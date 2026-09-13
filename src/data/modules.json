@@ -3,36 +3,36 @@
     "id": "A",
     "name": "数据与统计基础",
     "subtitle": "DATA FOUNDATIONS",
-    "color": "#73c6dc"
+    "color": "#086b91"
   },
   {
     "id": "B",
     "name": "数据探索与可视化",
     "subtitle": "EXPLORATION",
-    "color": "#7fcfb3"
+    "color": "#087c62"
   },
   {
     "id": "C",
     "name": "降维与潜变量",
     "subtitle": "DIMENSION & LATENT",
-    "color": "#b3a0f5"
+    "color": "#7042b6"
   },
   {
     "id": "D",
     "name": "分类与分群",
     "subtitle": "CLASSIFICATION",
-    "color": "#eca47c"
+    "color": "#b45309"
   },
   {
     "id": "E",
     "name": "多变量关系建模",
     "subtitle": "RELATIONSHIP",
-    "color": "#7fa4f3"
+    "color": "#2257bf"
   },
   {
     "id": "F",
     "name": "综合应用",
     "subtitle": "APPLICATION",
-    "color": "#d3c183"
+    "color": "#80600a"
   }
 ]

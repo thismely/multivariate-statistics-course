@@ -15,7 +15,7 @@ This report records file paths, categories, counts, locations and content hashes
 
 - resources: `101`
 - registered_course_paths: `134`
-- files_scanned: `381`
+- files_scanned: `382`
 - failures: `0`
 - review_flags: `22`
 - unapproved_review_flags: `0`

@@ -21,8 +21,8 @@ function fly(id,home=false){
 }
 function updateVisibility(){
  const visible=new Set(store.filtered.map(n=>n.id)),focus=new Set(store.focusIds)
- for(const n of store.nodes){const mesh=meshMap.get(n.id);if(!mesh)continue;mesh.visible=visible.has(n.id);const active=!focus.size||focus.has(n.id);mesh.material.opacity=active?1:.13;mesh.scale.setScalar(n.id===store.selectedId?1.7:1);mesh.material.emissiveIntensity=n.id===store.selectedId?1.3:.5}
- for(const item of edgeObjects){const {edge,index,points,offset,color,matrix}=item;const show=visible.has(edge.source)&&visible.has(edge.target)&&(store.relationFilter==='all'||store.relationFilter===edge.type);const active=focus.size?focus.has(edge.source)&&focus.has(edge.target):edge.source===store.selectedId||edge.target===store.selectedId;const tint=color.clone().multiplyScalar(active?.9:.09);
+ for(const n of store.nodes){const mesh=meshMap.get(n.id);if(!mesh)continue;mesh.visible=visible.has(n.id);const active=!focus.size||focus.has(n.id);mesh.material.opacity=active?1:.13;mesh.scale.setScalar(n.id===store.selectedId?1.7:1);mesh.material.emissiveIntensity=n.id===store.selectedId?.35:.12}
+ for(const item of edgeObjects){const {edge,index,points,offset,color,matrix}=item;const show=visible.has(edge.source)&&visible.has(edge.target)&&(store.relationFilter==='all'||store.relationFilter===edge.type);const active=focus.size?focus.has(edge.source)&&focus.has(edge.target):edge.source===store.selectedId||edge.target===store.selectedId;const tint=color.clone().lerp(new THREE.Color('#f3f7fc'),active?0:.84);
   for(let i=0;i<points.length;i++){const at=offset+i;edgePositions.setXYZ(at,show?points[i].x:0,show?points[i].y:0,show?points[i].z:0);edgeColors.setXYZ(at,tint.r,tint.g,tint.b)}
   const transform=matrix.clone();if(!show||edge.type==='compare_with')transform.scale(new THREE.Vector3(0,0,0));edgeArrows.setMatrixAt(index,transform);edgeArrows.setColorAt(index,tint)
  }
@@ -54,10 +54,10 @@ function loop(now){
 }
 onMounted(()=>{
  if(new URLSearchParams(location.search).get('graphics')==='off'){failed.value=true;emit('ready',false);return}
- scene=new THREE.Scene();scene.fog=new THREE.FogExp2('#0b131b',.00055)
+ scene=new THREE.Scene();scene.fog=new THREE.FogExp2('#f3f7fc',.00055)
  camera=new THREE.PerspectiveCamera(43,1,1,4000);camera.up.set(0,0,1);camera.position.copy(homePosition)
  try{renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'high-performance'})}catch{failed.value=true;emit('ready',false);return}
- renderer.setClearColor(0x0b131b,0);renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));host.value.appendChild(renderer.domElement)
+ renderer.setClearColor(0xf3f7fc,0);renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));host.value.appendChild(renderer.domElement)
  labels=new CSS2DRenderer();labels.domElement.className='scene-label-layer';host.value.appendChild(labels.domElement)
  controls=new OrbitControls(camera,renderer.domElement);controls.target.copy(homeTarget);controls.enableDamping=true;controls.dampingFactor=.09;controls.minDistance=85;controls.maxDistance=1450;controls.maxPolarAngle=Math.PI*.89;controls.addEventListener('change',()=>dirty=true);controls.addEventListener('start',()=>{flight=null;atHome=false})
  scene.add(new THREE.AmbientLight('#ccddec',2));const light=new THREE.DirectionalLight('#eaf9ff',3);light.position.set(100,-200,700);scene.add(light)
@@ -76,12 +76,12 @@ onMounted(()=>{
   const column=new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(x,y,0),new THREE.Vector3(x,y,232)]),new THREE.LineDashedMaterial({color:module.color,dashSize:2,gapSize:8,transparent:true,opacity:.16}));column.computeLineDistances();scene.add(column)
  }
  const sphere=new THREE.IcosahedronGeometry(1,2)
- for(const node of store.nodes){const isCore=node.id==='course',material=new THREE.MeshStandardMaterial({color:isCore?'#f1ead9':typeColors[node.type],emissive:isCore?'#b8a780':typeColors[node.type],emissiveIntensity:.5,metalness:.25,roughness:.4,transparent:true});const mesh=new THREE.Mesh(sphere,material);mesh.position.fromArray(positions[node.id]);mesh.geometry=sphere;mesh.userData.nodeId=node.id
+ for(const node of store.nodes){const isCore=node.id==='course',material=new THREE.MeshStandardMaterial({color:isCore?'#f97316':typeColors[node.type],emissive:isCore?'#c45a08':typeColors[node.type],emissiveIntensity:.12,metalness:.25,roughness:.4,transparent:true});const mesh=new THREE.Mesh(sphere,material);mesh.position.fromArray(positions[node.id]);mesh.geometry=sphere;mesh.userData.nodeId=node.id
   // Use a parent scale to preserve highlight scaling independently of semantic size.
   const base=new THREE.Group();base.position.copy(mesh.position);mesh.position.set(0,0,0);mesh.scale.setScalar(1);base.scale.setScalar(isCore?13:node.importance>=5?7.2:4.2);base.add(mesh);scene.add(base);meshMap.set(node.id,mesh)
   const obj=label(isCore?'多元统计分析':node.name,[...positions[node.id].slice(0,2),positions[node.id][2]+13],'node-label');nodeLabels.push({obj,node})
  }
- const relationColors={prerequisite:'#75c6b4',derived_from:'#aa99dc',part_of:'#72879c',compare_with:'#e7b475',used_for:'#e69794',assessed_by:'#b6ce86'}
+ const relationColors={prerequisite:'#087c62',derived_from:'#7042b6',part_of:'#64748b',compare_with:'#c05a08',used_for:'#bd3748',assessed_by:'#4d7514'}
  const segmentVertices=store.edges.length*36;edgePositions=new THREE.BufferAttribute(new Float32Array(segmentVertices*3),3);edgeColors=new THREE.BufferAttribute(new Float32Array(segmentVertices*3),3)
  const edgeGeometry=new THREE.BufferGeometry().setAttribute('position',edgePositions).setAttribute('color',edgeColors)
  edgeLines=new THREE.LineSegments(edgeGeometry,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:.75,depthWrite:false}));edgeLines.frustumCulled=false;scene.add(edgeLines)

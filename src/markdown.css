@@ -203,3 +203,99 @@
     font-size: 17px;
   }
 }
+
+/* Markdown content follows the portal's light semantic palette. The fallback
+ * values keep this stylesheet readable if it is previewed outside the portal. */
+.markdown-preview {
+  --markdown-panel: var(--course-panel, #ffffff);
+  --markdown-panel-soft: var(--course-panel-soft, #edf5fc);
+  --markdown-line: var(--course-line, #c6d4e3);
+  --markdown-text: var(--course-text, #17324d);
+  --markdown-heading: var(--course-heading, #0e2d4d);
+  --markdown-muted: var(--course-muted, #496176);
+  --markdown-accent: var(--course-accent, #075dcc);
+  --markdown-accent-soft: var(--course-accent-soft, #e5efff);
+  --markdown-orange: var(--course-orange, #d96908);
+  color: var(--markdown-text);
+}
+
+.markdown-preview :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--markdown-heading);
+}
+
+.markdown-preview :is(h2) {
+  border-color: var(--markdown-line);
+}
+
+.markdown-preview :is(h3) {
+  color: var(--markdown-accent);
+}
+
+.markdown-preview :is(h4, h5, h6, p, ul, ol, blockquote, table, th, td) {
+  color: var(--markdown-text);
+}
+
+.markdown-preview :is(strong) {
+  color: var(--markdown-heading);
+}
+
+.markdown-preview :is(em) {
+  color: var(--markdown-muted);
+}
+
+.markdown-preview :is(a) {
+  color: var(--markdown-accent);
+  text-decoration-color: rgba(7, 93, 204, .35);
+}
+
+.markdown-preview :is(a:hover) {
+  color: var(--course-accent-strong, #064ca6);
+}
+
+.markdown-preview :is(blockquote) {
+  border-color: var(--markdown-accent);
+  color: var(--markdown-muted);
+  background: var(--markdown-accent-soft);
+}
+
+.markdown-preview :is(code) {
+  border-color: var(--markdown-line);
+  color: #79500c;
+  background: var(--markdown-panel-soft);
+}
+
+.markdown-preview :is(pre) {
+  border-color: var(--markdown-line);
+  color: var(--markdown-text);
+  background: var(--markdown-panel-soft);
+}
+
+.markdown-preview :is(pre code) {
+  color: inherit;
+  background: transparent;
+}
+
+.markdown-preview :is(th, td) {
+  border-color: var(--markdown-line);
+}
+
+.markdown-preview :is(th) {
+  color: var(--markdown-heading);
+  background: var(--markdown-accent-soft);
+}
+
+.markdown-preview :is(tr:nth-child(even) td) {
+  background: rgba(230, 240, 248, .55);
+}
+
+.markdown-preview :is(hr) {
+  border-color: var(--markdown-line);
+}
+
+.markdown-preview :is(img) {
+  border-color: var(--markdown-line);
+}
+
+.markdown-preview :is(.katex) {
+  color: var(--markdown-heading);
+}

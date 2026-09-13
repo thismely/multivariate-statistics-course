@@ -1,7 +1,7 @@
 export const relationNames = { prerequisite:'推荐先修', derived_from:'理论构造', part_of:'组成部分', compare_with:'方法比较', used_for:'应用于', assessed_by:'练习检验' }
 export const levels = ['基础概念','统计原理','Python 实现','方法诊断与解释','综合应用']
 export const typeNames = {concept:'概念',theory:'原理',method:'方法',python:'Python',case:'案例',assessment:'练习'}
-export const typeColors = {concept:'#92b9ce',theory:'#ad9ae9',method:'#65d7bc',python:'#e6bb7b',case:'#ef9290',assessment:'#a4c977'}
+export const typeColors = {concept:'#1263bd',theory:'#7042b6',method:'#00816d',python:'#b45309',case:'#bd3748',assessment:'#4d7514'}
 /** All predecessor branches in deterministic topological order. No arbitrary shortest-path branch loss. */
 export function learningPath(nodes,edges,target,direction='before') {
   if(!nodes.some(n=>n.id===target)) return []

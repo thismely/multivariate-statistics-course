@@ -2,6 +2,8 @@
 import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { ArrowLeft, ArrowUpRight, BookOpen, Download, ExternalLink, FileCode2, FileText, Link2, Orbit, Table2 } from 'lucide-vue-next'
 import { useUniverse } from '../store'
+import { renderMarkdown } from '../utils/markdown'
+import '../markdown.css'
 
 const props = defineProps({
   resource: { type: Object, default: null },
@@ -13,6 +15,7 @@ const store = useUniverse()
 const loading = ref(false)
 const error = ref('')
 const textPreview = ref('')
+const markdownHtml = ref('')
 const csvRows = ref([])
 const csvTotalRows = ref(0)
 const notebookCells = ref([])
@@ -65,6 +68,7 @@ const previewKind = computed(() => {
   if (r.type === 'data' && ['csv', 'tsv'].includes(extension.value)) return 'csv'
   if (r.type === 'slides' && ['ppt', 'pptx'].includes(extension.value)) return 'download'
   if (r.type === 'data') return 'data'
+  if (extension.value === 'md' && r.type !== 'code' && r.type !== 'notebook') return 'markdown'
   if (r.type === 'slides') return 'text'
   if (r.type === 'code' || r.type === 'notes' || r.type === 'exercise' || r.type === 'reference') return 'text'
   return 'text'
@@ -99,6 +103,20 @@ function parseCsv(text) {
   csvRows.value = lines.slice(0, 11).map((line) => parseCsvLine(line, delimiter))
 }
 
+function markdownClick(event) {
+  const anchor = event.target?.closest?.('a[data-markdown-anchor]')
+  if (!anchor) return
+  event.preventDefault()
+  const href = anchor.getAttribute('href') ?? ''
+  let id = ''
+  if (href.startsWith('#')) {
+    try { id = decodeURIComponent(href.slice(1)) } catch { id = href.slice(1) }
+  }
+  if (!id) return
+  const target = [...event.currentTarget.querySelectorAll('[id]')].find((element) => element.id === id)
+  target?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
 function notebookSource(cell) {
   return Array.isArray(cell?.source) ? cell.source.join('') : String(cell?.source ?? '')
 }
@@ -118,6 +136,7 @@ function notebookOutput(cell) {
 async function loadPreview() {
   controller?.abort()
   textPreview.value = ''
+  markdownHtml.value = ''
   csvRows.value = []
   csvTotalRows.value = 0
   notebookCells.value = []
@@ -150,6 +169,13 @@ async function loadPreview() {
     } else {
       const text = await response.text()
       if (previewKind.value === 'csv') parseCsv(text)
+      else if (previewKind.value === 'markdown') {
+        markdownHtml.value = renderMarkdown(text, {
+          sourcePath: path,
+          resources: props.resources,
+          assetBase: import.meta.env.BASE_URL || '/',
+        })
+      }
       else {
         try {
           const parsed = JSON.parse(text)
@@ -271,6 +297,7 @@ function provenanceText(value) {
           <p>{{ resource.description }}</p>
           <a v-if="downloadUrl" class="course-button course-button-primary" :href="downloadUrl" download><Download :size="16" />下载数据文件</a>
         </div>
+        <div v-else-if="previewKind === 'markdown'" class="markdown-preview" v-html="markdownHtml" @click="markdownClick"></div>
         <div v-else class="text-preview">
           <pre v-if="textPreview">{{ textPreview }}</pre>
           <p v-else class="course-empty">当前资源没有可在线提取的文本，请下载原件查看。</p>

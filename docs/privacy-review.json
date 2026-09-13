@@ -19,8 +19,8 @@
     {
       "path": "course/notes/ch07.md",
       "category": "teaching_sensitive_keyword",
-      "sha256": "e4e4055222c286db3eeb850873b996d8ccf18eafe4295c915edd507bcd0810d4",
-      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "sha256": "766af1b484b1b97bb1e8ea3b33491cdd2cfaeaec0fcb23508543e26a9aa9f2cc",
+      "reason": "已复核：仅修正公式分隔符和百分号转义，未新增个人记录。",
       "reviewer": "course build contextual review",
       "date": "2026-09-13"
     },
@@ -43,8 +43,8 @@
     {
       "path": "course/notes/ch11.md",
       "category": "teaching_sensitive_keyword",
-      "sha256": "1ab4dfed4447c116c141ffdbdfd8361c34d11bbb86d124ccd1d6373d8d675fcf",
-      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "sha256": "eee9e8b0f271118be231f7e25b0d84ed5c63641982a6c53ce632f034806ee9eb",
+      "reason": "已复核：仅修正公式分隔符和百分号转义，未新增个人记录。",
       "reviewer": "course build contextual review",
       "date": "2026-09-13"
     },
@@ -91,8 +91,8 @@
     {
       "path": "public/course/notes/ch07.md",
       "category": "teaching_sensitive_keyword",
-      "sha256": "e4e4055222c286db3eeb850873b996d8ccf18eafe4295c915edd507bcd0810d4",
-      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "sha256": "766af1b484b1b97bb1e8ea3b33491cdd2cfaeaec0fcb23508543e26a9aa9f2cc",
+      "reason": "已复核：仅修正公式分隔符和百分号转义，未新增个人记录。",
       "reviewer": "course build contextual review",
       "date": "2026-09-13"
     },
@@ -115,8 +115,8 @@
     {
       "path": "public/course/notes/ch11.md",
       "category": "teaching_sensitive_keyword",
-      "sha256": "1ab4dfed4447c116c141ffdbdfd8361c34d11bbb86d124ccd1d6373d8d675fcf",
-      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "sha256": "eee9e8b0f271118be231f7e25b0d84ed5c63641982a6c53ce632f034806ee9eb",
+      "reason": "已复核：仅修正公式分隔符和百分号转义，未新增个人记录。",
       "reviewer": "course build contextual review",
       "date": "2026-09-13"
     },

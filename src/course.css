@@ -1,6 +1,6 @@
 /* The course portal is intentionally scoped. The legacy graph keeps using style.css. */
 .course-page-active { overflow: auto; }
-.course-page-active.course-space-active { overflow: hidden; }
+.course-page-active.course-space-active { overflow-y: auto; overflow-x: hidden; scrollbar-gutter: stable; }
 .course-app {
   --course-bg: #091018;
   --course-panel: #101b25;

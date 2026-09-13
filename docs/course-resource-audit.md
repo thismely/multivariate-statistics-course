@@ -15,7 +15,7 @@ This report records file paths, categories, counts, locations and content hashes
 
 - resources: `101`
 - registered_course_paths: `134`
-- files_scanned: `377`
+- files_scanned: `381`
 - failures: `0`
 - review_flags: `22`
 - unapproved_review_flags: `0`
@@ -27,16 +27,16 @@ This report records file paths, categories, counts, locations and content hashes
 ## Manual review flags
 
 - `README.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `5a7c0ef42567caf2e17cc3415b638dac7543527282c9b367bc9ff6c37885624e`
-- `course/notes/ch07.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `e4e4055222c286db3eeb850873b996d8ccf18eafe4295c915edd507bcd0810d4`
+- `course/notes/ch07.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `766af1b484b1b97bb1e8ea3b33491cdd2cfaeaec0fcb23508543e26a9aa9f2cc`
 - `course/notes/ch09.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `de318119732d7a954615e5f8ac08c51b5806be2eeeeb5cd0753438999bcdaeb2`
 - `course/notes/ch10.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `53bc5dce0380acd1cf370fe48da78b06b9a5a70a3c0f02b3933e6411ef07550e`
-- `course/notes/ch11.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `1ab4dfed4447c116c141ffdbdfd8361c34d11bbb86d124ccd1d6373d8d675fcf`
+- `course/notes/ch11.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `eee9e8b0f271118be231f7e25b0d84ed5c63641982a6c53ce632f034806ee9eb`
 - `course/slides/ch07.html` — `teaching_sensitive_keyword` — `approved` — SHA-256 `ec48b672f69dd42010089e9225ce6896a5ce6b257ba93967af8232fc71b94e1b`
 - `course/slides/ch07.pptx` — `teaching_sensitive_keyword` — `approved` — SHA-256 `f6f574f75e3ae2824b0f83d6c24e5ea0cd9f2b92311e2cd8b91c50875e48d48b`
-- `public/course/notes/ch07.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `e4e4055222c286db3eeb850873b996d8ccf18eafe4295c915edd507bcd0810d4`
+- `public/course/notes/ch07.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `766af1b484b1b97bb1e8ea3b33491cdd2cfaeaec0fcb23508543e26a9aa9f2cc`
 - `public/course/notes/ch09.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `de318119732d7a954615e5f8ac08c51b5806be2eeeeb5cd0753438999bcdaeb2`
 - `public/course/notes/ch10.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `53bc5dce0380acd1cf370fe48da78b06b9a5a70a3c0f02b3933e6411ef07550e`
-- `public/course/notes/ch11.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `1ab4dfed4447c116c141ffdbdfd8361c34d11bbb86d124ccd1d6373d8d675fcf`
+- `public/course/notes/ch11.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `eee9e8b0f271118be231f7e25b0d84ed5c63641982a6c53ce632f034806ee9eb`
 - `public/course/slides/ch07.html` — `teaching_sensitive_keyword` — `approved` — SHA-256 `ec48b672f69dd42010089e9225ce6896a5ce6b257ba93967af8232fc71b94e1b`
 - `public/course/slides/ch07.pptx` — `teaching_sensitive_keyword` — `approved` — SHA-256 `f6f574f75e3ae2824b0f83d6c24e5ea0cd9f2b92311e2cd8b91c50875e48d48b`
 - `public/resources/lecture07.json` — `teaching_sensitive_keyword` — `approved` — SHA-256 `f4cfddfc5761a8194ecac20b8a64022f550e98f1dada69a07d6c14c5bce59eed`

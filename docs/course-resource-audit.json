@@ -26,7 +26,7 @@
   "summary": {
     "resources": 101,
     "registered_course_paths": 134,
-    "files_scanned": 377,
+    "files_scanned": 381,
     "failures": 0,
     "review_flags": 22,
     "unapproved_review_flags": 0
@@ -47,7 +47,7 @@
       "path": "course/notes/ch07.md",
       "category": "teaching_sensitive_keyword",
       "count": 16,
-      "sha256": "e4e4055222c286db3eeb850873b996d8ccf18eafe4295c915edd507bcd0810d4",
+      "sha256": "766af1b484b1b97bb1e8ea3b33491cdd2cfaeaec0fcb23508543e26a9aa9f2cc",
       "approved": true,
       "locations": [
         "58",
@@ -99,7 +99,7 @@
       "path": "course/notes/ch11.md",
       "category": "teaching_sensitive_keyword",
       "count": 1,
-      "sha256": "1ab4dfed4447c116c141ffdbdfd8361c34d11bbb86d124ccd1d6373d8d675fcf",
+      "sha256": "eee9e8b0f271118be231f7e25b0d84ed5c63641982a6c53ce632f034806ee9eb",
       "approved": true,
       "locations": [
         "2114"
@@ -141,7 +141,7 @@
       "path": "public/course/notes/ch07.md",
       "category": "teaching_sensitive_keyword",
       "count": 16,
-      "sha256": "e4e4055222c286db3eeb850873b996d8ccf18eafe4295c915edd507bcd0810d4",
+      "sha256": "766af1b484b1b97bb1e8ea3b33491cdd2cfaeaec0fcb23508543e26a9aa9f2cc",
       "approved": true,
       "locations": [
         "58",
@@ -193,7 +193,7 @@
       "path": "public/course/notes/ch11.md",
       "category": "teaching_sensitive_keyword",
       "count": 1,
-      "sha256": "1ab4dfed4447c116c141ffdbdfd8361c34d11bbb86d124ccd1d6373d8d675fcf",
+      "sha256": "eee9e8b0f271118be231f7e25b0d84ed5c63641982a6c53ce632f034806ee9eb",
       "approved": true,
       "locations": [
         "2114"

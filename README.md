@@ -2,7 +2,9 @@
 
 《多元统计分析》开放式数字课程平台。以三维知识空间连接章节、方法、讲义、课件、Python 实验、案例、数据和练习，提供探索式与章节式两种学习入口。
 
-在线课程地址将在 GitHub Pages 首次部署验证后登记。当前版本已完成本地构建与资源验收，尚未上线。仓库预定名称：`multivariate-statistics-course`。
+在线课程：[进入数字课程](https://thismely.github.io/multivariate-statistics-course/) · [GitHub 工程](https://github.com/thismely/multivariate-statistics-course)
+
+GitHub Actions 已通过自动审计、测试和生产构建，并成功部署至 GitHub Pages。
 
 ## 课程模块
 

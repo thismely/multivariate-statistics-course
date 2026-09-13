@@ -15,7 +15,7 @@ This report records file paths, categories, counts, locations and content hashes
 
 - resources: `101`
 - registered_course_paths: `134`
-- files_scanned: `375`
+- files_scanned: `377`
 - failures: `0`
 - review_flags: `22`
 - unapproved_review_flags: `0`
@@ -26,7 +26,7 @@ This report records file paths, categories, counts, locations and content hashes
 
 ## Manual review flags
 
-- `README.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `166219091fdd9eceda3a019c161f8d9e3addc237a92fe36fbd8360a098b62a24`
+- `README.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `5a7c0ef42567caf2e17cc3415b638dac7543527282c9b367bc9ff6c37885624e`
 - `course/notes/ch07.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `e4e4055222c286db3eeb850873b996d8ccf18eafe4295c915edd507bcd0810d4`
 - `course/notes/ch09.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `de318119732d7a954615e5f8ac08c51b5806be2eeeeb5cd0753438999bcdaeb2`
 - `course/notes/ch10.md` — `teaching_sensitive_keyword` — `approved` — SHA-256 `53bc5dce0380acd1cf370fe48da78b06b9a5a70a3c0f02b3933e6411ef07550e`

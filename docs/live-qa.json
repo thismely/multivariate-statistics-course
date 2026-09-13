@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "projectBase": "/multivariate-statistics-course/",
+  "resourceFiles": 134,
+  "graphDeepLink": true,
+  "downloadResolvesWithinProject": true,
+  "failures": [],
+  "siteUrl": "https://thismely.github.io/multivariate-statistics-course/",
+  "verifiedDate": "2026-09-13",
+  "workflowRun": "https://github.com/thismely/multivariate-statistics-course/actions/runs/34747219380"
+}

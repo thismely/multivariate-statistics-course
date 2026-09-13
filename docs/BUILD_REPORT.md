@@ -42,4 +42,6 @@
 - 6项桌面与移动端浏览器检查通过，无页面脚本异常。
 - 干净目录通过 npm ci 安装锁定依赖，再独立完成生产构建及134个部署文件检查。
 - 文本、Notebook与PPTX XML元数据审计通过；已知个人标识与本机用户路径扫描无命中。嵌入图片没有逐图OCR，自动审计不能代替对新增图片的内容复核。
-- GitHub API查询目标新仓库返回不可访问（404）；当前没有远端提交、Actions成功记录或Pages上线记录。配置与本地源码包已经准备，实际发布等待仓库入口可用。
+- 工程已推送至 [GitHub 仓库](https://github.com/thismely/multivariate-statistics-course)，[首次云端审计、测试、构建及部署](https://github.com/thismely/multivariate-statistics-course/actions/runs/34747219380)全部成功。
+- [在线课程](https://thismely.github.io/multivariate-statistics-course/)已由 GitHub Pages 发布。
+- 线上浏览器验证通过：134个资源链接返回成功，PCA图谱直达正常，数据下载地址保持在项目子目录；记录见 `docs/live-qa.json`。

@@ -26,7 +26,7 @@
   "summary": {
     "resources": 101,
     "registered_course_paths": 134,
-    "files_scanned": 375,
+    "files_scanned": 377,
     "failures": 0,
     "review_flags": 22,
     "unapproved_review_flags": 0
@@ -37,10 +37,10 @@
       "path": "README.md",
       "category": "teaching_sensitive_keyword",
       "count": 1,
-      "sha256": "166219091fdd9eceda3a019c161f8d9e3addc237a92fe36fbd8360a098b62a24",
+      "sha256": "5a7c0ef42567caf2e17cc3415b638dac7543527282c9b367bc9ff6c37885624e",
       "approved": true,
       "locations": [
-        "18"
+        "20"
       ]
     },
     {

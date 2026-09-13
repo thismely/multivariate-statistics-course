@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "httpFiles": 134,
+  "failures": [],
+  "csvRows": 11,
+  "download": "/course/data/pca_data.csv",
+  "iframe": "/course/preview/pca.html",
+  "searchEmptyState": true,
+  "codePreview": true
+}

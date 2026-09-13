@@ -1,0 +1,7 @@
+Course materials and software licensing notice
+
+This repository is published for access to the digital course. No blanket open-source or Creative Commons license is granted by this notice.
+
+Course materials are included within the usage scope confirmed by the course provider. Existing third-party rights remain with their respective holders. Public availability does not imply permission for redistribution, modification, or commercial use. Contact the repository maintainer through the repository for permission inquiries.
+
+Dependencies retain their own licenses: Vue, Vite, Pinia, and Three.js (MIT); Lucide (ISC). Their notices are available in the installed packages. A future license change requires the appropriate rights holder's authorization.

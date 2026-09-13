@@ -1,0 +1,7593 @@
+{
+  "resource": {
+    "id": "lecture01",
+    "title": "第1章_多元统计分析及软件概述_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第1章_多元统计分析及软件概述_完整讲义.md",
+    "sha256": "16cb785de4427bea716a9c974ea578fa4abea0aa637326abcf9c05b556a4d4b0",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture01.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "讲义 L1",
+      "text": "# 第1章 多元统计分析及软件概述"
+    },
+    {
+      "index": 2,
+      "locator": "讲义 L2",
+      "text": ""
+    },
+    {
+      "index": 3,
+      "locator": "讲义 L3",
+      "text": "---"
+    },
+    {
+      "index": 4,
+      "locator": "讲义 L4",
+      "text": ""
+    },
+    {
+      "index": 5,
+      "locator": "讲义 L5",
+      "text": "## 模块一：精准教学大纲"
+    },
+    {
+      "index": 6,
+      "locator": "讲义 L6",
+      "text": ""
+    },
+    {
+      "index": 7,
+      "locator": "讲义 L7",
+      "text": "### 一、教学目标"
+    },
+    {
+      "index": 8,
+      "locator": "讲义 L8",
+      "text": ""
+    },
+    {
+      "index": 9,
+      "locator": "讲义 L9",
+      "text": "通过本章学习，学生应具备以下核心能力："
+    },
+    {
+      "index": 10,
+      "locator": "讲义 L10",
+      "text": ""
+    },
+    {
+      "index": 11,
+      "locator": "讲义 L11",
+      "text": "1. **历史脉络认知**：准确描述多元统计分析从Pearson（1901）、Fisher（1936）到Hotelling（1933）三大奠基人的核心贡献，理解学科从\"描述\"到\"推断\"再到\"建模\"的演进逻辑。"
+    },
+    {
+      "index": 12,
+      "locator": "讲义 L12",
+      "text": "2. **多行业应用图谱**：能够在金融工程、大宗商品、医疗健康、市场营销、工业制造、社会治理等至少6个行业中，识别多元统计分析的典型应用场景，并说明每种方法的适用条件。"
+    },
+    {
+      "index": 13,
+      "locator": "讲义 L13",
+      "text": "3. **方法体系决策能力**：能够将多元统计分析的全部内容归纳为\"降维\"\"分类\"\"相关\"三大方法族，并根据数据特征（变量类型、样本量、分析目标）选择合适的方法。"
+    },
+    {
+      "index": 14,
+      "locator": "讲义 L14",
+      "text": "4. **软件工具选择**：对比SAS、SPSS、R、Python四大平台的优劣势，理解Python成为数据科学主流工具的技术与生态原因。"
+    },
+    {
+      "index": 15,
+      "locator": "讲义 L15",
+      "text": "5. **环境搭建能力**：独立完成Anaconda安装、conda虚拟环境管理、Jupyter Notebook启动与基本操作。"
+    },
+    {
+      "index": 16,
+      "locator": "讲义 L16",
+      "text": "6. **核心库认知**：掌握NumPy、Pandas、Matplotlib、Seaborn、Scipy、Scikit-learn六大库的功能定位、核心对象与典型调用方式。"
+    },
+    {
+      "index": 17,
+      "locator": "讲义 L17",
+      "text": ""
+    },
+    {
+      "index": 18,
+      "locator": "讲义 L18",
+      "text": "### 二、建议学时"
+    },
+    {
+      "index": 19,
+      "locator": "讲义 L19",
+      "text": ""
+    },
+    {
+      "index": 20,
+      "locator": "讲义 L20",
+      "text": "| 内容 | 学时 | 教学方式 |"
+    },
+    {
+      "index": 21,
+      "locator": "讲义 L21",
+      "text": "|------|------|----------|"
+    },
+    {
+      "index": 22,
+      "locator": "讲义 L22",
+      "text": "| 1.1 多元统计分析的历史 | 1 | 讲授+时间线图示 |"
+    },
+    {
+      "index": 23,
+      "locator": "讲义 L23",
+      "text": "| 1.2 多元统计分析的用途 | 2 | 讲授+多行业案例讨论 |"
+    },
+    {
+      "index": 24,
+      "locator": "讲义 L24",
+      "text": "| 1.3 多元统计分析的内容 | 1.5 | 讲授+方法对比图示 |"
+    },
+    {
+      "index": 25,
+      "locator": "讲义 L25",
+      "text": "| 1.4 统计分析软件及应用 | 0.5 | 讲授+演示 |"
+    },
+    {
+      "index": 26,
+      "locator": "讲义 L26",
+      "text": "| 1.5 Python数据分析平台 | 2 | 讲授+上机实操 |"
+    },
+    {
+      "index": 27,
+      "locator": "讲义 L27",
+      "text": "| **合计** | **7** | |"
+    },
+    {
+      "index": 28,
+      "locator": "讲义 L28",
+      "text": ""
+    },
+    {
+      "index": 29,
+      "locator": "讲义 L29",
+      "text": "### 三、重点与难点"
+    },
+    {
+      "index": 30,
+      "locator": "讲义 L30",
+      "text": ""
+    },
+    {
+      "index": 31,
+      "locator": "讲义 L31",
+      "text": "**重点**："
+    },
+    {
+      "index": 32,
+      "locator": "讲义 L32",
+      "text": "- 多元统计三大方法族（降维、分类、相关）的核心思想与适用场景差异"
+    },
+    {
+      "index": 33,
+      "locator": "讲义 L33",
+      "text": "- 多行业应用场景的识别与方法匹配"
+    },
+    {
+      "index": 34,
+      "locator": "讲义 L34",
+      "text": "- Python数据分析环境的搭建与核心库的调用逻辑"
+    },
+    {
+      "index": 35,
+      "locator": "讲义 L35",
+      "text": ""
+    },
+    {
+      "index": 36,
+      "locator": "讲义 L36",
+      "text": "**难点**："
+    },
+    {
+      "index": 37,
+      "locator": "讲义 L37",
+      "text": "- 各方法之间的联系与区别（如主成分分析 vs 因子分析 vs 对应分析的深层差异）"
+    },
+    {
+      "index": 38,
+      "locator": "讲义 L38",
+      "text": "- 理解\"降维\"思维在不同行业中的变体（如金融中的风险因子提取 vs 医学中的基因筛选）"
+    },
+    {
+      "index": 39,
+      "locator": "讲义 L39",
+      "text": "- NumPy数组与Pandas DataFrame的思维切换"
+    },
+    {
+      "index": 40,
+      "locator": "讲义 L40",
+      "text": ""
+    },
+    {
+      "index": 41,
+      "locator": "讲义 L41",
+      "text": "**化解建议**："
+    },
+    {
+      "index": 42,
+      "locator": "讲义 L42",
+      "text": "1. 建议学生在学习1.3节时，自行绘制一张\"方法选择决策树\"，将每种方法的输入数据类型、输出结果类型和适用场景整理成表格。"
+    },
+    {
+      "index": 43,
+      "locator": "讲义 L43",
+      "text": "2. 对于方法间的区别，建议从\"输入→输出→目标\"三个维度进行对比，而非死记硬背定义。"
+    },
+    {
+      "index": 44,
+      "locator": "讲义 L44",
+      "text": "3. 对于NumPy与Pandas的区别，可以类比\"计算器（NumPy）vs Excel（Pandas）\"——前者处理纯数值运算，后者处理带标签的表格数据。"
+    },
+    {
+      "index": 45,
+      "locator": "讲义 L45",
+      "text": ""
+    },
+    {
+      "index": 46,
+      "locator": "讲义 L46",
+      "text": "### 四、前置知识"
+    },
+    {
+      "index": 47,
+      "locator": "讲义 L47",
+      "text": ""
+    },
+    {
+      "index": 48,
+      "locator": "讲义 L48",
+      "text": "**本章前置知识清单**："
+    },
+    {
+      "index": 49,
+      "locator": "讲义 L49",
+      "text": ""
+    },
+    {
+      "index": 50,
+      "locator": "讲义 L50",
+      "text": "| 前置知识 | 是否已在本课程前序章节出现 | 处理方式 |"
+    },
+    {
+      "index": 51,
+      "locator": "讲义 L51",
+      "text": "|----------|--------------------------|----------|"
+    },
+    {
+      "index": 52,
+      "locator": "讲义 L52",
+      "text": "| 概率论基础（随机变量、期望、方差） | 否（基础课程） | 以下详细补充 |"
+    },
+    {
+      "index": 53,
+      "locator": "讲义 L53",
+      "text": "| 线性代数基础（矩阵、特征值） | 否（基础课程） | 以下详细补充 |"
+    },
+    {
+      "index": 54,
+      "locator": "讲义 L54",
+      "text": "| Python基础语法 | 否（基础课程） | 第2章详细讲解 |"
+    },
+    {
+      "index": 55,
+      "locator": "讲义 L55",
+      "text": ""
+    },
+    {
+      "index": 56,
+      "locator": "讲义 L56",
+      "text": "---"
+    },
+    {
+      "index": 57,
+      "locator": "讲义 L57",
+      "text": ""
+    },
+    {
+      "index": 58,
+      "locator": "讲义 L58",
+      "text": "#### 【前置知识补充一】概率论核心概念速览"
+    },
+    {
+      "index": 59,
+      "locator": "讲义 L59",
+      "text": ""
+    },
+    {
+      "index": 60,
+      "locator": "讲义 L60",
+      "text": "> **为什么需要这个？** 多元统计分析本质上是对多个随机变量联合行为的建模。如果不清楚\"随机变量\"\"期望\"\"方差\"\"协方差\"的含义，后续所有公式都将无法理解。"
+    },
+    {
+      "index": 61,
+      "locator": "讲义 L61",
+      "text": ""
+    },
+    {
+      "index": 62,
+      "locator": "讲义 L62",
+      "text": "**（1）随机变量（Random Variable）**"
+    },
+    {
+      "index": 63,
+      "locator": "讲义 L63",
+      "text": ""
+    },
+    {
+      "index": 64,
+      "locator": "讲义 L64",
+      "text": "随机变量是将随机试验的结果映射为数值的函数。用大写字母 $X, Y, Z$ 表示随机变量，用小写字母 $x, y, z$ 表示其具体取值。"
+    },
+    {
+      "index": 65,
+      "locator": "讲义 L65",
+      "text": ""
+    },
+    {
+      "index": 66,
+      "locator": "讲义 L66",
+      "text": "- **离散型随机变量**：取值为有限个或可列无限个。例如掷骰子的结果 $X \\in \\{1,2,3,4,5,6\\}$；某股票在一天内的涨跌次数。"
+    },
+    {
+      "index": 67,
+      "locator": "讲义 L67",
+      "text": "- **连续型随机变量**：取值为某个区间内的任意实数。例如股票的日收益率 $R \\in (-\\infty, +\\infty)$；某商品的价格 $P \\in (0, +\\infty)$。"
+    },
+    {
+      "index": 68,
+      "locator": "讲义 L68",
+      "text": ""
+    },
+    {
+      "index": 69,
+      "locator": "讲义 L69",
+      "text": "**概率分布**描述随机变量取各个值的概率规律。离散型用概率质量函数 $P(X=x_i)$ 描述，连续型用概率密度函数 $f(x)$ 描述，满足 $f(x) \\geq 0$ 且 $\\int_{-\\infty}^{+\\infty} f(x) dx = 1$。"
+    },
+    {
+      "index": 70,
+      "locator": "讲义 L70",
+      "text": ""
+    },
+    {
+      "index": 71,
+      "locator": "讲义 L71",
+      "text": "**（2）期望（Expectation/均值）**"
+    },
+    {
+      "index": 72,
+      "locator": "讲义 L72",
+      "text": ""
+    },
+    {
+      "index": 73,
+      "locator": "讲义 L73",
+      "text": "期望是随机变量的\"重心\"，反映其集中趋势："
+    },
+    {
+      "index": 74,
+      "locator": "讲义 L74",
+      "text": ""
+    },
+    {
+      "index": 75,
+      "locator": "讲义 L75",
+      "text": "$$"
+    },
+    {
+      "index": 76,
+      "locator": "讲义 L76",
+      "text": "E(X) = \\sum_{i} x_i P(X = x_i) \\quad \\text{（离散型）}"
+    },
+    {
+      "index": 77,
+      "locator": "讲义 L77",
+      "text": "$$"
+    },
+    {
+      "index": 78,
+      "locator": "讲义 L78",
+      "text": ""
+    },
+    {
+      "index": 79,
+      "locator": "讲义 L79",
+      "text": "$$"
+    },
+    {
+      "index": 80,
+      "locator": "讲义 L80",
+      "text": "E(X) = \\int_{-\\infty}^{+\\infty} x f(x) dx \\quad \\text{（连续型）}"
+    },
+    {
+      "index": 81,
+      "locator": "讲义 L81",
+      "text": "$$"
+    },
+    {
+      "index": 82,
+      "locator": "讲义 L82",
+      "text": ""
+    },
+    {
+      "index": 83,
+      "locator": "讲义 L83",
+      "text": "**实际含义**：如果某股票过去250个交易日的平均日收益率为0.05%，则0.05%就是该收益率随机变量的期望估计。期望回答的是\"长期来看，这个变量平均取什么值\"。"
+    },
+    {
+      "index": 84,
+      "locator": "讲义 L84",
+      "text": ""
+    },
+    {
+      "index": 85,
+      "locator": "讲义 L85",
+      "text": "**期望的性质**："
+    },
+    {
+      "index": 86,
+      "locator": "讲义 L86",
+      "text": "- $E(c) = c$（常数的期望等于常数本身）"
+    },
+    {
+      "index": 87,
+      "locator": "讲义 L87",
+      "text": "- $E(aX + b) = aE(X) + b$（线性性）"
+    },
+    {
+      "index": 88,
+      "locator": "讲义 L88",
+      "text": "- $E(X + Y) = E(X) + E(Y)$（可加性，不要求独立）"
+    },
+    {
+      "index": 89,
+      "locator": "讲义 L89",
+      "text": "- $E(XY) = E(X) \\cdot E(Y)$（仅当 $X, Y$ 独立时成立）"
+    },
+    {
+      "index": 90,
+      "locator": "讲义 L90",
+      "text": ""
+    },
+    {
+      "index": 91,
+      "locator": "讲义 L91",
+      "text": "**（3）方差与标准差**"
+    },
+    {
+      "index": 92,
+      "locator": "讲义 L92",
+      "text": ""
+    },
+    {
+      "index": 93,
+      "locator": "讲义 L93",
+      "text": "方差度量随机变量围绕期望的离散程度："
+    },
+    {
+      "index": 94,
+      "locator": "讲义 L94",
+      "text": ""
+    },
+    {
+      "index": 95,
+      "locator": "讲义 L95",
+      "text": "$$"
+    },
+    {
+      "index": 96,
+      "locator": "讲义 L96",
+      "text": "Var(X) = E[(X - E(X))^2] = E(X^2) - [E(X)]^2"
+    },
+    {
+      "index": 97,
+      "locator": "讲义 L97",
+      "text": "$$"
+    },
+    {
+      "index": 98,
+      "locator": "讲义 L98",
+      "text": ""
+    },
+    {
+      "index": 99,
+      "locator": "讲义 L99",
+      "text": "标准差 $\\sigma = \\sqrt{Var(X)}$，与原变量同量纲，更直观。"
+    },
+    {
+      "index": 100,
+      "locator": "讲义 L100",
+      "text": ""
+    },
+    {
+      "index": 101,
+      "locator": "讲义 L101",
+      "text": "**实际含义**：方差越大，说明数据越分散，不确定性越高。在金融中，方差（或标准差）被广泛用来度量**投资风险**。例如，原油期货的年化波动率约为35%，而国债的年化波动率约为5%，说明原油投资的风险远高于国债。"
+    },
+    {
+      "index": 102,
+      "locator": "讲义 L102",
+      "text": ""
+    },
+    {
+      "index": 103,
+      "locator": "讲义 L103",
+      "text": "**方差的性质**："
+    },
+    {
+      "index": 104,
+      "locator": "讲义 L104",
+      "text": "- $Var(c) = 0$（常数的方差为0）"
+    },
+    {
+      "index": 105,
+      "locator": "讲义 L105",
+      "text": "- $Var(aX + b) = a^2 Var(X)$"
+    },
+    {
+      "index": 106,
+      "locator": "讲义 L106",
+      "text": "- $Var(X + Y) = Var(X) + Var(Y) + 2Cov(X,Y)$"
+    },
+    {
+      "index": 107,
+      "locator": "讲义 L107",
+      "text": ""
+    },
+    {
+      "index": 108,
+      "locator": "讲义 L108",
+      "text": "**（4）协方差与相关系数**"
+    },
+    {
+      "index": 109,
+      "locator": "讲义 L109",
+      "text": ""
+    },
+    {
+      "index": 110,
+      "locator": "讲义 L110",
+      "text": "协方差度量两个随机变量的**线性联动方向**："
+    },
+    {
+      "index": 111,
+      "locator": "讲义 L111",
+      "text": ""
+    },
+    {
+      "index": 112,
+      "locator": "讲义 L112",
+      "text": "$$"
+    },
+    {
+      "index": 113,
+      "locator": "讲义 L113",
+      "text": "Cov(X, Y) = E[(X - E(X))(Y - E(Y))] = E(XY) - E(X)E(Y)"
+    },
+    {
+      "index": 114,
+      "locator": "讲义 L114",
+      "text": "$$"
+    },
+    {
+      "index": 115,
+      "locator": "讲义 L115",
+      "text": ""
+    },
+    {
+      "index": 116,
+      "locator": "讲义 L116",
+      "text": "- $Cov(X,Y) > 0$：X增大时Y也倾向于增大（正相关）"
+    },
+    {
+      "index": 117,
+      "locator": "讲义 L117",
+      "text": "- $Cov(X,Y) < 0$：X增大时Y倾向于减小（负相关）"
+    },
+    {
+      "index": 118,
+      "locator": "讲义 L118",
+      "text": "- $Cov(X,Y) = 0$：X和Y无线性关系（注意：不一定独立）"
+    },
+    {
+      "index": 119,
+      "locator": "讲义 L119",
+      "text": ""
+    },
+    {
+      "index": 120,
+      "locator": "讲义 L120",
+      "text": "**问题**：协方差的数值受量纲影响。如果X的单位是\"亿元\"，Y的单位是\"%\"，那么协方差的单位是\"亿元·%\"，难以解释。"
+    },
+    {
+      "index": 121,
+      "locator": "讲义 L121",
+      "text": ""
+    },
+    {
+      "index": 122,
+      "locator": "讲义 L122",
+      "text": "**解决方案**：相关系数是协方差的标准化版本，消除了量纲影响："
+    },
+    {
+      "index": 123,
+      "locator": "讲义 L123",
+      "text": ""
+    },
+    {
+      "index": 124,
+      "locator": "讲义 L124",
+      "text": "$$"
+    },
+    {
+      "index": 125,
+      "locator": "讲义 L125",
+      "text": "\\rho_{XY} = \\frac{Cov(X,Y)}{\\sigma_X \\cdot \\sigma_Y}, \\quad \\rho_{XY} \\in [-1, 1]"
+    },
+    {
+      "index": 126,
+      "locator": "讲义 L126",
+      "text": "$$"
+    },
+    {
+      "index": 127,
+      "locator": "讲义 L127",
+      "text": ""
+    },
+    {
+      "index": 128,
+      "locator": "讲义 L128",
+      "text": "**实际含义**："
+    },
+    {
+      "index": 129,
+      "locator": "讲义 L129",
+      "text": "- 如果沪深300指数与中证500指数的相关系数为0.85，说明两个市场高度联动，分散化效果有限"
+    },
+    {
+      "index": 130,
+      "locator": "讲义 L130",
+      "text": "- 如果黄金与股票的相关系数为-0.3，说明黄金可以在一定程度上对冲股票风险"
+    },
+    {
+      "index": 131,
+      "locator": "讲义 L131",
+      "text": "- 如果两只股票的相关系数接近0，说明它们的走势几乎独立，组合后可以显著降低风险"
+    },
+    {
+      "index": 132,
+      "locator": "讲义 L132",
+      "text": ""
+    },
+    {
+      "index": 133,
+      "locator": "讲义 L133",
+      "text": "**（5）多元正态分布**"
+    },
+    {
+      "index": 134,
+      "locator": "讲义 L134",
+      "text": ""
+    },
+    {
+      "index": 135,
+      "locator": "讲义 L135",
+      "text": "一元正态分布的概率密度函数为："
+    },
+    {
+      "index": 136,
+      "locator": "讲义 L136",
+      "text": ""
+    },
+    {
+      "index": 137,
+      "locator": "讲义 L137",
+      "text": "$$"
+    },
+    {
+      "index": 138,
+      "locator": "讲义 L138",
+      "text": "f(x) = \\frac{1}{\\sqrt{2\\pi}\\sigma} \\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)"
+    },
+    {
+      "index": 139,
+      "locator": "讲义 L139",
+      "text": "$$"
+    },
+    {
+      "index": 140,
+      "locator": "讲义 L140",
+      "text": ""
+    },
+    {
+      "index": 141,
+      "locator": "讲义 L141",
+      "text": "记为 $X \\sim N(\\mu, \\sigma^2)$，其中 $\\mu$ 为均值，$\\sigma^2$ 为方差。"
+    },
+    {
+      "index": 142,
+      "locator": "讲义 L142",
+      "text": ""
+    },
+    {
+      "index": 143,
+      "locator": "讲义 L143",
+      "text": "多元正态分布是其在高维空间的推广。$p$ 维随机向量 $\\mathbf{X} = (X_1, X_2, \\ldots, X_p)^T$ 服从多元正态分布 $N(\\boldsymbol{\\mu}, \\boldsymbol{\\Sigma})$，其中："
+    },
+    {
+      "index": 144,
+      "locator": "讲义 L144",
+      "text": "- $\\boldsymbol{\\mu} = (E(X_1), E(X_2), \\ldots, E(X_p))^T$ 为均值向量"
+    },
+    {
+      "index": 145,
+      "locator": "讲义 L145",
+      "text": "- $\\boldsymbol{\\Sigma} = (Cov(X_i, X_j))_{p \\times p}$ 为协方差矩阵"
+    },
+    {
+      "index": 146,
+      "locator": "讲义 L146",
+      "text": ""
+    },
+    {
+      "index": 147,
+      "locator": "讲义 L147",
+      "text": "协方差矩阵 $\\boldsymbol{\\Sigma}$ 是一个对称半正定矩阵，其对角线元素为各方差，非对角线元素为各对变量的协方差。"
+    },
+    {
+      "index": 148,
+      "locator": "讲义 L148",
+      "text": ""
+    },
+    {
+      "index": 149,
+      "locator": "讲义 L149",
+      "text": "**为什么多元正态分布如此重要？**"
+    },
+    {
+      "index": 150,
+      "locator": "讲义 L150",
+      "text": "1. 大量自然现象和经济现象近似服从多元正态分布"
+    },
+    {
+      "index": 151,
+      "locator": "讲义 L151",
+      "text": "2. 中心极限定理保证了多元正态分布的普遍性"
+    },
+    {
+      "index": 152,
+      "locator": "讲义 L152",
+      "text": "3. 多元正态分布具有良好的数学性质（线性变换后仍为多元正态）"
+    },
+    {
+      "index": 153,
+      "locator": "讲义 L153",
+      "text": "4. 本课程的大部分方法（主成分分析、因子分析、判别分析）都假设数据来自多元正态总体"
+    },
+    {
+      "index": 154,
+      "locator": "讲义 L154",
+      "text": ""
+    },
+    {
+      "index": 155,
+      "locator": "讲义 L155",
+      "text": "---"
+    },
+    {
+      "index": 156,
+      "locator": "讲义 L156",
+      "text": ""
+    },
+    {
+      "index": 157,
+      "locator": "讲义 L157",
+      "text": "#### 【前置知识补充二】线性代数核心概念速览"
+    },
+    {
+      "index": 158,
+      "locator": "讲义 L158",
+      "text": ""
+    },
+    {
+      "index": 159,
+      "locator": "讲义 L159",
+      "text": "> **为什么需要这个？** 多元统计分析的几乎所有核心方法（主成分分析、因子分析、典型相关分析）都依赖矩阵的特征值分解。如果不懂矩阵运算，这些方法的推导将完全无法进行。"
+    },
+    {
+      "index": 160,
+      "locator": "讲义 L160",
+      "text": ""
+    },
+    {
+      "index": 161,
+      "locator": "讲义 L161",
+      "text": "**（1）矩阵的基本概念**"
+    },
+    {
+      "index": 162,
+      "locator": "讲义 L162",
+      "text": ""
+    },
+    {
+      "index": 163,
+      "locator": "讲义 L163",
+      "text": "矩阵是一个 $m \\times n$ 的数表，记为 $A = (a_{ij})_{m \\times n}$，其中 $a_{ij}$ 表示第 $i$ 行第 $j$ 列的元素。"
+    },
+    {
+      "index": 164,
+      "locator": "讲义 L164",
+      "text": ""
+    },
+    {
+      "index": 165,
+      "locator": "讲义 L165",
+      "text": "**特殊矩阵**："
+    },
+    {
+      "index": 166,
+      "locator": "讲义 L166",
+      "text": "- **方阵**：$m = n$ 的矩阵，如 $3 \\times 3$ 矩阵"
+    },
+    {
+      "index": 167,
+      "locator": "讲义 L167",
+      "text": "- **对称矩阵**：$A = A^T$，即 $a_{ij} = a_{ji}$。协方差矩阵、相关系数矩阵都是对称矩阵"
+    },
+    {
+      "index": 168,
+      "locator": "讲义 L168",
+      "text": "- **单位阵**：$I = diag(1, 1, \\ldots, 1)$，对角线元素为1，其余为0。$AI = IA = A$"
+    },
+    {
+      "index": 169,
+      "locator": "讲义 L169",
+      "text": "- **对角矩阵**：$D = diag(d_1, d_2, \\ldots, d_n)$，只有对角线有非零元素"
+    },
+    {
+      "index": 170,
+      "locator": "讲义 L170",
+      "text": ""
+    },
+    {
+      "index": 171,
+      "locator": "讲义 L171",
+      "text": "**（2）矩阵运算**"
+    },
+    {
+      "index": 172,
+      "locator": "讲义 L172",
+      "text": ""
+    },
+    {
+      "index": 173,
+      "locator": "讲义 L173",
+      "text": "**矩阵乘法**：若 $A$ 为 $m \\times p$ 矩阵，$B$ 为 $p \\times n$ 矩阵，则 $C = AB$ 为 $m \\times n$ 矩阵："
+    },
+    {
+      "index": 174,
+      "locator": "讲义 L174",
+      "text": ""
+    },
+    {
+      "index": 175,
+      "locator": "讲义 L175",
+      "text": "$$"
+    },
+    {
+      "index": 176,
+      "locator": "讲义 L176",
+      "text": "c_{ij} = \\sum_{k=1}^{p} a_{ik} b_{kj}"
+    },
+    {
+      "index": 177,
+      "locator": "讲义 L177",
+      "text": "$$"
+    },
+    {
+      "index": 178,
+      "locator": "讲义 L178",
+      "text": ""
+    },
+    {
+      "index": 179,
+      "locator": "讲义 L179",
+      "text": "注意：矩阵乘法**不满足交换律**，即 $AB \\neq BA$（一般情况下）。"
+    },
+    {
+      "index": 180,
+      "locator": "讲义 L180",
+      "text": ""
+    },
+    {
+      "index": 181,
+      "locator": "讲义 L181",
+      "text": "**矩阵转置**：将矩阵的行和列互换，$(A^T)_{ij} = a_{ji}$。性质：$(AB)^T = B^T A^T$。"
+    },
+    {
+      "index": 182,
+      "locator": "讲义 L182",
+      "text": ""
+    },
+    {
+      "index": 183,
+      "locator": "讲义 L183",
+      "text": "**矩阵的逆**：若方阵 $A$ 满足 $|A| \\neq 0$（行列式不为零），则存在逆矩阵 $A^{-1}$ 使得 $AA^{-1} = A^{-1}A = I$。"
+    },
+    {
+      "index": 184,
+      "locator": "讲义 L184",
+      "text": ""
+    },
+    {
+      "index": 185,
+      "locator": "讲义 L185",
+      "text": "**（3）特征值与特征向量**"
+    },
+    {
+      "index": 186,
+      "locator": "讲义 L186",
+      "text": ""
+    },
+    {
+      "index": 187,
+      "locator": "讲义 L187",
+      "text": "对于方阵 $A$，如果存在标量 $\\lambda$ 和非零向量 $\\mathbf{v}$ 使得："
+    },
+    {
+      "index": 188,
+      "locator": "讲义 L188",
+      "text": ""
+    },
+    {
+      "index": 189,
+      "locator": "讲义 L189",
+      "text": "$$"
+    },
+    {
+      "index": 190,
+      "locator": "讲义 L190",
+      "text": "A\\mathbf{v} = \\lambda \\mathbf{v}"
+    },
+    {
+      "index": 191,
+      "locator": "讲义 L191",
+      "text": "$$"
+    },
+    {
+      "index": 192,
+      "locator": "讲义 L192",
+      "text": ""
+    },
+    {
+      "index": 193,
+      "locator": "讲义 L193",
+      "text": "则 $\\lambda$ 称为 $A$ 的**特征值**，$\\mathbf{v}$ 称为对应的**特征向量**。"
+    },
+    {
+      "index": 194,
+      "locator": "讲义 L194",
+      "text": ""
+    },
+    {
+      "index": 195,
+      "locator": "讲义 L195",
+      "text": "**几何含义**：特征向量代表了矩阵 $A$ 所描述的线性变换中\"方向不变\"的方向，特征值代表了该方向上的\"伸缩倍数\"。"
+    },
+    {
+      "index": 196,
+      "locator": "讲义 L196",
+      "text": ""
+    },
+    {
+      "index": 197,
+      "locator": "讲义 L197",
+      "text": "**求解方法**：特征值是特征方程 $|A - \\lambda I| = 0$ 的根。对于 $n \\times n$ 矩阵，最多有 $n$ 个特征值。"
+    },
+    {
+      "index": 198,
+      "locator": "讲义 L198",
+      "text": ""
+    },
+    {
+      "index": 199,
+      "locator": "讲义 L199",
+      "text": "**在多元统计中的核心地位**："
+    },
+    {
+      "index": 200,
+      "locator": "讲义 L200",
+      "text": "- **主成分分析**：协方差矩阵的特征向量就是主成分方向，特征值就是该主成分的方差"
+    },
+    {
+      "index": 201,
+      "locator": "讲义 L201",
+      "text": "- **因子分析**：通过相关矩阵的特征值分解来提取公共因子"
+    },
+    {
+      "index": 202,
+      "locator": "讲义 L202",
+      "text": "- **典型相关分析**：通过广义特征值问题求解典型变量"
+    },
+    {
+      "index": 203,
+      "locator": "讲义 L203",
+      "text": ""
+    },
+    {
+      "index": 204,
+      "locator": "讲义 L204",
+      "text": "**（4）正定矩阵与半正定矩阵**"
+    },
+    {
+      "index": 205,
+      "locator": "讲义 L205",
+      "text": ""
+    },
+    {
+      "index": 206,
+      "locator": "讲义 L206",
+      "text": "对称矩阵 $A$ 为**正定矩阵**的充要条件是：对任意非零向量 $\\mathbf{x}$，都有 $\\mathbf{x}^T A \\mathbf{x} > 0$。等价地，$A$ 的所有特征值 $\\lambda_i > 0$。"
+    },
+    {
+      "index": 207,
+      "locator": "讲义 L207",
+      "text": ""
+    },
+    {
+      "index": 208,
+      "locator": "讲义 L208",
+      "text": "对称矩阵 $A$ 为**半正定矩阵**的充要条件是：对任意向量 $\\mathbf{x}$，都有 $\\mathbf{x}^T A \\mathbf{x} \\geq 0$。等价地，$A$ 的所有特征值 $\\lambda_i \\geq 0$。"
+    },
+    {
+      "index": 209,
+      "locator": "讲义 L209",
+      "text": ""
+    },
+    {
+      "index": 210,
+      "locator": "讲义 L210",
+      "text": "**重要结论**：协方差矩阵 $\\boldsymbol{\\Sigma}$ 一定是半正定矩阵，因为方差不可能为负。在实际数据分析中，协方差矩阵通常是正定的（特征值全大于0）。"
+    },
+    {
+      "index": 211,
+      "locator": "讲义 L211",
+      "text": ""
+    },
+    {
+      "index": 212,
+      "locator": "讲义 L212",
+      "text": "**（5）矩阵的奇异值分解（SVD）**"
+    },
+    {
+      "index": 213,
+      "locator": "讲义 L213",
+      "text": ""
+    },
+    {
+      "index": 214,
+      "locator": "讲义 L214",
+      "text": "任意 $m \\times n$ 矩阵 $A$ 都可以分解为："
+    },
+    {
+      "index": 215,
+      "locator": "讲义 L215",
+      "text": ""
+    },
+    {
+      "index": 216,
+      "locator": "讲义 L216",
+      "text": "$$"
+    },
+    {
+      "index": 217,
+      "locator": "讲义 L217",
+      "text": "A = U \\Sigma V^T"
+    },
+    {
+      "index": 218,
+      "locator": "讲义 L218",
+      "text": "$$"
+    },
+    {
+      "index": 219,
+      "locator": "讲义 L219",
+      "text": ""
+    },
+    {
+      "index": 220,
+      "locator": "讲义 L220",
+      "text": "其中："
+    },
+    {
+      "index": 221,
+      "locator": "讲义 L221",
+      "text": "- $U$ 为 $m \\times m$ 正交矩阵（$U^T U = I$）"
+    },
+    {
+      "index": 222,
+      "locator": "讲义 L222",
+      "text": "- $\\Sigma$ 为 $m \\times n$ 对角矩阵，对角线元素 $\\sigma_1 \\geq \\sigma_2 \\geq \\cdots \\geq 0$ 称为奇异值"
+    },
+    {
+      "index": 223,
+      "locator": "讲义 L223",
+      "text": "- $V$ 为 $n \\times n$ 正交矩阵"
+    },
+    {
+      "index": 224,
+      "locator": "讲义 L224",
+      "text": ""
+    },
+    {
+      "index": 225,
+      "locator": "讲义 L225",
+      "text": "SVD是矩阵分解的\"瑞士军刀\"，在主成分分析、对应分析、推荐系统、图像压缩中都有核心应用。"
+    },
+    {
+      "index": 226,
+      "locator": "讲义 L226",
+      "text": ""
+    },
+    {
+      "index": 227,
+      "locator": "讲义 L227",
+      "text": "---"
+    },
+    {
+      "index": 228,
+      "locator": "讲义 L228",
+      "text": ""
+    },
+    {
+      "index": 229,
+      "locator": "讲义 L229",
+      "text": "## 模块二：沉浸式理论讲解"
+    },
+    {
+      "index": 230,
+      "locator": "讲义 L230",
+      "text": ""
+    },
+    {
+      "index": 231,
+      "locator": "讲义 L231",
+      "text": "### 1.1 多元统计分析的历史"
+    },
+    {
+      "index": 232,
+      "locator": "讲义 L232",
+      "text": ""
+    },
+    {
+      "index": 233,
+      "locator": "讲义 L233",
+      "text": "#### 1.1.1 从一元到多元：为什么需要多元统计？"
+    },
+    {
+      "index": 234,
+      "locator": "讲义 L234",
+      "text": ""
+    },
+    {
+      "index": 235,
+      "locator": "讲义 L235",
+      "text": "**【业务场景引入】**"
+    },
+    {
+      "index": 236,
+      "locator": "讲义 L236",
+      "text": ""
+    },
+    {
+      "index": 237,
+      "locator": "讲义 L237",
+      "text": "假设你是一名大宗商品分析师，需要评估某铜矿企业的经营健康状况。你手头有以下数据："
+    },
+    {
+      "index": 238,
+      "locator": "讲义 L238",
+      "text": ""
+    },
+    {
+      "index": 239,
+      "locator": "讲义 L239",
+      "text": "| 指标 | 企业A | 企业B | 企业C |"
+    },
+    {
+      "index": 240,
+      "locator": "讲义 L240",
+      "text": "|------|-------|-------|-------|"
+    },
+    {
+      "index": 241,
+      "locator": "讲义 L241",
+      "text": "| 营业收入（亿元） | 120 | 85 | 95 |"
+    },
+    {
+      "index": 242,
+      "locator": "讲义 L242",
+      "text": "| 净利润（亿元） | 15 | 12 | 18 |"
+    },
+    {
+      "index": 243,
+      "locator": "讲义 L243",
+      "text": "| 资产负债率（%） | 45 | 62 | 38 |"
+    },
+    {
+      "index": 244,
+      "locator": "讲义 L244",
+      "text": "| 经营现金流（亿元） | 20 | 8 | 22 |"
+    },
+    {
+      "index": 245,
+      "locator": "讲义 L245",
+      "text": "| 存货周转率（次） | 6.5 | 4.2 | 7.1 |"
+    },
+    {
+      "index": 246,
+      "locator": "讲义 L246",
+      "text": ""
+    },
+    {
+      "index": 247,
+      "locator": "讲义 L247",
+      "text": "如果只看单一指标，比如\"营业收入\"，企业A最好；但看\"净利润\"，企业C最好；看\"资产负债率\"，还是企业C最好。**问题在于：这5个指标之间存在复杂的相关关系**——收入高的企业往往现金流也好，负债率高的企业存货周转可能更慢。"
+    },
+    {
+      "index": 248,
+      "locator": "讲义 L248",
+      "text": ""
+    },
+    {
+      "index": 249,
+      "locator": "讲义 L249",
+      "text": "**一元统计**只研究单个变量的分布特征（均值、方差、假设检验）。它无法回答以下问题："
+    },
+    {
+      "index": 250,
+      "locator": "讲义 L250",
+      "text": "- 这5个指标能否综合为一个\"经营健康指数\"？（→ 主成分分析）"
+    },
+    {
+      "index": 251,
+      "locator": "讲义 L251",
+      "text": "- 这3家企业能否按经营特征分为\"稳健型\"\"激进型\"\"均衡型\"？（→ 聚类分析）"
+    },
+    {
+      "index": 252,
+      "locator": "讲义 L252",
+      "text": "- 这5个指标背后是否存在\"盈利能力\"\"运营效率\"\"财务风险\"等潜在因子？（→ 因子分析）"
+    },
+    {
+      "index": 253,
+      "locator": "讲义 L253",
+      "text": ""
+    },
+    {
+      "index": 254,
+      "locator": "讲义 L254",
+      "text": "**多元统计**研究多个变量的**联合分布**和**相互关系**，核心关注的是变量之间的**协方差结构**。"
+    },
+    {
+      "index": 255,
+      "locator": "讲义 L255",
+      "text": ""
+    },
+    {
+      "index": 256,
+      "locator": "讲义 L256",
+      "text": "#### 1.1.2 三大奠基人及其贡献"
+    },
+    {
+      "index": 257,
+      "locator": "讲义 L257",
+      "text": ""
+    },
+    {
+      "index": 258,
+      "locator": "讲义 L258",
+      "text": "**（1）Karl Pearson（1857-1936）—— 统计学的建筑师**"
+    },
+    {
+      "index": 259,
+      "locator": "讲义 L259",
+      "text": ""
+    },
+    {
+      "index": 260,
+      "locator": "讲义 L260",
+      "text": "Pearson是现代统计学的奠基人之一，他在1901年的论文《On Lines and Planes of Closest Fit to Systems of Points in Space》中首次提出了主成分分析（PCA）的雏形。"
+    },
+    {
+      "index": 261,
+      "locator": "讲义 L261",
+      "text": ""
+    },
+    {
+      "index": 262,
+      "locator": "讲义 L262",
+      "text": "**核心贡献**："
+    },
+    {
+      "index": 263,
+      "locator": "讲义 L263",
+      "text": "- 提出了主成分分析的思想：将多个相关变量通过正交变换转化为少数几个不相关的综合变量"
+    },
+    {
+      "index": 264,
+      "locator": "讲义 L264",
+      "text": "- 发展了卡方拟合优度检验"
+    },
+    {
+      "index": 265,
+      "locator": "讲义 L265",
+      "text": "- 创立了《Biometrika》统计学期刊"
+    },
+    {
+      "index": 266,
+      "locator": "讲义 L266",
+      "text": "- 提出了相关系数的计算公式（Pearson相关系数）"
+    },
+    {
+      "index": 267,
+      "locator": "讲义 L267",
+      "text": ""
+    },
+    {
+      "index": 268,
+      "locator": "讲义 L268",
+      "text": "**主成分分析的原始动机**：Pearson在研究回归理论时发现，当自变量之间存在高度相关时，回归系数会变得极不稳定（多重共线性问题）。他提出了一个天才的想法：**能否找到一组新的正交坐标轴，使得数据在这些轴上的投影方差依次最大？** 这就是主成分分析的核心思想。"
+    },
+    {
+      "index": 269,
+      "locator": "讲义 L269",
+      "text": ""
+    },
+    {
+      "index": 270,
+      "locator": "讲义 L270",
+      "text": "**（2）Ronald Aylmer Fisher（1890-1962）—— 统计推断的创始人**"
+    },
+    {
+      "index": 271,
+      "locator": "讲义 L271",
+      "text": ""
+    },
+    {
+      "index": 272,
+      "locator": "讲义 L272",
+      "text": "Fisher被公认为20世纪最伟大的统计学家，他的贡献覆盖了统计学的几乎每一个分支。"
+    },
+    {
+      "index": 273,
+      "locator": "讲义 L273",
+      "text": ""
+    },
+    {
+      "index": 274,
+      "locator": "讲义 L274",
+      "text": "**核心贡献**："
+    },
+    {
+      "index": 275,
+      "locator": "讲义 L275",
+      "text": "- **1936年**：提出线性判别分析（LDA）。核心思想是找到一个投影方向 $a$，使两类数据投影后的组间散度与组内散度之比最大化："
+    },
+    {
+      "index": 276,
+      "locator": "讲义 L276",
+      "text": ""
+    },
+    {
+      "index": 277,
+      "locator": "讲义 L277",
+      "text": "$$"
+    },
+    {
+      "index": 278,
+      "locator": "讲义 L278",
+      "text": "J(a) = \\frac{a^T B a}{a^T W a}"
+    },
+    {
+      "index": 279,
+      "locator": "讲义 L279",
+      "text": "$$"
+    },
+    {
+      "index": 280,
+      "locator": "讲义 L280",
+      "text": ""
+    },
+    {
+      "index": 281,
+      "locator": "讲义 L281",
+      "text": "其中 $B$ 为类间散度矩阵，$W$ 为类内散度矩阵。"
+    },
+    {
+      "index": 282,
+      "locator": "讲义 L282",
+      "text": ""
+    },
+    {
+      "index": 283,
+      "locator": "讲义 L283",
+      "text": "- **1925年**：发展了方差分析（ANOVA），用于检验不同处理因素对实验结果是否有显著影响"
+    },
+    {
+      "index": 284,
+      "locator": "讲义 L284",
+      "text": "- **1922年**：提出了充分统计量的概念"
+    },
+    {
+      "index": 285,
+      "locator": "讲义 L285",
+      "text": "- **1925年**：出版《Statistical Methods for Research Workers》，成为实验科学的统计学圣经"
+    },
+    {
+      "index": 286,
+      "locator": "讲义 L286",
+      "text": ""
+    },
+    {
+      "index": 287,
+      "locator": "讲义 L287",
+      "text": "**Fisher的学术遗产**：Fisher不仅提出了具体的方法，更重要的是他建立了**统计推断的框架**——从样本推断总体的系统性方法论。"
+    },
+    {
+      "index": 288,
+      "locator": "讲义 L288",
+      "text": ""
+    },
+    {
+      "index": 289,
+      "locator": "讲义 L289",
+      "text": "**（3）Harold Hotelling（1895-1973）—— 多元分析的系统化者**"
+    },
+    {
+      "index": 290,
+      "locator": "讲义 L290",
+      "text": ""
+    },
+    {
+      "index": 291,
+      "locator": "讲义 L291",
+      "text": "Hotelling是将多元统计分析系统化的关键人物。"
+    },
+    {
+      "index": 292,
+      "locator": "讲义 L292",
+      "text": ""
+    },
+    {
+      "index": 293,
+      "locator": "讲义 L293",
+      "text": "**核心贡献**："
+    },
+    {
+      "index": 294,
+      "locator": "讲义 L294",
+      "text": "- **1933年**：提出典型相关分析（CCA），研究两组变量之间的整体相关关系"
+    },
+    {
+      "index": 295,
+      "locator": "讲义 L295",
+      "text": "- **1931年**：提出Hotelling $T^2$ 统计量，是 $t$ 检验在多元情形下的推广"
+    },
+    {
+      "index": 296,
+      "locator": "讲义 L296",
+      "text": "- **1933年**：独立提出了主成分分析的严格数学推导"
+    },
+    {
+      "index": 297,
+      "locator": "讲义 L297",
+      "text": ""
+    },
+    {
+      "index": 298,
+      "locator": "讲义 L298",
+      "text": "**Hotelling $T^2$ 统计量的意义**："
+    },
+    {
+      "index": 299,
+      "locator": "讲义 L299",
+      "text": ""
+    },
+    {
+      "index": 300,
+      "locator": "讲义 L300",
+      "text": "一元情形下，我们用 $t$ 检验来检验均值是否等于某个指定值："
+    },
+    {
+      "index": 301,
+      "locator": "讲义 L301",
+      "text": ""
+    },
+    {
+      "index": 302,
+      "locator": "讲义 L302",
+      "text": "$$"
+    },
+    {
+      "index": 303,
+      "locator": "讲义 L303",
+      "text": "t = \\frac{\\bar{X} - \\mu_0}{S / \\sqrt{n}}"
+    },
+    {
+      "index": 304,
+      "locator": "讲义 L304",
+      "text": "$$"
+    },
+    {
+      "index": 305,
+      "locator": "讲义 L305",
+      "text": ""
+    },
+    {
+      "index": 306,
+      "locator": "讲义 L306",
+      "text": "但在多元情形下，我们有 $p$ 个变量需要同时检验。Hotelling $T^2$ 统计量正是为此而生："
+    },
+    {
+      "index": 307,
+      "locator": "讲义 L307",
+      "text": ""
+    },
+    {
+      "index": 308,
+      "locator": "讲义 L308",
+      "text": "$$"
+    },
+    {
+      "index": 309,
+      "locator": "讲义 L309",
+      "text": "T^2 = n(\\bar{\\mathbf{X}} - \\boldsymbol{\\mu}_0)^T \\mathbf{S}^{-1} (\\bar{\\mathbf{X}} - \\boldsymbol{\\mu}_0)"
+    },
+    {
+      "index": 310,
+      "locator": "讲义 L310",
+      "text": "$$"
+    },
+    {
+      "index": 311,
+      "locator": "讲义 L311",
+      "text": ""
+    },
+    {
+      "index": 312,
+      "locator": "讲义 L312",
+      "text": "其中 $\\bar{\\mathbf{X}}$ 为样本均值向量，$\\mathbf{S}$ 为样本协方差矩阵。"
+    },
+    {
+      "index": 313,
+      "locator": "讲义 L313",
+      "text": ""
+    },
+    {
+      "index": 314,
+      "locator": "讲义 L314",
+      "text": "#### 1.1.3 20世纪中后期的发展"
+    },
+    {
+      "index": 315,
+      "locator": "讲义 L315",
+      "text": ""
+    },
+    {
+      "index": 316,
+      "locator": "讲义 L316",
+      "text": "| 年代 | 里程碑事件 | 核心人物/机构 |"
+    },
+    {
+      "index": 317,
+      "locator": "讲义 L317",
+      "text": "|------|-----------|---------------|"
+    },
+    {
+      "index": 318,
+      "locator": "讲义 L318",
+      "text": "| 1957 | 聚类分析的系统化 | Sokal & Sneath |"
+    },
+    {
+      "index": 319,
+      "locator": "讲义 L319",
+      "text": "| 1966 | SAS软件问世 | SAS Institute |"
+    },
+    {
+      "index": 320,
+      "locator": "讲义 L320",
+      "text": "| 1970 | 对应分析的发展 | Jean-Paul Benzecri |"
+    },
+    {
+      "index": 321,
+      "locator": "讲义 L321",
+      "text": "| 1976 | SPSS普及 | SPSS Inc. |"
+    },
+    {
+      "index": 322,
+      "locator": "讲义 L322",
+      "text": "| 1977 | 广义线性模型（GLM）框架 | Nelder & Wedderburn |"
+    },
+    {
+      "index": 323,
+      "locator": "讲义 L323",
+      "text": "| 1993 | R语言诞生 | Ross Ihaka & Robert Gentleman |"
+    },
+    {
+      "index": 324,
+      "locator": "讲义 L324",
+      "text": "| 2001 | 随机森林 | Leo Breiman |"
+    },
+    {
+      "index": 325,
+      "locator": "讲义 L325",
+      "text": "| 2010 | Python数据科学生态成熟 | NumPy/Scipy/Pandas |"
+    },
+    {
+      "index": 326,
+      "locator": "讲义 L326",
+      "text": ""
+    },
+    {
+      "index": 327,
+      "locator": "讲义 L327",
+      "text": "#### 1.1.4 现代发展：从传统统计到机器学习的融合"
+    },
+    {
+      "index": 328,
+      "locator": "讲义 L328",
+      "text": ""
+    },
+    {
+      "index": 329,
+      "locator": "讲义 L329",
+      "text": "```mermaid"
+    },
+    {
+      "index": 330,
+      "locator": "讲义 L330",
+      "text": "graph LR"
+    },
+    {
+      "index": 331,
+      "locator": "讲义 L331",
+      "text": "    A[\"传统多元统计<br/>1900-1990\"] --> B[\"机器学习时代<br/>2000-至今\"]"
+    },
+    {
+      "index": 332,
+      "locator": "讲义 L332",
+      "text": "    "
+    },
+    {
+      "index": 333,
+      "locator": "讲义 L333",
+      "text": "    A --> A1[\"PCA → 自编码器<br/>（深度学习降维）\"]"
+    },
+    {
+      "index": 334,
+      "locator": "讲义 L334",
+      "text": "    A --> A2[\"K-Means → DBSCAN<br/>→ 谱聚类\"]"
+    },
+    {
+      "index": 335,
+      "locator": "讲义 L335",
+      "text": "    A --> A3[\"Fisher判别 → SVM<br/>→ 随机森林\"]"
+    },
+    {
+      "index": 336,
+      "locator": "讲义 L336",
+      "text": "    A --> A4[\"因子分析 → 主题模型<br/>→ LDA\"]"
+    },
+    {
+      "index": 337,
+      "locator": "讲义 L337",
+      "text": "    "
+    },
+    {
+      "index": 338,
+      "locator": "讲义 L338",
+      "text": "    B --> B1[\"可解释AI<br/>PCA/因子分析提供解释性\"]"
+    },
+    {
+      "index": 339,
+      "locator": "讲义 L339",
+      "text": "    B --> B2[\"大数据实时分析<br/>在线PCA/增量聚类\"]"
+    },
+    {
+      "index": 340,
+      "locator": "讲义 L340",
+      "text": "    B --> B3[\"因果推断<br/>结构方程模型SEM\"]"
+    },
+    {
+      "index": 341,
+      "locator": "讲义 L341",
+      "text": "    "
+    },
+    {
+      "index": 342,
+      "locator": "讲义 L342",
+      "text": "    style A fill:#2C3E50,stroke:#2C3E50,color:#ECF0F1"
+    },
+    {
+      "index": 343,
+      "locator": "讲义 L343",
+      "text": "    style B fill:#34495E,stroke:#34495E,color:#ECF0F1"
+    },
+    {
+      "index": 344,
+      "locator": "讲义 L344",
+      "text": "    style A1 fill:#5D6D7E,stroke:#5D6D7E,color:#ECF0F1"
+    },
+    {
+      "index": 345,
+      "locator": "讲义 L345",
+      "text": "    style A2 fill:#5D6D7E,stroke:#5D6D7E,color:#ECF0F1"
+    },
+    {
+      "index": 346,
+      "locator": "讲义 L346",
+      "text": "    style A3 fill:#5D6D7E,stroke:#5D6D7E,color:#ECF0F1"
+    },
+    {
+      "index": 347,
+      "locator": "讲义 L347",
+      "text": "    style A4 fill:#5D6D7E,stroke:#5D6D7E,color:#ECF0F1"
+    },
+    {
+      "index": 348,
+      "locator": "讲义 L348",
+      "text": "    style B1 fill:#7F8C8D,stroke:#7F8C8D,color:#ECF0F1"
+    },
+    {
+      "index": 349,
+      "locator": "讲义 L349",
+      "text": "    style B2 fill:#7F8C8D,stroke:#7F8C8D,color:#ECF0F1"
+    },
+    {
+      "index": 350,
+      "locator": "讲义 L350",
+      "text": "    style B3 fill:#7F8C8D,stroke:#7F8C8D,color:#ECF0F1"
+    },
+    {
+      "index": 351,
+      "locator": "讲义 L351",
+      "text": "```"
+    },
+    {
+      "index": 352,
+      "locator": "讲义 L352",
+      "text": ""
+    },
+    {
+      "index": 353,
+      "locator": "讲义 L353",
+      "text": "**关键趋势**：传统多元统计方法并没有被机器学习取代，反而在以下方面获得了新的生命力："
+    },
+    {
+      "index": 354,
+      "locator": "讲义 L354",
+      "text": "1. **可解释性**：在金融监管、医疗诊断等领域，模型的可解释性至关重要。PCA、因子分析等方法比深度学习更容易解释。"
+    },
+    {
+      "index": 355,
+      "locator": "讲义 L355",
+      "text": "2. **小样本场景**：当样本量不足以训练复杂模型时，传统多元统计方法往往更稳健。"
+    },
+    {
+      "index": 356,
+      "locator": "讲义 L356",
+      "text": "3. **因果推断**：结构方程模型（SEM）结合了因子分析和路径分析，是因果推断的重要工具。"
+    },
+    {
+      "index": 357,
+      "locator": "讲义 L357",
+      "text": ""
+    },
+    {
+      "index": 358,
+      "locator": "讲义 L358",
+      "text": "---"
+    },
+    {
+      "index": 359,
+      "locator": "讲义 L359",
+      "text": ""
+    },
+    {
+      "index": 360,
+      "locator": "讲义 L360",
+      "text": "### 1.2 多元统计分析的用途"
+    },
+    {
+      "index": 361,
+      "locator": "讲义 L361",
+      "text": ""
+    },
+    {
+      "index": 362,
+      "locator": "讲义 L362",
+      "text": "> **本节目标**：通过至少6个行业的详细案例，展示多元统计分析在实际中的广泛应用。每个案例都将说明：(1) 业务问题是什么；(2) 为什么一元统计不够用；(3) 使用哪种多元统计方法；(4) 得到什么结论。"
+    },
+    {
+      "index": 363,
+      "locator": "讲义 L363",
+      "text": ""
+    },
+    {
+      "index": 364,
+      "locator": "讲义 L364",
+      "text": "#### 1.2.1 金融工程与投资管理"
+    },
+    {
+      "index": 365,
+      "locator": "讲义 L365",
+      "text": ""
+    },
+    {
+      "index": 366,
+      "locator": "讲义 L366",
+      "text": "##### 应用一：投资组合优化与风险因子提取"
+    },
+    {
+      "index": 367,
+      "locator": "讲义 L367",
+      "text": ""
+    },
+    {
+      "index": 368,
+      "locator": "讲义 L368",
+      "text": "**业务问题**：某基金经理管理着一个包含50只A股股票的投资组合。他需要回答："
+    },
+    {
+      "index": 369,
+      "locator": "讲义 L369",
+      "text": "1. 这50只股票的收益波动主要受哪些共同因素驱动？"
+    },
+    {
+      "index": 370,
+      "locator": "讲义 L370",
+      "text": "2. 如何构建一个低风险、高分散化的投资组合？"
+    },
+    {
+      "index": 371,
+      "locator": "讲义 L371",
+      "text": ""
+    },
+    {
+      "index": 372,
+      "locator": "讲义 L372",
+      "text": "**为什么一元统计不够用**：单独看每只股票的收益率和方差，无法揭示股票之间的联动关系。50只股票的相关系数矩阵有 $50 \\times 49 / 2 = 1225$ 个非对角线元素，人工分析几乎不可能。"
+    },
+    {
+      "index": 373,
+      "locator": "讲义 L373",
+      "text": ""
+    },
+    {
+      "index": 374,
+      "locator": "讲义 L374",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 375,
+      "locator": "讲义 L375",
+      "text": "- **主成分分析（PCA）**：对50只股票的收益率矩阵做PCA，提取前3-5个主成分，通常可以解释70%-80%的总方差。第一主成分通常对应\"市场因子\"（所有股票同涨同跌），第二主成分可能对应\"行业因子\"（不同行业走势分化）。"
+    },
+    {
+      "index": 376,
+      "locator": "讲义 L376",
+      "text": "- **因子分析**：进一步探索收益波动背后的潜在因子，如Fama-French三因子模型（市场因子、规模因子、价值因子）就是因子分析的典型应用。"
+    },
+    {
+      "index": 377,
+      "locator": "讲义 L377",
+      "text": ""
+    },
+    {
+      "index": 378,
+      "locator": "讲义 L378",
+      "text": "**实际案例**：国际投行如高盛、摩根士丹利的量化团队广泛使用PCA来提取利率曲线的主成分。研究发现，利率期限结构的变动可以用3个主成分解释："
+    },
+    {
+      "index": 379,
+      "locator": "讲义 L379",
+      "text": "- **水平因子**（Level）：解释约85%的方差，对应所有期限利率的平行移动"
+    },
+    {
+      "index": 380,
+      "locator": "讲义 L380",
+      "text": "- **斜率因子**（Slope）：解释约10%的方差，对应短期与长期利率的反向变动"
+    },
+    {
+      "index": 381,
+      "locator": "讲义 L381",
+      "text": "- **曲率因子**（Curvature）：解释约3%的方差，对应中期利率相对于两端的变动"
+    },
+    {
+      "index": 382,
+      "locator": "讲义 L382",
+      "text": ""
+    },
+    {
+      "index": 383,
+      "locator": "讲义 L383",
+      "text": "##### 应用二：信用风险评估与违约预测"
+    },
+    {
+      "index": 384,
+      "locator": "讲义 L384",
+      "text": ""
+    },
+    {
+      "index": 385,
+      "locator": "讲义 L385",
+      "text": "**业务问题**：某商业银行需要根据企业的财务指标（资产负债率、流动比率、速动比率、净利润率、营业收入增长率等）预测其未来一年是否会违约。"
+    },
+    {
+      "index": 386,
+      "locator": "讲义 L386",
+      "text": ""
+    },
+    {
+      "index": 387,
+      "locator": "讲义 L387",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 388,
+      "locator": "讲义 L388",
+      "text": "- **判别分析（Fisher LDA / Bayes判别）**：基于已知违约和非违约企业的历史数据，建立判别规则。Altman的Z-Score模型（1968）就是判别分析的经典应用："
+    },
+    {
+      "index": 389,
+      "locator": "讲义 L389",
+      "text": ""
+    },
+    {
+      "index": 390,
+      "locator": "讲义 L390",
+      "text": "$$"
+    },
+    {
+      "index": 391,
+      "locator": "讲义 L391",
+      "text": "Z = 1.2 X_1 + 1.4 X_2 + 3.3 X_3 + 0.6 X_4 + 1.0 X_5"
+    },
+    {
+      "index": 392,
+      "locator": "讲义 L392",
+      "text": "$$"
+    },
+    {
+      "index": 393,
+      "locator": "讲义 L393",
+      "text": ""
+    },
+    {
+      "index": 394,
+      "locator": "讲义 L394",
+      "text": "其中 $X_1$ 为营运资本/总资产，$X_2$ 为留存收益/总资产，$X_3$ 为息税前利润/总资产，$X_4$ 为股权市值/总负债，$X_5$ 为销售收入/总资产。$Z > 2.99$ 为安全区，$Z < 1.81$ 为危险区。"
+    },
+    {
+      "index": 395,
+      "locator": "讲义 L395",
+      "text": ""
+    },
+    {
+      "index": 396,
+      "locator": "讲义 L396",
+      "text": "- **Logistic回归**：当因变量为二分类（违约/不违约）时，Logistic回归比判别分析更灵活，不需要正态分布假设。"
+    },
+    {
+      "index": 397,
+      "locator": "讲义 L397",
+      "text": ""
+    },
+    {
+      "index": 398,
+      "locator": "讲义 L398",
+      "text": "##### 应用三：大宗商品市场的跨品种联动分析"
+    },
+    {
+      "index": 399,
+      "locator": "讲义 L399",
+      "text": ""
+    },
+    {
+      "index": 400,
+      "locator": "讲义 L400",
+      "text": "**业务问题**：某大宗商品交易团队需要研究以下问题："
+    },
+    {
+      "index": 401,
+      "locator": "讲义 L401",
+      "text": "- 国际原油价格波动如何传导到国内化工品期货？"
+    },
+    {
+      "index": 402,
+      "locator": "讲义 L402",
+      "text": "- 铜价与宏观经济指标（PMI、M2、CPI）之间是否存在稳定的领先-滞后关系？"
+    },
+    {
+      "index": 403,
+      "locator": "讲义 L403",
+      "text": "- 贵金属（黄金、白银）与工业金属（铜、铝）之间的相关性在市场恐慌时期是否会显著变化？"
+    },
+    {
+      "index": 404,
+      "locator": "讲义 L404",
+      "text": ""
+    },
+    {
+      "index": 405,
+      "locator": "讲义 L405",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 406,
+      "locator": "讲义 L406",
+      "text": "- **典型相关分析（CCA）**：研究\"宏观经济指标组\"与\"商品价格组\"之间的整体相关关系"
+    },
+    {
+      "index": 407,
+      "locator": "讲义 L407",
+      "text": "- **主成分分析**：对多个商品期货的收益率矩阵做PCA，提取商品市场的共同因子"
+    },
+    {
+      "index": 408,
+      "locator": "讲义 L408",
+      "text": "- **聚类分析**：根据价格联动模式将商品分为\"能源类\"\"金属类\"\"农产品类\"等"
+    },
+    {
+      "index": 409,
+      "locator": "讲义 L409",
+      "text": ""
+    },
+    {
+      "index": 410,
+      "locator": "讲义 L410",
+      "text": "**实际发现**："
+    },
+    {
+      "index": 411,
+      "locator": "讲义 L411",
+      "text": "- 原油与铜的相关系数在经济扩张期约为0.6，在经济衰退期可能上升到0.8（\"危机时所有风险资产同跌\"）"
+    },
+    {
+      "index": 412,
+      "locator": "讲义 L412",
+      "text": "- 黄金与股票的相关性在市场恐慌时会变为负值（避险需求驱动资金流入黄金）"
+    },
+    {
+      "index": 413,
+      "locator": "讲义 L413",
+      "text": ""
+    },
+    {
+      "index": 414,
+      "locator": "讲义 L414",
+      "text": "#### 1.2.2 医疗健康与生物医学"
+    },
+    {
+      "index": 415,
+      "locator": "讲义 L415",
+      "text": ""
+    },
+    {
+      "index": 416,
+      "locator": "讲义 L416",
+      "text": "##### 应用四：疾病诊断与辅助决策"
+    },
+    {
+      "index": 417,
+      "locator": "讲义 L417",
+      "text": ""
+    },
+    {
+      "index": 418,
+      "locator": "讲义 L418",
+      "text": "**业务问题**：某三甲医院收集了500名患者的12项血液检测指标（白细胞计数、红细胞计数、血红蛋白、血小板计数、血糖、总胆固醇、甘油三酯、HDL、LDL、谷丙转氨酶、谷草转氨酶、肌酐），需要根据这些指标判断患者是否患有某种疾病。"
+    },
+    {
+      "index": 419,
+      "locator": "讲义 L419",
+      "text": ""
+    },
+    {
+      "index": 420,
+      "locator": "讲义 L420",
+      "text": "**为什么一元统计不够用**：单独看某一项指标（如血糖），可能无法区分健康人和患者。但多项指标的**组合模式**可能具有很强的判别能力。"
+    },
+    {
+      "index": 421,
+      "locator": "讲义 L421",
+      "text": ""
+    },
+    {
+      "index": 422,
+      "locator": "讲义 L422",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 423,
+      "locator": "讲义 L423",
+      "text": "- **判别分析**：基于已确诊患者和健康人的数据，建立判别规则。对新患者的检测结果进行自动分类。"
+    },
+    {
+      "index": 424,
+      "locator": "讲义 L424",
+      "text": "- **聚类分析**：在没有诊断标签的情况下，通过聚类发现患者群体中的亚型（如糖尿病的1型和2型）。"
+    },
+    {
+      "index": 425,
+      "locator": "讲义 L425",
+      "text": "- **Logistic回归**：计算患者患病的后验概率，辅助医生决策。"
+    },
+    {
+      "index": 426,
+      "locator": "讲义 L426",
+      "text": ""
+    },
+    {
+      "index": 427,
+      "locator": "讲义 L427",
+      "text": "**经典案例**：Fisher（1936）的鸢尾花数据集就是判别分析的原始应用——根据花瓣和花萼的4个测量值，判别鸢尾花属于三个品种中的哪一个。"
+    },
+    {
+      "index": 428,
+      "locator": "讲义 L428",
+      "text": ""
+    },
+    {
+      "index": 429,
+      "locator": "讲义 L429",
+      "text": "##### 应用五：基因表达数据分析与癌症分型"
+    },
+    {
+      "index": 430,
+      "locator": "讲义 L430",
+      "text": ""
+    },
+    {
+      "index": 431,
+      "locator": "讲义 L431",
+      "text": "**业务问题**：某肿瘤研究中心通过基因芯片检测了200名乳腺癌患者的20000个基因的表达水平。研究者希望："
+    },
+    {
+      "index": 432,
+      "locator": "讲义 L432",
+      "text": "1. 识别出与乳腺癌亚型相关的关键基因"
+    },
+    {
+      "index": 433,
+      "locator": "讲义 L433",
+      "text": "2. 将患者分为不同的分子亚型（如Luminal A、Luminal B、HER2+、Basal-like）"
+    },
+    {
+      "index": 434,
+      "locator": "讲义 L434",
+      "text": ""
+    },
+    {
+      "index": 435,
+      "locator": "讲义 L435",
+      "text": "**为什么一元统计不够用**：20000个基因的维度远超样本量200，直接分析面临\"维数灾难\"。且基因之间存在高度相关性（共表达基因群）。"
+    },
+    {
+      "index": 436,
+      "locator": "讲义 L436",
+      "text": ""
+    },
+    {
+      "index": 437,
+      "locator": "讲义 L437",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 438,
+      "locator": "讲义 L438",
+      "text": "- **主成分分析**：将20000维基因表达数据降维到2-3维，进行可视化和初步分型"
+    },
+    {
+      "index": 439,
+      "locator": "讲义 L439",
+      "text": "- **聚类分析**：对患者进行层次聚类，发现基因表达模式相似的患者群组"
+    },
+    {
+      "index": 440,
+      "locator": "讲义 L440",
+      "text": "- **因子分析**：识别共表达基因群，发现潜在的生物学通路"
+    },
+    {
+      "index": 441,
+      "locator": "讲义 L441",
+      "text": ""
+    },
+    {
+      "index": 442,
+      "locator": "讲义 L442",
+      "text": "**里程碑研究**：Perou等（2000）在《Nature》上发表的乳腺癌分子分型研究，就是基于层次聚类分析基因表达数据，将乳腺癌分为4个分子亚型，这一分类至今仍是临床治疗的重要依据。"
+    },
+    {
+      "index": 443,
+      "locator": "讲义 L443",
+      "text": ""
+    },
+    {
+      "index": 444,
+      "locator": "讲义 L444",
+      "text": "##### 应用六：临床试验的多终点分析"
+    },
+    {
+      "index": 445,
+      "locator": "讲义 L445",
+      "text": ""
+    },
+    {
+      "index": 446,
+      "locator": "讲义 L446",
+      "text": "**业务问题**：某制药公司开展了一项新药临床试验，需要同时评估药物对多个终点指标（血压、心率、胆固醇、血糖、体重）的影响。传统的做法是对每个终点分别做 $t$ 检验，但这会导致多重比较问题（假阳性率膨胀）。"
+    },
+    {
+      "index": 447,
+      "locator": "讲义 L447",
+      "text": ""
+    },
+    {
+      "index": 448,
+      "locator": "讲义 L448",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 449,
+      "locator": "讲义 L449",
+      "text": "- **多元方差分析（MANOVA）**：同时检验药物对多个终点指标的整体效应，避免多重比较问题"
+    },
+    {
+      "index": 450,
+      "locator": "讲义 L450",
+      "text": "- **Hotelling $T^2$ 检验**：两组均值向量的比较"
+    },
+    {
+      "index": 451,
+      "locator": "讲义 L451",
+      "text": ""
+    },
+    {
+      "index": 452,
+      "locator": "讲义 L452",
+      "text": "#### 1.2.3 市场营销与消费者行为"
+    },
+    {
+      "index": 453,
+      "locator": "讲义 L453",
+      "text": ""
+    },
+    {
+      "index": 454,
+      "locator": "讲义 L454",
+      "text": "##### 应用七：市场细分与客户画像"
+    },
+    {
+      "index": 455,
+      "locator": "讲义 L455",
+      "text": ""
+    },
+    {
+      "index": 456,
+      "locator": "讲义 L456",
+      "text": "**业务问题**：某电商平台拥有1000万用户的交易数据，需要将用户分为不同的群体，以便实施精准营销。"
+    },
+    {
+      "index": 457,
+      "locator": "讲义 L457",
+      "text": ""
+    },
+    {
+      "index": 458,
+      "locator": "讲义 L458",
+      "text": "**用户特征**：年龄、性别、注册时长、月均登录次数、月均消费金额、客单价、退货率、优惠券使用率、浏览品类数等15个指标。"
+    },
+    {
+      "index": 459,
+      "locator": "讲义 L459",
+      "text": ""
+    },
+    {
+      "index": 460,
+      "locator": "讲义 L460",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 461,
+      "locator": "讲义 L461",
+      "text": "- **K-Means聚类**：将用户分为\"高价值忠诚客户\"\"价格敏感型客户\"\"沉睡客户\"\"新客户\"等群体"
+    },
+    {
+      "index": 462,
+      "locator": "讲义 L462",
+      "text": "- **层次聚类**：当不确定最优分组数时，通过谱系图探索不同层次的分组结构"
+    },
+    {
+      "index": 463,
+      "locator": "讲义 L463",
+      "text": "- **判别分析**：建立判别规则，对新用户快速归类"
+    },
+    {
+      "index": 464,
+      "locator": "讲义 L464",
+      "text": ""
+    },
+    {
+      "index": 465,
+      "locator": "讲义 L465",
+      "text": "**实际应用**：亚马逊、淘宝等电商平台的推荐系统底层就使用了聚类分析来构建用户画像。"
+    },
+    {
+      "index": 466,
+      "locator": "讲义 L466",
+      "text": ""
+    },
+    {
+      "index": 467,
+      "locator": "讲义 L467",
+      "text": "##### 应用八：品牌形象与竞争定位"
+    },
+    {
+      "index": 468,
+      "locator": "讲义 L468",
+      "text": ""
+    },
+    {
+      "index": 469,
+      "locator": "讲义 L469",
+      "text": "**业务问题**：某汽车品牌希望了解消费者对其与竞品在\"安全性\"\"舒适性\"\"动力性\"\"经济性\"\"外观设计\"5个维度上的感知差异。"
+    },
+    {
+      "index": 470,
+      "locator": "讲义 L470",
+      "text": ""
+    },
+    {
+      "index": 471,
+      "locator": "讲义 L471",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 472,
+      "locator": "讲义 L472",
+      "text": "- **对应分析**：将品牌（行变量）和评价维度（列变量）的列联表数据可视化在同一张图上，直观展示品牌与属性的关联"
+    },
+    {
+      "index": 473,
+      "locator": "讲义 L473",
+      "text": "- **多维标度法（MDS）**：将消费者对品牌的感知距离映射到二维平面上，展示品牌间的竞争关系"
+    },
+    {
+      "index": 474,
+      "locator": "讲义 L474",
+      "text": ""
+    },
+    {
+      "index": 475,
+      "locator": "讲义 L475",
+      "text": "##### 应用九：问卷量表的结构效度检验"
+    },
+    {
+      "index": 476,
+      "locator": "讲义 L476",
+      "text": ""
+    },
+    {
+      "index": 477,
+      "locator": "讲义 L477",
+      "text": "**业务问题**：某研究者开发了一份包含24个题项的\"消费者在线购物信任\"量表，需要验证这24个题项是否真的测量了预设的3个维度（能力信任、善意信任、制度信任）。"
+    },
+    {
+      "index": 478,
+      "locator": "讲义 L478",
+      "text": ""
+    },
+    {
+      "index": 479,
+      "locator": "讲义 L479",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 480,
+      "locator": "讲义 L480",
+      "text": "- **探索性因子分析（EFA）**：探索24个题项背后的因子结构，看是否可以归结为3个公共因子"
+    },
+    {
+      "index": 481,
+      "locator": "讲义 L481",
+      "text": "- **验证性因子分析（CFA）**：验证预设的3因子模型是否与数据拟合良好"
+    },
+    {
+      "index": 482,
+      "locator": "讲义 L482",
+      "text": ""
+    },
+    {
+      "index": 483,
+      "locator": "讲义 L483",
+      "text": "#### 1.2.4 工业制造与质量控制"
+    },
+    {
+      "index": 484,
+      "locator": "讲义 L484",
+      "text": ""
+    },
+    {
+      "index": 485,
+      "locator": "讲义 L485",
+      "text": "##### 应用十：多指标质量控制"
+    },
+    {
+      "index": 486,
+      "locator": "讲义 L486",
+      "text": ""
+    },
+    {
+      "index": 487,
+      "locator": "讲义 L487",
+      "text": "**业务问题**：某半导体工厂需要同时监控芯片生产的8个质量指标（线宽、膜厚、掺杂浓度、表面粗糙度、缺陷密度、电阻率、击穿电压、漏电流），以判断生产过程是否处于受控状态。"
+    },
+    {
+      "index": 488,
+      "locator": "讲义 L488",
+      "text": ""
+    },
+    {
+      "index": 489,
+      "locator": "讲义 L489",
+      "text": "**为什么一元统计不够用**：对8个指标分别设置控制图会导致\"虚假报警\"问题——即使每个指标单独都在控制限内，它们的组合可能已经异常。"
+    },
+    {
+      "index": 490,
+      "locator": "讲义 L490",
+      "text": ""
+    },
+    {
+      "index": 491,
+      "locator": "讲义 L491",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 492,
+      "locator": "讲义 L492",
+      "text": "- **Hotelling $T^2$ 控制图**：多元版本的Shewhart控制图，同时监控多个相关指标"
+    },
+    {
+      "index": 493,
+      "locator": "讲义 L493",
+      "text": "- **主成分分析**：将8个指标降维为2-3个综合指标，在主成分空间中监控生产过程"
+    },
+    {
+      "index": 494,
+      "locator": "讲义 L494",
+      "text": ""
+    },
+    {
+      "index": 495,
+      "locator": "讲义 L495",
+      "text": "##### 应用十一：供应链风险评估"
+    },
+    {
+      "index": 496,
+      "locator": "讲义 L496",
+      "text": ""
+    },
+    {
+      "index": 497,
+      "locator": "讲义 L497",
+      "text": "**业务问题**：某制造企业有50家供应商，需要评估每家供应商的综合风险水平。评估指标包括：交货准时率、产品质量合格率、价格竞争力、财务稳定性、地理位置风险、替代供应商数量等。"
+    },
+    {
+      "index": 498,
+      "locator": "讲义 L498",
+      "text": ""
+    },
+    {
+      "index": 499,
+      "locator": "讲义 L499",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 500,
+      "locator": "讲义 L500",
+      "text": "- **主成分分析**：将多个指标降维为\"供应能力\"\"财务风险\"\"地理风险\"等综合因子"
+    },
+    {
+      "index": 501,
+      "locator": "讲义 L501",
+      "text": "- **聚类分析**：将供应商分为\"低风险\"\"中风险\"\"高风险\"三类"
+    },
+    {
+      "index": 502,
+      "locator": "讲义 L502",
+      "text": "- **综合评价**（TOPSIS法）：对供应商进行排序"
+    },
+    {
+      "index": 503,
+      "locator": "讲义 L503",
+      "text": ""
+    },
+    {
+      "index": 504,
+      "locator": "讲义 L504",
+      "text": "#### 1.2.5 社会治理与公共政策"
+    },
+    {
+      "index": 505,
+      "locator": "讲义 L505",
+      "text": ""
+    },
+    {
+      "index": 506,
+      "locator": "讲义 L506",
+      "text": "##### 应用十二：区域经济发展水平评价"
+    },
+    {
+      "index": 507,
+      "locator": "讲义 L507",
+      "text": ""
+    },
+    {
+      "index": 508,
+      "locator": "讲义 L508",
+      "text": "**业务问题**：某省发改委需要对下属15个地级市的经济发展水平进行综合评价，作为政策制定和资源分配的依据。"
+    },
+    {
+      "index": 509,
+      "locator": "讲义 L509",
+      "text": ""
+    },
+    {
+      "index": 510,
+      "locator": "讲义 L510",
+      "text": "**评价指标体系**："
+    },
+    {
+      "index": 511,
+      "locator": "讲义 L511",
+      "text": "- 经济维度：GDP、人均GDP、财政收入、固定资产投资"
+    },
+    {
+      "index": 512,
+      "locator": "讲义 L512",
+      "text": "- 社会维度：人均可支配收入、城镇化率、教育投入、医疗床位数"
+    },
+    {
+      "index": 513,
+      "locator": "讲义 L513",
+      "text": "- 环境维度：绿化覆盖率、空气质量优良天数、污水处理率"
+    },
+    {
+      "index": 514,
+      "locator": "讲义 L514",
+      "text": ""
+    },
+    {
+      "index": 515,
+      "locator": "讲义 L515",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 516,
+      "locator": "讲义 L516",
+      "text": "- **主成分分析**：将11个指标降维为2-3个综合指标"
+    },
+    {
+      "index": 517,
+      "locator": "讲义 L517",
+      "text": "- **综合评价法**（TOPSIS）：计算各城市的综合得分并排名"
+    },
+    {
+      "index": 518,
+      "locator": "讲义 L518",
+      "text": "- **聚类分析**：将城市按发展水平分类"
+    },
+    {
+      "index": 519,
+      "locator": "讲义 L519",
+      "text": ""
+    },
+    {
+      "index": 520,
+      "locator": "讲义 L520",
+      "text": "##### 应用十三：社会分层与阶层流动研究"
+    },
+    {
+      "index": 521,
+      "locator": "讲义 L521",
+      "text": ""
+    },
+    {
+      "index": 522,
+      "locator": "讲义 L522",
+      "text": "**业务问题**：社会学家希望根据收入、教育程度、职业声望、住房条件等指标，研究当代中国社会的阶层结构和代际流动模式。"
+    },
+    {
+      "index": 523,
+      "locator": "讲义 L523",
+      "text": ""
+    },
+    {
+      "index": 524,
+      "locator": "讲义 L524",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 525,
+      "locator": "讲义 L525",
+      "text": "- **聚类分析**：根据多维社会经济指标将家庭分为不同社会阶层"
+    },
+    {
+      "index": 526,
+      "locator": "讲义 L526",
+      "text": "- **判别分析**：建立阶层归属的判别规则"
+    },
+    {
+      "index": 527,
+      "locator": "讲义 L527",
+      "text": "- **对应分析**：分析父代阶层与子代阶层之间的关联"
+    },
+    {
+      "index": 528,
+      "locator": "讲义 L528",
+      "text": ""
+    },
+    {
+      "index": 529,
+      "locator": "讲义 L529",
+      "text": "#### 1.2.6 自然科学与环境研究"
+    },
+    {
+      "index": 530,
+      "locator": "讲义 L530",
+      "text": ""
+    },
+    {
+      "index": 531,
+      "locator": "讲义 L531",
+      "text": "##### 应用十四：生态系统分类与环境监测"
+    },
+    {
+      "index": 532,
+      "locator": "讲义 L532",
+      "text": ""
+    },
+    {
+      "index": 533,
+      "locator": "讲义 L533",
+      "text": "**业务问题**：某环保部门在某湖泊设置了20个监测站点，每个站点测量了8个水质指标（pH、溶解氧、COD、BOD、氨氮、总磷、总氮、叶绿素a）。需要根据水质指标将站点分类，识别污染源。"
+    },
+    {
+      "index": 534,
+      "locator": "讲义 L534",
+      "text": ""
+    },
+    {
+      "index": 535,
+      "locator": "讲义 L535",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 536,
+      "locator": "讲义 L536",
+      "text": "- **聚类分析**：根据水质指标将监测站点分为\"清洁区\"\"轻度污染区\"\"重度污染区\""
+    },
+    {
+      "index": 537,
+      "locator": "讲义 L537",
+      "text": "- **主成分分析**：识别影响水质的主要因子（如\"有机污染因子\"\"营养盐因子\"）"
+    },
+    {
+      "index": 538,
+      "locator": "讲义 L538",
+      "text": "- **判别分析**：建立水质等级的自动判别规则"
+    },
+    {
+      "index": 539,
+      "locator": "讲义 L539",
+      "text": ""
+    },
+    {
+      "index": 540,
+      "locator": "讲义 L540",
+      "text": "##### 应用十五：地质勘探与矿产预测"
+    },
+    {
+      "index": 541,
+      "locator": "讲义 L541",
+      "text": ""
+    },
+    {
+      "index": 542,
+      "locator": "讲义 L542",
+      "text": "**业务问题**：某地质勘探队在某区域采集了100个岩石样本，测量了其中12种元素的含量（SiO₂、Al₂O₃、Fe₂O₃、CaO、MgO、Na₂O、K₂O、TiO₂、MnO、P₂O₅、Cu、Pb）。需要识别不同类型的岩石，并预测矿化带的位置。"
+    },
+    {
+      "index": 543,
+      "locator": "讲义 L543",
+      "text": ""
+    },
+    {
+      "index": 544,
+      "locator": "讲义 L544",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 545,
+      "locator": "讲义 L545",
+      "text": "- **聚类分析**：将岩石样本按化学成分分类"
+    },
+    {
+      "index": 546,
+      "locator": "讲义 L546",
+      "text": "- **判别分析**：建立岩石类型的判别规则"
+    },
+    {
+      "index": 547,
+      "locator": "讲义 L547",
+      "text": "- **因子分析**：识别控制岩石化学成分的地质过程"
+    },
+    {
+      "index": 548,
+      "locator": "讲义 L548",
+      "text": ""
+    },
+    {
+      "index": 549,
+      "locator": "讲义 L549",
+      "text": "#### 1.2.7 体育科学与运动分析"
+    },
+    {
+      "index": 550,
+      "locator": "讲义 L550",
+      "text": ""
+    },
+    {
+      "index": 551,
+      "locator": "讲义 L551",
+      "text": "##### 应用十六：运动员综合能力评估"
+    },
+    {
+      "index": 552,
+      "locator": "讲义 L552",
+      "text": ""
+    },
+    {
+      "index": 553,
+      "locator": "讲义 L553",
+      "text": "**业务问题**：某足球俱乐部需要评估球员的综合能力。评估指标包括：传球成功率、跑动距离、冲刺次数、抢断成功率、射门准确率、控球时间等。"
+    },
+    {
+      "index": 554,
+      "locator": "讲义 L554",
+      "text": ""
+    },
+    {
+      "index": 555,
+      "locator": "讲义 L555",
+      "text": "**多元统计方法**："
+    },
+    {
+      "index": 556,
+      "locator": "讲义 L556",
+      "text": "- **主成分分析**：将多个技术指标降维为\"进攻能力\"\"防守能力\"\"体能水平\"等综合因子"
+    },
+    {
+      "index": 557,
+      "locator": "讲义 L557",
+      "text": "- **聚类分析**：将球员按技术特点分为\"组织型\"\"突破型\"\"防守型\"等类型"
+    },
+    {
+      "index": 558,
+      "locator": "讲义 L558",
+      "text": ""
+    },
+    {
+      "index": 559,
+      "locator": "讲义 L559",
+      "text": "#### 1.2.8 方法与行业匹配总览"
+    },
+    {
+      "index": 560,
+      "locator": "讲义 L560",
+      "text": ""
+    },
+    {
+      "index": 561,
+      "locator": "讲义 L561",
+      "text": "| 行业 | 典型业务问题 | 推荐方法 | 核心输出 |"
+    },
+    {
+      "index": 562,
+      "locator": "讲义 L562",
+      "text": "|------|------------|----------|----------|"
+    },
+    {
+      "index": 563,
+      "locator": "讲义 L563",
+      "text": "| **金融** | 投资组合优化 | PCA、因子分析 | 风险因子、分散化组合 |"
+    },
+    {
+      "index": 564,
+      "locator": "讲义 L564",
+      "text": "| **金融** | 信用风险评估 | 判别分析、Logistic回归 | 违约概率、信用等级 |"
+    },
+    {
+      "index": 565,
+      "locator": "讲义 L565",
+      "text": "| **金融** | 大宗商品联动 | 典型相关分析、聚类 | 价格传导关系、品种分类 |"
+    },
+    {
+      "index": 566,
+      "locator": "讲义 L566",
+      "text": "| **医疗** | 疾病诊断 | 判别分析、Logistic回归 | 诊断规则、患病概率 |"
+    },
+    {
+      "index": 567,
+      "locator": "讲义 L567",
+      "text": "| **医疗** | 基因分型 | 聚类分析、PCA | 分子亚型、关键基因 |"
+    },
+    {
+      "index": 568,
+      "locator": "讲义 L568",
+      "text": "| **医疗** | 临床试验 | MANOVA | 药物整体效应 |"
+    },
+    {
+      "index": 569,
+      "locator": "讲义 L569",
+      "text": "| **营销** | 客户细分 | K-Means、层次聚类 | 客户画像、营销策略 |"
+    },
+    {
+      "index": 570,
+      "locator": "讲义 L570",
+      "text": "| **营销** | 品牌定位 | 对应分析、MDS | 品牌-属性关联图 |"
+    },
+    {
+      "index": 571,
+      "locator": "讲义 L571",
+      "text": "| **营销** | 量表验证 | 因子分析 | 结构效度 |"
+    },
+    {
+      "index": 572,
+      "locator": "讲义 L572",
+      "text": "| **工业** | 质量控制 | Hotelling T²、PCA | 异常报警、控制图 |"
+    },
+    {
+      "index": 573,
+      "locator": "讲义 L573",
+      "text": "| **工业** | 供应商评估 | TOPSIS、聚类 | 供应商排名、风险分类 |"
+    },
+    {
+      "index": 574,
+      "locator": "讲义 L574",
+      "text": "| **治理** | 区域评价 | PCA、TOPSIS | 综合排名 |"
+    },
+    {
+      "index": 575,
+      "locator": "讲义 L575",
+      "text": "| **环境** | 水质监测 | 聚类、PCA | 污染分区、主因子 |"
+    },
+    {
+      "index": 576,
+      "locator": "讲义 L576",
+      "text": "| **体育** | 运动员评估 | PCA、聚类 | 能力因子、球员类型 |"
+    },
+    {
+      "index": 577,
+      "locator": "讲义 L577",
+      "text": ""
+    },
+    {
+      "index": 578,
+      "locator": "讲义 L578",
+      "text": "---"
+    },
+    {
+      "index": 579,
+      "locator": "讲义 L579",
+      "text": ""
+    },
+    {
+      "index": 580,
+      "locator": "讲义 L580",
+      "text": "### 1.3 多元统计分析的内容"
+    },
+    {
+      "index": 581,
+      "locator": "讲义 L581",
+      "text": ""
+    },
+    {
+      "index": 582,
+      "locator": "讲义 L582",
+      "text": "#### 1.3.1 方法体系总览"
+    },
+    {
+      "index": 583,
+      "locator": "讲义 L583",
+      "text": ""
+    },
+    {
+      "index": 584,
+      "locator": "讲义 L584",
+      "text": "```mermaid"
+    },
+    {
+      "index": 585,
+      "locator": "讲义 L585",
+      "text": "graph TB"
+    },
+    {
+      "index": 586,
+      "locator": "讲义 L586",
+      "text": "    A[\"多元统计分析\"] --> B[\"降维方法族\"]"
+    },
+    {
+      "index": 587,
+      "locator": "讲义 L587",
+      "text": "    A --> C[\"分类方法族\"]"
+    },
+    {
+      "index": 588,
+      "locator": "讲义 L588",
+      "text": "    A --> D[\"相关方法族\"]"
+    },
+    {
+      "index": 589,
+      "locator": "讲义 L589",
+      "text": "    "
+    },
+    {
+      "index": 590,
+      "locator": "讲义 L590",
+      "text": "    B --> B1[\"主成分分析 PCA<br/>────────────<br/>核心：方差最大化<br/>输入：p个相关变量<br/>输出：m个正交主成分<br/>用途：数据压缩、可视化\"]"
+    },
+    {
+      "index": 591,
+      "locator": "讲义 L591",
+      "text": "    B --> B2[\"因子分析 FA<br/>────────────<br/>核心：潜变量建模<br/>输入：p个观测变量<br/>输出：m个公共因子<br/>用途：探索潜在结构\"]"
+    },
+    {
+      "index": 592,
+      "locator": "讲义 L592",
+      "text": "    B --> B3[\"对应分析 CA<br/>────────────<br/>核心：列联表降维<br/>输入：I×J列联表<br/>输出：行列变量二维图<br/>用途：分类数据可视化\"]"
+    },
+    {
+      "index": 593,
+      "locator": "讲义 L593",
+      "text": "    "
+    },
+    {
+      "index": 594,
+      "locator": "讲义 L594",
+      "text": "    C --> C1[\"聚类分析<br/>────────────<br/>核心：无监督分组<br/>输入：n个样品的p维数据<br/>输出：样品类别标签<br/>方法：层次聚类、K-Means\"]"
+    },
+    {
+      "index": 595,
+      "locator": "讲义 L595",
+      "text": "    C --> C2[\"判别分析<br/>────────────<br/>核心：有监督分类<br/>输入：已标签训练数据<br/>输出：判别规则/后验概率<br/>方法：Fisher LDA、Bayes\"]"
+    },
+    {
+      "index": 596,
+      "locator": "讲义 L596",
+      "text": "    "
+    },
+    {
+      "index": 597,
+      "locator": "讲义 L597",
+      "text": "    D --> D1[\"相关与回归<br/>────────────<br/>核心：变量依存关系<br/>输入：因变量+自变量<br/>输出：回归方程、R²<br/>用途：预测、因果分析\"]"
+    },
+    {
+      "index": 598,
+      "locator": "讲义 L598",
+      "text": "    D --> D2[\"典型相关分析 CCA<br/>────────────<br/>核心：两组变量整体相关<br/>输入：X组和Y组变量<br/>输出：典型变量对、典型相关系数<br/>用途：跨领域关系研究\"]"
+    },
+    {
+      "index": 599,
+      "locator": "讲义 L599",
+      "text": "    D --> D3[\"扩展线性模型 GLM<br/>────────────<br/>核心：非正态因变量<br/>输入：分类/计数因变量<br/>输出：连接函数+线性预测器<br/>方法：Logistic、泊松回归\"]"
+    },
+    {
+      "index": 600,
+      "locator": "讲义 L600",
+      "text": "    "
+    },
+    {
+      "index": 601,
+      "locator": "讲义 L601",
+      "text": "    style A fill:#1a252f,stroke:#1a252f,color:#ecf0f1"
+    },
+    {
+      "index": 602,
+      "locator": "讲义 L602",
+      "text": "    style B fill:#2c3e50,stroke:#2c3e50,color:#ecf0f1"
+    },
+    {
+      "index": 603,
+      "locator": "讲义 L603",
+      "text": "    style C fill:#2c3e50,stroke:#2c3e50,color:#ecf0f1"
+    },
+    {
+      "index": 604,
+      "locator": "讲义 L604",
+      "text": "    style D fill:#2c3e50,stroke:#2c3e50,color:#ecf0f1"
+    },
+    {
+      "index": 605,
+      "locator": "讲义 L605",
+      "text": "    style B1 fill:#34495e,stroke:#34495e,color:#ecf0f1"
+    },
+    {
+      "index": 606,
+      "locator": "讲义 L606",
+      "text": "    style B2 fill:#34495e,stroke:#34495e,color:#ecf0f1"
+    },
+    {
+      "index": 607,
+      "locator": "讲义 L607",
+      "text": "    style B3 fill:#34495e,stroke:#34495e,color:#ecf0f1"
+    },
+    {
+      "index": 608,
+      "locator": "讲义 L608",
+      "text": "    style C1 fill:#34495e,stroke:#34495e,color:#ecf0f1"
+    },
+    {
+      "index": 609,
+      "locator": "讲义 L609",
+      "text": "    style C2 fill:#34495e,stroke:#34495e,color:#ecf0f1"
+    },
+    {
+      "index": 610,
+      "locator": "讲义 L610",
+      "text": "    style D1 fill:#34495e,stroke:#34495e,color:#ecf0f1"
+    },
+    {
+      "index": 611,
+      "locator": "讲义 L611",
+      "text": "    style D2 fill:#34495e,stroke:#34495e,color:#ecf0f1"
+    },
+    {
+      "index": 612,
+      "locator": "讲义 L612",
+      "text": "    style D3 fill:#34495e,stroke:#34495e,color:#ecf0f1"
+    },
+    {
+      "index": 613,
+      "locator": "讲义 L613",
+      "text": "```"
+    },
+    {
+      "index": 614,
+      "locator": "讲义 L614",
+      "text": ""
+    },
+    {
+      "index": 615,
+      "locator": "讲义 L615",
+      "text": "#### 1.3.2 三大方法族的核心区别"
+    },
+    {
+      "index": 616,
+      "locator": "讲义 L616",
+      "text": ""
+    },
+    {
+      "index": 617,
+      "locator": "讲义 L617",
+      "text": "| 维度 | 降维方法 | 分类方法 | 相关方法 |"
+    },
+    {
+      "index": 618,
+      "locator": "讲义 L618",
+      "text": "|------|----------|----------|----------|"
+    },
+    {
+      "index": 619,
+      "locator": "讲义 L619",
+      "text": "| **核心问题** | 如何压缩变量个数？ | 如何将样品分组？ | 变量之间有何关联？ |"
+    },
+    {
+      "index": 620,
+      "locator": "讲义 L620",
+      "text": "| **输入** | p个相关变量 | n个样品的p维数据 | 一组或多组变量 |"
+    },
+    {
+      "index": 621,
+      "locator": "讲义 L621",
+      "text": "| **输出** | m个综合指标(m<p) | 样品的类别标签 | 变量间的关联模型 |"
+    },
+    {
+      "index": 622,
+      "locator": "讲义 L622",
+      "text": "| **学习类型** | 无监督 | 无监督/有监督 | 有监督 |"
+    },
+    {
+      "index": 623,
+      "locator": "讲义 L623",
+      "text": "| **典型方法** | PCA、因子分析、对应分析 | 聚类、判别 | 回归、典型相关、GLM |"
+    },
+    {
+      "index": 624,
+      "locator": "讲义 L624",
+      "text": "| **核心数学工具** | 特征值分解、SVD | 距离度量、后验概率 | 最小二乘、最大似然 |"
+    },
+    {
+      "index": 625,
+      "locator": "讲义 L625",
+      "text": ""
+    },
+    {
+      "index": 626,
+      "locator": "讲义 L626",
+      "text": "#### 1.3.3 容易混淆的方法辨析"
+    },
+    {
+      "index": 627,
+      "locator": "讲义 L627",
+      "text": ""
+    },
+    {
+      "index": 628,
+      "locator": "讲义 L628",
+      "text": "**（1）主成分分析 vs 因子分析**"
+    },
+    {
+      "index": 629,
+      "locator": "讲义 L629",
+      "text": ""
+    },
+    {
+      "index": 630,
+      "locator": "讲义 L630",
+      "text": "| 维度 | 主成分分析（PCA） | 因子分析（FA） |"
+    },
+    {
+      "index": 631,
+      "locator": "讲义 L631",
+      "text": "|------|------------------|----------------|"
+    },
+    {
+      "index": 632,
+      "locator": "讲义 L632",
+      "text": "| **目标** | 数据降维（数学变换） | 探索潜在结构（统计模型） |"
+    },
+    {
+      "index": 633,
+      "locator": "讲义 L633",
+      "text": "| **模型** | $Y = LX$（精确线性组合） | $X = AF + \\varepsilon$（含误差项） |"
+    },
+    {
+      "index": 634,
+      "locator": "讲义 L634",
+      "text": "| **可逆性** | 可逆（可以从主成分还原原始数据） | 不可逆（含随机误差） |"
+    },
+    {
+      "index": 635,
+      "locator": "讲义 L635",
+      "text": "| **因子旋转** | 通常不做 | 通常需要（便于解释） |"
+    },
+    {
+      "index": 636,
+      "locator": "讲义 L636",
+      "text": "| **共同度** | 所有变量的共同度为1 | 共同度<1，反映被解释的程度 |"
+    },
+    {
+      "index": 637,
+      "locator": "讲义 L637",
+      "text": "| **适用场景** | 数据压缩、消除共线性 | 探索变量背后的潜在维度 |"
+    },
+    {
+      "index": 638,
+      "locator": "讲义 L638",
+      "text": ""
+    },
+    {
+      "index": 639,
+      "locator": "讲义 L639",
+      "text": "**（2）聚类分析 vs 判别分析**"
+    },
+    {
+      "index": 640,
+      "locator": "讲义 L640",
+      "text": ""
+    },
+    {
+      "index": 641,
+      "locator": "讲义 L641",
+      "text": "| 维度 | 聚类分析 | 判别分析 |"
+    },
+    {
+      "index": 642,
+      "locator": "讲义 L642",
+      "text": "|------|----------|----------|"
+    },
+    {
+      "index": 643,
+      "locator": "讲义 L643",
+      "text": "| **学习类型** | 无监督（不需要标签） | 有监督（需要已标签数据） |"
+    },
+    {
+      "index": 644,
+      "locator": "讲义 L644",
+      "text": "| **目标** | 发现数据内在结构 | 建立分类规则 |"
+    },
+    {
+      "index": 645,
+      "locator": "讲义 L645",
+      "text": "| **输入** | 未标签的样品数据 | 已标签的训练数据 |"
+    },
+    {
+      "index": 646,
+      "locator": "讲义 L646",
+      "text": "| **输出** | 样品的类别标签 | 判别函数/后验概率 |"
+    },
+    {
+      "index": 647,
+      "locator": "讲义 L647",
+      "text": "| **评价方式** | 轮廓系数、CH指数 | 准确率、混淆矩阵 |"
+    },
+    {
+      "index": 648,
+      "locator": "讲义 L648",
+      "text": "| **典型应用** | 客户细分、基因分型 | 疾病诊断、信用评估 |"
+    },
+    {
+      "index": 649,
+      "locator": "讲义 L649",
+      "text": ""
+    },
+    {
+      "index": 650,
+      "locator": "讲义 L650",
+      "text": "**（3）简单相关、多元相关与典型相关**"
+    },
+    {
+      "index": 651,
+      "locator": "讲义 L651",
+      "text": ""
+    },
+    {
+      "index": 652,
+      "locator": "讲义 L652",
+      "text": "| 维度 | 简单相关 | 多元相关 | 典型相关 |"
+    },
+    {
+      "index": 653,
+      "locator": "讲义 L653",
+      "text": "|------|----------|----------|----------|"
+    },
+    {
+      "index": 654,
+      "locator": "讲义 L654",
+      "text": "| **研究对象** | 两个变量 | 一个因变量 vs 多个自变量 | 一组变量 vs 另一组变量 |"
+    },
+    {
+      "index": 655,
+      "locator": "讲义 L655",
+      "text": "| **度量指标** | Pearson相关系数r | 复相关系数R | 典型相关系数ρ |"
+    },
+    {
+      "index": 656,
+      "locator": "讲义 L656",
+      "text": "| **取值范围** | [-1, 1] | [0, 1] | [0, 1] |"
+    },
+    {
+      "index": 657,
+      "locator": "讲义 L657",
+      "text": "| **例子** | 铜价与油价的相关 | 房价与面积+楼层+朝向的整体相关 | 宏观指标组与商品价格组的整体相关 |"
+    },
+    {
+      "index": 658,
+      "locator": "讲义 L658",
+      "text": ""
+    },
+    {
+      "index": 659,
+      "locator": "讲义 L659",
+      "text": "#### 1.3.4 方法选择决策流程"
+    },
+    {
+      "index": 660,
+      "locator": "讲义 L660",
+      "text": ""
+    },
+    {
+      "index": 661,
+      "locator": "讲义 L661",
+      "text": "```mermaid"
+    },
+    {
+      "index": 662,
+      "locator": "讲义 L662",
+      "text": "flowchart TD"
+    },
+    {
+      "index": 663,
+      "locator": "讲义 L663",
+      "text": "    A[\"开始：你有什么数据？<br/>想解决什么问题？\"] --> B{\"分析目标是什么？\"}"
+    },
+    {
+      "index": 664,
+      "locator": "讲义 L664",
+      "text": "    "
+    },
+    {
+      "index": 665,
+      "locator": "讲义 L665",
+      "text": "    B -->|\"减少变量个数\"| C{\"变量类型？\"}"
+    },
+    {
+      "index": 666,
+      "locator": "讲义 L666",
+      "text": "    B -->|\"将样品分组\"| D{\"有标签吗？\"}"
+    },
+    {
+      "index": 667,
+      "locator": "讲义 L667",
+      "text": "    B -->|\"研究变量间关系\"| E{\"因变量类型？\"}"
+    },
+    {
+      "index": 668,
+      "locator": "讲义 L668",
+      "text": "    "
+    },
+    {
+      "index": 669,
+      "locator": "讲义 L669",
+      "text": "    C -->|\"连续变量\"| C1[\"主成分分析 PCA\"]"
+    },
+    {
+      "index": 670,
+      "locator": "讲义 L670",
+      "text": "    C -->|\"分类变量（列联表）\"| C2[\"对应分析 CA\"]"
+    },
+    {
+      "index": 671,
+      "locator": "讲义 L671",
+      "text": "    C -->|\"探索潜在因子\"| C3[\"因子分析 FA\"]"
+    },
+    {
+      "index": 672,
+      "locator": "讲义 L672",
+      "text": "    "
+    },
+    {
+      "index": 673,
+      "locator": "讲义 L673",
+      "text": "    D -->|\"没有标签\"| D1[\"聚类分析\"]"
+    },
+    {
+      "index": 674,
+      "locator": "讲义 L674",
+      "text": "    D -->|\"有标签\"| D2[\"判别分析\"]"
+    },
+    {
+      "index": 675,
+      "locator": "讲义 L675",
+      "text": "    "
+    },
+    {
+      "index": 676,
+      "locator": "讲义 L676",
+      "text": "    D1 --> D1a{\"样本量？<br/>分布形状？\"}"
+    },
+    {
+      "index": 677,
+      "locator": "讲义 L677",
+      "text": "    D1a -->|\"n<500\"| D1b[\"层次聚类\"]"
+    },
+    {
+      "index": 678,
+      "locator": "讲义 L678",
+      "text": "    D1a -->|\"n>1000, 球形\"| D1c[\"K-Means\"]"
+    },
+    {
+      "index": 679,
+      "locator": "讲义 L679",
+      "text": "    D1a -->|\"非球形分布\"| D1d[\"DBSCAN\"]"
+    },
+    {
+      "index": 680,
+      "locator": "讲义 L680",
+      "text": "    "
+    },
+    {
+      "index": 681,
+      "locator": "讲义 L681",
+      "text": "    E -->|\"连续型\"| E1[\"多元线性回归\"]"
+    },
+    {
+      "index": 682,
+      "locator": "讲义 L682",
+      "text": "    E -->|\"二分类\"| E2[\"Logistic回归\"]"
+    },
+    {
+      "index": 683,
+      "locator": "讲义 L683",
+      "text": "    E -->|\"计数型\"| E3[\"泊松回归\"]"
+    },
+    {
+      "index": 684,
+      "locator": "讲义 L684",
+      "text": "    E -->|\"两组变量间关系\"| E4[\"典型相关分析 CCA\"]"
+    },
+    {
+      "index": 685,
+      "locator": "讲义 L685",
+      "text": "    "
+    },
+    {
+      "index": 686,
+      "locator": "讲义 L686",
+      "text": "    style A fill:#1a252f,stroke:#1a252f,color:#ecf0f1"
+    },
+    {
+      "index": 687,
+      "locator": "讲义 L687",
+      "text": "    style B fill:#2c3e50,stroke:#2c3e50,color:#ecf0f1"
+    },
+    {
+      "index": 688,
+      "locator": "讲义 L688",
+      "text": "    style C fill:#34495e,stroke:#34495e,color:#ecf0f1"
+    },
+    {
+      "index": 689,
+      "locator": "讲义 L689",
+      "text": "    style D fill:#34495e,stroke:#34495e,color:#ecf0f1"
+    },
+    {
+      "index": 690,
+      "locator": "讲义 L690",
+      "text": "    style E fill:#34495e,stroke:#34495e,color:#ecf0f1"
+    },
+    {
+      "index": 691,
+      "locator": "讲义 L691",
+      "text": "```"
+    },
+    {
+      "index": 692,
+      "locator": "讲义 L692",
+      "text": ""
+    },
+    {
+      "index": 693,
+      "locator": "讲义 L693",
+      "text": "#### 1.3.5 各方法的核心数学工具"
+    },
+    {
+      "index": 694,
+      "locator": "讲义 L694",
+      "text": ""
+    },
+    {
+      "index": 695,
+      "locator": "讲义 L695",
+      "text": "| 方法 | 核心数学工具 | 公式概要 |"
+    },
+    {
+      "index": 696,
+      "locator": "讲义 L696",
+      "text": "|------|-------------|----------|"
+    },
+    {
+      "index": 697,
+      "locator": "讲义 L697",
+      "text": "| PCA | 协方差矩阵的特征值分解 | $\\Sigma \\mathbf{l} = \\lambda \\mathbf{l}$ |"
+    },
+    {
+      "index": 698,
+      "locator": "讲义 L698",
+      "text": "| 因子分析 | 相关矩阵的特征值分解 + 旋转 | $X = AF + \\varepsilon$ |"
+    },
+    {
+      "index": 699,
+      "locator": "讲义 L699",
+      "text": "| 对应分析 | 奇异值分解（SVD） | $A = U\\Sigma V^T$ |"
+    },
+    {
+      "index": 700,
+      "locator": "讲义 L700",
+      "text": "| 聚类分析 | 距离度量 | $d(x,y) = \\sqrt{\\sum(x_i-y_i)^2}$ |"
+    },
+    {
+      "index": 701,
+      "locator": "讲义 L701",
+      "text": "| 判别分析 | 散度矩阵的逆 | $a = W^{-1}(\\bar{X}_1 - \\bar{X}_2)$ |"
+    },
+    {
+      "index": 702,
+      "locator": "讲义 L702",
+      "text": "| 回归分析 | 最小二乘法 | $\\hat{\\beta} = (X^TX)^{-1}X^TY$ |"
+    },
+    {
+      "index": 703,
+      "locator": "讲义 L703",
+      "text": "| 典型相关 | 广义特征值问题 | $|\\Sigma_{XX}^{-1}\\Sigma_{XY}\\Sigma_{YY}^{-1}\\Sigma_{YX} - \\lambda I| = 0$ |"
+    },
+    {
+      "index": 704,
+      "locator": "讲义 L704",
+      "text": "| Logistic回归 | 最大似然估计 | $\\max \\prod p_i^{y_i}(1-p_i)^{1-y_i}$ |"
+    },
+    {
+      "index": 705,
+      "locator": "讲义 L705",
+      "text": ""
+    },
+    {
+      "index": 706,
+      "locator": "讲义 L706",
+      "text": "---"
+    },
+    {
+      "index": 707,
+      "locator": "讲义 L707",
+      "text": ""
+    },
+    {
+      "index": 708,
+      "locator": "讲义 L708",
+      "text": "### 1.4 统计分析软件及应用"
+    },
+    {
+      "index": 709,
+      "locator": "讲义 L709",
+      "text": ""
+    },
+    {
+      "index": 710,
+      "locator": "讲义 L710",
+      "text": "#### 1.4.1 四大统计软件对比"
+    },
+    {
+      "index": 711,
+      "locator": "讲义 L711",
+      "text": ""
+    },
+    {
+      "index": 712,
+      "locator": "讲义 L712",
+      "text": "```mermaid"
+    },
+    {
+      "index": 713,
+      "locator": "讲义 L713",
+      "text": "quadrantChart"
+    },
+    {
+      "index": 714,
+      "locator": "讲义 L714",
+      "text": "    title 统计软件定位图"
+    },
+    {
+      "index": 715,
+      "locator": "讲义 L715",
+      "text": "    x-axis \"易用性低\" --> \"易用性高\""
+    },
+    {
+      "index": 716,
+      "locator": "讲义 L716",
+      "text": "    y-axis \"功能有限\" --> \"功能强大\""
+    },
+    {
+      "index": 717,
+      "locator": "讲义 L717",
+      "text": "    quadrant-1 \"功能强大且易用\""
+    },
+    {
+      "index": 718,
+      "locator": "讲义 L718",
+      "text": "    quadrant-2 \"功能强大但复杂\""
+    },
+    {
+      "index": 719,
+      "locator": "讲义 L719",
+      "text": "    quadrant-3 \"功能有限且复杂\""
+    },
+    {
+      "index": 720,
+      "locator": "讲义 L720",
+      "text": "    quadrant-4 \"易用但功能有限\""
+    },
+    {
+      "index": 721,
+      "locator": "讲义 L721",
+      "text": "    \"SAS\": [0.3, 0.9]"
+    },
+    {
+      "index": 722,
+      "locator": "讲义 L722",
+      "text": "    \"SPSS\": [0.85, 0.5]"
+    },
+    {
+      "index": 723,
+      "locator": "讲义 L723",
+      "text": "    \"R\": [0.4, 0.85]"
+    },
+    {
+      "index": 724,
+      "locator": "讲义 L724",
+      "text": "    \"Python\": [0.6, 0.95]"
+    },
+    {
+      "index": 725,
+      "locator": "讲义 L725",
+      "text": "```"
+    },
+    {
+      "index": 726,
+      "locator": "讲义 L726",
+      "text": ""
+    },
+    {
+      "index": 727,
+      "locator": "讲义 L727",
+      "text": "**详细对比**："
+    },
+    {
+      "index": 728,
+      "locator": "讲义 L728",
+      "text": ""
+    },
+    {
+      "index": 729,
+      "locator": "讲义 L729",
+      "text": "| 维度 | SAS | SPSS | R | Python |"
+    },
+    {
+      "index": 730,
+      "locator": "讲义 L730",
+      "text": "|------|-----|------|---|--------|"
+    },
+    {
+      "index": 731,
+      "locator": "讲义 L731",
+      "text": "| **类型** | 商业软件 | 商业软件 | 开源 | 开源 |"
+    },
+    {
+      "index": 732,
+      "locator": "讲义 L732",
+      "text": "| **价格** | 昂贵（年费数万元） | 中等（年费数千元） | 免费 | 免费 |"
+    },
+    {
+      "index": 733,
+      "locator": "讲义 L733",
+      "text": "| **学习曲线** | 陡峭 | 平缓 | 中等 | 中等 |"
+    },
+    {
+      "index": 734,
+      "locator": "讲义 L734",
+      "text": "| **数据处理能力** | 极强（TB级） | 中等 | 较强 | 极强 |"
+    },
+    {
+      "index": 735,
+      "locator": "讲义 L735",
+      "text": "| **统计方法覆盖** | 最全 | 较全 | 最全（社区贡献） | 较全（持续增长） |"
+    },
+    {
+      "index": 736,
+      "locator": "讲义 L736",
+      "text": "| **可视化** | 基础 | 基础 | 极强（ggplot2） | 极强（Matplotlib+Seaborn） |"
+    },
+    {
+      "index": 737,
+      "locator": "讲义 L737",
+      "text": "| **机器学习** | 较弱 | 较弱 | 较强 | 极强（Scikit-learn） |"
+    },
+    {
+      "index": 738,
+      "locator": "讲义 L738",
+      "text": "| **深度学习** | 不支持 | 不支持 | 较弱 | 极强（TensorFlow/PyTorch） |"
+    },
+    {
+      "index": 739,
+      "locator": "讲义 L739",
+      "text": "| **工程化部署** | 困难 | 不支持 | 困难 | 极易（Web/API/云） |"
+    },
+    {
+      "index": 740,
+      "locator": "讲义 L740",
+      "text": "| **社区生态** | 封闭 | 封闭 | CRAN 20000+包 | PyPI 400000+包 |"
+    },
+    {
+      "index": 741,
+      "locator": "讲义 L741",
+      "text": "| **主要用户** | 制药、金融 | 社会科学 | 学术研究 | 全行业 |"
+    },
+    {
+      "index": 742,
+      "locator": "讲义 L742",
+      "text": ""
+    },
+    {
+      "index": 743,
+      "locator": "讲义 L743",
+      "text": "#### 1.4.2 Python成为数据科学主流的原因"
+    },
+    {
+      "index": 744,
+      "locator": "讲义 L744",
+      "text": ""
+    },
+    {
+      "index": 745,
+      "locator": "讲义 L745",
+      "text": "**（1）通用性**"
+    },
+    {
+      "index": 746,
+      "locator": "讲义 L746",
+      "text": ""
+    },
+    {
+      "index": 747,
+      "locator": "讲义 L747",
+      "text": "Python是一种通用编程语言，不仅用于统计分析，还覆盖Web开发、自动化运维、人工智能等领域。这意味着："
+    },
+    {
+      "index": 748,
+      "locator": "讲义 L748",
+      "text": "- 数据分析师可以用Python完成从数据采集到模型部署的全流程"
+    },
+    {
+      "index": 749,
+      "locator": "讲义 L749",
+      "text": "- 不需要在多个工具之间切换（如用SPSS做分析，再用Java写系统）"
+    },
+    {
+      "index": 750,
+      "locator": "讲义 L750",
+      "text": ""
+    },
+    {
+      "index": 751,
+      "locator": "讲义 L751",
+      "text": "**（2）生态完善**"
+    },
+    {
+      "index": 752,
+      "locator": "讲义 L752",
+      "text": ""
+    },
+    {
+      "index": 753,
+      "locator": "讲义 L753",
+      "text": "Python的数据科学生态链已经非常成熟："
+    },
+    {
+      "index": 754,
+      "locator": "讲义 L754",
+      "text": "- **数据采集**：requests（网页爬虫）、sqlalchemy（数据库连接）"
+    },
+    {
+      "index": 755,
+      "locator": "讲义 L755",
+      "text": "- **数据处理**：NumPy（数值计算）、Pandas（表格处理）"
+    },
+    {
+      "index": 756,
+      "locator": "讲义 L756",
+      "text": "- **统计建模**：scipy.stats（假设检验）、statsmodels（回归/时序）"
+    },
+    {
+      "index": 757,
+      "locator": "讲义 L757",
+      "text": "- **机器学习**：Scikit-learn（分类/聚类/降维）"
+    },
+    {
+      "index": 758,
+      "locator": "讲义 L758",
+      "text": "- **深度学习**：TensorFlow、PyTorch"
+    },
+    {
+      "index": 759,
+      "locator": "讲义 L759",
+      "text": "- **可视化**：Matplotlib、Seaborn、Plotly"
+    },
+    {
+      "index": 760,
+      "locator": "讲义 L760",
+      "text": ""
+    },
+    {
+      "index": 761,
+      "locator": "讲义 L761",
+      "text": "**（3）开源免费**"
+    },
+    {
+      "index": 762,
+      "locator": "讲义 L762",
+      "text": ""
+    },
+    {
+      "index": 763,
+      "locator": "讲义 L763",
+      "text": "Python及其所有数据科学库都是开源免费的，降低了学习和使用门槛。"
+    },
+    {
+      "index": 764,
+      "locator": "讲义 L764",
+      "text": ""
+    },
+    {
+      "index": 765,
+      "locator": "讲义 L765",
+      "text": "**（4）工程化能力**"
+    },
+    {
+      "index": 766,
+      "locator": "讲义 L766",
+      "text": ""
+    },
+    {
+      "index": 767,
+      "locator": "讲义 L767",
+      "text": "Python代码可以直接部署为生产系统（Web API、微服务），而R/SPSS更多停留在分析阶段。"
+    },
+    {
+      "index": 768,
+      "locator": "讲义 L768",
+      "text": ""
+    },
+    {
+      "index": 769,
+      "locator": "讲义 L769",
+      "text": "#### 1.4.3 各软件的适用场景选择"
+    },
+    {
+      "index": 770,
+      "locator": "讲义 L770",
+      "text": ""
+    },
+    {
+      "index": 771,
+      "locator": "讲义 L771",
+      "text": "- **需要FDA合规的临床试验分析** → SAS"
+    },
+    {
+      "index": 772,
+      "locator": "讲义 L772",
+      "text": "- **社会科学问卷数据分析** → SPSS"
+    },
+    {
+      "index": 773,
+      "locator": "讲义 L773",
+      "text": "- **学术论文中的统计分析** → R"
+    },
+    {
+      "index": 774,
+      "locator": "讲义 L774",
+      "text": "- **构建数据产品和机器学习系统** → Python"
+    },
+    {
+      "index": 775,
+      "locator": "讲义 L775",
+      "text": "- **快速探索性数据分析** → Python（Jupyter Notebook）"
+    },
+    {
+      "index": 776,
+      "locator": "讲义 L776",
+      "text": "- **大规模数据处理** → Python（Pandas/Dask）"
+    },
+    {
+      "index": 777,
+      "locator": "讲义 L777",
+      "text": ""
+    },
+    {
+      "index": 778,
+      "locator": "讲义 L778",
+      "text": "---"
+    },
+    {
+      "index": 779,
+      "locator": "讲义 L779",
+      "text": ""
+    },
+    {
+      "index": 780,
+      "locator": "讲义 L780",
+      "text": "### 1.5 Python数据分析平台"
+    },
+    {
+      "index": 781,
+      "locator": "讲义 L781",
+      "text": ""
+    },
+    {
+      "index": 782,
+      "locator": "讲义 L782",
+      "text": "#### 1.5.1 Anaconda安装与配置"
+    },
+    {
+      "index": 783,
+      "locator": "讲义 L783",
+      "text": ""
+    },
+    {
+      "index": 784,
+      "locator": "讲义 L784",
+      "text": "**（1）什么是Anaconda？**"
+    },
+    {
+      "index": 785,
+      "locator": "讲义 L785",
+      "text": ""
+    },
+    {
+      "index": 786,
+      "locator": "讲义 L786",
+      "text": "Anaconda是Python数据科学的\"全家桶\"发行版，包含："
+    },
+    {
+      "index": 787,
+      "locator": "讲义 L787",
+      "text": "- Python解释器（3.8/3.9/3.10/3.11/3.12可选）"
+    },
+    {
+      "index": 788,
+      "locator": "讲义 L788",
+      "text": "- conda包管理器（比pip更强大的依赖管理）"
+    },
+    {
+      "index": 789,
+      "locator": "讲义 L789",
+      "text": "- 200+预装数据科学库"
+    },
+    {
+      "index": 790,
+      "locator": "讲义 L790",
+      "text": "- Jupyter Notebook交互式编程环境"
+    },
+    {
+      "index": 791,
+      "locator": "讲义 L791",
+      "text": "- Spyder集成开发环境"
+    },
+    {
+      "index": 792,
+      "locator": "讲义 L792",
+      "text": ""
+    },
+    {
+      "index": 793,
+      "locator": "讲义 L793",
+      "text": "**（2）安装步骤**"
+    },
+    {
+      "index": 794,
+      "locator": "讲义 L794",
+      "text": ""
+    },
+    {
+      "index": 795,
+      "locator": "讲义 L795",
+      "text": "**Windows系统**："
+    },
+    {
+      "index": 796,
+      "locator": "讲义 L796",
+      "text": "1. 访问 https://www.anaconda.com/download 下载Windows安装包（约800MB）"
+    },
+    {
+      "index": 797,
+      "locator": "讲义 L797",
+      "text": "2. 双击运行安装程序"
+    },
+    {
+      "index": 798,
+      "locator": "讲义 L798",
+      "text": "3. 选择\"Just Me\"（推荐）"
+    },
+    {
+      "index": 799,
+      "locator": "讲义 L799",
+      "text": "4. 选择安装路径（建议不要有中文路径）"
+    },
+    {
+      "index": 800,
+      "locator": "讲义 L800",
+      "text": "5. 勾选\"Add Anaconda to my PATH environment variable\""
+    },
+    {
+      "index": 801,
+      "locator": "讲义 L801",
+      "text": "6. 等待安装完成"
+    },
+    {
+      "index": 802,
+      "locator": "讲义 L802",
+      "text": ""
+    },
+    {
+      "index": 803,
+      "locator": "讲义 L803",
+      "text": "**macOS系统**："
+    },
+    {
+      "index": 804,
+      "locator": "讲义 L804",
+      "text": "1. 下载macOS安装包"
+    },
+    {
+      "index": 805,
+      "locator": "讲义 L805",
+      "text": "2. 双击.pkg文件运行安装程序"
+    },
+    {
+      "index": 806,
+      "locator": "讲义 L806",
+      "text": "3. 按默认设置安装"
+    },
+    {
+      "index": 807,
+      "locator": "讲义 L807",
+      "text": ""
+    },
+    {
+      "index": 808,
+      "locator": "讲义 L808",
+      "text": "**验证安装**："
+    },
+    {
+      "index": 809,
+      "locator": "讲义 L809",
+      "text": ""
+    },
+    {
+      "index": 810,
+      "locator": "讲义 L810",
+      "text": "打开终端（Windows为Anaconda Prompt），输入："
+    },
+    {
+      "index": 811,
+      "locator": "讲义 L811",
+      "text": ""
+    },
+    {
+      "index": 812,
+      "locator": "讲义 L812",
+      "text": "```bash"
+    },
+    {
+      "index": 813,
+      "locator": "讲义 L813",
+      "text": "python --version        # 应显示 Python 3.x.x"
+    },
+    {
+      "index": 814,
+      "locator": "讲义 L814",
+      "text": "conda --version         # 应显示 conda 24.x.x"
+    },
+    {
+      "index": 815,
+      "locator": "讲义 L815",
+      "text": "jupyter --version       # 应显示 jupyter 版本号"
+    },
+    {
+      "index": 816,
+      "locator": "讲义 L816",
+      "text": "```"
+    },
+    {
+      "index": 817,
+      "locator": "讲义 L817",
+      "text": ""
+    },
+    {
+      "index": 818,
+      "locator": "讲义 L818",
+      "text": "**（3）conda虚拟环境管理**"
+    },
+    {
+      "index": 819,
+      "locator": "讲义 L819",
+      "text": ""
+    },
+    {
+      "index": 820,
+      "locator": "讲义 L820",
+      "text": "虚拟环境是Python项目管理的最佳实践，可以为不同项目创建独立的Python环境，避免依赖冲突。"
+    },
+    {
+      "index": 821,
+      "locator": "讲义 L821",
+      "text": ""
+    },
+    {
+      "index": 822,
+      "locator": "讲义 L822",
+      "text": "```bash"
+    },
+    {
+      "index": 823,
+      "locator": "讲义 L823",
+      "text": "# 创建名为multistat的Python 3.10环境"
+    },
+    {
+      "index": 824,
+      "locator": "讲义 L824",
+      "text": "conda create -n multistat python=3.10"
+    },
+    {
+      "index": 825,
+      "locator": "讲义 L825",
+      "text": ""
+    },
+    {
+      "index": 826,
+      "locator": "讲义 L826",
+      "text": "# 激活环境"
+    },
+    {
+      "index": 827,
+      "locator": "讲义 L827",
+      "text": "conda activate multistat"
+    },
+    {
+      "index": 828,
+      "locator": "讲义 L828",
+      "text": ""
+    },
+    {
+      "index": 829,
+      "locator": "讲义 L829",
+      "text": "# 在该环境中安装核心库"
+    },
+    {
+      "index": 830,
+      "locator": "讲义 L830",
+      "text": "conda install numpy pandas matplotlib seaborn scipy scikit-learn statsmodels jupyter"
+    },
+    {
+      "index": 831,
+      "locator": "讲义 L831",
+      "text": ""
+    },
+    {
+      "index": 832,
+      "locator": "讲义 L832",
+      "text": "# 查看已安装的库"
+    },
+    {
+      "index": 833,
+      "locator": "讲义 L833",
+      "text": "conda list"
+    },
+    {
+      "index": 834,
+      "locator": "讲义 L834",
+      "text": ""
+    },
+    {
+      "index": 835,
+      "locator": "讲义 L835",
+      "text": "# 退出环境"
+    },
+    {
+      "index": 836,
+      "locator": "讲义 L836",
+      "text": "conda deactivate"
+    },
+    {
+      "index": 837,
+      "locator": "讲义 L837",
+      "text": ""
+    },
+    {
+      "index": 838,
+      "locator": "讲义 L838",
+      "text": "# 删除环境"
+    },
+    {
+      "index": 839,
+      "locator": "讲义 L839",
+      "text": "conda env remove -n multistat"
+    },
+    {
+      "index": 840,
+      "locator": "讲义 L840",
+      "text": ""
+    },
+    {
+      "index": 841,
+      "locator": "讲义 L841",
+      "text": "# 查看所有环境"
+    },
+    {
+      "index": 842,
+      "locator": "讲义 L842",
+      "text": "conda env list"
+    },
+    {
+      "index": 843,
+      "locator": "讲义 L843",
+      "text": "```"
+    },
+    {
+      "index": 844,
+      "locator": "讲义 L844",
+      "text": ""
+    },
+    {
+      "index": 845,
+      "locator": "讲义 L845",
+      "text": "#### 1.5.2 Jupyter Notebook使用"
+    },
+    {
+      "index": 846,
+      "locator": "讲义 L846",
+      "text": ""
+    },
+    {
+      "index": 847,
+      "locator": "讲义 L847",
+      "text": "**（1）启动方式**"
+    },
+    {
+      "index": 848,
+      "locator": "讲义 L848",
+      "text": ""
+    },
+    {
+      "index": 849,
+      "locator": "讲义 L849",
+      "text": "```bash"
+    },
+    {
+      "index": 850,
+      "locator": "讲义 L850",
+      "text": "# 激活虚拟环境"
+    },
+    {
+      "index": 851,
+      "locator": "讲义 L851",
+      "text": "conda activate multistat"
+    },
+    {
+      "index": 852,
+      "locator": "讲义 L852",
+      "text": ""
+    },
+    {
+      "index": 853,
+      "locator": "讲义 L853",
+      "text": "# 启动Jupyter Notebook"
+    },
+    {
+      "index": 854,
+      "locator": "讲义 L854",
+      "text": "jupyter notebook"
+    },
+    {
+      "index": 855,
+      "locator": "讲义 L855",
+      "text": "```"
+    },
+    {
+      "index": 856,
+      "locator": "讲义 L856",
+      "text": ""
+    },
+    {
+      "index": 857,
+      "locator": "讲义 L857",
+      "text": "浏览器会自动打开Jupyter的主页面，可以创建新的Notebook或打开已有的文件。"
+    },
+    {
+      "index": 858,
+      "locator": "讲义 L858",
+      "text": ""
+    },
+    {
+      "index": 859,
+      "locator": "讲义 L859",
+      "text": "**（2）单元格类型**"
+    },
+    {
+      "index": 860,
+      "locator": "讲义 L860",
+      "text": ""
+    },
+    {
+      "index": 861,
+      "locator": "讲义 L861",
+      "text": "Jupyter Notebook由一系列\"单元格\"（Cell）组成，有两种主要类型："
+    },
+    {
+      "index": 862,
+      "locator": "讲义 L862",
+      "text": "- **代码单元格（Code）**：编写和执行Python代码"
+    },
+    {
+      "index": 863,
+      "locator": "讲义 L863",
+      "text": "- **Markdown单元格**：编写文字说明、公式、标题"
+    },
+    {
+      "index": 864,
+      "locator": "讲义 L864",
+      "text": ""
+    },
+    {
+      "index": 865,
+      "locator": "讲义 L865",
+      "text": "**（3）核心快捷键**"
+    },
+    {
+      "index": 866,
+      "locator": "讲义 L866",
+      "text": ""
+    },
+    {
+      "index": 867,
+      "locator": "讲义 L867",
+      "text": "| 操作 | 命令模式快捷键 | 编辑模式快捷键 |"
+    },
+    {
+      "index": 868,
+      "locator": "讲义 L868",
+      "text": "|------|---------------|---------------|"
+    },
+    {
+      "index": 869,
+      "locator": "讲义 L869",
+      "text": "| 执行当前单元格 | `Enter` | `Shift + Enter` |"
+    },
+    {
+      "index": 870,
+      "locator": "讲义 L870",
+      "text": "| 在上方插入单元格 | `A` | `Esc + A` |"
+    },
+    {
+      "index": 871,
+      "locator": "讲义 L871",
+      "text": "| 在下方插入单元格 | `B` | `Esc + B` |"
+    },
+    {
+      "index": 872,
+      "locator": "讲义 L872",
+      "text": "| 删除当前单元格 | `DD` | `Esc + DD` |"
+    },
+    {
+      "index": 873,
+      "locator": "讲义 L873",
+      "text": "| 转为Markdown | `M` | `Esc + M` |"
+    },
+    {
+      "index": 874,
+      "locator": "讲义 L874",
+      "text": "| 转为代码 | `Y` | `Esc + Y` |"
+    },
+    {
+      "index": 875,
+      "locator": "讲义 L875",
+      "text": "| 保存 | `S` | `Ctrl + S` |"
+    },
+    {
+      "index": 876,
+      "locator": "讲义 L876",
+      "text": ""
+    },
+    {
+      "index": 877,
+      "locator": "讲义 L877",
+      "text": "**（4）魔法命令**"
+    },
+    {
+      "index": 878,
+      "locator": "讲义 L878",
+      "text": ""
+    },
+    {
+      "index": 879,
+      "locator": "讲义 L879",
+      "text": "```python"
+    },
+    {
+      "index": 880,
+      "locator": "讲义 L880",
+      "text": "%matplotlib inline    # 使图形嵌入Notebook中显示"
+    },
+    {
+      "index": 881,
+      "locator": "讲义 L881",
+      "text": "%timeit sum(range(1000))  # 测量代码执行时间"
+    },
+    {
+      "index": 882,
+      "locator": "讲义 L882",
+      "text": "%%writefile test.py   # 将整个单元格内容写入文件"
+    },
+    {
+      "index": 883,
+      "locator": "讲义 L883",
+      "text": "%who                  # 查看当前命名空间中的变量"
+    },
+    {
+      "index": 884,
+      "locator": "讲义 L884",
+      "text": "```"
+    },
+    {
+      "index": 885,
+      "locator": "讲义 L885",
+      "text": ""
+    },
+    {
+      "index": 886,
+      "locator": "讲义 L886",
+      "text": "#### 1.5.3 Python核心数据分析库"
+    },
+    {
+      "index": 887,
+      "locator": "讲义 L887",
+      "text": ""
+    },
+    {
+      "index": 888,
+      "locator": "讲义 L888",
+      "text": "**（1）NumPy —— 数值计算基础**"
+    },
+    {
+      "index": 889,
+      "locator": "讲义 L889",
+      "text": ""
+    },
+    {
+      "index": 890,
+      "locator": "讲义 L890",
+      "text": "NumPy是Python科学计算的基础库，核心对象是`ndarray`（N维数组）。"
+    },
+    {
+      "index": 891,
+      "locator": "讲义 L891",
+      "text": ""
+    },
+    {
+      "index": 892,
+      "locator": "讲义 L892",
+      "text": "```python"
+    },
+    {
+      "index": 893,
+      "locator": "讲义 L893",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 894,
+      "locator": "讲义 L894",
+      "text": ""
+    },
+    {
+      "index": 895,
+      "locator": "讲义 L895",
+      "text": "# 创建数组"
+    },
+    {
+      "index": 896,
+      "locator": "讲义 L896",
+      "text": "arr = np.array([1, 2, 3, 4, 5])          # 从列表创建"
+    },
+    {
+      "index": 897,
+      "locator": "讲义 L897",
+      "text": "zeros = np.zeros((3, 4))                   # 3×4全零矩阵"
+    },
+    {
+      "index": 898,
+      "locator": "讲义 L898",
+      "text": "ones = np.ones((2, 3))                     # 2×3全一矩阵"
+    },
+    {
+      "index": 899,
+      "locator": "讲义 L899",
+      "text": "eye = np.eye(3)                            # 3×3单位阵"
+    },
+    {
+      "index": 900,
+      "locator": "讲义 L900",
+      "text": "rand = np.random.randn(100)                # 100个标准正态随机数"
+    },
+    {
+      "index": 901,
+      "locator": "讲义 L901",
+      "text": ""
+    },
+    {
+      "index": 902,
+      "locator": "讲义 L902",
+      "text": "# 数组运算（向量化，比循环快数十倍）"
+    },
+    {
+      "index": 903,
+      "locator": "讲义 L903",
+      "text": "arr = np.array([1, 2, 3, 4, 5])"
+    },
+    {
+      "index": 904,
+      "locator": "讲义 L904",
+      "text": "print(arr * 2)        # [2, 4, 6, 8, 10]"
+    },
+    {
+      "index": 905,
+      "locator": "讲义 L905",
+      "text": "print(arr ** 2)       # [1, 4, 9, 16, 25]"
+    },
+    {
+      "index": 906,
+      "locator": "讲义 L906",
+      "text": "print(np.sqrt(arr))   # [1.0, 1.414, 1.732, 2.0, 2.236]"
+    },
+    {
+      "index": 907,
+      "locator": "讲义 L907",
+      "text": ""
+    },
+    {
+      "index": 908,
+      "locator": "讲义 L908",
+      "text": "# 矩阵运算"
+    },
+    {
+      "index": 909,
+      "locator": "讲义 L909",
+      "text": "A = np.array([[1, 2], [3, 4]])"
+    },
+    {
+      "index": 910,
+      "locator": "讲义 L910",
+      "text": "B = np.array([[5, 6], [7, 8]])"
+    },
+    {
+      "index": 911,
+      "locator": "讲义 L911",
+      "text": "print(A @ B)                    # 矩阵乘法"
+    },
+    {
+      "index": 912,
+      "locator": "讲义 L912",
+      "text": "print(np.linalg.inv(A))         # 逆矩阵"
+    },
+    {
+      "index": 913,
+      "locator": "讲义 L913",
+      "text": "print(np.linalg.det(A))         # 行列式"
+    },
+    {
+      "index": 914,
+      "locator": "讲义 L914",
+      "text": "eigenvalues, eigenvectors = np.linalg.eig(A)  # 特征值分解"
+    },
+    {
+      "index": 915,
+      "locator": "讲义 L915",
+      "text": "```"
+    },
+    {
+      "index": 916,
+      "locator": "讲义 L916",
+      "text": ""
+    },
+    {
+      "index": 917,
+      "locator": "讲义 L917",
+      "text": "**（2）Pandas —— 数据处理与分析**"
+    },
+    {
+      "index": 918,
+      "locator": "讲义 L918",
+      "text": ""
+    },
+    {
+      "index": 919,
+      "locator": "讲义 L919",
+      "text": "Pandas是Python数据分析的核心库，核心对象是`DataFrame`（二维表格）。"
+    },
+    {
+      "index": 920,
+      "locator": "讲义 L920",
+      "text": ""
+    },
+    {
+      "index": 921,
+      "locator": "讲义 L921",
+      "text": "```python"
+    },
+    {
+      "index": 922,
+      "locator": "讲义 L922",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 923,
+      "locator": "讲义 L923",
+      "text": ""
+    },
+    {
+      "index": 924,
+      "locator": "讲义 L924",
+      "text": "# 创建DataFrame"
+    },
+    {
+      "index": 925,
+      "locator": "讲义 L925",
+      "text": "df = pd.DataFrame({"
+    },
+    {
+      "index": 926,
+      "locator": "讲义 L926",
+      "text": "    '城市': ['北京', '上海', '广州', '深圳'],"
+    },
+    {
+      "index": 927,
+      "locator": "讲义 L927",
+      "text": "    'GDP': [40269, 44653, 28231, 32388],"
+    },
+    {
+      "index": 928,
+      "locator": "讲义 L928",
+      "text": "    '人口': [2189, 2487, 1868, 1756]"
+    },
+    {
+      "index": 929,
+      "locator": "讲义 L929",
+      "text": "})"
+    },
+    {
+      "index": 930,
+      "locator": "讲义 L930",
+      "text": ""
+    },
+    {
+      "index": 931,
+      "locator": "讲义 L931",
+      "text": "# 从文件读取"
+    },
+    {
+      "index": 932,
+      "locator": "讲义 L932",
+      "text": "# df = pd.read_csv('data.csv', encoding='utf-8')"
+    },
+    {
+      "index": 933,
+      "locator": "讲义 L933",
+      "text": "# df = pd.read_excel('data.xlsx', sheet_name='Sheet1')"
+    },
+    {
+      "index": 934,
+      "locator": "讲义 L934",
+      "text": ""
+    },
+    {
+      "index": 935,
+      "locator": "讲义 L935",
+      "text": "# 数据查看"
+    },
+    {
+      "index": 936,
+      "locator": "讲义 L936",
+      "text": "print(df.head())          # 前5行"
+    },
+    {
+      "index": 937,
+      "locator": "讲义 L937",
+      "text": "print(df.describe())      # 描述性统计"
+    },
+    {
+      "index": 938,
+      "locator": "讲义 L938",
+      "text": "print(df.info())          # 数据类型和缺失值信息"
+    },
+    {
+      "index": 939,
+      "locator": "讲义 L939",
+      "text": ""
+    },
+    {
+      "index": 940,
+      "locator": "讲义 L940",
+      "text": "# 数据筛选"
+    },
+    {
+      "index": 941,
+      "locator": "讲义 L941",
+      "text": "print(df[df['GDP'] > 30000])           # 布尔索引"
+    },
+    {
+      "index": 942,
+      "locator": "讲义 L942",
+      "text": "print(df.loc[0:2, ['城市', 'GDP']])    # 标签索引"
+    },
+    {
+      "index": 943,
+      "locator": "讲义 L943",
+      "text": "print(df.iloc[0:2, 0:2])               # 位置索引"
+    },
+    {
+      "index": 944,
+      "locator": "讲义 L944",
+      "text": ""
+    },
+    {
+      "index": 945,
+      "locator": "讲义 L945",
+      "text": "# 分组聚合"
+    },
+    {
+      "index": 946,
+      "locator": "讲义 L946",
+      "text": "print(df.groupby('城市')['GDP'].mean())"
+    },
+    {
+      "index": 947,
+      "locator": "讲义 L947",
+      "text": "```"
+    },
+    {
+      "index": 948,
+      "locator": "讲义 L948",
+      "text": ""
+    },
+    {
+      "index": 949,
+      "locator": "讲义 L949",
+      "text": "**（3）Matplotlib + Seaborn —— 数据可视化**"
+    },
+    {
+      "index": 950,
+      "locator": "讲义 L950",
+      "text": ""
+    },
+    {
+      "index": 951,
+      "locator": "讲义 L951",
+      "text": "```python"
+    },
+    {
+      "index": 952,
+      "locator": "讲义 L952",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 953,
+      "locator": "讲义 L953",
+      "text": "import seaborn as sns"
+    },
+    {
+      "index": 954,
+      "locator": "讲义 L954",
+      "text": ""
+    },
+    {
+      "index": 955,
+      "locator": "讲义 L955",
+      "text": "# 设置中文字体"
+    },
+    {
+      "index": 956,
+      "locator": "讲义 L956",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 957,
+      "locator": "讲义 L957",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 958,
+      "locator": "讲义 L958",
+      "text": ""
+    },
+    {
+      "index": 959,
+      "locator": "讲义 L959",
+      "text": "# 创建子图布局"
+    },
+    {
+      "index": 960,
+      "locator": "讲义 L960",
+      "text": "fig, axes = plt.subplots(1, 2, figsize=(14, 5))"
+    },
+    {
+      "index": 961,
+      "locator": "讲义 L961",
+      "text": ""
+    },
+    {
+      "index": 962,
+      "locator": "讲义 L962",
+      "text": "# Matplotlib基础绑图"
+    },
+    {
+      "index": 963,
+      "locator": "讲义 L963",
+      "text": "axes[0].bar(df['城市'], df['GDP'], color='steelblue')"
+    },
+    {
+      "index": 964,
+      "locator": "讲义 L964",
+      "text": "axes[0].set_title('各城市GDP')"
+    },
+    {
+      "index": 965,
+      "locator": "讲义 L965",
+      "text": ""
+    },
+    {
+      "index": 966,
+      "locator": "讲义 L966",
+      "text": "# Seaborn高级统计图"
+    },
+    {
+      "index": 967,
+      "locator": "讲义 L967",
+      "text": "sns.heatmap(df.corr(), annot=True, cmap='RdBu_r', center=0, ax=axes[1])"
+    },
+    {
+      "index": 968,
+      "locator": "讲义 L968",
+      "text": "axes[1].set_title('相关系数热力图')"
+    },
+    {
+      "index": 969,
+      "locator": "讲义 L969",
+      "text": ""
+    },
+    {
+      "index": 970,
+      "locator": "讲义 L970",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 971,
+      "locator": "讲义 L971",
+      "text": "plt.show()"
+    },
+    {
+      "index": 972,
+      "locator": "讲义 L972",
+      "text": "```"
+    },
+    {
+      "index": 973,
+      "locator": "讲义 L973",
+      "text": ""
+    },
+    {
+      "index": 974,
+      "locator": "讲义 L974",
+      "text": "**（4）Scipy —— 科学计算与统计检验**"
+    },
+    {
+      "index": 975,
+      "locator": "讲义 L975",
+      "text": ""
+    },
+    {
+      "index": 976,
+      "locator": "讲义 L976",
+      "text": "```python"
+    },
+    {
+      "index": 977,
+      "locator": "讲义 L977",
+      "text": "from scipy import stats"
+    },
+    {
+      "index": 978,
+      "locator": "讲义 L978",
+      "text": ""
+    },
+    {
+      "index": 979,
+      "locator": "讲义 L979",
+      "text": "# 概率分布"
+    },
+    {
+      "index": 980,
+      "locator": "讲义 L980",
+      "text": "x = np.linspace(-3, 3, 100)"
+    },
+    {
+      "index": 981,
+      "locator": "讲义 L981",
+      "text": "pdf = stats.norm.pdf(x, loc=0, scale=1)   # 正态分布概率密度"
+    },
+    {
+      "index": 982,
+      "locator": "讲义 L982",
+      "text": "cdf = stats.norm.cdf(x, loc=0, scale=1)   # 累积分布函数"
+    },
+    {
+      "index": 983,
+      "locator": "讲义 L983",
+      "text": "ppf = stats.norm.ppf(0.975)                # 分位数（≈1.96）"
+    },
+    {
+      "index": 984,
+      "locator": "讲义 L984",
+      "text": ""
+    },
+    {
+      "index": 985,
+      "locator": "讲义 L985",
+      "text": "# 假设检验"
+    },
+    {
+      "index": 986,
+      "locator": "讲义 L986",
+      "text": "t_stat, p_value = stats.ttest_ind([1,2,3,4,5], [2,3,4,5,6])  # 独立样本t检验"
+    },
+    {
+      "index": 987,
+      "locator": "讲义 L987",
+      "text": "print(f\"t统计量={t_stat:.4f}, p值={p_value:.4f}\")"
+    },
+    {
+      "index": 988,
+      "locator": "讲义 L988",
+      "text": "```"
+    },
+    {
+      "index": 989,
+      "locator": "讲义 L989",
+      "text": ""
+    },
+    {
+      "index": 990,
+      "locator": "讲义 L990",
+      "text": "**（5）Scikit-learn —— 机器学习**"
+    },
+    {
+      "index": 991,
+      "locator": "讲义 L991",
+      "text": ""
+    },
+    {
+      "index": 992,
+      "locator": "讲义 L992",
+      "text": "```python"
+    },
+    {
+      "index": 993,
+      "locator": "讲义 L993",
+      "text": "from sklearn.decomposition import PCA"
+    },
+    {
+      "index": 994,
+      "locator": "讲义 L994",
+      "text": "from sklearn.cluster import KMeans"
+    },
+    {
+      "index": 995,
+      "locator": "讲义 L995",
+      "text": "from sklearn.discriminant_analysis import LinearDiscriminantAnalysis"
+    },
+    {
+      "index": 996,
+      "locator": "讲义 L996",
+      "text": "from sklearn.preprocessing import StandardScaler"
+    },
+    {
+      "index": 997,
+      "locator": "讲义 L997",
+      "text": ""
+    },
+    {
+      "index": 998,
+      "locator": "讲义 L998",
+      "text": "# 统一的API接口：fit → transform → predict"
+    },
+    {
+      "index": 999,
+      "locator": "讲义 L999",
+      "text": "# 例如：主成分分析"
+    },
+    {
+      "index": 1000,
+      "locator": "讲义 L1000",
+      "text": "pca = PCA(n_components=2)          # 创建模型"
+    },
+    {
+      "index": 1001,
+      "locator": "讲义 L1001",
+      "text": "scores = pca.fit_transform(X_std)   # 拟合并转换"
+    },
+    {
+      "index": 1002,
+      "locator": "讲义 L1002",
+      "text": "print(pca.explained_variance_ratio_)  # 方差贡献率"
+    },
+    {
+      "index": 1003,
+      "locator": "讲义 L1003",
+      "text": "```"
+    },
+    {
+      "index": 1004,
+      "locator": "讲义 L1004",
+      "text": ""
+    },
+    {
+      "index": 1005,
+      "locator": "讲义 L1005",
+      "text": "#### 1.5.4 库的功能定位与调用逻辑"
+    },
+    {
+      "index": 1006,
+      "locator": "讲义 L1006",
+      "text": ""
+    },
+    {
+      "index": 1007,
+      "locator": "讲义 L1007",
+      "text": "```mermaid"
+    },
+    {
+      "index": 1008,
+      "locator": "讲义 L1008",
+      "text": "graph TB"
+    },
+    {
+      "index": 1009,
+      "locator": "讲义 L1009",
+      "text": "    subgraph \"数据获取层\""
+    },
+    {
+      "index": 1010,
+      "locator": "讲义 L1010",
+      "text": "        A1[\"pandas.read_csv()\"]"
+    },
+    {
+      "index": 1011,
+      "locator": "讲义 L1011",
+      "text": "        A2[\"pandas.read_excel()\"]"
+    },
+    {
+      "index": 1012,
+      "locator": "讲义 L1012",
+      "text": "        A3[\"sqlalchemy (数据库)\"]"
+    },
+    {
+      "index": 1013,
+      "locator": "讲义 L1013",
+      "text": "    end"
+    },
+    {
+      "index": 1014,
+      "locator": "讲义 L1014",
+      "text": "    "
+    },
+    {
+      "index": 1015,
+      "locator": "讲义 L1015",
+      "text": "    subgraph \"数据处理层\""
+    },
+    {
+      "index": 1016,
+      "locator": "讲义 L1016",
+      "text": "        B1[\"numpy: 数组运算<br/>矩阵运算、特征值分解\"]"
+    },
+    {
+      "index": 1017,
+      "locator": "讲义 L1017",
+      "text": "        B2[\"pandas: DataFrame操作<br/>筛选、分组、合并、透视\"]"
+    },
+    {
+      "index": 1018,
+      "locator": "讲义 L1018",
+      "text": "    end"
+    },
+    {
+      "index": 1019,
+      "locator": "讲义 L1019",
+      "text": "    "
+    },
+    {
+      "index": 1020,
+      "locator": "讲义 L1020",
+      "text": "    subgraph \"统计建模层\""
+    },
+    {
+      "index": 1021,
+      "locator": "讲义 L1021",
+      "text": "        C1[\"scipy.stats<br/>概率分布、假设检验\"]"
+    },
+    {
+      "index": 1022,
+      "locator": "讲义 L1022",
+      "text": "        C2[\"statsmodels<br/>回归分析、时序分析\"]"
+    },
+    {
+      "index": 1023,
+      "locator": "讲义 L1023",
+      "text": "        C3[\"sklearn<br/>PCA、聚类、判别\"]"
+    },
+    {
+      "index": 1024,
+      "locator": "讲义 L1024",
+      "text": "    end"
+    },
+    {
+      "index": 1025,
+      "locator": "讲义 L1025",
+      "text": "    "
+    },
+    {
+      "index": 1026,
+      "locator": "讲义 L1026",
+      "text": "    subgraph \"可视化层\""
+    },
+    {
+      "index": 1027,
+      "locator": "讲义 L1027",
+      "text": "        D1[\"matplotlib<br/>基础绑图（折线/柱状/散点）\"]"
+    },
+    {
+      "index": 1028,
+      "locator": "讲义 L1028",
+      "text": "        D2[\"seaborn<br/>统计图形（热力图/箱线图/小提琴图）\"]"
+    },
+    {
+      "index": 1029,
+      "locator": "讲义 L1029",
+      "text": "    end"
+    },
+    {
+      "index": 1030,
+      "locator": "讲义 L1030",
+      "text": "    "
+    },
+    {
+      "index": 1031,
+      "locator": "讲义 L1031",
+      "text": "    subgraph \"输出层\""
+    },
+    {
+      "index": 1032,
+      "locator": "讲义 L1032",
+      "text": "        E1[\"报告/论文\"]"
+    },
+    {
+      "index": 1033,
+      "locator": "讲义 L1033",
+      "text": "        E2[\"Web应用/API\"]"
+    },
+    {
+      "index": 1034,
+      "locator": "讲义 L1034",
+      "text": "        E3[\"决策支持系统\"]"
+    },
+    {
+      "index": 1035,
+      "locator": "讲义 L1035",
+      "text": "    end"
+    },
+    {
+      "index": 1036,
+      "locator": "讲义 L1036",
+      "text": "    "
+    },
+    {
+      "index": 1037,
+      "locator": "讲义 L1037",
+      "text": "    A1 --> B1"
+    },
+    {
+      "index": 1038,
+      "locator": "讲义 L1038",
+      "text": "    A2 --> B2"
+    },
+    {
+      "index": 1039,
+      "locator": "讲义 L1039",
+      "text": "    A3 --> B2"
+    },
+    {
+      "index": 1040,
+      "locator": "讲义 L1040",
+      "text": "    B1 --> C1"
+    },
+    {
+      "index": 1041,
+      "locator": "讲义 L1041",
+      "text": "    B1 --> C2"
+    },
+    {
+      "index": 1042,
+      "locator": "讲义 L1042",
+      "text": "    B2 --> C3"
+    },
+    {
+      "index": 1043,
+      "locator": "讲义 L1043",
+      "text": "    C1 --> D1"
+    },
+    {
+      "index": 1044,
+      "locator": "讲义 L1044",
+      "text": "    C2 --> D1"
+    },
+    {
+      "index": 1045,
+      "locator": "讲义 L1045",
+      "text": "    C3 --> D2"
+    },
+    {
+      "index": 1046,
+      "locator": "讲义 L1046",
+      "text": "    D1 --> E1"
+    },
+    {
+      "index": 1047,
+      "locator": "讲义 L1047",
+      "text": "    D2 --> E1"
+    },
+    {
+      "index": 1048,
+      "locator": "讲义 L1048",
+      "text": "    C3 --> E2"
+    },
+    {
+      "index": 1049,
+      "locator": "讲义 L1049",
+      "text": "    C1 --> E3"
+    },
+    {
+      "index": 1050,
+      "locator": "讲义 L1050",
+      "text": "    "
+    },
+    {
+      "index": 1051,
+      "locator": "讲义 L1051",
+      "text": "    style A1 fill:#5D6D7E,stroke:#5D6D7E,color:#ECF0F1"
+    },
+    {
+      "index": 1052,
+      "locator": "讲义 L1052",
+      "text": "    style A2 fill:#5D6D7E,stroke:#5D6D7E,color:#ECF0F1"
+    },
+    {
+      "index": 1053,
+      "locator": "讲义 L1053",
+      "text": "    style A3 fill:#5D6D7E,stroke:#5D6D7E,color:#ECF0F1"
+    },
+    {
+      "index": 1054,
+      "locator": "讲义 L1054",
+      "text": "    style B1 fill:#34495E,stroke:#34495E,color:#ECF0F1"
+    },
+    {
+      "index": 1055,
+      "locator": "讲义 L1055",
+      "text": "    style B2 fill:#34495E,stroke:#34495E,color:#ECF0F1"
+    },
+    {
+      "index": 1056,
+      "locator": "讲义 L1056",
+      "text": "    style C1 fill:#2C3E50,stroke:#2C3E50,color:#ECF0F1"
+    },
+    {
+      "index": 1057,
+      "locator": "讲义 L1057",
+      "text": "    style C2 fill:#2C3E50,stroke:#2C3E50,color:#ECF0F1"
+    },
+    {
+      "index": 1058,
+      "locator": "讲义 L1058",
+      "text": "    style C3 fill:#2C3E50,stroke:#2C3E50,color:#ECF0F1"
+    },
+    {
+      "index": 1059,
+      "locator": "讲义 L1059",
+      "text": "    style D1 fill:#1a252f,stroke:#1a252f,color:#ECF0F1"
+    },
+    {
+      "index": 1060,
+      "locator": "讲义 L1060",
+      "text": "    style D2 fill:#1a252f,stroke:#1a252f,color:#ECF0F1"
+    },
+    {
+      "index": 1061,
+      "locator": "讲义 L1061",
+      "text": "```"
+    },
+    {
+      "index": 1062,
+      "locator": "讲义 L1062",
+      "text": ""
+    },
+    {
+      "index": 1063,
+      "locator": "讲义 L1063",
+      "text": "---"
+    },
+    {
+      "index": 1064,
+      "locator": "讲义 L1064",
+      "text": ""
+    },
+    {
+      "index": 1065,
+      "locator": "讲义 L1065",
+      "text": "## 模块三：实战与代码复现"
+    },
+    {
+      "index": 1066,
+      "locator": "讲义 L1066",
+      "text": ""
+    },
+    {
+      "index": 1067,
+      "locator": "讲义 L1067",
+      "text": "### 实战案例1-1：Python环境验证与核心库功能演示"
+    },
+    {
+      "index": 1068,
+      "locator": "讲义 L1068",
+      "text": ""
+    },
+    {
+      "index": 1069,
+      "locator": "讲义 L1069",
+      "text": "**【业务场景】** 作为大宗商品分析师，你需要验证Python环境是否正常工作，并快速了解各核心库的基本功能。本案例使用模拟的5只商品ETF日收益率数据进行演示。"
+    },
+    {
+      "index": 1070,
+      "locator": "讲义 L1070",
+      "text": ""
+    },
+    {
+      "index": 1071,
+      "locator": "讲义 L1071",
+      "text": "```python"
+    },
+    {
+      "index": 1072,
+      "locator": "讲义 L1072",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1073,
+      "locator": "讲义 L1073",
+      "text": "# 第1章 实战案例：Python环境验证与核心库功能演示"
+    },
+    {
+      "index": 1074,
+      "locator": "讲义 L1074",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1075,
+      "locator": "讲义 L1075",
+      "text": ""
+    },
+    {
+      "index": 1076,
+      "locator": "讲义 L1076",
+      "text": "# --- 1. 导入核心库并检查版本 ---"
+    },
+    {
+      "index": 1077,
+      "locator": "讲义 L1077",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 1078,
+      "locator": "讲义 L1078",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 1079,
+      "locator": "讲义 L1079",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 1080,
+      "locator": "讲义 L1080",
+      "text": "import seaborn as sns"
+    },
+    {
+      "index": 1081,
+      "locator": "讲义 L1081",
+      "text": "import scipy.stats as stats"
+    },
+    {
+      "index": 1082,
+      "locator": "讲义 L1082",
+      "text": "import sklearn"
+    },
+    {
+      "index": 1083,
+      "locator": "讲义 L1083",
+      "text": ""
+    },
+    {
+      "index": 1084,
+      "locator": "讲义 L1084",
+      "text": "# 设置中文字体和专业绑图风格"
+    },
+    {
+      "index": 1085,
+      "locator": "讲义 L1085",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 1086,
+      "locator": "讲义 L1086",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 1087,
+      "locator": "讲义 L1087",
+      "text": "sns.set_theme(style=\"whitegrid\", palette=\"muted\")"
+    },
+    {
+      "index": 1088,
+      "locator": "讲义 L1088",
+      "text": ""
+    },
+    {
+      "index": 1089,
+      "locator": "讲义 L1089",
+      "text": "print(\"=\" * 50)"
+    },
+    {
+      "index": 1090,
+      "locator": "讲义 L1090",
+      "text": "print(\"Python 数据分析环境验证\")"
+    },
+    {
+      "index": 1091,
+      "locator": "讲义 L1091",
+      "text": "print(\"=\" * 50)"
+    },
+    {
+      "index": 1092,
+      "locator": "讲义 L1092",
+      "text": "print(f\"NumPy版本:       {np.__version__}\")"
+    },
+    {
+      "index": 1093,
+      "locator": "讲义 L1093",
+      "text": "print(f\"Pandas版本:      {pd.__version__}\")"
+    },
+    {
+      "index": 1094,
+      "locator": "讲义 L1094",
+      "text": "print(f\"Scikit-learn版本: {sklearn.__version__}\")"
+    },
+    {
+      "index": 1095,
+      "locator": "讲义 L1095",
+      "text": "print(\"=\" * 50)"
+    },
+    {
+      "index": 1096,
+      "locator": "讲义 L1096",
+      "text": ""
+    },
+    {
+      "index": 1097,
+      "locator": "讲义 L1097",
+      "text": "# --- 2. 模拟大宗商品ETF日收益率数据 ---"
+    },
+    {
+      "index": 1098,
+      "locator": "讲义 L1098",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 1099,
+      "locator": "讲义 L1099",
+      "text": "n_days = 250  # 一个交易年"
+    },
+    {
+      "index": 1100,
+      "locator": "讲义 L1100",
+      "text": ""
+    },
+    {
+      "index": 1101,
+      "locator": "讲义 L1101",
+      "text": "etf_names = ['铜ETF', '原油ETF', '黄金ETF', '白银ETF', '农产品ETF']"
+    },
+    {
+      "index": 1102,
+      "locator": "讲义 L1102",
+      "text": "mu = np.array([0.0003, 0.0002, 0.0001, 0.00015, 0.0001])"
+    },
+    {
+      "index": 1103,
+      "locator": "讲义 L1103",
+      "text": "sigma = np.array([0.018, 0.022, 0.010, 0.020, 0.012])"
+    },
+    {
+      "index": 1104,
+      "locator": "讲义 L1104",
+      "text": ""
+    },
+    {
+      "index": 1105,
+      "locator": "讲义 L1105",
+      "text": "# 相关系数矩阵（铜和原油正相关，黄金和铜负相关）"
+    },
+    {
+      "index": 1106,
+      "locator": "讲义 L1106",
+      "text": "corr_matrix = np.array(["
+    },
+    {
+      "index": 1107,
+      "locator": "讲义 L1107",
+      "text": "    [1.00, 0.65, -0.25, 0.10, 0.30],"
+    },
+    {
+      "index": 1108,
+      "locator": "讲义 L1108",
+      "text": "    [0.65, 1.00, -0.15, 0.05, 0.20],"
+    },
+    {
+      "index": 1109,
+      "locator": "讲义 L1109",
+      "text": "    [-0.25, -0.15, 1.00, 0.70, -0.10],"
+    },
+    {
+      "index": 1110,
+      "locator": "讲义 L1110",
+      "text": "    [0.10, 0.05, 0.70, 1.00, 0.05],"
+    },
+    {
+      "index": 1111,
+      "locator": "讲义 L1111",
+      "text": "    [0.30, 0.20, -0.10, 0.05, 1.00]"
+    },
+    {
+      "index": 1112,
+      "locator": "讲义 L1112",
+      "text": "])"
+    },
+    {
+      "index": 1113,
+      "locator": "讲义 L1113",
+      "text": ""
+    },
+    {
+      "index": 1114,
+      "locator": "讲义 L1114",
+      "text": "# 从协方差矩阵生成多元正态随机数"
+    },
+    {
+      "index": 1115,
+      "locator": "讲义 L1115",
+      "text": "cov_matrix = np.outer(sigma, sigma) * corr_matrix"
+    },
+    {
+      "index": 1116,
+      "locator": "讲义 L1116",
+      "text": "returns = np.random.multivariate_normal(mu, cov_matrix, n_days)"
+    },
+    {
+      "index": 1117,
+      "locator": "讲义 L1117",
+      "text": ""
+    },
+    {
+      "index": 1118,
+      "locator": "讲义 L1118",
+      "text": "# 创建DataFrame"
+    },
+    {
+      "index": 1119,
+      "locator": "讲义 L1119",
+      "text": "dates = pd.date_range(start='2024-01-02', periods=n_days, freq='B')"
+    },
+    {
+      "index": 1120,
+      "locator": "讲义 L1120",
+      "text": "df_returns = pd.DataFrame(returns, index=dates, columns=etf_names)"
+    },
+    {
+      "index": 1121,
+      "locator": "讲义 L1121",
+      "text": ""
+    },
+    {
+      "index": 1122,
+      "locator": "讲义 L1122",
+      "text": "print(\"\\n=== 数据概览（前10行）===\")"
+    },
+    {
+      "index": 1123,
+      "locator": "讲义 L1123",
+      "text": "print(df_returns.head(10).round(6))"
+    },
+    {
+      "index": 1124,
+      "locator": "讲义 L1124",
+      "text": "print(f\"\\n数据形状: {df_returns.shape}（{n_days}个交易日 × {len(etf_names)}只ETF）\")"
+    },
+    {
+      "index": 1125,
+      "locator": "讲义 L1125",
+      "text": ""
+    },
+    {
+      "index": 1126,
+      "locator": "讲义 L1126",
+      "text": "# --- 3. Pandas描述性统计 ---"
+    },
+    {
+      "index": 1127,
+      "locator": "讲义 L1127",
+      "text": "print(\"\\n=== 描述性统计 ===\")"
+    },
+    {
+      "index": 1128,
+      "locator": "讲义 L1128",
+      "text": "print(df_returns.describe().round(6))"
+    },
+    {
+      "index": 1129,
+      "locator": "讲义 L1129",
+      "text": ""
+    },
+    {
+      "index": 1130,
+      "locator": "讲义 L1130",
+      "text": "# 年化指标"
+    },
+    {
+      "index": 1131,
+      "locator": "讲义 L1131",
+      "text": "ann_return = df_returns.mean() * 252"
+    },
+    {
+      "index": 1132,
+      "locator": "讲义 L1132",
+      "text": "ann_vol = df_returns.std() * np.sqrt(252)"
+    },
+    {
+      "index": 1133,
+      "locator": "讲义 L1133",
+      "text": "print(\"\\n=== 年化指标 ===\")"
+    },
+    {
+      "index": 1134,
+      "locator": "讲义 L1134",
+      "text": "for name in etf_names:"
+    },
+    {
+      "index": 1135,
+      "locator": "讲义 L1135",
+      "text": "    sharpe = ann_return[name] / ann_vol[name]  # 简化Sharpe比率（假设无风险利率为0）"
+    },
+    {
+      "index": 1136,
+      "locator": "讲义 L1136",
+      "text": "    print(f\"  {name}: 年化收益率={ann_return[name]:.2%}, 年化波动率={ann_vol[name]:.2%}, Sharpe={sharpe:.3f}\")"
+    },
+    {
+      "index": 1137,
+      "locator": "讲义 L1137",
+      "text": ""
+    },
+    {
+      "index": 1138,
+      "locator": "讲义 L1138",
+      "text": "# --- 4. Scipy正态性检验 ---"
+    },
+    {
+      "index": 1139,
+      "locator": "讲义 L1139",
+      "text": "print(\"\\n=== Jarque-Bera正态性检验 ===\")"
+    },
+    {
+      "index": 1140,
+      "locator": "讲义 L1140",
+      "text": "for name in etf_names:"
+    },
+    {
+      "index": 1141,
+      "locator": "讲义 L1141",
+      "text": "    jb_stat, jb_p = stats.jarque_bera(df_returns[name])"
+    },
+    {
+      "index": 1142,
+      "locator": "讲义 L1142",
+      "text": "    skew = stats.skew(df_returns[name])"
+    },
+    {
+      "index": 1143,
+      "locator": "讲义 L1143",
+      "text": "    kurt = stats.kurtosis(df_returns[name])"
+    },
+    {
+      "index": 1144,
+      "locator": "讲义 L1144",
+      "text": "    normality = \"正态\" if jb_p > 0.05 else \"非正态\""
+    },
+    {
+      "index": 1145,
+      "locator": "讲义 L1145",
+      "text": "    print(f\"  {name}: 偏度={skew:.3f}, 峰度={kurt:.3f}, JB={jb_stat:.2f}, p={jb_p:.4f} → {normality}\")"
+    },
+    {
+      "index": 1146,
+      "locator": "讲义 L1146",
+      "text": ""
+    },
+    {
+      "index": 1147,
+      "locator": "讲义 L1147",
+      "text": "# --- 5. 相关系数矩阵 ---"
+    },
+    {
+      "index": 1148,
+      "locator": "讲义 L1148",
+      "text": "corr_pd = df_returns.corr()"
+    },
+    {
+      "index": 1149,
+      "locator": "讲义 L1149",
+      "text": "print(\"\\n=== 相关系数矩阵 ===\")"
+    },
+    {
+      "index": 1150,
+      "locator": "讲义 L1150",
+      "text": "print(corr_pd.round(3))"
+    },
+    {
+      "index": 1151,
+      "locator": "讲义 L1151",
+      "text": ""
+    },
+    {
+      "index": 1152,
+      "locator": "讲义 L1152",
+      "text": "# --- 6. 可视化 ---"
+    },
+    {
+      "index": 1153,
+      "locator": "讲义 L1153",
+      "text": "fig, axes = plt.subplots(2, 2, figsize=(16, 12))"
+    },
+    {
+      "index": 1154,
+      "locator": "讲义 L1154",
+      "text": ""
+    },
+    {
+      "index": 1155,
+      "locator": "讲义 L1155",
+      "text": "# (1) 累计收益走势"
+    },
+    {
+      "index": 1156,
+      "locator": "讲义 L1156",
+      "text": "cumulative = (1 + df_returns).cumprod()"
+    },
+    {
+      "index": 1157,
+      "locator": "讲义 L1157",
+      "text": "cumulative.plot(ax=axes[0, 0], linewidth=1.5)"
+    },
+    {
+      "index": 1158,
+      "locator": "讲义 L1158",
+      "text": "axes[0, 0].set_title('各ETF累计收益走势', fontsize=14)"
+    },
+    {
+      "index": 1159,
+      "locator": "讲义 L1159",
+      "text": "axes[0, 0].set_ylabel('累计净值')"
+    },
+    {
+      "index": 1160,
+      "locator": "讲义 L1160",
+      "text": "axes[0, 0].legend(loc='upper left', fontsize=9)"
+    },
+    {
+      "index": 1161,
+      "locator": "讲义 L1161",
+      "text": "axes[0, 0].axhline(y=1, color='gray', linestyle='--', alpha=0.5)"
+    },
+    {
+      "index": 1162,
+      "locator": "讲义 L1162",
+      "text": ""
+    },
+    {
+      "index": 1163,
+      "locator": "讲义 L1163",
+      "text": "# (2) 相关系数热力图"
+    },
+    {
+      "index": 1164,
+      "locator": "讲义 L1164",
+      "text": "sns.heatmap(corr_pd, annot=True, fmt='.3f', cmap='RdBu_r', center=0,"
+    },
+    {
+      "index": 1165,
+      "locator": "讲义 L1165",
+      "text": "            square=True, ax=axes[0, 1], annot_kws={'size': 11})"
+    },
+    {
+      "index": 1166,
+      "locator": "讲义 L1166",
+      "text": "axes[0, 1].set_title('收益率相关系数矩阵', fontsize=14)"
+    },
+    {
+      "index": 1167,
+      "locator": "讲义 L1167",
+      "text": ""
+    },
+    {
+      "index": 1168,
+      "locator": "讲义 L1168",
+      "text": "# (3) 箱线图"
+    },
+    {
+      "index": 1169,
+      "locator": "讲义 L1169",
+      "text": "df_returns.boxplot(ax=axes[1, 0], grid=False)"
+    },
+    {
+      "index": 1170,
+      "locator": "讲义 L1170",
+      "text": "axes[1, 0].set_title('各ETF日收益率分布（箱线图）', fontsize=14)"
+    },
+    {
+      "index": 1171,
+      "locator": "讲义 L1171",
+      "text": "axes[1, 0].set_ylabel('日收益率')"
+    },
+    {
+      "index": 1172,
+      "locator": "讲义 L1172",
+      "text": "axes[1, 0].axhline(y=0, color='red', linestyle='--', alpha=0.5)"
+    },
+    {
+      "index": 1173,
+      "locator": "讲义 L1173",
+      "text": ""
+    },
+    {
+      "index": 1174,
+      "locator": "讲义 L1174",
+      "text": "# (4) 散点图：铜 vs 原油"
+    },
+    {
+      "index": 1175,
+      "locator": "讲义 L1175",
+      "text": "axes[1, 1].scatter(df_returns['铜ETF'], df_returns['原油ETF'],"
+    },
+    {
+      "index": 1176,
+      "locator": "讲义 L1176",
+      "text": "                   alpha=0.4, s=20, color='steelblue', edgecolors='none')"
+    },
+    {
+      "index": 1177,
+      "locator": "讲义 L1177",
+      "text": "z = np.polyfit(df_returns['铜ETF'], df_returns['原油ETF'], 1)"
+    },
+    {
+      "index": 1178,
+      "locator": "讲义 L1178",
+      "text": "p_line = np.poly1d(z)"
+    },
+    {
+      "index": 1179,
+      "locator": "讲义 L1179",
+      "text": "x_line = np.linspace(df_returns['铜ETF'].min(), df_returns['铜ETF'].max(), 100)"
+    },
+    {
+      "index": 1180,
+      "locator": "讲义 L1180",
+      "text": "axes[1, 1].plot(x_line, p_line(x_line), 'r--', linewidth=2)"
+    },
+    {
+      "index": 1181,
+      "locator": "讲义 L1181",
+      "text": "r_cu_oil = corr_pd.loc['铜ETF', '原油ETF']"
+    },
+    {
+      "index": 1182,
+      "locator": "讲义 L1182",
+      "text": "axes[1, 1].set_xlabel('铜ETF日收益率')"
+    },
+    {
+      "index": 1183,
+      "locator": "讲义 L1183",
+      "text": "axes[1, 1].set_ylabel('原油ETF日收益率')"
+    },
+    {
+      "index": 1184,
+      "locator": "讲义 L1184",
+      "text": "axes[1, 1].set_title(f'铜ETF vs 原油ETF (r={r_cu_oil:.3f})', fontsize=14)"
+    },
+    {
+      "index": 1185,
+      "locator": "讲义 L1185",
+      "text": ""
+    },
+    {
+      "index": 1186,
+      "locator": "讲义 L1186",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 1187,
+      "locator": "讲义 L1187",
+      "text": "plt.show()"
+    },
+    {
+      "index": 1188,
+      "locator": "讲义 L1188",
+      "text": ""
+    },
+    {
+      "index": 1189,
+      "locator": "讲义 L1189",
+      "text": "print(\"\\n✓ 环境验证完成！所有库正常工作。\")"
+    },
+    {
+      "index": 1190,
+      "locator": "讲义 L1190",
+      "text": "```"
+    },
+    {
+      "index": 1191,
+      "locator": "讲义 L1191",
+      "text": ""
+    },
+    {
+      "index": 1192,
+      "locator": "讲义 L1192",
+      "text": "*(此处平台应展示相应的 Python 运行结果和可视化统计图表)*"
+    },
+    {
+      "index": 1193,
+      "locator": "讲义 L1193",
+      "text": ""
+    },
+    {
+      "index": 1194,
+      "locator": "讲义 L1194",
+      "text": "#### 结果业务解读"
+    },
+    {
+      "index": 1195,
+      "locator": "讲义 L1195",
+      "text": ""
+    },
+    {
+      "index": 1196,
+      "locator": "讲义 L1196",
+      "text": "**解读1：年化指标与Sharpe比率**"
+    },
+    {
+      "index": 1197,
+      "locator": "讲义 L1197",
+      "text": ""
+    },
+    {
+      "index": 1198,
+      "locator": "讲义 L1198",
+      "text": "| ETF | 年化收益率 | 年化波动率 | Sharpe比率 |"
+    },
+    {
+      "index": 1199,
+      "locator": "讲义 L1199",
+      "text": "|-----|-----------|-----------|-----------|"
+    },
+    {
+      "index": 1200,
+      "locator": "讲义 L1200",
+      "text": "| 铜ETF | 7.56% | 28.57% | 0.265 |"
+    },
+    {
+      "index": 1201,
+      "locator": "讲义 L1201",
+      "text": "| 原油ETF | 5.04% | 34.92% | 0.144 |"
+    },
+    {
+      "index": 1202,
+      "locator": "讲义 L1202",
+      "text": "| 黄金ETF | 2.52% | 15.87% | 0.159 |"
+    },
+    {
+      "index": 1203,
+      "locator": "讲义 L1203",
+      "text": "| 白银ETF | 3.78% | 31.75% | 0.119 |"
+    },
+    {
+      "index": 1204,
+      "locator": "讲义 L1204",
+      "text": "| 农产品ETF | 2.52% | 19.05% | 0.132 |"
+    },
+    {
+      "index": 1205,
+      "locator": "讲义 L1205",
+      "text": ""
+    },
+    {
+      "index": 1206,
+      "locator": "讲义 L1206",
+      "text": "- **铜ETF**的Sharpe比率最高（0.265），说明在承担单位风险的情况下，铜的收益补偿最好"
+    },
+    {
+      "index": 1207,
+      "locator": "讲义 L1207",
+      "text": "- **原油ETF**波动率最高（34.92%），体现了原油市场的高不确定性"
+    },
+    {
+      "index": 1208,
+      "locator": "讲义 L1208",
+      "text": "- **黄金ETF**波动率最低（15.87%），印证了黄金作为避险资产的低波动特征"
+    },
+    {
+      "index": 1209,
+      "locator": "讲义 L1209",
+      "text": ""
+    },
+    {
+      "index": 1210,
+      "locator": "讲义 L1210",
+      "text": "**解读2：相关系数的业务含义**"
+    },
+    {
+      "index": 1211,
+      "locator": "讲义 L1211",
+      "text": ""
+    },
+    {
+      "index": 1212,
+      "locator": "讲义 L1212",
+      "text": "- **铜与原油**高度正相关（r≈0.65）：两者都是工业需求驱动的商品，经济扩张期同步上涨。对于商品组合投资，同时持有铜和原油的分散化效果有限。"
+    },
+    {
+      "index": 1213,
+      "locator": "讲义 L1213",
+      "text": "- **黄金与铜**负相关（r≈-0.25）：体现\"风险资产 vs 避险资产\"的跷跷板效应。在投资组合中加入黄金可以对冲工业金属的下行风险。"
+    },
+    {
+      "index": 1214,
+      "locator": "讲义 L1214",
+      "text": "- **黄金与白银**高度正相关（r≈0.70）：同属贵金属，受相同的货币政策和避险情绪驱动。"
+    },
+    {
+      "index": 1215,
+      "locator": "讲义 L1215",
+      "text": ""
+    },
+    {
+      "index": 1216,
+      "locator": "讲义 L1216",
+      "text": "**解读3：正态性检验的启示**"
+    },
+    {
+      "index": 1217,
+      "locator": "讲义 L1217",
+      "text": ""
+    },
+    {
+      "index": 1218,
+      "locator": "讲义 L1218",
+      "text": "Jarque-Bera检验结果显示多数ETF的收益率不服从正态分布。偏度不为0说明收益分布不对称，峰度大于0说明存在\"尖峰厚尾\"特征——极端事件（大涨大跌）发生的概率远高于正态分布的预测。"
+    },
+    {
+      "index": 1219,
+      "locator": "讲义 L1219",
+      "text": ""
+    },
+    {
+      "index": 1220,
+      "locator": "讲义 L1220",
+      "text": "**对后续分析的影响**：使用假设正态分布的方法（如t检验、方差分析）时需要谨慎。对于金融数据，可能需要使用稳健方法或非参数方法。"
+    },
+    {
+      "index": 1221,
+      "locator": "讲义 L1221",
+      "text": ""
+    },
+    {
+      "index": 1222,
+      "locator": "讲义 L1222",
+      "text": "---"
+    },
+    {
+      "index": 1223,
+      "locator": "讲义 L1223",
+      "text": ""
+    },
+    {
+      "index": 1224,
+      "locator": "讲义 L1224",
+      "text": "### 实战案例1-2：协方差矩阵的几何直觉——为理解PCA做准备"
+    },
+    {
+      "index": 1225,
+      "locator": "讲义 L1225",
+      "text": ""
+    },
+    {
+      "index": 1226,
+      "locator": "讲义 L1226",
+      "text": "**【业务场景】** 理解协方差矩阵的几何含义，是后续学习主成分分析（PCA）的核心基础。本案例通过可视化展示协方差矩阵如何决定数据的\"椭圆分布形状\"，以及特征值分解如何找到椭圆的主轴方向。"
+    },
+    {
+      "index": 1227,
+      "locator": "讲义 L1227",
+      "text": ""
+    },
+    {
+      "index": 1228,
+      "locator": "讲义 L1228",
+      "text": "```python"
+    },
+    {
+      "index": 1229,
+      "locator": "讲义 L1229",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 1230,
+      "locator": "讲义 L1230",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 1231,
+      "locator": "讲义 L1231",
+      "text": "from matplotlib.patches import Ellipse"
+    },
+    {
+      "index": 1232,
+      "locator": "讲义 L1232",
+      "text": ""
+    },
+    {
+      "index": 1233,
+      "locator": "讲义 L1233",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 1234,
+      "locator": "讲义 L1234",
+      "text": ""
+    },
+    {
+      "index": 1235,
+      "locator": "讲义 L1235",
+      "text": "# 定义三个不同的协方差矩阵"
+    },
+    {
+      "index": 1236,
+      "locator": "讲义 L1236",
+      "text": "cov_cases = {"
+    },
+    {
+      "index": 1237,
+      "locator": "讲义 L1237",
+      "text": "    '高正相关 (ρ=0.9)': np.array([[1.0, 0.9], [0.9, 1.0]]),"
+    },
+    {
+      "index": 1238,
+      "locator": "讲义 L1238",
+      "text": "    '弱负相关 (ρ=-0.6)': np.array([[1.0, -0.6], [-0.6, 1.0]]),"
+    },
+    {
+      "index": 1239,
+      "locator": "讲义 L1239",
+      "text": "    '不等方差 (σ₁=2, σ₂=0.5, ρ=0.5)': np.array([[4.0, 1.0], [1.0, 0.25]])"
+    },
+    {
+      "index": 1240,
+      "locator": "讲义 L1240",
+      "text": "}"
+    },
+    {
+      "index": 1241,
+      "locator": "讲义 L1241",
+      "text": ""
+    },
+    {
+      "index": 1242,
+      "locator": "讲义 L1242",
+      "text": "fig, axes = plt.subplots(1, 3, figsize=(18, 6))"
+    },
+    {
+      "index": 1243,
+      "locator": "讲义 L1243",
+      "text": ""
+    },
+    {
+      "index": 1244,
+      "locator": "讲义 L1244",
+      "text": "for idx, (title, cov) in enumerate(cov_cases.items()):"
+    },
+    {
+      "index": 1245,
+      "locator": "讲义 L1245",
+      "text": "    ax = axes[idx]"
+    },
+    {
+      "index": 1246,
+      "locator": "讲义 L1246",
+      "text": "    mean = np.array([0, 0])"
+    },
+    {
+      "index": 1247,
+      "locator": "讲义 L1247",
+      "text": "    data = np.random.multivariate_normal(mean, cov, 500)"
+    },
+    {
+      "index": 1248,
+      "locator": "讲义 L1248",
+      "text": "    "
+    },
+    {
+      "index": 1249,
+      "locator": "讲义 L1249",
+      "text": "    # 特征值分解"
+    },
+    {
+      "index": 1250,
+      "locator": "讲义 L1250",
+      "text": "    eigenvalues, eigenvectors = np.linalg.eig(cov)"
+    },
+    {
+      "index": 1251,
+      "locator": "讲义 L1251",
+      "text": "    "
+    },
+    {
+      "index": 1252,
+      "locator": "讲义 L1252",
+      "text": "    # 绘制数据点"
+    },
+    {
+      "index": 1253,
+      "locator": "讲义 L1253",
+      "text": "    ax.scatter(data[:, 0], data[:, 1], s=10, alpha=0.3, color='steelblue', edgecolors='none')"
+    },
+    {
+      "index": 1254,
+      "locator": "讲义 L1254",
+      "text": "    "
+    },
+    {
+      "index": 1255,
+      "locator": "讲义 L1255",
+      "text": "    # 绘制协方差椭圆（2σ）"
+    },
+    {
+      "index": 1256,
+      "locator": "讲义 L1256",
+      "text": "    for scale in [1, 2, 3]:"
+    },
+    {
+      "index": 1257,
+      "locator": "讲义 L1257",
+      "text": "        angle = np.degrees(np.arctan2(eigenvectors[1, 0], eigenvectors[0, 0]))"
+    },
+    {
+      "index": 1258,
+      "locator": "讲义 L1258",
+      "text": "        width = 2 * scale * np.sqrt(eigenvalues[0])"
+    },
+    {
+      "index": 1259,
+      "locator": "讲义 L1259",
+      "text": "        height = 2 * scale * np.sqrt(eigenvalues[1])"
+    },
+    {
+      "index": 1260,
+      "locator": "讲义 L1260",
+      "text": "        ellipse = Ellipse(xy=mean, width=width, height=height, angle=angle,"
+    },
+    {
+      "index": 1261,
+      "locator": "讲义 L1261",
+      "text": "                          fill=False, color='red', linewidth=2 if scale == 2 else 1,"
+    },
+    {
+      "index": 1262,
+      "locator": "讲义 L1262",
+      "text": "                          linestyle='-' if scale == 2 else '--', alpha=0.8 if scale == 2 else 0.4)"
+    },
+    {
+      "index": 1263,
+      "locator": "讲义 L1263",
+      "text": "        ax.add_patch(ellipse)"
+    },
+    {
+      "index": 1264,
+      "locator": "讲义 L1264",
+      "text": "    "
+    },
+    {
+      "index": 1265,
+      "locator": "讲义 L1265",
+      "text": "    # 绘制特征向量方向"
+    },
+    {
+      "index": 1266,
+      "locator": "讲义 L1266",
+      "text": "    for i in range(2):"
+    },
+    {
+      "index": 1267,
+      "locator": "讲义 L1267",
+      "text": "        vec = eigenvectors[:, i] * np.sqrt(eigenvalues[i]) * 2"
+    },
+    {
+      "index": 1268,
+      "locator": "讲义 L1268",
+      "text": "        ax.annotate('', xy=vec, xytext=mean,"
+    },
+    {
+      "index": 1269,
+      "locator": "讲义 L1269",
+      "text": "                    arrowprops=dict(arrowstyle='->', color='darkred', lw=2.5))"
+    },
+    {
+      "index": 1270,
+      "locator": "讲义 L1270",
+      "text": "        ax.text(vec[0]*1.15, vec[1]*1.15, f'λ={eigenvalues[i]:.2f}',"
+    },
+    {
+      "index": 1271,
+      "locator": "讲义 L1271",
+      "text": "                fontsize=10, color='darkred', fontweight='bold')"
+    },
+    {
+      "index": 1272,
+      "locator": "讲义 L1272",
+      "text": "    "
+    },
+    {
+      "index": 1273,
+      "locator": "讲义 L1273",
+      "text": "    ax.set_xlim(-6, 6)"
+    },
+    {
+      "index": 1274,
+      "locator": "讲义 L1274",
+      "text": "    ax.set_ylim(-6, 6)"
+    },
+    {
+      "index": 1275,
+      "locator": "讲义 L1275",
+      "text": "    ax.set_aspect('equal')"
+    },
+    {
+      "index": 1276,
+      "locator": "讲义 L1276",
+      "text": "    ax.set_title(title, fontsize=13)"
+    },
+    {
+      "index": 1277,
+      "locator": "讲义 L1277",
+      "text": "    ax.set_xlabel('变量X')"
+    },
+    {
+      "index": 1278,
+      "locator": "讲义 L1278",
+      "text": "    ax.set_ylabel('变量Y')"
+    },
+    {
+      "index": 1279,
+      "locator": "讲义 L1279",
+      "text": "    ax.axhline(y=0, color='gray', linestyle='-', alpha=0.3)"
+    },
+    {
+      "index": 1280,
+      "locator": "讲义 L1280",
+      "text": "    ax.axvline(x=0, color='gray', linestyle='-', alpha=0.3)"
+    },
+    {
+      "index": 1281,
+      "locator": "讲义 L1281",
+      "text": ""
+    },
+    {
+      "index": 1282,
+      "locator": "讲义 L1282",
+      "text": "plt.suptitle('协方差矩阵的几何含义：椭圆形状由协方差结构决定', fontsize=15, y=1.02)"
+    },
+    {
+      "index": 1283,
+      "locator": "讲义 L1283",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 1284,
+      "locator": "讲义 L1284",
+      "text": "plt.show()"
+    },
+    {
+      "index": 1285,
+      "locator": "讲义 L1285",
+      "text": ""
+    },
+    {
+      "index": 1286,
+      "locator": "讲义 L1286",
+      "text": "# 打印特征值和方差解释比例"
+    },
+    {
+      "index": 1287,
+      "locator": "讲义 L1287",
+      "text": "print(\"\\n=== 各情形的特征值分解 ===\")"
+    },
+    {
+      "index": 1288,
+      "locator": "讲义 L1288",
+      "text": "for title, cov in cov_cases.items():"
+    },
+    {
+      "index": 1289,
+      "locator": "讲义 L1289",
+      "text": "    eigenvalues, eigenvectors = np.linalg.eig(cov)"
+    },
+    {
+      "index": 1290,
+      "locator": "讲义 L1290",
+      "text": "    total_var = eigenvalues.sum()"
+    },
+    {
+      "index": 1291,
+      "locator": "讲义 L1291",
+      "text": "    print(f\"\\n{title}:\")"
+    },
+    {
+      "index": 1292,
+      "locator": "讲义 L1292",
+      "text": "    print(f\"  特征值: λ₁={eigenvalues[0]:.3f}, λ₂={eigenvalues[1]:.3f}\")"
+    },
+    {
+      "index": 1293,
+      "locator": "讲义 L1293",
+      "text": "    print(f\"  第一主成分解释方差比例: {eigenvalues[0]/total_var:.1%}\")"
+    },
+    {
+      "index": 1294,
+      "locator": "讲义 L1294",
+      "text": "    print(f\"  累计解释方差比例: {total_var/total_var:.1%}\")"
+    },
+    {
+      "index": 1295,
+      "locator": "讲义 L1295",
+      "text": "    print(f\"  主成分方向（特征向量）:\")"
+    },
+    {
+      "index": 1296,
+      "locator": "讲义 L1296",
+      "text": "    for i in range(2):"
+    },
+    {
+      "index": 1297,
+      "locator": "讲义 L1297",
+      "text": "        print(f\"    PC{i+1}: ({eigenvectors[0,i]:.3f}, {eigenvectors[1,i]:.3f})\")"
+    },
+    {
+      "index": 1298,
+      "locator": "讲义 L1298",
+      "text": "```"
+    },
+    {
+      "index": 1299,
+      "locator": "讲义 L1299",
+      "text": ""
+    },
+    {
+      "index": 1300,
+      "locator": "讲义 L1300",
+      "text": "*(此处平台应展示相应的 Python 运行结果和可视化统计图表)*"
+    },
+    {
+      "index": 1301,
+      "locator": "讲义 L1301",
+      "text": ""
+    },
+    {
+      "index": 1302,
+      "locator": "讲义 L1302",
+      "text": "#### 结果业务解读"
+    },
+    {
+      "index": 1303,
+      "locator": "讲义 L1303",
+      "text": ""
+    },
+    {
+      "index": 1304,
+      "locator": "讲义 L1304",
+      "text": "**解读1：椭圆形状与相关性的关系**"
+    },
+    {
+      "index": 1305,
+      "locator": "讲义 L1305",
+      "text": ""
+    },
+    {
+      "index": 1306,
+      "locator": "讲义 L1306",
+      "text": "- **高正相关（ρ=0.9）**：椭圆沿\"左下-右上\"方向极度拉伸，长轴方向即第一主成分方向。这意味着数据的主要变异发生在\"X和Y同增同减\"的方向上。"
+    },
+    {
+      "index": 1307,
+      "locator": "讲义 L1307",
+      "text": "- **弱负相关（ρ=-0.6）**：椭圆沿\"左上-右下\"方向拉伸。当X增大时，Y倾向于减小。"
+    },
+    {
+      "index": 1308,
+      "locator": "讲义 L1308",
+      "text": "- **不等方差**：当两个变量的方差差异很大时（σ₁=2, σ₂=0.5），椭圆的长轴更倾向于方差大的变量方向。"
+    },
+    {
+      "index": 1309,
+      "locator": "讲义 L1309",
+      "text": ""
+    },
+    {
+      "index": 1310,
+      "locator": "讲义 L1310",
+      "text": "**解读2：特征值与方差解释比例**"
+    },
+    {
+      "index": 1311,
+      "locator": "讲义 L1311",
+      "text": ""
+    },
+    {
+      "index": 1312,
+      "locator": "讲义 L1312",
+      "text": "在\"高正相关\"情形下，第一主成分的特征值远大于第二主成分（如λ₁=1.9, λ₂=0.1），说明第一主成分解释了95%的总方差。这意味着：**只需要一个综合指标就可以捕获数据的绝大部分信息**，降维效果非常好。"
+    },
+    {
+      "index": 1313,
+      "locator": "讲义 L1313",
+      "text": ""
+    },
+    {
+      "index": 1314,
+      "locator": "讲义 L1314",
+      "text": "在\"不等方差\"情形下，第一主成分解释的方差比例也很高，因为两个变量的方差本身就差异很大。"
+    },
+    {
+      "index": 1315,
+      "locator": "讲义 L1315",
+      "text": ""
+    },
+    {
+      "index": 1316,
+      "locator": "讲义 L1316",
+      "text": "**解读3：核心直觉——主成分方向就是椭圆的主轴方向**"
+    },
+    {
+      "index": 1317,
+      "locator": "讲义 L1317",
+      "text": ""
+    },
+    {
+      "index": 1318,
+      "locator": "讲义 L1318",
+      "text": "协方差矩阵的特征向量决定了椭圆的**方向**（主轴朝向），特征值决定了椭圆的**形状**（长轴和短轴的长度）。这就是主成分分析的几何本质：**找到数据分布椭圆的主轴方向，沿这些方向投影数据**。"
+    },
+    {
+      "index": 1319,
+      "locator": "讲义 L1319",
+      "text": ""
+    },
+    {
+      "index": 1320,
+      "locator": "讲义 L1320",
+      "text": "---"
+    },
+    {
+      "index": 1321,
+      "locator": "讲义 L1321",
+      "text": ""
+    },
+    {
+      "index": 1322,
+      "locator": "讲义 L1322",
+      "text": "### 实战案例1-3：多行业应用场景模拟"
+    },
+    {
+      "index": 1323,
+      "locator": "讲义 L1323",
+      "text": ""
+    },
+    {
+      "index": 1324,
+      "locator": "讲义 L1324",
+      "text": "**【业务场景】** 通过模拟不同行业的数据，展示多元统计方法的实际应用效果。"
+    },
+    {
+      "index": 1325,
+      "locator": "讲义 L1325",
+      "text": ""
+    },
+    {
+      "index": 1326,
+      "locator": "讲义 L1326",
+      "text": "```python"
+    },
+    {
+      "index": 1327,
+      "locator": "讲义 L1327",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 1328,
+      "locator": "讲义 L1328",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 1329,
+      "locator": "讲义 L1329",
+      "text": "from sklearn.decomposition import PCA"
+    },
+    {
+      "index": 1330,
+      "locator": "讲义 L1330",
+      "text": "from sklearn.cluster import KMeans"
+    },
+    {
+      "index": 1331,
+      "locator": "讲义 L1331",
+      "text": "from sklearn.preprocessing import StandardScaler"
+    },
+    {
+      "index": 1332,
+      "locator": "讲义 L1332",
+      "text": "from sklearn.discriminant_analysis import LinearDiscriminantAnalysis"
+    },
+    {
+      "index": 1333,
+      "locator": "讲义 L1333",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 1334,
+      "locator": "讲义 L1334",
+      "text": "import seaborn as sns"
+    },
+    {
+      "index": 1335,
+      "locator": "讲义 L1335",
+      "text": ""
+    },
+    {
+      "index": 1336,
+      "locator": "讲义 L1336",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 1337,
+      "locator": "讲义 L1337",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 1338,
+      "locator": "讲义 L1338",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 1339,
+      "locator": "讲义 L1339",
+      "text": ""
+    },
+    {
+      "index": 1340,
+      "locator": "讲义 L1340",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1341,
+      "locator": "讲义 L1341",
+      "text": "# 场景1：金融——大宗商品ETF的主成分分析"
+    },
+    {
+      "index": 1342,
+      "locator": "讲义 L1342",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1343,
+      "locator": "讲义 L1343",
+      "text": "print(\"=\" * 60)"
+    },
+    {
+      "index": 1344,
+      "locator": "讲义 L1344",
+      "text": "print(\"场景1：大宗商品ETF的主成分分析\")"
+    },
+    {
+      "index": 1345,
+      "locator": "讲义 L1345",
+      "text": "print(\"=\" * 60)"
+    },
+    {
+      "index": 1346,
+      "locator": "讲义 L1346",
+      "text": ""
+    },
+    {
+      "index": 1347,
+      "locator": "讲义 L1347",
+      "text": "# 模拟6只商品ETF的收益率（前文已生成，这里复用）"
+    },
+    {
+      "index": 1348,
+      "locator": "讲义 L1348",
+      "text": "etf_names = ['铜ETF', '原油ETF', '黄金ETF', '白银ETF', '农产品ETF', '天然气ETF']"
+    },
+    {
+      "index": 1349,
+      "locator": "讲义 L1349",
+      "text": "n = 250"
+    },
+    {
+      "index": 1350,
+      "locator": "讲义 L1350",
+      "text": "F1 = np.random.randn(n)  # 工业因子"
+    },
+    {
+      "index": 1351,
+      "locator": "讲义 L1351",
+      "text": "F2 = np.random.randn(n)  # 避险因子"
+    },
+    {
+      "index": 1352,
+      "locator": "讲义 L1352",
+      "text": "F3 = np.random.randn(n)  # 能源因子"
+    },
+    {
+      "index": 1353,
+      "locator": "讲义 L1353",
+      "text": ""
+    },
+    {
+      "index": 1354,
+      "locator": "讲义 L1354",
+      "text": "returns = np.column_stack(["
+    },
+    {
+      "index": 1355,
+      "locator": "讲义 L1355",
+      "text": "    0.7*F1 + 0.2*F2 + 0.3*F3 + np.random.randn(n)*0.3,  # 铜"
+    },
+    {
+      "index": 1356,
+      "locator": "讲义 L1356",
+      "text": "    0.6*F1 + 0.1*F2 + 0.5*F3 + np.random.randn(n)*0.3,  # 原油"
+    },
+    {
+      "index": 1357,
+      "locator": "讲义 L1357",
+      "text": "    -0.3*F1 + 0.8*F2 + 0.1*F3 + np.random.randn(n)*0.2, # 黄金"
+    },
+    {
+      "index": 1358,
+      "locator": "讲义 L1358",
+      "text": "    -0.1*F1 + 0.6*F2 + 0.2*F3 + np.random.randn(n)*0.3, # 白银"
+    },
+    {
+      "index": 1359,
+      "locator": "讲义 L1359",
+      "text": "    0.3*F1 + 0.1*F2 + 0.2*F3 + np.random.randn(n)*0.3,  # 农产品"
+    },
+    {
+      "index": 1360,
+      "locator": "讲义 L1360",
+      "text": "    0.2*F1 + 0.0*F2 + 0.8*F3 + np.random.randn(n)*0.3,  # 天然气"
+    },
+    {
+      "index": 1361,
+      "locator": "讲义 L1361",
+      "text": "])"
+    },
+    {
+      "index": 1362,
+      "locator": "讲义 L1362",
+      "text": ""
+    },
+    {
+      "index": 1363,
+      "locator": "讲义 L1363",
+      "text": "df_etf = pd.DataFrame(returns, columns=etf_names)"
+    },
+    {
+      "index": 1364,
+      "locator": "讲义 L1364",
+      "text": ""
+    },
+    {
+      "index": 1365,
+      "locator": "讲义 L1365",
+      "text": "# PCA"
+    },
+    {
+      "index": 1366,
+      "locator": "讲义 L1366",
+      "text": "X_std = StandardScaler().fit_transform(returns)"
+    },
+    {
+      "index": 1367,
+      "locator": "讲义 L1367",
+      "text": "pca = PCA()"
+    },
+    {
+      "index": 1368,
+      "locator": "讲义 L1368",
+      "text": "scores = pca.fit_transform(X_std)"
+    },
+    {
+      "index": 1369,
+      "locator": "讲义 L1369",
+      "text": ""
+    },
+    {
+      "index": 1370,
+      "locator": "讲义 L1370",
+      "text": "print(f\"各主成分方差贡献率: {pca.explained_variance_ratio_.round(3)}\")"
+    },
+    {
+      "index": 1371,
+      "locator": "讲义 L1371",
+      "text": "print(f\"累计方差贡献率: {np.cumsum(pca.explained_variance_ratio_).round(3)}\")"
+    },
+    {
+      "index": 1372,
+      "locator": "讲义 L1372",
+      "text": ""
+    },
+    {
+      "index": 1373,
+      "locator": "讲义 L1373",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1374,
+      "locator": "讲义 L1374",
+      "text": "# 场景2：医疗——患者分型的聚类分析"
+    },
+    {
+      "index": 1375,
+      "locator": "讲义 L1375",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1376,
+      "locator": "讲义 L1376",
+      "text": "print(\"\\n\" + \"=\" * 60)"
+    },
+    {
+      "index": 1377,
+      "locator": "讲义 L1377",
+      "text": "print(\"场景2：患者分型的聚类分析\")"
+    },
+    {
+      "index": 1378,
+      "locator": "讲义 L1378",
+      "text": "print(\"=\" * 60)"
+    },
+    {
+      "index": 1379,
+      "locator": "讲义 L1379",
+      "text": ""
+    },
+    {
+      "index": 1380,
+      "locator": "讲义 L1380",
+      "text": "# 模拟100名患者的6项检测指标"
+    },
+    {
+      "index": 1381,
+      "locator": "讲义 L1381",
+      "text": "n_patients = 100"
+    },
+    {
+      "index": 1382,
+      "locator": "讲义 L1382",
+      "text": "# 3类患者：健康、轻症、重症"
+    },
+    {
+      "index": 1383,
+      "locator": "讲义 L1383",
+      "text": "healthy = np.random.multivariate_normal([5.0, 4.5, 140, 200, 80, 0.8], "
+    },
+    {
+      "index": 1384,
+      "locator": "讲义 L1384",
+      "text": "                                         np.diag([0.5, 0.3, 10, 20, 5, 0.1]), 40)"
+    },
+    {
+      "index": 1385,
+      "locator": "讲义 L1385",
+      "text": "mild = np.random.multivariate_normal([6.5, 5.5, 160, 240, 95, 1.2],"
+    },
+    {
+      "index": 1386,
+      "locator": "讲义 L1386",
+      "text": "                                      np.diag([0.8, 0.5, 15, 25, 8, 0.2]), 35)"
+    },
+    {
+      "index": 1387,
+      "locator": "讲义 L1387",
+      "text": "severe = np.random.multivariate_normal([8.0, 7.0, 180, 300, 110, 1.8],"
+    },
+    {
+      "index": 1388,
+      "locator": "讲义 L1388",
+      "text": "                                        np.diag([1.0, 0.8, 20, 30, 10, 0.3]), 25)"
+    },
+    {
+      "index": 1389,
+      "locator": "讲义 L1389",
+      "text": ""
+    },
+    {
+      "index": 1390,
+      "locator": "讲义 L1390",
+      "text": "X_patient = np.vstack([healthy, mild, severe])"
+    },
+    {
+      "index": 1391,
+      "locator": "讲义 L1391",
+      "text": "patient_labels = np.array([0]*40 + [1]*35 + [2]*25)  # 真实标签"
+    },
+    {
+      "index": 1392,
+      "locator": "讲义 L1392",
+      "text": "feature_names = ['血糖', '糖化血红蛋白', '收缩压', '总胆固醇', '心率', '肌酐']"
+    },
+    {
+      "index": 1393,
+      "locator": "讲义 L1393",
+      "text": ""
+    },
+    {
+      "index": 1394,
+      "locator": "讲义 L1394",
+      "text": "df_patient = pd.DataFrame(X_patient, columns=feature_names)"
+    },
+    {
+      "index": 1395,
+      "locator": "讲义 L1395",
+      "text": ""
+    },
+    {
+      "index": 1396,
+      "locator": "讲义 L1396",
+      "text": "# K-Means聚类"
+    },
+    {
+      "index": 1397,
+      "locator": "讲义 L1397",
+      "text": "X_patient_std = StandardScaler().fit_transform(X_patient)"
+    },
+    {
+      "index": 1398,
+      "locator": "讲义 L1398",
+      "text": "km = KMeans(n_clusters=3, n_init=10, random_state=42)"
+    },
+    {
+      "index": 1399,
+      "locator": "讲义 L1399",
+      "text": "cluster_labels = km.fit_predict(X_patient_std)"
+    },
+    {
+      "index": 1400,
+      "locator": "讲义 L1400",
+      "text": ""
+    },
+    {
+      "index": 1401,
+      "locator": "讲义 L1401",
+      "text": "# 计算聚类准确率（因为标签可能不对应，需要调整）"
+    },
+    {
+      "index": 1402,
+      "locator": "讲义 L1402",
+      "text": "from scipy.optimize import linear_sum_assignment"
+    },
+    {
+      "index": 1403,
+      "locator": "讲义 L1403",
+      "text": "from sklearn.metrics import confusion_matrix"
+    },
+    {
+      "index": 1404,
+      "locator": "讲义 L1404",
+      "text": ""
+    },
+    {
+      "index": 1405,
+      "locator": "讲义 L1405",
+      "text": "cm = confusion_matrix(patient_labels, cluster_labels)"
+    },
+    {
+      "index": 1406,
+      "locator": "讲义 L1406",
+      "text": "row_ind, col_ind = linear_sum_assignment(-cm)"
+    },
+    {
+      "index": 1407,
+      "locator": "讲义 L1407",
+      "text": "accuracy = cm[row_ind, col_ind].sum() / n_patients"
+    },
+    {
+      "index": 1408,
+      "locator": "讲义 L1408",
+      "text": "print(f\"聚类准确率: {accuracy:.1%}\")"
+    },
+    {
+      "index": 1409,
+      "locator": "讲义 L1409",
+      "text": ""
+    },
+    {
+      "index": 1410,
+      "locator": "讲义 L1410",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1411,
+      "locator": "讲义 L1411",
+      "text": "# 场景3：营销——客户细分的判别分析"
+    },
+    {
+      "index": 1412,
+      "locator": "讲义 L1412",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1413,
+      "locator": "讲义 L1413",
+      "text": "print(\"\\n\" + \"=\" * 60)"
+    },
+    {
+      "index": 1414,
+      "locator": "讲义 L1414",
+      "text": "print(\"场景3：客户细分的判别分析\")"
+    },
+    {
+      "index": 1415,
+      "locator": "讲义 L1415",
+      "text": "print(\"=\" * 60)"
+    },
+    {
+      "index": 1416,
+      "locator": "讲义 L1416",
+      "text": ""
+    },
+    {
+      "index": 1417,
+      "locator": "讲义 L1417",
+      "text": "# 模拟200名客户的消费行为数据"
+    },
+    {
+      "index": 1418,
+      "locator": "讲义 L1418",
+      "text": "n_customers = 200"
+    },
+    {
+      "index": 1419,
+      "locator": "讲义 L1419",
+      "text": "# 3类客户：高价值、中价值、低价值"
+    },
+    {
+      "index": 1420,
+      "locator": "讲义 L1420",
+      "text": "high_val = np.random.multivariate_normal([5000, 15, 0.8, 500],"
+    },
+    {
+      "index": 1421,
+      "locator": "讲义 L1421",
+      "text": "                                          [[500000, 100, 5, 50000],"
+    },
+    {
+      "index": 1422,
+      "locator": "讲义 L1422",
+      "text": "                                           [100, 20, 0.5, 100],"
+    },
+    {
+      "index": 1423,
+      "locator": "讲义 L1423",
+      "text": "                                           [5, 0.5, 0.05, 5],"
+    },
+    {
+      "index": 1424,
+      "locator": "讲义 L1424",
+      "text": "                                           [50000, 100, 5, 100000]], 50)"
+    },
+    {
+      "index": 1425,
+      "locator": "讲义 L1425",
+      "text": "mid_val = np.random.multivariate_normal([2000, 8, 0.5, 200],"
+    },
+    {
+      "index": 1426,
+      "locator": "讲义 L1426",
+      "text": "                                         [[200000, 50, 3, 20000],"
+    },
+    {
+      "index": 1427,
+      "locator": "讲义 L1427",
+      "text": "                                          [50, 10, 0.3, 50],"
+    },
+    {
+      "index": 1428,
+      "locator": "讲义 L1428",
+      "text": "                                          [3, 0.3, 0.03, 3],"
+    },
+    {
+      "index": 1429,
+      "locator": "讲义 L1429",
+      "text": "                                          [20000, 50, 3, 50000]], 80)"
+    },
+    {
+      "index": 1430,
+      "locator": "讲义 L1430",
+      "text": "low_val = np.random.multivariate_normal([500, 3, 0.2, 50],"
+    },
+    {
+      "index": 1431,
+      "locator": "讲义 L1431",
+      "text": "                                         [[50000, 20, 1, 5000],"
+    },
+    {
+      "index": 1432,
+      "locator": "讲义 L1432",
+      "text": "                                          [20, 5, 0.1, 20],"
+    },
+    {
+      "index": 1433,
+      "locator": "讲义 L1433",
+      "text": "                                          [1, 0.1, 0.01, 1],"
+    },
+    {
+      "index": 1434,
+      "locator": "讲义 L1434",
+      "text": "                                          [5000, 20, 1, 10000]], 70)"
+    },
+    {
+      "index": 1435,
+      "locator": "讲义 L1435",
+      "text": ""
+    },
+    {
+      "index": 1436,
+      "locator": "讲义 L1436",
+      "text": "X_cust = np.vstack([high_val, mid_val, low_val])"
+    },
+    {
+      "index": 1437,
+      "locator": "讲义 L1437",
+      "text": "y_cust = np.array([0]*50 + [1]*80 + [2]*70)"
+    },
+    {
+      "index": 1438,
+      "locator": "讲义 L1438",
+      "text": "cust_features = ['月消费额', '月购买次数', '复购率', '客单价']"
+    },
+    {
+      "index": 1439,
+      "locator": "讲义 L1439",
+      "text": ""
+    },
+    {
+      "index": 1440,
+      "locator": "讲义 L1440",
+      "text": "# Fisher判别分析"
+    },
+    {
+      "index": 1441,
+      "locator": "讲义 L1441",
+      "text": "lda = LinearDiscriminantAnalysis()"
+    },
+    {
+      "index": 1442,
+      "locator": "讲义 L1442",
+      "text": "X_cust_std = StandardScaler().fit_transform(X_cust)"
+    },
+    {
+      "index": 1443,
+      "locator": "讲义 L1443",
+      "text": "lda.fit(X_cust_std, y_cust)"
+    },
+    {
+      "index": 1444,
+      "locator": "讲义 L1444",
+      "text": "train_accuracy = lda.score(X_cust_std, y_cust)"
+    },
+    {
+      "index": 1445,
+      "locator": "讲义 L1445",
+      "text": "print(f\"判别分析训练集准确率: {train_accuracy:.1%}\")"
+    },
+    {
+      "index": 1446,
+      "locator": "讲义 L1446",
+      "text": ""
+    },
+    {
+      "index": 1447,
+      "locator": "讲义 L1447",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1448,
+      "locator": "讲义 L1448",
+      "text": "# 可视化：三个场景的综合展示"
+    },
+    {
+      "index": 1449,
+      "locator": "讲义 L1449",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1450,
+      "locator": "讲义 L1450",
+      "text": "fig, axes = plt.subplots(1, 3, figsize=(18, 5))"
+    },
+    {
+      "index": 1451,
+      "locator": "讲义 L1451",
+      "text": ""
+    },
+    {
+      "index": 1452,
+      "locator": "讲义 L1452",
+      "text": "# 场景1：PCA碎石图"
+    },
+    {
+      "index": 1453,
+      "locator": "讲义 L1453",
+      "text": "axes[0].bar(range(1, len(pca.explained_variance_ratio_)+1), "
+    },
+    {
+      "index": 1454,
+      "locator": "讲义 L1454",
+      "text": "            pca.explained_variance_ratio_, color='steelblue', alpha=0.8, label='各主成分')"
+    },
+    {
+      "index": 1455,
+      "locator": "讲义 L1455",
+      "text": "axes[0].plot(range(1, len(pca.explained_variance_ratio_)+1),"
+    },
+    {
+      "index": 1456,
+      "locator": "讲义 L1456",
+      "text": "             np.cumsum(pca.explained_variance_ratio_), 'ro-', linewidth=2, label='累计')"
+    },
+    {
+      "index": 1457,
+      "locator": "讲义 L1457",
+      "text": "axes[0].axhline(y=0.8, color='gray', linestyle='--', alpha=0.5, label='80%阈值')"
+    },
+    {
+      "index": 1458,
+      "locator": "讲义 L1458",
+      "text": "axes[0].set_xlabel('主成分序号')"
+    },
+    {
+      "index": 1459,
+      "locator": "讲义 L1459",
+      "text": "axes[0].set_ylabel('方差贡献率')"
+    },
+    {
+      "index": 1460,
+      "locator": "讲义 L1460",
+      "text": "axes[0].set_title('场景1：商品ETF主成分分析\\n（碎石图）', fontsize=13)"
+    },
+    {
+      "index": 1461,
+      "locator": "讲义 L1461",
+      "text": "axes[0].legend(fontsize=9)"
+    },
+    {
+      "index": 1462,
+      "locator": "讲义 L1462",
+      "text": ""
+    },
+    {
+      "index": 1463,
+      "locator": "讲义 L1463",
+      "text": "# 场景2：聚类结果（前两个主成分）"
+    },
+    {
+      "index": 1464,
+      "locator": "讲义 L1464",
+      "text": "pca2 = PCA(n_components=2)"
+    },
+    {
+      "index": 1465,
+      "locator": "讲义 L1465",
+      "text": "X_patient_2d = pca2.fit_transform(X_patient_std)"
+    },
+    {
+      "index": 1466,
+      "locator": "讲义 L1466",
+      "text": "colors_cluster = ['#2C3E50', '#E74C3C', '#3498DB']"
+    },
+    {
+      "index": 1467,
+      "locator": "讲义 L1467",
+      "text": "for k in range(3):"
+    },
+    {
+      "index": 1468,
+      "locator": "讲义 L1468",
+      "text": "    mask = cluster_labels == k"
+    },
+    {
+      "index": 1469,
+      "locator": "讲义 L1469",
+      "text": "    axes[1].scatter(X_patient_2d[mask, 0], X_patient_2d[mask, 1], "
+    },
+    {
+      "index": 1470,
+      "locator": "讲义 L1470",
+      "text": "                    c=colors_cluster[k], s=40, alpha=0.7, label=f'聚类{k}', edgecolors='white', linewidth=0.5)"
+    },
+    {
+      "index": 1471,
+      "locator": "讲义 L1471",
+      "text": "axes[1].set_xlabel('PC1')"
+    },
+    {
+      "index": 1472,
+      "locator": "讲义 L1472",
+      "text": "axes[1].set_ylabel('PC2')"
+    },
+    {
+      "index": 1473,
+      "locator": "讲义 L1473",
+      "text": "axes[1].set_title(f'场景2：患者分型聚类\\n（准确率={accuracy:.1%}）', fontsize=13)"
+    },
+    {
+      "index": 1474,
+      "locator": "讲义 L1474",
+      "text": "axes[1].legend()"
+    },
+    {
+      "index": 1475,
+      "locator": "讲义 L1475",
+      "text": ""
+    },
+    {
+      "index": 1476,
+      "locator": "讲义 L1476",
+      "text": "# 场景3：判别分析得分分布"
+    },
+    {
+      "index": 1477,
+      "locator": "讲义 L1477",
+      "text": "X_lda = lda.transform(X_cust_std)"
+    },
+    {
+      "index": 1478,
+      "locator": "讲义 L1478",
+      "text": "for label, name, color in [(0, '高价值', '#2C3E50'), (1, '中价值', '#E67E22'), (2, '低价值', '#95A5A6')]:"
+    },
+    {
+      "index": 1479,
+      "locator": "讲义 L1479",
+      "text": "    mask = y_cust == label"
+    },
+    {
+      "index": 1480,
+      "locator": "讲义 L1480",
+      "text": "    axes[2].hist(X_lda[mask, 0], bins=15, alpha=0.6, color=color, label=name)"
+    },
+    {
+      "index": 1481,
+      "locator": "讲义 L1481",
+      "text": "axes[2].set_xlabel('第一判别函数得分')"
+    },
+    {
+      "index": 1482,
+      "locator": "讲义 L1482",
+      "text": "axes[2].set_ylabel('频数')"
+    },
+    {
+      "index": 1483,
+      "locator": "讲义 L1483",
+      "text": "axes[2].set_title(f'场景3：客户判别分析\\n（准确率={train_accuracy:.1%}）', fontsize=13)"
+    },
+    {
+      "index": 1484,
+      "locator": "讲义 L1484",
+      "text": "axes[2].legend()"
+    },
+    {
+      "index": 1485,
+      "locator": "讲义 L1485",
+      "text": ""
+    },
+    {
+      "index": 1486,
+      "locator": "讲义 L1486",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 1487,
+      "locator": "讲义 L1487",
+      "text": "plt.show()"
+    },
+    {
+      "index": 1488,
+      "locator": "讲义 L1488",
+      "text": "```"
+    },
+    {
+      "index": 1489,
+      "locator": "讲义 L1489",
+      "text": ""
+    },
+    {
+      "index": 1490,
+      "locator": "讲义 L1490",
+      "text": "*(此处平台应展示相应的 Python 运行结果和可视化统计图表)*"
+    },
+    {
+      "index": 1491,
+      "locator": "讲义 L1491",
+      "text": ""
+    },
+    {
+      "index": 1492,
+      "locator": "讲义 L1492",
+      "text": "#### 结果业务解读"
+    },
+    {
+      "index": 1493,
+      "locator": "讲义 L1493",
+      "text": ""
+    },
+    {
+      "index": 1494,
+      "locator": "讲义 L1494",
+      "text": "**场景1解读：商品ETF的主成分分析**"
+    },
+    {
+      "index": 1495,
+      "locator": "讲义 L1495",
+      "text": ""
+    },
+    {
+      "index": 1496,
+      "locator": "讲义 L1496",
+      "text": "从碎石图可以看到，前2-3个主成分就能解释商品ETF收益波动的大部分方差（通常>70%）。这意味着6只看似独立的ETF，其价格变动主要受2-3个共同因子驱动："
+    },
+    {
+      "index": 1497,
+      "locator": "讲义 L1497",
+      "text": "- **第一主成分**可能对应\"全球经济因子\"（所有商品同涨同跌）"
+    },
+    {
+      "index": 1498,
+      "locator": "讲义 L1498",
+      "text": "- **第二主成分**可能对应\"避险/风险偏好因子\"（贵金属与工业商品走势分化）"
+    },
+    {
+      "index": 1499,
+      "locator": "讲义 L1499",
+      "text": ""
+    },
+    {
+      "index": 1500,
+      "locator": "讲义 L1500",
+      "text": "**投资启示**：如果投资者想构建分散化的商品组合，不需要同时持有6只ETF——因为它们的价格变动高度相关。选择在不同主成分上载荷差异大的ETF组合，才能真正实现分散化。"
+    },
+    {
+      "index": 1501,
+      "locator": "讲义 L1501",
+      "text": ""
+    },
+    {
+      "index": 1502,
+      "locator": "讲义 L1502",
+      "text": "**场景2解读：患者分型的聚类分析**"
+    },
+    {
+      "index": 1503,
+      "locator": "讲义 L1503",
+      "text": ""
+    },
+    {
+      "index": 1504,
+      "locator": "讲义 L1504",
+      "text": "K-Means聚类在没有标签的情况下，仅凭6项检测指标就能将患者分为3个群组，且与真实分型高度一致（准确率通常>80%）。这说明："
+    },
+    {
+      "index": 1505,
+      "locator": "讲义 L1505",
+      "text": "- 不同类型的患者在多维检测指标空间中确实存在可区分的\"聚类结构\""
+    },
+    {
+      "index": 1506,
+      "locator": "讲义 L1506",
+      "text": "- 聚类分析可以辅助医生发现潜在的疾病亚型"
+    },
+    {
+      "index": 1507,
+      "locator": "讲义 L1507",
+      "text": ""
+    },
+    {
+      "index": 1508,
+      "locator": "讲义 L1508",
+      "text": "**场景3解读：客户判别分析**"
+    },
+    {
+      "index": 1509,
+      "locator": "讲义 L1509",
+      "text": ""
+    },
+    {
+      "index": 1510,
+      "locator": "讲义 L1510",
+      "text": "Fisher判别分析能够将4维消费行为数据投影到1维判别空间上，实现客户分类。从直方图可以看到，三类客户在判别得分上的分布存在明显分离，判别准确率通常>90%。"
+    },
+    {
+      "index": 1511,
+      "locator": "讲义 L1511",
+      "text": ""
+    },
+    {
+      "index": 1512,
+      "locator": "讲义 L1512",
+      "text": "**营销启示**：基于判别规则，电商平台可以自动对新注册用户进行分类，并推送差异化的营销内容（如高价值客户推送VIP服务，低价值客户推送优惠券激活）。"
+    },
+    {
+      "index": 1513,
+      "locator": "讲义 L1513",
+      "text": ""
+    },
+    {
+      "index": 1514,
+      "locator": "讲义 L1514",
+      "text": "---"
+    },
+    {
+      "index": 1515,
+      "locator": "讲义 L1515",
+      "text": ""
+    },
+    {
+      "index": 1516,
+      "locator": "讲义 L1516",
+      "text": "**本章内容是否需要修改？若无需修改，请回复\"继续\"以生成下一章。**"
+    }
+  ]
+}

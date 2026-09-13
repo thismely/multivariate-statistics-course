@@ -1,0 +1,103 @@
+{
+  "resource": {
+    "id": "mvsData",
+    "title": "mvsData",
+    "kind": "dataset",
+    "source_path": "课程数据/mvsData.xlsx",
+    "sha256": "f1b01b5bfe2078b8e53fd2ef2f84e832b60b73adc6949430e92cfd9689f033a3",
+    "status": "SHEET_NAMES_VERIFIED",
+    "href": "resources/mvsData.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "工作表 d21",
+      "text": "d21"
+    },
+    {
+      "index": 2,
+      "locator": "工作表 d31",
+      "text": "d31"
+    },
+    {
+      "index": 3,
+      "locator": "工作表 d51",
+      "text": "d51"
+    },
+    {
+      "index": 4,
+      "locator": "工作表 d71",
+      "text": "d71"
+    },
+    {
+      "index": 5,
+      "locator": "工作表 d81",
+      "text": "d81"
+    },
+    {
+      "index": 6,
+      "locator": "工作表 d82",
+      "text": "d82"
+    },
+    {
+      "index": 7,
+      "locator": "工作表 d93",
+      "text": "d93"
+    },
+    {
+      "index": 8,
+      "locator": "工作表 d94",
+      "text": "d94"
+    },
+    {
+      "index": 9,
+      "locator": "工作表 d101",
+      "text": "d101"
+    },
+    {
+      "index": 10,
+      "locator": "工作表 d102",
+      "text": "d102"
+    },
+    {
+      "index": 11,
+      "locator": "工作表 d111",
+      "text": "d111"
+    },
+    {
+      "index": 12,
+      "locator": "工作表 d112",
+      "text": "d112"
+    },
+    {
+      "index": 13,
+      "locator": "工作表 d113",
+      "text": "d113"
+    },
+    {
+      "index": 14,
+      "locator": "工作表 d114",
+      "text": "d114"
+    },
+    {
+      "index": 15,
+      "locator": "工作表 d115",
+      "text": "d115"
+    },
+    {
+      "index": 16,
+      "locator": "工作表 d116",
+      "text": "d116"
+    },
+    {
+      "index": 17,
+      "locator": "工作表 d121",
+      "text": "d121"
+    },
+    {
+      "index": 18,
+      "locator": "工作表 d123",
+      "text": "d123"
+    }
+  ]
+}

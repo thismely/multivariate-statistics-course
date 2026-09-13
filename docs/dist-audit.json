@@ -1,0 +1,811 @@
+{
+  "status": "PASS",
+  "resourceFiles": 134,
+  "scope": "Built-file and relative URL validation; browser interaction is separately verified.",
+  "files": [
+    {
+      "id": "notes-CH01",
+      "field": "path",
+      "path": "course/notes/ch01.md",
+      "bytes": 69532
+    },
+    {
+      "id": "slides-CH01",
+      "field": "path",
+      "path": "course/slides/ch01.pptx",
+      "bytes": 2629381
+    },
+    {
+      "id": "slides-CH01",
+      "field": "preview",
+      "path": "course/slides/ch01.html",
+      "bytes": 4200
+    },
+    {
+      "id": "original-nb-CH01",
+      "field": "path",
+      "path": "course/notebooks/original-ch01.ipynb",
+      "bytes": 4545
+    },
+    {
+      "id": "original-nb-CH01",
+      "field": "preview",
+      "path": "course/notebooks/original-ch01.html",
+      "bytes": 3770
+    },
+    {
+      "id": "exercise-CH01",
+      "field": "path",
+      "path": "course/exercises/ch01.md",
+      "bytes": 674
+    },
+    {
+      "id": "notes-CH02",
+      "field": "path",
+      "path": "course/notes/ch02.md",
+      "bytes": 33161
+    },
+    {
+      "id": "slides-CH02",
+      "field": "path",
+      "path": "course/slides/ch02.pptx",
+      "bytes": 10717654
+    },
+    {
+      "id": "slides-CH02",
+      "field": "preview",
+      "path": "course/slides/ch02.html",
+      "bytes": 8439
+    },
+    {
+      "id": "original-nb-CH02",
+      "field": "path",
+      "path": "course/notebooks/original-ch02.ipynb",
+      "bytes": 36998
+    },
+    {
+      "id": "original-nb-CH02",
+      "field": "preview",
+      "path": "course/notebooks/original-ch02.html",
+      "bytes": 23128
+    },
+    {
+      "id": "exercise-CH02",
+      "field": "path",
+      "path": "course/exercises/ch02.md",
+      "bytes": 1493
+    },
+    {
+      "id": "notes-CH03",
+      "field": "path",
+      "path": "course/notes/ch03.md",
+      "bytes": 22717
+    },
+    {
+      "id": "slides-CH03",
+      "field": "path",
+      "path": "course/slides/ch03.pptx",
+      "bytes": 9459561
+    },
+    {
+      "id": "slides-CH03",
+      "field": "preview",
+      "path": "course/slides/ch03.html",
+      "bytes": 4564
+    },
+    {
+      "id": "original-nb-CH03",
+      "field": "path",
+      "path": "course/notebooks/original-ch03.ipynb",
+      "bytes": 8267
+    },
+    {
+      "id": "original-nb-CH03",
+      "field": "preview",
+      "path": "course/notebooks/original-ch03.html",
+      "bytes": 5656
+    },
+    {
+      "id": "exercise-CH03",
+      "field": "path",
+      "path": "course/exercises/ch03.md",
+      "bytes": 1415
+    },
+    {
+      "id": "notes-CH04",
+      "field": "path",
+      "path": "course/notes/ch04.md",
+      "bytes": 66058
+    },
+    {
+      "id": "slides-CH04",
+      "field": "path",
+      "path": "course/slides/ch04.pptx",
+      "bytes": 5745125
+    },
+    {
+      "id": "slides-CH04",
+      "field": "preview",
+      "path": "course/slides/ch04.html",
+      "bytes": 8094
+    },
+    {
+      "id": "original-nb-CH04",
+      "field": "path",
+      "path": "course/notebooks/original-ch04.ipynb",
+      "bytes": 21718
+    },
+    {
+      "id": "original-nb-CH04",
+      "field": "preview",
+      "path": "course/notebooks/original-ch04.html",
+      "bytes": 14149
+    },
+    {
+      "id": "exercise-CH04",
+      "field": "path",
+      "path": "course/exercises/ch04.md",
+      "bytes": 1433
+    },
+    {
+      "id": "notes-CH05",
+      "field": "path",
+      "path": "course/notes/ch05.md",
+      "bytes": 81790
+    },
+    {
+      "id": "slides-CH05",
+      "field": "path",
+      "path": "course/slides/ch05.pptx",
+      "bytes": 12003547
+    },
+    {
+      "id": "slides-CH05",
+      "field": "preview",
+      "path": "course/slides/ch05.html",
+      "bytes": 9812
+    },
+    {
+      "id": "original-nb-CH05",
+      "field": "path",
+      "path": "course/notebooks/original-ch05.ipynb",
+      "bytes": 7230
+    },
+    {
+      "id": "original-nb-CH05",
+      "field": "preview",
+      "path": "course/notebooks/original-ch05.html",
+      "bytes": 5670
+    },
+    {
+      "id": "exercise-CH05",
+      "field": "path",
+      "path": "course/exercises/ch05.md",
+      "bytes": 1526
+    },
+    {
+      "id": "notes-CH06",
+      "field": "path",
+      "path": "course/notes/ch06.md",
+      "bytes": 62612
+    },
+    {
+      "id": "slides-CH06",
+      "field": "path",
+      "path": "course/slides/ch06.pptx",
+      "bytes": 4541014
+    },
+    {
+      "id": "slides-CH06",
+      "field": "preview",
+      "path": "course/slides/ch06.html",
+      "bytes": 6843
+    },
+    {
+      "id": "original-nb-CH06",
+      "field": "path",
+      "path": "course/notebooks/original-ch06.ipynb",
+      "bytes": 21629
+    },
+    {
+      "id": "original-nb-CH06",
+      "field": "preview",
+      "path": "course/notebooks/original-ch06.html",
+      "bytes": 14963
+    },
+    {
+      "id": "exercise-CH06",
+      "field": "path",
+      "path": "course/exercises/ch06.md",
+      "bytes": 1594
+    },
+    {
+      "id": "notes-CH07",
+      "field": "path",
+      "path": "course/notes/ch07.md",
+      "bytes": 77331
+    },
+    {
+      "id": "slides-CH07",
+      "field": "path",
+      "path": "course/slides/ch07.pptx",
+      "bytes": 9271075
+    },
+    {
+      "id": "slides-CH07",
+      "field": "preview",
+      "path": "course/slides/ch07.html",
+      "bytes": 66608
+    },
+    {
+      "id": "original-nb-CH07",
+      "field": "path",
+      "path": "course/notebooks/original-ch07.ipynb",
+      "bytes": 21177
+    },
+    {
+      "id": "original-nb-CH07",
+      "field": "preview",
+      "path": "course/notebooks/original-ch07.html",
+      "bytes": 14823
+    },
+    {
+      "id": "exercise-CH07",
+      "field": "path",
+      "path": "course/exercises/ch07.md",
+      "bytes": 1497
+    },
+    {
+      "id": "notes-CH08",
+      "field": "path",
+      "path": "course/notes/ch08.md",
+      "bytes": 88893
+    },
+    {
+      "id": "slides-CH08",
+      "field": "path",
+      "path": "course/slides/ch08.pptx",
+      "bytes": 9616937
+    },
+    {
+      "id": "slides-CH08",
+      "field": "preview",
+      "path": "course/slides/ch08.html",
+      "bytes": 10199
+    },
+    {
+      "id": "original-nb-CH08",
+      "field": "path",
+      "path": "course/notebooks/original-ch08.ipynb",
+      "bytes": 19836
+    },
+    {
+      "id": "original-nb-CH08",
+      "field": "preview",
+      "path": "course/notebooks/original-ch08.html",
+      "bytes": 14065
+    },
+    {
+      "id": "exercise-CH08",
+      "field": "path",
+      "path": "course/exercises/ch08.md",
+      "bytes": 1509
+    },
+    {
+      "id": "notes-CH09",
+      "field": "path",
+      "path": "course/notes/ch09.md",
+      "bytes": 60212
+    },
+    {
+      "id": "slides-CH09",
+      "field": "path",
+      "path": "course/slides/ch09.pptx",
+      "bytes": 3956984
+    },
+    {
+      "id": "slides-CH09",
+      "field": "preview",
+      "path": "course/slides/ch09.html",
+      "bytes": 10345
+    },
+    {
+      "id": "original-nb-CH09",
+      "field": "path",
+      "path": "course/notebooks/original-ch09.ipynb",
+      "bytes": 12595
+    },
+    {
+      "id": "original-nb-CH09",
+      "field": "preview",
+      "path": "course/notebooks/original-ch09.html",
+      "bytes": 8390
+    },
+    {
+      "id": "exercise-CH09",
+      "field": "path",
+      "path": "course/exercises/ch09.md",
+      "bytes": 1474
+    },
+    {
+      "id": "notes-CH10",
+      "field": "path",
+      "path": "course/notes/ch10.md",
+      "bytes": 69629
+    },
+    {
+      "id": "slides-CH10",
+      "field": "path",
+      "path": "course/slides/ch10.pptx",
+      "bytes": 4009657
+    },
+    {
+      "id": "slides-CH10",
+      "field": "preview",
+      "path": "course/slides/ch10.html",
+      "bytes": 5981
+    },
+    {
+      "id": "original-nb-CH10",
+      "field": "path",
+      "path": "course/notebooks/original-ch10.ipynb",
+      "bytes": 9657
+    },
+    {
+      "id": "original-nb-CH10",
+      "field": "preview",
+      "path": "course/notebooks/original-ch10.html",
+      "bytes": 6988
+    },
+    {
+      "id": "exercise-CH10",
+      "field": "path",
+      "path": "course/exercises/ch10.md",
+      "bytes": 1519
+    },
+    {
+      "id": "notes-CH11",
+      "field": "path",
+      "path": "course/notes/ch11.md",
+      "bytes": 85493
+    },
+    {
+      "id": "slides-CH11",
+      "field": "path",
+      "path": "course/slides/ch11.pptx",
+      "bytes": 10313840
+    },
+    {
+      "id": "slides-CH11",
+      "field": "preview",
+      "path": "course/slides/ch11.html",
+      "bytes": 6229
+    },
+    {
+      "id": "original-nb-CH11",
+      "field": "path",
+      "path": "course/notebooks/original-ch11.ipynb",
+      "bytes": 9942
+    },
+    {
+      "id": "original-nb-CH11",
+      "field": "preview",
+      "path": "course/notebooks/original-ch11.html",
+      "bytes": 6850
+    },
+    {
+      "id": "exercise-CH11",
+      "field": "path",
+      "path": "course/exercises/ch11.md",
+      "bytes": 1439
+    },
+    {
+      "id": "notes-CH12",
+      "field": "path",
+      "path": "course/notes/ch12.md",
+      "bytes": 55170
+    },
+    {
+      "id": "slides-CH12",
+      "field": "path",
+      "path": "course/slides/ch12.pptx",
+      "bytes": 4489219
+    },
+    {
+      "id": "slides-CH12",
+      "field": "preview",
+      "path": "course/slides/ch12.html",
+      "bytes": 9383
+    },
+    {
+      "id": "original-nb-CH12",
+      "field": "path",
+      "path": "course/notebooks/original-ch12.ipynb",
+      "bytes": 16775
+    },
+    {
+      "id": "original-nb-CH12",
+      "field": "preview",
+      "path": "course/notebooks/original-ch12.html",
+      "bytes": 11364
+    },
+    {
+      "id": "exercise-CH12",
+      "field": "path",
+      "path": "course/exercises/ch12.md",
+      "bytes": 1468
+    },
+    {
+      "id": "book0",
+      "field": "path",
+      "path": "course/references/book0.md",
+      "bytes": 378
+    },
+    {
+      "id": "book1",
+      "field": "path",
+      "path": "course/references/book1.md",
+      "bytes": 303
+    },
+    {
+      "id": "book2",
+      "field": "path",
+      "path": "course/references/book2.md",
+      "bytes": 333
+    },
+    {
+      "id": "book3",
+      "field": "path",
+      "path": "course/references/book3.md",
+      "bytes": 349
+    },
+    {
+      "id": "book4",
+      "field": "path",
+      "path": "course/references/book4.md",
+      "bytes": 338
+    },
+    {
+      "id": "book5",
+      "field": "path",
+      "path": "course/references/book5.md",
+      "bytes": 311
+    },
+    {
+      "id": "lab-pca-code",
+      "field": "path",
+      "path": "course/code/pca.py",
+      "bytes": 2983
+    },
+    {
+      "id": "lab-pca-notebook",
+      "field": "path",
+      "path": "course/notebooks/pca.ipynb",
+      "bytes": 1686
+    },
+    {
+      "id": "lab-pca-notebook",
+      "field": "preview",
+      "path": "course/preview/pca.html",
+      "bytes": 3556
+    },
+    {
+      "id": "lab-pca-data",
+      "field": "path",
+      "path": "course/data/pca_data.csv",
+      "bytes": 16637
+    },
+    {
+      "id": "lab-pca-case",
+      "field": "path",
+      "path": "course/cases/pca.md",
+      "bytes": 1378
+    },
+    {
+      "id": "lab-pca-dictionary",
+      "field": "path",
+      "path": "course/data/pca_fields.csv",
+      "bytes": 541
+    },
+    {
+      "id": "lab-fa-code",
+      "field": "path",
+      "path": "course/code/fa.py",
+      "bytes": 2810
+    },
+    {
+      "id": "lab-fa-notebook",
+      "field": "path",
+      "path": "course/notebooks/fa.ipynb",
+      "bytes": 1635
+    },
+    {
+      "id": "lab-fa-notebook",
+      "field": "preview",
+      "path": "course/preview/fa.html",
+      "bytes": 3557
+    },
+    {
+      "id": "lab-fa-data",
+      "field": "path",
+      "path": "course/data/fa_data.csv",
+      "bytes": 26107
+    },
+    {
+      "id": "lab-fa-case",
+      "field": "path",
+      "path": "course/cases/fa.md",
+      "bytes": 1412
+    },
+    {
+      "id": "lab-fa-dictionary",
+      "field": "path",
+      "path": "course/data/fa_fields.csv",
+      "bytes": 708
+    },
+    {
+      "id": "lab-cluster-code",
+      "field": "path",
+      "path": "course/code/cluster.py",
+      "bytes": 3022
+    },
+    {
+      "id": "lab-cluster-notebook",
+      "field": "path",
+      "path": "course/notebooks/cluster.ipynb",
+      "bytes": 1804
+    },
+    {
+      "id": "lab-cluster-notebook",
+      "field": "preview",
+      "path": "course/preview/cluster.html",
+      "bytes": 3706
+    },
+    {
+      "id": "lab-cluster-data",
+      "field": "path",
+      "path": "course/data/cluster_data.csv",
+      "bytes": 15043
+    },
+    {
+      "id": "lab-cluster-case",
+      "field": "path",
+      "path": "course/cases/cluster.md",
+      "bytes": 1471
+    },
+    {
+      "id": "lab-cluster-dictionary",
+      "field": "path",
+      "path": "course/data/cluster_fields.csv",
+      "bytes": 521
+    },
+    {
+      "id": "lab-discriminant-code",
+      "field": "path",
+      "path": "course/code/discriminant.py",
+      "bytes": 3426
+    },
+    {
+      "id": "lab-discriminant-notebook",
+      "field": "path",
+      "path": "course/notebooks/discriminant.ipynb",
+      "bytes": 2036
+    },
+    {
+      "id": "lab-discriminant-notebook",
+      "field": "preview",
+      "path": "course/preview/discriminant.html",
+      "bytes": 3651
+    },
+    {
+      "id": "lab-discriminant-data",
+      "field": "path",
+      "path": "course/data/discriminant_data.csv",
+      "bytes": 28260
+    },
+    {
+      "id": "lab-discriminant-case",
+      "field": "path",
+      "path": "course/cases/discriminant.md",
+      "bytes": 1439
+    },
+    {
+      "id": "lab-discriminant-dictionary",
+      "field": "path",
+      "path": "course/data/discriminant_fields.csv",
+      "bytes": 787
+    },
+    {
+      "id": "lab-regression-code",
+      "field": "path",
+      "path": "course/code/regression.py",
+      "bytes": 3268
+    },
+    {
+      "id": "lab-regression-notebook",
+      "field": "path",
+      "path": "course/notebooks/regression.ipynb",
+      "bytes": 1686
+    },
+    {
+      "id": "lab-regression-notebook",
+      "field": "preview",
+      "path": "course/preview/regression.html",
+      "bytes": 3694
+    },
+    {
+      "id": "lab-regression-data",
+      "field": "path",
+      "path": "course/data/regression_data.csv",
+      "bytes": 24673
+    },
+    {
+      "id": "lab-regression-case",
+      "field": "path",
+      "path": "course/cases/regression.md",
+      "bytes": 1485
+    },
+    {
+      "id": "lab-regression-dictionary",
+      "field": "path",
+      "path": "course/data/regression_fields.csv",
+      "bytes": 606
+    },
+    {
+      "id": "lab-logistic-code",
+      "field": "path",
+      "path": "course/code/logistic.py",
+      "bytes": 3449
+    },
+    {
+      "id": "lab-logistic-notebook",
+      "field": "path",
+      "path": "course/notebooks/logistic.ipynb",
+      "bytes": 1692
+    },
+    {
+      "id": "lab-logistic-notebook",
+      "field": "preview",
+      "path": "course/preview/logistic.html",
+      "bytes": 3574
+    },
+    {
+      "id": "lab-logistic-data",
+      "field": "path",
+      "path": "course/data/logistic_data.csv",
+      "bytes": 30836
+    },
+    {
+      "id": "lab-logistic-case",
+      "field": "path",
+      "path": "course/cases/logistic.md",
+      "bytes": 1373
+    },
+    {
+      "id": "lab-logistic-dictionary",
+      "field": "path",
+      "path": "course/data/logistic_fields.csv",
+      "bytes": 725
+    },
+    {
+      "id": "lab-cca-code",
+      "field": "path",
+      "path": "course/code/cca.py",
+      "bytes": 3578
+    },
+    {
+      "id": "lab-cca-notebook",
+      "field": "path",
+      "path": "course/notebooks/cca.ipynb",
+      "bytes": 1850
+    },
+    {
+      "id": "lab-cca-notebook",
+      "field": "preview",
+      "path": "course/preview/cca.html",
+      "bytes": 3572
+    },
+    {
+      "id": "lab-cca-data",
+      "field": "path",
+      "path": "course/data/cca_data.csv",
+      "bytes": 33031
+    },
+    {
+      "id": "lab-cca-case",
+      "field": "path",
+      "path": "course/cases/cca.md",
+      "bytes": 1416
+    },
+    {
+      "id": "lab-cca-dictionary",
+      "field": "path",
+      "path": "course/data/cca_fields.csv",
+      "bytes": 728
+    },
+    {
+      "id": "lab-ca-code",
+      "field": "path",
+      "path": "course/code/ca.py",
+      "bytes": 3780
+    },
+    {
+      "id": "lab-ca-notebook",
+      "field": "path",
+      "path": "course/notebooks/ca.ipynb",
+      "bytes": 1619
+    },
+    {
+      "id": "lab-ca-notebook",
+      "field": "preview",
+      "path": "course/preview/ca.html",
+      "bytes": 3508
+    },
+    {
+      "id": "lab-ca-data",
+      "field": "path",
+      "path": "course/data/ca_table.csv",
+      "bytes": 196
+    },
+    {
+      "id": "lab-ca-case",
+      "field": "path",
+      "path": "course/cases/ca.md",
+      "bytes": 1343
+    },
+    {
+      "id": "lab-ca-dictionary",
+      "field": "path",
+      "path": "course/data/ca_fields.csv",
+      "bytes": 578
+    },
+    {
+      "id": "lab-evaluation-code",
+      "field": "path",
+      "path": "course/code/evaluation.py",
+      "bytes": 4241
+    },
+    {
+      "id": "lab-evaluation-notebook",
+      "field": "path",
+      "path": "course/notebooks/evaluation.ipynb",
+      "bytes": 2131
+    },
+    {
+      "id": "lab-evaluation-notebook",
+      "field": "preview",
+      "path": "course/preview/evaluation.html",
+      "bytes": 3739
+    },
+    {
+      "id": "lab-evaluation-data",
+      "field": "path",
+      "path": "course/data/evaluation_data.csv",
+      "bytes": 1484
+    },
+    {
+      "id": "lab-evaluation-case",
+      "field": "path",
+      "path": "course/cases/evaluation.md",
+      "bytes": 1509
+    },
+    {
+      "id": "lab-evaluation-dictionary",
+      "field": "path",
+      "path": "course/data/evaluation_fields.csv",
+      "bytes": 619
+    },
+    {
+      "id": "guide-course-README-md",
+      "field": "path",
+      "path": "course/README.md",
+      "bytes": 2689
+    },
+    {
+      "id": "guide-course-running-md",
+      "field": "path",
+      "path": "course/running.md",
+      "bytes": 1195
+    }
+  ]
+}

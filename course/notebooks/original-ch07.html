@@ -1,0 +1,155 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px/1.8 system-ui;max-width:960px;margin:24px auto;padding:20px;color:#192b3b}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:20px}article{border-bottom:1px solid #ccc}h2{font-size:18px}</style><h1>第7章 原课程 Notebook（阅读参考）</h1><p>已移除运行输出、身份元数据与本机路径。历史依赖及数据文件尚未全部适配；请使用同章可重跑教学实验。</p><article><h2>单元 1 · markdown</h2><pre># 第7章 因子分析及Python应用</pre></article><article><h2>单元 2 · code</h2><pre>#%cd &quot;[本地路径已移除]&quot;</pre></article><article><h2>单元 3 · code</h2><pre></pre></article><article><h2>单元 4 · code</h2><pre>#输出初始化设置
+import pandas as pd                        #加载数据分析包
+import numpy as np                        #加载数值计算包
+pd.set_option(&#x27;display.precision&#x27;,4)       #设置数据框输出精度
+pd.set_option(&#x27;display.max_rows&#x27;,14)       #显示数据框最大行数
+from pandas import DataFrame as DF         #设置数据框别名
+from sklearn.preprocessing import StandardScaler
+import factor_analyzer as fa
+from factor_analyzer import FactorAnalyzer as FA</pre></article><article><h2>单元 5 · markdown</h2><pre>## 7.1 因子分析模型</pre></article><article><h2>单元 6 · markdown</h2><pre>### 7.1.1 因子概念的提出</pre></article><article><h2>单元 7 · markdown</h2><pre>### 7.1.2 因子分析的用途</pre></article><article><h2>单元 8 · markdown</h2><pre>### 7.1.3 因子模型的提出</pre></article><article><h2>单元 9 · code</h2><pre>d71=pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d71&#x27;,index_col=0)
+d71_scaler = d71.copy()             #复制数据框
+d71_mean = d71_scaler-d71_scaler.mean()  #均值中心化
+d71_scaler = d71_mean/d71_scaler.std()    #标准化
+d71 = d71_scaler.copy()             #复制数据框
+d71.columns = [&quot;主营业务利润率&quot;,&quot;销售毛利率&quot;,&quot;速动比率&quot;,&quot;资产负债率&quot;,&quot;主营业务收入增长率&quot;,&quot;营业利润增长率&quot;]
+print(d71)
+
+
+
+</pre></article><article><h2>单元 10 · code</h2><pre>d71.corr()                              #计算相关阵</pre></article><article><h2>单元 11 · markdown</h2><pre>## KMO检验
+KMO值是由Kaiser、Meyer和Olkin提出的，用于衡量变量间的相关性和适合性。它通过比较变量间的简单相关系数与偏相关系数来判断数据是否适合进行因子分析。KMO值越接近1，表示变量间的相关性越强，适合进行因子分析；而KMO值接近0则表示变量间的相关性较弱，不适合进行因子分析。
+### KMO值的计算
+KMO值的计算公式为：
+$KMO = \frac{\sum_{i=1}\^{n} \sum_{j=1}\^{n} r_{ij}\^2}{\sum_{i=1}\^{n} \sum_{j=1}\^{n} r_{ij}\^2 + \sum_{i=1}\^{n} \sum_{j=1}\^{n} p_{ij}\^2}$ 
+其中，$r_{ij}$为变量间的简单相关系数，$p_{ij}$为变量间的偏相关系数。
+- **KMO值的解读**
+  - KMO值 ≥ 0.9：非常适合进行因子分析
+  - KMO值 ≥ 0.8：适合进行因子分析
+  - KMO值 ≥ 0.7：一般适合
+  - KMO值 ≥ 0.6：勉强适合
+  - KMO值 &lt; 0.5：不适合进行因子分析。 </pre></article><article><h2>单元 12 · code</h2><pre>kmo=fa.calculate_kmo(d71) #计算KMO
+print(&#x27;KMO值: %5.4f&#x27;%kmo[1])
+chisq=fa.calculate_bartlett_sphericity(d71) #进行bartlett检验
+print(&#x27;卡方值 = %8.4f, Bartlett检验P值 = %5.4f&#x27;%(chisq[0],chisq[1]))</pre></article><article><h2>单元 13 · markdown</h2><pre>## 7.2 因子载荷及解释</pre></article><article><h2>单元 14 · code</h2><pre>#!pip install factor_analyzer</pre></article><article><h2>单元 15 · markdown</h2><pre>### 7.2.1 主因子估计法</pre></article><article><h2>单元 16 · code</h2><pre>#def FA_disp(fa,Indexs):  #显示因子信息
+#    Columns=[&#x27;F&#x27;+str(i) for i in range(1,fa.n_factors+1)]    
+#    return pd.DataFrame(fa.loadings_,Indexs,Columns)      </pre></article><article><h2>单元 17 · code</h2><pre>#显示因子名称
+def Factors(fa):
+    return [&#x27;F&#x27;+str(i) for i in range(1,fa.n_factors+1)]    </pre></article><article><h2>单元 18 · code</h2><pre>from factor_analyzer import FactorAnalyzer as FA
+Fp=FA(n_factors=6,method=&#x27;principal&#x27;,rotation=None).fit(d71.values) #拟合6个主因子
+DF(Fp.loadings_,d71.columns,Factors(Fp)) #显示因子载荷</pre></article><article><h2>单元 19 · code</h2><pre>Fp1=FA(n_factors=3,method=&#x27;principal&#x27;,rotation=None).fit(d71.values) #取前3个主因子
+Fp1_load=DF(Fp1.loadings_,d71.columns,Factors(Fp1))  #定义因子载荷阵
+Fp1_load</pre></article><article><h2>单元 20 · markdown</h2><pre>### 7.2.2 极大似然估计法</pre></article><article><h2>单元 21 · code</h2><pre>Fm=FA(n_factors=6,method=&#x27;ml&#x27;,rotation=None).fit(d71.values) #取前6个主因子
+DF(Fm.loadings_,d71.columns,Factors(Fm)) </pre></article><article><h2>单元 22 · code</h2><pre>Fm1=FA(n_factors=3,method=&#x27;ml&#x27;,rotation=None).fit(d71.values)
+Fm1_load=DF(Fm1.loadings_,d71.columns,Factors(Fm1)) 
+Fm1_load</pre></article><article><h2>单元 23 · markdown</h2><pre>### 7.2.3 因子载荷的意义</pre></article><article><h2>单元 24 · code</h2><pre>Vars=[&#x27;方差&#x27;,&#x27;贡献率&#x27;,&#x27;累计贡献率&#x27;]
+Fp1_Vars=DF(Fp1.get_factor_variance(),Vars,Factors(Fp1))
+Fp1_Vars #主因子法方差贡献 </pre></article><article><h2>单元 25 · code</h2><pre>Fm1_Vars=DF(Fm1.get_factor_variance(),Vars,Factors(Fm1))
+Fm1_Vars #极大似然法方差贡献 </pre></article><article><h2>单元 26 · code</h2><pre>#主因子法共同度，uniquenesses（不一致性）
+Fp1_load[&#x27;共同度&#x27;]=1-Fp1.get_uniquenesses()
+DF(Fp1_load)</pre></article><article><h2>单元 27 · code</h2><pre>#极大似然法共同度，uniquenesses（不一致性）
+Fm1_load[&#x27;共同度&#x27;]=1-Fm1.get_uniquenesses()
+DF(Fm1_load)</pre></article><article><h2>单元 28 · markdown</h2><pre>## 7.3 因子旋转</pre></article><article><h2>单元 29 · markdown</h2><pre>### 7.3.1 因子旋转方法</pre></article><article><h2>单元 30 · markdown</h2><pre>### 7.3.2 如何进行旋转</pre></article><article><h2>单元 31 · code</h2><pre>Fp2=FA(3,method=&#x27;principal&#x27;,rotation=&#x27;varimax&#x27;).fit(d71.values) #varimax旋转
+Fp2_Vars=DF(Fp2.get_factor_variance(),Vars,Factors(Fp2))
+Fp2_Vars</pre></article><article><h2>单元 32 · code</h2><pre>Fp2_load=DF(Fp2.loadings_,d71.columns,Factors(Fp2))  
+Fp2_load  #旋转前因子载荷</pre></article><article><h2>单元 33 · code</h2><pre>Fp2_load[&#x27;共同度&#x27;]=1-Fp2.get_uniquenesses()
+DF(Fp2_load)  #旋转后因子载荷及共同度</pre></article><article><h2>单元 34 · markdown</h2><pre>## 7.4 因子得分</pre></article><article><h2>单元 35 · markdown</h2><pre>### 7.4.1 因子得分的计算</pre></article><article><h2>单元 36 · code</h2><pre>#pd.set_option(&#x27;display.max_rows&#x27;,15) #设置最大显示行数
+Fp1_scores=DF(Fp1.transform(d71.values),d71.index,Factors(Fp1))
+DF(Fp1_scores)   #旋转前因子得分</pre></article><article><h2>单元 37 · code</h2><pre>#旋转后因子得分
+Fp2_scores=DF(Fp2.transform(d71.values),d71.index,Factors(Fp2))
+DF(Fp2_scores)</pre></article><article><h2>单元 38 · markdown</h2><pre>## 7.4.2 （倒推）计算因子得分系数矩阵</pre></article><article><h2>单元 39 · code</h2><pre>Z = d71.values
+F = Fp2.transform(Z) 
+Fp2_confi = np.linalg.inv(Z.T @ Z) @ Z.T @ F
+factor_scores_df = pd.DataFrame(Fp2_confi, index=d71.columns, columns=Factors(Fp2))
+DF(factor_scores_df)</pre></article><article><h2>单元 40 · markdown</h2><pre>### 因子模型表达式：
+$$
+x_1 = 0.5276 \cdot F_1 - 0.0246 \cdot F_2 - 0.0665 \cdot F_3 + \varepsilon_1
+$$
+
+$$
+x_2 = 0.5301 \cdot F_1 - 0.0197 \cdot F_2 - 0.0768 \cdot F_3 + \varepsilon_2
+$$
+
+$$
+x_3 = 0.0660 \cdot F_1 - 0.5210 \cdot F_2 - 0.0035 \cdot F_3 + \varepsilon_3
+$$
+
+$$
+x_4 = 0.0251 \cdot F_1 + 0.5157 \cdot F_2 - 0.1036 \cdot F_3 + \varepsilon_4
+$$
+
+$$
+x_5 = -0.1304 \cdot F_1 + 0.1032 \cdot F_2 + 0.5848 \cdot F_3 + \varepsilon_5
+$$
+
+$$
+x_6 = -0.0178 \cdot F_1 - 0.1704 \cdot F_2 + 0.6222 \cdot F_3 + \varepsilon_6
+$$
+
+#### OR 
+
+$$
+F_1 = 0.5276 \cdot x_1 + 0.5301 \cdot x_2 + 0.0660 \cdot x_3 + 0.0251 \cdot x_4 - 0.1304 \cdot x_5 - 0.0178 \cdot x_6
+$$
+
+$$
+F_2 = -0.0246 \cdot x_1 - 0.0197 \cdot x_2 - 0.5210 \cdot x_3 + 0.5157 \cdot x_4 + 0.1032 \cdot x_5 - 0.1704 \cdot x_6
+$$
+
+$$
+F_3 = -0.0665 \cdot x_1 - 0.0768 \cdot x_2 - 0.0035 \cdot x_3 - 0.1036 \cdot x_4 + 0.5848 \cdot x_5 + 0.6222 \cdot x_6
+$$</pre></article><article><h2>单元 41 · markdown</h2><pre>### 7.4.3 因子得分信息图</pre></article><article><h2>单元 42 · code</h2><pre>import matplotlib.pyplot as plt            
+plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;SimHei&#x27;];  #中文黑体SimHei
+plt.rcParams[&#x27;axes.unicode_minus&#x27;]=False; #正常显示图中正负号
+def Scoreplot(Scores): #自定得分图绘制函数
+    plt.plot(Scores.iloc[:,0],Scores.iloc[:,1],&#x27;*&#x27;); 
+    plt.xlabel(Scores.columns[0]);plt.ylabel(Scores.columns[1])
+    plt.axhline(y=0,ls=&#x27;:&#x27;);plt.axvline(x=0,ls=&#x27;:&#x27;)
+    for i in range(len(Scores)):
+        plt.text(Scores.iloc[i,0],Scores.iloc[i,1],Scores.index[i])</pre></article><article><h2>单元 43 · code</h2><pre>#自定得分图绘制函数，见第6章6.3.2节
+Scoreplot(Fp2_scores[[&#x27;F1&#x27;,&#x27;F2&#x27;]]) </pre></article><article><h2>单元 44 · code</h2><pre>Scoreplot(Fp2_scores[[&#x27;F1&#x27;,&#x27;F3&#x27;]])</pre></article><article><h2>单元 45 · code</h2><pre>Scoreplot(Fp2_scores[[&#x27;F2&#x27;,&#x27;F3&#x27;]])</pre></article><article><h2>单元 46 · code</h2><pre>def Biplot(Load,Score): #双向因子信息重叠图
+    Scoreplot(Score)
+    for i in range(Load.shape[0]):
+        plt.arrow(0,0,Load.iloc[i,0],Load.iloc[i,1],color=&#x27;r&#x27;)
+        plt.text(Load.iloc[i,0],Load.iloc[i,1],Load.index[i],color=&#x27;b&#x27;)</pre></article><article><h2>单元 47 · code</h2><pre>Biplot(Fp2_load,Fp2_scores)</pre></article><article><h2>单元 48 · markdown</h2><pre>### 7.4.4 综合得分及排名</pre></article><article><h2>单元 49 · code</h2><pre>def FArank(Vars,Scores): #计算综合因子得分与排名
+    Vi=Vars.values[0]
+    Wi=Vi/sum(Vi);Wi
+    Fi=Scores.dot(Wi)
+    Ri=Fi.rank(ascending=False).astype(int);
+    return(pd.DataFrame({&#x27;因子得分&#x27;:Fi,&#x27;因子排名&#x27;:Ri}))</pre></article><article><h2>单元 50 · code</h2><pre>print(FArank(Fp1_Vars,Fp1_scores))</pre></article><article><h2>单元 51 · code</h2><pre>print(FArank(Fp2_Vars,Fp2_scores))</pre></article><article><h2>单元 52 · markdown</h2><pre>## 7.5 因子分析步骤</pre></article><article><h2>单元 53 · markdown</h2><pre>### 7.5.1 因子分析的准备工作</pre></article><article><h2>单元 54 · markdown</h2><pre>（1）简单相关分析</pre></article><article><h2>单元 55 · code</h2><pre>d31=pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d31&#x27;,index_col=0)
+DF(d31.corr())                  #计算相关阵</pre></article><article><h2>单元 56 · markdown</h2><pre>（2）KMO统计量</pre></article><article><h2>单元 57 · code</h2><pre>import factor_analyzer as fa
+kmo=fa.calculate_kmo(d31) #计算KMO
+print(&#x27;KMO: %5.4f&#x27;%kmo[1])</pre></article><article><h2>单元 58 · markdown</h2><pre>（3）Bartlett&#x27;s球状检验</pre></article><article><h2>单元 59 · code</h2><pre>chisq=fa.calculate_bartlett_sphericity(d31) #进行bartlett检验
+print(&#x27;卡方值 = %8.4f, p值 = %5.4f&#x27;%(chisq[0],chisq[1]))</pre></article><article><h2>单元 60 · markdown</h2><pre>### 7.5.2 因子分析的过程</pre></article><article><h2>单元 61 · code</h2><pre>def FAscores(X,m=2,rot=&#x27;varimax&#x27;): #因子分析综合评价函数
+    import factor_analyzer as fa
+    kmo=fa.calculate_kmo(X) 
+    chisq=fa.calculate_bartlett_sphericity(X) #进行bartlett检验
+    print(&#x27;KMO检验: KMO值=%6.4f 卡方值=%8.4f, p值=%5.4f&#x27;%(kmo[1],chisq[0],chisq[1]))
+    from factor_analyzer import FactorAnalyzer as FA
+    Fp=FA(n_factors=m,method=&#x27;principal&#x27;,rotation=rot).fit(X.values)
+    vars=Fp.get_factor_variance()
+    Factor=[&#x27;F%d&#x27; %(i+1) for i in range(m)]
+    Vars=pd.DataFrame(vars,[&#x27;方差&#x27;,&#x27;贡献率&#x27;,&#x27;累计贡献率&#x27;],Factor)
+    print(&quot;\n方差贡献:\n&quot;,Vars)
+    Load=pd.DataFrame(Fp.loadings_,X.columns,Factor) 
+    Load[&#x27;共同度&#x27;]=1-Fp.get_uniquenesses()
+    print(&quot;\n因子载荷:\n&quot;,Load)
+    Scores=pd.DataFrame(Fp.transform(X.values),X.index,Factor)    
+    print(&quot;\n因子得分:\n&quot;,Scores)
+    Vi=vars[0]
+    Wi=Vi/sum(Vi);Wi
+    Fi=Scores.dot(Wi)
+    Ri=Fi.rank(ascending=False).astype(int);
+    print(&quot;\n综合排名:\n&quot;)
+    return pd.DataFrame({&#x27;综合得分&#x27;:Fi,&#x27;综合排名&#x27;:Ri})</pre></article><article><h2>单元 62 · code</h2><pre>pd.set_option(&#x27;display.max_rows&#x27;,31) 
+FAscores(d31,m=2,rot=&#x27;varimax&#x27;)</pre></article><article><h2>单元 63 · code</h2><pre>Fp4 = FA(2,method=&#x27;principal&#x27;,rotation=&#x27;varimax&#x27;).fit(d31.values)
+Fp4_scores=DF(Fp4.transform(d31.values),d31.index,Factors(Fp4))
+Scoreplot(Fp4_scores[[&#x27;F1&#x27;,&#x27;F2&#x27;]])
+</pre></article><article><h2>单元 64 · code</h2><pre>Fp4_load=DF(Fp4.loadings_,d31.columns,Factors(Fp4)) 
+Biplot(Fp4_load,Fp4_scores)
+</pre></article><article><h2>单元 65 · markdown</h2><pre>## 7.6 实际中进行因子分析</pre></article><article><h2>单元 66 · markdown</h2><pre>### 7.6.1 基本分析</pre></article><article><h2>单元 67 · markdown</h2><pre>### 7.6.2 扩展分析</pre></article><article><h2>单元 68 · markdown</h2><pre>## 案例7 上市公司经营业绩评价的因子分析</pre></article><article><h2>单元 69 · code</h2><pre>Case7=pd.read_excel(&#x27;mvscase.xlsx&#x27;,&#x27;Case7&#x27;,index_col=0); #Case7
+print(Case7.head(10))                  #计算相关阵</pre></article><article><h2>单元 70 · code</h2><pre>print(FAscores(Case7,m=4))</pre></article><article><h2>单元 71 · code</h2><pre>Fp5 = FA(4,method=&#x27;principal&#x27;,rotation=&#x27;varimax&#x27;).fit(Case7.values)
+Fp5_scores=DF(Fp5.transform(Case7.values),Case7.index,Factors(Fp5))
+Scoreplot(Fp5_scores[[&#x27;F1&#x27;,&#x27;F2&#x27;]])
+</pre></article><article><h2>单元 72 · code</h2><pre>Fp5_load=DF(Fp5.loadings_,Case7.columns,Factors(Fp5)) 
+Biplot(Fp5_load,Fp5_scores)
+</pre></article><article><h2>单元 73 · code</h2><pre></pre></article></html>

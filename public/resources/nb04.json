@@ -1,0 +1,428 @@
+{
+  "resource": {
+    "id": "nb04",
+    "title": "第04章-聚类分析",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第04章-聚类分析.ipynb",
+    "sha256": "f119d796de2e92c56f82df53ea38d2eb10e3ba8c7318f63ea02a09dbc39620e5",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb04.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "Notebook 单元 1 · markdown",
+      "text": "# 第4章 聚类分析及Python分类"
+    },
+    {
+      "index": 2,
+      "locator": "Notebook 单元 2 · markdown",
+      "text": "## 4.1 聚类分析的概念"
+    },
+    {
+      "index": 3,
+      "locator": "Notebook 单元 3 · markdown",
+      "text": "### 4.1.1 聚类分析的提出"
+    },
+    {
+      "index": 4,
+      "locator": "Notebook 单元 4 · markdown",
+      "text": "### 4.1.2 聚类分析的类型"
+    },
+    {
+      "index": 5,
+      "locator": "Notebook 单元 5 · markdown",
+      "text": "## 4.2聚类统计量"
+    },
+    {
+      "index": 6,
+      "locator": "Notebook 单元 6 · markdown",
+      "text": "### 4.2.1 距离的概念"
+    },
+    {
+      "index": 7,
+      "locator": "Notebook 单元 7 · code",
+      "text": "from IPython.core.interactiveshell import InteractiveShell\nInteractiveShell.ast_node_interactivity = \"all\""
+    },
+    {
+      "index": 8,
+      "locator": "Notebook 单元 8 · code",
+      "text": "sn=[1,2,3,4,5,6,7,8,9]\nx1=[2.5,3,6,6.6,7.2,4,4.7,4.5,5.5]\nx2=[2.1,2.5,2.5,1.5,3,6.4,5.6,7.6,6.9]"
+    },
+    {
+      "index": 9,
+      "locator": "Notebook 单元 9 · code",
+      "text": "#%config InlineBackend.figure_format='retina'\nimport matplotlib.pyplot as plt             \nplt.plot(x1,x2,'.');plt.xlabel('x1');plt.ylabel('x2')\nfor i in sn: plt.text(x1[i-1],x2[i-1],sn[i-1])"
+    },
+    {
+      "index": 10,
+      "locator": "Notebook 单元 10 · code",
+      "text": "plt.text?\n"
+    },
+    {
+      "index": 11,
+      "locator": "Notebook 单元 11 · markdown",
+      "text": "### 4.2.2 距离的计算"
+    },
+    {
+      "index": 12,
+      "locator": "Notebook 单元 12 · code",
+      "text": "import pandas as pd\nX=pd.DataFrame({'x1':x1,'x2':x2},index=sn);\nprint(X)"
+    },
+    {
+      "index": 13,
+      "locator": "Notebook 单元 13 · code",
+      "text": "from scipy.spatial.distance import pdist,squareform\nDa1=pdist(X).round(3); Da1  #euclidean距离向量\nprint(Da1) "
+    },
+    {
+      "index": 14,
+      "locator": "Notebook 单元 14 · code",
+      "text": "pdist?"
+    },
+    {
+      "index": 15,
+      "locator": "Notebook 单元 15 · code",
+      "text": "Ds1=squareform(Da1);        #euclidean距离方阵\n(pd.DataFrame(Ds1,index=X.index,columns=X.index))"
+    },
+    {
+      "index": 16,
+      "locator": "Notebook 单元 16 · code",
+      "text": "Da2=pdist(X,'cityblock');Da2    #cityblock距离向量"
+    },
+    {
+      "index": 17,
+      "locator": "Notebook 单元 17 · code",
+      "text": "Ds2=squareform(Da2);           #cityblock距离方阵\nprint(pd.DataFrame(Ds2,index=X.index,columns=X.index))"
+    },
+    {
+      "index": 18,
+      "locator": "Notebook 单元 18 · markdown",
+      "text": "## 4.3系统聚类法"
+    },
+    {
+      "index": 19,
+      "locator": "Notebook 单元 19 · markdown",
+      "text": "### 4.3.1 系统聚类法的基本思想与方法"
+    },
+    {
+      "index": 20,
+      "locator": "Notebook 单元 20 · markdown",
+      "text": "### 4.3.2 系统聚类法的基本步骤"
+    },
+    {
+      "index": 21,
+      "locator": "Notebook 单元 21 · markdown",
+      "text": "### 4.3.3 聚类分析实例分析"
+    },
+    {
+      "index": 22,
+      "locator": "Notebook 单元 22 · code",
+      "text": "import scipy.cluster.hierarchy as sch\nHs=sch.linkage(Da1,method='single');  #最短距离法系统聚类\n#pd.DataFrame({'类(i)':H1[:,0]+1,'类(j)':H1[:,1]+1,'距离':H1[:,2],'新类':H1[:,3]})"
+    },
+    {
+      "index": 23,
+      "locator": "Notebook 单元 23 · code",
+      "text": "Hs"
+    },
+    {
+      "index": 24,
+      "locator": "Notebook 单元 24 · code",
+      "text": "print(pd.DataFrame(sch.cut_tree(Hs)+1,index=X.index,columns=X.index)) #聚类过程"
+    },
+    {
+      "index": 25,
+      "locator": "Notebook 单元 25 · code",
+      "text": "sch.dendrogram(Hs,labels=X.index);   #最短距离法系统聚类图"
+    },
+    {
+      "index": 26,
+      "locator": "Notebook 单元 26 · code",
+      "text": "Hc=sch.linkage(Da1,method='complete');  #最长距离法系统聚类"
+    },
+    {
+      "index": 27,
+      "locator": "Notebook 单元 27 · code",
+      "text": "print(pd.DataFrame(sch.cut_tree(Hc)+1,index=X.index,columns=X.index)) #聚类过程"
+    },
+    {
+      "index": 28,
+      "locator": "Notebook 单元 28 · code",
+      "text": "sch.dendrogram(Hc,labels=X.index);   #最长距离法系统聚类图"
+    },
+    {
+      "index": 29,
+      "locator": "Notebook 单元 29 · code",
+      "text": "sch.dendrogram(Hc,labels=X.index,orientation='right');"
+    },
+    {
+      "index": 30,
+      "locator": "Notebook 单元 30 · code",
+      "text": "import pandas as pd\nd31=pd.read_excel('[本地路径已移除]','d31',index_col=0);d31"
+    },
+    {
+      "index": 31,
+      "locator": "Notebook 单元 31 · code",
+      "text": "%config InlineBackend.figure_format='retina' #图片清晰\nplt.rcParams['font.sans-serif']=['HeiTi TC'];  #SimHei黑体\nplt.figure(figsize=(9,5));\npd.plotting.scatter_matrix(d31);"
+    },
+    {
+      "index": 32,
+      "locator": "Notebook 单元 32 · code",
+      "text": "import scipy.cluster.hierarchy as sch\nD=sch.distance.pdist(d31); D[:10].round(1)"
+    },
+    {
+      "index": 33,
+      "locator": "Notebook 单元 33 · code",
+      "text": "D.shape\nfrom scipy.special import comb\nprint(comb(31, 2))\n            \nfrom itertools import combinations\ncombins = [c for c in  combinations(range(31), 2)];len(combins)"
+    },
+    {
+      "index": 34,
+      "locator": "Notebook 单元 34 · code",
+      "text": "plt.rcParams['font.sans-serif']=['Heiti TC']  #SimHei黑体\nplt.figure(figsize=(9,5))\nH1=sch.linkage(D,method='single');   #最短距离法\nsch.dendrogram(H1,labels=d31.index);"
+    },
+    {
+      "index": 35,
+      "locator": "Notebook 单元 35 · code",
+      "text": "H2=sch.linkage(D,method='complete'); #最长距离法\nplt.figure(figsize=(9,5))\nsch.dendrogram(H2,labels=d31.index);"
+    },
+    {
+      "index": 36,
+      "locator": "Notebook 单元 36 · code",
+      "text": "H3=sch.linkage(D,method='median');     #中间距离法\nplt.figure(figsize=(9,5))\nsch.dendrogram(H3,labels=d31.index);"
+    },
+    {
+      "index": 37,
+      "locator": "Notebook 单元 37 · code",
+      "text": "H4=sch.linkage(D,method='average');       #类平均法\nplt.figure(figsize=(9,5))\nsch.dendrogram(H4,labels=d31.index);"
+    },
+    {
+      "index": 38,
+      "locator": "Notebook 单元 38 · code",
+      "text": "H5=sch.linkage(D,method='centroid');      #重心法\nplt.figure(figsize=(9,5))\nsch.dendrogram(H5,labels=d31.index);"
+    },
+    {
+      "index": 39,
+      "locator": "Notebook 单元 39 · code",
+      "text": "H6=sch.linkage(D,method='ward');      #ward法\nplt.figure(figsize=(9,5))\nsch.dendrogram(H6,labels=d31.index);"
+    },
+    {
+      "index": 40,
+      "locator": "Notebook 单元 40 · code",
+      "text": "plt.figure(figsize=(7,7))\nsch.dendrogram(H6,labels=d31.index,orientation='right');"
+    },
+    {
+      "index": 41,
+      "locator": "Notebook 单元 41 · code",
+      "text": "sch6=pd.DataFrame(sch.cut_tree(H6))[[29,28,27]]+1\nsch6.index=d31.index;sch6.columns=['分2类','分3类','分4类']\nprint(sch6)"
+    },
+    {
+      "index": 42,
+      "locator": "Notebook 单元 42 · code",
+      "text": "sch6[sch6.分4类==1]['分4类']"
+    },
+    {
+      "index": 43,
+      "locator": "Notebook 单元 43 · code",
+      "text": "sch6[sch6.分4类==2]['分4类']"
+    },
+    {
+      "index": 44,
+      "locator": "Notebook 单元 44 · code",
+      "text": "sch6[sch6.分4类==3]['分4类']"
+    },
+    {
+      "index": 45,
+      "locator": "Notebook 单元 45 · code",
+      "text": "sch6[sch6.分4类==4]['分4类']"
+    },
+    {
+      "index": 46,
+      "locator": "Notebook 单元 46 · markdown",
+      "text": "## 4.4快速聚类法"
+    },
+    {
+      "index": 47,
+      "locator": "Notebook 单元 47 · markdown",
+      "text": "### 4.4.1 快速聚类基本概念"
+    },
+    {
+      "index": 48,
+      "locator": "Notebook 单元 48 · markdown",
+      "text": "### 4.4.2 快速聚类计算原理"
+    },
+    {
+      "index": 49,
+      "locator": "Notebook 单元 49 · markdown",
+      "text": "### 4.4.3 快速聚类的模拟研究"
+    },
+    {
+      "index": 50,
+      "locator": "Notebook 单元 50 · code",
+      "text": "import numpy as np\nnp.random.seed(123)    #设置种子数使结果可重复\nx1=np.random.normal(0,0.3,1000).reshape((100,10))\nx2=np.random.normal(1,0.3,1000).reshape((100,10))\nX=np.append(x1,x2,axis=0);X.round(4)"
+    },
+    {
+      "index": 51,
+      "locator": "Notebook 单元 51 · code",
+      "text": "D=pdist(X);\nD1=squareform(D);        #euclidean距离方阵\nD.shape\nD1.shape\nprint(D1)\n"
+    },
+    {
+      "index": 52,
+      "locator": "Notebook 单元 52 · code",
+      "text": "H=sch.linkage(D); # 用于计算层次聚类,根据指定的方法（默认为 'single'）计算层次聚类的链接矩阵H,链接矩阵 H 包含了聚类过程中每一步的合并信息，包括被合并的簇及其之间的距离。\nsch.dendrogram(H); # 绘制树状图。树状图是一种展示层次聚类结果的图形表示方式，通过树状图可以直观地观察到数据点的聚类过程和聚类结构。树状图的横轴表示样本，纵轴表示聚类过程中合并的距离。"
+    },
+    {
+      "index": 53,
+      "locator": "Notebook 单元 53 · code",
+      "text": "Clust=pd.DataFrame(sch.cut_tree(H))+1  #分两类情形\nprint(Clust)\nClust.value_counts()   #聚类结果"
+    },
+    {
+      "index": 54,
+      "locator": "Notebook 单元 54 · code",
+      "text": "from sklearn.cluster import KMeans\nXkm=KMeans(n_clusters=2).fit(X)\nXkm.predict(X)      #分类结果"
+    },
+    {
+      "index": 55,
+      "locator": "Notebook 单元 55 · code",
+      "text": "plt.rcParams['axes.unicode_minus']=False;    #正常显示图中正负号\nplt.scatter(X[:,0],X[:,1],c=Xkm.predict(X));  #分类图"
+    },
+    {
+      "index": 56,
+      "locator": "Notebook 单元 56 · code",
+      "text": "np.random.seed(123)    #设置种子数使结果可重复\nx3=np.random.normal(0,0.2,10000).reshape((1000,10))\nx4=np.random.normal(1,0.2,10000).reshape((1000,10))\nY=np.append(x3,x4,axis=0)"
+    },
+    {
+      "index": 57,
+      "locator": "Notebook 单元 57 · code",
+      "text": "Ykm=KMeans(n_clusters=2).fit(Y)\nYkm.predict(Y)"
+    },
+    {
+      "index": 58,
+      "locator": "Notebook 单元 58 · code",
+      "text": "plt.scatter(Y[:,0],Y[:,1],c=Ykm.predict(Y),marker='x');"
+    },
+    {
+      "index": 59,
+      "locator": "Notebook 单元 59 · markdown",
+      "text": "## 4.5 聚类分析注意的问题"
+    },
+    {
+      "index": 60,
+      "locator": "Notebook 单元 60 · markdown",
+      "text": "## 案例四"
+    },
+    {
+      "index": 61,
+      "locator": "Notebook 单元 61 · code",
+      "text": "Case4=pd.read_excel('mvsCase.xlsx','Case4',index_col=0);Case4"
+    },
+    {
+      "index": 62,
+      "locator": "Notebook 单元 62 · code",
+      "text": "import scipy.cluster.hierarchy as sch\nCase4_D=sch.distance.pdist(Case4)\nCase4_H=sch.linkage(Case4_D,method='ward');\nplt.figure(figsize=(9,5))\nsch.dendrogram(Case4_H,labels=Case4.index);"
+    },
+    {
+      "index": 63,
+      "locator": "Notebook 单元 63 · code",
+      "text": "plt.figure(figsize=(7,7))\nsch.dendrogram(Case4_H,labels=Case4.index,orientation='right');"
+    },
+    {
+      "index": 64,
+      "locator": "Notebook 单元 64 · code",
+      "text": "Case4_T=pd.DataFrame(sch.cut_tree(Case4_H))[26]+1\nCase4_T.index=Case4.index;\nprint(Case4_T[Case4_T==1])\nprint(Case4_T[Case4_T==2])\nprint(Case4_T[Case4_T==3])\nprint(Case4_T[Case4_T==4])"
+    },
+    {
+      "index": 65,
+      "locator": "Notebook 单元 65 · code",
+      "text": "class_1 = Case4_T[Case4_T == 1].index.tolist()\nclass_2 = Case4_T[Case4_T == 2].index.tolist()\nclass_3 = Case4_T[Case4_T == 3].index.tolist()\nclass_4 = Case4_T[Case4_T == 4].index.tolist()\n\n# 创建一个字典来存储分类结果\ndata = {\n    '第1类': [class_1],\n    '第2类': [class_2],\n    '第3类': [class_3],\n    '第4类': [class_4]\n}\n# 将字典转换为 DataFrame\nresult_df = pd.DataFrame(data).T\n\n# 打印结果表格\nprint(result_df)\n"
+    },
+    {
+      "index": 66,
+      "locator": "Notebook 单元 66 · code",
+      "text": "from sklearn.cluster import KMeans\nCase4_KM=KMeans(n_clusters=4).fit(Case4).predict(Case4)\nprint(Case4_KM+1)"
+    },
+    {
+      "index": 67,
+      "locator": "Notebook 单元 67 · code",
+      "text": "Case4_class=pd.DataFrame({'类别':Case4_KM+1},index=Case4.index)\nprint(Case4_class[Case4_class.类别==1])\nprint(Case4_class[Case4_class.类别==2])\nprint(Case4_class[Case4_class.类别==3])\nprint(Case4_class[Case4_class.类别==4])"
+    },
+    {
+      "index": 68,
+      "locator": "Notebook 单元 68 · markdown",
+      "text": "## 课后习题 "
+    },
+    {
+      "index": 69,
+      "locator": "Notebook 单元 69 · markdown",
+      "text": "### 习题二、 第1题"
+    },
+    {
+      "index": 70,
+      "locator": "Notebook 单元 70 · code",
+      "text": "assigm_21_D = np.array([4,6,1,6,9,7,3,10,5,8]);\nassigm_21_Ds = squareform(assigm_21_D);\nprint(assigm_21_Ds)\nassigm_21_Ds_single = sch.linkage(assigm_21_Ds,method='single');\nsch.dendrogram(assigm_21_Ds_single,labels=range(1,6));\n\n"
+    },
+    {
+      "index": 71,
+      "locator": "Notebook 单元 71 · code",
+      "text": "assigm_21_Ds_complete = sch.linkage(assigm_21_Ds,method='complete');\nsch.dendrogram(assigm_21_Ds_complete,labels=range(1,6));\n"
+    },
+    {
+      "index": 72,
+      "locator": "Notebook 单元 72 · code",
+      "text": "\nassigm_21_Ds_ward = sch.linkage(assigm_21_Ds,method='ward');\nsch.dendrogram(assigm_21_Ds_ward,labels=range(1,6));"
+    },
+    {
+      "index": 73,
+      "locator": "Notebook 单元 73 · markdown",
+      "text": "### 习题二、 第2题"
+    },
+    {
+      "index": 74,
+      "locator": "Notebook 单元 74 · code",
+      "text": "a22_df = pd.read_excel('table4_5.xlsx', index_col=0);\na22_df"
+    },
+    {
+      "index": 75,
+      "locator": "Notebook 单元 75 · code",
+      "text": "D_a22 = pdist(a22_df);D_a22[:10].round(1)"
+    },
+    {
+      "index": 76,
+      "locator": "Notebook 单元 76 · code",
+      "text": "import scipy.cluster.hierarchy as sch\nimport matplotlib.pyplot as plt\nD_a22_H1 = sch.linkage(D_a22, method='complete');\nplt.figure(figsize=(9,5))\nsch.dendrogram(D_a22_H1, labels=a22_df.index);"
+    },
+    {
+      "index": 77,
+      "locator": "Notebook 单元 77 · code",
+      "text": "D_a22_H2 = sch.linkage(D_a22, method='ward');\nplt.figure(figsize=(9,5))\nsch.dendrogram(D_a22_H2, labels=a22_df.index);"
+    },
+    {
+      "index": 78,
+      "locator": "Notebook 单元 78 · code",
+      "text": "# Kmeans聚类\nfrom sklearn.cluster import KMeans\na22_KM = KMeans(n_clusters=20).fit(a22_df)\na22_KM.predict(a22_df)"
+    },
+    {
+      "index": 79,
+      "locator": "Notebook 单元 79 · code",
+      "text": "a22_KM = KMeans(n_clusters=4).fit(a22_df).predict(a22_df)\na22_KM"
+    },
+    {
+      "index": 80,
+      "locator": "Notebook 单元 80 · code",
+      "text": "a22_class=pd.DataFrame({'类别':a22_KM+1},index=a22_df.index)\nprint(a22_class[a22_class.类别==1])\nprint(a22_class[a22_class.类别==2])\nprint(a22_class[a22_class.类别==3])\nprint(a22_class[a22_class.类别==4])"
+    },
+    {
+      "index": 81,
+      "locator": "Notebook 单元 81 · code",
+      "text": "a22_class[a22_class.类别==1].index.tolist()"
+    },
+    {
+      "index": 82,
+      "locator": "Notebook 单元 82 · code",
+      "text": "a22_class_1 = a22_class[a22_class.类别==1].index.tolist()\na22_class_2 = a22_class[a22_class.类别==2].index.tolist()\na22_class_3 = a22_class[a22_class.类别==3].index.tolist()\na22_class_4 = a22_class[a22_class.类别==4].index.tolist()\n\n# 创建一个字典来存储分类结果\ndata_a22 = {\n    '第1类': [a22_class_1],\n    '第2类': [a22_class_2],\n    '第3类': [a22_class_3],\n    '第4类': [a22_class_4]\n}\n# 将字典转换为 DataFrame\na22_result_df = pd.DataFrame(data_a22).T\n\n# 打印结果表格\nprint(a22_result_df)\n"
+    },
+    {
+      "index": 83,
+      "locator": "Notebook 单元 83 · markdown",
+      "text": "### 习题二、 第3题"
+    }
+  ]
+}

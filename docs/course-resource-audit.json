@@ -1,0 +1,362 @@
+{
+  "status": "PASS",
+  "scope": {
+    "root": ".",
+    "excluded_directories": [
+      ".cache",
+      ".git",
+      ".ipynb_checkpoints",
+      ".mypy_cache",
+      ".nox",
+      ".parcel-cache",
+      ".pytest_cache",
+      ".ruff_cache",
+      ".tox",
+      ".vite",
+      "__pycache__",
+      "cache",
+      "coverage",
+      "dist",
+      "node_modules",
+      "temp",
+      "tmp"
+    ],
+    "content_policy": "text and OOXML XML members; no external directories scanned"
+  },
+  "summary": {
+    "resources": 101,
+    "registered_course_paths": 134,
+    "files_scanned": 375,
+    "failures": 0,
+    "review_flags": 22,
+    "unapproved_review_flags": 0
+  },
+  "failures": [],
+  "review_flags": [
+    {
+      "path": "README.md",
+      "category": "teaching_sensitive_keyword",
+      "count": 1,
+      "sha256": "166219091fdd9eceda3a019c161f8d9e3addc237a92fe36fbd8360a098b62a24",
+      "approved": true,
+      "locations": [
+        "18"
+      ]
+    },
+    {
+      "path": "course/notes/ch07.md",
+      "category": "teaching_sensitive_keyword",
+      "count": 16,
+      "sha256": "e4e4055222c286db3eeb850873b996d8ccf18eafe4295c915edd507bcd0810d4",
+      "approved": true,
+      "locations": [
+        "58",
+        "59",
+        "60",
+        "628",
+        "629",
+        "631",
+        "632",
+        "634",
+        "954",
+        "985",
+        "1018",
+        "1146"
+      ]
+    },
+    {
+      "path": "course/notes/ch09.md",
+      "category": "teaching_sensitive_keyword",
+      "count": 1,
+      "sha256": "de318119732d7a954615e5f8ac08c51b5806be2eeeeb5cd0753438999bcdaeb2",
+      "approved": true,
+      "locations": [
+        "85"
+      ]
+    },
+    {
+      "path": "course/notes/ch10.md",
+      "category": "teaching_sensitive_keyword",
+      "count": 15,
+      "sha256": "53bc5dce0380acd1cf370fe48da78b06b9a5a70a3c0f02b3933e6411ef07550e",
+      "approved": true,
+      "locations": [
+        "124",
+        "1062",
+        "1078",
+        "1096",
+        "1098",
+        "1099",
+        "1100",
+        "1101",
+        "1105",
+        "1108",
+        "1939",
+        "1968"
+      ]
+    },
+    {
+      "path": "course/notes/ch11.md",
+      "category": "teaching_sensitive_keyword",
+      "count": 1,
+      "sha256": "1ab4dfed4447c116c141ffdbdfd8361c34d11bbb86d124ccd1d6373d8d675fcf",
+      "approved": true,
+      "locations": [
+        "2114"
+      ]
+    },
+    {
+      "path": "course/slides/ch07.html",
+      "category": "teaching_sensitive_keyword",
+      "count": 7,
+      "sha256": "ec48b672f69dd42010089e9225ce6896a5ce6b257ba93967af8232fc71b94e1b",
+      "approved": true,
+      "locations": [
+        "140",
+        "157",
+        "169",
+        "173",
+        "178",
+        "191",
+        "192"
+      ]
+    },
+    {
+      "path": "course/slides/ch07.pptx",
+      "category": "teaching_sensitive_keyword",
+      "count": 7,
+      "sha256": "f6f574f75e3ae2824b0f83d6c24e5ea0cd9f2b92311e2cd8b91c50875e48d48b",
+      "approved": true,
+      "locations": [
+        "ppt/slides/slide10.xml:835",
+        "ppt/slides/slide11.xml:473",
+        "ppt/slides/slide11.xml:574",
+        "ppt/slides/slide11.xml:650",
+        "ppt/slides/slide11.xml:681",
+        "ppt/slides/slide12.xml:459",
+        "ppt/slides/slide12.xml:464"
+      ]
+    },
+    {
+      "path": "public/course/notes/ch07.md",
+      "category": "teaching_sensitive_keyword",
+      "count": 16,
+      "sha256": "e4e4055222c286db3eeb850873b996d8ccf18eafe4295c915edd507bcd0810d4",
+      "approved": true,
+      "locations": [
+        "58",
+        "59",
+        "60",
+        "628",
+        "629",
+        "631",
+        "632",
+        "634",
+        "954",
+        "985",
+        "1018",
+        "1146"
+      ]
+    },
+    {
+      "path": "public/course/notes/ch09.md",
+      "category": "teaching_sensitive_keyword",
+      "count": 1,
+      "sha256": "de318119732d7a954615e5f8ac08c51b5806be2eeeeb5cd0753438999bcdaeb2",
+      "approved": true,
+      "locations": [
+        "85"
+      ]
+    },
+    {
+      "path": "public/course/notes/ch10.md",
+      "category": "teaching_sensitive_keyword",
+      "count": 15,
+      "sha256": "53bc5dce0380acd1cf370fe48da78b06b9a5a70a3c0f02b3933e6411ef07550e",
+      "approved": true,
+      "locations": [
+        "124",
+        "1062",
+        "1078",
+        "1096",
+        "1098",
+        "1099",
+        "1100",
+        "1101",
+        "1105",
+        "1108",
+        "1939",
+        "1968"
+      ]
+    },
+    {
+      "path": "public/course/notes/ch11.md",
+      "category": "teaching_sensitive_keyword",
+      "count": 1,
+      "sha256": "1ab4dfed4447c116c141ffdbdfd8361c34d11bbb86d124ccd1d6373d8d675fcf",
+      "approved": true,
+      "locations": [
+        "2114"
+      ]
+    },
+    {
+      "path": "public/course/slides/ch07.html",
+      "category": "teaching_sensitive_keyword",
+      "count": 7,
+      "sha256": "ec48b672f69dd42010089e9225ce6896a5ce6b257ba93967af8232fc71b94e1b",
+      "approved": true,
+      "locations": [
+        "140",
+        "157",
+        "169",
+        "173",
+        "178",
+        "191",
+        "192"
+      ]
+    },
+    {
+      "path": "public/course/slides/ch07.pptx",
+      "category": "teaching_sensitive_keyword",
+      "count": 7,
+      "sha256": "f6f574f75e3ae2824b0f83d6c24e5ea0cd9f2b92311e2cd8b91c50875e48d48b",
+      "approved": true,
+      "locations": [
+        "ppt/slides/slide10.xml:835",
+        "ppt/slides/slide11.xml:473",
+        "ppt/slides/slide11.xml:574",
+        "ppt/slides/slide11.xml:650",
+        "ppt/slides/slide11.xml:681",
+        "ppt/slides/slide12.xml:459",
+        "ppt/slides/slide12.xml:464"
+      ]
+    },
+    {
+      "path": "public/resources/lecture07.json",
+      "category": "teaching_sensitive_keyword",
+      "count": 16,
+      "sha256": "f4cfddfc5761a8194ecac20b8a64022f550e98f1dada69a07d6c14c5bce59eed",
+      "approved": true,
+      "locations": [
+        "300",
+        "305",
+        "310",
+        "3150",
+        "3155",
+        "3165",
+        "3170",
+        "3180",
+        "4780",
+        "4935",
+        "5100",
+        "5740"
+      ]
+    },
+    {
+      "path": "public/resources/lecture09.json",
+      "category": "teaching_sensitive_keyword",
+      "count": 1,
+      "sha256": "9e917b3d2e317d8446affb572fe1cd6ced5aaeff6255d7bf6c7614c35efd2785",
+      "approved": true,
+      "locations": [
+        "435"
+      ]
+    },
+    {
+      "path": "public/resources/lecture10.json",
+      "category": "teaching_sensitive_keyword",
+      "count": 15,
+      "sha256": "f3e4b820305cf01742d0cd277d11972e82550f935e9901a2f8ad14b8b47dde79",
+      "approved": true,
+      "locations": [
+        "630",
+        "5320",
+        "5400",
+        "5490",
+        "5500",
+        "5505",
+        "5510",
+        "5515",
+        "5535",
+        "5550",
+        "9705",
+        "9850"
+      ]
+    },
+    {
+      "path": "public/resources/lecture11.json",
+      "category": "teaching_sensitive_keyword",
+      "count": 1,
+      "sha256": "c88f6d8a7e0dc73c159037a5b8f31bc942ecfaa65f5da47b746ecdd4ec53c6fc",
+      "approved": true,
+      "locations": [
+        "10580"
+      ]
+    },
+    {
+      "path": "public/resources/ppt07.json",
+      "category": "teaching_sensitive_keyword",
+      "count": 7,
+      "sha256": "b1cf7b19864fe4ab50ab33c27f225629dc07d3216da351e890c48aa7fe283410",
+      "approved": true,
+      "locations": [
+        "69",
+        "75",
+        "81"
+      ]
+    },
+    {
+      "path": "src/data/comparisons.json",
+      "category": "teaching_sensitive_keyword",
+      "count": 2,
+      "sha256": "16d8b49b8f70fc7e22bc93c677f38d3a1b0acbb726eb427ca56a5cbab10f8142",
+      "approved": true,
+      "locations": [
+        "69"
+      ]
+    },
+    {
+      "path": "src/data/edges.json",
+      "category": "teaching_sensitive_keyword",
+      "count": 13,
+      "sha256": "6820fdbdb9c9534340212a7814f3f3688c88906774987eff171a70779f07a020",
+      "approved": true,
+      "locations": [
+        "1617",
+        "2203",
+        "2221",
+        "2325",
+        "3347",
+        "3881",
+        "4249"
+      ]
+    },
+    {
+      "path": "src/data/nodes.json",
+      "category": "teaching_sensitive_keyword",
+      "count": 3,
+      "sha256": "166c3560ac6783cec0f60cd9ea9fc780932d50936988595706d48817cc5f2194",
+      "approved": true,
+      "locations": [
+        "1225",
+        "3392"
+      ]
+    },
+    {
+      "path": "src/data/problems.json",
+      "category": "teaching_sensitive_keyword",
+      "count": 2,
+      "sha256": "18dd3791be6d3e7c5aec982bcbe2d5aaa71d4f20a7e3d9bda0494ea411670448",
+      "approved": true,
+      "locations": [
+        "35"
+      ]
+    }
+  ],
+  "review_config": "docs/privacy-review.json",
+  "notes": [
+    "PASS requires zero direct failures and approval for every review flag.",
+    "Review approvals match relative path, category and content sha256.",
+    "Notebook outputs=[] and execution_count=null are treated as unexecuted."
+  ]
+}

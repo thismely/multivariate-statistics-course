@@ -1,0 +1,458 @@
+[
+  {
+    "id": "ppt00",
+    "title": "第0章-课前准备",
+    "kind": "ppt",
+    "source_path": "PPT/第0章-课前准备.pptx",
+    "sha256": "2458391575a5a09424d5142e14279fe0cebf6275e67a5bbce084b82af07711d7",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt00.json"
+  },
+  {
+    "id": "ppt10",
+    "title": "第10章 典型相关分析及Python应用",
+    "kind": "ppt",
+    "source_path": "PPT/第10章 典型相关分析及Python应用.pptx",
+    "sha256": "f1c6100edb9fa6e3983d53db6ee4f1538e881da87323913c15d4db082e78de1a",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt10.json",
+    "course_id": "slides-CH10"
+  },
+  {
+    "id": "ppt11",
+    "title": "第11章 扩展线性模型及Python建模",
+    "kind": "ppt",
+    "source_path": "PPT/第11章 扩展线性模型及Python建模.pptx",
+    "sha256": "f98a62c1a3ad65b4187f6511f4eac2349c3cfaa469edac2693cf79bbc0862089",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt11.json",
+    "course_id": "slides-CH11"
+  },
+  {
+    "id": "ppt12",
+    "title": "第12 章 判别分析及 Python 算法",
+    "kind": "ppt",
+    "source_path": "PPT/第12 章 判别分析及 Python 算法.pptx",
+    "sha256": "c1c104616974a8b1ef0493f688b5a4976a11eb0f1b5353dfb344c596cffc66db",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt12.json",
+    "course_id": "slides-CH12"
+  },
+  {
+    "id": "ppt01",
+    "title": "第1章 多元统计分析及软件概述 ",
+    "kind": "ppt",
+    "source_path": "PPT/第1章 多元统计分析及软件概述 .pptx",
+    "sha256": "1b8564afaeb5f2b093960e7c4beaebab7d63a85da53222af56fe861b30d8aa50",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt01.json",
+    "course_id": "slides-CH01"
+  },
+  {
+    "id": "ppt02",
+    "title": "第2章 多元数据的Python处理",
+    "kind": "ppt",
+    "source_path": "PPT/第2章 多元数据的Python处理.pptx",
+    "sha256": "9379c202f2cbdd8a81bc701cae167786b7ade416e463bcf74571aaac6ad3a7aa",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt02.json",
+    "course_id": "slides-CH02"
+  },
+  {
+    "id": "ppt03",
+    "title": "第3章 多元数据的Python可视化",
+    "kind": "ppt",
+    "source_path": "PPT/第3章 多元数据的Python可视化.pptx",
+    "sha256": "2317f6f64b9dbce80f77966fd21c210c7fbb90876e7438ffd3421727ec30a46f",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt03.json",
+    "course_id": "slides-CH03"
+  },
+  {
+    "id": "ppt04",
+    "title": "第4章 聚类分析及Python分类 (1)",
+    "kind": "ppt",
+    "source_path": "PPT/第4章 聚类分析及Python分类 (1).pptx",
+    "sha256": "764db40e93fe7d001a33ad946573b0b0ce7e66a528f4f211c9ae32a78fd0d1c8",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt04.json",
+    "course_id": "slides-CH04"
+  },
+  {
+    "id": "ppt05",
+    "title": "第5章 综合分析及Python评价",
+    "kind": "ppt",
+    "source_path": "PPT/第5章 综合分析及Python评价.pptx",
+    "sha256": "983c63e4c39b4e746f50a697b27e575af0b76bc2e09508a2111bba673f261258",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt05.json",
+    "course_id": "slides-CH05"
+  },
+  {
+    "id": "ppt06",
+    "title": "第6章 主成分分析及Python计算",
+    "kind": "ppt",
+    "source_path": "PPT/第6章 主成分分析及Python计算.pptx",
+    "sha256": "a084fb7626d15531855f4339511892637ce6c0dd36e1959162d7aadbb6967914",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt06.json",
+    "course_id": "slides-CH06"
+  },
+  {
+    "id": "ppt07",
+    "title": "第7章 因子分析及Python应用",
+    "kind": "ppt",
+    "source_path": "PPT/第7章 因子分析及Python应用.pptx",
+    "sha256": "a65bba82ca4023724af25e28f0ad810097a80822293d196f14d4a1fc4d20c91d",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt07.json",
+    "course_id": "slides-CH07"
+  },
+  {
+    "id": "ppt08",
+    "title": "第8章 对应分析及Python视图",
+    "kind": "ppt",
+    "source_path": "PPT/第8章 对应分析及Python视图.pptx",
+    "sha256": "5cebafeb1e4960481eeeb91917669f74b9c384d25512efed2f2cb2b56d4173f6",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt08.json",
+    "course_id": "slides-CH08"
+  },
+  {
+    "id": "ppt09",
+    "title": "第9章 相关与回归及Python分析",
+    "kind": "ppt",
+    "source_path": "PPT/第9章 相关与回归及Python分析.pptx",
+    "sha256": "1a2267857fa6e9c8c406589d243572566492305da64030d418029970d0a18502",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt09.json",
+    "course_id": "slides-CH09"
+  },
+  {
+    "id": "lecture10",
+    "title": "第10章_典型相关分析及Python应用_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第10章_典型相关分析及Python应用_完整讲义.md",
+    "sha256": "53bc5dce0380acd1cf370fe48da78b06b9a5a70a3c0f02b3933e6411ef07550e",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture10.json",
+    "course_id": "notes-CH10"
+  },
+  {
+    "id": "lecture11",
+    "title": "第11章_扩展线性模型及Python建模_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第11章_扩展线性模型及Python建模_完整讲义.md",
+    "sha256": "1ab4dfed4447c116c141ffdbdfd8361c34d11bbb86d124ccd1d6373d8d675fcf",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture11.json",
+    "course_id": "notes-CH11"
+  },
+  {
+    "id": "lecture12",
+    "title": "第12章_判别分析及Python算法_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第12章_判别分析及Python算法_完整讲义.md",
+    "sha256": "2be3abbfcf628409b1015613d8ffdc9d42cba816b5ed223ea78a9df58b10a5e6",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture12.json",
+    "course_id": "notes-CH12"
+  },
+  {
+    "id": "lecture01",
+    "title": "第1章_多元统计分析及软件概述_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第1章_多元统计分析及软件概述_完整讲义.md",
+    "sha256": "16cb785de4427bea716a9c974ea578fa4abea0aa637326abcf9c05b556a4d4b0",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture01.json",
+    "course_id": "notes-CH01"
+  },
+  {
+    "id": "lecture02",
+    "title": "第2章_多元数据的Python处理_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第2章_多元数据的Python处理_完整讲义.md",
+    "sha256": "28512df93cf6f4d3c61bcfbf7c61e7c716d0ad61452f01d987fca4e10ccf091a",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture02.json",
+    "course_id": "notes-CH02"
+  },
+  {
+    "id": "lecture03",
+    "title": "第3章_多元数据的Python可视化_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第3章_多元数据的Python可视化_完整讲义.md",
+    "sha256": "e4f7d83b38e88d1936841ea4917e0d732dd3c7eda79c5ceb4cc2d9bebde8e2f2",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture03.json",
+    "course_id": "notes-CH03"
+  },
+  {
+    "id": "lecture04",
+    "title": "第4章_聚类分析及Python分类_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第4章_聚类分析及Python分类_完整讲义.md",
+    "sha256": "d3a6b43f849dd1843a06890ab247f570eaa3bbf991354a52607cc18be4d70c71",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture04.json",
+    "course_id": "notes-CH04"
+  },
+  {
+    "id": "lecture05",
+    "title": "第5章_综合分析及Python评价_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第5章_综合分析及Python评价_完整讲义.md",
+    "sha256": "f72d2a7f835d21087832778e8bb6988d63adb34f710344011879b3211cafb45f",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture05.json",
+    "course_id": "notes-CH05"
+  },
+  {
+    "id": "lecture06",
+    "title": "第6章_主成分分析及Python计算_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第6章_主成分分析及Python计算_完整讲义.md",
+    "sha256": "98a523064ad9d902ed4b853ef5cbe7e4ece1bed700e7167edc66822568633a93",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture06.json",
+    "course_id": "notes-CH06"
+  },
+  {
+    "id": "lecture07",
+    "title": "第7章_因子分析及Python应用_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第7章_因子分析及Python应用_完整讲义.md",
+    "sha256": "2493336abce6e9f9f6a3f032c7687597ea9aa4873809009df22e50e12ee6ec80",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture07.json",
+    "course_id": "notes-CH07"
+  },
+  {
+    "id": "lecture08",
+    "title": "第8章_对应分析及Python视图_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第8章_对应分析及Python视图_完整讲义.md",
+    "sha256": "095c7b4c034698ef6635822e260b82ccdacdce738c03ba75fc1ced1f1ff2f476",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture08.json",
+    "course_id": "notes-CH08"
+  },
+  {
+    "id": "lecture09",
+    "title": "第9章_相关与回归及Python分析_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第9章_相关与回归及Python分析_完整讲义.md",
+    "sha256": "de318119732d7a954615e5f8ac08c51b5806be2eeeeb5cd0753438999bcdaeb2",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture09.json",
+    "course_id": "notes-CH09"
+  },
+  {
+    "id": "nb01",
+    "title": "第01章 概述",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第01章 概述.ipynb",
+    "sha256": "189cbd62ece2b5791fa5d6f5c046a4ccf05acf86746477be7f6d9713a805e6f1",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb01.json",
+    "course_id": "original-nb-CH01"
+  },
+  {
+    "id": "nb02",
+    "title": "第02章-数据处理",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第02章-数据处理.ipynb",
+    "sha256": "05bf980a7eefe0a21da1410731f5d2b55db755a211440ca2a8bd4c657e55df83",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb02.json",
+    "course_id": "original-nb-CH02"
+  },
+  {
+    "id": "nb03",
+    "title": "第03章-数据可视化",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第03章-数据可视化.ipynb",
+    "sha256": "acdf27d69c27f99f8513d4e397caf88ab000665872d93c61bee0bf7acdf9ab36",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb03.json",
+    "course_id": "original-nb-CH03"
+  },
+  {
+    "id": "nb04",
+    "title": "第04章-聚类分析",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第04章-聚类分析.ipynb",
+    "sha256": "f119d796de2e92c56f82df53ea38d2eb10e3ba8c7318f63ea02a09dbc39620e5",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb04.json",
+    "course_id": "original-nb-CH04"
+  },
+  {
+    "id": "nb05",
+    "title": "第05章-综合评价",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第05章-综合评价.ipynb",
+    "sha256": "8fdaf570247c1fe14ec09148ac795d0470dc849217da3788b16a4aa2c2827c61",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb05.json",
+    "course_id": "original-nb-CH05"
+  },
+  {
+    "id": "nb06",
+    "title": "第06章-主成分分析",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第06章-主成分分析.ipynb",
+    "sha256": "cbc112893bb3988f1143723b4caf4d31cb7c517623ca72108269604c6019162b",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb06.json",
+    "course_id": "original-nb-CH06"
+  },
+  {
+    "id": "nb07",
+    "title": "第07章-因子分析",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第07章-因子分析.ipynb",
+    "sha256": "52faf9a91e913bedd3bca94fc4bc98dced3bb247403e032d28dd1537e1d232a7",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb07.json",
+    "course_id": "original-nb-CH07"
+  },
+  {
+    "id": "nb08",
+    "title": "第08章-对应分析",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第08章-对应分析.ipynb",
+    "sha256": "426fa2f292ec1b816ab142664828663b8406f8ba63183ea4dfc66040e1a2a143",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb08.json",
+    "course_id": "original-nb-CH08"
+  },
+  {
+    "id": "nb09",
+    "title": "第09章 相关与回归",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第09章 相关与回归.ipynb",
+    "sha256": "f6bfab6a7bca54b05841e0591dbae1c1ceccd8edac47f34075ffc7c0005ac311",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb09.json",
+    "course_id": "original-nb-CH09"
+  },
+  {
+    "id": "nb10",
+    "title": "第10章-典型相关",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第10章-典型相关.ipynb",
+    "sha256": "01a6214887ba7e11b9e2c266317ab40b3bcce6599914b6dda255dfb9ac3219d2",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb10.json",
+    "course_id": "original-nb-CH10"
+  },
+  {
+    "id": "nb11",
+    "title": "第11章-线性模型",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第11章-线性模型.ipynb",
+    "sha256": "61c46806d392d4e4b6ba512da7719632d2729658eb2afbe7fe317cd5306ff1f2",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb11.json",
+    "course_id": "original-nb-CH11"
+  },
+  {
+    "id": "nb12",
+    "title": "第12章-判别分析",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第12章-判别分析.ipynb",
+    "sha256": "30644624de18ff44c6490fa311b6861e9fbaf01c897b60a88900178be5b4d430",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb12.json",
+    "course_id": "original-nb-CH12"
+  },
+  {
+    "id": "mvsCase",
+    "title": "mvsCase",
+    "kind": "dataset",
+    "source_path": "课程数据/mvsCase.xlsx",
+    "sha256": "e136b854b8cf03c575ca2918900a3c87234c4dbfcc01cffc23a936bb6dc667be",
+    "status": "SHEET_NAMES_VERIFIED",
+    "href": "resources/mvsCase.json"
+  },
+  {
+    "id": "mvsData",
+    "title": "mvsData",
+    "kind": "dataset",
+    "source_path": "课程数据/mvsData.xlsx",
+    "sha256": "f1b01b5bfe2078b8e53fd2ef2f84e832b60b73adc6949430e92cfd9689f033a3",
+    "status": "SHEET_NAMES_VERIFIED",
+    "href": "resources/mvsData.json"
+  },
+  {
+    "id": "mvsExer",
+    "title": "mvsExer",
+    "kind": "dataset",
+    "source_path": "课程数据/mvsExer.xlsx",
+    "sha256": "2aead42a633fbf57baaf56fe0dca478dadb3a929a46cac4c8cf0dc6d90ebe9ad",
+    "status": "SHEET_NAMES_VERIFIED",
+    "href": "resources/mvsExer.json"
+  },
+  {
+    "id": "book0",
+    "title": "[管理学精选教材译丛]应用多元统计分析 第2版 翻译版 (（德）哈德勒，（比）西马著)",
+    "kind": "book",
+    "source_path": "参考书目：[管理学精选教材译丛]应用多元统计分析 第2版 翻译版 (（德）哈德勒，（比）西马著)",
+    "sha256": "cb01b3862a7480415bd07b317ba76be1c604a31896f21a41f95bd3e496303001",
+    "status": "SCAN_REQUIRES_OCR",
+    "href": null,
+    "course_id": "book0"
+  },
+  {
+    "id": "book1",
+    "title": "多元统计分析 第5版 (何晓群)",
+    "kind": "book",
+    "source_path": "参考书目：多元统计分析 第5版 (何晓群)",
+    "sha256": "aa830772a2e5139c5eb82f0e91ffb41f0a212c0e321ffc3233395a313827c01b",
+    "status": "SCAN_REQUIRES_OCR",
+    "href": null,
+    "course_id": "book1"
+  },
+  {
+    "id": "book2",
+    "title": "多元统计分析导论 (安德森 T. W. Anderson 张润楚 程轶)",
+    "kind": "book",
+    "source_path": "参考书目：多元统计分析导论 (安德森 T. W. Anderson 张润楚 程轶)",
+    "sha256": "e75fdaf6c9fc92e5c4bd8f01ad884ec5bf4e30136c7bfb6358239cba13b98e48",
+    "status": "SCAN_REQUIRES_OCR",
+    "href": null,
+    "course_id": "book2"
+  },
+  {
+    "id": "book3",
+    "title": "应用多元统计分析=Applied multivariate statistical analysis (朱建平主编)",
+    "kind": "book",
+    "source_path": "参考书目：应用多元统计分析=Applied multivariate statistical analysis (朱建平主编)",
+    "sha256": "d7763ac090b53df49d80f068a2d82d201e921a617e309d87822c9f261f920ec9",
+    "status": "SCAN_REQUIRES_OCR",
+    "href": null,
+    "course_id": "book3"
+  },
+  {
+    "id": "book4",
+    "title": "本科生数学基础课教材 应用多元统计分析 (高惠璇编著)",
+    "kind": "book",
+    "source_path": "参考书目：本科生数学基础课教材 应用多元统计分析 (高惠璇编著)",
+    "sha256": "d12cc43fe69f7da6d0a5f640eae8df946fccd2223e60321a24d7a7996a07a9aa",
+    "status": "SCAN_REQUIRES_OCR",
+    "href": null,
+    "course_id": "book4"
+  },
+  {
+    "id": "book5",
+    "title": "李东风-《多元统计分析讲义》讲义",
+    "kind": "book",
+    "source_path": "参考书目：李东风-《多元统计分析讲义》讲义",
+    "sha256": "c0b305eee7f43bd12e2880b166fc6df8b160caa14156cf60bcaa4da08116c16e",
+    "status": "SELECTED_SECTIONS_REVIEWED",
+    "href": null,
+    "course_id": "book5"
+  }
+]

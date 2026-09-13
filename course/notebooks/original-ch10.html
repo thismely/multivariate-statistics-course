@@ -1,0 +1,49 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px/1.8 system-ui;max-width:960px;margin:24px auto;padding:20px;color:#192b3b}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:20px}article{border-bottom:1px solid #ccc}h2{font-size:18px}</style><h1>第10章 原课程 Notebook（阅读参考）</h1><p>已移除运行输出、身份元数据与本机路径。历史依赖及数据文件尚未全部适配；请使用同章可重跑教学实验。</p><article><h2>单元 1 · markdown</h2><pre># 第10章 典型相关分析</pre></article><article><h2>单元 2 · markdown</h2><pre>## 10.1 引言</pre></article><article><h2>单元 3 · markdown</h2><pre>## 10.2 相关分析的架构</pre></article><article><h2>单元 4 · code</h2><pre>#%run init.py</pre></article><article><h2>单元 5 · code</h2><pre>#%cd &quot;[本地路径已移除]&quot;</pre></article><article><h2>单元 6 · markdown</h2><pre>### 10.2.1 简单相关分析</pre></article><article><h2>单元 7 · code</h2><pre>import pandas as pd
+pd.set_option(&#x27;display.precision&#x27;,4)  #数据框输出精度
+d101=pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d101&#x27;);#d101</pre></article><article><h2>单元 8 · code</h2><pre>d101.corr()</pre></article><article><h2>单元 9 · code</h2><pre>pd.plotting.scatter_matrix(d101); #sns.pairplot(d10_1)</pre></article><article><h2>单元 10 · markdown</h2><pre>### 10.2.2 多元相关分析</pre></article><article><h2>单元 11 · code</h2><pre>from statsmodels.formula.api import ols
+fmy1=ols(formula=&#x27;y1~x1+x2+x3&#x27;,data=d101).fit()
+print(fmy1.summary())</pre></article><article><h2>单元 12 · code</h2><pre>fmy2=ols(formula=&#x27;y2~x1+x2+x3&#x27;,data=d101).fit()
+print(fmy2.summary())</pre></article><article><h2>单元 13 · code</h2><pre>fmy3=ols(formula=&#x27;y3~x1+x2+x3&#x27;,data=d101).fit()
+print(fmy3.summary())</pre></article><article><h2>单元 14 · markdown</h2><pre>## 10.3 典型相关分析原理</pre></article><article><h2>单元 15 · markdown</h2><pre>### 10.3.1 典型相关的思想</pre></article><article><h2>单元 16 · markdown</h2><pre>### 10.3.2 典型相关的求法</pre></article><article><h2>单元 17 · code</h2><pre>X=d101[[&#x27;x1&#x27;,&#x27;x2&#x27;,&#x27;x3&#x27;]]  #第一组数据
+Y=d101[[&#x27;y1&#x27;,&#x27;y2&#x27;,&#x27;y3&#x27;]]  #第二组数据</pre></article><article><h2>单元 18 · code</h2><pre>from sklearn.cross_decomposition import CCA
+import numpy as np
+n,p=np.shape(X); n,q = np.shape(Y)
+ca=CCA(n_components=min(p,q)).fit(X,Y); #取最小变量个数</pre></article><article><h2>单元 19 · code</h2><pre>from pandas import DataFrame as DF
+u_coef=ca.x_rotations_.T  #X的典型变量系数
+print(DF(u_coef,[&#x27;u1&#x27;,&#x27;u2&#x27;,&#x27;u3&#x27;],X.columns))
+v_coef=ca.y_rotations_.T  #Y的典型变量系数
+print(DF(v_coef,[&#x27;v1&#x27;,&#x27;v2&#x27;,&#x27;v3&#x27;],Y.columns))</pre></article><article><h2>单元 20 · code</h2><pre>u_scores,v_scores=ca.transform(X,Y) #典型变量u、v得分
+U=DF(u_scores);V=DF(v_scores)       #典型变量得分数据框
+U,V</pre></article><article><h2>单元 21 · code</h2><pre>CR=U.corrwith(V);CR                 #典型变量的相关系数</pre></article><article><h2>单元 22 · markdown</h2><pre>### 10.3.3 典型变量的性质</pre></article><article><h2>单元 23 · markdown</h2><pre>### 10.3.4 典型相关的检验</pre></article><article><h2>单元 24 · code</h2><pre>def CR_test(n,p,q,r):  #典型相关检验函数
+    m=len(r); 
+    import numpy as np
+    Q=np.zeros(m); P=np.zeros(m)
+    L=1  #lambda=1
+    from math import log
+    for k in range(m-1,-1,-1):  
+        L=L*(1-r[k]**2)  
+        Q[k]=-log(L)
+    from scipy import stats                
+    for k in range(0,m):
+        Q[k]=(n-k-1/2*(p+q+3))*Q[k] #检验的卡方值
+        P[k]=1-stats.chi2.cdf(Q[k],(p-k)*(q-k)) #P值
+    CR=DF({&#x27;CR&#x27;:r,&#x27;Q&#x27;:Q,&#x27;P&#x27;:P}).round(4)
+    return CR</pre></article><article><h2>单元 25 · code</h2><pre>print(CR_test(n,p,q,CR))</pre></article><article><h2>单元 26 · markdown</h2><pre>### 10.4 典型相关分析步骤</pre></article><article><h2>单元 27 · markdown</h2><pre>### 10.4.1 计算典型系数及变量</pre></article><article><h2>单元 28 · code</h2><pre>def cancor(X,Y,pq=None,plot=False):  #pq指定典型变量的个数
+    import numpy as np
+    n,p=np.shape(X); n,q=np.shape(Y)
+    if pq==None: pq=min(p,q)
+    cca=CCA(n_components=pq).fit(X,Y); 
+    u_scores,v_scores=cca.transform(X,Y) 
+    r=DF(u_scores).corrwith(DF(v_scores));  
+    CR=CR_test(n,p,q,r)           
+    print(&#x27;典型相关系数检验：\n&#x27;,CR)   
+    print(&#x27;\n典型相关变量系数：\n&#x27;)
+    u_coef=DF(cca.x_rotations_.T,[&#x27;u%d&#x27;%(i+1) for i in range(pq)],X.columns)
+    v_coef=DF(cca.y_rotations_.T,[&#x27;v%d&#x27;%(i+1) for i in range(pq)],Y.columns)        
+    if plot: #显示第一对典型变量的关系图
+        import matplotlib.pyplot as plt    
+        plt.plot(u_scores[:,0],v_scores[:,0],&#x27;o&#x27;)
+    return u_coef,v_coef</pre></article><article><h2>单元 29 · code</h2><pre>cancor(X,Y,plot=True)</pre></article><article><h2>单元 30 · markdown</h2><pre>### 10.4.2 典型相关的实证分析</pre></article><article><h2>单元 31 · code</h2><pre>d102=pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d102&#x27;);d102</pre></article><article><h2>单元 32 · code</h2><pre>#cancor(d102[[&#x27;x1&#x27;,&#x27;x2&#x27;,&#x27;x3&#x27;,&#x27;x4&#x27;]],d102[[&#x27;y1&#x27;,&#x27;y2&#x27;,&#x27;y3&#x27;,&#x27;y4&#x27;,&#x27;y5&#x27;,&#x27;y6&#x27;]])
+X=d102[[&#x27;x1&#x27;,&#x27;x2&#x27;,&#x27;x3&#x27;,&#x27;x4&#x27;]];Y=d102[[&#x27;y1&#x27;,&#x27;y2&#x27;,&#x27;y3&#x27;,&#x27;y4&#x27;,&#x27;y5&#x27;,&#x27;y6&#x27;]]
+cancor(X,Y)</pre></article><article><h2>单元 33 · code</h2><pre>cancor(X,Y,2,plot=True) #去前两对典型变量并绘制第一对典型变量的散点图</pre></article><article><h2>单元 34 · markdown</h2><pre>## 案例10：R&amp;D投入与产出的典型相关分析</pre></article><article><h2>单元 35 · code</h2><pre>Case10=pd.read_excel(&#x27;mvsCase.xlsx&#x27;,&#x27;Case10&#x27;);Case10</pre></article><article><h2>单元 36 · code</h2><pre>Case10.corr()</pre></article><article><h2>单元 37 · code</h2><pre>pd.plotting.scatter_matrix(Case10,figsize=(10,8));</pre></article><article><h2>单元 38 · code</h2><pre>cancor(Case10[[&#x27;x1&#x27;,&#x27;x2&#x27;,&#x27;x3&#x27;]],Case10[[&#x27;y1&#x27;,&#x27;y2&#x27;,&#x27;y3&#x27;,&#x27;y4&#x27;,&#x27;y5&#x27;,&#x27;y6&#x27;]])</pre></article><article><h2>单元 39 · code</h2><pre>cancor(Case10[[&#x27;x1&#x27;,&#x27;x2&#x27;,&#x27;x3&#x27;]],Case10[[&#x27;y1&#x27;,&#x27;y2&#x27;,&#x27;y3&#x27;,&#x27;y4&#x27;,&#x27;y5&#x27;,&#x27;y6&#x27;]]
+       ,2,True)</pre></article><article><h2>单元 40 · code</h2><pre></pre></article></html>

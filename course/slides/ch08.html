@@ -1,0 +1,379 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px/1.8 system-ui;max-width:960px;margin:24px auto;padding:20px;color:#192b3b}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:20px}article{border-bottom:1px solid #ccc}h2{font-size:18px}</style><h1>第8章 课程课件</h1><p>文本预览；图像、公式和版式请下载课件核对。</p><article><h2>第 1 页</h2><pre>第
+8
+章 对应分析及
+Python
+视图
+多元统计分析及
+Python
+建模 </pre></article><article><h2>第 2 页</h2><pre>多元统计分析及
+Python
+建模
+第
+8
+章
+ 
+对应分析及
+Python
+视图
+	</pre></article><article><h2>第 3 页</h2><pre>多元统计分析及
+Python
+建模
+第
+8
+章
+ 
+对应分析及
+Python
+视图
+	
+【
+学习目标 
+】
+要求了解对应分析的目的和基本统计思想，以及对应分析的实
+  
+                     
+际意义。了解对应分析的统计原理。特别是定性变量定量量化
+  
+                     
+，解决社会科学中实际问题的基本思路。了解Python程程序中
+                      
+                     
+对应分析的基本步骤。
+【
+教学内容 
+】
+对应分析的目的和基本思想。对应分析方法的基本原理。掌
+握
+           
+                     
+对应分析的基本分析步骤，掌握R型和Q型因子分析在对
+应分析
+                           
+                     
+中的应用。简单介绍相关的Python计算程序。</pre></article><article><h2>第 4 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.1
+对应分析的提出
+       
+在错综复杂的经济和管理关系中，不仅需要了解变量之间的关系，样品之间的关系，还需要了解变量与样品之间的对应关系。1970年Beozecri提出了对应分析，是多变量统计分析中一种有用的分析方法。
+       
+对应分析（Correspondence
+ 
+Analysis）是在因子分析的基础上发展起来的。是近年新发展起来的一种多元相依变量统计分析技术，通过分析由定性变量构成的交互汇总表来揭示变量间的联系。可以揭示同一变量的各个类别之间的差异，以及不同变量各个类别之间的对应关系。</pre></article><article><h2>第 5 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.1
+对应分析的提出
+       
+       
+如对某一行业所属的企业进行经济效益评价时，不仅要研究经济效益指标间的关系，还要将企业按经济效益的好坏进行分类，研究哪些企业与哪些经济效益指标的关系更密切一些，为决策部门正确指导企业的生产经营活动提供更多的信息。这就需要有一种统计方法，将企业（样品）和指标（变量）放在一起进行分析、分类 
+、作图，便于做经济意义上的解释 。解决这类问题的统计方法就是对应分析。
+8.1.1
+ 样品与变量间的关系</pre></article><article><h2>第 6 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.1
+对应分析的提出
+       
+      
+因子分析分为 R 型因子分析和 Q 型因子分析。
+   
+ （1）Q 型因子分析
+               
+Q 型因子分析是对样品作因子分析，研究样品之间的相互关系；
+    
+（2）R 型因子分析
+               
+R 型因子分析是对变量作因子分析，研究的是变量之间的相互关系；
+    
+（3）
+对
+应型因子分析   
+     
+对应分析把 R 型因子分析和 Q 型因子分析统一了起来，通过 R 型因子分析直接得到Q型因子分析的结果， 同时把变量（ 指标 ） 和样品反映到相同的坐标轴（ 因子轴 ） 的一张图形上，用此来说明变量（指标）与样品之间的对应关系。
+8.1.2
+ 对应分析的类型</pre></article><article><h2>第 7 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+      
+对应分析是分析两组或多组变量之间关系的有效方法，在离散情况下，它是从资料出发通过建立因素间的二维或多维列联表来对数据进行分析，在此我们要问， 这种分析是否有意义，或者说对于所给的数据是否值得做这种相应分析。也就是说通常我们首先需要了解因素间有无联系或是否独立，这一节我们将介绍对应分析与独立性检验的内在关系，以此说明应用对应分析方法解决实际问题时， 避免盲目性，并需先进行因素的独立性检验。一般用
+X²
+检验来分析它们之间的关系。
+8.2.1
+ 列联表分析</pre></article><article><h2>第 8 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+8.2.1
+ 列联表分析</pre></article><article><h2>第 9 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+8.2.1
+ 列联表分析</pre></article><article><h2>第 10 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+8.2.1
+ 列联表分析</pre></article><article><h2>第 11 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+8.2.1
+ 列联表分析</pre></article><article><h2>第 12 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+8.2.1
+ 列联表分析</pre></article><article><h2>第 13 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       </pre></article><article><h2>第 14 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       </pre></article><article><h2>第 15 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+8.2.1
+ 列联表分析</pre></article><article><h2>第 16 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+8.2.2
+ 对应分析方法</pre></article><article><h2>第 17 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+8.2.2
+ 对应分析方法</pre></article><article><h2>第 18 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+8.2.2
+ 对应分析方法</pre></article><article><h2>第 19 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+8.2.2
+ 对应分析方法</pre></article><article><h2>第 20 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.2
+对应分析基本原理
+       
+8.2.2
+ 对应分析方法</pre></article><article><h2>第 21 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       
+8.3.
+1
+对应分析方法</pre></article><article><h2>第 22 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       
+8.3.
+1 
+对应分析方法</pre></article><article><h2>第 23 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       </pre></article><article><h2>第 24 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       
+8.3.
+1 
+对应分析方法</pre></article><article><h2>第 25 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       
+8.3.
+2 
+实证分析</pre></article><article><h2>第 26 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       </pre></article><article><h2>第 27 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       
+8.3.
+2 
+实证分析</pre></article><article><h2>第 28 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       
+8.3.
+2 
+实证分析</pre></article><article><h2>第 29 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       </pre></article><article><h2>第 30 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       </pre></article><article><h2>第 31 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       </pre></article><article><h2>第 32 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       </pre></article><article><h2>第 33 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.3
+对应分析计算步骤
+       
+8.3.
+2 
+实证分析</pre></article><article><h2>第 34 页</h2><pre>8
+多元统计分析及
+Python
+建模
+8.4
+对应分析注意事项
+       </pre></article><article><h2>第 35 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 36 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 37 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 38 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 39 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 40 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 41 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 42 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 43 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 44 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 45 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 46 页</h2><pre>多元统计分析及
+Python
+建模
+案例
+8：对应分析在农民收入中的应用
+       </pre></article><article><h2>第 47 页</h2><pre>欢迎大家继续学习
+第
+8
+章内容就讲到这里</pre></article></html>

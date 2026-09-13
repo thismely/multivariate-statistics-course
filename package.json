@@ -1,0 +1,30 @@
+{
+  "name": "multivariate-statistics-course",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "start": "npm run dev",
+    "prepare:course": "python3 scripts/prepare-course.py",
+    "audit": "node scripts/audit.mjs && python3 scripts/course-audit.py",
+    "build": "npm run prepare:course && npm run audit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.mjs",
+    "predev": "npm run prepare:course",
+    "test:dist": "node scripts/check-dist.mjs"
+  },
+  "dependencies": {
+    "vue": "^3.5.0",
+    "pinia": "^3.0.0",
+    "three": "^0.180.0",
+    "lucide-vue-next": "^0.468.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0",
+    "@vitejs/plugin-vue": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

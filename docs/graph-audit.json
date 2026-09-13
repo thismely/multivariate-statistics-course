@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "nodes": 111,
+  "edges": 199,
+  "resources": 46,
+  "cases": 9,
+  "comparisons": 6,
+  "problems": 8,
+  "byLevel": {
+    "1": 13,
+    "2": 43,
+    "3": 19,
+    "4": 24,
+    "5": 12
+  },
+  "byModule": {
+    "core": 1,
+    "A": 13,
+    "B": 11,
+    "C": 35,
+    "D": 24,
+    "E": 15,
+    "F": 12
+  },
+  "byRelation": {
+    "prerequisite": 77,
+    "derived_from": 6,
+    "part_of": 98,
+    "compare_with": 6,
+    "used_for": 9,
+    "assessed_by": 3
+  },
+  "errors": [],
+  "scope": "Structural and source locator audit; not independent faculty content approval or empirical reproduction."
+}

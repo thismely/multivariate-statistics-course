@@ -1,0 +1,273 @@
+{
+  "resource": {
+    "id": "nb09",
+    "title": "第09章 相关与回归",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第09章 相关与回归.ipynb",
+    "sha256": "f6bfab6a7bca54b05841e0591dbae1c1ceccd8edac47f34075ffc7c0005ac311",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb09.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "Notebook 单元 1 · markdown",
+      "text": "# 第9章 相关与回归及Python分析"
+    },
+    {
+      "index": 2,
+      "locator": "Notebook 单元 2 · markdown",
+      "text": "## 9.1 变量间的关系"
+    },
+    {
+      "index": 3,
+      "locator": "Notebook 单元 3 · markdown",
+      "text": "## 9.2 一元相关与回归分析"
+    },
+    {
+      "index": 4,
+      "locator": "Notebook 单元 4 · markdown",
+      "text": "### 9.2.1 简单相关分析"
+    },
+    {
+      "index": 5,
+      "locator": "Notebook 单元 5 · code",
+      "text": "#%run init.py"
+    },
+    {
+      "index": 6,
+      "locator": "Notebook 单元 6 · code",
+      "text": "import numpy as np\nnp.set_printoptions(4) \nx=np.array([171,175,159,155,152,158,154,164,168,166,159,164])  #身高向量\ny=np.array([57,64,41,38,35,44,41,51,57,49,47,46])              #体重向量"
+    },
+    {
+      "index": 7,
+      "locator": "Notebook 单元 7 · code",
+      "text": "%config InlineBackend.figure_format='retina'\nimport matplotlib.pyplot as plt              #加载基本绘图包\nplt.scatter(x,y);                            #做散点图\nplt.xlabel('x');plt.ylabel('y');"
+    },
+    {
+      "index": 8,
+      "locator": "Notebook 单元 8 · code",
+      "text": "def lxy(x,y):\n    return sum(x*y)-sum(x)*sum(y)/len(x)  #离均差乘积和函数"
+    },
+    {
+      "index": 9,
+      "locator": "Notebook 单元 9 · code",
+      "text": "lxy(x,x)  #x的离均差平方和"
+    },
+    {
+      "index": 10,
+      "locator": "Notebook 单元 10 · code",
+      "text": "lxy(y,y)  #y的离均差平方和"
+    },
+    {
+      "index": 11,
+      "locator": "Notebook 单元 11 · code",
+      "text": "lxy(x,y)  #x和y的离均差乘积和"
+    },
+    {
+      "index": 12,
+      "locator": "Notebook 单元 12 · code",
+      "text": "r=lxy(x,y)/np.sqrt(lxy(x,x)*lxy(y,y)) ;r  #相关系数计算"
+    },
+    {
+      "index": 13,
+      "locator": "Notebook 单元 13 · code",
+      "text": "#np.corrcoef(x,y)       #计算相关系数"
+    },
+    {
+      "index": 14,
+      "locator": "Notebook 单元 14 · code",
+      "text": "n=len(x)                  #向量的长度\ntr=r/np.sqrt((1-r**2)/(n-2))  #相关系数假设检验t统计量\ntr"
+    },
+    {
+      "index": 15,
+      "locator": "Notebook 单元 15 · code",
+      "text": "#from scipy import stats as st             #加载统计包\nimport scipy.stats as st             #加载统计包\nrp=st.pearsonr(x,y)\nprint('r=%.4f  p-value=%.4g'%(rp[0],rp[1]))"
+    },
+    {
+      "index": 16,
+      "locator": "Notebook 单元 16 · markdown",
+      "text": "### 9.2.2 简单回归分析"
+    },
+    {
+      "index": 17,
+      "locator": "Notebook 单元 17 · code",
+      "text": "b=lxy(x,y)/lxy(x,x)             #线性回归方程斜率\na=y.mean()-b*x.mean()           #线性回归方程截距\nprint('a=%.4f  b=%.4f'%(a,b))   #显示线性回归方程估计值"
+    },
+    {
+      "index": 18,
+      "locator": "Notebook 单元 18 · code",
+      "text": "plt.plot(x,y,'o',x,a+b*x,'-');     #添加估计方程线\nplt.xlabel('x');plt.ylabel('y');"
+    },
+    {
+      "index": 19,
+      "locator": "Notebook 单元 19 · code",
+      "text": "import pandas as pd                          #加载数据分析包\npd.set_option('display.precision',4)         #设置数据框输出精度\nd93=pd.read_excel('mvsData.xlsx','d93',index_col=0);d93 "
+    },
+    {
+      "index": 20,
+      "locator": "Notebook 单元 20 · code",
+      "text": "from statsmodels.formula.api import ols   #加载公式法普通最小二乘函数\nfm0=ols('y ~ x',data=d93).fit()           #拟合一元线性回归模型\nfm0.params                                #显示回归参数"
+    },
+    {
+      "index": 21,
+      "locator": "Notebook 单元 21 · code",
+      "text": "plt.plot(d93.x,d93.y,'o',d93.x,fm0.fittedvalues,'-');  #添加回归线\nplt.xlabel('x');plt.ylabel('y');"
+    },
+    {
+      "index": 22,
+      "locator": "Notebook 单元 22 · code",
+      "text": "#import statsmodels.api as sm   #加载统计分析模型包\n#sm.stats.anova_lm(fm0)          #模型方差分析"
+    },
+    {
+      "index": 23,
+      "locator": "Notebook 单元 23 · code",
+      "text": "print(fm0.summary().tables[1])  #回归系数t检验"
+    },
+    {
+      "index": 24,
+      "locator": "Notebook 单元 24 · markdown",
+      "text": "## 9.3 多元相关与回归分析"
+    },
+    {
+      "index": 25,
+      "locator": "Notebook 单元 25 · markdown",
+      "text": "### 9.3.1 多元线性相关分析"
+    },
+    {
+      "index": 26,
+      "locator": "Notebook 单元 26 · code",
+      "text": "d94=pd.read_excel('mvsData.xlsx','d94',index_col=0); d94 "
+    },
+    {
+      "index": 27,
+      "locator": "Notebook 单元 27 · code",
+      "text": "print(d94.corr())  #多元数据相关系数矩阵"
+    },
+    {
+      "index": 28,
+      "locator": "Notebook 单元 28 · code",
+      "text": "%config InlineBackend.figure_format='retina'   #可提高图形显示的清晰度\npd.plotting.scatter_matrix(d94);  #多元数据散点图"
+    },
+    {
+      "index": 29,
+      "locator": "Notebook 单元 29 · code",
+      "text": "import scipy.stats as st    #加载统计包\ndef mcor_test(X):     #相关系数矩阵检验\n    p=X.shape[1];p\n    sp=np.ones([p, p]).astype(str)\n    for i in range(0,p):\n        for j in range(i,p):        \n            P=st.pearsonr(X.iloc[:,i],X.iloc[:,j])[1]        \n            if P>0.05: sp[i,j]=' '\n            if(P>0.01 and P<=0.05): sp[i,j]='*'\n            if(P>0.001 and P<=0.01): sp[i,j]='**'\n            if(P<=0.001): sp[i,j]='***'\n            r=st.pearsonr(X.iloc[:,i],X.iloc[:,j])[0]\n            sp[j,i]=round(r,4)\n            if(i==j):sp[i,j]='------'    \n    print(pd.DataFrame(sp,index=X.columns,columns=X.columns))\n    print(\"\\n下三角为相关系数，上三角为检验p值 * p<0.05 ** p<0.05 *** p<0.001\")"
+    },
+    {
+      "index": 30,
+      "locator": "Notebook 单元 30 · code",
+      "text": "mcor_test(d94)   #多元数据相关系数检验"
+    },
+    {
+      "index": 31,
+      "locator": "Notebook 单元 31 · markdown",
+      "text": "### 9.3.2 多元线性回归模型的建立"
+    },
+    {
+      "index": 32,
+      "locator": "Notebook 单元 32 · code",
+      "text": "fm=ols('y~x1+x2+x3+x4',data=d94).fit()\nfm.params              #模型参数"
+    },
+    {
+      "index": 33,
+      "locator": "Notebook 单元 33 · code",
+      "text": "#from scipy import stats             \n#fm1_z=ols('y ~ x1+x2+x3+x4',data=d9_4.apply(stats.zscore)).fit()\n#fm1_z.params  #标准回归系数"
+    },
+    {
+      "index": 34,
+      "locator": "Notebook 单元 34 · markdown",
+      "text": "### 9.3.3 多元线性回归模型的检验"
+    },
+    {
+      "index": 35,
+      "locator": "Notebook 单元 35 · code",
+      "text": "print(fm.summary())  #多元线性回归系数t检验"
+    },
+    {
+      "index": 36,
+      "locator": "Notebook 单元 36 · code",
+      "text": "fm1=ols('y~x1',data=d94).fit();fm1.params"
+    },
+    {
+      "index": 37,
+      "locator": "Notebook 单元 37 · code",
+      "text": "fm2=ols('y~x1+x2',data=d94).fit();fm2.params"
+    },
+    {
+      "index": 38,
+      "locator": "Notebook 单元 38 · code",
+      "text": "fm3=ols('y~x1+x2+x3',data=d94).fit();fm3.params"
+    },
+    {
+      "index": 39,
+      "locator": "Notebook 单元 39 · code",
+      "text": "fm4=ols('y~x1+x2+x3+x4',data=d94).fit();fm4.params"
+    },
+    {
+      "index": 40,
+      "locator": "Notebook 单元 40 · code",
+      "text": "from statsmodels.iolib.summary2 import summary_col\nsummary_col([fm1,fm2,fm3,fm4])"
+    },
+    {
+      "index": 41,
+      "locator": "Notebook 单元 41 · markdown",
+      "text": "### 9.3.4 复相关及模型的决定系数"
+    },
+    {
+      "index": 42,
+      "locator": "Notebook 单元 42 · code",
+      "text": "R2=fm.rsquared\nprint('模型的决定系数 R^2 = %5.4f'%R2)"
+    },
+    {
+      "index": 43,
+      "locator": "Notebook 单元 43 · code",
+      "text": "R=np.sqrt(R2);R    \nprint('变量的复相关系数 R = %5.4f'%np.sqrt(R2))"
+    },
+    {
+      "index": 44,
+      "locator": "Notebook 单元 44 · markdown",
+      "text": "## 案例9：中国宏观经济发展的多因素分析"
+    },
+    {
+      "index": 45,
+      "locator": "Notebook 单元 45 · code",
+      "text": "Case9=pd.read_excel('mvsCase.xlsx','Case9'); Case9"
+    },
+    {
+      "index": 46,
+      "locator": "Notebook 单元 46 · code",
+      "text": "#Case9.describe()"
+    },
+    {
+      "index": 47,
+      "locator": "Notebook 单元 47 · code",
+      "text": "mcor_test(Case9)   #相关系数两两检验"
+    },
+    {
+      "index": 48,
+      "locator": "Notebook 单元 48 · code",
+      "text": "pd.plotting.scatter_matrix(Case9);  #矩阵散点图"
+    },
+    {
+      "index": 49,
+      "locator": "Notebook 单元 49 · code",
+      "text": "from statsmodels.formula.api import ols   \nprint(ols('Y~X1+X2+X3+X4+X5+X6',data=Case9).fit().summary())"
+    },
+    {
+      "index": 50,
+      "locator": "Notebook 单元 50 · code",
+      "text": "fm=ols('Y~X1+X2+X4',data=Case9).fit();\nprint(fm.summary())"
+    },
+    {
+      "index": 51,
+      "locator": "Notebook 单元 51 · code",
+      "text": "plt.figure(figsize=(7,5)) \nplt.plot(Case9.Y,'o',Case9.index,fm.fittedvalues,'-');"
+    },
+    {
+      "index": 52,
+      "locator": "Notebook 单元 52 · code",
+      "text": ""
+    }
+  ]
+}

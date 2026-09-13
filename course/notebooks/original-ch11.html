@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px/1.8 system-ui;max-width:960px;margin:24px auto;padding:20px;color:#192b3b}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:20px}article{border-bottom:1px solid #ccc}h2{font-size:18px}</style><h1>第11章 原课程 Notebook（阅读参考）</h1><p>已移除运行输出、身份元数据与本机路径。历史依赖及数据文件尚未全部适配；请使用同章可重跑教学实验。</p><article><h2>单元 1 · markdown</h2><pre># 第11章 扩展线性模型及Python建模</pre></article><article><h2>单元 2 · markdown</h2><pre>## 11.1 数据分类与模型选择</pre></article><article><h2>单元 3 · code</h2><pre>%run init.py</pre></article><article><h2>单元 4 · markdown</h2><pre>### 11.1.1 变量的取值类型</pre></article><article><h2>单元 5 · markdown</h2><pre>### 11.1.2 模型选择方式</pre></article><article><h2>单元 6 · markdown</h2><pre>## 11.2 方差分析模型</pre></article><article><h2>单元 7 · markdown</h2><pre>### 11.2.1 完全随机设计模型</pre></article><article><h2>单元 8 · code</h2><pre>import pandas as pd
+pd.set_option(&#x27;display.precision&#x27;,4) </pre></article><article><h2>单元 9 · code</h2><pre>d111 = pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d111&#x27;);d111</pre></article><article><h2>单元 10 · code</h2><pre>#?d111.boxplot</pre></article><article><h2>单元 11 · code</h2><pre>#import matplotlib.pyplot as plt
+#d111.plot(&#x27;Y&#x27;,&#x27;A&#x27;);
+d111.boxplot(&#x27;Y&#x27;,&#x27;A&#x27;);</pre></article><article><h2>单元 12 · code</h2><pre>#print(d111.groupby(&#x27;A&#x27;).mean())</pre></article><article><h2>单元 13 · code</h2><pre>import numpy as np #计算每组的例数len、均值mean、标准差std
+print(d111.pivot_table(&#x27;Y&#x27;,&#x27;A&#x27;,aggfunc={len,np.mean,np.std}))</pre></article><article><h2>单元 14 · code</h2><pre>from statsmodels.formula.api import ols     #加载普通最小二乘模拟
+from statsmodels.stats.anova import anova_lm as ANOVA #方差分析
+M1=ols(&#x27;Y ~ C(A)&#x27;,data=d111).fit()          #C(A)设置A为哑变量
+print(ANOVA(M1))                      #完全随机设计模型方差分析</pre></article><article><h2>单元 15 · markdown</h2><pre>### 11.2.2 随机区组设计模型</pre></article><article><h2>单元 16 · code</h2><pre>d112 = pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d112&#x27;);#d112</pre></article><article><h2>单元 17 · code</h2><pre>d112.boxplot(&#x27;Y&#x27;,&#x27;A&#x27;);
+print(d112.pivot_table(&#x27;Y&#x27;,&#x27;A&#x27;,aggfunc={len,np.mean,np.std}))</pre></article><article><h2>单元 18 · code</h2><pre>d112.boxplot(&#x27;Y&#x27;,&#x27;B&#x27;);
+print(d112.pivot_table(&#x27;Y&#x27;,&#x27;B&#x27;,aggfunc={len,np.mean,np.std}))</pre></article><article><h2>单元 19 · code</h2><pre>M2 = ols(&#x27;Y ~ C(A)+C(B)&#x27;,data=d112).fit()
+print(ANOVA(M2))    #随机单位组设计模型方差分析</pre></article><article><h2>单元 20 · markdown</h2><pre>### 11.2.3 析因设计模型</pre></article><article><h2>单元 21 · code</h2><pre>d113 = pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d113&#x27;);d113</pre></article><article><h2>单元 22 · code</h2><pre>d113.boxplot(&#x27;Y&#x27;,&#x27;A&#x27;);
+d113.pivot_table(&#x27;Y&#x27;,&#x27;A&#x27;,aggfunc={len,np.mean,np.std})</pre></article><article><h2>单元 23 · code</h2><pre>d113.boxplot(&#x27;Y&#x27;,&#x27;B&#x27;);
+d113.pivot_table(&#x27;Y&#x27;,&#x27;B&#x27;,aggfunc={len,np.mean,np.std})</pre></article><article><h2>单元 24 · code</h2><pre>M3 = ols(&#x27;Y ~ C(A)*C(B)&#x27;,data=d113).fit()
+print(ANOVA(M3))   #析因设计模型方差分析</pre></article><article><h2>单元 25 · markdown</h2><pre>### 11.2.4 正交设计模型</pre></article><article><h2>单元 26 · code</h2><pre>d114 = pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d114&#x27;);d114</pre></article><article><h2>单元 27 · code</h2><pre>d114.pivot_table(&#x27;Y&#x27;,&#x27;A&#x27;,aggfunc={len,np.mean,np.std})</pre></article><article><h2>单元 28 · code</h2><pre>#M4 = ols(&#x27;Y~C(A)+C(B)+C(A)*C(B)+C(C)+C(D)&#x27;,data=d114).fit()
+M4 = ols(&#x27;Y~A+B+A*B+C+D&#x27;,data=d114).fit()
+print(ANOVA(M4))      #正交设计模型方差分析</pre></article><article><h2>单元 29 · markdown</h2><pre>## 11.3 广义线性模型</pre></article><article><h2>单元 30 · markdown</h2><pre>### 11.3.1 广义线性模型概述</pre></article><article><h2>单元 31 · code</h2><pre>import numpy as np
+x=np.arange(1,20);x
+y=1/(1+np.exp(-(x-10)));y
+import matplotlib.pyplot as plt  
+plt.plot(x,y,&#x27;o-&#x27;);</pre></article><article><h2>单元 32 · markdown</h2><pre>### 11.3.2  Logistic模型</pre></article><article><h2>单元 33 · code</h2><pre>d115 = pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d115&#x27;)  #读取例11.5数据 </pre></article><article><h2>单元 34 · code</h2><pre>import statsmodels.api as sm
+Logit=sm.GLM.from_formula(&#x27;y~x1+x2+x3&#x27;,family=sm.families.Binomial(),data=d115).fit() 
+Logit.summary()                   #Logistic回归模型结果</pre></article><article><h2>单元 35 · code</h2><pre>Logit_x1=sm.GLM.from_formula(&#x27;y~x1&#x27;,family=sm.families.Binomial(),data=d115).fit()
+Logit_x1.summary()</pre></article><article><h2>单元 36 · code</h2><pre>#预测视力正常(x1=1)和视力有问题(x1=0)的司机发生事故概率
+Logit_x1.predict(pd.DataFrame({&#x27;x1&#x27;:[1,0]})) </pre></article><article><h2>单元 37 · markdown</h2><pre>### 11.3.3 对数线性模型</pre></article><article><h2>单元 38 · code</h2><pre>d116 = pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d116&#x27;)  #读取例11.6数据 
+print(d116)</pre></article><article><h2>单元 39 · code</h2><pre>Log=sm.GLM.from_formula(&#x27;y~C(x1)+C(x2)&#x27;,family=sm.families.Poisson(),data=d116).fit()
+Log.summary()                                #对数线性模型结果</pre></article><article><h2>单元 40 · markdown</h2><pre>## 案例11：广义线性模型的应用</pre></article><article><h2>单元 41 · code</h2><pre>Case11=pd.read_excel(&#x27;mvsCase.xlsx&#x27;,&#x27;Case11&#x27;);Case11</pre></article><article><h2>单元 42 · code</h2><pre>import statsmodels.api as sm
+glm1=sm.GLM.from_formula(&#x27;y~sex+age&#x27;,family=sm.families.Binomial(),data=Case11)
+print(glm1.fit().summary())</pre></article><article><h2>单元 43 · code</h2><pre>glm2=sm.GLM.from_formula(&#x27;y~age&#x27;,family=sm.families.Binomial(),data=Case11)
+print(glm2.fit().summary())</pre></article><article><h2>单元 44 · code</h2><pre>fv=glm1.fit().predict();fv
+import numpy as np
+pv=1/(1+np.exp(-fv));pv
+plt.scatter(Case11.age,pv);</pre></article><article><h2>单元 45 · code</h2><pre></pre></article></html>

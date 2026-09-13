@@ -1,0 +1,9 @@
+{
+  "purpose": "Internal index for generated course artifacts used by static-resource audits.",
+  "files": [
+    "course/preview/index.html",
+    "course/preview/build-report.json",
+    "course/verification-report.json"
+  ],
+  "notes": "Preview pages contain escaped case text and relative links only. Verification report records actual local execution without publishing a private filesystem path."
+}

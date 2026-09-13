@@ -1,0 +1,918 @@
+{
+  "resource": {
+    "id": "nb02",
+    "title": "第02章-数据处理",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第02章-数据处理.ipynb",
+    "sha256": "05bf980a7eefe0a21da1410731f5d2b55db755a211440ca2a8bd4c657e55df83",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb02.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "Notebook 单元 1 · markdown",
+      "text": "## 第2章 多元数据的Python处理"
+    },
+    {
+      "index": 2,
+      "locator": "Notebook 单元 2 · code",
+      "text": "%run init.py"
+    },
+    {
+      "index": 3,
+      "locator": "Notebook 单元 3 · markdown",
+      "text": "## 2.1 Python的编程基础"
+    },
+    {
+      "index": 4,
+      "locator": "Notebook 单元 4 · markdown",
+      "text": "### 2.1.1 Python的数据类型"
+    },
+    {
+      "index": 5,
+      "locator": "Notebook 单元 5 · markdown",
+      "text": "1. Python基本类型"
+    },
+    {
+      "index": 6,
+      "locator": "Notebook 单元 6 · markdown",
+      "text": "（1）数值型 "
+    },
+    {
+      "index": 7,
+      "locator": "Notebook 单元 7 · code",
+      "text": "from IPython.core.interactiveshell import InteractiveShell\nInteractiveShell.ast_node_interactivity = \"all\""
+    },
+    {
+      "index": 8,
+      "locator": "Notebook 单元 8 · code",
+      "text": "n=5             #整数\nn                #相当于 print(n)"
+    },
+    {
+      "index": 9,
+      "locator": "Notebook 单元 9 · code",
+      "text": "x=1.2345         #实数\nx                #无格式输出"
+    },
+    {
+      "index": 10,
+      "locator": "Notebook 单元 10 · code",
+      "text": "print(\"x=%10.5f\"%x)"
+    },
+    {
+      "index": 11,
+      "locator": "Notebook 单元 11 · code",
+      "text": "round(x,1)         #保留一位小数"
+    },
+    {
+      "index": 12,
+      "locator": "Notebook 单元 12 · markdown",
+      "text": "（2）逻辑型 "
+    },
+    {
+      "index": 13,
+      "locator": "Notebook 单元 13 · code",
+      "text": "a=True;a\nb=False;b"
+    },
+    {
+      "index": 14,
+      "locator": "Notebook 单元 14 · code",
+      "text": "10>3\n10<3"
+    },
+    {
+      "index": 15,
+      "locator": "Notebook 单元 15 · markdown",
+      "text": "（3）字符型 "
+    },
+    {
+      "index": 16,
+      "locator": "Notebook 单元 16 · code",
+      "text": "s=\"python\"; s"
+    },
+    {
+      "index": 17,
+      "locator": "Notebook 单元 17 · code",
+      "text": "S = 'We love Python data analysis'; S "
+    },
+    {
+      "index": 18,
+      "locator": "Notebook 单元 18 · code",
+      "text": "type(n) \nn"
+    },
+    {
+      "index": 19,
+      "locator": "Notebook 单元 19 · code",
+      "text": "type(x)"
+    },
+    {
+      "index": 20,
+      "locator": "Notebook 单元 20 · code",
+      "text": "type(s)"
+    },
+    {
+      "index": 21,
+      "locator": "Notebook 单元 21 · markdown",
+      "text": "2. Python扩展类型"
+    },
+    {
+      "index": 22,
+      "locator": "Notebook 单元 22 · markdown",
+      "text": "（1）List（列表）"
+    },
+    {
+      "index": 23,
+      "locator": "Notebook 单元 23 · markdown",
+      "text": "    列表（list）是Python中使用最频繁的数据类型。列表可以完成大多数集合类的数据结构实现。列表也具有字符串一样的切片功能，是进行数据分析的基本类型，须掌握。"
+    },
+    {
+      "index": 24,
+      "locator": "Notebook 单元 24 · code",
+      "text": "L=['A','B','C','D','E','F','G','H','I'];  #字母列表\nL"
+    },
+    {
+      "index": 25,
+      "locator": "Notebook 单元 25 · code",
+      "text": "X=[1,2,3,4,5,6,7,8,9];                    #数字列表\nX"
+    },
+    {
+      "index": 26,
+      "locator": "Notebook 单元 26 · code",
+      "text": "L[0]          # 输出列表的第一个元素"
+    },
+    {
+      "index": 27,
+      "locator": "Notebook 单元 27 · code",
+      "text": "L[1:3]        # 输出第二个至第三个元素"
+    },
+    {
+      "index": 28,
+      "locator": "Notebook 单元 28 · code",
+      "text": "X[3:]         # 输出从第三个开始至列表末尾的所有元素"
+    },
+    {
+      "index": 29,
+      "locator": "Notebook 单元 29 · code",
+      "text": "L[:3] + X[3:]  # 列表合并输出"
+    },
+    {
+      "index": 30,
+      "locator": "Notebook 单元 30 · markdown",
+      "text": "python的内置函数range()可创建一个整数列表，使用range函数可生成各种类型的列表，在range在python3变成一个迭代器，输出需用list。"
+    },
+    {
+      "index": 31,
+      "locator": "Notebook 单元 31 · code",
+      "text": "i=range(9)        #从0开始到8的整数=range(0,9)\nlist(i)           #显示整数列表"
+    },
+    {
+      "index": 32,
+      "locator": "Notebook 单元 32 · code",
+      "text": "j=range(1,9)      #从1开始到8整数列\nlist(j)"
+    },
+    {
+      "index": 33,
+      "locator": "Notebook 单元 33 · code",
+      "text": "k=range(1,9,2)     #步长为2的整数列\nlist(k)"
+    },
+    {
+      "index": 34,
+      "locator": "Notebook 单元 34 · markdown",
+      "text": "（2）Dictionary（字典） "
+    },
+    {
+      "index": 35,
+      "locator": "Notebook 单元 35 · markdown",
+      "text": "    字典也是一种数据类型，且可存储任意类型对象。字典的每个键值对用冒号“:”分隔，每个键值对之间用逗号“,”分隔，整个字典包括在花括号{}中，格式如下：dict= {key1 : value1, key2 : value2 }"
+    },
+    {
+      "index": 36,
+      "locator": "Notebook 单元 36 · code",
+      "text": "Dict={'字母':L,'数字':X,'数组':list(i)}; Dict  #定义字典"
+    },
+    {
+      "index": 37,
+      "locator": "Notebook 单元 37 · code",
+      "text": "Dict['字母']         # 输出键为'字母'的值"
+    },
+    {
+      "index": 38,
+      "locator": "Notebook 单元 38 · code",
+      "text": "Dict.keys()           # 输出所有键"
+    },
+    {
+      "index": 39,
+      "locator": "Notebook 单元 39 · code",
+      "text": "Dict.values()        # 输出所有值 "
+    },
+    {
+      "index": 40,
+      "locator": "Notebook 单元 40 · markdown",
+      "text": "### 2.1.2 运算符及控制语句"
+    },
+    {
+      "index": 41,
+      "locator": "Notebook 单元 41 · markdown",
+      "text": "1. 条件语句"
+    },
+    {
+      "index": 42,
+      "locator": "Notebook 单元 42 · code",
+      "text": "x=6; y=5\nif x > y:\n    print(x)\nelse:\n    print(y)"
+    },
+    {
+      "index": 43,
+      "locator": "Notebook 单元 43 · code",
+      "text": "x if x> y else y"
+    },
+    {
+      "index": 44,
+      "locator": "Notebook 单元 44 · markdown",
+      "text": "2. 循环语句"
+    },
+    {
+      "index": 45,
+      "locator": "Notebook 单元 45 · code",
+      "text": "for i in [1,2,3,4]:print(i) "
+    },
+    {
+      "index": 46,
+      "locator": "Notebook 单元 46 · code",
+      "text": "[i for i in [1,2,3,4]]           #形成列表"
+    },
+    {
+      "index": 47,
+      "locator": "Notebook 单元 47 · markdown",
+      "text": "2. 条件语句"
+    },
+    {
+      "index": 48,
+      "locator": "Notebook 单元 48 · markdown",
+      "text": "### 2.1.3 Python函数的使用"
+    },
+    {
+      "index": 49,
+      "locator": "Notebook 单元 49 · markdown",
+      "text": "1. 内置函数"
+    },
+    {
+      "index": 50,
+      "locator": "Notebook 单元 50 · code",
+      "text": "print(dir())"
+    },
+    {
+      "index": 51,
+      "locator": "Notebook 单元 51 · code",
+      "text": "round(3.1415926,2)"
+    },
+    {
+      "index": 52,
+      "locator": "Notebook 单元 52 · code",
+      "text": "len([1,3,5,7,9])"
+    },
+    {
+      "index": 53,
+      "locator": "Notebook 单元 53 · markdown",
+      "text": "2. 包及其安装"
+    },
+    {
+      "index": 54,
+      "locator": "Notebook 单元 54 · code",
+      "text": "#!pip install xxxxxx"
+    },
+    {
+      "index": 55,
+      "locator": "Notebook 单元 55 · markdown",
+      "text": "3. 包及其函数使用"
+    },
+    {
+      "index": 56,
+      "locator": "Notebook 单元 56 · code",
+      "text": "import math\nx=8.56;\n[math.sqrt(x),math.log(x),math.exp(x)]"
+    },
+    {
+      "index": 57,
+      "locator": "Notebook 单元 57 · code",
+      "text": "import math as m\n[m.sqrt(x),m.log(x),m.exp(x)]"
+    },
+    {
+      "index": 58,
+      "locator": "Notebook 单元 58 · code",
+      "text": "from math import sqrt,log,exp\n[sqrt(x),log(x),exp(x)]"
+    },
+    {
+      "index": 59,
+      "locator": "Notebook 单元 59 · markdown",
+      "text": "4. 自定义函数 "
+    },
+    {
+      "index": 60,
+      "locator": "Notebook 单元 60 · markdown",
+      "text": "如计算向量X=(x1, x2,…,xn)的均值函数：\n\n$\\bar{x}=\\frac{\\sum{x}}{n}$"
+    },
+    {
+      "index": 61,
+      "locator": "Notebook 单元 61 · code",
+      "text": "def xbar(x):\n    n=len(x)\n    xm=sum(x)/n\n    return(xm)"
+    },
+    {
+      "index": 62,
+      "locator": "Notebook 单元 62 · code",
+      "text": "X=[1,2,3,4,5,6,7,8,9]\nxbar(X)"
+    },
+    {
+      "index": 63,
+      "locator": "Notebook 单元 63 · markdown",
+      "text": "## 2.2 Python数值分析"
+    },
+    {
+      "index": 64,
+      "locator": "Notebook 单元 64 · markdown",
+      "text": "### 2.2.1 一维数组（向量）运算"
+    },
+    {
+      "index": 65,
+      "locator": "Notebook 单元 65 · code",
+      "text": "import numpy            #将以numpy名调用函数\nnumpy.array([1,2,3,4,5])    #根据列表构建的一维数组"
+    },
+    {
+      "index": 66,
+      "locator": "Notebook 单元 66 · code",
+      "text": "import numpy as np          \na=np.array([1,2,3,4,5]); a      "
+    },
+    {
+      "index": 67,
+      "locator": "Notebook 单元 67 · code",
+      "text": "b=np.arange(5); b            #数差序列，差距1"
+    },
+    {
+      "index": 68,
+      "locator": "Notebook 单元 68 · code",
+      "text": "c=np.log(2*a+b**3); c"
+    },
+    {
+      "index": 69,
+      "locator": "Notebook 单元 69 · code",
+      "text": "c.astype(int)  #将实数数组c转换为整型数组"
+    },
+    {
+      "index": 70,
+      "locator": "Notebook 单元 70 · code",
+      "text": "a.astype(str) #将数组a转换为字符型"
+    },
+    {
+      "index": 71,
+      "locator": "Notebook 单元 71 · code",
+      "text": "print(a+b)     #加\nprint(a-b)     #减\nprint(a*b)     #乘\nprint(a/b)     #除"
+    },
+    {
+      "index": 72,
+      "locator": "Notebook 单元 72 · markdown",
+      "text": "### 2.2.2 二维数组（矩阵）运算"
+    },
+    {
+      "index": 73,
+      "locator": "Notebook 单元 73 · code",
+      "text": "#定义二维数组（矩阵）\nA=np.array([[1,2,3],[4,5,6]]); A"
+    },
+    {
+      "index": 74,
+      "locator": "Notebook 单元 74 · code",
+      "text": "B=np.array([[1,4],[2,5],[3,6]]); B"
+    },
+    {
+      "index": 75,
+      "locator": "Notebook 单元 75 · code",
+      "text": "A.shape             #数组的维度"
+    },
+    {
+      "index": 76,
+      "locator": "Notebook 单元 76 · code",
+      "text": "n=A.shape[0];n        #行数"
+    },
+    {
+      "index": 77,
+      "locator": "Notebook 单元 77 · code",
+      "text": "p=A.shape[1];p        #列数"
+    },
+    {
+      "index": 78,
+      "locator": "Notebook 单元 78 · code",
+      "text": "A.T               #矩阵转置"
+    },
+    {
+      "index": 79,
+      "locator": "Notebook 单元 79 · code",
+      "text": "A+A             #矩阵相加"
+    },
+    {
+      "index": 80,
+      "locator": "Notebook 单元 80 · code",
+      "text": "B-B              #矩阵相减"
+    },
+    {
+      "index": 81,
+      "locator": "Notebook 单元 81 · code",
+      "text": "C=np.dot(A,B);C    #矩阵相乘"
+    },
+    {
+      "index": 82,
+      "locator": "Notebook 单元 82 · markdown",
+      "text": "## 2.3 多元数据的收集和整理"
+    },
+    {
+      "index": 83,
+      "locator": "Notebook 单元 83 · markdown",
+      "text": "###　2.3.1 数据格式"
+    },
+    {
+      "index": 84,
+      "locator": "Notebook 单元 84 · markdown",
+      "text": "### 2.3.2 变量的分类"
+    },
+    {
+      "index": 85,
+      "locator": "Notebook 单元 85 · markdown",
+      "text": "## 2.4 Python的数据框"
+    },
+    {
+      "index": 86,
+      "locator": "Notebook 单元 86 · markdown",
+      "text": "### 2.4.1 数据框的构成"
+    },
+    {
+      "index": 87,
+      "locator": "Notebook 单元 87 · markdown",
+      "text": "在数据分析中，数据通常以向量或变量（一维数组，Python中用序列表示）和矩阵（二维数组，Python中用数据框表示）的形式出现， pandas中用函数DataFrame()生成数据框。数据框相当于关系数据库中的结构化数据。Python中的数据分析大都是基于数据框进行的，所以本书的分析也是以数据框形式为主，向量和矩阵都可以看成数据框的一个特例。下面介绍pandas基本数据操作。"
+    },
+    {
+      "index": 88,
+      "locator": "Notebook 单元 88 · code",
+      "text": "L=['A','B','C','D','E'];\nX=[1,2,3,4,5]; \nY=[x**2 for x in X]; #Y=X^2\nY"
+    },
+    {
+      "index": 89,
+      "locator": "Notebook 单元 89 · code",
+      "text": "import pandas as pd         #加载数据分析库\ndf1=pd.DataFrame([L,X,Y]);  #按行构建数据框\nprint(df1)"
+    },
+    {
+      "index": 90,
+      "locator": "Notebook 单元 90 · code",
+      "text": "df2=pd.DataFrame({'L':L,'X':X,'Y':Y}); \nprint(df2)"
+    },
+    {
+      "index": 91,
+      "locator": "Notebook 单元 91 · code",
+      "text": "df3=pd.DataFrame({'X1':X,'X2':Y},index=L); \nprint(df3)"
+    },
+    {
+      "index": 92,
+      "locator": "Notebook 单元 92 · code",
+      "text": "#重新定义行列名\ndf1.index=['行1','行2','行3']\ndf1.columns=['列1','列2','列3','列4','列5']\nprint(df1)"
+    },
+    {
+      "index": 93,
+      "locator": "Notebook 单元 93 · markdown",
+      "text": "### 2.4.2 数据框的调用"
+    },
+    {
+      "index": 94,
+      "locator": "Notebook 单元 94 · markdown",
+      "text": "（1）从剪切板上读取\n>    先在 DaPy_data.xls 数据文件的【BSdata】表中选取 A1:H53，复制，然后在 Python 中读取数据。剪切板命令（clipboard）可复制任何数据。"
+    },
+    {
+      "index": 95,
+      "locator": "Notebook 单元 95 · code",
+      "text": "#dat=pd.read_clipboard(); #从剪切板上复制数据 \n#print(dat)"
+    },
+    {
+      "index": 96,
+      "locator": "Notebook 单元 96 · markdown",
+      "text": "（2）读取 Excel 格式数据 \n>   使用pandas包中的read_excel可直接读取excel文档中的任意表单数据，其读取命令也比较简单（建议使用！）"
+    },
+    {
+      "index": 97,
+      "locator": "Notebook 单元 97 · code",
+      "text": "d21=pd.read_excel('mvsData.xlsx','d21');\nd21\nd21.head(10)"
+    },
+    {
+      "index": 98,
+      "locator": "Notebook 单元 98 · markdown",
+      "text": "3. pandas 数据集的保存 "
+    },
+    {
+      "index": 99,
+      "locator": "Notebook 单元 99 · markdown",
+      "text": "> pandas保存数据的命令也很简单"
+    },
+    {
+      "index": 100,
+      "locator": "Notebook 单元 100 · code",
+      "text": "#将数据框d21保存到 d21.xlsx 文档中\nd21.to_excel('d21.xlsx',index=False)  #index=False表示不保存行标签"
+    },
+    {
+      "index": 101,
+      "locator": "Notebook 单元 101 · markdown",
+      "text": "### 2.4.3 数据框的操作"
+    },
+    {
+      "index": 102,
+      "locator": "Notebook 单元 102 · markdown",
+      "text": "1. 数据框信息"
+    },
+    {
+      "index": 103,
+      "locator": "Notebook 单元 103 · code",
+      "text": "d21.info()     #数据框信息"
+    },
+    {
+      "index": 104,
+      "locator": "Notebook 单元 104 · code",
+      "text": "pd.set_option('display.max_rows',6) #全局设置输出行数"
+    },
+    {
+      "index": 105,
+      "locator": "Notebook 单元 105 · code",
+      "text": "print(d21)"
+    },
+    {
+      "index": 106,
+      "locator": "Notebook 单元 106 · markdown",
+      "text": "（2）局部输出函数"
+    },
+    {
+      "index": 107,
+      "locator": "Notebook 单元 107 · code",
+      "text": "print(d21.head())     #默认显示前5行 "
+    },
+    {
+      "index": 108,
+      "locator": "Notebook 单元 108 · code",
+      "text": "print(d21.tail(3))   #最后3行"
+    },
+    {
+      "index": 109,
+      "locator": "Notebook 单元 109 · markdown",
+      "text": "3. 行列数及行列名"
+    },
+    {
+      "index": 110,
+      "locator": "Notebook 单元 110 · code",
+      "text": "d21.columns    #查看列名称 "
+    },
+    {
+      "index": 111,
+      "locator": "Notebook 单元 111 · code",
+      "text": "d21.index      #数据框行名 "
+    },
+    {
+      "index": 112,
+      "locator": "Notebook 单元 112 · code",
+      "text": "d21.shape      #显示数据框的行数和列数"
+    },
+    {
+      "index": 113,
+      "locator": "Notebook 单元 113 · code",
+      "text": "d21.shape[0]   #数据框行数n "
+    },
+    {
+      "index": 114,
+      "locator": "Notebook 单元 114 · code",
+      "text": "d21.shape[1]   #数据框列数m"
+    },
+    {
+      "index": 115,
+      "locator": "Notebook 单元 115 · markdown",
+      "text": "3. 数据框的取值"
+    },
+    {
+      "index": 116,
+      "locator": "Notebook 单元 116 · markdown",
+      "text": "（1）样品选择（选择行）"
+    },
+    {
+      "index": 117,
+      "locator": "Notebook 单元 117 · code",
+      "text": "d21[d21['性别']=='男'] "
+    },
+    {
+      "index": 118,
+      "locator": "Notebook 单元 118 · code",
+      "text": "d21[(d21['性别']=='男') & (d21['年龄']>60)] "
+    },
+    {
+      "index": 119,
+      "locator": "Notebook 单元 119 · markdown",
+      "text": "（2）变量选择（选择列）"
+    },
+    {
+      "index": 120,
+      "locator": "Notebook 单元 120 · code",
+      "text": "d21['年龄'].head()   #取一列数据，一列时也可用d21.年龄"
+    },
+    {
+      "index": 121,
+      "locator": "Notebook 单元 121 · code",
+      "text": "d21.loc[6:10,['性别','年龄','投资结果']]"
+    },
+    {
+      "index": 122,
+      "locator": "Notebook 单元 122 · code",
+      "text": "d21.iloc[3:7,2:6]  #3至6行和2至5列数据"
+    },
+    {
+      "index": 123,
+      "locator": "Notebook 单元 123 · markdown",
+      "text": "## 2.5 Pythn数据框的分析"
+    },
+    {
+      "index": 124,
+      "locator": "Notebook 单元 124 · markdown",
+      "text": "### 2.5.1 定量数据的分析"
+    },
+    {
+      "index": 125,
+      "locator": "Notebook 单元 125 · markdown",
+      "text": "1. 变量的分布特征"
+    },
+    {
+      "index": 126,
+      "locator": "Notebook 单元 126 · code",
+      "text": "import matplotlib.pyplot as plt\n\nplt.rcParams['font.family'] = ['Heiti TC']\nplt.rcParams[\"axes.unicode_minus\"] = False"
+    },
+    {
+      "index": 127,
+      "locator": "Notebook 单元 127 · code",
+      "text": "plt.title(\"年龄分布直方图\")\nplt.hist(d21.年龄)"
+    },
+    {
+      "index": 128,
+      "locator": "Notebook 单元 128 · code",
+      "text": "#定量频数表与直方图函数\ndef freq(X,bins=10):  #默认自动分10组\n    H=plt.hist(X,bins);\n    a=H[1][:-1]; b=H[1][1:];\n    f=H[0]; p=f/sum(f)*100;p\n    cp=np.cumsum(p);cp\n    Freq=pd.DataFrame([a,b,f,p,cp])\n    Freq.index=['[下限','上限)','频数','频率(%)','累计频数(%)']\n    return(round(Freq.T,2))"
+    },
+    {
+      "index": 129,
+      "locator": "Notebook 单元 129 · code",
+      "text": "H = plt.hist(d21.年龄,10);\nH[0]\nH[0].shape \nH[1]\nH[1].shape\ntype(plt.hist(d21.年龄,10)[2])\n"
+    },
+    {
+      "index": 130,
+      "locator": "Notebook 单元 130 · code",
+      "text": "a=H[1][:-1];a \nb=H[1][1:];b"
+    },
+    {
+      "index": 131,
+      "locator": "Notebook 单元 131 · code",
+      "text": "f=H[0]; f\ntotal = np.sum(f); total\n"
+    },
+    {
+      "index": 132,
+      "locator": "Notebook 单元 132 · code",
+      "text": "print(freq(d21.年龄))  #默认自动分10组"
+    },
+    {
+      "index": 133,
+      "locator": "Notebook 单元 133 · markdown",
+      "text": "2. 定量数据分组统计"
+    },
+    {
+      "index": 134,
+      "locator": "Notebook 单元 134 · code",
+      "text": "pd.set_option('display.max_rows',8) #全局设置输出行数\nage_cut=pd.cut(d21.年龄,bins=[0,20,30,40,50,60,70,80])\nage_freq=age_cut.value_counts().sort_index();age_freq"
+    },
+    {
+      "index": 135,
+      "locator": "Notebook 单元 135 · code",
+      "text": "age_cut.value_counts()"
+    },
+    {
+      "index": 136,
+      "locator": "Notebook 单元 136 · code",
+      "text": "pd.DataFrame.sort_index?\n"
+    },
+    {
+      "index": 137,
+      "locator": "Notebook 单元 137 · code",
+      "text": "age_freq.plot(kind='bar');   #将结果画成垂直条图"
+    },
+    {
+      "index": 138,
+      "locator": "Notebook 单元 138 · markdown",
+      "text": "（2）变量的基本统计量"
+    },
+    {
+      "index": 139,
+      "locator": "Notebook 单元 139 · code",
+      "text": "x=d21.资金规模"
+    },
+    {
+      "index": 140,
+      "locator": "Notebook 单元 140 · code",
+      "text": "x.mean()   #变量x的均值"
+    },
+    {
+      "index": 141,
+      "locator": "Notebook 单元 141 · code",
+      "text": "x.var()   #变量x的方差"
+    },
+    {
+      "index": 142,
+      "locator": "Notebook 单元 142 · code",
+      "text": "x.std()   #变量x的标准差"
+    },
+    {
+      "index": 143,
+      "locator": "Notebook 单元 143 · markdown",
+      "text": "### 2.5.2 定性变量的分析"
+    },
+    {
+      "index": 144,
+      "locator": "Notebook 单元 144 · markdown",
+      "text": "   对计数数据，可用pivot_table()函数生成任意维统计表，包括计量数据的分组统计。\n   使用pandas包中pivot_table命令，可以实现Excel等电子表格的透视表功能，且更为灵活。\n\nDataFrame.pivot_table(\n    values=None,        #值变量\n    index=None,         #行变量\n    columns=None,       #列变量\n    aggfunc='mean',     #聚集函数\n    fill_value=None,    #缺失值填充 \n    margins=False,      #是否增加边际 \n    dropna=True,        #删除缺失值\n    margins_name='All', #边际名称\n    observed=False)"
+    },
+    {
+      "index": 145,
+      "locator": "Notebook 单元 145 · code",
+      "text": "pt1=d21.pivot_table(values=['编号'],index=['投资结果'],aggfunc=len);  #len分组数\nprint(pt1)\n\n# 如果函数中的参数顺序按定义中的，那么也可省略参数名称，下同！"
+    },
+    {
+      "index": 146,
+      "locator": "Notebook 单元 146 · code",
+      "text": "pt12=d21.pivot_table(values=['编号'],index=['投资结果'],columns=['性别'],aggfunc=len);\nprint(pt12)"
+    },
+    {
+      "index": 147,
+      "locator": "Notebook 单元 147 · code",
+      "text": "pt13=d21.pivot_table(values=['资金规模'],index=['性别'],columns=['投资结果']);\nprint(pt13)"
+    },
+    {
+      "index": 148,
+      "locator": "Notebook 单元 148 · code",
+      "text": "import matplotlib.pyplot as plt            #加载基本绘图包\nplt.rcParams['font.sans-serif']=['SimHei ST']; #SimHei黑体\npt1.plot(kind='bar',legend=False);\npt13.plot(kind='bar',legend=True);"
+    },
+    {
+      "index": 149,
+      "locator": "Notebook 单元 149 · code",
+      "text": "#pt12=BSdata.pivot_table(values=['学号'],index=['性别','开设'],aggfunc=len)\npt2=d21.pivot_table(['编号'],['性别'],['投资结果'],aggfunc=len);(pt2)"
+    },
+    {
+      "index": 150,
+      "locator": "Notebook 单元 150 · code",
+      "text": "pt2.plot(kind='barh');  "
+    },
+    {
+      "index": 151,
+      "locator": "Notebook 单元 151 · code",
+      "text": "pt2.plot(kind='bar',subplots=True,legend=False,figsize=(6,8));"
+    },
+    {
+      "index": 152,
+      "locator": "Notebook 单元 152 · code",
+      "text": "pt2.plot(kind='bar',stacked=True);"
+    },
+    {
+      "index": 153,
+      "locator": "Notebook 单元 153 · code",
+      "text": "pt3=d21.pivot_table('编号', ['性别','风险意识'], '投资结果', aggfunc=len,  \n                     margins=True, margins_name='合计')\n(pt3)"
+    },
+    {
+      "index": 154,
+      "locator": "Notebook 单元 154 · code",
+      "text": "pt3.plot(kind='bar',stacked=True);"
+    },
+    {
+      "index": 155,
+      "locator": "Notebook 单元 155 · markdown",
+      "text": "### 2.5.3 定性定量因素分析\n1. 单因素分组"
+    },
+    {
+      "index": 156,
+      "locator": "Notebook 单元 156 · code",
+      "text": "import numpy as np\npt4=d21.pivot_table(\"资金规模\",'投资结果',aggfunc=[np.size,'mean', 'std']);\n(pt4)"
+    },
+    {
+      "index": 157,
+      "locator": "Notebook 单元 157 · markdown",
+      "text": "2. 两因素分组"
+    },
+    {
+      "index": 158,
+      "locator": "Notebook 单元 158 · code",
+      "text": "pt5=d21.pivot_table('资金规模',['性别','专兼职'],aggfunc=[np.size,'mean', 'std'],  \n                   margins=True, margins_name='合计')\n(pt5)"
+    },
+    {
+      "index": 159,
+      "locator": "Notebook 单元 159 · markdown",
+      "text": "3. 多因素分组"
+    },
+    {
+      "index": 160,
+      "locator": "Notebook 单元 160 · code",
+      "text": "pt6=d21.pivot_table('资金规模',['性别','专兼职','风险意识'],aggfunc=[np.size,'mean', 'std'],  \n                   margins=True, margins_name='合计')\n(pt6)"
+    },
+    {
+      "index": 161,
+      "locator": "Notebook 单元 161 · markdown",
+      "text": "# 案例2：多元数据的基本统计分析"
+    },
+    {
+      "index": 162,
+      "locator": "Notebook 单元 162 · code",
+      "text": "Case2=pd.read_excel('mvsCase.xlsx', 'Case2'); Case2"
+    },
+    {
+      "index": 163,
+      "locator": "Notebook 单元 163 · code",
+      "text": "T1=Case2.pivot_table(['序号'],['地区'],aggfunc=len); T1"
+    },
+    {
+      "index": 164,
+      "locator": "Notebook 单元 164 · code",
+      "text": "T1.plot(kind='bar');"
+    },
+    {
+      "index": 165,
+      "locator": "Notebook 单元 165 · code",
+      "text": "import matplotlib.pyplot as plt            \nplt.hist(Case2.月收入)"
+    },
+    {
+      "index": 166,
+      "locator": "Notebook 单元 166 · code",
+      "text": "#Case2.groupby('地区')['月收入'].apply"
+    },
+    {
+      "index": 167,
+      "locator": "Notebook 单元 167 · code",
+      "text": "Case2.boxplot('月收入','地区');\nCase2.pivot_table('月收入','地区',\n                  aggfunc=[len,'min','max','mean','std'])"
+    },
+    {
+      "index": 168,
+      "locator": "Notebook 单元 168 · raw",
+      "text": "     Q1-1.5IQR   Q1   median  Q3   Q3+1.5IQR    \n                  |-----:-----|\n  o      |--------|     :     |--------|    o  o\n                  |-----:-----|\nflier             <----------->            fliers\n                       IQR"
+    },
+    {
+      "index": 169,
+      "locator": "Notebook 单元 169 · code",
+      "text": "pd.DataFrame.boxplot?"
+    },
+    {
+      "index": 170,
+      "locator": "Notebook 单元 170 · code",
+      "text": "import seaborn as sns\nsns.boxplot(x=\"地区\", y=\"月收入\", data=Case2, width=0.6, showfliers=True)  # showfliers=True 显示异常值\nsns.stripplot(x=\"地区\", y=\"月收入\", data=Case2, color=\"black\", size=6, jitter=True, alpha=0.7)\n"
+    },
+    {
+      "index": 171,
+      "locator": "Notebook 单元 171 · code",
+      "text": "T2=Case2.pivot_table(['序号'],['性别'],['观点'],aggfunc=len);\nT2"
+    },
+    {
+      "index": 172,
+      "locator": "Notebook 单元 172 · code",
+      "text": "T2.plot(kind='bar',legend=False);"
+    },
+    {
+      "index": 173,
+      "locator": "Notebook 单元 173 · code",
+      "text": "T3=Case2.pivot_table(['序号'],['性别','教育程度'],['观点'],aggfunc=len); \nT3"
+    },
+    {
+      "index": 174,
+      "locator": "Notebook 单元 174 · code",
+      "text": "T3.plot(kind='barh',legend=False);"
+    },
+    {
+      "index": 175,
+      "locator": "Notebook 单元 175 · code",
+      "text": "#定义二维数组（矩阵）\nA=np.array([[1,2,3],[4,5,6]]); A"
+    },
+    {
+      "index": 176,
+      "locator": "Notebook 单元 176 · code",
+      "text": "age_freq.plot(kind='bar');   #将结果画成垂直条图"
+    },
+    {
+      "index": 177,
+      "locator": "Notebook 单元 177 · code",
+      "text": ""
+    },
+    {
+      "index": 178,
+      "locator": "Notebook 单元 178 · code",
+      "text": ""
+    },
+    {
+      "index": 179,
+      "locator": "Notebook 单元 179 · code",
+      "text": ""
+    },
+    {
+      "index": 180,
+      "locator": "Notebook 单元 180 · code",
+      "text": ""
+    },
+    {
+      "index": 181,
+      "locator": "Notebook 单元 181 · code",
+      "text": ""
+    }
+  ]
+}

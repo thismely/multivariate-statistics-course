@@ -1,0 +1,9 @@
+field,dtype,description,unit,role
+predictor_1,float,模拟连续预测变量 1,synthetic unit,input
+predictor_2,float,与预测变量 1 有相关性的模拟连续变量,synthetic unit,input
+predictor_3,float,模拟连续预测变量 3,synthetic unit,input
+predictor_4,float,模拟连续预测变量 4,synthetic unit,input
+predictor_5,float,模拟连续预测变量 5,synthetic unit,input
+target,float,由固定系数和噪声生成的连续响应,synthetic unit,target
+actual,float,测试集响应观测,synthetic unit,test output
+predicted,float,回归模型测试集预测值,synthetic unit,test output

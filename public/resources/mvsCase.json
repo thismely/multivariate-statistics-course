@@ -1,0 +1,73 @@
+{
+  "resource": {
+    "id": "mvsCase",
+    "title": "mvsCase",
+    "kind": "dataset",
+    "source_path": "课程数据/mvsCase.xlsx",
+    "sha256": "e136b854b8cf03c575ca2918900a3c87234c4dbfcc01cffc23a936bb6dc667be",
+    "status": "SHEET_NAMES_VERIFIED",
+    "href": "resources/mvsCase.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "工作表 Case1",
+      "text": "Case1"
+    },
+    {
+      "index": 2,
+      "locator": "工作表 Case2",
+      "text": "Case2"
+    },
+    {
+      "index": 3,
+      "locator": "工作表 Case3",
+      "text": "Case3"
+    },
+    {
+      "index": 4,
+      "locator": "工作表 Case4",
+      "text": "Case4"
+    },
+    {
+      "index": 5,
+      "locator": "工作表 Case5",
+      "text": "Case5"
+    },
+    {
+      "index": 6,
+      "locator": "工作表 Case6",
+      "text": "Case6"
+    },
+    {
+      "index": 7,
+      "locator": "工作表 Case7",
+      "text": "Case7"
+    },
+    {
+      "index": 8,
+      "locator": "工作表 Case8",
+      "text": "Case8"
+    },
+    {
+      "index": 9,
+      "locator": "工作表 Case9",
+      "text": "Case9"
+    },
+    {
+      "index": 10,
+      "locator": "工作表 Case10",
+      "text": "Case10"
+    },
+    {
+      "index": 11,
+      "locator": "工作表 Case11",
+      "text": "Case11"
+    },
+    {
+      "index": 12,
+      "locator": "工作表 Case12",
+      "text": "Case12"
+    }
+  ]
+}

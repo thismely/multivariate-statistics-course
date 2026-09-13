@@ -1,0 +1,5433 @@
+{
+  "resource": {
+    "id": "lecture02",
+    "title": "第2章_多元数据的Python处理_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第2章_多元数据的Python处理_完整讲义.md",
+    "sha256": "28512df93cf6f4d3c61bcfbf7c61e7c716d0ad61452f01d987fca4e10ccf091a",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture02.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "讲义 L1",
+      "text": "# 第2章 多元数据的Python处理"
+    },
+    {
+      "index": 2,
+      "locator": "讲义 L2",
+      "text": ""
+    },
+    {
+      "index": 3,
+      "locator": "讲义 L3",
+      "text": "## 模块一：精准教学大纲"
+    },
+    {
+      "index": 4,
+      "locator": "讲义 L4",
+      "text": ""
+    },
+    {
+      "index": 5,
+      "locator": "讲义 L5",
+      "text": "### 一、教学目标"
+    },
+    {
+      "index": 6,
+      "locator": "讲义 L6",
+      "text": ""
+    },
+    {
+      "index": 7,
+      "locator": "讲义 L7",
+      "text": "通过本章学习，学生应具备以下核心能力："
+    },
+    {
+      "index": 8,
+      "locator": "讲义 L8",
+      "text": ""
+    },
+    {
+      "index": 9,
+      "locator": "讲义 L9",
+      "text": "1. **Python编程基础**：掌握Python的核心数据类型（数值、字符串、列表、元组、字典、集合）、控制结构（条件判断、循环）、函数定义与使用，能够编写基本的数据处理脚本。"
+    },
+    {
+      "index": 10,
+      "locator": "讲义 L10",
+      "text": "2. **NumPy数值计算**：熟练使用NumPy进行数组创建、索引切片、矩阵运算、特征值分解、统计计算，理解向量化运算的性能优势。"
+    },
+    {
+      "index": 11,
+      "locator": "讲义 L11",
+      "text": "3. **Scipy科学计算**：掌握scipy.stats模块中常用概率分布的使用方法，能够进行t检验、卡方检验等基本假设检验。"
+    },
+    {
+      "index": 12,
+      "locator": "讲义 L12",
+      "text": "4. **数据收集与整理**：理解多元数据的来源（问卷调查、实验观测、数据库导出），掌握缺失值处理（MCAR/MAR/MNAR识别、删除法与插补法）、异常值检测（Z-score法、IQR法）、数据标准化（Z-score、Min-Max）的方法与Python实现。"
+    },
+    {
+      "index": 13,
+      "locator": "讲义 L13",
+      "text": "5. **Pandas数据框操作**：熟练使用DataFrame进行数据创建、读取、索引切片、排序、分组聚合、合并连接、数据透视等操作。"
+    },
+    {
+      "index": 14,
+      "locator": "讲义 L14",
+      "text": "6. **描述性统计分析**：能够计算集中趋势（均值、中位数、众数）、离散趋势（方差、标准差、变异系数）、相关系数矩阵，并进行业务解读。"
+    },
+    {
+      "index": 15,
+      "locator": "讲义 L15",
+      "text": ""
+    },
+    {
+      "index": 16,
+      "locator": "讲义 L16",
+      "text": "### 二、建议学时"
+    },
+    {
+      "index": 17,
+      "locator": "讲义 L17",
+      "text": ""
+    },
+    {
+      "index": 18,
+      "locator": "讲义 L18",
+      "text": "| 内容 | 学时 | 教学方式 |"
+    },
+    {
+      "index": 19,
+      "locator": "讲义 L19",
+      "text": "|------|------|----------|"
+    },
+    {
+      "index": 20,
+      "locator": "讲义 L20",
+      "text": "| 2.1 Python的编程基础 | 2 | 讲授+练习 |"
+    },
+    {
+      "index": 21,
+      "locator": "讲义 L21",
+      "text": "| 2.2 Python数值分析（NumPy/Scipy） | 2 | 讲授+练习 |"
+    },
+    {
+      "index": 22,
+      "locator": "讲义 L22",
+      "text": "| 2.3 多元数据的收集和整理 | 2 | 讲授+案例 |"
+    },
+    {
+      "index": 23,
+      "locator": "讲义 L23",
+      "text": "| 2.4 Python的数据框（Pandas） | 2 | 讲授+练习 |"
+    },
+    {
+      "index": 24,
+      "locator": "讲义 L24",
+      "text": "| 2.5 Python数据框的分析 | 2 | 讲授+练习 |"
+    },
+    {
+      "index": 25,
+      "locator": "讲义 L25",
+      "text": "| **合计** | **10** | |"
+    },
+    {
+      "index": 26,
+      "locator": "讲义 L26",
+      "text": ""
+    },
+    {
+      "index": 27,
+      "locator": "讲义 L27",
+      "text": "### 三、重点与难点"
+    },
+    {
+      "index": 28,
+      "locator": "讲义 L28",
+      "text": ""
+    },
+    {
+      "index": 29,
+      "locator": "讲义 L29",
+      "text": "**重点**："
+    },
+    {
+      "index": 30,
+      "locator": "讲义 L30",
+      "text": "- NumPy数组的向量化运算思维（避免for循环）"
+    },
+    {
+      "index": 31,
+      "locator": "讲义 L31",
+      "text": "- Pandas DataFrame的loc/iloc索引、groupby分组聚合"
+    },
+    {
+      "index": 32,
+      "locator": "讲义 L32",
+      "text": "- 缺失值的类型识别与处理策略选择"
+    },
+    {
+      "index": 33,
+      "locator": "讲义 L33",
+      "text": "- 数据标准化方法的选择依据"
+    },
+    {
+      "index": 34,
+      "locator": "讲义 L34",
+      "text": ""
+    },
+    {
+      "index": 35,
+      "locator": "讲义 L35",
+      "text": "**难点**："
+    },
+    {
+      "index": 36,
+      "locator": "讲义 L36",
+      "text": "- 布尔索引与花式索引的区别"
+    },
+    {
+      "index": 37,
+      "locator": "讲义 L37",
+      "text": "- MCAR/MAR/MNAR三种缺失机制的区分与检验"
+    },
+    {
+      "index": 38,
+      "locator": "讲义 L38",
+      "text": "- 多重索引（MultiIndex）与数据透视表的使用"
+    },
+    {
+      "index": 39,
+      "locator": "讲义 L39",
+      "text": "- 标准化方法对后续分析结果的影响"
+    },
+    {
+      "index": 40,
+      "locator": "讲义 L40",
+      "text": ""
+    },
+    {
+      "index": 41,
+      "locator": "讲义 L41",
+      "text": "**化解建议**："
+    },
+    {
+      "index": 42,
+      "locator": "讲义 L42",
+      "text": "1. 对于NumPy向量化思维，建议用\"广播\"（Broadcasting）的几何直觉来理解——小数组自动\"扩展\"到大数组的形状。"
+    },
+    {
+      "index": 43,
+      "locator": "讲义 L43",
+      "text": "2. 对于缺失值机制，建议用\"缺失是否与观测值有关\"这一核心问题来区分：MCAR（完全无关）、MAR（与其他变量有关）、MNAR（与自身有关）。"
+    },
+    {
+      "index": 44,
+      "locator": "讲义 L44",
+      "text": "3. 对于标准化方法，建议对比\"极值标准化后加权求和\"与\"Z-score标准化后加权求和\"的结果差异，直观理解为什么综合评价通常用极值标准化。"
+    },
+    {
+      "index": 45,
+      "locator": "讲义 L45",
+      "text": ""
+    },
+    {
+      "index": 46,
+      "locator": "讲义 L46",
+      "text": "### 四、前置知识"
+    },
+    {
+      "index": 47,
+      "locator": "讲义 L47",
+      "text": ""
+    },
+    {
+      "index": 48,
+      "locator": "讲义 L48",
+      "text": "| 前置知识 | 是否已在本课程前序章节出现 | 处理方式 |"
+    },
+    {
+      "index": 49,
+      "locator": "讲义 L49",
+      "text": "|----------|--------------------------|----------|"
+    },
+    {
+      "index": 50,
+      "locator": "讲义 L50",
+      "text": "| Python基础语法 | 否 | 本章2.1节详细讲解 |"
+    },
+    {
+      "index": 51,
+      "locator": "讲义 L51",
+      "text": "| 概率论基础 | 是（第1章前置知识补充） | 直接引用 |"
+    },
+    {
+      "index": 52,
+      "locator": "讲义 L52",
+      "text": "| 线性代数基础 | 是（第1章前置知识补充） | 直接引用 |"
+    },
+    {
+      "index": 53,
+      "locator": "讲义 L53",
+      "text": ""
+    },
+    {
+      "index": 54,
+      "locator": "讲义 L54",
+      "text": "---"
+    },
+    {
+      "index": 55,
+      "locator": "讲义 L55",
+      "text": ""
+    },
+    {
+      "index": 56,
+      "locator": "讲义 L56",
+      "text": "## 模块二：沉浸式理论讲解"
+    },
+    {
+      "index": 57,
+      "locator": "讲义 L57",
+      "text": ""
+    },
+    {
+      "index": 58,
+      "locator": "讲义 L58",
+      "text": "### 2.1 Python的编程基础"
+    },
+    {
+      "index": 59,
+      "locator": "讲义 L59",
+      "text": ""
+    },
+    {
+      "index": 60,
+      "locator": "讲义 L60",
+      "text": "#### 2.1.1 Python的数据类型"
+    },
+    {
+      "index": 61,
+      "locator": "讲义 L61",
+      "text": ""
+    },
+    {
+      "index": 62,
+      "locator": "讲义 L62",
+      "text": "**【业务场景引入】**"
+    },
+    {
+      "index": 63,
+      "locator": "讲义 L63",
+      "text": ""
+    },
+    {
+      "index": 64,
+      "locator": "讲义 L64",
+      "text": "在开始处理多元统计数据之前，我们需要了解Python中存储数据的基本\"容器\"类型。类比一个大宗商品交易系统："
+    },
+    {
+      "index": 65,
+      "locator": "讲义 L65",
+      "text": "- **整型（int）**：合约代码（如CU2401表示2024年1月铜期货）"
+    },
+    {
+      "index": 66,
+      "locator": "讲义 L66",
+      "text": "- **浮点型（float）**：价格（如68520.0元/吨）、收益率（如0.0032）"
+    },
+    {
+      "index": 67,
+      "locator": "讲义 L67",
+      "text": "- **字符串（str）**：品种名称（如\"沪铜\"）、交易所（如\"上期所\"）"
+    },
+    {
+      "index": 68,
+      "locator": "讲义 L68",
+      "text": "- **列表（list）**：一组有序的品种代码，如`['CU', 'AL', 'ZN']`"
+    },
+    {
+      "index": 69,
+      "locator": "讲义 L69",
+      "text": "- **字典（dict）**：品种与价格的映射，如`{'铜': 68520, '铝': 18950}`"
+    },
+    {
+      "index": 70,
+      "locator": "讲义 L70",
+      "text": ""
+    },
+    {
+      "index": 71,
+      "locator": "讲义 L71",
+      "text": "**（1）数值类型**"
+    },
+    {
+      "index": 72,
+      "locator": "讲义 L72",
+      "text": ""
+    },
+    {
+      "index": 73,
+      "locator": "讲义 L73",
+      "text": "```python"
+    },
+    {
+      "index": 74,
+      "locator": "讲义 L74",
+      "text": "# 整型（int）：没有大小限制，支持任意精度"
+    },
+    {
+      "index": 75,
+      "locator": "讲义 L75",
+      "text": "x = 42"
+    },
+    {
+      "index": 76,
+      "locator": "讲义 L76",
+      "text": "code = 2401"
+    },
+    {
+      "index": 77,
+      "locator": "讲义 L77",
+      "text": "print(type(x))  # <class 'int'>"
+    },
+    {
+      "index": 78,
+      "locator": "讲义 L78",
+      "text": ""
+    },
+    {
+      "index": 79,
+      "locator": "讲义 L79",
+      "text": "# 浮点型（float）：双精度浮点数（64位），存在浮点误差"
+    },
+    {
+      "index": 80,
+      "locator": "讲义 L80",
+      "text": "price = 68520.5"
+    },
+    {
+      "index": 81,
+      "locator": "讲义 L81",
+      "text": "rate = 0.0032"
+    },
+    {
+      "index": 82,
+      "locator": "讲义 L82",
+      "text": "print(0.1 + 0.2)        # 0.30000000000000004（浮点误差！）"
+    },
+    {
+      "index": 83,
+      "locator": "讲义 L83",
+      "text": "print(0.1 + 0.2 == 0.3)  # False"
+    },
+    {
+      "index": 84,
+      "locator": "讲义 L84",
+      "text": "# 正确的浮点数比较方式："
+    },
+    {
+      "index": 85,
+      "locator": "讲义 L85",
+      "text": "import math"
+    },
+    {
+      "index": 86,
+      "locator": "讲义 L86",
+      "text": "print(math.isclose(0.1 + 0.2, 0.3))  # True"
+    },
+    {
+      "index": 87,
+      "locator": "讲义 L87",
+      "text": "```"
+    },
+    {
+      "index": 88,
+      "locator": "讲义 L88",
+      "text": ""
+    },
+    {
+      "index": 89,
+      "locator": "讲义 L89",
+      "text": "**为什么浮点误差很重要？** 在金融计算中，如果对大量微小的浮点数进行累加（如计算一个包含100万笔交易的日收益率之和），浮点误差可能累积到不可忽略的程度。使用`decimal`模块或`numpy.float64`可以缓解这个问题。"
+    },
+    {
+      "index": 90,
+      "locator": "讲义 L90",
+      "text": ""
+    },
+    {
+      "index": 91,
+      "locator": "讲义 L91",
+      "text": "**（2）字符串类型**"
+    },
+    {
+      "index": 92,
+      "locator": "讲义 L92",
+      "text": ""
+    },
+    {
+      "index": 93,
+      "locator": "讲义 L93",
+      "text": "```python"
+    },
+    {
+      "index": 94,
+      "locator": "讲义 L94",
+      "text": "# 字符串创建"
+    },
+    {
+      "index": 95,
+      "locator": "讲义 L95",
+      "text": "s = \"铜期货CU2401\""
+    },
+    {
+      "index": 96,
+      "locator": "讲义 L96",
+      "text": "t = '单引号也可以'"
+    },
+    {
+      "index": 97,
+      "locator": "讲义 L97",
+      "text": ""
+    },
+    {
+      "index": 98,
+      "locator": "讲义 L98",
+      "text": "# 字符串切片（左闭右开）"
+    },
+    {
+      "index": 99,
+      "locator": "讲义 L99",
+      "text": "print(s[0:2])    # '铜期'"
+    },
+    {
+      "index": 100,
+      "locator": "讲义 L100",
+      "text": "print(s[-4:])    # 'CU2401'"
+    },
+    {
+      "index": 101,
+      "locator": "讲义 L101",
+      "text": "print(s[::-1])   # '1042UC货期铜'（反转）"
+    },
+    {
+      "index": 102,
+      "locator": "讲义 L102",
+      "text": ""
+    },
+    {
+      "index": 103,
+      "locator": "讲义 L103",
+      "text": "# f-string格式化（Python 3.6+）"
+    },
+    {
+      "index": 104,
+      "locator": "讲义 L104",
+      "text": "price = 68520.5"
+    },
+    {
+      "index": 105,
+      "locator": "讲义 L105",
+      "text": "print(f\"铜期货当前价格：{price:,.1f}元/吨\")"
+    },
+    {
+      "index": 106,
+      "locator": "讲义 L106",
+      "text": "print(f\"收益率：{rate:.4%}\")"
+    },
+    {
+      "index": 107,
+      "locator": "讲义 L107",
+      "text": ""
+    },
+    {
+      "index": 108,
+      "locator": "讲义 L108",
+      "text": "# 常用方法"
+    },
+    {
+      "index": 109,
+      "locator": "讲义 L109",
+      "text": "s = \"  Hello, World!  \""
+    },
+    {
+      "index": 110,
+      "locator": "讲义 L110",
+      "text": "print(s.strip())        # 'Hello, World!'"
+    },
+    {
+      "index": 111,
+      "locator": "讲义 L111",
+      "text": "print(s.lower())        # '  hello, world!  '"
+    },
+    {
+      "index": 112,
+      "locator": "讲义 L112",
+      "text": "print(s.replace('World', 'Python'))"
+    },
+    {
+      "index": 113,
+      "locator": "讲义 L113",
+      "text": "print(s.split(','))     # ['  Hello', ' World!  ']"
+    },
+    {
+      "index": 114,
+      "locator": "讲义 L114",
+      "text": "```"
+    },
+    {
+      "index": 115,
+      "locator": "讲义 L115",
+      "text": ""
+    },
+    {
+      "index": 116,
+      "locator": "讲义 L116",
+      "text": "**（3）列表与元组**"
+    },
+    {
+      "index": 117,
+      "locator": "讲义 L117",
+      "text": ""
+    },
+    {
+      "index": 118,
+      "locator": "讲义 L118",
+      "text": "```python"
+    },
+    {
+      "index": 119,
+      "locator": "讲义 L119",
+      "text": "# 列表（list）：有序、可变"
+    },
+    {
+      "index": 120,
+      "locator": "讲义 L120",
+      "text": "prices = [68520, 18950, 21500, 17800, 15230]"
+    },
+    {
+      "index": 121,
+      "locator": "讲义 L121",
+      "text": "prices.append(8500)"
+    },
+    {
+      "index": 122,
+      "locator": "讲义 L122",
+      "text": "prices.insert(0, 99999)"
+    },
+    {
+      "index": 123,
+      "locator": "讲义 L123",
+      "text": "prices.remove(99999)"
+    },
+    {
+      "index": 124,
+      "locator": "讲义 L124",
+      "text": "popped = prices.pop()"
+    },
+    {
+      "index": 125,
+      "locator": "讲义 L125",
+      "text": "print(prices[1:3])"
+    },
+    {
+      "index": 126,
+      "locator": "讲义 L126",
+      "text": ""
+    },
+    {
+      "index": 127,
+      "locator": "讲义 L127",
+      "text": "# 列表推导式（高效创建列表）"
+    },
+    {
+      "index": 128,
+      "locator": "讲义 L128",
+      "text": "squares = [x**2 for x in range(10) if x % 2 == 0]"
+    },
+    {
+      "index": 129,
+      "locator": "讲义 L129",
+      "text": "# 结果: [0, 4, 16, 36, 64]"
+    },
+    {
+      "index": 130,
+      "locator": "讲义 L130",
+      "text": ""
+    },
+    {
+      "index": 131,
+      "locator": "讲义 L131",
+      "text": "# 列表推导式在数据处理中的应用"
+    },
+    {
+      "index": 132,
+      "locator": "讲义 L132",
+      "text": "returns = [0.01, -0.02, 0.03, -0.01, 0.02]"
+    },
+    {
+      "index": 133,
+      "locator": "讲义 L133",
+      "text": "cumulative = [1 + r for r in returns]"
+    },
+    {
+      "index": 134,
+      "locator": "讲义 L134",
+      "text": "positive_returns = [r for r in returns if r > 0]"
+    },
+    {
+      "index": 135,
+      "locator": "讲义 L135",
+      "text": ""
+    },
+    {
+      "index": 136,
+      "locator": "讲义 L136",
+      "text": "# 元组（tuple）：有序、不可变"
+    },
+    {
+      "index": 137,
+      "locator": "讲义 L137",
+      "text": "point = (3, 5)"
+    },
+    {
+      "index": 138,
+      "locator": "讲义 L138",
+      "text": "record = ('铜', 68520, '上期所')"
+    },
+    {
+      "index": 139,
+      "locator": "讲义 L139",
+      "text": "name, price, exchange = record  # 解包"
+    },
+    {
+      "index": 140,
+      "locator": "讲义 L140",
+      "text": "```"
+    },
+    {
+      "index": 141,
+      "locator": "讲义 L141",
+      "text": ""
+    },
+    {
+      "index": 142,
+      "locator": "讲义 L142",
+      "text": "**列表 vs 元组的选择原则**："
+    },
+    {
+      "index": 143,
+      "locator": "讲义 L143",
+      "text": "- 需要修改内容时用列表（如动态添加交易记录）"
+    },
+    {
+      "index": 144,
+      "locator": "讲义 L144",
+      "text": "- 不需要修改时用元组（如坐标、配置参数）"
+    },
+    {
+      "index": 145,
+      "locator": "讲义 L145",
+      "text": "- 元组可以作为字典的键（因为不可变），列表不行"
+    },
+    {
+      "index": 146,
+      "locator": "讲义 L146",
+      "text": ""
+    },
+    {
+      "index": 147,
+      "locator": "讲义 L147",
+      "text": "**（4）字典与集合**"
+    },
+    {
+      "index": 148,
+      "locator": "讲义 L148",
+      "text": ""
+    },
+    {
+      "index": 149,
+      "locator": "讲义 L149",
+      "text": "```python"
+    },
+    {
+      "index": 150,
+      "locator": "讲义 L150",
+      "text": "# 字典（dict）：键值对映射，查找O(1)"
+    },
+    {
+      "index": 151,
+      "locator": "讲义 L151",
+      "text": "prices = {'铜': 68520, '铝': 18950, '锌': 21500}"
+    },
+    {
+      "index": 152,
+      "locator": "讲义 L152",
+      "text": "prices['铅'] = 16200"
+    },
+    {
+      "index": 153,
+      "locator": "讲义 L153",
+      "text": "del prices['铅']"
+    },
+    {
+      "index": 154,
+      "locator": "讲义 L154",
+      "text": "print(prices.get('金', 'N/A'))"
+    },
+    {
+      "index": 155,
+      "locator": "讲义 L155",
+      "text": ""
+    },
+    {
+      "index": 156,
+      "locator": "讲义 L156",
+      "text": "# 字典推导式"
+    },
+    {
+      "index": 157,
+      "locator": "讲义 L157",
+      "text": "names = ['铜', '铝', '锌']"
+    },
+    {
+      "index": 158,
+      "locator": "讲义 L158",
+      "text": "codes = ['CU', 'AL', 'ZN']"
+    },
+    {
+      "index": 159,
+      "locator": "讲义 L159",
+      "text": "name_to_code = {n: c for n, c in zip(names, codes)}"
+    },
+    {
+      "index": 160,
+      "locator": "讲义 L160",
+      "text": ""
+    },
+    {
+      "index": 161,
+      "locator": "讲义 L161",
+      "text": "# 遍历字典"
+    },
+    {
+      "index": 162,
+      "locator": "讲义 L162",
+      "text": "for name, price in prices.items():"
+    },
+    {
+      "index": 163,
+      "locator": "讲义 L163",
+      "text": "    print(f\"{name}: {price}元/吨\")"
+    },
+    {
+      "index": 164,
+      "locator": "讲义 L164",
+      "text": ""
+    },
+    {
+      "index": 165,
+      "locator": "讲义 L165",
+      "text": "# 集合（set）：无序、去重，支持集合运算"
+    },
+    {
+      "index": 166,
+      "locator": "讲义 L166",
+      "text": "set_a = {'铜', '铝', '锌', '金'}"
+    },
+    {
+      "index": 167,
+      "locator": "讲义 L167",
+      "text": "set_b = {'铜', '金', '银', '铂'}"
+    },
+    {
+      "index": 168,
+      "locator": "讲义 L168",
+      "text": "print(set_a & set_b)   # 交集: {'铜', '金'}"
+    },
+    {
+      "index": 169,
+      "locator": "讲义 L169",
+      "text": "print(set_a | set_b)   # 并集: {'铜', '铝', '锌', '金', '银', '铂'}"
+    },
+    {
+      "index": 170,
+      "locator": "讲义 L170",
+      "text": "print(set_a - set_b)   # 差集: {'铝', '锌'}"
+    },
+    {
+      "index": 171,
+      "locator": "讲义 L171",
+      "text": "```"
+    },
+    {
+      "index": 172,
+      "locator": "讲义 L172",
+      "text": ""
+    },
+    {
+      "index": 173,
+      "locator": "讲义 L173",
+      "text": "#### 2.1.2 控制结构"
+    },
+    {
+      "index": 174,
+      "locator": "讲义 L174",
+      "text": ""
+    },
+    {
+      "index": 175,
+      "locator": "讲义 L175",
+      "text": "**（1）条件判断**"
+    },
+    {
+      "index": 176,
+      "locator": "讲义 L176",
+      "text": ""
+    },
+    {
+      "index": 177,
+      "locator": "讲义 L177",
+      "text": "```python"
+    },
+    {
+      "index": 178,
+      "locator": "讲义 L178",
+      "text": "price = 68520"
+    },
+    {
+      "index": 179,
+      "locator": "讲义 L179",
+      "text": "if price > 70000:"
+    },
+    {
+      "index": 180,
+      "locator": "讲义 L180",
+      "text": "    signal = '偏高'"
+    },
+    {
+      "index": 181,
+      "locator": "讲义 L181",
+      "text": "elif price > 65000:"
+    },
+    {
+      "index": 182,
+      "locator": "讲义 L182",
+      "text": "    signal = '适中'"
+    },
+    {
+      "index": 183,
+      "locator": "讲义 L183",
+      "text": "else:"
+    },
+    {
+      "index": 184,
+      "locator": "讲义 L184",
+      "text": "    signal = '偏低'"
+    },
+    {
+      "index": 185,
+      "locator": "讲义 L185",
+      "text": ""
+    },
+    {
+      "index": 186,
+      "locator": "讲义 L186",
+      "text": "# 条件表达式（三元运算符）"
+    },
+    {
+      "index": 187,
+      "locator": "讲义 L187",
+      "text": "signal = '偏高' if price > 70000 else ('适中' if price > 65000 else '偏低')"
+    },
+    {
+      "index": 188,
+      "locator": "讲义 L188",
+      "text": "```"
+    },
+    {
+      "index": 189,
+      "locator": "讲义 L189",
+      "text": ""
+    },
+    {
+      "index": 190,
+      "locator": "讲义 L190",
+      "text": "**（2）循环结构**"
+    },
+    {
+      "index": 191,
+      "locator": "讲义 L191",
+      "text": ""
+    },
+    {
+      "index": 192,
+      "locator": "讲义 L192",
+      "text": "```python"
+    },
+    {
+      "index": 193,
+      "locator": "讲义 L193",
+      "text": "# for循环与可迭代对象"
+    },
+    {
+      "index": 194,
+      "locator": "讲义 L194",
+      "text": "prices = [68520, 18950, 21500, 17800]"
+    },
+    {
+      "index": 195,
+      "locator": "讲义 L195",
+      "text": "for price in prices:"
+    },
+    {
+      "index": 196,
+      "locator": "讲义 L196",
+      "text": "    print(price)"
+    },
+    {
+      "index": 197,
+      "locator": "讲义 L197",
+      "text": ""
+    },
+    {
+      "index": 198,
+      "locator": "讲义 L198",
+      "text": "# enumerate同时获取索引和值"
+    },
+    {
+      "index": 199,
+      "locator": "讲义 L199",
+      "text": "for i, price in enumerate(prices):"
+    },
+    {
+      "index": 200,
+      "locator": "讲义 L200",
+      "text": "    print(f\"第{i+1}个品种: {price}\")"
+    },
+    {
+      "index": 201,
+      "locator": "讲义 L201",
+      "text": ""
+    },
+    {
+      "index": 202,
+      "locator": "讲义 L202",
+      "text": "# zip并行遍历多个序列"
+    },
+    {
+      "index": 203,
+      "locator": "讲义 L203",
+      "text": "names = ['铜', '铝', '锌', '铅']"
+    },
+    {
+      "index": 204,
+      "locator": "讲义 L204",
+      "text": "for name, price in zip(names, prices):"
+    },
+    {
+      "index": 205,
+      "locator": "讲义 L205",
+      "text": "    print(f\"{name}: {price}\")"
+    },
+    {
+      "index": 206,
+      "locator": "讲义 L206",
+      "text": ""
+    },
+    {
+      "index": 207,
+      "locator": "讲义 L207",
+      "text": "# while循环"
+    },
+    {
+      "index": 208,
+      "locator": "讲义 L208",
+      "text": "balance = 100000"
+    },
+    {
+      "index": 209,
+      "locator": "讲义 L209",
+      "text": "year = 0"
+    },
+    {
+      "index": 210,
+      "locator": "讲义 L210",
+      "text": "while balance < 200000:"
+    },
+    {
+      "index": 211,
+      "locator": "讲义 L211",
+      "text": "    balance *= 1.08"
+    },
+    {
+      "index": 212,
+      "locator": "讲义 L212",
+      "text": "    year += 1"
+    },
+    {
+      "index": 213,
+      "locator": "讲义 L213",
+      "text": "print(f\"资产翻倍需要{year}年，最终余额{balance:,.0f}元\")"
+    },
+    {
+      "index": 214,
+      "locator": "讲义 L214",
+      "text": "```"
+    },
+    {
+      "index": 215,
+      "locator": "讲义 L215",
+      "text": ""
+    },
+    {
+      "index": 216,
+      "locator": "讲义 L216",
+      "text": "#### 2.1.3 函数定义与使用"
+    },
+    {
+      "index": 217,
+      "locator": "讲义 L217",
+      "text": ""
+    },
+    {
+      "index": 218,
+      "locator": "讲义 L218",
+      "text": "```python"
+    },
+    {
+      "index": 219,
+      "locator": "讲义 L219",
+      "text": "# 基本函数定义"
+    },
+    {
+      "index": 220,
+      "locator": "讲义 L220",
+      "text": "def sharpe_ratio(returns, rf=0.03):"
+    },
+    {
+      "index": 221,
+      "locator": "讲义 L221",
+      "text": "    \"\"\""
+    },
+    {
+      "index": 222,
+      "locator": "讲义 L222",
+      "text": "    计算Sharpe比率"
+    },
+    {
+      "index": 223,
+      "locator": "讲义 L223",
+      "text": ""
+    },
+    {
+      "index": 224,
+      "locator": "讲义 L224",
+      "text": "    参数："
+    },
+    {
+      "index": 225,
+      "locator": "讲义 L225",
+      "text": "        returns: 收益率序列（列表或数组）"
+    },
+    {
+      "index": 226,
+      "locator": "讲义 L226",
+      "text": "        rf: 无风险利率（默认3%）"
+    },
+    {
+      "index": 227,
+      "locator": "讲义 L227",
+      "text": "    返回："
+    },
+    {
+      "index": 228,
+      "locator": "讲义 L228",
+      "text": "        Sharpe比率"
+    },
+    {
+      "index": 229,
+      "locator": "讲义 L229",
+      "text": "    \"\"\""
+    },
+    {
+      "index": 230,
+      "locator": "讲义 L230",
+      "text": "    import numpy as np"
+    },
+    {
+      "index": 231,
+      "locator": "讲义 L231",
+      "text": "    excess_return = np.mean(returns) - rf"
+    },
+    {
+      "index": 232,
+      "locator": "讲义 L232",
+      "text": "    volatility = np.std(returns, ddof=1)"
+    },
+    {
+      "index": 233,
+      "locator": "讲义 L233",
+      "text": "    return excess_return / volatility if volatility > 0 else 0"
+    },
+    {
+      "index": 234,
+      "locator": "讲义 L234",
+      "text": ""
+    },
+    {
+      "index": 235,
+      "locator": "讲义 L235",
+      "text": "# 使用"
+    },
+    {
+      "index": 236,
+      "locator": "讲义 L236",
+      "text": "returns = [0.01, -0.02, 0.03, -0.01, 0.02, 0.015, -0.005]"
+    },
+    {
+      "index": 237,
+      "locator": "讲义 L237",
+      "text": "sr = sharpe_ratio(returns)"
+    },
+    {
+      "index": 238,
+      "locator": "讲义 L238",
+      "text": "print(f\"Sharpe比率: {sr:.4f}\")"
+    },
+    {
+      "index": 239,
+      "locator": "讲义 L239",
+      "text": ""
+    },
+    {
+      "index": 240,
+      "locator": "讲义 L240",
+      "text": "# 默认参数与可变参数"
+    },
+    {
+      "index": 241,
+      "locator": "讲义 L241",
+      "text": "def summary(*args, **kwargs):"
+    },
+    {
+      "index": 242,
+      "locator": "讲义 L242",
+      "text": "    import numpy as np"
+    },
+    {
+      "index": 243,
+      "locator": "讲义 L243",
+      "text": "    for arr in args:"
+    },
+    {
+      "index": 244,
+      "locator": "讲义 L244",
+      "text": "        name = kwargs.get('name', '数据')"
+    },
+    {
+      "index": 245,
+      "locator": "讲义 L245",
+      "text": "        print(f\"{name}: 均值={np.mean(arr):.4f}, 标准差={np.std(arr, ddof=1):.4f}\")"
+    },
+    {
+      "index": 246,
+      "locator": "讲义 L246",
+      "text": ""
+    },
+    {
+      "index": 247,
+      "locator": "讲义 L247",
+      "text": "# lambda匿名函数"
+    },
+    {
+      "index": 248,
+      "locator": "讲义 L248",
+      "text": "data = [('铜', 68520), ('铝', 18950), ('锌', 21500)]"
+    },
+    {
+      "index": 249,
+      "locator": "讲义 L249",
+      "text": "sorted_data = sorted(data, key=lambda x: x[1], reverse=True)"
+    },
+    {
+      "index": 250,
+      "locator": "讲义 L250",
+      "text": "print(sorted_data)"
+    },
+    {
+      "index": 251,
+      "locator": "讲义 L251",
+      "text": "```"
+    },
+    {
+      "index": 252,
+      "locator": "讲义 L252",
+      "text": ""
+    },
+    {
+      "index": 253,
+      "locator": "讲义 L253",
+      "text": "---"
+    },
+    {
+      "index": 254,
+      "locator": "讲义 L254",
+      "text": ""
+    },
+    {
+      "index": 255,
+      "locator": "讲义 L255",
+      "text": "### 2.2 Python数值分析——NumPy与Scipy"
+    },
+    {
+      "index": 256,
+      "locator": "讲义 L256",
+      "text": ""
+    },
+    {
+      "index": 257,
+      "locator": "讲义 L257",
+      "text": "#### 2.2.1 NumPy数组操作"
+    },
+    {
+      "index": 258,
+      "locator": "讲义 L258",
+      "text": ""
+    },
+    {
+      "index": 259,
+      "locator": "讲义 L259",
+      "text": "**【业务场景引入】**"
+    },
+    {
+      "index": 260,
+      "locator": "讲义 L260",
+      "text": ""
+    },
+    {
+      "index": 261,
+      "locator": "讲义 L261",
+      "text": "在大宗商品分析中，我们经常需要对大量数据进行矩阵运算。例如："
+    },
+    {
+      "index": 262,
+      "locator": "讲义 L262",
+      "text": "- 计算50只商品期货的协方差矩阵（50x50矩阵）"
+    },
+    {
+      "index": 263,
+      "locator": "讲义 L263",
+      "text": "- 对协方差矩阵做特征值分解（主成分分析的核心步骤）"
+    },
+    {
+      "index": 264,
+      "locator": "讲义 L264",
+      "text": "- 计算投资组合的期望收益和风险（涉及矩阵乘法）"
+    },
+    {
+      "index": 265,
+      "locator": "讲义 L265",
+      "text": ""
+    },
+    {
+      "index": 266,
+      "locator": "讲义 L266",
+      "text": "这些操作如果用Python的for循环实现，速度会非常慢。NumPy通过**向量化运算**（底层用C语言实现）将速度提升数十倍甚至上百倍。"
+    },
+    {
+      "index": 267,
+      "locator": "讲义 L267",
+      "text": ""
+    },
+    {
+      "index": 268,
+      "locator": "讲义 L268",
+      "text": "**（1）数组创建**"
+    },
+    {
+      "index": 269,
+      "locator": "讲义 L269",
+      "text": ""
+    },
+    {
+      "index": 270,
+      "locator": "讲义 L270",
+      "text": "```python"
+    },
+    {
+      "index": 271,
+      "locator": "讲义 L271",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 272,
+      "locator": "讲义 L272",
+      "text": ""
+    },
+    {
+      "index": 273,
+      "locator": "讲义 L273",
+      "text": "# 从列表创建"
+    },
+    {
+      "index": 274,
+      "locator": "讲义 L274",
+      "text": "arr = np.array([1, 2, 3, 4, 5])"
+    },
+    {
+      "index": 275,
+      "locator": "讲义 L275",
+      "text": "matrix = np.array([[1, 2, 3], [4, 5, 6]])"
+    },
+    {
+      "index": 276,
+      "locator": "讲义 L276",
+      "text": ""
+    },
+    {
+      "index": 277,
+      "locator": "讲义 L277",
+      "text": "# 特殊数组"
+    },
+    {
+      "index": 278,
+      "locator": "讲义 L278",
+      "text": "zeros = np.zeros((3, 4))"
+    },
+    {
+      "index": 279,
+      "locator": "讲义 L279",
+      "text": "ones = np.ones((2, 3))"
+    },
+    {
+      "index": 280,
+      "locator": "讲义 L280",
+      "text": "eye = np.eye(3)"
+    },
+    {
+      "index": 281,
+      "locator": "讲义 L281",
+      "text": "diag = np.diag([1, 2, 3])"
+    },
+    {
+      "index": 282,
+      "locator": "讲义 L282",
+      "text": "rand_uniform = np.random.uniform(0, 1, (3, 4))"
+    },
+    {
+      "index": 283,
+      "locator": "讲义 L283",
+      "text": "rand_normal = np.random.randn(100)"
+    },
+    {
+      "index": 284,
+      "locator": "讲义 L284",
+      "text": "linspace = np.linspace(0, 1, 5)"
+    },
+    {
+      "index": 285,
+      "locator": "讲义 L285",
+      "text": "arange = np.arange(0, 10, 2)"
+    },
+    {
+      "index": 286,
+      "locator": "讲义 L286",
+      "text": ""
+    },
+    {
+      "index": 287,
+      "locator": "讲义 L287",
+      "text": "# 数组属性"
+    },
+    {
+      "index": 288,
+      "locator": "讲义 L288",
+      "text": "arr = np.random.randn(100, 5)"
+    },
+    {
+      "index": 289,
+      "locator": "讲义 L289",
+      "text": "print(f\"形状: {arr.shape}\")      # (100, 5)"
+    },
+    {
+      "index": 290,
+      "locator": "讲义 L290",
+      "text": "print(f\"维度: {arr.ndim}\")       # 2"
+    },
+    {
+      "index": 291,
+      "locator": "讲义 L291",
+      "text": "print(f\"元素总数: {arr.size}\")   # 500"
+    },
+    {
+      "index": 292,
+      "locator": "讲义 L292",
+      "text": "print(f\"数据类型: {arr.dtype}\")  # float64"
+    },
+    {
+      "index": 293,
+      "locator": "讲义 L293",
+      "text": "```"
+    },
+    {
+      "index": 294,
+      "locator": "讲义 L294",
+      "text": ""
+    },
+    {
+      "index": 295,
+      "locator": "讲义 L295",
+      "text": "**（2）索引与切片**"
+    },
+    {
+      "index": 296,
+      "locator": "讲义 L296",
+      "text": ""
+    },
+    {
+      "index": 297,
+      "locator": "讲义 L297",
+      "text": "```python"
+    },
+    {
+      "index": 298,
+      "locator": "讲义 L298",
+      "text": "# 一维数组索引"
+    },
+    {
+      "index": 299,
+      "locator": "讲义 L299",
+      "text": "arr = np.array([10, 20, 30, 40, 50])"
+    },
+    {
+      "index": 300,
+      "locator": "讲义 L300",
+      "text": "print(arr[0])       # 10"
+    },
+    {
+      "index": 301,
+      "locator": "讲义 L301",
+      "text": "print(arr[-1])      # 50"
+    },
+    {
+      "index": 302,
+      "locator": "讲义 L302",
+      "text": "print(arr[1:4])     # [20, 30, 40]"
+    },
+    {
+      "index": 303,
+      "locator": "讲义 L303",
+      "text": ""
+    },
+    {
+      "index": 304,
+      "locator": "讲义 L304",
+      "text": "# 二维数组索引"
+    },
+    {
+      "index": 305,
+      "locator": "讲义 L305",
+      "text": "matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])"
+    },
+    {
+      "index": 306,
+      "locator": "讲义 L306",
+      "text": "print(matrix[0, 1])         # 2"
+    },
+    {
+      "index": 307,
+      "locator": "讲义 L307",
+      "text": "print(matrix[0:2, 1:3])     # [[2, 3], [5, 6]]"
+    },
+    {
+      "index": 308,
+      "locator": "讲义 L308",
+      "text": ""
+    },
+    {
+      "index": 309,
+      "locator": "讲义 L309",
+      "text": "# 布尔索引"
+    },
+    {
+      "index": 310,
+      "locator": "讲义 L310",
+      "text": "data = np.random.randn(10)"
+    },
+    {
+      "index": 311,
+      "locator": "讲义 L311",
+      "text": "print(data[data > 0])"
+    },
+    {
+      "index": 312,
+      "locator": "讲义 L312",
+      "text": "print(data[(data > -1) & (data < 1)])"
+    },
+    {
+      "index": 313,
+      "locator": "讲义 L313",
+      "text": ""
+    },
+    {
+      "index": 314,
+      "locator": "讲义 L314",
+      "text": "# 花式索引"
+    },
+    {
+      "index": 315,
+      "locator": "讲义 L315",
+      "text": "arr = np.array([10, 20, 30, 40, 50])"
+    },
+    {
+      "index": 316,
+      "locator": "讲义 L316",
+      "text": "indices = [0, 2, 4]"
+    },
+    {
+      "index": 317,
+      "locator": "讲义 L317",
+      "text": "print(arr[indices])         # [10, 30, 50]"
+    },
+    {
+      "index": 318,
+      "locator": "讲义 L318",
+      "text": "```"
+    },
+    {
+      "index": 319,
+      "locator": "讲义 L319",
+      "text": ""
+    },
+    {
+      "index": 320,
+      "locator": "讲义 L320",
+      "text": "**布尔索引 vs 花式索引的区别**："
+    },
+    {
+      "index": 321,
+      "locator": "讲义 L321",
+      "text": "- **布尔索引**：用True/False数组筛选，返回满足条件的元素"
+    },
+    {
+      "index": 322,
+      "locator": "讲义 L322",
+      "text": "- **花式索引**：用整数数组指定位置，返回指定位置的元素"
+    },
+    {
+      "index": 323,
+      "locator": "讲义 L323",
+      "text": ""
+    },
+    {
+      "index": 324,
+      "locator": "讲义 L324",
+      "text": "**（3）向量化运算**"
+    },
+    {
+      "index": 325,
+      "locator": "讲义 L325",
+      "text": ""
+    },
+    {
+      "index": 326,
+      "locator": "讲义 L326",
+      "text": "```python"
+    },
+    {
+      "index": 327,
+      "locator": "讲义 L327",
+      "text": "# 向量化 vs 循环：性能对比"
+    },
+    {
+      "index": 328,
+      "locator": "讲义 L328",
+      "text": "import time"
+    },
+    {
+      "index": 329,
+      "locator": "讲义 L329",
+      "text": ""
+    },
+    {
+      "index": 330,
+      "locator": "讲义 L330",
+      "text": "n = 1000000"
+    },
+    {
+      "index": 331,
+      "locator": "讲义 L331",
+      "text": "a = np.random.randn(n)"
+    },
+    {
+      "index": 332,
+      "locator": "讲义 L332",
+      "text": "b = np.random.randn(n)"
+    },
+    {
+      "index": 333,
+      "locator": "讲义 L333",
+      "text": ""
+    },
+    {
+      "index": 334,
+      "locator": "讲义 L334",
+      "text": "# 方法1：Python循环（慢）"
+    },
+    {
+      "index": 335,
+      "locator": "讲义 L335",
+      "text": "start = time.time()"
+    },
+    {
+      "index": 336,
+      "locator": "讲义 L336",
+      "text": "c_loop = [a[i] + b[i] for i in range(n)]"
+    },
+    {
+      "index": 337,
+      "locator": "讲义 L337",
+      "text": "print(f\"循环耗时: {time.time() - start:.4f}秒\")"
+    },
+    {
+      "index": 338,
+      "locator": "讲义 L338",
+      "text": ""
+    },
+    {
+      "index": 339,
+      "locator": "讲义 L339",
+      "text": "# 方法2：NumPy向量化（快）"
+    },
+    {
+      "index": 340,
+      "locator": "讲义 L340",
+      "text": "start = time.time()"
+    },
+    {
+      "index": 341,
+      "locator": "讲义 L341",
+      "text": "c_vec = a + b"
+    },
+    {
+      "index": 342,
+      "locator": "讲义 L342",
+      "text": "print(f\"向量化耗时: {time.time() - start:.6f}秒\")"
+    },
+    {
+      "index": 343,
+      "locator": "讲义 L343",
+      "text": ""
+    },
+    {
+      "index": 344,
+      "locator": "讲义 L344",
+      "text": "# 常用向量化运算"
+    },
+    {
+      "index": 345,
+      "locator": "讲义 L345",
+      "text": "print(np.sqrt(arr))"
+    },
+    {
+      "index": 346,
+      "locator": "讲义 L346",
+      "text": "print(np.exp(arr))"
+    },
+    {
+      "index": 347,
+      "locator": "讲义 L347",
+      "text": "print(np.log(arr))"
+    },
+    {
+      "index": 348,
+      "locator": "讲义 L348",
+      "text": "print(np.abs(arr))"
+    },
+    {
+      "index": 349,
+      "locator": "讲义 L349",
+      "text": "print(np.maximum(a, b))"
+    },
+    {
+      "index": 350,
+      "locator": "讲义 L350",
+      "text": "```"
+    },
+    {
+      "index": 351,
+      "locator": "讲义 L351",
+      "text": ""
+    },
+    {
+      "index": 352,
+      "locator": "讲义 L352",
+      "text": "**（4）矩阵运算**"
+    },
+    {
+      "index": 353,
+      "locator": "讲义 L353",
+      "text": ""
+    },
+    {
+      "index": 354,
+      "locator": "讲义 L354",
+      "text": "```python"
+    },
+    {
+      "index": 355,
+      "locator": "讲义 L355",
+      "text": "A = np.array([[1, 2], [3, 4]])"
+    },
+    {
+      "index": 356,
+      "locator": "讲义 L356",
+      "text": "B = np.array([[5, 6], [7, 8]])"
+    },
+    {
+      "index": 357,
+      "locator": "讲义 L357",
+      "text": ""
+    },
+    {
+      "index": 358,
+      "locator": "讲义 L358",
+      "text": "# 矩阵乘法"
+    },
+    {
+      "index": 359,
+      "locator": "讲义 L359",
+      "text": "C1 = A @ B"
+    },
+    {
+      "index": 360,
+      "locator": "讲义 L360",
+      "text": "C2 = np.dot(A, B)"
+    },
+    {
+      "index": 361,
+      "locator": "讲义 L361",
+      "text": "C3 = np.matmul(A, B)"
+    },
+    {
+      "index": 362,
+      "locator": "讲义 L362",
+      "text": ""
+    },
+    {
+      "index": 363,
+      "locator": "讲义 L363",
+      "text": "# 转置"
+    },
+    {
+      "index": 364,
+      "locator": "讲义 L364",
+      "text": "print(A.T)"
+    },
+    {
+      "index": 365,
+      "locator": "讲义 L365",
+      "text": ""
+    },
+    {
+      "index": 366,
+      "locator": "讲义 L366",
+      "text": "# 逆矩阵"
+    },
+    {
+      "index": 367,
+      "locator": "讲义 L367",
+      "text": "A_inv = np.linalg.inv(A)"
+    },
+    {
+      "index": 368,
+      "locator": "讲义 L368",
+      "text": "print(A @ A_inv)"
+    },
+    {
+      "index": 369,
+      "locator": "讲义 L369",
+      "text": ""
+    },
+    {
+      "index": 370,
+      "locator": "讲义 L370",
+      "text": "# 行列式"
+    },
+    {
+      "index": 371,
+      "locator": "讲义 L371",
+      "text": "det_A = np.linalg.det(A)"
+    },
+    {
+      "index": 372,
+      "locator": "讲义 L372",
+      "text": ""
+    },
+    {
+      "index": 373,
+      "locator": "讲义 L373",
+      "text": "# 特征值分解"
+    },
+    {
+      "index": 374,
+      "locator": "讲义 L374",
+      "text": "eigenvalues, eigenvectors = np.linalg.eig(A)"
+    },
+    {
+      "index": 375,
+      "locator": "讲义 L375",
+      "text": "print(f\"特征值: {eigenvalues}\")"
+    },
+    {
+      "index": 376,
+      "locator": "讲义 L376",
+      "text": "print(f\"特征向量:\\n{eigenvectors}\")"
+    },
+    {
+      "index": 377,
+      "locator": "讲义 L377",
+      "text": "```"
+    },
+    {
+      "index": 378,
+      "locator": "讲义 L378",
+      "text": ""
+    },
+    {
+      "index": 379,
+      "locator": "讲义 L379",
+      "text": "**（5）统计计算**"
+    },
+    {
+      "index": 380,
+      "locator": "讲义 L380",
+      "text": ""
+    },
+    {
+      "index": 381,
+      "locator": "讲义 L381",
+      "text": "```python"
+    },
+    {
+      "index": 382,
+      "locator": "讲义 L382",
+      "text": "data = np.random.randn(100, 3)"
+    },
+    {
+      "index": 383,
+      "locator": "讲义 L383",
+      "text": ""
+    },
+    {
+      "index": 384,
+      "locator": "讲义 L384",
+      "text": "# 基本统计量"
+    },
+    {
+      "index": 385,
+      "locator": "讲义 L385",
+      "text": "print(f\"均值: {data.mean(axis=0)}\")"
+    },
+    {
+      "index": 386,
+      "locator": "讲义 L386",
+      "text": "print(f\"标准差: {data.std(axis=0, ddof=1)}\")"
+    },
+    {
+      "index": 387,
+      "locator": "讲义 L387",
+      "text": "print(f\"最大值: {data.max(axis=0)}\")"
+    },
+    {
+      "index": 388,
+      "locator": "讲义 L388",
+      "text": "print(f\"最小值: {data.min(axis=0)}\")"
+    },
+    {
+      "index": 389,
+      "locator": "讲义 L389",
+      "text": "print(f\"中位数: {np.median(data, axis=0)}\")"
+    },
+    {
+      "index": 390,
+      "locator": "讲义 L390",
+      "text": ""
+    },
+    {
+      "index": 391,
+      "locator": "讲义 L391",
+      "text": "# 相关系数矩阵"
+    },
+    {
+      "index": 392,
+      "locator": "讲义 L392",
+      "text": "corr = np.corrcoef(data.T)"
+    },
+    {
+      "index": 393,
+      "locator": "讲义 L393",
+      "text": ""
+    },
+    {
+      "index": 394,
+      "locator": "讲义 L394",
+      "text": "# 协方差矩阵"
+    },
+    {
+      "index": 395,
+      "locator": "讲义 L395",
+      "text": "cov = np.cov(data.T)"
+    },
+    {
+      "index": 396,
+      "locator": "讲义 L396",
+      "text": ""
+    },
+    {
+      "index": 397,
+      "locator": "讲义 L397",
+      "text": "# 分位数"
+    },
+    {
+      "index": 398,
+      "locator": "讲义 L398",
+      "text": "print(f\"25%分位数: {np.percentile(data, 25, axis=0)}\")"
+    },
+    {
+      "index": 399,
+      "locator": "讲义 L399",
+      "text": "print(f\"75%分位数: {np.percentile(data, 75, axis=0)}\")"
+    },
+    {
+      "index": 400,
+      "locator": "讲义 L400",
+      "text": "```"
+    },
+    {
+      "index": 401,
+      "locator": "讲义 L401",
+      "text": ""
+    },
+    {
+      "index": 402,
+      "locator": "讲义 L402",
+      "text": "#### 2.2.2 Scipy科学计算"
+    },
+    {
+      "index": 403,
+      "locator": "讲义 L403",
+      "text": ""
+    },
+    {
+      "index": 404,
+      "locator": "讲义 L404",
+      "text": "```python"
+    },
+    {
+      "index": 405,
+      "locator": "讲义 L405",
+      "text": "from scipy import stats"
+    },
+    {
+      "index": 406,
+      "locator": "讲义 L406",
+      "text": ""
+    },
+    {
+      "index": 407,
+      "locator": "讲义 L407",
+      "text": "# === 概率分布 ==="
+    },
+    {
+      "index": 408,
+      "locator": "讲义 L408",
+      "text": ""
+    },
+    {
+      "index": 409,
+      "locator": "讲义 L409",
+      "text": "# 正态分布"
+    },
+    {
+      "index": 410,
+      "locator": "讲义 L410",
+      "text": "norm_dist = stats.norm(loc=0, scale=1)"
+    },
+    {
+      "index": 411,
+      "locator": "讲义 L411",
+      "text": "x = np.linspace(-3, 3, 100)"
+    },
+    {
+      "index": 412,
+      "locator": "讲义 L412",
+      "text": "pdf = norm_dist.pdf(x)"
+    },
+    {
+      "index": 413,
+      "locator": "讲义 L413",
+      "text": "cdf = norm_dist.cdf(x)"
+    },
+    {
+      "index": 414,
+      "locator": "讲义 L414",
+      "text": "ppf = norm_dist.ppf(0.975)"
+    },
+    {
+      "index": 415,
+      "locator": "讲义 L415",
+      "text": "rvs = norm_dist.rvs(size=1000)"
+    },
+    {
+      "index": 416,
+      "locator": "讲义 L416",
+      "text": ""
+    },
+    {
+      "index": 417,
+      "locator": "讲义 L417",
+      "text": "# t分布"
+    },
+    {
+      "index": 418,
+      "locator": "讲义 L418",
+      "text": "t_dist = stats.t(df=10)"
+    },
+    {
+      "index": 419,
+      "locator": "讲义 L419",
+      "text": "print(f\"t分布95%分位数: {t_dist.ppf(0.95):.4f}\")"
+    },
+    {
+      "index": 420,
+      "locator": "讲义 L420",
+      "text": ""
+    },
+    {
+      "index": 421,
+      "locator": "讲义 L421",
+      "text": "# 卡方分布"
+    },
+    {
+      "index": 422,
+      "locator": "讲义 L422",
+      "text": "chi2_dist = stats.chi2(df=5)"
+    },
+    {
+      "index": 423,
+      "locator": "讲义 L423",
+      "text": "print(f\"卡方分布95%分位数: {chi2_dist.ppf(0.95):.4f}\")"
+    },
+    {
+      "index": 424,
+      "locator": "讲义 L424",
+      "text": ""
+    },
+    {
+      "index": 425,
+      "locator": "讲义 L425",
+      "text": "# F分布"
+    },
+    {
+      "index": 426,
+      "locator": "讲义 L426",
+      "text": "f_dist = stats.f(dfn=3, dfd=20)"
+    },
+    {
+      "index": 427,
+      "locator": "讲义 L427",
+      "text": "print(f\"F分布95%分位数: {f_dist.ppf(0.95):.4f}\")"
+    },
+    {
+      "index": 428,
+      "locator": "讲义 L428",
+      "text": ""
+    },
+    {
+      "index": 429,
+      "locator": "讲义 L429",
+      "text": "# === 假设检验 ==="
+    },
+    {
+      "index": 430,
+      "locator": "讲义 L430",
+      "text": ""
+    },
+    {
+      "index": 431,
+      "locator": "讲义 L431",
+      "text": "# 单样本t检验"
+    },
+    {
+      "index": 432,
+      "locator": "讲义 L432",
+      "text": "x = np.random.randn(50) + 0.3"
+    },
+    {
+      "index": 433,
+      "locator": "讲义 L433",
+      "text": "t_stat, p_value = stats.ttest_1samp(x, 0)"
+    },
+    {
+      "index": 434,
+      "locator": "讲义 L434",
+      "text": "print(f\"单样本t检验: t={t_stat:.4f}, p={p_value:.4f}\")"
+    },
+    {
+      "index": 435,
+      "locator": "讲义 L435",
+      "text": ""
+    },
+    {
+      "index": 436,
+      "locator": "讲义 L436",
+      "text": "# 独立样本t检验"
+    },
+    {
+      "index": 437,
+      "locator": "讲义 L437",
+      "text": "group_a = np.random.normal(75, 10, 30)"
+    },
+    {
+      "index": 438,
+      "locator": "讲义 L438",
+      "text": "group_b = np.random.normal(82, 10, 30)"
+    },
+    {
+      "index": 439,
+      "locator": "讲义 L439",
+      "text": "t_stat, p_value = stats.ttest_ind(group_a, group_b)"
+    },
+    {
+      "index": 440,
+      "locator": "讲义 L440",
+      "text": "print(f\"独立样本t检验: t={t_stat:.4f}, p={p_value:.4f}\")"
+    },
+    {
+      "index": 441,
+      "locator": "讲义 L441",
+      "text": ""
+    },
+    {
+      "index": 442,
+      "locator": "讲义 L442",
+      "text": "# 配对样本t检验"
+    },
+    {
+      "index": 443,
+      "locator": "讲义 L443",
+      "text": "before = np.random.normal(120, 15, 25)"
+    },
+    {
+      "index": 444,
+      "locator": "讲义 L444",
+      "text": "after = before - np.random.normal(5, 3, 25)"
+    },
+    {
+      "index": 445,
+      "locator": "讲义 L445",
+      "text": "t_stat, p_value = stats.ttest_rel(before, after)"
+    },
+    {
+      "index": 446,
+      "locator": "讲义 L446",
+      "text": "print(f\"配对t检验: t={t_stat:.4f}, p={p_value:.4f}\")"
+    },
+    {
+      "index": 447,
+      "locator": "讲义 L447",
+      "text": ""
+    },
+    {
+      "index": 448,
+      "locator": "讲义 L448",
+      "text": "# 卡方检验"
+    },
+    {
+      "index": 449,
+      "locator": "讲义 L449",
+      "text": "table = np.array([[50, 30, 20], [30, 40, 30]])"
+    },
+    {
+      "index": 450,
+      "locator": "讲义 L450",
+      "text": "chi2, p, dof, expected = stats.chi2_contingency(table)"
+    },
+    {
+      "index": 451,
+      "locator": "讲义 L451",
+      "text": "print(f\"卡方检验: χ²={chi2:.4f}, p={p:.4f}, df={dof}\")"
+    },
+    {
+      "index": 452,
+      "locator": "讲义 L452",
+      "text": "```"
+    },
+    {
+      "index": 453,
+      "locator": "讲义 L453",
+      "text": ""
+    },
+    {
+      "index": 454,
+      "locator": "讲义 L454",
+      "text": "---"
+    },
+    {
+      "index": 455,
+      "locator": "讲义 L455",
+      "text": ""
+    },
+    {
+      "index": 456,
+      "locator": "讲义 L456",
+      "text": "### 2.3 多元数据的收集和整理"
+    },
+    {
+      "index": 457,
+      "locator": "讲义 L457",
+      "text": ""
+    },
+    {
+      "index": 458,
+      "locator": "讲义 L458",
+      "text": "#### 2.3.1 数据收集方法"
+    },
+    {
+      "index": 459,
+      "locator": "讲义 L459",
+      "text": ""
+    },
+    {
+      "index": 460,
+      "locator": "讲义 L460",
+      "text": "**【业务场景引入】**"
+    },
+    {
+      "index": 461,
+      "locator": "讲义 L461",
+      "text": ""
+    },
+    {
+      "index": 462,
+      "locator": "讲义 L462",
+      "text": "多元统计数据的来源主要有以下几种："
+    },
+    {
+      "index": 463,
+      "locator": "讲义 L463",
+      "text": ""
+    },
+    {
+      "index": 464,
+      "locator": "讲义 L464",
+      "text": "| 数据来源 | 典型场景 | 数据特点 |"
+    },
+    {
+      "index": 465,
+      "locator": "讲义 L465",
+      "text": "|----------|----------|----------|"
+    },
+    {
+      "index": 466,
+      "locator": "讲义 L466",
+      "text": "| 问卷调查 | 消费者满意度、社会态度 | Likert量表、存在缺失值 |"
+    },
+    {
+      "index": 467,
+      "locator": "讲义 L467",
+      "text": "| 实验观测 | 临床试验、农业实验 | 受控条件、需要随机化 |"
+    },
+    {
+      "index": 468,
+      "locator": "讲义 L468",
+      "text": "| 数据库导出 | 金融交易、电商订单 | 数据量大、可能有异常值 |"
+    },
+    {
+      "index": 469,
+      "locator": "讲义 L469",
+      "text": "| 网络爬虫 | 新闻舆情、社交媒体 | 非结构化、需要清洗 |"
+    },
+    {
+      "index": 470,
+      "locator": "讲义 L470",
+      "text": "| 公开数据集 | 政府统计、学术数据 | 规范、但可能过时 |"
+    },
+    {
+      "index": 471,
+      "locator": "讲义 L471",
+      "text": ""
+    },
+    {
+      "index": 472,
+      "locator": "讲义 L472",
+      "text": "**问卷调查中的Likert量表**："
+    },
+    {
+      "index": 473,
+      "locator": "讲义 L473",
+      "text": ""
+    },
+    {
+      "index": 474,
+      "locator": "讲义 L474",
+      "text": "在社会调查和市场研究中，最常用的数据收集工具是Likert量表（李克特量表）："
+    },
+    {
+      "index": 475,
+      "locator": "讲义 L475",
+      "text": ""
+    },
+    {
+      "index": 476,
+      "locator": "讲义 L476",
+      "text": "| 题项 | 非常不同意 | 不同意 | 一般 | 同意 | 非常同意 |"
+    },
+    {
+      "index": 477,
+      "locator": "讲义 L477",
+      "text": "|------|-----------|--------|------|------|----------|"
+    },
+    {
+      "index": 478,
+      "locator": "讲义 L478",
+      "text": "| 该品牌质量可靠 | 1 | 2 | 3 | 4 | 5 |"
+    },
+    {
+      "index": 479,
+      "locator": "讲义 L479",
+      "text": "| 该品牌价格合理 | 1 | 2 | 3 | 4 | 5 |"
+    },
+    {
+      "index": 480,
+      "locator": "讲义 L480",
+      "text": "| 我会推荐给朋友 | 1 | 2 | 3 | 4 | 5 |"
+    },
+    {
+      "index": 481,
+      "locator": "讲义 L481",
+      "text": ""
+    },
+    {
+      "index": 482,
+      "locator": "讲义 L482",
+      "text": "编码注意事项："
+    },
+    {
+      "index": 483,
+      "locator": "讲义 L483",
+      "text": "- 正向题和逆向题需要统一方向（逆向题需反向计分）"
+    },
+    {
+      "index": 484,
+      "locator": "讲义 L484",
+      "text": "- 缺失值需要特殊处理（如用NaN表示）"
+    },
+    {
+      "index": 485,
+      "locator": "讲义 L485",
+      "text": ""
+    },
+    {
+      "index": 486,
+      "locator": "讲义 L486",
+      "text": "#### 2.3.2 缺失值处理"
+    },
+    {
+      "index": 487,
+      "locator": "讲义 L487",
+      "text": ""
+    },
+    {
+      "index": 488,
+      "locator": "讲义 L488",
+      "text": "**（1）缺失值的类型与识别**"
+    },
+    {
+      "index": 489,
+      "locator": "讲义 L489",
+      "text": ""
+    },
+    {
+      "index": 490,
+      "locator": "讲义 L490",
+      "text": "缺失值是多元数据分析中最常见的数据质量问题。根据缺失机制的不同，可以分为三类："
+    },
+    {
+      "index": 491,
+      "locator": "讲义 L491",
+      "text": ""
+    },
+    {
+      "index": 492,
+      "locator": "讲义 L492",
+      "text": "| 缺失类型 | 英文缩写 | 含义 | 例子 |"
+    },
+    {
+      "index": 493,
+      "locator": "讲义 L493",
+      "text": "|----------|----------|------|------|"
+    },
+    {
+      "index": 494,
+      "locator": "讲义 L494",
+      "text": "| 完全随机缺失 | MCAR | 缺失与任何变量无关 | 问卷丢失 |"
+    },
+    {
+      "index": 495,
+      "locator": "讲义 L495",
+      "text": "| 随机缺失 | MAR | 缺失与其他观测变量有关 | 年轻人更不愿意填收入 |"
+    },
+    {
+      "index": 496,
+      "locator": "讲义 L496",
+      "text": "| 非随机缺失 | MNAR | 缺失与缺失值本身有关 | 高收入者不愿填收入 |"
+    },
+    {
+      "index": 497,
+      "locator": "讲义 L497",
+      "text": ""
+    },
+    {
+      "index": 498,
+      "locator": "讲义 L498",
+      "text": "**区分方法**："
+    },
+    {
+      "index": 499,
+      "locator": "讲义 L499",
+      "text": "- **MCAR**：缺失与所有变量都无关。可用Little's MCAR检验。"
+    },
+    {
+      "index": 500,
+      "locator": "讲义 L500",
+      "text": "- **MAR**：缺失与其他已观测变量有关。如性别影响收入的缺失概率。"
+    },
+    {
+      "index": 501,
+      "locator": "讲义 L501",
+      "text": "- **MNAR**：缺失与缺失值本身有关。如收入高的人更不愿意填写收入。"
+    },
+    {
+      "index": 502,
+      "locator": "讲义 L502",
+      "text": ""
+    },
+    {
+      "index": 503,
+      "locator": "讲义 L503",
+      "text": "**处理策略**："
+    },
+    {
+      "index": 504,
+      "locator": "讲义 L504",
+      "text": ""
+    },
+    {
+      "index": 505,
+      "locator": "讲义 L505",
+      "text": "| 缺失类型 | 推荐处理方法 | 原因 |"
+    },
+    {
+      "index": 506,
+      "locator": "讲义 L506",
+      "text": "|----------|-------------|------|"
+    },
+    {
+      "index": 507,
+      "locator": "讲义 L507",
+      "text": "| MCAR | 删除法或均值插补 | 缺失完全随机，删除不会引入偏差 |"
+    },
+    {
+      "index": 508,
+      "locator": "讲义 L508",
+      "text": "| MAR | 多重插补（MI） | 利用其他变量的信息进行插补 |"
+    },
+    {
+      "index": 509,
+      "locator": "讲义 L509",
+      "text": "| MNAR | 选择模型或敏感性分析 | 需要专门的建模方法 |"
+    },
+    {
+      "index": 510,
+      "locator": "讲义 L510",
+      "text": ""
+    },
+    {
+      "index": 511,
+      "locator": "讲义 L511",
+      "text": "```python"
+    },
+    {
+      "index": 512,
+      "locator": "讲义 L512",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 513,
+      "locator": "讲义 L513",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 514,
+      "locator": "讲义 L514",
+      "text": ""
+    },
+    {
+      "index": 515,
+      "locator": "讲义 L515",
+      "text": "# 创建含缺失值的数据"
+    },
+    {
+      "index": 516,
+      "locator": "讲义 L516",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 517,
+      "locator": "讲义 L517",
+      "text": "df = pd.DataFrame({"
+    },
+    {
+      "index": 518,
+      "locator": "讲义 L518",
+      "text": "    'GDP': [100, 200, np.nan, 400, 500, np.nan, 700],"
+    },
+    {
+      "index": 519,
+      "locator": "讲义 L519",
+      "text": "    '人口': [50, np.nan, 150, 200, 250, 300, np.nan],"
+    },
+    {
+      "index": 520,
+      "locator": "讲义 L520",
+      "text": "    '收入': [3.5, 4.2, 2.8, np.nan, 5.1, 3.9, 4.5]"
+    },
+    {
+      "index": 521,
+      "locator": "讲义 L521",
+      "text": "})"
+    },
+    {
+      "index": 522,
+      "locator": "讲义 L522",
+      "text": ""
+    },
+    {
+      "index": 523,
+      "locator": "讲义 L523",
+      "text": "# 缺失值检测"
+    },
+    {
+      "index": 524,
+      "locator": "讲义 L524",
+      "text": "print(\"=== 缺失值统计 ===\")"
+    },
+    {
+      "index": 525,
+      "locator": "讲义 L525",
+      "text": "print(df.isnull().sum())"
+    },
+    {
+      "index": 526,
+      "locator": "讲义 L526",
+      "text": "print(f\"\\n缺失比例:\\n{(df.isnull().sum() / len(df) * 100).round(1)}%\")"
+    },
+    {
+      "index": 527,
+      "locator": "讲义 L527",
+      "text": ""
+    },
+    {
+      "index": 528,
+      "locator": "讲义 L528",
+      "text": "# 删除法"
+    },
+    {
+      "index": 529,
+      "locator": "讲义 L529",
+      "text": "df_drop = df.dropna()"
+    },
+    {
+      "index": 530,
+      "locator": "讲义 L530",
+      "text": "df_drop_col = df.dropna(axis=1)"
+    },
+    {
+      "index": 531,
+      "locator": "讲义 L531",
+      "text": "df_drop_thresh = df.dropna(thresh=2)"
+    },
+    {
+      "index": 532,
+      "locator": "讲义 L532",
+      "text": ""
+    },
+    {
+      "index": 533,
+      "locator": "讲义 L533",
+      "text": "# 均值插补"
+    },
+    {
+      "index": 534,
+      "locator": "讲义 L534",
+      "text": "df_fill_mean = df.fillna(df.mean())"
+    },
+    {
+      "index": 535,
+      "locator": "讲义 L535",
+      "text": ""
+    },
+    {
+      "index": 536,
+      "locator": "讲义 L536",
+      "text": "# 中位数插补"
+    },
+    {
+      "index": 537,
+      "locator": "讲义 L537",
+      "text": "df_fill_median = df.fillna(df.median())"
+    },
+    {
+      "index": 538,
+      "locator": "讲义 L538",
+      "text": ""
+    },
+    {
+      "index": 539,
+      "locator": "讲义 L539",
+      "text": "# 前向填充"
+    },
+    {
+      "index": 540,
+      "locator": "讲义 L540",
+      "text": "df_ffill = df.fillna(method='ffill')"
+    },
+    {
+      "index": 541,
+      "locator": "讲义 L541",
+      "text": "```"
+    },
+    {
+      "index": 542,
+      "locator": "讲义 L542",
+      "text": ""
+    },
+    {
+      "index": 543,
+      "locator": "讲义 L543",
+      "text": "**（2）异常值检测**"
+    },
+    {
+      "index": 544,
+      "locator": "讲义 L544",
+      "text": ""
+    },
+    {
+      "index": 545,
+      "locator": "讲义 L545",
+      "text": "```python"
+    },
+    {
+      "index": 546,
+      "locator": "讲义 L546",
+      "text": "def detect_outliers_zscore(data, threshold=3):"
+    },
+    {
+      "index": 547,
+      "locator": "讲义 L547",
+      "text": "    \"\"\"Z-score法检测异常值\"\"\""
+    },
+    {
+      "index": 548,
+      "locator": "讲义 L548",
+      "text": "    z_scores = np.abs((data - data.mean()) / data.std(ddof=1))"
+    },
+    {
+      "index": 549,
+      "locator": "讲义 L549",
+      "text": "    return z_scores > threshold"
+    },
+    {
+      "index": 550,
+      "locator": "讲义 L550",
+      "text": ""
+    },
+    {
+      "index": 551,
+      "locator": "讲义 L551",
+      "text": "def detect_outliers_iqr(data):"
+    },
+    {
+      "index": 552,
+      "locator": "讲义 L552",
+      "text": "    \"\"\"IQR法检测异常值\"\"\""
+    },
+    {
+      "index": 553,
+      "locator": "讲义 L553",
+      "text": "    Q1 = data.quantile(0.25)"
+    },
+    {
+      "index": 554,
+      "locator": "讲义 L554",
+      "text": "    Q3 = data.quantile(0.75)"
+    },
+    {
+      "index": 555,
+      "locator": "讲义 L555",
+      "text": "    IQR = Q3 - Q1"
+    },
+    {
+      "index": 556,
+      "locator": "讲义 L556",
+      "text": "    lower = Q1 - 1.5 * IQR"
+    },
+    {
+      "index": 557,
+      "locator": "讲义 L557",
+      "text": "    upper = Q3 + 1.5 * IQR"
+    },
+    {
+      "index": 558,
+      "locator": "讲义 L558",
+      "text": "    return (data < lower) | (data > upper)"
+    },
+    {
+      "index": 559,
+      "locator": "讲义 L559",
+      "text": ""
+    },
+    {
+      "index": 560,
+      "locator": "讲义 L560",
+      "text": "# 示例"
+    },
+    {
+      "index": 561,
+      "locator": "讲义 L561",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 562,
+      "locator": "讲义 L562",
+      "text": "data = pd.Series(np.concatenate([np.random.normal(50, 10, 95), [120, 130, -20, 150, -30]]))"
+    },
+    {
+      "index": 563,
+      "locator": "讲义 L563",
+      "text": ""
+    },
+    {
+      "index": 564,
+      "locator": "讲义 L564",
+      "text": "outliers_z = detect_outliers_zscore(data)"
+    },
+    {
+      "index": 565,
+      "locator": "讲义 L565",
+      "text": "outliers_iqr = detect_outliers_iqr(data)"
+    },
+    {
+      "index": 566,
+      "locator": "讲义 L566",
+      "text": ""
+    },
+    {
+      "index": 567,
+      "locator": "讲义 L567",
+      "text": "print(f\"Z-score法异常值数量: {outliers_z.sum()}\")"
+    },
+    {
+      "index": 568,
+      "locator": "讲义 L568",
+      "text": "print(f\"IQR法异常值数量: {outliers_iqr.sum()}\")"
+    },
+    {
+      "index": 569,
+      "locator": "讲义 L569",
+      "text": "print(f\"IQR法异常值位置: {data[outliers_iqr].index.tolist()}\")"
+    },
+    {
+      "index": 570,
+      "locator": "讲义 L570",
+      "text": "```"
+    },
+    {
+      "index": 571,
+      "locator": "讲义 L571",
+      "text": ""
+    },
+    {
+      "index": 572,
+      "locator": "讲义 L572",
+      "text": "#### 2.3.3 数据标准化"
+    },
+    {
+      "index": 573,
+      "locator": "讲义 L573",
+      "text": ""
+    },
+    {
+      "index": 574,
+      "locator": "讲义 L574",
+      "text": "**【业务场景引入】**"
+    },
+    {
+      "index": 575,
+      "locator": "讲义 L575",
+      "text": ""
+    },
+    {
+      "index": 576,
+      "locator": "讲义 L576",
+      "text": "在综合评价中，不同指标的量纲和数量级差异巨大。例如："
+    },
+    {
+      "index": 577,
+      "locator": "讲义 L577",
+      "text": "- GDP：单位是亿元，取值范围可能是[100, 40000]"
+    },
+    {
+      "index": 578,
+      "locator": "讲义 L578",
+      "text": "- 人均收入：单位是万元，取值范围可能是[2, 10]"
+    },
+    {
+      "index": 579,
+      "locator": "讲义 L579",
+      "text": "- 城镇化率：单位是%，取值范围可能是[30, 90]"
+    },
+    {
+      "index": 580,
+      "locator": "讲义 L580",
+      "text": ""
+    },
+    {
+      "index": 581,
+      "locator": "讲义 L581",
+      "text": "如果直接将这些指标加权求和，GDP的数值会主导结果。**数据标准化**的目的就是消除量纲和数量级的差异。"
+    },
+    {
+      "index": 582,
+      "locator": "讲义 L582",
+      "text": ""
+    },
+    {
+      "index": 583,
+      "locator": "讲义 L583",
+      "text": "**（1）Z-score标准化**"
+    },
+    {
+      "index": 584,
+      "locator": "讲义 L584",
+      "text": ""
+    },
+    {
+      "index": 585,
+      "locator": "讲义 L585",
+      "text": "$$"
+    },
+    {
+      "index": 586,
+      "locator": "讲义 L586",
+      "text": "x^* = \\frac{x - \\bar{x}}{s}"
+    },
+    {
+      "index": 587,
+      "locator": "讲义 L587",
+      "text": "$$"
+    },
+    {
+      "index": 588,
+      "locator": "讲义 L588",
+      "text": ""
+    },
+    {
+      "index": 589,
+      "locator": "讲义 L589",
+      "text": "- 标准化后均值为0，标准差为1"
+    },
+    {
+      "index": 590,
+      "locator": "讲义 L590",
+      "text": "- 不受极值影响"
+    },
+    {
+      "index": 591,
+      "locator": "讲义 L591",
+      "text": "- 结果可为负值（不便于后续加权求和）"
+    },
+    {
+      "index": 592,
+      "locator": "讲义 L592",
+      "text": "- 适用于：聚类分析、主成分分析、回归分析"
+    },
+    {
+      "index": 593,
+      "locator": "讲义 L593",
+      "text": ""
+    },
+    {
+      "index": 594,
+      "locator": "讲义 L594",
+      "text": "**（2）极值标准化（Min-Max）**"
+    },
+    {
+      "index": 595,
+      "locator": "讲义 L595",
+      "text": ""
+    },
+    {
+      "index": 596,
+      "locator": "讲义 L596",
+      "text": "$$"
+    },
+    {
+      "index": 597,
+      "locator": "讲义 L597",
+      "text": "x^* = \\frac{x - x_{\\min}}{x_{\\max} - x_{\\min}}"
+    },
+    {
+      "index": 598,
+      "locator": "讲义 L598",
+      "text": "$$"
+    },
+    {
+      "index": 599,
+      "locator": "讲义 L599",
+      "text": ""
+    },
+    {
+      "index": 600,
+      "locator": "讲义 L600",
+      "text": "- 标准化后取值范围为[0, 1]"
+    },
+    {
+      "index": 601,
+      "locator": "讲义 L601",
+      "text": "- 对异常值敏感"
+    },
+    {
+      "index": 602,
+      "locator": "讲义 L602",
+      "text": "- 结果非负（便于后续加权求和）"
+    },
+    {
+      "index": 603,
+      "locator": "讲义 L603",
+      "text": "- 适用于：综合评价、TOPSIS法"
+    },
+    {
+      "index": 604,
+      "locator": "讲义 L604",
+      "text": ""
+    },
+    {
+      "index": 605,
+      "locator": "讲义 L605",
+      "text": "**（3）逆向指标的处理**"
+    },
+    {
+      "index": 606,
+      "locator": "讲义 L606",
+      "text": ""
+    },
+    {
+      "index": 607,
+      "locator": "讲义 L607",
+      "text": "对于\"越小越好\"的指标（如失业率、犯罪率），需要先反转方向："
+    },
+    {
+      "index": 608,
+      "locator": "讲义 L608",
+      "text": ""
+    },
+    {
+      "index": 609,
+      "locator": "讲义 L609",
+      "text": "$$"
+    },
+    {
+      "index": 610,
+      "locator": "讲义 L610",
+      "text": "x^* = \\frac{x_{\\max} - x}{x_{\\max} - x_{\\min}}"
+    },
+    {
+      "index": 611,
+      "locator": "讲义 L611",
+      "text": "$$"
+    },
+    {
+      "index": 612,
+      "locator": "讲义 L612",
+      "text": ""
+    },
+    {
+      "index": 613,
+      "locator": "讲义 L613",
+      "text": "```python"
+    },
+    {
+      "index": 614,
+      "locator": "讲义 L614",
+      "text": "from sklearn.preprocessing import StandardScaler, MinMaxScaler"
+    },
+    {
+      "index": 615,
+      "locator": "讲义 L615",
+      "text": ""
+    },
+    {
+      "index": 616,
+      "locator": "讲义 L616",
+      "text": "df = pd.DataFrame({"
+    },
+    {
+      "index": 617,
+      "locator": "讲义 L617",
+      "text": "    '城市': ['A', 'B', 'C', 'D'],"
+    },
+    {
+      "index": 618,
+      "locator": "讲义 L618",
+      "text": "    'GDP': [8000, 5000, 3000, 6000],"
+    },
+    {
+      "index": 619,
+      "locator": "讲义 L619",
+      "text": "    '人均收入': [6.5, 4.2, 3.0, 5.5],"
+    },
+    {
+      "index": 620,
+      "locator": "讲义 L620",
+      "text": "    '失业率': [3.2, 5.8, 8.5, 4.1],"
+    },
+    {
+      "index": 621,
+      "locator": "讲义 L621",
+      "text": "    '教育投入': [500, 300, 200, 400],"
+    },
+    {
+      "index": 622,
+      "locator": "讲义 L622",
+      "text": "    '绿化率': [45, 38, 42, 50]"
+    },
+    {
+      "index": 623,
+      "locator": "讲义 L623",
+      "text": "})"
+    },
+    {
+      "index": 624,
+      "locator": "讲义 L624",
+      "text": ""
+    },
+    {
+      "index": 625,
+      "locator": "讲义 L625",
+      "text": "# Z-score标准化"
+    },
+    {
+      "index": 626,
+      "locator": "讲义 L626",
+      "text": "scaler_z = StandardScaler()"
+    },
+    {
+      "index": 627,
+      "locator": "讲义 L627",
+      "text": "df_zscore = pd.DataFrame("
+    },
+    {
+      "index": 628,
+      "locator": "讲义 L628",
+      "text": "    scaler_z.fit_transform(df.iloc[:, 1:]),"
+    },
+    {
+      "index": 629,
+      "locator": "讲义 L629",
+      "text": "    columns=df.columns[1:]"
+    },
+    {
+      "index": 630,
+      "locator": "讲义 L630",
+      "text": ")"
+    },
+    {
+      "index": 631,
+      "locator": "讲义 L631",
+      "text": "print(\"=== Z-score标准化 ===\")"
+    },
+    {
+      "index": 632,
+      "locator": "讲义 L632",
+      "text": "print(df_zscore.round(3))"
+    },
+    {
+      "index": 633,
+      "locator": "讲义 L633",
+      "text": ""
+    },
+    {
+      "index": 634,
+      "locator": "讲义 L634",
+      "text": "# 极值标准化（区分正向和逆向指标）"
+    },
+    {
+      "index": 635,
+      "locator": "讲义 L635",
+      "text": "X = df.iloc[:, 1:].values.astype(float)"
+    },
+    {
+      "index": 636,
+      "locator": "讲义 L636",
+      "text": "X_minmax = np.zeros_like(X)"
+    },
+    {
+      "index": 637,
+      "locator": "讲义 L637",
+      "text": ""
+    },
+    {
+      "index": 638,
+      "locator": "讲义 L638",
+      "text": "positive_cols = [0, 1, 3, 4]"
+    },
+    {
+      "index": 639,
+      "locator": "讲义 L639",
+      "text": "negative_cols = [2]"
+    },
+    {
+      "index": 640,
+      "locator": "讲义 L640",
+      "text": ""
+    },
+    {
+      "index": 641,
+      "locator": "讲义 L641",
+      "text": "for j in positive_cols:"
+    },
+    {
+      "index": 642,
+      "locator": "讲义 L642",
+      "text": "    X_minmax[:, j] = (X[:, j] - X[:, j].min()) / (X[:, j].max() - X[:, j].min())"
+    },
+    {
+      "index": 643,
+      "locator": "讲义 L643",
+      "text": "for j in negative_cols:"
+    },
+    {
+      "index": 644,
+      "locator": "讲义 L644",
+      "text": "    X_minmax[:, j] = (X[:, j].max() - X[:, j]) / (X[:, j].max() - X[:, j].min())"
+    },
+    {
+      "index": 645,
+      "locator": "讲义 L645",
+      "text": ""
+    },
+    {
+      "index": 646,
+      "locator": "讲义 L646",
+      "text": "df_minmax = pd.DataFrame(X_minmax, columns=df.columns[1:])"
+    },
+    {
+      "index": 647,
+      "locator": "讲义 L647",
+      "text": "print(\"\\n=== 极值标准化（失业率已反转）===\")"
+    },
+    {
+      "index": 648,
+      "locator": "讲义 L648",
+      "text": "print(df_minmax.round(3))"
+    },
+    {
+      "index": 649,
+      "locator": "讲义 L649",
+      "text": "```"
+    },
+    {
+      "index": 650,
+      "locator": "讲义 L650",
+      "text": ""
+    },
+    {
+      "index": 651,
+      "locator": "讲义 L651",
+      "text": "---"
+    },
+    {
+      "index": 652,
+      "locator": "讲义 L652",
+      "text": ""
+    },
+    {
+      "index": 653,
+      "locator": "讲义 L653",
+      "text": "### 2.4 Python的数据框——Pandas DataFrame"
+    },
+    {
+      "index": 654,
+      "locator": "讲义 L654",
+      "text": ""
+    },
+    {
+      "index": 655,
+      "locator": "讲义 L655",
+      "text": "#### 2.4.1 DataFrame的创建与读取"
+    },
+    {
+      "index": 656,
+      "locator": "讲义 L656",
+      "text": ""
+    },
+    {
+      "index": 657,
+      "locator": "讲义 L657",
+      "text": "```python"
+    },
+    {
+      "index": 658,
+      "locator": "讲义 L658",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 659,
+      "locator": "讲义 L659",
+      "text": ""
+    },
+    {
+      "index": 660,
+      "locator": "讲义 L660",
+      "text": "# 从字典创建"
+    },
+    {
+      "index": 661,
+      "locator": "讲义 L661",
+      "text": "df = pd.DataFrame({"
+    },
+    {
+      "index": 662,
+      "locator": "讲义 L662",
+      "text": "    '品种': ['铜', '铝', '锌', '铅', '镍'],"
+    },
+    {
+      "index": 663,
+      "locator": "讲义 L663",
+      "text": "    '价格': [68520, 18950, 21500, 16200, 128000],"
+    },
+    {
+      "index": 664,
+      "locator": "讲义 L664",
+      "text": "    '涨跌幅': [1.2, -0.5, 0.8, -1.1, 2.3],"
+    },
+    {
+      "index": 665,
+      "locator": "讲义 L665",
+      "text": "    '成交量': [125000, 89000, 67000, 45000, 32000]"
+    },
+    {
+      "index": 666,
+      "locator": "讲义 L666",
+      "text": "})"
+    },
+    {
+      "index": 667,
+      "locator": "讲义 L667",
+      "text": ""
+    },
+    {
+      "index": 668,
+      "locator": "讲义 L668",
+      "text": "# 从CSV读取"
+    },
+    {
+      "index": 669,
+      "locator": "讲义 L669",
+      "text": "# df = pd.read_csv('data.csv', encoding='utf-8')"
+    },
+    {
+      "index": 670,
+      "locator": "讲义 L670",
+      "text": "# df = pd.read_csv('data.csv', encoding='gbk')"
+    },
+    {
+      "index": 671,
+      "locator": "讲义 L671",
+      "text": ""
+    },
+    {
+      "index": 672,
+      "locator": "讲义 L672",
+      "text": "# 从Excel读取"
+    },
+    {
+      "index": 673,
+      "locator": "讲义 L673",
+      "text": "# df = pd.read_excel('data.xlsx', sheet_name='Sheet1')"
+    },
+    {
+      "index": 674,
+      "locator": "讲义 L674",
+      "text": ""
+    },
+    {
+      "index": 675,
+      "locator": "讲义 L675",
+      "text": "# 数据查看"
+    },
+    {
+      "index": 676,
+      "locator": "讲义 L676",
+      "text": "print(df.head(3))"
+    },
+    {
+      "index": 677,
+      "locator": "讲义 L677",
+      "text": "print(df.tail(2))"
+    },
+    {
+      "index": 678,
+      "locator": "讲义 L678",
+      "text": "print(df.shape)"
+    },
+    {
+      "index": 679,
+      "locator": "讲义 L679",
+      "text": "print(df.dtypes)"
+    },
+    {
+      "index": 680,
+      "locator": "讲义 L680",
+      "text": "print(df.info())"
+    },
+    {
+      "index": 681,
+      "locator": "讲义 L681",
+      "text": "print(df.describe())"
+    },
+    {
+      "index": 682,
+      "locator": "讲义 L682",
+      "text": "```"
+    },
+    {
+      "index": 683,
+      "locator": "讲义 L683",
+      "text": ""
+    },
+    {
+      "index": 684,
+      "locator": "讲义 L684",
+      "text": "#### 2.4.2 索引与切片"
+    },
+    {
+      "index": 685,
+      "locator": "讲义 L685",
+      "text": ""
+    },
+    {
+      "index": 686,
+      "locator": "讲义 L686",
+      "text": "```python"
+    },
+    {
+      "index": 687,
+      "locator": "讲义 L687",
+      "text": "# loc：按标签索引（包含端点）"
+    },
+    {
+      "index": 688,
+      "locator": "讲义 L688",
+      "text": "print(df.loc[0:2, '品种':'价格'])"
+    },
+    {
+      "index": 689,
+      "locator": "讲义 L689",
+      "text": ""
+    },
+    {
+      "index": 690,
+      "locator": "讲义 L690",
+      "text": "# iloc：按位置索引（不包含端点）"
+    },
+    {
+      "index": 691,
+      "locator": "讲义 L691",
+      "text": "print(df.iloc[0:2, 0:2])"
+    },
+    {
+      "index": 692,
+      "locator": "讲义 L692",
+      "text": ""
+    },
+    {
+      "index": 693,
+      "locator": "讲义 L693",
+      "text": "# 布尔索引"
+    },
+    {
+      "index": 694,
+      "locator": "讲义 L694",
+      "text": "print(df[df['涨跌幅'] > 0])"
+    },
+    {
+      "index": 695,
+      "locator": "讲义 L695",
+      "text": "print(df[(df['价格'] > 20000) & (df['涨跌幅'] > 0)])"
+    },
+    {
+      "index": 696,
+      "locator": "讲义 L696",
+      "text": ""
+    },
+    {
+      "index": 697,
+      "locator": "讲义 L697",
+      "text": "# 条件赋值"
+    },
+    {
+      "index": 698,
+      "locator": "讲义 L698",
+      "text": "df['方向'] = '平'"
+    },
+    {
+      "index": 699,
+      "locator": "讲义 L699",
+      "text": "df.loc[df['涨跌幅'] > 0, '方向'] = '涨'"
+    },
+    {
+      "index": 700,
+      "locator": "讲义 L700",
+      "text": "df.loc[df['涨跌幅'] < 0, '方向'] = '跌'"
+    },
+    {
+      "index": 701,
+      "locator": "讲义 L701",
+      "text": "```"
+    },
+    {
+      "index": 702,
+      "locator": "讲义 L702",
+      "text": ""
+    },
+    {
+      "index": 703,
+      "locator": "讲义 L703",
+      "text": "#### 2.4.3 排序与分组"
+    },
+    {
+      "index": 704,
+      "locator": "讲义 L704",
+      "text": ""
+    },
+    {
+      "index": 705,
+      "locator": "讲义 L705",
+      "text": "```python"
+    },
+    {
+      "index": 706,
+      "locator": "讲义 L706",
+      "text": "# 排序"
+    },
+    {
+      "index": 707,
+      "locator": "讲义 L707",
+      "text": "df_sorted = df.sort_values('价格', ascending=False)"
+    },
+    {
+      "index": 708,
+      "locator": "讲义 L708",
+      "text": "df_sorted2 = df.sort_values(['方向', '价格'], ascending=[True, False])"
+    },
+    {
+      "index": 709,
+      "locator": "讲义 L709",
+      "text": ""
+    },
+    {
+      "index": 710,
+      "locator": "讲义 L710",
+      "text": "# 分组聚合"
+    },
+    {
+      "index": 711,
+      "locator": "讲义 L711",
+      "text": "df['交易所'] = ['上期所', '上期所', '上期所', '上期所', '上期所']"
+    },
+    {
+      "index": 712,
+      "locator": "讲义 L712",
+      "text": "result = df.groupby('方向').agg("
+    },
+    {
+      "index": 713,
+      "locator": "讲义 L713",
+      "text": "    平均价格=('价格', 'mean'),"
+    },
+    {
+      "index": 714,
+      "locator": "讲义 L714",
+      "text": "    价格标准差=('价格', 'std'),"
+    },
+    {
+      "index": 715,
+      "locator": "讲义 L715",
+      "text": "    总成交量=('成交量', 'sum'),"
+    },
+    {
+      "index": 716,
+      "locator": "讲义 L716",
+      "text": "    品种数量=('品种', 'count')"
+    },
+    {
+      "index": 717,
+      "locator": "讲义 L717",
+      "text": ")"
+    },
+    {
+      "index": 718,
+      "locator": "讲义 L718",
+      "text": "print(result.round(2))"
+    },
+    {
+      "index": 719,
+      "locator": "讲义 L719",
+      "text": "```"
+    },
+    {
+      "index": 720,
+      "locator": "讲义 L720",
+      "text": ""
+    },
+    {
+      "index": 721,
+      "locator": "讲义 L721",
+      "text": "#### 2.4.4 合并与连接"
+    },
+    {
+      "index": 722,
+      "locator": "讲义 L722",
+      "text": ""
+    },
+    {
+      "index": 723,
+      "locator": "讲义 L723",
+      "text": "```python"
+    },
+    {
+      "index": 724,
+      "locator": "讲义 L724",
+      "text": "df1 = pd.DataFrame({'品种': ['铜', '铝', '锌'], '价格': [68520, 18950, 21500]})"
+    },
+    {
+      "index": 725,
+      "locator": "讲义 L725",
+      "text": "df2 = pd.DataFrame({'品种': ['铜', '铝', '铅'], '库存': [50000, 30000, 20000]})"
+    },
+    {
+      "index": 726,
+      "locator": "讲义 L726",
+      "text": ""
+    },
+    {
+      "index": 727,
+      "locator": "讲义 L727",
+      "text": "# 内连接（取交集）"
+    },
+    {
+      "index": 728,
+      "locator": "讲义 L728",
+      "text": "inner = pd.merge(df1, df2, on='品种', how='inner')"
+    },
+    {
+      "index": 729,
+      "locator": "讲义 L729",
+      "text": "print(\"内连接:\", inner)"
+    },
+    {
+      "index": 730,
+      "locator": "讲义 L730",
+      "text": ""
+    },
+    {
+      "index": 731,
+      "locator": "讲义 L731",
+      "text": "# 外连接（取并集）"
+    },
+    {
+      "index": 732,
+      "locator": "讲义 L732",
+      "text": "outer = pd.merge(df1, df2, on='品种', how='outer')"
+    },
+    {
+      "index": 733,
+      "locator": "讲义 L733",
+      "text": "print(\"外连接:\", outer)"
+    },
+    {
+      "index": 734,
+      "locator": "讲义 L734",
+      "text": ""
+    },
+    {
+      "index": 735,
+      "locator": "讲义 L735",
+      "text": "# 左连接"
+    },
+    {
+      "index": 736,
+      "locator": "讲义 L736",
+      "text": "left = pd.merge(df1, df2, on='品种', how='left')"
+    },
+    {
+      "index": 737,
+      "locator": "讲义 L737",
+      "text": "print(\"左连接:\", left)"
+    },
+    {
+      "index": 738,
+      "locator": "讲义 L738",
+      "text": "```"
+    },
+    {
+      "index": 739,
+      "locator": "讲义 L739",
+      "text": ""
+    },
+    {
+      "index": 740,
+      "locator": "讲义 L740",
+      "text": "#### 2.4.5 数据透视表"
+    },
+    {
+      "index": 741,
+      "locator": "讲义 L741",
+      "text": ""
+    },
+    {
+      "index": 742,
+      "locator": "讲义 L742",
+      "text": "```python"
+    },
+    {
+      "index": 743,
+      "locator": "讲义 L743",
+      "text": "sales = pd.DataFrame({"
+    },
+    {
+      "index": 744,
+      "locator": "讲义 L744",
+      "text": "    '月份': ['1月', '1月', '2月', '2月', '3月', '3月'],"
+    },
+    {
+      "index": 745,
+      "locator": "讲义 L745",
+      "text": "    '品种': ['铜', '铝', '铜', '铝', '铜', '铝'],"
+    },
+    {
+      "index": 746,
+      "locator": "讲义 L746",
+      "text": "    '销量': [1000, 800, 1200, 900, 1100, 850],"
+    },
+    {
+      "index": 747,
+      "locator": "讲义 L747",
+      "text": "    '收入': [6852, 1516, 8222, 1705, 7537, 1611]"
+    },
+    {
+      "index": 748,
+      "locator": "讲义 L748",
+      "text": "})"
+    },
+    {
+      "index": 749,
+      "locator": "讲义 L749",
+      "text": ""
+    },
+    {
+      "index": 750,
+      "locator": "讲义 L750",
+      "text": "pivot = sales.pivot_table("
+    },
+    {
+      "index": 751,
+      "locator": "讲义 L751",
+      "text": "    values='销量',"
+    },
+    {
+      "index": 752,
+      "locator": "讲义 L752",
+      "text": "    index='品种',"
+    },
+    {
+      "index": 753,
+      "locator": "讲义 L753",
+      "text": "    columns='月份',"
+    },
+    {
+      "index": 754,
+      "locator": "讲义 L754",
+      "text": "    aggfunc='sum',"
+    },
+    {
+      "index": 755,
+      "locator": "讲义 L755",
+      "text": "    fill_value=0"
+    },
+    {
+      "index": 756,
+      "locator": "讲义 L756",
+      "text": ")"
+    },
+    {
+      "index": 757,
+      "locator": "讲义 L757",
+      "text": "print(pivot)"
+    },
+    {
+      "index": 758,
+      "locator": "讲义 L758",
+      "text": "```"
+    },
+    {
+      "index": 759,
+      "locator": "讲义 L759",
+      "text": ""
+    },
+    {
+      "index": 760,
+      "locator": "讲义 L760",
+      "text": "---"
+    },
+    {
+      "index": 761,
+      "locator": "讲义 L761",
+      "text": ""
+    },
+    {
+      "index": 762,
+      "locator": "讲义 L762",
+      "text": "### 2.5 Python数据框的分析"
+    },
+    {
+      "index": 763,
+      "locator": "讲义 L763",
+      "text": ""
+    },
+    {
+      "index": 764,
+      "locator": "讲义 L764",
+      "text": "#### 2.5.1 描述性统计量"
+    },
+    {
+      "index": 765,
+      "locator": "讲义 L765",
+      "text": ""
+    },
+    {
+      "index": 766,
+      "locator": "讲义 L766",
+      "text": "```python"
+    },
+    {
+      "index": 767,
+      "locator": "讲义 L767",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 768,
+      "locator": "讲义 L768",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 769,
+      "locator": "讲义 L769",
+      "text": ""
+    },
+    {
+      "index": 770,
+      "locator": "讲义 L770",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 771,
+      "locator": "讲义 L771",
+      "text": "df = pd.DataFrame({"
+    },
+    {
+      "index": 772,
+      "locator": "讲义 L772",
+      "text": "    '铜价': np.random.lognormal(11, 0.05, 250),"
+    },
+    {
+      "index": 773,
+      "locator": "讲义 L773",
+      "text": "    '铝价': np.random.lognormal(9.8, 0.04, 250),"
+    },
+    {
+      "index": 774,
+      "locator": "讲义 L774",
+      "text": "    '锌价': np.random.lognormal(10, 0.06, 250),"
+    },
+    {
+      "index": 775,
+      "locator": "讲义 L775",
+      "text": "    '成交量': np.random.poisson(100000, 250)"
+    },
+    {
+      "index": 776,
+      "locator": "讲义 L776",
+      "text": "})"
+    },
+    {
+      "index": 777,
+      "locator": "讲义 L777",
+      "text": ""
+    },
+    {
+      "index": 778,
+      "locator": "讲义 L778",
+      "text": "# 集中趋势"
+    },
+    {
+      "index": 779,
+      "locator": "讲义 L779",
+      "text": "print(\"=== 集中趋势 ===\")"
+    },
+    {
+      "index": 780,
+      "locator": "讲义 L780",
+      "text": "for col in df.columns:"
+    },
+    {
+      "index": 781,
+      "locator": "讲义 L781",
+      "text": "    print(f\"  {col}: 均值={df[col].mean():.2f}, 中位数={df[col].median():.2f}\")"
+    },
+    {
+      "index": 782,
+      "locator": "讲义 L782",
+      "text": ""
+    },
+    {
+      "index": 783,
+      "locator": "讲义 L783",
+      "text": "# 离散趋势"
+    },
+    {
+      "index": 784,
+      "locator": "讲义 L784",
+      "text": "print(\"\\n=== 离散趋势 ===\")"
+    },
+    {
+      "index": 785,
+      "locator": "讲义 L785",
+      "text": "for col in df.columns:"
+    },
+    {
+      "index": 786,
+      "locator": "讲义 L786",
+      "text": "    std = df[col].std()"
+    },
+    {
+      "index": 787,
+      "locator": "讲义 L787",
+      "text": "    mean = df[col].mean()"
+    },
+    {
+      "index": 788,
+      "locator": "讲义 L788",
+      "text": "    cv = std / mean"
+    },
+    {
+      "index": 789,
+      "locator": "讲义 L789",
+      "text": "    print(f\"  {col}: 标准差={std:.2f}, 变异系数={cv:.4f}\")"
+    },
+    {
+      "index": 790,
+      "locator": "讲义 L790",
+      "text": ""
+    },
+    {
+      "index": 791,
+      "locator": "讲义 L791",
+      "text": "# 偏度和峰度"
+    },
+    {
+      "index": 792,
+      "locator": "讲义 L792",
+      "text": "print(\"\\n=== 偏度与峰度 ===\")"
+    },
+    {
+      "index": 793,
+      "locator": "讲义 L793",
+      "text": "for col in df.columns:"
+    },
+    {
+      "index": 794,
+      "locator": "讲义 L794",
+      "text": "    print(f\"  {col}: 偏度={df[col].skew():.3f}, 峰度={df[col].kurtosis():.3f}\")"
+    },
+    {
+      "index": 795,
+      "locator": "讲义 L795",
+      "text": "```"
+    },
+    {
+      "index": 796,
+      "locator": "讲义 L796",
+      "text": ""
+    },
+    {
+      "index": 797,
+      "locator": "讲义 L797",
+      "text": "**偏度与峰度的含义**："
+    },
+    {
+      "index": 798,
+      "locator": "讲义 L798",
+      "text": "- **偏度=0**：对称分布"
+    },
+    {
+      "index": 799,
+      "locator": "讲义 L799",
+      "text": "- **偏度>0**：右偏（右尾较长）"
+    },
+    {
+      "index": 800,
+      "locator": "讲义 L800",
+      "text": "- **偏度<0**：左偏（左尾较长）"
+    },
+    {
+      "index": 801,
+      "locator": "讲义 L801",
+      "text": "- **峰度=0**：与正态分布相同"
+    },
+    {
+      "index": 802,
+      "locator": "讲义 L802",
+      "text": "- **峰度>0**：尖峰厚尾（极端事件更频繁）"
+    },
+    {
+      "index": 803,
+      "locator": "讲义 L803",
+      "text": "- **峰度<0**：平峰薄尾"
+    },
+    {
+      "index": 804,
+      "locator": "讲义 L804",
+      "text": ""
+    },
+    {
+      "index": 805,
+      "locator": "讲义 L805",
+      "text": "#### 2.5.2 相关系数矩阵"
+    },
+    {
+      "index": 806,
+      "locator": "讲义 L806",
+      "text": ""
+    },
+    {
+      "index": 807,
+      "locator": "讲义 L807",
+      "text": "```python"
+    },
+    {
+      "index": 808,
+      "locator": "讲义 L808",
+      "text": "corr = df.corr()"
+    },
+    {
+      "index": 809,
+      "locator": "讲义 L809",
+      "text": "print(\"=== 相关系数矩阵 ===\")"
+    },
+    {
+      "index": 810,
+      "locator": "讲义 L810",
+      "text": "print(corr.round(3))"
+    },
+    {
+      "index": 811,
+      "locator": "讲义 L811",
+      "text": ""
+    },
+    {
+      "index": 812,
+      "locator": "讲义 L812",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 813,
+      "locator": "讲义 L813",
+      "text": "import seaborn as sns"
+    },
+    {
+      "index": 814,
+      "locator": "讲义 L814",
+      "text": ""
+    },
+    {
+      "index": 815,
+      "locator": "讲义 L815",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 816,
+      "locator": "讲义 L816",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 817,
+      "locator": "讲义 L817",
+      "text": ""
+    },
+    {
+      "index": 818,
+      "locator": "讲义 L818",
+      "text": "fig, ax = plt.subplots(figsize=(8, 6))"
+    },
+    {
+      "index": 819,
+      "locator": "讲义 L819",
+      "text": "sns.heatmap(corr, annot=True, fmt='.3f', cmap='RdBu_r', center=0,"
+    },
+    {
+      "index": 820,
+      "locator": "讲义 L820",
+      "text": "            square=True, ax=ax, annot_kws={'size': 12})"
+    },
+    {
+      "index": 821,
+      "locator": "讲义 L821",
+      "text": "ax.set_title('商品价格相关系数矩阵')"
+    },
+    {
+      "index": 822,
+      "locator": "讲义 L822",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 823,
+      "locator": "讲义 L823",
+      "text": "plt.show()"
+    },
+    {
+      "index": 824,
+      "locator": "讲义 L824",
+      "text": "```"
+    },
+    {
+      "index": 825,
+      "locator": "讲义 L825",
+      "text": ""
+    },
+    {
+      "index": 826,
+      "locator": "讲义 L826",
+      "text": "---"
+    },
+    {
+      "index": 827,
+      "locator": "讲义 L827",
+      "text": ""
+    },
+    {
+      "index": 828,
+      "locator": "讲义 L828",
+      "text": "## 模块三：实战与代码复现"
+    },
+    {
+      "index": 829,
+      "locator": "讲义 L829",
+      "text": ""
+    },
+    {
+      "index": 830,
+      "locator": "讲义 L830",
+      "text": "### 实战案例2-1：大宗商品数据清洗全流程"
+    },
+    {
+      "index": 831,
+      "locator": "讲义 L831",
+      "text": ""
+    },
+    {
+      "index": 832,
+      "locator": "讲义 L832",
+      "text": "**【业务场景】** 你是一名大宗商品数据分析师，收到了一份包含20家矿业公司财务指标的Excel文件。数据存在缺失值、异常值和量纲不一致的问题，需要进行完整的数据清洗和预处理。"
+    },
+    {
+      "index": 833,
+      "locator": "讲义 L833",
+      "text": ""
+    },
+    {
+      "index": 834,
+      "locator": "讲义 L834",
+      "text": "```python"
+    },
+    {
+      "index": 835,
+      "locator": "讲义 L835",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 836,
+      "locator": "讲义 L836",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 837,
+      "locator": "讲义 L837",
+      "text": "from scipy import stats"
+    },
+    {
+      "index": 838,
+      "locator": "讲义 L838",
+      "text": "from sklearn.preprocessing import StandardScaler, MinMaxScaler"
+    },
+    {
+      "index": 839,
+      "locator": "讲义 L839",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 840,
+      "locator": "讲义 L840",
+      "text": "import seaborn as sns"
+    },
+    {
+      "index": 841,
+      "locator": "讲义 L841",
+      "text": ""
+    },
+    {
+      "index": 842,
+      "locator": "讲义 L842",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 843,
+      "locator": "讲义 L843",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 844,
+      "locator": "讲义 L844",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 845,
+      "locator": "讲义 L845",
+      "text": ""
+    },
+    {
+      "index": 846,
+      "locator": "讲义 L846",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 847,
+      "locator": "讲义 L847",
+      "text": "# Step 1: 创建模拟数据"
+    },
+    {
+      "index": 848,
+      "locator": "讲义 L848",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 849,
+      "locator": "讲义 L849",
+      "text": "n = 20"
+    },
+    {
+      "index": 850,
+      "locator": "讲义 L850",
+      "text": "companies = [f'矿业公司{chr(65+i)}' for i in range(n)]"
+    },
+    {
+      "index": 851,
+      "locator": "讲义 L851",
+      "text": ""
+    },
+    {
+      "index": 852,
+      "locator": "讲义 L852",
+      "text": "revenue = np.random.lognormal(5, 0.5, n) * 10"
+    },
+    {
+      "index": 853,
+      "locator": "讲义 L853",
+      "text": "profit = revenue * np.random.uniform(0.05, 0.25, n)"
+    },
+    {
+      "index": 854,
+      "locator": "讲义 L854",
+      "text": "debt_ratio = np.random.normal(50, 15, n)"
+    },
+    {
+      "index": 855,
+      "locator": "讲义 L855",
+      "text": "cash_flow = profit * np.random.uniform(0.5, 2, n)"
+    },
+    {
+      "index": 856,
+      "locator": "讲义 L856",
+      "text": "inventory_turnover = np.random.normal(6, 2, n)"
+    },
+    {
+      "index": 857,
+      "locator": "讲义 L857",
+      "text": ""
+    },
+    {
+      "index": 858,
+      "locator": "讲义 L858",
+      "text": "for arr in [revenue, profit, debt_ratio, cash_flow, inventory_turnover]:"
+    },
+    {
+      "index": 859,
+      "locator": "讲义 L859",
+      "text": "    mask = np.random.random(n) < 0.1"
+    },
+    {
+      "index": 860,
+      "locator": "讲义 L860",
+      "text": "    arr[mask] = np.nan"
+    },
+    {
+      "index": 861,
+      "locator": "讲义 L861",
+      "text": ""
+    },
+    {
+      "index": 862,
+      "locator": "讲义 L862",
+      "text": "debt_ratio[3] = 98"
+    },
+    {
+      "index": 863,
+      "locator": "讲义 L863",
+      "text": "inventory_turnover[7] = -2"
+    },
+    {
+      "index": 864,
+      "locator": "讲义 L864",
+      "text": ""
+    },
+    {
+      "index": 865,
+      "locator": "讲义 L865",
+      "text": "df = pd.DataFrame({"
+    },
+    {
+      "index": 866,
+      "locator": "讲义 L866",
+      "text": "    '公司': companies,"
+    },
+    {
+      "index": 867,
+      "locator": "讲义 L867",
+      "text": "    '营业收入': revenue,"
+    },
+    {
+      "index": 868,
+      "locator": "讲义 L868",
+      "text": "    '净利润': profit,"
+    },
+    {
+      "index": 869,
+      "locator": "讲义 L869",
+      "text": "    '资产负债率': debt_ratio,"
+    },
+    {
+      "index": 870,
+      "locator": "讲义 L870",
+      "text": "    '经营现金流': cash_flow,"
+    },
+    {
+      "index": 871,
+      "locator": "讲义 L871",
+      "text": "    '存货周转率': inventory_turnover"
+    },
+    {
+      "index": 872,
+      "locator": "讲义 L872",
+      "text": "})"
+    },
+    {
+      "index": 873,
+      "locator": "讲义 L873",
+      "text": ""
+    },
+    {
+      "index": 874,
+      "locator": "讲义 L874",
+      "text": "print(\"=== 原始数据概览 ===\")"
+    },
+    {
+      "index": 875,
+      "locator": "讲义 L875",
+      "text": "print(df.head(10))"
+    },
+    {
+      "index": 876,
+      "locator": "讲义 L876",
+      "text": ""
+    },
+    {
+      "index": 877,
+      "locator": "讲义 L877",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 878,
+      "locator": "讲义 L878",
+      "text": "# Step 2: 缺失值检测与处理"
+    },
+    {
+      "index": 879,
+      "locator": "讲义 L879",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 880,
+      "locator": "讲义 L880",
+      "text": "print(\"\\n=== 缺失值统计 ===\")"
+    },
+    {
+      "index": 881,
+      "locator": "讲义 L881",
+      "text": "missing = df.isnull().sum()"
+    },
+    {
+      "index": 882,
+      "locator": "讲义 L882",
+      "text": "missing_pct = (missing / len(df) * 100).round(1)"
+    },
+    {
+      "index": 883,
+      "locator": "讲义 L883",
+      "text": "missing_info = pd.DataFrame({'缺失数': missing, '缺失比例(%)': missing_pct})"
+    },
+    {
+      "index": 884,
+      "locator": "讲义 L884",
+      "text": "print(missing_info[missing_info['缺失数'] > 0])"
+    },
+    {
+      "index": 885,
+      "locator": "讲义 L885",
+      "text": ""
+    },
+    {
+      "index": 886,
+      "locator": "讲义 L886",
+      "text": "numeric_cols = ['营业收入', '净利润', '资产负债率', '经营现金流', '存货周转率']"
+    },
+    {
+      "index": 887,
+      "locator": "讲义 L887",
+      "text": "df_clean = df.copy()"
+    },
+    {
+      "index": 888,
+      "locator": "讲义 L888",
+      "text": "for col in numeric_cols:"
+    },
+    {
+      "index": 889,
+      "locator": "讲义 L889",
+      "text": "    median_val = df_clean[col].median()"
+    },
+    {
+      "index": 890,
+      "locator": "讲义 L890",
+      "text": "    df_clean[col] = df_clean[col].fillna(median_val)"
+    },
+    {
+      "index": 891,
+      "locator": "讲义 L891",
+      "text": ""
+    },
+    {
+      "index": 892,
+      "locator": "讲义 L892",
+      "text": "print(f\"\\n插补后缺失值: {df_clean[numeric_cols].isnull().sum().sum()}\")"
+    },
+    {
+      "index": 893,
+      "locator": "讲义 L893",
+      "text": ""
+    },
+    {
+      "index": 894,
+      "locator": "讲义 L894",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 895,
+      "locator": "讲义 L895",
+      "text": "# Step 3: 异常值检测与处理"
+    },
+    {
+      "index": 896,
+      "locator": "讲义 L896",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 897,
+      "locator": "讲义 L897",
+      "text": "print(\"\\n=== 异常值检测（IQR法）===\")"
+    },
+    {
+      "index": 898,
+      "locator": "讲义 L898",
+      "text": "for col in numeric_cols:"
+    },
+    {
+      "index": 899,
+      "locator": "讲义 L899",
+      "text": "    Q1 = df_clean[col].quantile(0.25)"
+    },
+    {
+      "index": 900,
+      "locator": "讲义 L900",
+      "text": "    Q3 = df_clean[col].quantile(0.75)"
+    },
+    {
+      "index": 901,
+      "locator": "讲义 L901",
+      "text": "    IQR = Q3 - Q1"
+    },
+    {
+      "index": 902,
+      "locator": "讲义 L902",
+      "text": "    lower = Q1 - 1.5 * IQR"
+    },
+    {
+      "index": 903,
+      "locator": "讲义 L903",
+      "text": "    upper = Q3 + 1.5 * IQR"
+    },
+    {
+      "index": 904,
+      "locator": "讲义 L904",
+      "text": "    outliers = ((df_clean[col] < lower) | (df_clean[col] > upper))"
+    },
+    {
+      "index": 905,
+      "locator": "讲义 L905",
+      "text": "    if outliers.sum() > 0:"
+    },
+    {
+      "index": 906,
+      "locator": "讲义 L906",
+      "text": "        print(f\"  {col}: {outliers.sum()}个异常值, 范围=[{lower:.2f}, {upper:.2f}]\")"
+    },
+    {
+      "index": 907,
+      "locator": "讲义 L907",
+      "text": ""
+    },
+    {
+      "index": 908,
+      "locator": "讲义 L908",
+      "text": "# Winsorize处理"
+    },
+    {
+      "index": 909,
+      "locator": "讲义 L909",
+      "text": "for col in numeric_cols:"
+    },
+    {
+      "index": 910,
+      "locator": "讲义 L910",
+      "text": "    Q1 = df_clean[col].quantile(0.25)"
+    },
+    {
+      "index": 911,
+      "locator": "讲义 L911",
+      "text": "    Q3 = df_clean[col].quantile(0.75)"
+    },
+    {
+      "index": 912,
+      "locator": "讲义 L912",
+      "text": "    IQR = Q3 - Q1"
+    },
+    {
+      "index": 913,
+      "locator": "讲义 L913",
+      "text": "    lower = Q1 - 1.5 * IQR"
+    },
+    {
+      "index": 914,
+      "locator": "讲义 L914",
+      "text": "    upper = Q3 + 1.5 * IQR"
+    },
+    {
+      "index": 915,
+      "locator": "讲义 L915",
+      "text": "    df_clean[col] = df_clean[col].clip(lower, upper)"
+    },
+    {
+      "index": 916,
+      "locator": "讲义 L916",
+      "text": ""
+    },
+    {
+      "index": 917,
+      "locator": "讲义 L917",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 918,
+      "locator": "讲义 L918",
+      "text": "# Step 4: 数据标准化"
+    },
+    {
+      "index": 919,
+      "locator": "讲义 L919",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 920,
+      "locator": "讲义 L920",
+      "text": "scaler_z = StandardScaler()"
+    },
+    {
+      "index": 921,
+      "locator": "讲义 L921",
+      "text": "X_zscore = scaler_z.fit_transform(df_clean[numeric_cols])"
+    },
+    {
+      "index": 922,
+      "locator": "讲义 L922",
+      "text": "df_zscore = pd.DataFrame(X_zscore, columns=numeric_cols)"
+    },
+    {
+      "index": 923,
+      "locator": "讲义 L923",
+      "text": ""
+    },
+    {
+      "index": 924,
+      "locator": "讲义 L924",
+      "text": "scaler_mm = MinMaxScaler()"
+    },
+    {
+      "index": 925,
+      "locator": "讲义 L925",
+      "text": "X_minmax = scaler_mm.fit_transform(df_clean[numeric_cols])"
+    },
+    {
+      "index": 926,
+      "locator": "讲义 L926",
+      "text": "df_minmax = pd.DataFrame(X_minmax, columns=numeric_cols)"
+    },
+    {
+      "index": 927,
+      "locator": "讲义 L927",
+      "text": ""
+    },
+    {
+      "index": 928,
+      "locator": "讲义 L928",
+      "text": "print(\"\\n=== Z-score标准化后描述统计 ===\")"
+    },
+    {
+      "index": 929,
+      "locator": "讲义 L929",
+      "text": "print(df_zscore.describe().round(3))"
+    },
+    {
+      "index": 930,
+      "locator": "讲义 L930",
+      "text": ""
+    },
+    {
+      "index": 931,
+      "locator": "讲义 L931",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 932,
+      "locator": "讲义 L932",
+      "text": "# Step 5: 相关系数分析"
+    },
+    {
+      "index": 933,
+      "locator": "讲义 L933",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 934,
+      "locator": "讲义 L934",
+      "text": "corr = df_clean[numeric_cols].corr()"
+    },
+    {
+      "index": 935,
+      "locator": "讲义 L935",
+      "text": "print(\"\\n=== 相关系数矩阵 ===\")"
+    },
+    {
+      "index": 936,
+      "locator": "讲义 L936",
+      "text": "print(corr.round(3))"
+    },
+    {
+      "index": 937,
+      "locator": "讲义 L937",
+      "text": ""
+    },
+    {
+      "index": 938,
+      "locator": "讲义 L938",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 939,
+      "locator": "讲义 L939",
+      "text": "# Step 6: 可视化"
+    },
+    {
+      "index": 940,
+      "locator": "讲义 L940",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 941,
+      "locator": "讲义 L941",
+      "text": "fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "index": 942,
+      "locator": "讲义 L942",
+      "text": ""
+    },
+    {
+      "index": 943,
+      "locator": "讲义 L943",
+      "text": "# 缺失值热力图"
+    },
+    {
+      "index": 944,
+      "locator": "讲义 L944",
+      "text": "missing_matrix = df[numeric_cols].isnull().astype(int)"
+    },
+    {
+      "index": 945,
+      "locator": "讲义 L945",
+      "text": "sns.heatmap(missing_matrix, cbar=True, cmap='YlOrRd', ax=axes[0, 0],"
+    },
+    {
+      "index": 946,
+      "locator": "讲义 L946",
+      "text": "            yticklabels=df['公司'], xticklabels=numeric_cols)"
+    },
+    {
+      "index": 947,
+      "locator": "讲义 L947",
+      "text": "axes[0, 0].set_title('缺失值分布')"
+    },
+    {
+      "index": 948,
+      "locator": "讲义 L948",
+      "text": ""
+    },
+    {
+      "index": 949,
+      "locator": "讲义 L949",
+      "text": "# 标准化前箱线图"
+    },
+    {
+      "index": 950,
+      "locator": "讲义 L950",
+      "text": "df_clean[numeric_cols].boxplot(ax=axes[0, 1])"
+    },
+    {
+      "index": 951,
+      "locator": "讲义 L951",
+      "text": "axes[0, 1].set_title('标准化前箱线图')"
+    },
+    {
+      "index": 952,
+      "locator": "讲义 L952",
+      "text": "axes[0, 1].tick_params(axis='x', rotation=45)"
+    },
+    {
+      "index": 953,
+      "locator": "讲义 L953",
+      "text": ""
+    },
+    {
+      "index": 954,
+      "locator": "讲义 L954",
+      "text": "# 相关系数热力图"
+    },
+    {
+      "index": 955,
+      "locator": "讲义 L955",
+      "text": "sns.heatmap(corr, annot=True, fmt='.3f', cmap='RdBu_r', center=0,"
+    },
+    {
+      "index": 956,
+      "locator": "讲义 L956",
+      "text": "            square=True, ax=axes[1, 0])"
+    },
+    {
+      "index": 957,
+      "locator": "讲义 L957",
+      "text": "axes[1, 0].set_title('相关系数矩阵')"
+    },
+    {
+      "index": 958,
+      "locator": "讲义 L958",
+      "text": ""
+    },
+    {
+      "index": 959,
+      "locator": "讲义 L959",
+      "text": "# 变异系数对比"
+    },
+    {
+      "index": 960,
+      "locator": "讲义 L960",
+      "text": "cv = df_clean[numeric_cols].std() / df_clean[numeric_cols].mean()"
+    },
+    {
+      "index": 961,
+      "locator": "讲义 L961",
+      "text": "cv.plot(kind='bar', ax=axes[1, 1], color='coral')"
+    },
+    {
+      "index": 962,
+      "locator": "讲义 L962",
+      "text": "axes[1, 1].set_title('各指标变异系数对比')"
+    },
+    {
+      "index": 963,
+      "locator": "讲义 L963",
+      "text": "axes[1, 1].tick_params(axis='x', rotation=45)"
+    },
+    {
+      "index": 964,
+      "locator": "讲义 L964",
+      "text": ""
+    },
+    {
+      "index": 965,
+      "locator": "讲义 L965",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 966,
+      "locator": "讲义 L966",
+      "text": "plt.show()"
+    },
+    {
+      "index": 967,
+      "locator": "讲义 L967",
+      "text": "```"
+    },
+    {
+      "index": 968,
+      "locator": "讲义 L968",
+      "text": ""
+    },
+    {
+      "index": 969,
+      "locator": "讲义 L969",
+      "text": "*(此处平台应展示相应的 Python 运行结果和可视化统计图表)*"
+    },
+    {
+      "index": 970,
+      "locator": "讲义 L970",
+      "text": ""
+    },
+    {
+      "index": 971,
+      "locator": "讲义 L971",
+      "text": "#### 结果业务解读"
+    },
+    {
+      "index": 972,
+      "locator": "讲义 L972",
+      "text": ""
+    },
+    {
+      "index": 973,
+      "locator": "讲义 L973",
+      "text": "**解读1：缺失值分析**"
+    },
+    {
+      "index": 974,
+      "locator": "讲义 L974",
+      "text": ""
+    },
+    {
+      "index": 975,
+      "locator": "讲义 L975",
+      "text": "从缺失值热力图可以看到，各指标的缺失比例约为10%，属于可接受范围。缺失模式看起来是随机的（MCAR），因此使用中位数插补是合理的。"
+    },
+    {
+      "index": 976,
+      "locator": "讲义 L976",
+      "text": ""
+    },
+    {
+      "index": 977,
+      "locator": "讲义 L977",
+      "text": "**解读2：异常值检测**"
+    },
+    {
+      "index": 978,
+      "locator": "讲义 L978",
+      "text": ""
+    },
+    {
+      "index": 979,
+      "locator": "讲义 L979",
+      "text": "IQR法检测到的异常值包括："
+    },
+    {
+      "index": 980,
+      "locator": "讲义 L980",
+      "text": "- 资产负债率异常高（98%）的公司——可能存在财务风险"
+    },
+    {
+      "index": 981,
+      "locator": "讲义 L981",
+      "text": "- 存货周转率为负值——这在业务上不可能，可能是数据录入错误"
+    },
+    {
+      "index": 982,
+      "locator": "讲义 L982",
+      "text": ""
+    },
+    {
+      "index": 983,
+      "locator": "讲义 L983",
+      "text": "**解读3：相关系数分析**"
+    },
+    {
+      "index": 984,
+      "locator": "讲义 L984",
+      "text": ""
+    },
+    {
+      "index": 985,
+      "locator": "讲义 L985",
+      "text": "营业收入与净利润的正相关符合业务直觉——收入高的公司通常利润也高。资产负债率与其他指标的相关性可能为负——高负债公司的盈利能力可能较弱。"
+    },
+    {
+      "index": 986,
+      "locator": "讲义 L986",
+      "text": ""
+    },
+    {
+      "index": 987,
+      "locator": "讲义 L987",
+      "text": "**解读4：变异系数对比**"
+    },
+    {
+      "index": 988,
+      "locator": "讲义 L988",
+      "text": ""
+    },
+    {
+      "index": 989,
+      "locator": "讲义 L989",
+      "text": "变异系数（CV = 标准差/均值）反映了各指标的相对离散程度。CV>0.15的指标说明公司间差异较大，后续分析时需要特别关注。"
+    },
+    {
+      "index": 990,
+      "locator": "讲义 L990",
+      "text": ""
+    },
+    {
+      "index": 991,
+      "locator": "讲义 L991",
+      "text": "---"
+    },
+    {
+      "index": 992,
+      "locator": "讲义 L992",
+      "text": ""
+    },
+    {
+      "index": 993,
+      "locator": "讲义 L993",
+      "text": "### 实战案例2-2：Pandas数据操作综合练习"
+    },
+    {
+      "index": 994,
+      "locator": "讲义 L994",
+      "text": ""
+    },
+    {
+      "index": 995,
+      "locator": "讲义 L995",
+      "text": "**【业务场景】** 某交易所提供了2024年1-6月的商品期货月度数据，需要进行多维度分析。"
+    },
+    {
+      "index": 996,
+      "locator": "讲义 L996",
+      "text": ""
+    },
+    {
+      "index": 997,
+      "locator": "讲义 L997",
+      "text": "```python"
+    },
+    {
+      "index": 998,
+      "locator": "讲义 L998",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 999,
+      "locator": "讲义 L999",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 1000,
+      "locator": "讲义 L1000",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 1001,
+      "locator": "讲义 L1001",
+      "text": "import seaborn as sns"
+    },
+    {
+      "index": 1002,
+      "locator": "讲义 L1002",
+      "text": ""
+    },
+    {
+      "index": 1003,
+      "locator": "讲义 L1003",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 1004,
+      "locator": "讲义 L1004",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 1005,
+      "locator": "讲义 L1005",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 1006,
+      "locator": "讲义 L1006",
+      "text": ""
+    },
+    {
+      "index": 1007,
+      "locator": "讲义 L1007",
+      "text": "months = ['2024-01', '2024-02', '2024-03', '2024-04', '2024-05', '2024-06']"
+    },
+    {
+      "index": 1008,
+      "locator": "讲义 L1008",
+      "text": "products = ['铜', '铝', '锌', '铅', '镍', '黄金', '白银', '原油']"
+    },
+    {
+      "index": 1009,
+      "locator": "讲义 L1009",
+      "text": ""
+    },
+    {
+      "index": 1010,
+      "locator": "讲义 L1010",
+      "text": "data = []"
+    },
+    {
+      "index": 1011,
+      "locator": "讲义 L1011",
+      "text": "for month in months:"
+    },
+    {
+      "index": 1012,
+      "locator": "讲义 L1012",
+      "text": "    for product in products:"
+    },
+    {
+      "index": 1013,
+      "locator": "讲义 L1013",
+      "text": "        price = np.random.lognormal(10 if product in ['铜','镍'] else 9.5, 0.1)"
+    },
+    {
+      "index": 1014,
+      "locator": "讲义 L1014",
+      "text": "        volume = np.random.poisson(100000)"
+    },
+    {
+      "index": 1015,
+      "locator": "讲义 L1015",
+      "text": "        open_interest = np.random.poisson(50000)"
+    },
+    {
+      "index": 1016,
+      "locator": "讲义 L1016",
+      "text": "        change_pct = np.random.normal(0, 3)"
+    },
+    {
+      "index": 1017,
+      "locator": "讲义 L1017",
+      "text": "        data.append([month, product, price, volume, open_interest, change_pct])"
+    },
+    {
+      "index": 1018,
+      "locator": "讲义 L1018",
+      "text": ""
+    },
+    {
+      "index": 1019,
+      "locator": "讲义 L1019",
+      "text": "df = pd.DataFrame(data, columns=['月份', '品种', '收盘价', '成交量', '持仓量', '涨跌幅(%)'])"
+    },
+    {
+      "index": 1020,
+      "locator": "讲义 L1020",
+      "text": ""
+    },
+    {
+      "index": 1021,
+      "locator": "讲义 L1021",
+      "text": "# 分析1：各品种月度平均价格"
+    },
+    {
+      "index": 1022,
+      "locator": "讲义 L1022",
+      "text": "price_pivot = df.pivot_table(values='收盘价', index='品种', columns='月份', aggfunc='mean')"
+    },
+    {
+      "index": 1023,
+      "locator": "讲义 L1023",
+      "text": "print(\"=== 各品种月度平均价格 ===\")"
+    },
+    {
+      "index": 1024,
+      "locator": "讲义 L1024",
+      "text": "print(price_pivot.round(0))"
+    },
+    {
+      "index": 1025,
+      "locator": "讲义 L1025",
+      "text": ""
+    },
+    {
+      "index": 1026,
+      "locator": "讲义 L1026",
+      "text": "# 分析2：各品种成交量统计"
+    },
+    {
+      "index": 1027,
+      "locator": "讲义 L1027",
+      "text": "vol_stats = df.groupby('品种')['成交量'].agg(['mean', 'std', 'sum', 'count'])"
+    },
+    {
+      "index": 1028,
+      "locator": "讲义 L1028",
+      "text": "vol_stats.columns = ['平均成交量', '成交量标准差', '总成交量', '交易月数']"
+    },
+    {
+      "index": 1029,
+      "locator": "讲义 L1029",
+      "text": "print(\"\\n=== 各品种成交量统计 ===\")"
+    },
+    {
+      "index": 1030,
+      "locator": "讲义 L1030",
+      "text": "print(vol_stats.round(0))"
+    },
+    {
+      "index": 1031,
+      "locator": "讲义 L1031",
+      "text": ""
+    },
+    {
+      "index": 1032,
+      "locator": "讲义 L1032",
+      "text": "# 分析3：筛选表现最好的品种"
+    },
+    {
+      "index": 1033,
+      "locator": "讲义 L1033",
+      "text": "avg_change = df.groupby('品种')['涨跌幅(%)'].mean().sort_values(ascending=False)"
+    },
+    {
+      "index": 1034,
+      "locator": "讲义 L1034",
+      "text": "print(\"\\n=== 各品种平均涨跌幅排名 ===\")"
+    },
+    {
+      "index": 1035,
+      "locator": "讲义 L1035",
+      "text": "for name, val in avg_change.items():"
+    },
+    {
+      "index": 1036,
+      "locator": "讲义 L1036",
+      "text": "    print(f\"  {name}: {val:+.2f}%\")"
+    },
+    {
+      "index": 1037,
+      "locator": "讲义 L1037",
+      "text": ""
+    },
+    {
+      "index": 1038,
+      "locator": "讲义 L1038",
+      "text": "# 可视化"
+    },
+    {
+      "index": 1039,
+      "locator": "讲义 L1039",
+      "text": "fig, axes = plt.subplots(2, 2, figsize=(16, 12))"
+    },
+    {
+      "index": 1040,
+      "locator": "讲义 L1040",
+      "text": ""
+    },
+    {
+      "index": 1041,
+      "locator": "讲义 L1041",
+      "text": "# 各品种月度价格走势"
+    },
+    {
+      "index": 1042,
+      "locator": "讲义 L1042",
+      "text": "price_pivot.T.plot(ax=axes[0, 0], marker='o', linewidth=1.5)"
+    },
+    {
+      "index": 1043,
+      "locator": "讲义 L1043",
+      "text": "axes[0, 0].set_title('各品种月度价格走势')"
+    },
+    {
+      "index": 1044,
+      "locator": "讲义 L1044",
+      "text": "axes[0, 0].set_ylabel('收盘价')"
+    },
+    {
+      "index": 1045,
+      "locator": "讲义 L1045",
+      "text": "axes[0, 0].legend(fontsize=8, ncol=4)"
+    },
+    {
+      "index": 1046,
+      "locator": "讲义 L1046",
+      "text": ""
+    },
+    {
+      "index": 1047,
+      "locator": "讲义 L1047",
+      "text": "# 成交量分布"
+    },
+    {
+      "index": 1048,
+      "locator": "讲义 L1048",
+      "text": "df.boxplot(column='成交量', by='品种', ax=axes[0, 1])"
+    },
+    {
+      "index": 1049,
+      "locator": "讲义 L1049",
+      "text": "axes[0, 1].set_title('各品种成交量分布')"
+    },
+    {
+      "index": 1050,
+      "locator": "讲义 L1050",
+      "text": ""
+    },
+    {
+      "index": 1051,
+      "locator": "讲义 L1051",
+      "text": "# 涨跌幅热力图"
+    },
+    {
+      "index": 1052,
+      "locator": "讲义 L1052",
+      "text": "change_pivot = df.pivot_table(values='涨跌幅(%)', index='品种', columns='月份', aggfunc='mean')"
+    },
+    {
+      "index": 1053,
+      "locator": "讲义 L1053",
+      "text": "sns.heatmap(change_pivot, annot=True, fmt='.1f', cmap='RdYlGn', center=0, ax=axes[1, 0])"
+    },
+    {
+      "index": 1054,
+      "locator": "讲义 L1054",
+      "text": "axes[1, 0].set_title('月度涨跌幅热力图')"
+    },
+    {
+      "index": 1055,
+      "locator": "讲义 L1055",
+      "text": ""
+    },
+    {
+      "index": 1056,
+      "locator": "讲义 L1056",
+      "text": "# 平均涨跌幅排名"
+    },
+    {
+      "index": 1057,
+      "locator": "讲义 L1057",
+      "text": "avg_change.plot(kind='barh', ax=axes[1, 1], color='steelblue')"
+    },
+    {
+      "index": 1058,
+      "locator": "讲义 L1058",
+      "text": "axes[1, 1].set_title('各品种平均涨跌幅排名')"
+    },
+    {
+      "index": 1059,
+      "locator": "讲义 L1059",
+      "text": "axes[1, 1].set_xlabel('平均涨跌幅(%)')"
+    },
+    {
+      "index": 1060,
+      "locator": "讲义 L1060",
+      "text": "axes[1, 1].axvline(x=0, color='red', linestyle='--')"
+    },
+    {
+      "index": 1061,
+      "locator": "讲义 L1061",
+      "text": ""
+    },
+    {
+      "index": 1062,
+      "locator": "讲义 L1062",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 1063,
+      "locator": "讲义 L1063",
+      "text": "plt.show()"
+    },
+    {
+      "index": 1064,
+      "locator": "讲义 L1064",
+      "text": "```"
+    },
+    {
+      "index": 1065,
+      "locator": "讲义 L1065",
+      "text": ""
+    },
+    {
+      "index": 1066,
+      "locator": "讲义 L1066",
+      "text": "*(此处平台应展示相应的 Python 运行结果和可视化统计图表)*"
+    },
+    {
+      "index": 1067,
+      "locator": "讲义 L1067",
+      "text": ""
+    },
+    {
+      "index": 1068,
+      "locator": "讲义 L1068",
+      "text": "#### 结果业务解读"
+    },
+    {
+      "index": 1069,
+      "locator": "讲义 L1069",
+      "text": ""
+    },
+    {
+      "index": 1070,
+      "locator": "讲义 L1070",
+      "text": "**解读1：价格走势**"
+    },
+    {
+      "index": 1071,
+      "locator": "讲义 L1071",
+      "text": ""
+    },
+    {
+      "index": 1072,
+      "locator": "讲义 L1072",
+      "text": "从月度价格走势图可以看到各品种的价格变化趋势。铜和镍的价格通常较高（反映其工业价值），黄金和白银的价格走势可能与其他工业品分化（避险属性）。"
+    },
+    {
+      "index": 1073,
+      "locator": "讲义 L1073",
+      "text": ""
+    },
+    {
+      "index": 1074,
+      "locator": "讲义 L1074",
+      "text": "**解读2：成交量分析**"
+    },
+    {
+      "index": 1075,
+      "locator": "讲义 L1075",
+      "text": ""
+    },
+    {
+      "index": 1076,
+      "locator": "讲义 L1076",
+      "text": "成交量的箱线图可以揭示哪些品种交易最活跃（流动性好），哪些品种的成交量波动最大。"
+    },
+    {
+      "index": 1077,
+      "locator": "讲义 L1077",
+      "text": ""
+    },
+    {
+      "index": 1078,
+      "locator": "讲义 L1078",
+      "text": "**解读3：涨跌幅热力图**"
+    },
+    {
+      "index": 1079,
+      "locator": "讲义 L1079",
+      "text": ""
+    },
+    {
+      "index": 1080,
+      "locator": "讲义 L1080",
+      "text": "热力图可以直观展示哪些月份整体上涨（绿色偏多），哪些品种表现最稳定，哪些品种波动最大。"
+    },
+    {
+      "index": 1081,
+      "locator": "讲义 L1081",
+      "text": ""
+    },
+    {
+      "index": 1082,
+      "locator": "讲义 L1082",
+      "text": "---"
+    },
+    {
+      "index": 1083,
+      "locator": "讲义 L1083",
+      "text": ""
+    },
+    {
+      "index": 1084,
+      "locator": "讲义 L1084",
+      "text": "**本章内容是否需要修改？若无需修改，请回复\"继续\"以生成下一章。**"
+    }
+  ]
+}

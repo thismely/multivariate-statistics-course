@@ -1,0 +1,136 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px/1.8 system-ui;max-width:960px;margin:24px auto;padding:20px;color:#192b3b}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:20px}article{border-bottom:1px solid #ccc}h2{font-size:18px}</style><h1>第4章 原课程 Notebook（阅读参考）</h1><p>已移除运行输出、身份元数据与本机路径。历史依赖及数据文件尚未全部适配；请使用同章可重跑教学实验。</p><article><h2>单元 1 · markdown</h2><pre># 第4章 聚类分析及Python分类</pre></article><article><h2>单元 2 · markdown</h2><pre>## 4.1 聚类分析的概念</pre></article><article><h2>单元 3 · markdown</h2><pre>### 4.1.1 聚类分析的提出</pre></article><article><h2>单元 4 · markdown</h2><pre>### 4.1.2 聚类分析的类型</pre></article><article><h2>单元 5 · markdown</h2><pre>## 4.2聚类统计量</pre></article><article><h2>单元 6 · markdown</h2><pre>### 4.2.1 距离的概念</pre></article><article><h2>单元 7 · code</h2><pre>from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = &quot;all&quot;</pre></article><article><h2>单元 8 · code</h2><pre>sn=[1,2,3,4,5,6,7,8,9]
+x1=[2.5,3,6,6.6,7.2,4,4.7,4.5,5.5]
+x2=[2.1,2.5,2.5,1.5,3,6.4,5.6,7.6,6.9]</pre></article><article><h2>单元 9 · code</h2><pre>#%config InlineBackend.figure_format=&#x27;retina&#x27;
+import matplotlib.pyplot as plt             
+plt.plot(x1,x2,&#x27;.&#x27;);plt.xlabel(&#x27;x1&#x27;);plt.ylabel(&#x27;x2&#x27;)
+for i in sn: plt.text(x1[i-1],x2[i-1],sn[i-1])</pre></article><article><h2>单元 10 · code</h2><pre>plt.text?
+</pre></article><article><h2>单元 11 · markdown</h2><pre>### 4.2.2 距离的计算</pre></article><article><h2>单元 12 · code</h2><pre>import pandas as pd
+X=pd.DataFrame({&#x27;x1&#x27;:x1,&#x27;x2&#x27;:x2},index=sn);
+print(X)</pre></article><article><h2>单元 13 · code</h2><pre>from scipy.spatial.distance import pdist,squareform
+Da1=pdist(X).round(3); Da1  #euclidean距离向量
+print(Da1) </pre></article><article><h2>单元 14 · code</h2><pre>pdist?</pre></article><article><h2>单元 15 · code</h2><pre>Ds1=squareform(Da1);        #euclidean距离方阵
+(pd.DataFrame(Ds1,index=X.index,columns=X.index))</pre></article><article><h2>单元 16 · code</h2><pre>Da2=pdist(X,&#x27;cityblock&#x27;);Da2    #cityblock距离向量</pre></article><article><h2>单元 17 · code</h2><pre>Ds2=squareform(Da2);           #cityblock距离方阵
+print(pd.DataFrame(Ds2,index=X.index,columns=X.index))</pre></article><article><h2>单元 18 · markdown</h2><pre>## 4.3系统聚类法</pre></article><article><h2>单元 19 · markdown</h2><pre>### 4.3.1 系统聚类法的基本思想与方法</pre></article><article><h2>单元 20 · markdown</h2><pre>### 4.3.2 系统聚类法的基本步骤</pre></article><article><h2>单元 21 · markdown</h2><pre>### 4.3.3 聚类分析实例分析</pre></article><article><h2>单元 22 · code</h2><pre>import scipy.cluster.hierarchy as sch
+Hs=sch.linkage(Da1,method=&#x27;single&#x27;);  #最短距离法系统聚类
+#pd.DataFrame({&#x27;类(i)&#x27;:H1[:,0]+1,&#x27;类(j)&#x27;:H1[:,1]+1,&#x27;距离&#x27;:H1[:,2],&#x27;新类&#x27;:H1[:,3]})</pre></article><article><h2>单元 23 · code</h2><pre>Hs</pre></article><article><h2>单元 24 · code</h2><pre>print(pd.DataFrame(sch.cut_tree(Hs)+1,index=X.index,columns=X.index)) #聚类过程</pre></article><article><h2>单元 25 · code</h2><pre>sch.dendrogram(Hs,labels=X.index);   #最短距离法系统聚类图</pre></article><article><h2>单元 26 · code</h2><pre>Hc=sch.linkage(Da1,method=&#x27;complete&#x27;);  #最长距离法系统聚类</pre></article><article><h2>单元 27 · code</h2><pre>print(pd.DataFrame(sch.cut_tree(Hc)+1,index=X.index,columns=X.index)) #聚类过程</pre></article><article><h2>单元 28 · code</h2><pre>sch.dendrogram(Hc,labels=X.index);   #最长距离法系统聚类图</pre></article><article><h2>单元 29 · code</h2><pre>sch.dendrogram(Hc,labels=X.index,orientation=&#x27;right&#x27;);</pre></article><article><h2>单元 30 · code</h2><pre>import pandas as pd
+d31=pd.read_excel(&#x27;[本地路径已移除]&#x27;,&#x27;d31&#x27;,index_col=0);d31</pre></article><article><h2>单元 31 · code</h2><pre>%config InlineBackend.figure_format=&#x27;retina&#x27; #图片清晰
+plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;HeiTi TC&#x27;];  #SimHei黑体
+plt.figure(figsize=(9,5));
+pd.plotting.scatter_matrix(d31);</pre></article><article><h2>单元 32 · code</h2><pre>import scipy.cluster.hierarchy as sch
+D=sch.distance.pdist(d31); D[:10].round(1)</pre></article><article><h2>单元 33 · code</h2><pre>D.shape
+from scipy.special import comb
+print(comb(31, 2))
+            
+from itertools import combinations
+combins = [c for c in  combinations(range(31), 2)];len(combins)</pre></article><article><h2>单元 34 · code</h2><pre>plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;Heiti TC&#x27;]  #SimHei黑体
+plt.figure(figsize=(9,5))
+H1=sch.linkage(D,method=&#x27;single&#x27;);   #最短距离法
+sch.dendrogram(H1,labels=d31.index);</pre></article><article><h2>单元 35 · code</h2><pre>H2=sch.linkage(D,method=&#x27;complete&#x27;); #最长距离法
+plt.figure(figsize=(9,5))
+sch.dendrogram(H2,labels=d31.index);</pre></article><article><h2>单元 36 · code</h2><pre>H3=sch.linkage(D,method=&#x27;median&#x27;);     #中间距离法
+plt.figure(figsize=(9,5))
+sch.dendrogram(H3,labels=d31.index);</pre></article><article><h2>单元 37 · code</h2><pre>H4=sch.linkage(D,method=&#x27;average&#x27;);       #类平均法
+plt.figure(figsize=(9,5))
+sch.dendrogram(H4,labels=d31.index);</pre></article><article><h2>单元 38 · code</h2><pre>H5=sch.linkage(D,method=&#x27;centroid&#x27;);      #重心法
+plt.figure(figsize=(9,5))
+sch.dendrogram(H5,labels=d31.index);</pre></article><article><h2>单元 39 · code</h2><pre>H6=sch.linkage(D,method=&#x27;ward&#x27;);      #ward法
+plt.figure(figsize=(9,5))
+sch.dendrogram(H6,labels=d31.index);</pre></article><article><h2>单元 40 · code</h2><pre>plt.figure(figsize=(7,7))
+sch.dendrogram(H6,labels=d31.index,orientation=&#x27;right&#x27;);</pre></article><article><h2>单元 41 · code</h2><pre>sch6=pd.DataFrame(sch.cut_tree(H6))[[29,28,27]]+1
+sch6.index=d31.index;sch6.columns=[&#x27;分2类&#x27;,&#x27;分3类&#x27;,&#x27;分4类&#x27;]
+print(sch6)</pre></article><article><h2>单元 42 · code</h2><pre>sch6[sch6.分4类==1][&#x27;分4类&#x27;]</pre></article><article><h2>单元 43 · code</h2><pre>sch6[sch6.分4类==2][&#x27;分4类&#x27;]</pre></article><article><h2>单元 44 · code</h2><pre>sch6[sch6.分4类==3][&#x27;分4类&#x27;]</pre></article><article><h2>单元 45 · code</h2><pre>sch6[sch6.分4类==4][&#x27;分4类&#x27;]</pre></article><article><h2>单元 46 · markdown</h2><pre>## 4.4快速聚类法</pre></article><article><h2>单元 47 · markdown</h2><pre>### 4.4.1 快速聚类基本概念</pre></article><article><h2>单元 48 · markdown</h2><pre>### 4.4.2 快速聚类计算原理</pre></article><article><h2>单元 49 · markdown</h2><pre>### 4.4.3 快速聚类的模拟研究</pre></article><article><h2>单元 50 · code</h2><pre>import numpy as np
+np.random.seed(123)    #设置种子数使结果可重复
+x1=np.random.normal(0,0.3,1000).reshape((100,10))
+x2=np.random.normal(1,0.3,1000).reshape((100,10))
+X=np.append(x1,x2,axis=0);X.round(4)</pre></article><article><h2>单元 51 · code</h2><pre>D=pdist(X);
+D1=squareform(D);        #euclidean距离方阵
+D.shape
+D1.shape
+print(D1)
+</pre></article><article><h2>单元 52 · code</h2><pre>H=sch.linkage(D); # 用于计算层次聚类,根据指定的方法（默认为 &#x27;single&#x27;）计算层次聚类的链接矩阵H,链接矩阵 H 包含了聚类过程中每一步的合并信息，包括被合并的簇及其之间的距离。
+sch.dendrogram(H); # 绘制树状图。树状图是一种展示层次聚类结果的图形表示方式，通过树状图可以直观地观察到数据点的聚类过程和聚类结构。树状图的横轴表示样本，纵轴表示聚类过程中合并的距离。</pre></article><article><h2>单元 53 · code</h2><pre>Clust=pd.DataFrame(sch.cut_tree(H))+1  #分两类情形
+print(Clust)
+Clust.value_counts()   #聚类结果</pre></article><article><h2>单元 54 · code</h2><pre>from sklearn.cluster import KMeans
+Xkm=KMeans(n_clusters=2).fit(X)
+Xkm.predict(X)      #分类结果</pre></article><article><h2>单元 55 · code</h2><pre>plt.rcParams[&#x27;axes.unicode_minus&#x27;]=False;    #正常显示图中正负号
+plt.scatter(X[:,0],X[:,1],c=Xkm.predict(X));  #分类图</pre></article><article><h2>单元 56 · code</h2><pre>np.random.seed(123)    #设置种子数使结果可重复
+x3=np.random.normal(0,0.2,10000).reshape((1000,10))
+x4=np.random.normal(1,0.2,10000).reshape((1000,10))
+Y=np.append(x3,x4,axis=0)</pre></article><article><h2>单元 57 · code</h2><pre>Ykm=KMeans(n_clusters=2).fit(Y)
+Ykm.predict(Y)</pre></article><article><h2>单元 58 · code</h2><pre>plt.scatter(Y[:,0],Y[:,1],c=Ykm.predict(Y),marker=&#x27;x&#x27;);</pre></article><article><h2>单元 59 · markdown</h2><pre>## 4.5 聚类分析注意的问题</pre></article><article><h2>单元 60 · markdown</h2><pre>## 案例四</pre></article><article><h2>单元 61 · code</h2><pre>Case4=pd.read_excel(&#x27;mvsCase.xlsx&#x27;,&#x27;Case4&#x27;,index_col=0);Case4</pre></article><article><h2>单元 62 · code</h2><pre>import scipy.cluster.hierarchy as sch
+Case4_D=sch.distance.pdist(Case4)
+Case4_H=sch.linkage(Case4_D,method=&#x27;ward&#x27;);
+plt.figure(figsize=(9,5))
+sch.dendrogram(Case4_H,labels=Case4.index);</pre></article><article><h2>单元 63 · code</h2><pre>plt.figure(figsize=(7,7))
+sch.dendrogram(Case4_H,labels=Case4.index,orientation=&#x27;right&#x27;);</pre></article><article><h2>单元 64 · code</h2><pre>Case4_T=pd.DataFrame(sch.cut_tree(Case4_H))[26]+1
+Case4_T.index=Case4.index;
+print(Case4_T[Case4_T==1])
+print(Case4_T[Case4_T==2])
+print(Case4_T[Case4_T==3])
+print(Case4_T[Case4_T==4])</pre></article><article><h2>单元 65 · code</h2><pre>class_1 = Case4_T[Case4_T == 1].index.tolist()
+class_2 = Case4_T[Case4_T == 2].index.tolist()
+class_3 = Case4_T[Case4_T == 3].index.tolist()
+class_4 = Case4_T[Case4_T == 4].index.tolist()
+
+# 创建一个字典来存储分类结果
+data = {
+    &#x27;第1类&#x27;: [class_1],
+    &#x27;第2类&#x27;: [class_2],
+    &#x27;第3类&#x27;: [class_3],
+    &#x27;第4类&#x27;: [class_4]
+}
+# 将字典转换为 DataFrame
+result_df = pd.DataFrame(data).T
+
+# 打印结果表格
+print(result_df)
+</pre></article><article><h2>单元 66 · code</h2><pre>from sklearn.cluster import KMeans
+Case4_KM=KMeans(n_clusters=4).fit(Case4).predict(Case4)
+print(Case4_KM+1)</pre></article><article><h2>单元 67 · code</h2><pre>Case4_class=pd.DataFrame({&#x27;类别&#x27;:Case4_KM+1},index=Case4.index)
+print(Case4_class[Case4_class.类别==1])
+print(Case4_class[Case4_class.类别==2])
+print(Case4_class[Case4_class.类别==3])
+print(Case4_class[Case4_class.类别==4])</pre></article><article><h2>单元 68 · markdown</h2><pre>## 课后习题 </pre></article><article><h2>单元 69 · markdown</h2><pre>### 习题二、 第1题</pre></article><article><h2>单元 70 · code</h2><pre>assigm_21_D = np.array([4,6,1,6,9,7,3,10,5,8]);
+assigm_21_Ds = squareform(assigm_21_D);
+print(assigm_21_Ds)
+assigm_21_Ds_single = sch.linkage(assigm_21_Ds,method=&#x27;single&#x27;);
+sch.dendrogram(assigm_21_Ds_single,labels=range(1,6));
+
+</pre></article><article><h2>单元 71 · code</h2><pre>assigm_21_Ds_complete = sch.linkage(assigm_21_Ds,method=&#x27;complete&#x27;);
+sch.dendrogram(assigm_21_Ds_complete,labels=range(1,6));
+</pre></article><article><h2>单元 72 · code</h2><pre>
+assigm_21_Ds_ward = sch.linkage(assigm_21_Ds,method=&#x27;ward&#x27;);
+sch.dendrogram(assigm_21_Ds_ward,labels=range(1,6));</pre></article><article><h2>单元 73 · markdown</h2><pre>### 习题二、 第2题</pre></article><article><h2>单元 74 · code</h2><pre>a22_df = pd.read_excel(&#x27;table4_5.xlsx&#x27;, index_col=0);
+a22_df</pre></article><article><h2>单元 75 · code</h2><pre>D_a22 = pdist(a22_df);D_a22[:10].round(1)</pre></article><article><h2>单元 76 · code</h2><pre>import scipy.cluster.hierarchy as sch
+import matplotlib.pyplot as plt
+D_a22_H1 = sch.linkage(D_a22, method=&#x27;complete&#x27;);
+plt.figure(figsize=(9,5))
+sch.dendrogram(D_a22_H1, labels=a22_df.index);</pre></article><article><h2>单元 77 · code</h2><pre>D_a22_H2 = sch.linkage(D_a22, method=&#x27;ward&#x27;);
+plt.figure(figsize=(9,5))
+sch.dendrogram(D_a22_H2, labels=a22_df.index);</pre></article><article><h2>单元 78 · code</h2><pre># Kmeans聚类
+from sklearn.cluster import KMeans
+a22_KM = KMeans(n_clusters=20).fit(a22_df)
+a22_KM.predict(a22_df)</pre></article><article><h2>单元 79 · code</h2><pre>a22_KM = KMeans(n_clusters=4).fit(a22_df).predict(a22_df)
+a22_KM</pre></article><article><h2>单元 80 · code</h2><pre>a22_class=pd.DataFrame({&#x27;类别&#x27;:a22_KM+1},index=a22_df.index)
+print(a22_class[a22_class.类别==1])
+print(a22_class[a22_class.类别==2])
+print(a22_class[a22_class.类别==3])
+print(a22_class[a22_class.类别==4])</pre></article><article><h2>单元 81 · code</h2><pre>a22_class[a22_class.类别==1].index.tolist()</pre></article><article><h2>单元 82 · code</h2><pre>a22_class_1 = a22_class[a22_class.类别==1].index.tolist()
+a22_class_2 = a22_class[a22_class.类别==2].index.tolist()
+a22_class_3 = a22_class[a22_class.类别==3].index.tolist()
+a22_class_4 = a22_class[a22_class.类别==4].index.tolist()
+
+# 创建一个字典来存储分类结果
+data_a22 = {
+    &#x27;第1类&#x27;: [a22_class_1],
+    &#x27;第2类&#x27;: [a22_class_2],
+    &#x27;第3类&#x27;: [a22_class_3],
+    &#x27;第4类&#x27;: [a22_class_4]
+}
+# 将字典转换为 DataFrame
+a22_result_df = pd.DataFrame(data_a22).T
+
+# 打印结果表格
+print(a22_result_df)
+</pre></article><article><h2>单元 83 · markdown</h2><pre>### 习题二、 第3题</pre></article></html>

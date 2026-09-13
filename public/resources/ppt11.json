@@ -1,0 +1,259 @@
+{
+  "resource": {
+    "id": "ppt11",
+    "title": "第11章 扩展线性模型及Python建模",
+    "kind": "ppt",
+    "source_path": "PPT/第11章 扩展线性模型及Python建模.pptx",
+    "sha256": "f98a62c1a3ad65b4187f6511f4eac2349c3cfaa469edac2693cf79bbc0862089",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt11.json"
+  },
+  "units": [
+    {
+      "locator": "PPT 第 1 页",
+      "index": 1,
+      "text": "多元统计分析及 Python 建模 第 11 章 扩展线性模型及 Python 建模",
+      "images": 0
+    },
+    {
+      "locator": "PPT 第 2 页",
+      "index": 2,
+      "text": "11  扩展线性模型及 Python 建模",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 3 页",
+      "index": 3,
+      "text": "基本 内容 ： 数据的分类与模型选择、方差分析模型、广义线性模型概述、 Logistic 回归模型、对数线性模型的计算。 基本要求 ： 要求学生针对因变量 和解释变量的取值性质 , 了解统计模型的类型。掌握数据的分类与模型选择方法 , 并对广义线性模型和方差分析等模型有初步的了解。 内容与要求 11  扩展线性模型及 Python 建模",
+      "images": 0
+    },
+    {
+      "locator": "PPT 第 4 页",
+      "index": 4,
+      "text": "11 .1  数据的分类与模型选择 11  扩展线性模型及 Python 建模 一、变量的取值类型：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 5 页",
+      "index": 5,
+      "text": "11 .1  数据的分类与模型选择 11  扩展线性模型及 Python 建模 一、变量的取值类型：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 6 页",
+      "index": 6,
+      "text": "11 .1  数据的分类与模型选择 11  扩展线性模型及 Python 建模 二、模型选择方式：",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 7 页",
+      "index": 7,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 一、完全随机设计模型：",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 8 页",
+      "index": 8,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模   举例：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 9 页",
+      "index": 9,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 10 页",
+      "index": 10,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 11 页",
+      "index": 11,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 12 页",
+      "index": 12,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 二、随机区组设计模型：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 13 页",
+      "index": 13,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模   举例：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 14 页",
+      "index": 14,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 15 页",
+      "index": 15,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 16 页",
+      "index": 16,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 17 页",
+      "index": 17,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 三、析因设计模型：",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 18 页",
+      "index": 18,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模   举例：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 19 页",
+      "index": 19,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 20 页",
+      "index": 20,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 四、正交设计模型：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 21 页",
+      "index": 21,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模   举例：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 22 页",
+      "index": 22,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 23 页",
+      "index": 23,
+      "text": "11 .2  方差分析模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 24 页",
+      "index": 24,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模 一、广义线性模型概述：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 25 页",
+      "index": 25,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模 一、广义线性模型概述：",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 26 页",
+      "index": 26,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模 二、 Logistic  模型： Logistic  模型的定义 Logistic  模型的估计 Logistic  模型的检验 Logistic  模型的优缺点 Logistic  模型  VS  线性模型",
+      "images": 0
+    },
+    {
+      "locator": "PPT 第 27 页",
+      "index": 27,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模   举例：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 28 页",
+      "index": 28,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 29 页",
+      "index": 29,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 30 页",
+      "index": 30,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 31 页",
+      "index": 31,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 32 页",
+      "index": 32,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模 三 、对数线性模型",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 33 页",
+      "index": 33,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模   举例：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 34 页",
+      "index": 34,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 35 页",
+      "index": 35,
+      "text": "11 .3  广义线性模型 11  扩展线性模型及 Python 建模 程序与结果",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 36 页",
+      "index": 36,
+      "text": "11  扩展线性模型及 Python 建模 案例分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 37 页",
+      "index": 37,
+      "text": "11  扩展线性模型及 Python 建模 案例分析",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 38 页",
+      "index": 38,
+      "text": "11  扩展线性模型及 Python 建模 程序与结果 案例分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 39 页",
+      "index": 39,
+      "text": "11  扩展线性模型及 Python 建模 程序与结果 案例分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 40 页",
+      "index": 40,
+      "text": "11  扩展线性模型及 Python 建模 程序与结果 案例分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 41 页",
+      "index": 41,
+      "text": "谢谢！",
+      "images": 0
+    }
+  ]
+}

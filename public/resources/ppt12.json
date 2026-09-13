@@ -1,0 +1,349 @@
+{
+  "resource": {
+    "id": "ppt12",
+    "title": "第12 章 判别分析及 Python 算法",
+    "kind": "ppt",
+    "source_path": "PPT/第12 章 判别分析及 Python 算法.pptx",
+    "sha256": "c1c104616974a8b1ef0493f688b5a4976a11eb0f1b5353dfb344c596cffc66db",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt12.json"
+  },
+  "units": [
+    {
+      "locator": "PPT 第 1 页",
+      "index": 1,
+      "text": "多元统计分析及 Python 建模 第 12 章 判别分析及 Python 算法",
+      "images": 0
+    },
+    {
+      "locator": "PPT 第 2 页",
+      "index": 2,
+      "text": "多元统计分析及 Python 建模 第 12 章 判别分析及 Python 算法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 3 页",
+      "index": 3,
+      "text": "多元统计分析及 Python 建模 第 12 章 判别分析及 Python 算法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 4 页",
+      "index": 4,
+      "text": "12.1 判别分析的概念 12.1.1 判别分析的用途 第 12 章 判别分析及 Python 算法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 5 页",
+      "index": 5,
+      "text": "12.1 判别分析的概念 12.1.2 判别分析的种类 第 12 章 判别分析及 Python 算法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 6 页",
+      "index": 6,
+      "text": "12.2 Fisher 判别法 12.2.1 Fisher 判别的提出 第 12 章 判别分析及 Python 算法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 7 页",
+      "index": 7,
+      "text": "12.2 Fisher 判别法 12.2.1 Fisher 判别的提出 第 12 章 判别分析及 Python 算法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 8 页",
+      "index": 8,
+      "text": "12.2 Fisher 判别法 12.2.1 Fisher 判别的提出 第 12 章 判别分析及 Python 算法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 9 页",
+      "index": 9,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法 1. 求线性判别函数",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 10 页",
+      "index": 10,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法 1. 求线性判别函数",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 11 页",
+      "index": 11,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法 2. 计算判别界值",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 12 页",
+      "index": 12,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法 3. 建立判别标准",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 13 页",
+      "index": 13,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 14 页",
+      "index": 14,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法 例  12-1",
+      "images": 4
+    },
+    {
+      "locator": "PPT 第 15 页",
+      "index": 15,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法 例  12-1",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 16 页",
+      "index": 16,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法 例  12-1",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 17 页",
+      "index": 17,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法 例  12-1",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 18 页",
+      "index": 18,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法 例  12-1",
+      "images": 4
+    },
+    {
+      "locator": "PPT 第 19 页",
+      "index": 19,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法 例  12-1",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 20 页",
+      "index": 20,
+      "text": "12.2 Fisher 判别法 12.2.2 线性判别函数 第 12 章 判别分析及 Python 算法 例  12-1",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 21 页",
+      "index": 21,
+      "text": "12.2 Fisher 判别法 12.2.3 非线性判别函数 第 12 章 判别分析及 Python 算法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 22 页",
+      "index": 22,
+      "text": "12.2 Fisher 判别法 12.2.3 非线性判别函数 第 12 章 判别分析及 Python 算法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 23 页",
+      "index": 23,
+      "text": "12.2 Fisher 判别法 12.2.3 非线性判别函数 第 12 章 判别分析及 Python 算法 1. 等方差阵： （ 12-5 ）",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 24 页",
+      "index": 24,
+      "text": "12.2 Fisher 判别法 12.2.3 非线性判别函数 第 12 章 判别分析及 Python 算法 1. 等方差阵：",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 25 页",
+      "index": 25,
+      "text": "12.2 Fisher 判别法 12.2.3 非线性判别函数 第 12 章 判别分析及 Python 算法 2. 异方差阵： （ 12-6 ）",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 26 页",
+      "index": 26,
+      "text": "12.2 Fisher 判别法 12.2.3 非线性判别函数 第 12 章 判别分析及 Python 算法 【例 12.2】 对例 12.1 天气数据做距离判别分析。我们知道，当方差阵相同时，距离判别跟 Fisher 判别是一样的，都是线性判别，所以我们下面只做方差阵不同时的二次判别。",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 27 页",
+      "index": 27,
+      "text": "12.2 Fisher 判别法 12.2.3 非线性判别函数 第 12 章 判别分析及 Python 算法 例  12-2",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 28 页",
+      "index": 28,
+      "text": "12.2 Fisher 判别法 12.2.3 非线性判别函数 第 12 章 判别分析及 Python 算法 例  12-2",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 29 页",
+      "index": 29,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法 1. 协方差矩阵相同：线性判别",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 30 页",
+      "index": 30,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法 1. 协方差矩阵相同：线性判别",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 31 页",
+      "index": 31,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法 2. 协方差矩阵不同：非线性判别",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 32 页",
+      "index": 32,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 33 页",
+      "index": 33,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法 例  12-3",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 34 页",
+      "index": 34,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法 例  12-3",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 35 页",
+      "index": 35,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法 例  12-3",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 36 页",
+      "index": 36,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法 例  12-3",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 37 页",
+      "index": 37,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法 1.  线性判别（等方差）",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 38 页",
+      "index": 38,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法 1.  线性判别（等方差）",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 39 页",
+      "index": 39,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法 2. 二次判别（异方差）",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 40 页",
+      "index": 40,
+      "text": "12.2 Fisher 判别法 12.2.4 多总体距离判别 第 12 章 判别分析及 Python 算法 2. 二次判别（异方差）",
+      "images": 4
+    },
+    {
+      "locator": "PPT 第 41 页",
+      "index": 41,
+      "text": "12.3 Bayes 判别法 12.3.1 Bayes 判别准则 第 12 章 判别分析及 Python 算法 1. 概率判别 （ 12-10 ）",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 42 页",
+      "index": 42,
+      "text": "12.3 Bayes 判别法 12.3.1 Bayes 判别准则 第 12 章 判别分析及 Python 算法 2. 损失判别",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 43 页",
+      "index": 43,
+      "text": "12.3 Bayes 判别法 12.3.1 Bayes 判别准则 第 12 章 判别分析及 Python 算法 2. 损失判别",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 44 页",
+      "index": 44,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 1. Bayes 判别函数求解",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 45 页",
+      "index": 45,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 1. Bayes 判别函数求解",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 46 页",
+      "index": 46,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 2. 协方差阵相等情形",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 47 页",
+      "index": 47,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 2. 协方差阵相等情形",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 48 页",
+      "index": 48,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 2. 协方差阵相等情形",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 49 页",
+      "index": 49,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 3. 后验概率的计算 （ 12-15 ）",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 50 页",
+      "index": 50,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 51 页",
+      "index": 51,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 例  12-4",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 52 页",
+      "index": 52,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 例  12-4",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 53 页",
+      "index": 53,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 例  12-4",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 54 页",
+      "index": 54,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 例  12-4",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 55 页",
+      "index": 55,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 例  12-4",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 56 页",
+      "index": 56,
+      "text": "12.3 Bayes 判别法 12.3.2 正态总体的 Bayes 判别 第 12 章 判别分析及 Python 算法 例  12-4",
+      "images": 2
+    }
+  ]
+}

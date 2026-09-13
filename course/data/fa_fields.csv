@@ -1,0 +1,9 @@
+field,dtype,description,unit,role
+survey_item_1,float,共同因子模型中的模拟观测变量 1,standardised item,input
+survey_item_2,float,共同因子模型中的模拟观测变量 2,standardised item,input
+survey_item_3,float,共同因子模型中的模拟观测变量 3,standardised item,input
+survey_item_4,float,共同因子模型中的模拟观测变量 4,standardised item,input
+survey_item_5,float,共同因子模型中的模拟观测变量 5,standardised item,input
+survey_item_6,float,共同因子模型中的模拟观测变量 6,standardised item,input
+factor_1,float,旋转后公共因子得分,standardised score,derived
+factor_2,float,旋转后公共因子得分,standardised score,derived

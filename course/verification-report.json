@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "Nine offline teaching scripts and their nine new notebooks",
+  "runtime": {
+    "python": "3.13.5",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "scikit_learn": "1.9.1",
+    "network": "not required",
+    "data_source": "fixed-seed synthetic data only"
+  },
+  "labs": {
+    "pca": {"script": "PASS", "notebook": "PASS", "result": "generated course/results/pca_results.json"},
+    "fa": {"script": "PASS", "notebook": "PASS", "result": "generated course/results/fa_results.json"},
+    "cluster": {"script": "PASS", "notebook": "PASS", "result": "generated course/results/cluster_results.json"},
+    "discriminant": {"script": "PASS", "notebook": "PASS", "result": "generated course/results/discriminant_results.json"},
+    "regression": {"script": "PASS", "notebook": "PASS", "result": "generated course/results/regression_results.json"},
+    "logistic": {"script": "PASS", "notebook": "PASS", "result": "generated course/results/logistic_results.json"},
+    "cca": {"script": "PASS", "notebook": "PASS", "result": "generated course/results/cca_results.json"},
+    "ca": {"script": "PASS", "notebook": "PASS", "result": "generated course/results/ca_results.json"},
+    "evaluation": {"script": "PASS", "notebook": "PASS", "result": "generated course/results/evaluation_results.json"}
+  },
+  "notebook_validation": "Each manifest notebook code cell was executed in order with outputs intentionally not saved.",
+  "preview_validation": "course/preview/build-report.json reports PASS and emits no script tags.",
+  "limitations": "Results verify the implementation on synthetic data; they are not evidence of teaching effectiveness or real-world model validity."
+}

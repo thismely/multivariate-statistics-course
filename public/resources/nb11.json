@@ -1,0 +1,238 @@
+{
+  "resource": {
+    "id": "nb11",
+    "title": "第11章-线性模型",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第11章-线性模型.ipynb",
+    "sha256": "61c46806d392d4e4b6ba512da7719632d2729658eb2afbe7fe317cd5306ff1f2",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb11.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "Notebook 单元 1 · markdown",
+      "text": "# 第11章 扩展线性模型及Python建模"
+    },
+    {
+      "index": 2,
+      "locator": "Notebook 单元 2 · markdown",
+      "text": "## 11.1 数据分类与模型选择"
+    },
+    {
+      "index": 3,
+      "locator": "Notebook 单元 3 · code",
+      "text": "%run init.py"
+    },
+    {
+      "index": 4,
+      "locator": "Notebook 单元 4 · markdown",
+      "text": "### 11.1.1 变量的取值类型"
+    },
+    {
+      "index": 5,
+      "locator": "Notebook 单元 5 · markdown",
+      "text": "### 11.1.2 模型选择方式"
+    },
+    {
+      "index": 6,
+      "locator": "Notebook 单元 6 · markdown",
+      "text": "## 11.2 方差分析模型"
+    },
+    {
+      "index": 7,
+      "locator": "Notebook 单元 7 · markdown",
+      "text": "### 11.2.1 完全随机设计模型"
+    },
+    {
+      "index": 8,
+      "locator": "Notebook 单元 8 · code",
+      "text": "import pandas as pd\npd.set_option('display.precision',4) "
+    },
+    {
+      "index": 9,
+      "locator": "Notebook 单元 9 · code",
+      "text": "d111 = pd.read_excel('mvsData.xlsx','d111');d111"
+    },
+    {
+      "index": 10,
+      "locator": "Notebook 单元 10 · code",
+      "text": "#?d111.boxplot"
+    },
+    {
+      "index": 11,
+      "locator": "Notebook 单元 11 · code",
+      "text": "#import matplotlib.pyplot as plt\n#d111.plot('Y','A');\nd111.boxplot('Y','A');"
+    },
+    {
+      "index": 12,
+      "locator": "Notebook 单元 12 · code",
+      "text": "#print(d111.groupby('A').mean())"
+    },
+    {
+      "index": 13,
+      "locator": "Notebook 单元 13 · code",
+      "text": "import numpy as np #计算每组的例数len、均值mean、标准差std\nprint(d111.pivot_table('Y','A',aggfunc={len,np.mean,np.std}))"
+    },
+    {
+      "index": 14,
+      "locator": "Notebook 单元 14 · code",
+      "text": "from statsmodels.formula.api import ols     #加载普通最小二乘模拟\nfrom statsmodels.stats.anova import anova_lm as ANOVA #方差分析\nM1=ols('Y ~ C(A)',data=d111).fit()          #C(A)设置A为哑变量\nprint(ANOVA(M1))                      #完全随机设计模型方差分析"
+    },
+    {
+      "index": 15,
+      "locator": "Notebook 单元 15 · markdown",
+      "text": "### 11.2.2 随机区组设计模型"
+    },
+    {
+      "index": 16,
+      "locator": "Notebook 单元 16 · code",
+      "text": "d112 = pd.read_excel('mvsData.xlsx','d112');#d112"
+    },
+    {
+      "index": 17,
+      "locator": "Notebook 单元 17 · code",
+      "text": "d112.boxplot('Y','A');\nprint(d112.pivot_table('Y','A',aggfunc={len,np.mean,np.std}))"
+    },
+    {
+      "index": 18,
+      "locator": "Notebook 单元 18 · code",
+      "text": "d112.boxplot('Y','B');\nprint(d112.pivot_table('Y','B',aggfunc={len,np.mean,np.std}))"
+    },
+    {
+      "index": 19,
+      "locator": "Notebook 单元 19 · code",
+      "text": "M2 = ols('Y ~ C(A)+C(B)',data=d112).fit()\nprint(ANOVA(M2))    #随机单位组设计模型方差分析"
+    },
+    {
+      "index": 20,
+      "locator": "Notebook 单元 20 · markdown",
+      "text": "### 11.2.3 析因设计模型"
+    },
+    {
+      "index": 21,
+      "locator": "Notebook 单元 21 · code",
+      "text": "d113 = pd.read_excel('mvsData.xlsx','d113');d113"
+    },
+    {
+      "index": 22,
+      "locator": "Notebook 单元 22 · code",
+      "text": "d113.boxplot('Y','A');\nd113.pivot_table('Y','A',aggfunc={len,np.mean,np.std})"
+    },
+    {
+      "index": 23,
+      "locator": "Notebook 单元 23 · code",
+      "text": "d113.boxplot('Y','B');\nd113.pivot_table('Y','B',aggfunc={len,np.mean,np.std})"
+    },
+    {
+      "index": 24,
+      "locator": "Notebook 单元 24 · code",
+      "text": "M3 = ols('Y ~ C(A)*C(B)',data=d113).fit()\nprint(ANOVA(M3))   #析因设计模型方差分析"
+    },
+    {
+      "index": 25,
+      "locator": "Notebook 单元 25 · markdown",
+      "text": "### 11.2.4 正交设计模型"
+    },
+    {
+      "index": 26,
+      "locator": "Notebook 单元 26 · code",
+      "text": "d114 = pd.read_excel('mvsData.xlsx','d114');d114"
+    },
+    {
+      "index": 27,
+      "locator": "Notebook 单元 27 · code",
+      "text": "d114.pivot_table('Y','A',aggfunc={len,np.mean,np.std})"
+    },
+    {
+      "index": 28,
+      "locator": "Notebook 单元 28 · code",
+      "text": "#M4 = ols('Y~C(A)+C(B)+C(A)*C(B)+C(C)+C(D)',data=d114).fit()\nM4 = ols('Y~A+B+A*B+C+D',data=d114).fit()\nprint(ANOVA(M4))      #正交设计模型方差分析"
+    },
+    {
+      "index": 29,
+      "locator": "Notebook 单元 29 · markdown",
+      "text": "## 11.3 广义线性模型"
+    },
+    {
+      "index": 30,
+      "locator": "Notebook 单元 30 · markdown",
+      "text": "### 11.3.1 广义线性模型概述"
+    },
+    {
+      "index": 31,
+      "locator": "Notebook 单元 31 · code",
+      "text": "import numpy as np\nx=np.arange(1,20);x\ny=1/(1+np.exp(-(x-10)));y\nimport matplotlib.pyplot as plt  \nplt.plot(x,y,'o-');"
+    },
+    {
+      "index": 32,
+      "locator": "Notebook 单元 32 · markdown",
+      "text": "### 11.3.2  Logistic模型"
+    },
+    {
+      "index": 33,
+      "locator": "Notebook 单元 33 · code",
+      "text": "d115 = pd.read_excel('mvsData.xlsx','d115')  #读取例11.5数据 "
+    },
+    {
+      "index": 34,
+      "locator": "Notebook 单元 34 · code",
+      "text": "import statsmodels.api as sm\nLogit=sm.GLM.from_formula('y~x1+x2+x3',family=sm.families.Binomial(),data=d115).fit() \nLogit.summary()                   #Logistic回归模型结果"
+    },
+    {
+      "index": 35,
+      "locator": "Notebook 单元 35 · code",
+      "text": "Logit_x1=sm.GLM.from_formula('y~x1',family=sm.families.Binomial(),data=d115).fit()\nLogit_x1.summary()"
+    },
+    {
+      "index": 36,
+      "locator": "Notebook 单元 36 · code",
+      "text": "#预测视力正常(x1=1)和视力有问题(x1=0)的司机发生事故概率\nLogit_x1.predict(pd.DataFrame({'x1':[1,0]})) "
+    },
+    {
+      "index": 37,
+      "locator": "Notebook 单元 37 · markdown",
+      "text": "### 11.3.3 对数线性模型"
+    },
+    {
+      "index": 38,
+      "locator": "Notebook 单元 38 · code",
+      "text": "d116 = pd.read_excel('mvsData.xlsx','d116')  #读取例11.6数据 \nprint(d116)"
+    },
+    {
+      "index": 39,
+      "locator": "Notebook 单元 39 · code",
+      "text": "Log=sm.GLM.from_formula('y~C(x1)+C(x2)',family=sm.families.Poisson(),data=d116).fit()\nLog.summary()                                #对数线性模型结果"
+    },
+    {
+      "index": 40,
+      "locator": "Notebook 单元 40 · markdown",
+      "text": "## 案例11：广义线性模型的应用"
+    },
+    {
+      "index": 41,
+      "locator": "Notebook 单元 41 · code",
+      "text": "Case11=pd.read_excel('mvsCase.xlsx','Case11');Case11"
+    },
+    {
+      "index": 42,
+      "locator": "Notebook 单元 42 · code",
+      "text": "import statsmodels.api as sm\nglm1=sm.GLM.from_formula('y~sex+age',family=sm.families.Binomial(),data=Case11)\nprint(glm1.fit().summary())"
+    },
+    {
+      "index": 43,
+      "locator": "Notebook 单元 43 · code",
+      "text": "glm2=sm.GLM.from_formula('y~age',family=sm.families.Binomial(),data=Case11)\nprint(glm2.fit().summary())"
+    },
+    {
+      "index": 44,
+      "locator": "Notebook 单元 44 · code",
+      "text": "fv=glm1.fit().predict();fv\nimport numpy as np\npv=1/(1+np.exp(-fv));pv\nplt.scatter(Case11.age,pv);"
+    },
+    {
+      "index": 45,
+      "locator": "Notebook 单元 45 · code",
+      "text": ""
+    }
+  ]
+}

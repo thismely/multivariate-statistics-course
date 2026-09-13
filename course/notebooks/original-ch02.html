@@ -1,0 +1,116 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px/1.8 system-ui;max-width:960px;margin:24px auto;padding:20px;color:#192b3b}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:20px}article{border-bottom:1px solid #ccc}h2{font-size:18px}</style><h1>第2章 原课程 Notebook（阅读参考）</h1><p>已移除运行输出、身份元数据与本机路径。历史依赖及数据文件尚未全部适配；请使用同章可重跑教学实验。</p><article><h2>单元 1 · markdown</h2><pre>## 第2章 多元数据的Python处理</pre></article><article><h2>单元 2 · code</h2><pre># %run init.py</pre></article><article><h2>单元 3 · markdown</h2><pre>## 2.1 Python的编程基础</pre></article><article><h2>单元 4 · markdown</h2><pre>### 2.1.1 Python的数据类型</pre></article><article><h2>单元 5 · markdown</h2><pre>1. Python基本类型</pre></article><article><h2>单元 6 · markdown</h2><pre>（1）数值型 </pre></article><article><h2>单元 7 · code</h2><pre>from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = &quot;all&quot;</pre></article><article><h2>单元 8 · code</h2><pre>n=5             #整数
+n                #相当于 print(n)</pre></article><article><h2>单元 9 · code</h2><pre>x=1.2345         #实数
+x                #无格式输出</pre></article><article><h2>单元 10 · code</h2><pre>print(&quot;x=%10.5f&quot;%x)</pre></article><article><h2>单元 11 · code</h2><pre>round(x,1)         #保留一位小数</pre></article><article><h2>单元 12 · markdown</h2><pre>（2）逻辑型 </pre></article><article><h2>单元 13 · code</h2><pre>a=True;a
+b=False;b</pre></article><article><h2>单元 14 · code</h2><pre>10&gt;3
+10&lt;3</pre></article><article><h2>单元 15 · markdown</h2><pre>（3）字符型 </pre></article><article><h2>单元 16 · code</h2><pre>s=&quot;python&quot;; s</pre></article><article><h2>单元 17 · code</h2><pre>S = &#x27;We love Python data analysis&#x27;; S </pre></article><article><h2>单元 18 · code</h2><pre>type(n) 
+n</pre></article><article><h2>单元 19 · code</h2><pre>type(x)</pre></article><article><h2>单元 20 · code</h2><pre>type(s)</pre></article><article><h2>单元 21 · markdown</h2><pre>2. Python扩展类型</pre></article><article><h2>单元 22 · markdown</h2><pre>（1）List（列表）</pre></article><article><h2>单元 23 · markdown</h2><pre>    列表（list）是Python中使用最频繁的数据类型。列表可以完成大多数集合类的数据结构实现。列表也具有字符串一样的切片功能，是进行数据分析的基本类型，须掌握。</pre></article><article><h2>单元 24 · code</h2><pre>L=[&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;,&#x27;D&#x27;,&#x27;E&#x27;,&#x27;F&#x27;,&#x27;G&#x27;,&#x27;H&#x27;,&#x27;I&#x27;];  #字母列表
+L</pre></article><article><h2>单元 25 · code</h2><pre>X=[1,2,3,4,5,6,7,8,9];                    #数字列表
+X</pre></article><article><h2>单元 26 · code</h2><pre>L[0]          # 输出列表的第一个元素</pre></article><article><h2>单元 27 · code</h2><pre>L[1:3]        # 输出第二个至第三个元素</pre></article><article><h2>单元 28 · code</h2><pre>X[3:]         # 输出从第三个开始至列表末尾的所有元素</pre></article><article><h2>单元 29 · code</h2><pre>L[:3] + X[3:]  # 列表合并输出</pre></article><article><h2>单元 30 · markdown</h2><pre>python的内置函数range()可创建一个整数列表，使用range函数可生成各种类型的列表，在range在python3变成一个迭代器，输出需用list。</pre></article><article><h2>单元 31 · code</h2><pre>i=range(9)        #从0开始到8的整数=range(0,9)
+list(i)           #显示整数列表</pre></article><article><h2>单元 32 · code</h2><pre>j=range(1,9)      #从1开始到8整数列
+list(j)</pre></article><article><h2>单元 33 · code</h2><pre>k=range(1,9,2)     #步长为2的整数列
+list(k)</pre></article><article><h2>单元 34 · markdown</h2><pre>（2）Dictionary（字典） </pre></article><article><h2>单元 35 · markdown</h2><pre>    字典也是一种数据类型，且可存储任意类型对象。字典的每个键值对用冒号“:”分隔，每个键值对之间用逗号“,”分隔，整个字典包括在花括号{}中，格式如下：dict= {key1 : value1, key2 : value2 }</pre></article><article><h2>单元 36 · code</h2><pre>Dict={&#x27;字母&#x27;:L,&#x27;数字&#x27;:X,&#x27;数组&#x27;:list(i)}; Dict  #定义字典</pre></article><article><h2>单元 37 · code</h2><pre>Dict[&#x27;字母&#x27;]         # 输出键为&#x27;字母&#x27;的值</pre></article><article><h2>单元 38 · code</h2><pre>Dict.keys()           # 输出所有键</pre></article><article><h2>单元 39 · code</h2><pre>Dict.values()        # 输出所有值 </pre></article><article><h2>单元 40 · markdown</h2><pre>### 2.1.2 运算符及控制语句</pre></article><article><h2>单元 41 · markdown</h2><pre>1. 条件语句</pre></article><article><h2>单元 42 · code</h2><pre>x=6; y=5
+if x &gt; y:
+    print(x)
+else:
+    print(y)</pre></article><article><h2>单元 43 · code</h2><pre>x if x&gt; y else y</pre></article><article><h2>单元 44 · markdown</h2><pre>2. 循环语句</pre></article><article><h2>单元 45 · code</h2><pre>for i in [1,2,3,4]:print(i) </pre></article><article><h2>单元 46 · code</h2><pre>[i for i in [1,2,3,4]]           #形成列表</pre></article><article><h2>单元 47 · markdown</h2><pre>2. 条件语句</pre></article><article><h2>单元 48 · markdown</h2><pre>### 2.1.3 Python函数的使用</pre></article><article><h2>单元 49 · markdown</h2><pre>1. 内置函数</pre></article><article><h2>单元 50 · code</h2><pre>print(dir())</pre></article><article><h2>单元 51 · code</h2><pre>round(3.1415926,2)</pre></article><article><h2>单元 52 · code</h2><pre>len([1,3,5,7,9])</pre></article><article><h2>单元 53 · markdown</h2><pre>2. 包及其安装</pre></article><article><h2>单元 54 · code</h2><pre>#!pip install xxxxxx</pre></article><article><h2>单元 55 · markdown</h2><pre>3. 包及其函数使用</pre></article><article><h2>单元 56 · code</h2><pre>import math
+x=8.56;
+[math.sqrt(x),math.log(x),math.exp(x)]</pre></article><article><h2>单元 57 · code</h2><pre>import math as m
+[m.sqrt(x),m.log(x),m.exp(x)]</pre></article><article><h2>单元 58 · code</h2><pre>from math import sqrt,log,exp
+[sqrt(x),log(x),exp(x)]</pre></article><article><h2>单元 59 · markdown</h2><pre>4. 自定义函数 </pre></article><article><h2>单元 60 · markdown</h2><pre>如计算向量X=(x1, x2,…,xn)的均值函数：
+
+$\bar{x}=\frac{\sum{x}}{n}$</pre></article><article><h2>单元 61 · code</h2><pre>def xbar(x):
+    n=len(x)
+    xm=sum(x)/n
+    return(xm)</pre></article><article><h2>单元 62 · code</h2><pre>X=[1,2,3,4,5,6,7,8,9]
+xbar(X)</pre></article><article><h2>单元 63 · markdown</h2><pre>## 2.2 Python数值分析</pre></article><article><h2>单元 64 · markdown</h2><pre>### 2.2.1 一维数组（向量）运算</pre></article><article><h2>单元 65 · code</h2><pre>import numpy            #将以numpy名调用函数
+numpy.array([1,2,3,4,5])    #根据列表构建的一维数组</pre></article><article><h2>单元 66 · code</h2><pre>import numpy as np          
+a=np.array([1,2,3,4,5]); a      </pre></article><article><h2>单元 67 · code</h2><pre>b=np.arange(5); b            #数差序列，差距1</pre></article><article><h2>单元 68 · code</h2><pre>c=np.log(2*a+b**3); c</pre></article><article><h2>单元 69 · code</h2><pre>c.astype(int)  #将实数数组c转换为整型数组</pre></article><article><h2>单元 70 · code</h2><pre>a.astype(str) #将数组a转换为字符型</pre></article><article><h2>单元 71 · code</h2><pre>print(a+b)     #加
+print(a-b)     #减
+print(a*b)     #乘
+print(a/b)     #除</pre></article><article><h2>单元 72 · markdown</h2><pre>### 2.2.2 二维数组（矩阵）运算</pre></article><article><h2>单元 73 · code</h2><pre>#定义二维数组（矩阵）
+A=np.array([[1,2,3],[4,5,6]]); A</pre></article><article><h2>单元 74 · code</h2><pre>B=np.array([[1,4],[2,5],[3,6]]); B</pre></article><article><h2>单元 75 · code</h2><pre>A.shape             #数组的维度</pre></article><article><h2>单元 76 · code</h2><pre>n=A.shape[0];n        #行数</pre></article><article><h2>单元 77 · code</h2><pre>p=A.shape[1];p        #列数</pre></article><article><h2>单元 78 · code</h2><pre>A.T               #矩阵转置</pre></article><article><h2>单元 79 · code</h2><pre>A+A             #矩阵相加</pre></article><article><h2>单元 80 · code</h2><pre>B-B              #矩阵相减</pre></article><article><h2>单元 81 · code</h2><pre>C=np.dot(A,B);C    #矩阵相乘</pre></article><article><h2>单元 82 · markdown</h2><pre>## 2.3 多元数据的收集和整理</pre></article><article><h2>单元 83 · markdown</h2><pre>###　2.3.1 数据格式</pre></article><article><h2>单元 84 · markdown</h2><pre>### 2.3.2 变量的分类</pre></article><article><h2>单元 85 · markdown</h2><pre>## 2.4 Python的数据框</pre></article><article><h2>单元 86 · markdown</h2><pre>### 2.4.1 数据框的构成</pre></article><article><h2>单元 87 · markdown</h2><pre>在数据分析中，数据通常以向量或变量（一维数组，Python中用序列表示）和矩阵（二维数组，Python中用数据框表示）的形式出现， pandas中用函数DataFrame()生成数据框。数据框相当于关系数据库中的结构化数据。Python中的数据分析大都是基于数据框进行的，所以本书的分析也是以数据框形式为主，向量和矩阵都可以看成数据框的一个特例。下面介绍pandas基本数据操作。</pre></article><article><h2>单元 88 · code</h2><pre>L=[&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;,&#x27;D&#x27;,&#x27;E&#x27;];
+X=[1,2,3,4,5]; 
+Y=[x**2 for x in X]; #Y=X^2
+Y</pre></article><article><h2>单元 89 · code</h2><pre>import pandas as pd         #加载数据分析库
+df1=pd.DataFrame([L,X,Y]);  #按行构建数据框
+print(df1)</pre></article><article><h2>单元 90 · code</h2><pre>df2=pd.DataFrame({&#x27;L&#x27;:L,&#x27;X&#x27;:X,&#x27;Y&#x27;:Y}); 
+print(df2)</pre></article><article><h2>单元 91 · code</h2><pre>df3=pd.DataFrame({&#x27;X1&#x27;:X,&#x27;X2&#x27;:Y},index=L); 
+print(df3)</pre></article><article><h2>单元 92 · code</h2><pre>#重新定义行列名
+df1.index=[&#x27;行1&#x27;,&#x27;行2&#x27;,&#x27;行3&#x27;]
+df1.columns=[&#x27;列1&#x27;,&#x27;列2&#x27;,&#x27;列3&#x27;,&#x27;列4&#x27;,&#x27;列5&#x27;]
+print(df1)</pre></article><article><h2>单元 93 · markdown</h2><pre>### 2.4.2 数据框的调用</pre></article><article><h2>单元 94 · markdown</h2><pre>（1）从剪切板上读取
+&gt;    先在 DaPy_data.xls 数据文件的【BSdata】表中选取 A1:H53，复制，然后在 Python 中读取数据。剪切板命令（clipboard）可复制任何数据。</pre></article><article><h2>单元 95 · code</h2><pre>#dat=pd.read_clipboard(); #从剪切板上复制数据 
+#print(dat)</pre></article><article><h2>单元 96 · markdown</h2><pre>（2）读取 Excel 格式数据 
+&gt;   使用pandas包中的read_excel可直接读取excel文档中的任意表单数据，其读取命令也比较简单（建议使用！）</pre></article><article><h2>单元 97 · code</h2><pre>d21=pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d21&#x27;);
+d21
+d21.head(10)</pre></article><article><h2>单元 98 · markdown</h2><pre>3. pandas 数据集的保存 </pre></article><article><h2>单元 99 · markdown</h2><pre>&gt; pandas保存数据的命令也很简单</pre></article><article><h2>单元 100 · code</h2><pre>#将数据框d21保存到 d21.xlsx 文档中
+d21.to_excel(&#x27;d21.xlsx&#x27;,index=False)  #index=False表示不保存行标签</pre></article><article><h2>单元 101 · markdown</h2><pre>### 2.4.3 数据框的操作</pre></article><article><h2>单元 102 · markdown</h2><pre>1. 数据框信息</pre></article><article><h2>单元 103 · code</h2><pre>d21.info()     #数据框信息</pre></article><article><h2>单元 104 · code</h2><pre>pd.set_option(&#x27;display.max_rows&#x27;,6) #全局设置输出行数</pre></article><article><h2>单元 105 · code</h2><pre>print(d21)</pre></article><article><h2>单元 106 · markdown</h2><pre>（2）局部输出函数</pre></article><article><h2>单元 107 · code</h2><pre>print(d21.head())     #默认显示前5行 </pre></article><article><h2>单元 108 · code</h2><pre>print(d21.tail(3))   #最后3行</pre></article><article><h2>单元 109 · markdown</h2><pre>3. 行列数及行列名</pre></article><article><h2>单元 110 · code</h2><pre>d21.columns    #查看列名称 </pre></article><article><h2>单元 111 · code</h2><pre>d21.index      #数据框行名 </pre></article><article><h2>单元 112 · code</h2><pre>d21.shape      #显示数据框的行数和列数</pre></article><article><h2>单元 113 · code</h2><pre>d21.shape[0]   #数据框行数n </pre></article><article><h2>单元 114 · code</h2><pre>d21.shape[1]   #数据框列数m</pre></article><article><h2>单元 115 · markdown</h2><pre>3. 数据框的取值</pre></article><article><h2>单元 116 · markdown</h2><pre>（1）样品选择（选择行）</pre></article><article><h2>单元 117 · code</h2><pre>d21[d21[&#x27;性别&#x27;]==&#x27;男&#x27;] </pre></article><article><h2>单元 118 · code</h2><pre>d21[(d21[&#x27;性别&#x27;]==&#x27;男&#x27;) &amp; (d21[&#x27;年龄&#x27;]&gt;60)] </pre></article><article><h2>单元 119 · markdown</h2><pre>（2）变量选择（选择列）</pre></article><article><h2>单元 120 · code</h2><pre>d21[&#x27;年龄&#x27;].head()   #取一列数据，一列时也可用d21.年龄</pre></article><article><h2>单元 121 · code</h2><pre>d21.loc[6:10,[&#x27;性别&#x27;,&#x27;年龄&#x27;,&#x27;投资结果&#x27;]]</pre></article><article><h2>单元 122 · code</h2><pre>d21.iloc[3:7,2:6]  #3至6行和2至5列数据</pre></article><article><h2>单元 123 · markdown</h2><pre>## 2.5 Pythn数据框的分析</pre></article><article><h2>单元 124 · markdown</h2><pre>### 2.5.1 定量数据的分析</pre></article><article><h2>单元 125 · markdown</h2><pre>1. 变量的分布特征</pre></article><article><h2>单元 126 · code</h2><pre>import matplotlib.pyplot as plt
+
+plt.rcParams[&#x27;font.family&#x27;] = [&#x27;Heiti TC&#x27;]
+plt.rcParams[&quot;axes.unicode_minus&quot;] = False</pre></article><article><h2>单元 127 · code</h2><pre>plt.title(&quot;年龄分布直方图&quot;)
+plt.hist(d21.年龄)</pre></article><article><h2>单元 128 · code</h2><pre>#定量频数表与直方图函数
+def freq(X,bins=10):  #默认自动分10组
+    H=plt.hist(X,bins);
+    a=H[1][:-1]; b=H[1][1:];
+    f=H[0]; p=f/sum(f)*100;p
+    cp=np.cumsum(p);cp
+    Freq=pd.DataFrame([a,b,f,p,cp])
+    Freq.index=[&#x27;[下限&#x27;,&#x27;上限)&#x27;,&#x27;频数&#x27;,&#x27;频率(%)&#x27;,&#x27;累计频数(%)&#x27;]
+    return(round(Freq.T,2))</pre></article><article><h2>单元 129 · code</h2><pre>H = plt.hist(d21.年龄,10);
+H[0]
+H[0].shape 
+H[1]
+H[1].shape
+type(plt.hist(d21.年龄,10)[2])
+</pre></article><article><h2>单元 130 · code</h2><pre>a=H[1][:-1];a 
+b=H[1][1:];b</pre></article><article><h2>单元 131 · code</h2><pre>f=H[0]; f
+total = np.sum(f); total
+</pre></article><article><h2>单元 132 · code</h2><pre>print(freq(d21.年龄))  #默认自动分10组</pre></article><article><h2>单元 133 · markdown</h2><pre>2. 定量数据分组统计</pre></article><article><h2>单元 134 · code</h2><pre>pd.set_option(&#x27;display.max_rows&#x27;,8) #全局设置输出行数
+age_cut=pd.cut(d21.年龄,bins=[0,20,30,40,50,60,70,80])
+age_freq=age_cut.value_counts().sort_index();age_freq</pre></article><article><h2>单元 135 · code</h2><pre>age_cut.value_counts()</pre></article><article><h2>单元 136 · code</h2><pre>pd.DataFrame.sort_index?
+</pre></article><article><h2>单元 137 · code</h2><pre>age_freq.plot(kind=&#x27;bar&#x27;);   #将结果画成垂直条图</pre></article><article><h2>单元 138 · markdown</h2><pre>（2）变量的基本统计量</pre></article><article><h2>单元 139 · code</h2><pre>x=d21.资金规模</pre></article><article><h2>单元 140 · code</h2><pre>x.mean()   #变量x的均值</pre></article><article><h2>单元 141 · code</h2><pre>x.var()   #变量x的方差</pre></article><article><h2>单元 142 · code</h2><pre>x.std()   #变量x的标准差</pre></article><article><h2>单元 143 · markdown</h2><pre>### 2.5.2 定性变量的分析</pre></article><article><h2>单元 144 · markdown</h2><pre>   对计数数据，可用pivot_table()函数生成任意维统计表，包括计量数据的分组统计。
+   使用pandas包中pivot_table命令，可以实现Excel等电子表格的透视表功能，且更为灵活。
+
+DataFrame.pivot_table(
+    values=None,        #值变量
+    index=None,         #行变量
+    columns=None,       #列变量
+    aggfunc=&#x27;mean&#x27;,     #聚集函数
+    fill_value=None,    #缺失值填充 
+    margins=False,      #是否增加边际 
+    dropna=True,        #删除缺失值
+    margins_name=&#x27;All&#x27;, #边际名称
+    observed=False)</pre></article><article><h2>单元 145 · code</h2><pre>pt1=d21.pivot_table(values=[&#x27;编号&#x27;],index=[&#x27;投资结果&#x27;],aggfunc=len);  #len分组数
+print(pt1)
+
+# 如果函数中的参数顺序按定义中的，那么也可省略参数名称，下同！</pre></article><article><h2>单元 146 · code</h2><pre>pt12=d21.pivot_table(values=[&#x27;编号&#x27;],index=[&#x27;投资结果&#x27;],columns=[&#x27;性别&#x27;],aggfunc=len);
+print(pt12)</pre></article><article><h2>单元 147 · code</h2><pre>pt13=d21.pivot_table(values=[&#x27;资金规模&#x27;],index=[&#x27;性别&#x27;],columns=[&#x27;投资结果&#x27;]);
+print(pt13)</pre></article><article><h2>单元 148 · code</h2><pre>import matplotlib.pyplot as plt            #加载基本绘图包
+plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;SimHei ST&#x27;]; #SimHei黑体
+pt1.plot(kind=&#x27;bar&#x27;,legend=False);
+pt13.plot(kind=&#x27;bar&#x27;,legend=True);</pre></article><article><h2>单元 149 · code</h2><pre>#pt12=BSdata.pivot_table(values=[&#x27;学号&#x27;],index=[&#x27;性别&#x27;,&#x27;开设&#x27;],aggfunc=len)
+pt2=d21.pivot_table([&#x27;编号&#x27;],[&#x27;性别&#x27;],[&#x27;投资结果&#x27;],aggfunc=len);(pt2)</pre></article><article><h2>单元 150 · code</h2><pre>pt2.plot(kind=&#x27;barh&#x27;);  </pre></article><article><h2>单元 151 · code</h2><pre>pt2.plot(kind=&#x27;bar&#x27;,subplots=True,legend=False,figsize=(6,8));</pre></article><article><h2>单元 152 · code</h2><pre>pt2.plot(kind=&#x27;bar&#x27;,stacked=True);</pre></article><article><h2>单元 153 · code</h2><pre>pt3=d21.pivot_table(&#x27;编号&#x27;, [&#x27;性别&#x27;,&#x27;风险意识&#x27;], &#x27;投资结果&#x27;, aggfunc=len,  
+                     margins=True, margins_name=&#x27;合计&#x27;)
+(pt3)</pre></article><article><h2>单元 154 · code</h2><pre>pt3.plot(kind=&#x27;bar&#x27;,stacked=True);</pre></article><article><h2>单元 155 · markdown</h2><pre>### 2.5.3 定性定量因素分析
+1. 单因素分组</pre></article><article><h2>单元 156 · code</h2><pre>import numpy as np
+pt4=d21.pivot_table(&quot;资金规模&quot;,&#x27;投资结果&#x27;,aggfunc=[np.size,&#x27;mean&#x27;, &#x27;std&#x27;]);
+(pt4)</pre></article><article><h2>单元 157 · markdown</h2><pre>2. 两因素分组</pre></article><article><h2>单元 158 · code</h2><pre>pt5=d21.pivot_table(&#x27;资金规模&#x27;,[&#x27;性别&#x27;,&#x27;专兼职&#x27;],aggfunc=[np.size,&#x27;mean&#x27;, &#x27;std&#x27;],  
+                   margins=True, margins_name=&#x27;合计&#x27;)
+(pt5)</pre></article><article><h2>单元 159 · markdown</h2><pre>3. 多因素分组</pre></article><article><h2>单元 160 · code</h2><pre>pt6=d21.pivot_table(&#x27;资金规模&#x27;,[&#x27;性别&#x27;,&#x27;专兼职&#x27;,&#x27;风险意识&#x27;],aggfunc=[np.size,&#x27;mean&#x27;, &#x27;std&#x27;],  
+                   margins=True, margins_name=&#x27;合计&#x27;)
+(pt6)</pre></article><article><h2>单元 161 · markdown</h2><pre># 案例2：多元数据的基本统计分析</pre></article><article><h2>单元 162 · code</h2><pre>Case2=pd.read_excel(&#x27;mvsCase.xlsx&#x27;, &#x27;Case2&#x27;); Case2</pre></article><article><h2>单元 163 · code</h2><pre>T1=Case2.pivot_table([&#x27;序号&#x27;],[&#x27;地区&#x27;],aggfunc=len); T1</pre></article><article><h2>单元 164 · code</h2><pre>T1.plot(kind=&#x27;bar&#x27;);</pre></article><article><h2>单元 165 · code</h2><pre>import matplotlib.pyplot as plt            
+plt.hist(Case2.月收入)</pre></article><article><h2>单元 166 · code</h2><pre>#Case2.groupby(&#x27;地区&#x27;)[&#x27;月收入&#x27;].apply</pre></article><article><h2>单元 167 · code</h2><pre>Case2.boxplot(&#x27;月收入&#x27;,&#x27;地区&#x27;);
+Case2.pivot_table(&#x27;月收入&#x27;,&#x27;地区&#x27;,
+                  aggfunc=[len,&#x27;min&#x27;,&#x27;max&#x27;,&#x27;mean&#x27;,&#x27;std&#x27;])</pre></article><article><h2>单元 168 · raw</h2><pre>     Q1-1.5IQR   Q1   median  Q3   Q3+1.5IQR    
+                  |-----:-----|
+  o      |--------|     :     |--------|    o  o
+                  |-----:-----|
+flier             &lt;-----------&gt;            fliers
+                       IQR</pre></article><article><h2>单元 169 · code</h2><pre>pd.DataFrame.boxplot?</pre></article><article><h2>单元 170 · code</h2><pre>import seaborn as sns
+sns.boxplot(x=&quot;地区&quot;, y=&quot;月收入&quot;, data=Case2, width=0.6, showfliers=True)  # showfliers=True 显示异常值
+sns.stripplot(x=&quot;地区&quot;, y=&quot;月收入&quot;, data=Case2, color=&quot;black&quot;, size=6, jitter=True, alpha=0.7)
+</pre></article><article><h2>单元 171 · code</h2><pre>T2=Case2.pivot_table([&#x27;序号&#x27;],[&#x27;性别&#x27;],[&#x27;观点&#x27;],aggfunc=len);
+T2</pre></article><article><h2>单元 172 · code</h2><pre>T2.plot(kind=&#x27;bar&#x27;,legend=False);</pre></article><article><h2>单元 173 · code</h2><pre>T3=Case2.pivot_table([&#x27;序号&#x27;],[&#x27;性别&#x27;,&#x27;教育程度&#x27;],[&#x27;观点&#x27;],aggfunc=len); 
+T3</pre></article><article><h2>单元 174 · code</h2><pre>T3.plot(kind=&#x27;barh&#x27;,legend=False);</pre></article><article><h2>单元 175 · code</h2><pre>#定义二维数组（矩阵）
+A=np.array([[1,2,3],[4,5,6]]); A</pre></article><article><h2>单元 176 · code</h2><pre>age_freq.plot(kind=&#x27;bar&#x27;);   #将结果画成垂直条图</pre></article><article><h2>单元 177 · code</h2><pre></pre></article><article><h2>单元 178 · code</h2><pre></pre></article><article><h2>单元 179 · code</h2><pre></pre></article><article><h2>单元 180 · code</h2><pre></pre></article><article><h2>单元 181 · code</h2><pre></pre></article></html>

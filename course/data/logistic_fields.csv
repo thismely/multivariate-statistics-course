@@ -1,0 +1,11 @@
+field,dtype,description,unit,role
+predictor_1,float,二分类模拟预测变量 1,synthetic unit,input
+predictor_2,float,二分类模拟预测变量 2,synthetic unit,input
+predictor_3,float,二分类模拟预测变量 3,synthetic unit,input
+predictor_4,float,二分类模拟预测变量 4,synthetic unit,input
+predictor_5,float,二分类模拟预测变量 5,synthetic unit,input
+predictor_6,float,二分类模拟预测变量 6,synthetic unit,input
+synthetic_class,int,生成器提供的二分类检验标签,category,validation target
+actual,int,测试集真实生成标签,category,test output
+predicted,int,Logistic 回归预测类别,category,test output
+probability_1,float,预测为类别 1 的概率,0 to 1,test output

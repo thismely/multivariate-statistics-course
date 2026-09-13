@@ -1,0 +1,8 @@
+field,dtype,description,unit,role
+feature_1,float,模拟聚类特征 1,synthetic unit,input
+feature_2,float,模拟聚类特征 2,synthetic unit,input
+feature_3,float,模拟聚类特征 3,synthetic unit,input
+feature_4,float,模拟聚类特征 4,synthetic unit,input
+synthetic_group,int,仅用于检验的生成机制标签，不是学生或真实主体标签,category,validation only
+kmeans_cluster,int,K-means 输出的簇编号,cluster id,derived
+ward_cluster,int,Ward 层次聚类输出的簇编号,cluster id,derived

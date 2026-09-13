@@ -1,0 +1,199 @@
+{
+  "resource": {
+    "id": "ppt03",
+    "title": "第3章 多元数据的Python可视化",
+    "kind": "ppt",
+    "source_path": "PPT/第3章 多元数据的Python可视化.pptx",
+    "sha256": "2317f6f64b9dbce80f77966fd21c210c7fbb90876e7438ffd3421727ec30a46f",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt03.json"
+  },
+  "units": [
+    {
+      "locator": "PPT 第 1 页",
+      "index": 1,
+      "text": "第 3 章 多元数据的Python可视化 多元统计分析及 Python 建模    ",
+      "images": 0
+    },
+    {
+      "locator": "PPT 第 2 页",
+      "index": 2,
+      "text": "多元统计分析及 Python 建模   3  多元数据的Python可视化",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 3 页",
+      "index": 3,
+      "text": "多元统计分析及 Python 建模 3  多元数据的Python可视化",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 4 页",
+      "index": 4,
+      "text": "3.1 多元数据可视化准备 3   多元数据的  Python  处理",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 5 页",
+      "index": 5,
+      "text": "3.1 多元数据可视化准备 3   多元数据的  Python  处理",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 6 页",
+      "index": 6,
+      "text": "3.1 多元数据可视化准备 3   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 7 页",
+      "index": 7,
+      "text": "3.1 多元数据可视化准备 3   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 8 页",
+      "index": 8,
+      "text": "3.1 多元数据可视化准备 3   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 9 页",
+      "index": 9,
+      "text": "3.1 多元数据可视化准备 3   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 10 页",
+      "index": 10,
+      "text": "3.1 多元数据可视化准备 3   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 11 页",
+      "index": 11,
+      "text": "3.1 多元数据可视化准备 3   多元数据的  Python  处理",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 12 页",
+      "index": 12,
+      "text": "3.1 多元数据可视化准备 3   多元数据的  Python  处理",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 13 页",
+      "index": 13,
+      "text": "3.1 多元数据可视化准备 3   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 14 页",
+      "index": 14,
+      "text": "3.2 条图或柱图 3   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 15 页",
+      "index": 15,
+      "text": "3.2 条图或柱图 3   多元数据的  Python  处理",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 16 页",
+      "index": 16,
+      "text": "3.2 条图或柱图 3   多元数据的  Python  处理",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 17 页",
+      "index": 17,
+      "text": "3.2 条图或柱图 3   多元数据的  Python  处理",
+      "images": 4
+    },
+    {
+      "locator": "PPT 第 18 页",
+      "index": 18,
+      "text": "3.2 条图或柱图 3   多元数据的  Python  处理",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 19 页",
+      "index": 19,
+      "text": "3.2 条图或柱图 3   多元数据的  Python  处理",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 20 页",
+      "index": 20,
+      "text": "3.3 描述统计及箱尾图 3   多元数据的  Python  处理",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 21 页",
+      "index": 21,
+      "text": "3.3 描述统计及箱尾图 3   多元数据的  Python  处理",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 22 页",
+      "index": 22,
+      "text": "3.3 描述统计及箱尾图 3   多元数据的  Python  处理",
+      "images": 4
+    },
+    {
+      "locator": "PPT 第 23 页",
+      "index": 23,
+      "text": "3.4 变量间的关系图 3   多元数据的  Python  处理      从图上可以看出，年龄与资金规模之间的关系。      一般来说，人们希望能够从数据中回答几个问题：      1) 这两个变量是否有关系？这从散点图就很容易看出。      2) 如果有关系，它们的关系是否有意义？这可以从散点图得到，但需进行统计检验， 具体见第 9 章线性相关分析。      3) 这些关系是什么关系，是否可以用数学模型来描述？具体见第 9 章线性回归分析。",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 24 页",
+      "index": 24,
+      "text": "3.4 变量间的关系图 3   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 25 页",
+      "index": 25,
+      "text": "3.5 其他多元分析图 3   多元数据的  Python  处理",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 26 页",
+      "index": 26,
+      "text": "案例 3：城市现代化水平的直观分析 3   多元数据的  Python  处理",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 27 页",
+      "index": 27,
+      "text": "案例 3：城市现代化水平的直观分析 3   多元数据的  Python  处理",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 28 页",
+      "index": 28,
+      "text": "案例 3：城市现代化水平的直观分析 3   多元数据的  Python  处理",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 29 页",
+      "index": 29,
+      "text": "案例 3：城市现代化水平的直观分析 3   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 30 页",
+      "index": 30,
+      "text": "案例 3：城市现代化水平的直观分析 3   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 31 页",
+      "index": 31,
+      "text": "案例 3：城市现代化水平的直观分析 3   多元数据的  Python  处理",
+      "images": 2
+    }
+  ]
+}

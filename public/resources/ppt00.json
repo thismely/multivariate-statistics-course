@@ -1,0 +1,49 @@
+{
+  "resource": {
+    "id": "ppt00",
+    "title": "第0章-课前准备",
+    "kind": "ppt",
+    "source_path": "PPT/第0章-课前准备.pptx",
+    "sha256": "2458391575a5a09424d5142e14279fe0cebf6275e67a5bbce084b82af07711d7",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt00.json"
+  },
+  "units": [
+    {
+      "locator": "PPT 第 1 页",
+      "index": 1,
+      "text": "《多元统计分析》数字课程学习指南",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 2 页",
+      "index": 2,
+      "text": "从课程章节或三维知识节点开始学习。",
+      "images": 0
+    },
+    {
+      "locator": "PPT 第 3 页",
+      "index": 3,
+      "text": "课程学习流程：知识理解、条件判断、模拟实验、结果解释。",
+      "images": 0
+    },
+    {
+      "locator": "PPT 第 4 页",
+      "index": 4,
+      "text": "本网站不发布教师联系方式和具体考核安排。",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 5 页",
+      "index": 5,
+      "text": "使用固定种子模拟数据练习，避免上传个人数据。",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 6 页",
+      "index": 6,
+      "text": "完整讲义、课件和实验可从课程资源页访问。",
+      "images": 1
+    }
+  ]
+}

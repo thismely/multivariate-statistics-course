@@ -1,0 +1,175 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px/1.8 system-ui;max-width:960px;margin:24px auto;padding:20px;color:#192b3b}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:20px}article{border-bottom:1px solid #ccc}h2{font-size:18px}</style><h1>第6章 原课程 Notebook（阅读参考）</h1><p>已移除运行输出、身份元数据与本机路径。历史依赖及数据文件尚未全部适配；请使用同章可重跑教学实验。</p><article><h2>单元 1 · markdown</h2><pre># 第6章 主成分分析及Python计算</pre></article><article><h2>单元 2 · code</h2><pre>#%cd &quot;[本地路径已移除]
+%run init.py</pre></article><article><h2>单元 3 · markdown</h2><pre>## 6.1 主成分分析的概念</pre></article><article><h2>单元 4 · markdown</h2><pre>### 6.1.1 主成分分析的提出</pre></article><article><h2>单元 5 · markdown</h2><pre>### 6.1.2 主成分的直观解释</pre></article><article><h2>单元 6 · markdown</h2><pre>$\begin{cases}
+y_1=\cos \theta x_1+\sin \theta x_2 \\
+y_2=-\sin \theta x_1+\cos \theta x_2
+\end{cases}$</pre></article><article><h2>单元 7 · code</h2><pre>import matplotlib.pyplot as plt              #加载基本绘图包
+import pandas as pd                         #加载数据处理包
+plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;Heiti TC&#x27;];  #设置中文字体为黑体
+
+pd.set_option(&#x27;display.max_rows&#x27;, None)
+pd.set_option(&#x27;display.max_columns&#x27;, None)
+pd.set_option(&#x27;display.max_colwidth&#x27;, None)</pre></article><article><h2>单元 8 · code</h2><pre>x1=[147,171,175,159,155,152,158,154,164,168,166,159,164,177]  #身高
+x2=[32,57,64,41,38,35,44,41,54,57,49,47,46,63]                #体重</pre></article><article><h2>单元 9 · code</h2><pre>import matplotlib.pyplot as plt
+plt.scatter(x1, x2); #绘制散点图
+plt.xlabel(&#x27;x1&#x27;);plt.ylabel(&#x27;x2&#x27;);      </pre></article><article><h2>单元 10 · code</h2><pre>from matplotlib.patches import Ellipse
+fig=plt.figure();
+ax=fig.add_subplot(111)
+ell1=Ellipse(xy=(162,48),width=48,height=8,angle=48,facecolor=&#x27;yellow&#x27;,alpha=0.3) 
+ax.add_patch(ell1) #绘制椭圆 
+plt.scatter(x1, x2);plt.xlabel(&#x27;x1&#x27;);plt.ylabel(&#x27;x2&#x27;)    
+plt.plot([146,178],[30,66]);plt.plot([162,166],[54,47]); #绘制线段
+plt.text(178,66,&#x27;y1&#x27;);plt.text(161,55,&#x27;y2&#x27;);</pre></article><article><h2>单元 11 · markdown</h2><pre>## 6.2 主成分分析的性质</pre></article><article><h2>单元 12 · markdown</h2><pre>### 6.2.1 主成分的说明</pre></article><article><h2>单元 13 · code</h2><pre>import pandas as pd
+pd.set_option(&#x27;display.precision&#x27;,4)  #数据框输出精度
+X=pd.DataFrame({&#x27;x1&#x27;:x1,&#x27;x2&#x27;:x2});#X  #构建数据框 X</pre></article><article><h2>单元 14 · code</h2><pre>S=X.cov();S    #协方差阵</pre></article><article><h2>单元 15 · code</h2><pre>R=X.corr();R  #相关系数阵</pre></article><article><h2>单元 16 · code</h2><pre># 1. 数据标准化（均值为0，方差为1）
+X_mean = np.mean(X, axis=0)
+x_var = np.var(X, axis=0)
+X_centered = (X - X_mean) / np.sqrt(x_var)
+</pre></article><article><h2>单元 17 · code</h2><pre># 2. 计算协方差矩阵
+cov_matrix = np.cov(X_centered, rowvar=False)
+cov_matrix</pre></article><article><h2>单元 18 · code</h2><pre># 3. 计算协方差矩阵的特征值和特征向量
+eigenvalues, eigenvectors = np.linalg.eig(cov_matrix)
+eigenvalues, eigenvectors</pre></article><article><h2>单元 19 · code</h2><pre># 5. 选择前两个主成分
+n_components = 2
+selected_eigenvectors = eigenvectors[:, :n_components]
+</pre></article><article><h2>单元 20 · markdown</h2><pre>### 6.2.2 主成分的推导</pre></article><article><h2>单元 21 · code</h2><pre>import numpy as np  #from numpy.linalg import svd
+np.set_printoptions(4)
+d1,u1,v1=np.linalg.svd(S) #协差阵的奇异值分解 S=UDV&#x27;
+print(&#x27;d1:\n&#x27;,d1,&#x27;\n&#x27;,&#x27;u1:\n&#x27;,u1,&#x27;\n&#x27;,&#x27;v1:\n&#x27;,v1)</pre></article><article><h2>单元 22 · code</h2><pre>d2,u2,v2=np.linalg.svd(R)  #相关阵的奇异值分解 R=UDV&#x27;
+print(&#x27;d1:\n&#x27;,d2,&#x27;\n&#x27;,&#x27;u1:\n&#x27;,u2,&#x27;\n&#x27;,&#x27;v1:\n&#x27;,v2)</pre></article><article><h2>单元 23 · code</h2><pre># 1. 计算协方差矩阵的特征值和特征向量
+eigenvalues, eigenvectors = np.linalg.eig(S)
+eigenvalues, eigenvectors</pre></article><article><h2>单元 24 · code</h2><pre># 计算原始数据的方差（对角线元素）
+sigma_jj = np.var(X, axis=0, ddof=1)  # 样本方差</pre></article><article><h2>单元 25 · code</h2><pre>(np.sqrt(eigenvalues) * X ) / (sigma_jj ** 0.5)</pre></article><article><h2>单元 26 · code</h2><pre># 计算主成分系数矩阵 A
+A = np.zeros_like(eigenvectors)
+for i in range(len(eigenvectors)):  # 遍历每个主成分
+    A[:, i] = (np.sqrt(eigenvalues[i]) * eigenvectors[:, i]) / np.sqrt(sigma_jj)
+A
+</pre></article><article><h2>单元 27 · code</h2><pre>np.dot(X, A)</pre></article><article><h2>单元 28 · markdown</h2><pre>### 6.2.3 主成分的计算</pre></article><article><h2>单元 29 · markdown</h2><pre>1.主成分方差</pre></article><article><h2>单元 30 · code</h2><pre>from sklearn.decomposition import PCA
+pca = PCA(n_components=2).fit(X)         #拟合主成分
+Vi=pca.explained_variance_;Vi             #主成分方差
+#pd.DataFrame(pca.explained_variance_,index=[&#x27;PC1&#x27;,&#x27;PC2&#x27;])   #主成分方差</pre></article><article><h2>单元 31 · markdown</h2><pre>2.主成分系数</pre></article><article><h2>单元 32 · code</h2><pre>#DataFrame(pca.components_,columns=[&#x27;PC1&#x27;,&#x27;PC2&#x27;])        #主成分负荷
+pca.components_     #主成分负荷</pre></article><article><h2>单元 33 · code</h2><pre># 将主成分得分转换为 DataFrame
+scores = pd.DataFrame(pca.components_, index=X.columns, columns=[&#x27;PC1&#x27;, &#x27;PC2&#x27;])
+print(&quot;主成分得分:\n&quot;, scores)</pre></article><article><h2>单元 34 · markdown</h2><pre>3. 主成分系数及主成分得分的  &lt;big&gt;&lt;mark&gt;**分步计算**&lt;mark&gt;&lt;/big&gt;</pre></article><article><h2>单元 35 · code</h2><pre># 数据中心化
+x_var = np.var(X, axis=0)
+X_centered = (X - X_mean)
+print(&quot;中心化后的数据:\n&quot;, X_centered)</pre></article><article><h2>单元 36 · code</h2><pre># 计算协方差矩阵
+cov_matrix = np.cov(X_centered, rowvar=False)
+print(&quot;协方差矩阵:\n&quot;, cov_matrix)</pre></article><article><h2>单元 37 · code</h2><pre># 计算协方差矩阵的特征值和特征向量
+eigenvalues, eigenvectors = np.linalg.eig(cov_matrix)
+print(&quot;特征值:\n&quot;, eigenvalues)
+print(&quot;特征向量:\n&quot;, eigenvectors)
+</pre></article><article><h2>单元 38 · code</h2><pre># 将特征值从大到小排序
+sorted_indices = np.argsort(eigenvalues)[::-1]
+sorted_eigenvalues = eigenvalues[sorted_indices]
+sorted_eigenvectors = eigenvectors[:, sorted_indices]
+
+print(&quot;排序后的特征值:\n&quot;, sorted_eigenvalues)
+print(&quot;排序后的特征向量:\n&quot;, sorted_eigenvectors)</pre></article><article><h2>单元 39 · code</h2><pre># 选择前两个主成分
+n_components = 2
+selected_eigenvectors = sorted_eigenvectors[:, :n_components]
+print(&quot;选择的主成分:\n&quot;, selected_eigenvectors)</pre></article><article><h2>单元 40 · code</h2><pre># 将数据投影到主成分上 （未排序）
+X_pca = np.dot(X_centered, eigenvectors)
+print(&quot;投影后的数据:\n&quot;, X_pca)</pre></article><article><h2>单元 41 · code</h2><pre># 将数据投影到主成分上,即计算主成分得分
+X_pca = np.dot(X_centered, selected_eigenvectors)
+X_pca_df = pd.DataFrame(X_pca, columns=[&#x27;PC1&#x27;, &#x27;PC2&#x27;])
+print(&quot;投影后的数据:\n&quot;, X_pca_df)</pre></article><article><h2>单元 42 · code</h2><pre>X_pca_df.plot.scatter(x=&#x27;PC1&#x27;, y=&#x27;PC2&#x27;)
+plt.axhline(y=0, color=&#x27;blue&#x27;, linestyle=&#x27;:&#x27;)
+plt.axvline(x=0, color=&#x27;blue&#x27;, linestyle=&#x27;--&#x27;)</pre></article><article><h2>单元 43 · markdown</h2><pre>3.主成分得分</pre></article><article><h2>单元 44 · code</h2><pre>scores=pd.DataFrame(pca.fit_transform(X),columns=[&#x27;PC1&#x27;,&#x27;PC2&#x27;]);
+scores #主成分得分
+#scores=pca.fit_transform(X);scores #主成分得分</pre></article><article><h2>单元 45 · code</h2><pre>scores.plot(&#x27;PC1&#x27;,&#x27;PC2&#x27;,kind=&#x27;scatter&#x27;)           #绘制主成分得分散点图
+plt.axhline(y=0,ls=&quot;:&quot;);plt.axvline(x=0,ls=&quot;:&quot;); #添加水平和垂直直线</pre></article><article><h2>单元 46 · code</h2><pre>scores.corr().round(4)                  #主成分得分相关阵</pre></article><article><h2>单元 47 · code</h2><pre>scores.cov().round(4)                    #主成分得分协方差阵</pre></article><article><h2>单元 48 · markdown</h2><pre>4.方差贡献率</pre></article><article><h2>单元 49 · code</h2><pre>Wi=pca.explained_variance_ratio_;Wi   #方差贡献率 </pre></article><article><h2>单元 50 · code</h2><pre>Wi.sum()             #方差累计贡献率</pre></article><article><h2>单元 51 · code</h2><pre># 计算总方差
+total_variance = np.sum(sorted_eigenvalues)
+print(&quot;总方差:&quot;, total_variance)
+
+# 计算方差贡献率
+explained_variance_ratio = sorted_eigenvalues / total_variance
+print(&quot;方差贡献率:\n&quot;, explained_variance_ratio)
+print(&#x27;方差累积贡献率:\n&#x27;,explained_variance_ratio.sum())</pre></article><article><h2>单元 52 · code</h2><pre></pre></article><article><h2>单元 53 · markdown</h2><pre>## 6.3 主成分分析步骤
+### 6.3.1 计算过程</pre></article><article><h2>单元 54 · code</h2><pre>import numpy as np
+def PCscores(X,m=2): #主成分评价函数
+    from sklearn.decomposition import PCA
+    Z=(X-X.mean())/X.std() #数据标准化
+    p=Z.shape[1]
+    pca = PCA(n_components=p).fit(Z)
+    Vi=pca.explained_variance_;Vi   # 获取特征值(各主成分的方差)
+    Wi=pca.explained_variance_ratio_;Wi # 获取各主成分的方差贡献率
+    
+    # 创建方差相关的DataFrame
+    Vars=pd.DataFrame({&#x27;Variances&#x27;:Vi});Vars  #,index=X.columns
+    Vars.index=[&#x27;Comp%d&#x27; %(i+1) for i in range(p)]
+    Vars[&#x27;Explained&#x27;]=Wi*100;Vars
+    Vars[&#x27;Cumulative&#x27;]=np.cumsum(Wi)*100;
+    print(&quot;\n方差贡献:\n&quot;,round(Vars,4))
+    
+    # 提取前m个主成分的负荷矩阵
+    Compi=[&#x27;Comp%d&#x27; %(i+1) for i in range(m)]
+    loadings=pd.DataFrame(pca.components_[:m].T,columns=Compi,index=X.columns);
+    print(&quot;\n主成分负荷:\n&quot;,round(loadings,4))
+    
+    # 计算主成分得分
+    scores=pd.DataFrame(pca.fit_transform(Z)).iloc[:,:m];
+    scores.index=X.index; 
+    scores.columns=Compi;scores
+    
+    # 计算综合得分和排名
+    scores[&#x27;Comp&#x27;]=scores.dot(Wi[:m]);scores
+    scores[&#x27;Rank&#x27;]=scores.Comp.rank(ascending=False).astype(int);
+    return scores #print(&#x27;\n综合得分与排名:\n&#x27;,round(scores,4))</pre></article><article><h2>单元 55 · markdown</h2><pre>### 6.3.2 实证分析</pre></article><article><h2>单元 56 · code</h2><pre>d31=pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d31&#x27;,index_col=0)
+d31_pcs=PCscores(d31);print(d31_pcs)</pre></article><article><h2>单元 57 · code</h2><pre>d31=pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d31&#x27;,index_col=0); d31</pre></article><article><h2>单元 58 · code</h2><pre>d31_pcs=PCscores(d31);
+#print(d31_pcs)</pre></article><article><h2>单元 59 · code</h2><pre>print(d31_pcs.sort_values(&#x27;Rank&#x27;))</pre></article><article><h2>单元 60 · code</h2><pre>import matplotlib.pyplot as plt            
+plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;Heiti TC&#x27;];  #中文黑体SimHei
+plt.rcParams[&#x27;axes.unicode_minus&#x27;]=False; #正常显示图中正负号
+def Scoreplot(Scores): #自定得分图绘制函数
+    plt.plot(Scores.iloc[:,0],Scores.iloc[:,1],&#x27;*&#x27;); 
+    plt.xlabel(Scores.columns[0]);plt.ylabel(Scores.columns[1])
+    plt.axhline(y=0,ls=&#x27;:&#x27;);plt.axvline(x=0,ls=&#x27;:&#x27;)
+    for i in range(len(Scores)):
+        plt.text(Scores.iloc[i,0],Scores.iloc[i,1],Scores.index[i])</pre></article><article><h2>单元 61 · code</h2><pre>Scoreplot(d31_pcs)</pre></article><article><h2>单元 62 · markdown</h2><pre>## 6.4 主成分分析注意事项</pre></article><article><h2>单元 63 · markdown</h2><pre>## 案例6 电信业发展的主成分分析</pre></article><article><h2>单元 64 · code</h2><pre>Case6=pd.read_excel(&#x27;mvsCase.xlsx&#x27;,&#x27;Case6&#x27;,index_col=0); #Case6</pre></article><article><h2>单元 65 · code</h2><pre>plt.figure(figsize=(9,5))
+import scipy.cluster.hierarchy as sch
+Z=(Case6-Case6.mean())/Case6.std() #数据标准化
+D=sch.distance.pdist(Z)
+H=sch.linkage(D,method=&#x27;complete&#x27;);
+sch.dendrogram(H,labels=Case6.index); #绘制系统聚类图</pre></article><article><h2>单元 66 · code</h2><pre>level4 = pd.DataFrame(sch.cut_tree(H), index= Case6.index)[17]+1
+level3 = pd.DataFrame(sch.cut_tree(H), index= Case6.index)[18]+1
+level2 = pd.DataFrame(sch.cut_tree(H), index= Case6.index)[19]+1
+
+class_41 = level4[level4 == 1].index.tolist()
+class_42 = level4[level4 == 2].index.tolist()
+class_43 = level4[level4 == 3].index.tolist()
+class_44 = level4[level4 == 4].index.tolist()
+
+# 创建一个字典来存储分类结果
+data4 = {
+    &#x27;第1类&#x27;: [class_41],
+    &#x27;第2类&#x27;: [class_42],
+    &#x27;第3类&#x27;: [class_43],
+    &#x27;第4类&#x27;: [class_44]
+}
+# 将字典转换为 DataFrame
+class4_df = pd.DataFrame(data4)
+class4_df
+
+class_31 = level3[level3 == 1].index.tolist()
+class_32 = level3[level3 == 2].index.tolist()
+class_33 = level3[level3 == 3].index.tolist()
+
+# 创建一个字典来存储分类结果
+data3 = {
+    &#x27;第1类&#x27;: [class_31],
+    &#x27;第2类&#x27;: [class_32],
+    &#x27;第3类&#x27;: [class_33]
+}
+# 将字典转换为 DataFrame
+class3_df = pd.DataFrame(data3)
+
+class_21 = level2[level2 == 1].index.tolist()
+class_22 = level2[level2 == 2].index.tolist()
+# 创建一个字典来存储分类结果
+data2 = {
+    &#x27;第1类&#x27;: [class_21],
+    &#x27;第2类&#x27;: [class_22]
+}
+# 将字典转换为 DataFrame
+class2_df = pd.DataFrame(data2)</pre></article><article><h2>单元 67 · code</h2><pre>print(&quot;分2类：\n&quot;,class2_df.T)
+print(&quot;分3类：\n&quot;,class3_df.T)
+print(&quot;分4类：\n&quot;,class4_df.T)</pre></article><article><h2>单元 68 · code</h2><pre>Case6_pcs=PCscores(Case6);Case6_pcs    #主成分分析</pre></article><article><h2>单元 69 · code</h2><pre>Scoreplot(Case6_pcs)</pre></article><article><h2>单元 70 · code</h2><pre></pre></article></html>

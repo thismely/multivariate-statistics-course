@@ -1,0 +1,373 @@
+{
+  "resource": {
+    "id": "ppt02",
+    "title": "第2章 多元数据的Python处理",
+    "kind": "ppt",
+    "source_path": "PPT/第2章 多元数据的Python处理.pptx",
+    "sha256": "9379c202f2cbdd8a81bc701cae167786b7ade416e463bcf74571aaac6ad3a7aa",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt02.json"
+  },
+  "units": [
+    {
+      "locator": "PPT 第 1 页",
+      "index": 1,
+      "text": "第 2 章 多元数据的 Python 处理 多元统计分析及 Python 建模    ",
+      "images": 0
+    },
+    {
+      "locator": "PPT 第 2 页",
+      "index": 2,
+      "text": "多元统计分析及 Python 建模 2 多元数据的数学表达及Python使用",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 3 页",
+      "index": 3,
+      "text": "多元统计分析及 Python 建模 2 多元数据的数学表达及Python使用",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 4 页",
+      "index": 4,
+      "text": "2.1.1 Python 的数据类型 2.1 Python 的编程基础 2   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 5 页",
+      "index": 5,
+      "text": "2.1.1 Python 的数据类型 2.1 Python 的编程基础 2   多元数据的  Python  处理",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 6 页",
+      "index": 6,
+      "text": "2.1.1 Python 的数据类型 2.1 Python 的编程基础 2   多元数据的 Python 处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 7 页",
+      "index": 7,
+      "text": "2.1.1 Python 的数据类型 2.1 Python 的编程基础 2   多元数据的  Python  处理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 8 页",
+      "index": 8,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础 （3）字符型",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 9 页",
+      "index": 9,
+      "text": "2   多元数据的  Python  处理 2.1.1 Python 的数据类型 2.1 Python 的编程基础",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 10 页",
+      "index": 10,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础 （ 1 ）列表",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 11 页",
+      "index": 11,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 12 页",
+      "index": 12,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础 （ 2 ）字典",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 13 页",
+      "index": 13,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础 2.1.2 运算符及控制语句",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 14 页",
+      "index": 14,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 15 页",
+      "index": 15,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础 2.1.3 Python 函数的使用",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 16 页",
+      "index": 16,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 17 页",
+      "index": 17,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 18 页",
+      "index": 18,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础",
+      "images": 4
+    },
+    {
+      "locator": "PPT 第 19 页",
+      "index": 19,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础",
+      "images": 4
+    },
+    {
+      "locator": "PPT 第 20 页",
+      "index": 20,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 21 页",
+      "index": 21,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 22 页",
+      "index": 22,
+      "text": "2   多元数据的  Python  处理 2.1 Python 的编程基础",
+      "images": 4
+    },
+    {
+      "locator": "PPT 第 23 页",
+      "index": 23,
+      "text": "2   多元数据的  Python  处理 2.2 Python 数值分析",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 24 页",
+      "index": 24,
+      "text": "2   多元数据的  Python  处理 2.2 Python 数值分析",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 25 页",
+      "index": 25,
+      "text": "2   多元数据的  Python  处理 2.2 Python 数值分析",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 26 页",
+      "index": 26,
+      "text": "2   多元数据的  Python  处理 2.2 Python 数值分析",
+      "images": 5
+    },
+    {
+      "locator": "PPT 第 27 页",
+      "index": 27,
+      "text": "2   多元数据的  Python  处理 2.3 多元数据的收集和整理",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 28 页",
+      "index": 28,
+      "text": "2   多元数据的  Python  处理 2.3 多元数据的收集和整理",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 29 页",
+      "index": 29,
+      "text": "2   多元数据的  Python  处理 2.3 多元数据的收集和整理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 30 页",
+      "index": 30,
+      "text": "2   多元数据的  Python  处理 2.3 多元数据的收集和整理",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 31 页",
+      "index": 31,
+      "text": "2   多元数据的  Python  处理 2.3 多元数据的收集和整理      目前从数据管理和编辑方便来说，最好的软件应该是微软的 Excel，大量的数据可以在一个 Excel 工作薄中保存，所以本书采用该方法来管理和编辑数据。下图是保存该例子的Excel 工作薄（文件名为 mvsData.xlsx，表 d21 中为原始数据）。      为了简化分析，下面的分析只考虑：性别、年龄、资金规模、风险意识、是否专兼职和投资结果共六个变量进行分析，其中性别、风险意识、是否专兼职和投资结果为定性变量，年龄和资金规模为定量变量。",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 32 页",
+      "index": 32,
+      "text": "2   多元数据的  Python  处理 2.4 Python 的数据框",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 33 页",
+      "index": 33,
+      "text": "2   多元数据的  Python  处理 2.4 Python 的数据框",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 34 页",
+      "index": 34,
+      "text": "2   多元数据的  Python  处理 2.4 Python 的数据框",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 35 页",
+      "index": 35,
+      "text": "2   多元数据的  Python  处理 2.4 Python 的数据框 2. 从电子表格读取      前面我们说过，最好的数据管理和编辑软件是 ExcelWPS）类电子表格，多个数据可以保存在一个电子表格的数据表（sheet）中，如果想直接读取 Excel 中的多个表格，可用pandas 的 read_excel 函数。",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 36 页",
+      "index": 36,
+      "text": "2   多元数据的  Python  处理 2.4 Python 的数据框",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 37 页",
+      "index": 37,
+      "text": "2   多元数据的  Python  处理 2.4 Python 的数据框",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 38 页",
+      "index": 38,
+      "text": "2   多元数据的  Python  处理 2.4 Python 的数据框",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 39 页",
+      "index": 39,
+      "text": "2   多元数据的  Python  处理 2.4 Python 的数据框",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 40 页",
+      "index": 40,
+      "text": "2   多元数据的  Python  处理 2.4 Python 的数据框",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 41 页",
+      "index": 41,
+      "text": "2   多元数据的  Python  处理 2.4 Python 的数据框",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 42 页",
+      "index": 42,
+      "text": "2   多元数据的  Python  处理 2.4 Python 的数据框",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 43 页",
+      "index": 43,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 44 页",
+      "index": 44,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 45 页",
+      "index": 45,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 46 页",
+      "index": 46,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 47 页",
+      "index": 47,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 48 页",
+      "index": 48,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 49 页",
+      "index": 49,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 50 页",
+      "index": 50,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 51 页",
+      "index": 51,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 52 页",
+      "index": 52,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 53 页",
+      "index": 53,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 54 页",
+      "index": 54,
+      "text": "2   多元数据的  Python  处理 2.5 Python 数据框的分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 55 页",
+      "index": 55,
+      "text": "2   多元数据的  Python  处理 案例 2： 多元数据的基本统计分析",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 56 页",
+      "index": 56,
+      "text": "2   多元数据的  Python  处理 案例 2： 多元数据的基本统计分析",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 57 页",
+      "index": 57,
+      "text": "2   多元数据的  Python  处理 案例 2： 多元数据的基本统计分析",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 58 页",
+      "index": 58,
+      "text": "2   多元数据的  Python  处理 案例 2： 多元数据的基本统计分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 59 页",
+      "index": 59,
+      "text": "2   多元数据的  Python  处理 案例 2： 多元数据的基本统计分析",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 60 页",
+      "index": 60,
+      "text": "2   多元数据的  Python  处理 案例 2： 多元数据的基本统计分析",
+      "images": 1
+    }
+  ]
+}

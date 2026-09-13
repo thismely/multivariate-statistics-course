@@ -1,0 +1,9 @@
+field,dtype,description,unit,role
+row_category,string,列联表行类别，使用匿名合成类别名,category,index
+profile_A,int,列联表中的模拟频数,synthetic count,input
+profile_B,int,列联表中的模拟频数,synthetic count,input
+profile_C,int,列联表中的模拟频数,synthetic count,input
+profile_D,int,列联表中的模拟频数,synthetic count,input
+profile_E,int,列联表中的模拟频数,synthetic count,input
+dim_1,float,基于 SVD 的行或列坐标第一维,coordinate,derived
+dim_2,float,基于 SVD 的行或列坐标第二维,coordinate,derived

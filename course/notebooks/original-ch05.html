@@ -1,0 +1,95 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px/1.8 system-ui;max-width:960px;margin:24px auto;padding:20px;color:#192b3b}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:20px}article{border-bottom:1px solid #ccc}h2{font-size:18px}</style><h1>第5章 原课程 Notebook（阅读参考）</h1><p>已移除运行输出、身份元数据与本机路径。历史依赖及数据文件尚未全部适配；请使用同章可重跑教学实验。</p><article><h2>单元 1 · code</h2><pre>import pandas as pd
+import numpy as np
+
+import matplotlib.pyplot as plt              #加载基本绘图包
+plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;Heiti TC&#x27;];  #设置中文字体为黑体
+
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = &quot;all&quot;</pre></article><article><h2>单元 2 · code</h2><pre># 读取数据
+epu = pd.read_excel(f&#x27;All_Country_Data.xlsx&#x27;)
+
+epu[&#x27;DATE&#x27;] = pd.to_datetime(epu[[&#x27;Year&#x27;, &#x27;Month&#x27;]].assign(DAY=1))
+epu.set_index(&#x27;DATE&#x27;, inplace=True)
+epu.index = pd.to_datetime(epu.index,format=&#x27;%Y%m%d&#x27;)
+epu = epu.loc[&#x27;2000-01-01&#x27;:]</pre></article><article><h2>单元 3 · code</h2><pre>index_df = pd.read_excel(&#x27;上证和科创综指.xls&#x27;)
+index_pivot = index_df.pivot_table(columns= &#x27;指数名称_IdxNm&#x27;, index=&#x27;交易日期_TrdDt&#x27;, values=&#x27;收盘价(元/点)_ClPr&#x27;)
+SH_index = index_pivot[&#x27;上证指数&#x27;]
+SH_index.index = pd.to_datetime(SH_index.index,format=&#x27;%Y%m%d&#x27;)
+SH_index = SH_index.loc[&#x27;2000-01-01&#x27;:]</pre></article><article><h2>单元 4 · code</h2><pre>epu_china = epu[&#x27;Mainland China&#x27;];print(f&#x27;&#x27;&#x27;epu_china描述性统计: 
+                                        {epu_china.describe()}&#x27;&#x27;&#x27;)</pre></article><article><h2>单元 5 · code</h2><pre>def standardize(x):
+    mean = x.mean()
+    std = x.std()
+    standardized_series = (x - mean) / std
+    return standardized_series
+def normalize(x): 
+    z=(x-x.min())/(x.max()-x.min())*600
+    return(z)
+def normalize_300(x): 
+    z=(x-x.min())/(x.max()-x.min())*600+300
+    return(z)</pre></article><article><h2>单元 6 · code</h2><pre>epu_china_standardized = standardize(epu_china);
+epu_china_normalized = normalize(epu_china);
+epu_china_normalized_300 = normalize_300(epu_china);</pre></article><article><h2>单元 7 · code</h2><pre>fig, axs = plt.subplots(2, 2, figsize=(14, 10));
+
+axs[0, 0].plot(epu_china_standardized, label=&#x27;标准化&#x27;);
+axs[0, 0].set_title(&#x27;中国政治经济不确定性指数 (标准化)&#x27;);
+axs[0, 0].set_xlabel(&#x27;日期&#x27;);
+axs[0, 0].set_ylabel(&#x27;标准化指数值&#x27;);
+
+axs[0, 1].plot(epu_china_normalized, label=&#x27;归一化&#x27;);
+axs[0, 1].set_title(&#x27;中国政治经济不确定性指数 (归一化)&#x27;);
+axs[0, 1].set_xlabel(&#x27;日期&#x27;);
+axs[0, 1].set_ylabel(&#x27;标准化指数值&#x27;);
+
+axs[1, 0].plot(epu_china_normalized_300, label=&#x27;归一化后纵轴+300&#x27;);
+axs[1, 0].set_title(&#x27;中国政治经济不确定性指数 (归一化后纵轴+300)&#x27;);
+axs[1, 0].set_xlabel(&#x27;日期&#x27;);
+axs[1, 0].set_ylabel(&#x27;标准化指数值&#x27;);
+
+# 隐藏右下角的子图
+axs[1, 1].axis(&#x27;off&#x27;);
+
+# 调整布局
+plt.tight_layout();
+plt.show();</pre></article><article><h2>单元 8 · code</h2><pre># 绘制图形
+plt.figure(figsize=(12, 6))
+plt.plot(SH_index, label=&#x27;上证指数&#x27;)
+plt.plot(epu_china, label=&#x27;政策不确定性指数&#x27;)
+plt.xlabel(&#x27;日期&#x27;)
+plt.ylabel(&#x27;指数值&#x27;)
+plt.title(&#x27;上证指数与政策不确定性指数趋势对比&#x27;)
+plt.legend()
+plt.show()</pre></article><article><h2>单元 9 · code</h2><pre># 绘制图形
+plt.figure(figsize=(12, 6));
+plt.plot(SH_index_n, label=&#x27;上证指数&#x27;);
+plt.plot(epu_china, label=&#x27;政策不确定性指数&#x27;);
+plt.xlabel(&#x27;日期&#x27;);
+plt.ylabel(&#x27;指数值&#x27;);
+plt.title(&#x27;上证指数与政策不确定性指数趋势对比&#x27;);
+plt.legend();
+plt.show();</pre></article><article><h2>单元 10 · code</h2><pre>SH_index_ret = SH_index.pct_change();SH_index_ret
+plt.figure(figsize=(12, 6));
+plt.plot(SH_index_ret, label=&#x27;上证指数收益率&#x27;);
+plt.xlabel(&#x27;日期&#x27;);
+plt.ylabel(&#x27;收益率&#x27;);
+plt.title(&#x27;上证指数收益率&#x27;);
+plt.legend();
+plt.show();</pre></article><article><h2>单元 11 · code</h2><pre>plt.figure(figsize=(12, 6));
+plt.plot(SH_index_ret, label=&#x27;上证指数收益率&#x27;);
+plt.plot(epu_china, label=&#x27;政策不确定性指数&#x27;);
+plt.xlabel(&#x27;日期&#x27;);
+plt.ylabel(&#x27;指数值&#x27;);
+plt.title(&#x27;上证指数与政策不确定性指数趋势对比&#x27;);
+plt.legend();
+plt.show();</pre></article><article><h2>单元 12 · code</h2><pre>epu_china_diff = epu_china.pct_change();epu_china_diff
+def normalize_01(x): 
+    z=(x-x.min())/(x.max()-x.min())*0.5
+    return(z)
+
+epu_china_diff_norm = normalize_01(epu_china_diff);epu_china_diff_norm</pre></article><article><h2>单元 13 · code</h2><pre>plt.figure(figsize=(12, 6));
+plt.plot(SH_index_ret, label=&#x27;上证指数收益率&#x27;);
+plt.plot(epu_china_diff_norm, label=&#x27;政策不确定性指数变化率&#x27;);
+plt.xlabel(&#x27;日期&#x27;);
+plt.ylabel(&#x27;指数值&#x27;);
+plt.title(&#x27;上证指数与政策不确定性指数趋势对比&#x27;);
+plt.legend();
+plt.show();</pre></article></html>

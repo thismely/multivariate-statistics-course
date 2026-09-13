@@ -1,0 +1,11 @@
+field,dtype,description,unit,role
+input_1,float,X 变量组的模拟指标 1,synthetic unit,X block
+input_2,float,X 变量组的模拟指标 2,synthetic unit,X block
+input_3,float,X 变量组的模拟指标 3,synthetic unit,X block
+input_4,float,X 变量组的模拟指标 4,synthetic unit,X block
+outcome_1,float,Y 变量组的模拟指标 1,synthetic unit,Y block
+outcome_2,float,Y 变量组的模拟指标 2,synthetic unit,Y block
+outcome_3,float,Y 变量组的模拟指标 3,synthetic unit,Y block
+canonical_pair,int,典型变量配对编号,1 or 2,derived
+train_abs_correlation,float,训练集典型相关绝对值,0 to 1,validation output
+test_abs_correlation,float,测试集典型相关绝对值,0 to 1,validation output

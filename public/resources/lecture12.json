@@ -1,0 +1,9013 @@
+{
+  "resource": {
+    "id": "lecture12",
+    "title": "第12章_判别分析及Python算法_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第12章_判别分析及Python算法_完整讲义.md",
+    "sha256": "2be3abbfcf628409b1015613d8ffdc9d42cba816b5ed223ea78a9df58b10a5e6",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture12.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "讲义 L1",
+      "text": "# 第12章 判别分析及Python算法"
+    },
+    {
+      "index": 2,
+      "locator": "讲义 L2",
+      "text": ""
+    },
+    {
+      "index": 3,
+      "locator": "讲义 L3",
+      "text": "## 模块一：精准教学大纲"
+    },
+    {
+      "index": 4,
+      "locator": "讲义 L4",
+      "text": ""
+    },
+    {
+      "index": 5,
+      "locator": "讲义 L5",
+      "text": "### 一、教学目标"
+    },
+    {
+      "index": 6,
+      "locator": "讲义 L6",
+      "text": ""
+    },
+    {
+      "index": 7,
+      "locator": "讲义 L7",
+      "text": "1. **判别分析概念**：理解判别分析是有监督的分类方法，区分Fisher判别、Bayes判别和距离判别三种方法。"
+    },
+    {
+      "index": 8,
+      "locator": "讲义 L8",
+      "text": "2. **Fisher判别法**：掌握Fisher准则函数 $J(a) = a^TBa / a^TWa$ 的推导，理解判别系数 $a = W^{-1}(\\bar{X}_1 - \\bar{X}_2)$ 的求解过程。"
+    },
+    {
+      "index": 9,
+      "locator": "讲义 L9",
+      "text": "3. **Bayes判别法**：掌握先验概率与后验概率的概念，理解正态总体下线性判别函数和二次判别函数的区别。"
+    },
+    {
+      "index": 10,
+      "locator": "讲义 L10",
+      "text": "4. **判别效果评价**：掌握混淆矩阵、准确率、精确率、召回率、F1值、ROC曲线和AUC的计算。"
+    },
+    {
+      "index": 11,
+      "locator": "讲义 L11",
+      "text": "5. **Python实操**：能够使用sklearn.discriminant_analysis进行LDA和QDA。"
+    },
+    {
+      "index": 12,
+      "locator": "讲义 L12",
+      "text": ""
+    },
+    {
+      "index": 13,
+      "locator": "讲义 L13",
+      "text": "### 二、建议学时"
+    },
+    {
+      "index": 14,
+      "locator": "讲义 L14",
+      "text": ""
+    },
+    {
+      "index": 15,
+      "locator": "讲义 L15",
+      "text": "| 内容 | 学时 | 教学方式 |"
+    },
+    {
+      "index": 16,
+      "locator": "讲义 L16",
+      "text": "|------|------|----------|"
+    },
+    {
+      "index": 17,
+      "locator": "讲义 L17",
+      "text": "| 12.1 判别分析的概念 | 0.5 | 讲授 |"
+    },
+    {
+      "index": 18,
+      "locator": "讲义 L18",
+      "text": "| 12.2 Fisher判别法 | 2 | 讲授+推导 |"
+    },
+    {
+      "index": 19,
+      "locator": "讲义 L19",
+      "text": "| 12.3 Bayes判别法 | 2 | 讲授+推导 |"
+    },
+    {
+      "index": 20,
+      "locator": "讲义 L20",
+      "text": "| 12.4 判别效果评价 | 1 | 讲授+案例 |"
+    },
+    {
+      "index": 21,
+      "locator": "讲义 L21",
+      "text": "| **合计** | **5.5** | |"
+    },
+    {
+      "index": 22,
+      "locator": "讲义 L22",
+      "text": ""
+    },
+    {
+      "index": 23,
+      "locator": "讲义 L23",
+      "text": "### 三、重点与难点"
+    },
+    {
+      "index": 24,
+      "locator": "讲义 L24",
+      "text": ""
+    },
+    {
+      "index": 25,
+      "locator": "讲义 L25",
+      "text": "**重点**："
+    },
+    {
+      "index": 26,
+      "locator": "讲义 L26",
+      "text": "- Fisher准则函数的推导与物理意义"
+    },
+    {
+      "index": 27,
+      "locator": "讲义 L27",
+      "text": "- Bayes后验概率的计算方法"
+    },
+    {
+      "index": 28,
+      "locator": "讲义 L28",
+      "text": "- 判别系数的解释与应用"
+    },
+    {
+      "index": 29,
+      "locator": "讲义 L29",
+      "text": "- 混淆矩阵各元素的含义"
+    },
+    {
+      "index": 30,
+      "locator": "讲义 L30",
+      "text": ""
+    },
+    {
+      "index": 31,
+      "locator": "讲义 L31",
+      "text": "**难点**："
+    },
+    {
+      "index": 32,
+      "locator": "讲义 L32",
+      "text": "- Fisher判别系数的矩阵求解过程"
+    },
+    {
+      "index": 33,
+      "locator": "讲义 L33",
+      "text": "- 二次判别函数（QDA）的理解"
+    },
+    {
+      "index": 34,
+      "locator": "讲义 L34",
+      "text": "- 多分类情形下的判别扩展"
+    },
+    {
+      "index": 35,
+      "locator": "讲义 L35",
+      "text": "- 判别效果的综合评价方法"
+    },
+    {
+      "index": 36,
+      "locator": "讲义 L36",
+      "text": ""
+    },
+    {
+      "index": 37,
+      "locator": "讲义 L37",
+      "text": "### 四、前置知识"
+    },
+    {
+      "index": 38,
+      "locator": "讲义 L38",
+      "text": ""
+    },
+    {
+      "index": 39,
+      "locator": "讲义 L39",
+      "text": "| 前置知识 | 是否已出现 | 处理方式 |"
+    },
+    {
+      "index": 40,
+      "locator": "讲义 L40",
+      "text": "|----------|-----------|----------|"
+    },
+    {
+      "index": 41,
+      "locator": "讲义 L41",
+      "text": "| 矩阵运算 | 是（第1章） | 直接引用 |"
+    },
+    {
+      "index": 42,
+      "locator": "讲义 L42",
+      "text": "| 概率论（条件概率、贝叶斯） | 是（第1章） | 直接引用 |"
+    },
+    {
+      "index": 43,
+      "locator": "讲义 L43",
+      "text": "| 多元正态分布 | 是（第1章） | 直接引用 |"
+    },
+    {
+      "index": 44,
+      "locator": "讲义 L44",
+      "text": "| 协方差矩阵 | 是（第1章） | 直接引用 |"
+    },
+    {
+      "index": 45,
+      "locator": "讲义 L45",
+      "text": "| 特征值与特征向量 | 是（第1章） | 直接引用 |"
+    },
+    {
+      "index": 46,
+      "locator": "讲义 L46",
+      "text": ""
+    },
+    {
+      "index": 47,
+      "locator": "讲义 L47",
+      "text": "### 五、知识地图"
+    },
+    {
+      "index": 48,
+      "locator": "讲义 L48",
+      "text": ""
+    },
+    {
+      "index": 49,
+      "locator": "讲义 L49",
+      "text": "判别分析是多元统计分析中分类方法的核心内容。本章将系统介绍三种主要判别方法："
+    },
+    {
+      "index": 50,
+      "locator": "讲义 L50",
+      "text": ""
+    },
+    {
+      "index": 51,
+      "locator": "讲义 L51",
+      "text": "1. **Fisher判别法**：基于投影思想，将高维数据投影到一维，使组间差异最大化、组内差异最小化。"
+    },
+    {
+      "index": 52,
+      "locator": "讲义 L52",
+      "text": "2. **Bayes判别法**：基于概率框架，利用先验概率和条件概率计算后验概率，实现最优分类。"
+    },
+    {
+      "index": 53,
+      "locator": "讲义 L53",
+      "text": "3. **距离判别法**：基于距离度量，将新样品判入距离最近的类别。"
+    },
+    {
+      "index": 54,
+      "locator": "讲义 L54",
+      "text": ""
+    },
+    {
+      "index": 55,
+      "locator": "讲义 L55",
+      "text": "三种方法各有优势：Fisher判别直观稳健、Bayes判别理论最优、距离判别简单易懂。"
+    },
+    {
+      "index": 56,
+      "locator": "讲义 L56",
+      "text": ""
+    },
+    {
+      "index": 57,
+      "locator": "讲义 L57",
+      "text": "---"
+    },
+    {
+      "index": 58,
+      "locator": "讲义 L58",
+      "text": ""
+    },
+    {
+      "index": 59,
+      "locator": "讲义 L59",
+      "text": "## 模块二：沉浸式理论讲解"
+    },
+    {
+      "index": 60,
+      "locator": "讲义 L60",
+      "text": ""
+    },
+    {
+      "index": 61,
+      "locator": "讲义 L61",
+      "text": "### 12.1 判别分析的概念"
+    },
+    {
+      "index": 62,
+      "locator": "讲义 L62",
+      "text": ""
+    },
+    {
+      "index": 63,
+      "locator": "讲义 L63",
+      "text": "#### 12.1.1 什么是判别分析？"
+    },
+    {
+      "index": 64,
+      "locator": "讲义 L64",
+      "text": ""
+    },
+    {
+      "index": 65,
+      "locator": "讲义 L65",
+      "text": "**【业务场景引入】**"
+    },
+    {
+      "index": 66,
+      "locator": "讲义 L66",
+      "text": ""
+    },
+    {
+      "index": 67,
+      "locator": "讲义 L67",
+      "text": "某商业银行需要根据客户的财务指标（收入、负债率、信用评分等）判断其信用等级（优、良、差）。已有1000名已知信用等级的客户数据，需要建立判别规则，对新客户进行自动分类。"
+    },
+    {
+      "index": 68,
+      "locator": "讲义 L68",
+      "text": ""
+    },
+    {
+      "index": 69,
+      "locator": "讲义 L69",
+      "text": "**判别分析**正是解决这类问题的工具：**根据已知类别的训练样本建立判别准则，对未知类别的新样品进行分类归组**。"
+    },
+    {
+      "index": 70,
+      "locator": "讲义 L70",
+      "text": ""
+    },
+    {
+      "index": 71,
+      "locator": "讲义 L71",
+      "text": "**判别分析的数学定义**："
+    },
+    {
+      "index": 72,
+      "locator": "讲义 L72",
+      "text": ""
+    },
+    {
+      "index": 73,
+      "locator": "讲义 L73",
+      "text": "设总体 $G_1, G_2, \\ldots, G_k$ 是 $k$ 个已知类别，每个类别有 $p$ 个特征变量。已知来自各类别的训练样本："
+    },
+    {
+      "index": 74,
+      "locator": "讲义 L74",
+      "text": ""
+    },
+    {
+      "index": 75,
+      "locator": "讲义 L75",
+      "text": "$$"
+    },
+    {
+      "index": 76,
+      "locator": "讲义 L76",
+      "text": "X^{(k)} = \\{X_1^{(k)}, X_2^{(k)}, \\ldots, X_{n_k}^{(k)}\\}, \\quad k = 1, 2, \\ldots, K"
+    },
+    {
+      "index": 77,
+      "locator": "讲义 L77",
+      "text": "$$"
+    },
+    {
+      "index": 78,
+      "locator": "讲义 L78",
+      "text": ""
+    },
+    {
+      "index": 79,
+      "locator": "讲义 L79",
+      "text": "判别分析的目标是找到判别函数 $\\delta(X)$，使得对新样品 $X_0$，根据 $\\delta(X_0)$ 的值决定其归属。"
+    },
+    {
+      "index": 80,
+      "locator": "讲义 L80",
+      "text": ""
+    },
+    {
+      "index": 81,
+      "locator": "讲义 L81",
+      "text": "**判别分析与聚类分析的区别**："
+    },
+    {
+      "index": 82,
+      "locator": "讲义 L82",
+      "text": ""
+    },
+    {
+      "index": 83,
+      "locator": "讲义 L83",
+      "text": "| 维度 | 判别分析 | 聚类分析 |"
+    },
+    {
+      "index": 84,
+      "locator": "讲义 L84",
+      "text": "|------|----------|----------|"
+    },
+    {
+      "index": 85,
+      "locator": "讲义 L85",
+      "text": "| 学习类型 | 有监督 | 无监督 |"
+    },
+    {
+      "index": 86,
+      "locator": "讲义 L86",
+      "text": "| 是否需要标签 | 需要 | 不需要 |"
+    },
+    {
+      "index": 87,
+      "locator": "讲义 L87",
+      "text": "| 目标 | 建立分类规则 | 发现数据结构 |"
+    },
+    {
+      "index": 88,
+      "locator": "讲义 L88",
+      "text": "| 输入 | 已标签训练数据 | 未标签数据 |"
+    },
+    {
+      "index": 89,
+      "locator": "讲义 L89",
+      "text": "| 输出 | 判别函数/规则 | 簇标签 |"
+    },
+    {
+      "index": 90,
+      "locator": "讲义 L90",
+      "text": "| 评价方式 | 准确率、AUC等 | 轮廓系数等 |"
+    },
+    {
+      "index": 91,
+      "locator": "讲义 L91",
+      "text": ""
+    },
+    {
+      "index": 92,
+      "locator": "讲义 L92",
+      "text": "**判别分析的适用条件**："
+    },
+    {
+      "index": 93,
+      "locator": "讲义 L93",
+      "text": ""
+    },
+    {
+      "index": 94,
+      "locator": "讲义 L94",
+      "text": "1. 各总体的分布已知（或可估计）"
+    },
+    {
+      "index": 95,
+      "locator": "讲义 L95",
+      "text": "2. 有足够的训练样本"
+    },
+    {
+      "index": 96,
+      "locator": "讲义 L96",
+      "text": "3. 特征变量之间不存在完全共线性"
+    },
+    {
+      "index": 97,
+      "locator": "讲义 L97",
+      "text": "4. 各总体的协方差矩阵可逆"
+    },
+    {
+      "index": 98,
+      "locator": "讲义 L98",
+      "text": ""
+    },
+    {
+      "index": 99,
+      "locator": "讲义 L99",
+      "text": "#### 12.1.2 判别方法的种类"
+    },
+    {
+      "index": 100,
+      "locator": "讲义 L100",
+      "text": ""
+    },
+    {
+      "index": 101,
+      "locator": "讲义 L101",
+      "text": "| 方法 | 核心思想 | 需要分布假设 | 特点 |"
+    },
+    {
+      "index": 102,
+      "locator": "讲义 L102",
+      "text": "|------|----------|-------------|------|"
+    },
+    {
+      "index": 103,
+      "locator": "讲义 L103",
+      "text": "| Fisher判别 | 投影使两组最分开 | 不需要 | 直观、稳健 |"
+    },
+    {
+      "index": 104,
+      "locator": "讲义 L104",
+      "text": "| Bayes判别 | 后验概率最大化 | 需要（通常正态） | 理论最优 |"
+    },
+    {
+      "index": 105,
+      "locator": "讲义 L105",
+      "text": "| 距离判别 | 马氏距离最近 | 不需要 | 直观简单 |"
+    },
+    {
+      "index": 106,
+      "locator": "讲义 L106",
+      "text": "| Logistic判别 | 最大似然估计 | 不需要 | 适合二分类 |"
+    },
+    {
+      "index": 107,
+      "locator": "讲义 L107",
+      "text": ""
+    },
+    {
+      "index": 108,
+      "locator": "讲义 L108",
+      "text": "#### 12.1.3 判别分析的应用领域"
+    },
+    {
+      "index": 109,
+      "locator": "讲义 L109",
+      "text": ""
+    },
+    {
+      "index": 110,
+      "locator": "讲义 L110",
+      "text": "判别分析在实际中有广泛的应用："
+    },
+    {
+      "index": 111,
+      "locator": "讲义 L111",
+      "text": ""
+    },
+    {
+      "index": 112,
+      "locator": "讲义 L112",
+      "text": "1. **医学诊断**：根据化验指标判断患者是否患病"
+    },
+    {
+      "index": 113,
+      "locator": "讲义 L113",
+      "text": "2. **信用评分**：根据财务指标判断信用等级"
+    },
+    {
+      "index": 114,
+      "locator": "讲义 L114",
+      "text": "3. **模式识别**：手写数字识别、人脸识别"
+    },
+    {
+      "index": 115,
+      "locator": "讲义 L115",
+      "text": "4. **质量控制**：根据产品指标判断是否合格"
+    },
+    {
+      "index": 116,
+      "locator": "讲义 L116",
+      "text": "5. **市场细分**：根据消费行为判断客户类型"
+    },
+    {
+      "index": 117,
+      "locator": "讲义 L117",
+      "text": "6. **地质勘探**：根据地球物理指标判断地质类型"
+    },
+    {
+      "index": 118,
+      "locator": "讲义 L118",
+      "text": ""
+    },
+    {
+      "index": 119,
+      "locator": "讲义 L119",
+      "text": "---"
+    },
+    {
+      "index": 120,
+      "locator": "讲义 L120",
+      "text": ""
+    },
+    {
+      "index": 121,
+      "locator": "讲义 L121",
+      "text": "### 12.2 Fisher判别法"
+    },
+    {
+      "index": 122,
+      "locator": "讲义 L122",
+      "text": ""
+    },
+    {
+      "index": 123,
+      "locator": "讲义 L123",
+      "text": "#### 12.2.1 Fisher判别的核心思想"
+    },
+    {
+      "index": 124,
+      "locator": "讲义 L124",
+      "text": ""
+    },
+    {
+      "index": 125,
+      "locator": "讲义 L125",
+      "text": "**目标**：找到投影方向 $a$，使投影后的两组数据 $u_1 = a^T X_1$ 和 $u_2 = a^T X_2$ 尽可能分开。"
+    },
+    {
+      "index": 126,
+      "locator": "讲义 L126",
+      "text": ""
+    },
+    {
+      "index": 127,
+      "locator": "讲义 L127",
+      "text": "**直观理解**："
+    },
+    {
+      "index": 128,
+      "locator": "讲义 L128",
+      "text": ""
+    },
+    {
+      "index": 129,
+      "locator": "讲义 L129",
+      "text": "想象有两团点云分布在二维空间中。Fisher判别就是要找到一个方向，将这两团点云投影到这个方向上后，它们之间的距离尽可能大，而每团点云内部的散度尽可能小。"
+    },
+    {
+      "index": 130,
+      "locator": "讲义 L130",
+      "text": ""
+    },
+    {
+      "index": 131,
+      "locator": "讲义 L131",
+      "text": "**数学表述**："
+    },
+    {
+      "index": 132,
+      "locator": "讲义 L132",
+      "text": ""
+    },
+    {
+      "index": 133,
+      "locator": "讲义 L133",
+      "text": "设两组数据分别为 $G_1 = \\{X_1^{(1)}, \\ldots, X_{n_1}^{(1)}\\}$ 和 $G_2 = \\{X_1^{(2)}, \\ldots, X_{n_2}^{(2)}\\}$。"
+    },
+    {
+      "index": 134,
+      "locator": "讲义 L134",
+      "text": ""
+    },
+    {
+      "index": 135,
+      "locator": "讲义 L135",
+      "text": "投影后的数据为 $u_i^{(k)} = a^T X_i^{(k)}$。"
+    },
+    {
+      "index": 136,
+      "locator": "讲义 L136",
+      "text": ""
+    },
+    {
+      "index": 137,
+      "locator": "讲义 L137",
+      "text": "投影后的组间差异（类间散度）："
+    },
+    {
+      "index": 138,
+      "locator": "讲义 L138",
+      "text": ""
+    },
+    {
+      "index": 139,
+      "locator": "讲义 L139",
+      "text": "$$"
+    },
+    {
+      "index": 140,
+      "locator": "讲义 L140",
+      "text": "B_a = (a^T \\bar{X}_1 - a^T \\bar{X}_2)^2 = a^T (\\bar{X}_1 - \\bar{X}_2)(\\bar{X}_1 - \\bar{X}_2)^T a = a^T B a"
+    },
+    {
+      "index": 141,
+      "locator": "讲义 L141",
+      "text": "$$"
+    },
+    {
+      "index": 142,
+      "locator": "讲义 L142",
+      "text": ""
+    },
+    {
+      "index": 143,
+      "locator": "讲义 L143",
+      "text": "其中 $B = (\\bar{X}_1 - \\bar{X}_2)(\\bar{X}_1 - \\bar{X}_2)^T$ 是类间散度矩阵。"
+    },
+    {
+      "index": 144,
+      "locator": "讲义 L144",
+      "text": ""
+    },
+    {
+      "index": 145,
+      "locator": "讲义 L145",
+      "text": "投影后的组内差异（类内散度）："
+    },
+    {
+      "index": 146,
+      "locator": "讲义 L146",
+      "text": ""
+    },
+    {
+      "index": 147,
+      "locator": "讲义 L147",
+      "text": "$$"
+    },
+    {
+      "index": 148,
+      "locator": "讲义 L148",
+      "text": "W_a = \\sum_{k=1}^{2} \\sum_{i=1}^{n_k} (a^T X_i^{(k)} - a^T \\bar{X}_k)^2 = a^T (S_1 + S_2) a = a^T W a"
+    },
+    {
+      "index": 149,
+      "locator": "讲义 L149",
+      "text": "$$"
+    },
+    {
+      "index": 150,
+      "locator": "讲义 L150",
+      "text": ""
+    },
+    {
+      "index": 151,
+      "locator": "讲义 L151",
+      "text": "其中 $S_k = \\sum_{i=1}^{n_k} (X_i^{(k)} - \\bar{X}_k)(X_i^{(k)} - \\bar{X}_k)^T$ 是第 $k$ 组的散布矩阵，$W = S_1 + S_2$ 是类内散度矩阵。"
+    },
+    {
+      "index": 152,
+      "locator": "讲义 L152",
+      "text": ""
+    },
+    {
+      "index": 153,
+      "locator": "讲义 L153",
+      "text": "**Fisher准则函数**："
+    },
+    {
+      "index": 154,
+      "locator": "讲义 L154",
+      "text": ""
+    },
+    {
+      "index": 155,
+      "locator": "讲义 L155",
+      "text": "$$"
+    },
+    {
+      "index": 156,
+      "locator": "讲义 L156",
+      "text": "J(a) = \\frac{a^T B a}{a^T W a}"
+    },
+    {
+      "index": 157,
+      "locator": "讲义 L157",
+      "text": "$$"
+    },
+    {
+      "index": 158,
+      "locator": "讲义 L158",
+      "text": ""
+    },
+    {
+      "index": 159,
+      "locator": "讲义 L159",
+      "text": "**最大化 $J(a)$ 的含义**："
+    },
+    {
+      "index": 160,
+      "locator": "讲义 L160",
+      "text": "- 分子 $a^T B a$：投影后的组间差异（越大越好）"
+    },
+    {
+      "index": 161,
+      "locator": "讲义 L161",
+      "text": "- 分母 $a^T W a$：投影后的组内差异（越小越好）"
+    },
+    {
+      "index": 162,
+      "locator": "讲义 L162",
+      "text": "- 最大化 $J(a)$ 等价于使\"组间差异最大、组内差异最小\""
+    },
+    {
+      "index": 163,
+      "locator": "讲义 L163",
+      "text": ""
+    },
+    {
+      "index": 164,
+      "locator": "讲义 L164",
+      "text": "#### 12.2.2 判别系数的求解"
+    },
+    {
+      "index": 165,
+      "locator": "讲义 L165",
+      "text": ""
+    },
+    {
+      "index": 166,
+      "locator": "讲义 L166",
+      "text": "**求解过程**："
+    },
+    {
+      "index": 167,
+      "locator": "讲义 L167",
+      "text": ""
+    },
+    {
+      "index": 168,
+      "locator": "讲义 L168",
+      "text": "对 $J(a)$ 关于 $a$ 求导并令其为零："
+    },
+    {
+      "index": 169,
+      "locator": "讲义 L169",
+      "text": ""
+    },
+    {
+      "index": 170,
+      "locator": "讲义 L170",
+      "text": "$$"
+    },
+    {
+      "index": 171,
+      "locator": "讲义 L171",
+      "text": "\\frac{\\partial J}{\\partial a} = \\frac{2Ba \\cdot a^TWa - 2Wa \\cdot a^TBa}{(a^TWa)^2} = 0"
+    },
+    {
+      "index": 172,
+      "locator": "讲义 L172",
+      "text": "$$"
+    },
+    {
+      "index": 173,
+      "locator": "讲义 L173",
+      "text": ""
+    },
+    {
+      "index": 174,
+      "locator": "讲义 L174",
+      "text": "化简得："
+    },
+    {
+      "index": 175,
+      "locator": "讲义 L175",
+      "text": ""
+    },
+    {
+      "index": 176,
+      "locator": "讲义 L176",
+      "text": "$$"
+    },
+    {
+      "index": 177,
+      "locator": "讲义 L177",
+      "text": "Ba \\cdot a^TWa = Wa \\cdot a^TBa"
+    },
+    {
+      "index": 178,
+      "locator": "讲义 L178",
+      "text": "$$"
+    },
+    {
+      "index": 179,
+      "locator": "讲义 L179",
+      "text": ""
+    },
+    {
+      "index": 180,
+      "locator": "讲义 L180",
+      "text": "即："
+    },
+    {
+      "index": 181,
+      "locator": "讲义 L181",
+      "text": ""
+    },
+    {
+      "index": 182,
+      "locator": "讲义 L182",
+      "text": "$$"
+    },
+    {
+      "index": 183,
+      "locator": "讲义 L183",
+      "text": "Ba = \\frac{a^TBa}{a^TWa} Wa = J(a) Wa"
+    },
+    {
+      "index": 184,
+      "locator": "讲义 L184",
+      "text": "$$"
+    },
+    {
+      "index": 185,
+      "locator": "讲义 L185",
+      "text": ""
+    },
+    {
+      "index": 186,
+      "locator": "讲义 L186",
+      "text": "令 $\\lambda = J(a)$，则有："
+    },
+    {
+      "index": 187,
+      "locator": "讲义 L187",
+      "text": ""
+    },
+    {
+      "index": 188,
+      "locator": "讲义 L188",
+      "text": "$$"
+    },
+    {
+      "index": 189,
+      "locator": "讲义 L189",
+      "text": "(B - \\lambda W)a = 0"
+    },
+    {
+      "index": 190,
+      "locator": "讲义 L190",
+      "text": "$$"
+    },
+    {
+      "index": 191,
+      "locator": "讲义 L191",
+      "text": ""
+    },
+    {
+      "index": 192,
+      "locator": "讲义 L192",
+      "text": "这是一个广义特征值问题。由于 $B$ 的秩为1（对于两类问题），非零特征值只有一个："
+    },
+    {
+      "index": 193,
+      "locator": "讲义 L193",
+      "text": ""
+    },
+    {
+      "index": 194,
+      "locator": "讲义 L194",
+      "text": "$$"
+    },
+    {
+      "index": 195,
+      "locator": "讲义 L195",
+      "text": "\\lambda = (\\bar{X}_1 - \\bar{X}_2)^T W^{-1} (\\bar{X}_1 - \\bar{X}_2)"
+    },
+    {
+      "index": 196,
+      "locator": "讲义 L196",
+      "text": "$$"
+    },
+    {
+      "index": 197,
+      "locator": "讲义 L197",
+      "text": ""
+    },
+    {
+      "index": 198,
+      "locator": "讲义 L198",
+      "text": "对应的特征向量为："
+    },
+    {
+      "index": 199,
+      "locator": "讲义 L199",
+      "text": ""
+    },
+    {
+      "index": 200,
+      "locator": "讲义 L200",
+      "text": "$$"
+    },
+    {
+      "index": 201,
+      "locator": "讲义 L201",
+      "text": "a = W^{-1}(\\bar{X}_1 - \\bar{X}_2)"
+    },
+    {
+      "index": 202,
+      "locator": "讲义 L202",
+      "text": "$$"
+    },
+    {
+      "index": 203,
+      "locator": "讲义 L203",
+      "text": ""
+    },
+    {
+      "index": 204,
+      "locator": "讲义 L204",
+      "text": "**判别系数的物理意义**："
+    },
+    {
+      "index": 205,
+      "locator": "讲义 L205",
+      "text": ""
+    },
+    {
+      "index": 206,
+      "locator": "讲义 L206",
+      "text": "$a = W^{-1}(\\bar{X}_1 - \\bar{X}_2)$ 可以理解为："
+    },
+    {
+      "index": 207,
+      "locator": "讲义 L207",
+      "text": "- $\\bar{X}_1 - \\bar{X}_2$：两组均值之差，表示组间差异的方向"
+    },
+    {
+      "index": 208,
+      "locator": "讲义 L208",
+      "text": "- $W^{-1}$：类内散度的逆，起\"标准化\"作用，消除变量量纲和相关性的影响"
+    },
+    {
+      "index": 209,
+      "locator": "讲义 L209",
+      "text": ""
+    },
+    {
+      "index": 210,
+      "locator": "讲义 L210",
+      "text": "#### 12.2.3 判别系数的求解（详细推导）"
+    },
+    {
+      "index": 211,
+      "locator": "讲义 L211",
+      "text": ""
+    },
+    {
+      "index": 212,
+      "locator": "讲义 L212",
+      "text": "**步骤1：计算各组均值向量**"
+    },
+    {
+      "index": 213,
+      "locator": "讲义 L213",
+      "text": ""
+    },
+    {
+      "index": 214,
+      "locator": "讲义 L214",
+      "text": "$$"
+    },
+    {
+      "index": 215,
+      "locator": "讲义 L215",
+      "text": "\\bar{X}_k = \\frac{1}{n_k} \\sum_{i=1}^{n_k} X_i^{(k)}, \\quad k = 1, 2"
+    },
+    {
+      "index": 216,
+      "locator": "讲义 L216",
+      "text": "$$"
+    },
+    {
+      "index": 217,
+      "locator": "讲义 L217",
+      "text": ""
+    },
+    {
+      "index": 218,
+      "locator": "讲义 L218",
+      "text": "**步骤2：计算类内散度矩阵**"
+    },
+    {
+      "index": 219,
+      "locator": "讲义 L219",
+      "text": ""
+    },
+    {
+      "index": 220,
+      "locator": "讲义 L220",
+      "text": "$$"
+    },
+    {
+      "index": 221,
+      "locator": "讲义 L221",
+      "text": "S_k = \\sum_{i=1}^{n_k} (X_i^{(k)} - \\bar{X}_k)(X_i^{(k)} - \\bar{X}_k)^T"
+    },
+    {
+      "index": 222,
+      "locator": "讲义 L222",
+      "text": "$$"
+    },
+    {
+      "index": 223,
+      "locator": "讲义 L223",
+      "text": ""
+    },
+    {
+      "index": 224,
+      "locator": "讲义 L224",
+      "text": "$$"
+    },
+    {
+      "index": 225,
+      "locator": "讲义 L225",
+      "text": "W = S_1 + S_2"
+    },
+    {
+      "index": 226,
+      "locator": "讲义 L226",
+      "text": "$$"
+    },
+    {
+      "index": 227,
+      "locator": "讲义 L227",
+      "text": ""
+    },
+    {
+      "index": 228,
+      "locator": "讲义 L228",
+      "text": "**步骤3：计算类间散度矩阵**"
+    },
+    {
+      "index": 229,
+      "locator": "讲义 L229",
+      "text": ""
+    },
+    {
+      "index": 230,
+      "locator": "讲义 L230",
+      "text": "$$"
+    },
+    {
+      "index": 231,
+      "locator": "讲义 L231",
+      "text": "B = (\\bar{X}_1 - \\bar{X}_2)(\\bar{X}_1 - \\bar{X}_2)^T"
+    },
+    {
+      "index": 232,
+      "locator": "讲义 L232",
+      "text": "$$"
+    },
+    {
+      "index": 233,
+      "locator": "讲义 L233",
+      "text": ""
+    },
+    {
+      "index": 234,
+      "locator": "讲义 L234",
+      "text": "**步骤4：求解判别系数**"
+    },
+    {
+      "index": 235,
+      "locator": "讲义 L235",
+      "text": ""
+    },
+    {
+      "index": 236,
+      "locator": "讲义 L236",
+      "text": "$$"
+    },
+    {
+      "index": 237,
+      "locator": "讲义 L237",
+      "text": "a = W^{-1}(\\bar{X}_1 - \\bar{X}_2)"
+    },
+    {
+      "index": 238,
+      "locator": "讲义 L238",
+      "text": "$$"
+    },
+    {
+      "index": 239,
+      "locator": "讲义 L239",
+      "text": ""
+    },
+    {
+      "index": 240,
+      "locator": "讲义 L240",
+      "text": "**计算示例**："
+    },
+    {
+      "index": 241,
+      "locator": "讲义 L241",
+      "text": ""
+    },
+    {
+      "index": 242,
+      "locator": "讲义 L242",
+      "text": "假设两组数据的均值向量和协方差矩阵为："
+    },
+    {
+      "index": 243,
+      "locator": "讲义 L243",
+      "text": ""
+    },
+    {
+      "index": 244,
+      "locator": "讲义 L244",
+      "text": "$$"
+    },
+    {
+      "index": 245,
+      "locator": "讲义 L245",
+      "text": "\\bar{X}_1 = \\begin{pmatrix} 5 \\\\ 3 \\end{pmatrix}, \\quad \\bar{X}_2 = \\begin{pmatrix} 2 \\\\ 1 \\end{pmatrix}"
+    },
+    {
+      "index": 246,
+      "locator": "讲义 L246",
+      "text": "$$"
+    },
+    {
+      "index": 247,
+      "locator": "讲义 L247",
+      "text": ""
+    },
+    {
+      "index": 248,
+      "locator": "讲义 L248",
+      "text": "$$"
+    },
+    {
+      "index": 249,
+      "locator": "讲义 L249",
+      "text": "W = \\begin{pmatrix} 10 & 2 \\\\ 2 & 8 \\end{pmatrix}"
+    },
+    {
+      "index": 250,
+      "locator": "讲义 L250",
+      "text": "$$"
+    },
+    {
+      "index": 251,
+      "locator": "讲义 L251",
+      "text": ""
+    },
+    {
+      "index": 252,
+      "locator": "讲义 L252",
+      "text": "计算逆矩阵："
+    },
+    {
+      "index": 253,
+      "locator": "讲义 L253",
+      "text": ""
+    },
+    {
+      "index": 254,
+      "locator": "讲义 L254",
+      "text": "$$"
+    },
+    {
+      "index": 255,
+      "locator": "讲义 L255",
+      "text": "W^{-1} = \\frac{1}{10 \\times 8 - 2 \\times 2}\\begin{pmatrix} 8 & -2 \\\\ -2 & 10 \\end{pmatrix} = \\frac{1}{76}\\begin{pmatrix} 8 & -2 \\\\ -2 & 10 \\end{pmatrix}"
+    },
+    {
+      "index": 256,
+      "locator": "讲义 L256",
+      "text": "$$"
+    },
+    {
+      "index": 257,
+      "locator": "讲义 L257",
+      "text": ""
+    },
+    {
+      "index": 258,
+      "locator": "讲义 L258",
+      "text": "$$"
+    },
+    {
+      "index": 259,
+      "locator": "讲义 L259",
+      "text": "a = W^{-1}(\\bar{X}_1 - \\bar{X}_2) = \\frac{1}{76}\\begin{pmatrix} 8 & -2 \\\\ -2 & 10 \\end{pmatrix}\\begin{pmatrix} 3 \\\\ 2 \\end{pmatrix} = \\frac{1}{76}\\begin{pmatrix} 20 \\\\ 14 \\end{pmatrix} = \\begin{pmatrix} 0.263 \\\\ 0.184 \\end{pmatrix}"
+    },
+    {
+      "index": 260,
+      "locator": "讲义 L260",
+      "text": "$$"
+    },
+    {
+      "index": 261,
+      "locator": "讲义 L261",
+      "text": ""
+    },
+    {
+      "index": 262,
+      "locator": "讲义 L262",
+      "text": "**判别函数**："
+    },
+    {
+      "index": 263,
+      "locator": "讲义 L263",
+      "text": ""
+    },
+    {
+      "index": 264,
+      "locator": "讲义 L264",
+      "text": "$$"
+    },
+    {
+      "index": 265,
+      "locator": "讲义 L265",
+      "text": "u = a^T X = 0.263 x_1 + 0.184 x_2"
+    },
+    {
+      "index": 266,
+      "locator": "讲义 L266",
+      "text": "$$"
+    },
+    {
+      "index": 267,
+      "locator": "讲义 L267",
+      "text": ""
+    },
+    {
+      "index": 268,
+      "locator": "讲义 L268",
+      "text": "**判别系数的解释**："
+    },
+    {
+      "index": 269,
+      "locator": "讲义 L269",
+      "text": "- $a_1 = 0.263$：变量 $x_1$ 每增加1个单位，判别得分增加0.263"
+    },
+    {
+      "index": 270,
+      "locator": "讲义 L270",
+      "text": "- $a_2 = 0.184$：变量 $x_2$ 每增加1个单位，判别得分增加0.184"
+    },
+    {
+      "index": 271,
+      "locator": "讲义 L271",
+      "text": "- $x_1$ 的系数更大，说明 $x_1$ 对区分两组的贡献更大"
+    },
+    {
+      "index": 272,
+      "locator": "讲义 L272",
+      "text": ""
+    },
+    {
+      "index": 273,
+      "locator": "讲义 L273",
+      "text": "#### 12.2.4 判别界值"
+    },
+    {
+      "index": 274,
+      "locator": "讲义 L274",
+      "text": ""
+    },
+    {
+      "index": 275,
+      "locator": "讲义 L275",
+      "text": "$$"
+    },
+    {
+      "index": 276,
+      "locator": "讲义 L276",
+      "text": "c = \\frac{a^T \\bar{X}_1 + a^T \\bar{X}_2}{2}"
+    },
+    {
+      "index": 277,
+      "locator": "讲义 L277",
+      "text": "$$"
+    },
+    {
+      "index": 278,
+      "locator": "讲义 L278",
+      "text": ""
+    },
+    {
+      "index": 279,
+      "locator": "讲义 L279",
+      "text": "新样品代入 $u = a^T X$："
+    },
+    {
+      "index": 280,
+      "locator": "讲义 L280",
+      "text": "- 若 $u > c$，判入 $G_1$"
+    },
+    {
+      "index": 281,
+      "locator": "讲义 L281",
+      "text": "- 若 $u < c$，判入 $G_2$"
+    },
+    {
+      "index": 282,
+      "locator": "讲义 L282",
+      "text": ""
+    },
+    {
+      "index": 283,
+      "locator": "讲义 L283",
+      "text": "**判别界值的几何意义**："
+    },
+    {
+      "index": 284,
+      "locator": "讲义 L284",
+      "text": ""
+    },
+    {
+      "index": 285,
+      "locator": "讲义 L285",
+      "text": "判别界值 $c$ 是两组投影均值的中点。在投影轴上，以 $c$ 为分界点，左侧归入 $G_2$，右侧归入 $G_1$。"
+    },
+    {
+      "index": 286,
+      "locator": "讲义 L286",
+      "text": ""
+    },
+    {
+      "index": 287,
+      "locator": "讲义 L287",
+      "text": "**多组情形的扩展**："
+    },
+    {
+      "index": 288,
+      "locator": "讲义 L288",
+      "text": ""
+    },
+    {
+      "index": 289,
+      "locator": "讲义 L289",
+      "text": "对于 $K$ 个类别，最多可以提取 $\\min(K-1, p)$ 个判别函数。判别界值的确定需要考虑多个判别函数的组合。"
+    },
+    {
+      "index": 290,
+      "locator": "讲义 L290",
+      "text": ""
+    },
+    {
+      "index": 291,
+      "locator": "讲义 L291",
+      "text": "#### 12.2.5 等方差与异方差情形"
+    },
+    {
+      "index": 292,
+      "locator": "讲义 L292",
+      "text": ""
+    },
+    {
+      "index": 293,
+      "locator": "讲义 L293",
+      "text": "| 情形 | 协方差矩阵 | 判别函数 | 判别边界 |"
+    },
+    {
+      "index": 294,
+      "locator": "讲义 L294",
+      "text": "|------|-----------|----------|----------|"
+    },
+    {
+      "index": 295,
+      "locator": "讲义 L295",
+      "text": "| 等方差 | $\\Sigma_1 = \\Sigma_2$ | 线性 | 超平面 |"
+    },
+    {
+      "index": 296,
+      "locator": "讲义 L296",
+      "text": "| 异方差 | $\\Sigma_1 \\neq \\Sigma_2$ | 二次 | 二次曲面 |"
+    },
+    {
+      "index": 297,
+      "locator": "讲义 L297",
+      "text": ""
+    },
+    {
+      "index": 298,
+      "locator": "讲义 L298",
+      "text": "**等方差情形**："
+    },
+    {
+      "index": 299,
+      "locator": "讲义 L299",
+      "text": ""
+    },
+    {
+      "index": 300,
+      "locator": "讲义 L300",
+      "text": "当两组的协方差矩阵相等时，判别函数是线性的："
+    },
+    {
+      "index": 301,
+      "locator": "讲义 L301",
+      "text": ""
+    },
+    {
+      "index": 302,
+      "locator": "讲义 L302",
+      "text": "$$"
+    },
+    {
+      "index": 303,
+      "locator": "讲义 L303",
+      "text": "u(X) = a^T X - c"
+    },
+    {
+      "index": 304,
+      "locator": "讲义 L304",
+      "text": "$$"
+    },
+    {
+      "index": 305,
+      "locator": "讲义 L305",
+      "text": ""
+    },
+    {
+      "index": 306,
+      "locator": "讲义 L306",
+      "text": "判别边界是超平面。"
+    },
+    {
+      "index": 307,
+      "locator": "讲义 L307",
+      "text": ""
+    },
+    {
+      "index": 308,
+      "locator": "讲义 L308",
+      "text": "**异方差情形**："
+    },
+    {
+      "index": 309,
+      "locator": "讲义 L309",
+      "text": ""
+    },
+    {
+      "index": 310,
+      "locator": "讲义 L310",
+      "text": "当两组的协方差矩阵不等时，判别函数是二次的："
+    },
+    {
+      "index": 311,
+      "locator": "讲义 L311",
+      "text": ""
+    },
+    {
+      "index": 312,
+      "locator": "讲义 L312",
+      "text": "$$"
+    },
+    {
+      "index": 313,
+      "locator": "讲义 L313",
+      "text": "u(X) = X^T A X + b^T X + c"
+    },
+    {
+      "index": 314,
+      "locator": "讲义 L314",
+      "text": "$$"
+    },
+    {
+      "index": 315,
+      "locator": "讲义 L315",
+      "text": ""
+    },
+    {
+      "index": 316,
+      "locator": "讲义 L316",
+      "text": "判别边界是二次曲面（椭圆、双曲线或抛物线）。"
+    },
+    {
+      "index": 317,
+      "locator": "讲义 L317",
+      "text": ""
+    },
+    {
+      "index": 318,
+      "locator": "讲义 L318",
+      "text": "#### 12.2.6 Fisher判别法的性质"
+    },
+    {
+      "index": 319,
+      "locator": "讲义 L319",
+      "text": ""
+    },
+    {
+      "index": 320,
+      "locator": "讲义 L320",
+      "text": "1. **不变性**：判别函数对线性变换保持不变"
+    },
+    {
+      "index": 321,
+      "locator": "讲义 L321",
+      "text": "2. **最优性**：在所有线性判别函数中，Fisher判别使组间分离最大化"
+    },
+    {
+      "index": 322,
+      "locator": "讲义 L322",
+      "text": "3. **稳健性**：对总体分布不作严格假设"
+    },
+    {
+      "index": 323,
+      "locator": "讲义 L323",
+      "text": "4. **局限性**：只能提取 $\\min(K-1, p)$ 个判别函数"
+    },
+    {
+      "index": 324,
+      "locator": "讲义 L324",
+      "text": ""
+    },
+    {
+      "index": 325,
+      "locator": "讲义 L325",
+      "text": "---"
+    },
+    {
+      "index": 326,
+      "locator": "讲义 L326",
+      "text": ""
+    },
+    {
+      "index": 327,
+      "locator": "讲义 L327",
+      "text": "### 12.3 Bayes判别法"
+    },
+    {
+      "index": 328,
+      "locator": "讲义 L328",
+      "text": ""
+    },
+    {
+      "index": 329,
+      "locator": "讲义 L329",
+      "text": "#### 12.3.1 Bayes判别准则"
+    },
+    {
+      "index": 330,
+      "locator": "讲义 L330",
+      "text": ""
+    },
+    {
+      "index": 331,
+      "locator": "讲义 L331",
+      "text": "**先验概率**：$P(G_k)$，分类前各类别的概率。"
+    },
+    {
+      "index": 332,
+      "locator": "讲义 L332",
+      "text": ""
+    },
+    {
+      "index": 333,
+      "locator": "讲义 L333",
+      "text": "**后验概率**：$P(G_k | X)$，观测到X后更新的概率。"
+    },
+    {
+      "index": 334,
+      "locator": "讲义 L334",
+      "text": ""
+    },
+    {
+      "index": 335,
+      "locator": "讲义 L335",
+      "text": "**Bayes定理**："
+    },
+    {
+      "index": 336,
+      "locator": "讲义 L336",
+      "text": ""
+    },
+    {
+      "index": 337,
+      "locator": "讲义 L337",
+      "text": "$$"
+    },
+    {
+      "index": 338,
+      "locator": "讲义 L338",
+      "text": "P(G_k | X) = \\frac{P(G_k) f(X | G_k)}{\\sum_j P(G_j) f(X | G_j)}"
+    },
+    {
+      "index": 339,
+      "locator": "讲义 L339",
+      "text": "$$"
+    },
+    {
+      "index": 340,
+      "locator": "讲义 L340",
+      "text": ""
+    },
+    {
+      "index": 341,
+      "locator": "讲义 L341",
+      "text": "其中 $f(X | G_k)$ 是第 $k$ 类的条件概率密度函数。"
+    },
+    {
+      "index": 342,
+      "locator": "讲义 L342",
+      "text": ""
+    },
+    {
+      "index": 343,
+      "locator": "讲义 L343",
+      "text": "**判别准则**：判入使后验概率最大的类别，即："
+    },
+    {
+      "index": 344,
+      "locator": "讲义 L344",
+      "text": ""
+    },
+    {
+      "index": 345,
+      "locator": "讲义 L345",
+      "text": "$$"
+    },
+    {
+      "index": 346,
+      "locator": "讲义 L346",
+      "text": "\\text{判入 } G_k \\iff P(G_k | X) = \\max_j P(G_j | X)"
+    },
+    {
+      "index": 347,
+      "locator": "讲义 L347",
+      "text": "$$"
+    },
+    {
+      "index": 348,
+      "locator": "讲义 L348",
+      "text": ""
+    },
+    {
+      "index": 349,
+      "locator": "讲义 L349",
+      "text": "等价于判入使 $P(G_k) f(X | G_k)$ 最大的类别。"
+    },
+    {
+      "index": 350,
+      "locator": "讲义 L350",
+      "text": ""
+    },
+    {
+      "index": 351,
+      "locator": "讲义 L351",
+      "text": "**Bayes判别的优势**："
+    },
+    {
+      "index": 352,
+      "locator": "讲义 L352",
+      "text": ""
+    },
+    {
+      "index": 353,
+      "locator": "讲义 L353",
+      "text": "1. 考虑了先验概率，对类别不平衡问题更稳健"
+    },
+    {
+      "index": 354,
+      "locator": "讲义 L354",
+      "text": "2. 提供后验概率，可以量化分类的不确定性"
+    },
+    {
+      "index": 355,
+      "locator": "讲义 L355",
+      "text": "3. 在正态假设下，理论最优"
+    },
+    {
+      "index": 356,
+      "locator": "讲义 L356",
+      "text": ""
+    },
+    {
+      "index": 357,
+      "locator": "讲义 L357",
+      "text": "#### 12.3.2 正态总体的Bayes判别"
+    },
+    {
+      "index": 358,
+      "locator": "讲义 L358",
+      "text": ""
+    },
+    {
+      "index": 359,
+      "locator": "讲义 L359",
+      "text": "**假设**：各类别的条件分布为多元正态分布："
+    },
+    {
+      "index": 360,
+      "locator": "讲义 L360",
+      "text": ""
+    },
+    {
+      "index": 361,
+      "locator": "讲义 L361",
+      "text": "$$"
+    },
+    {
+      "index": 362,
+      "locator": "讲义 L362",
+      "text": "X | G_k \\sim N(\\mu_k, \\Sigma_k)"
+    },
+    {
+      "index": 363,
+      "locator": "讲义 L363",
+      "text": "$$"
+    },
+    {
+      "index": 364,
+      "locator": "讲义 L364",
+      "text": ""
+    },
+    {
+      "index": 365,
+      "locator": "讲义 L365",
+      "text": "**等协方差矩阵情形**：线性判别函数"
+    },
+    {
+      "index": 366,
+      "locator": "讲义 L366",
+      "text": ""
+    },
+    {
+      "index": 367,
+      "locator": "讲义 L367",
+      "text": "当 $\\Sigma_1 = \\Sigma_2 = \\cdots = \\Sigma_K = \\Sigma$ 时，后验概率的比较等价于比较："
+    },
+    {
+      "index": 368,
+      "locator": "讲义 L368",
+      "text": ""
+    },
+    {
+      "index": 369,
+      "locator": "讲义 L369",
+      "text": "$$"
+    },
+    {
+      "index": 370,
+      "locator": "讲义 L370",
+      "text": "d_k(X) = \\ln(P_k) + \\mu_k^T \\Sigma^{-1} X - \\frac{1}{2}\\mu_k^T \\Sigma^{-1} \\mu_k"
+    },
+    {
+      "index": 371,
+      "locator": "讲义 L371",
+      "text": "$$"
+    },
+    {
+      "index": 372,
+      "locator": "讲义 L372",
+      "text": ""
+    },
+    {
+      "index": 373,
+      "locator": "讲义 L373",
+      "text": "判入 $d_k$ 最大的类别。"
+    },
+    {
+      "index": 374,
+      "locator": "讲义 L374",
+      "text": ""
+    },
+    {
+      "index": 375,
+      "locator": "讲义 L375",
+      "text": "**推导过程**："
+    },
+    {
+      "index": 376,
+      "locator": "讲义 L376",
+      "text": ""
+    },
+    {
+      "index": 377,
+      "locator": "讲义 L377",
+      "text": "$$"
+    },
+    {
+      "index": 378,
+      "locator": "讲义 L378",
+      "text": "\\begin{aligned}"
+    },
+    {
+      "index": 379,
+      "locator": "讲义 L379",
+      "text": "P(G_k | X) &\\propto P(G_k) f(X | G_k) \\\\"
+    },
+    {
+      "index": 380,
+      "locator": "讲义 L380",
+      "text": "&= P(G_k) \\cdot \\frac{1}{(2\\pi)^{p/2}|\\Sigma|^{1/2}} \\exp\\left(-\\frac{1}{2}(X-\\mu_k)^T\\Sigma^{-1}(X-\\mu_k)\\right)"
+    },
+    {
+      "index": 381,
+      "locator": "讲义 L381",
+      "text": "\\end{aligned}"
+    },
+    {
+      "index": 382,
+      "locator": "讲义 L382",
+      "text": "$$"
+    },
+    {
+      "index": 383,
+      "locator": "讲义 L383",
+      "text": ""
+    },
+    {
+      "index": 384,
+      "locator": "讲义 L384",
+      "text": "取对数并省略常数项："
+    },
+    {
+      "index": 385,
+      "locator": "讲义 L385",
+      "text": ""
+    },
+    {
+      "index": 386,
+      "locator": "讲义 L386",
+      "text": "$$"
+    },
+    {
+      "index": 387,
+      "locator": "讲义 L387",
+      "text": "\\ln P(G_k | X) \\propto \\ln P_k - \\frac{1}{2}(X-\\mu_k)^T\\Sigma^{-1}(X-\\mu_k)"
+    },
+    {
+      "index": 388,
+      "locator": "讲义 L388",
+      "text": "$$"
+    },
+    {
+      "index": 389,
+      "locator": "讲义 L389",
+      "text": ""
+    },
+    {
+      "index": 390,
+      "locator": "讲义 L390",
+      "text": "展开二次项："
+    },
+    {
+      "index": 391,
+      "locator": "讲义 L391",
+      "text": ""
+    },
+    {
+      "index": 392,
+      "locator": "讲义 L392",
+      "text": "$$"
+    },
+    {
+      "index": 393,
+      "locator": "讲义 L393",
+      "text": "(X-\\mu_k)^T\\Sigma^{-1}(X-\\mu_k) = X^T\\Sigma^{-1}X - 2\\mu_k^T\\Sigma^{-1}X + \\mu_k^T\\Sigma^{-1}\\mu_k"
+    },
+    {
+      "index": 394,
+      "locator": "讲义 L394",
+      "text": "$$"
+    },
+    {
+      "index": 395,
+      "locator": "讲义 L395",
+      "text": ""
+    },
+    {
+      "index": 396,
+      "locator": "讲义 L396",
+      "text": "省略与 $k$ 无关的项 $X^T\\Sigma^{-1}X$，得到线性判别函数："
+    },
+    {
+      "index": 397,
+      "locator": "讲义 L397",
+      "text": ""
+    },
+    {
+      "index": 398,
+      "locator": "讲义 L398",
+      "text": "$$"
+    },
+    {
+      "index": 399,
+      "locator": "讲义 L399",
+      "text": "d_k(X) = \\ln P_k + \\mu_k^T\\Sigma^{-1}X - \\frac{1}{2}\\mu_k^T\\Sigma^{-1}\\mu_k"
+    },
+    {
+      "index": 400,
+      "locator": "讲义 L400",
+      "text": "$$"
+    },
+    {
+      "index": 401,
+      "locator": "讲义 L401",
+      "text": ""
+    },
+    {
+      "index": 402,
+      "locator": "讲义 L402",
+      "text": "**不等协方差矩阵情形**：二次判别函数"
+    },
+    {
+      "index": 403,
+      "locator": "讲义 L403",
+      "text": ""
+    },
+    {
+      "index": 404,
+      "locator": "讲义 L404",
+      "text": "当各类别的协方差矩阵不相等时："
+    },
+    {
+      "index": 405,
+      "locator": "讲义 L405",
+      "text": ""
+    },
+    {
+      "index": 406,
+      "locator": "讲义 L406",
+      "text": "$$"
+    },
+    {
+      "index": 407,
+      "locator": "讲义 L407",
+      "text": "d_k(X) = \\ln(P_k) - \\frac{1}{2}\\ln|\\Sigma_k| - \\frac{1}{2}(X-\\mu_k)^T \\Sigma_k^{-1} (X-\\mu_k)"
+    },
+    {
+      "index": 408,
+      "locator": "讲义 L408",
+      "text": "$$"
+    },
+    {
+      "index": 409,
+      "locator": "讲义 L409",
+      "text": ""
+    },
+    {
+      "index": 410,
+      "locator": "讲义 L410",
+      "text": "判入 $d_k$ 最大的类别。"
+    },
+    {
+      "index": 411,
+      "locator": "讲义 L411",
+      "text": ""
+    },
+    {
+      "index": 412,
+      "locator": "讲义 L412",
+      "text": "**二次判别函数的特点**："
+    },
+    {
+      "index": 413,
+      "locator": "讲义 L413",
+      "text": ""
+    },
+    {
+      "index": 414,
+      "locator": "讲义 L414",
+      "text": "1. 包含二次项 $X^T\\Sigma_k^{-1}X$，判别边界是二次曲面"
+    },
+    {
+      "index": 415,
+      "locator": "讲义 L415",
+      "text": "2. 考虑了各类别协方差矩阵的差异"
+    },
+    {
+      "index": 416,
+      "locator": "讲义 L416",
+      "text": "3. 在协方差矩阵差异较大时，比线性判别更准确"
+    },
+    {
+      "index": 417,
+      "locator": "讲义 L417",
+      "text": "4. 需要更多的参数估计，对样本量要求更高"
+    },
+    {
+      "index": 418,
+      "locator": "讲义 L418",
+      "text": ""
+    },
+    {
+      "index": 419,
+      "locator": "讲义 L419",
+      "text": "#### 12.3.3 后验概率的计算"
+    },
+    {
+      "index": 420,
+      "locator": "讲义 L420",
+      "text": ""
+    },
+    {
+      "index": 421,
+      "locator": "讲义 L421",
+      "text": "$$"
+    },
+    {
+      "index": 422,
+      "locator": "讲义 L422",
+      "text": "P(G_k | X) = \\frac{\\exp(d_k(X))}{\\sum_j \\exp(d_j(X))}"
+    },
+    {
+      "index": 423,
+      "locator": "讲义 L423",
+      "text": "$$"
+    },
+    {
+      "index": 424,
+      "locator": "讲义 L424",
+      "text": ""
+    },
+    {
+      "index": 425,
+      "locator": "讲义 L425",
+      "text": "（softmax归一化）"
+    },
+    {
+      "index": 426,
+      "locator": "讲义 L426",
+      "text": ""
+    },
+    {
+      "index": 427,
+      "locator": "讲义 L427",
+      "text": "**后验概率的解释**："
+    },
+    {
+      "index": 428,
+      "locator": "讲义 L428",
+      "text": ""
+    },
+    {
+      "index": 429,
+      "locator": "讲义 L429",
+      "text": "1. 后验概率表示给定观测 $X$，样品属于各类别的概率"
+    },
+    {
+      "index": 430,
+      "locator": "讲义 L430",
+      "text": "2. 后验概率之和为1"
+    },
+    {
+      "index": 431,
+      "locator": "讲义 L431",
+      "text": "3. 后验概率越大，属于该类的可能性越高"
+    },
+    {
+      "index": 432,
+      "locator": "讲义 L432",
+      "text": "4. 可以用于评估分类的不确定性"
+    },
+    {
+      "index": 433,
+      "locator": "讲义 L433",
+      "text": ""
+    },
+    {
+      "index": 434,
+      "locator": "讲义 L434",
+      "text": "#### 12.3.4 参数估计"
+    },
+    {
+      "index": 435,
+      "locator": "讲义 L435",
+      "text": ""
+    },
+    {
+      "index": 436,
+      "locator": "讲义 L436",
+      "text": "在实际应用中，需要估计各类别的参数："
+    },
+    {
+      "index": 437,
+      "locator": "讲义 L437",
+      "text": ""
+    },
+    {
+      "index": 438,
+      "locator": "讲义 L438",
+      "text": "**均值向量的估计**："
+    },
+    {
+      "index": 439,
+      "locator": "讲义 L439",
+      "text": ""
+    },
+    {
+      "index": 440,
+      "locator": "讲义 L440",
+      "text": "$$"
+    },
+    {
+      "index": 441,
+      "locator": "讲义 L441",
+      "text": "\\hat{\\mu}_k = \\bar{X}_k = \\frac{1}{n_k} \\sum_{i=1}^{n_k} X_i^{(k)}"
+    },
+    {
+      "index": 442,
+      "locator": "讲义 L442",
+      "text": "$$"
+    },
+    {
+      "index": 443,
+      "locator": "讲义 L443",
+      "text": ""
+    },
+    {
+      "index": 444,
+      "locator": "讲义 L444",
+      "text": "**协方差矩阵的估计**："
+    },
+    {
+      "index": 445,
+      "locator": "讲义 L445",
+      "text": ""
+    },
+    {
+      "index": 446,
+      "locator": "讲义 L446",
+      "text": "等协方差情形（合并协方差矩阵）："
+    },
+    {
+      "index": 447,
+      "locator": "讲义 L447",
+      "text": ""
+    },
+    {
+      "index": 448,
+      "locator": "讲义 L448",
+      "text": "$$"
+    },
+    {
+      "index": 449,
+      "locator": "讲义 L449",
+      "text": "\\hat{\\Sigma} = \\frac{1}{n-K} \\sum_{k=1}^{K} \\sum_{i=1}^{n_k} (X_i^{(k)} - \\bar{X}_k)(X_i^{(k)} - \\bar{X}_k)^T"
+    },
+    {
+      "index": 450,
+      "locator": "讲义 L450",
+      "text": "$$"
+    },
+    {
+      "index": 451,
+      "locator": "讲义 L451",
+      "text": ""
+    },
+    {
+      "index": 452,
+      "locator": "讲义 L452",
+      "text": "不等协方差情形："
+    },
+    {
+      "index": 453,
+      "locator": "讲义 L453",
+      "text": ""
+    },
+    {
+      "index": 454,
+      "locator": "讲义 L454",
+      "text": "$$"
+    },
+    {
+      "index": 455,
+      "locator": "讲义 L455",
+      "text": "\\hat{\\Sigma}_k = \\frac{1}{n_k-1} \\sum_{i=1}^{n_k} (X_i^{(k)} - \\bar{X}_k)(X_i^{(k)} - \\bar{X}_k)^T"
+    },
+    {
+      "index": 456,
+      "locator": "讲义 L456",
+      "text": "$$"
+    },
+    {
+      "index": 457,
+      "locator": "讲义 L457",
+      "text": ""
+    },
+    {
+      "index": 458,
+      "locator": "讲义 L458",
+      "text": "**先验概率的估计**："
+    },
+    {
+      "index": 459,
+      "locator": "讲义 L459",
+      "text": ""
+    },
+    {
+      "index": 460,
+      "locator": "讲义 L460",
+      "text": "$$"
+    },
+    {
+      "index": 461,
+      "locator": "讲义 L461",
+      "text": "\\hat{P}_k = \\frac{n_k}{n}"
+    },
+    {
+      "index": 462,
+      "locator": "讲义 L462",
+      "text": "$$"
+    },
+    {
+      "index": 463,
+      "locator": "讲义 L463",
+      "text": ""
+    },
+    {
+      "index": 464,
+      "locator": "讲义 L464",
+      "text": "或根据领域知识设定。"
+    },
+    {
+      "index": 465,
+      "locator": "讲义 L465",
+      "text": ""
+    },
+    {
+      "index": 466,
+      "locator": "讲义 L466",
+      "text": "#### 12.3.5 Bayes判别与Fisher判别的关系"
+    },
+    {
+      "index": 467,
+      "locator": "讲义 L467",
+      "text": ""
+    },
+    {
+      "index": 468,
+      "locator": "讲义 L468",
+      "text": "在两类、等协方差、先验概率相等的情形下，Bayes判别与Fisher判别等价："
+    },
+    {
+      "index": 469,
+      "locator": "讲义 L469",
+      "text": ""
+    },
+    {
+      "index": 470,
+      "locator": "讲义 L470",
+      "text": "**证明**："
+    },
+    {
+      "index": 471,
+      "locator": "讲义 L471",
+      "text": ""
+    },
+    {
+      "index": 472,
+      "locator": "讲义 L472",
+      "text": "Bayes判别函数："
+    },
+    {
+      "index": 473,
+      "locator": "讲义 L473",
+      "text": ""
+    },
+    {
+      "index": 474,
+      "locator": "讲义 L474",
+      "text": "$$"
+    },
+    {
+      "index": 475,
+      "locator": "讲义 L475",
+      "text": "d_1(X) - d_2(X) = (\\mu_1 - \\mu_2)^T\\Sigma^{-1}X - \\frac{1}{2}(\\mu_1^T\\Sigma^{-1}\\mu_1 - \\mu_2^T\\Sigma^{-1}\\mu_2)"
+    },
+    {
+      "index": 476,
+      "locator": "讲义 L476",
+      "text": "$$"
+    },
+    {
+      "index": 477,
+      "locator": "讲义 L477",
+      "text": ""
+    },
+    {
+      "index": 478,
+      "locator": "讲义 L478",
+      "text": "Fisher判别函数："
+    },
+    {
+      "index": 479,
+      "locator": "讲义 L479",
+      "text": ""
+    },
+    {
+      "index": 480,
+      "locator": "讲义 L480",
+      "text": "$$"
+    },
+    {
+      "index": 481,
+      "locator": "讲义 L481",
+      "text": "u(X) = a^T X = (\\bar{X}_1 - \\bar{X}_2)^T W^{-1} X"
+    },
+    {
+      "index": 482,
+      "locator": "讲义 L482",
+      "text": "$$"
+    },
+    {
+      "index": 483,
+      "locator": "讲义 L483",
+      "text": ""
+    },
+    {
+      "index": 484,
+      "locator": "讲义 L484",
+      "text": "当 $\\hat{\\Sigma} = W/(n-2)$ 时，两者仅相差常数倍。"
+    },
+    {
+      "index": 485,
+      "locator": "讲义 L485",
+      "text": ""
+    },
+    {
+      "index": 486,
+      "locator": "讲义 L486",
+      "text": "---"
+    },
+    {
+      "index": 487,
+      "locator": "讲义 L487",
+      "text": ""
+    },
+    {
+      "index": 488,
+      "locator": "讲义 L488",
+      "text": "### 12.4 距离判别法"
+    },
+    {
+      "index": 489,
+      "locator": "讲义 L489",
+      "text": ""
+    },
+    {
+      "index": 490,
+      "locator": "讲义 L490",
+      "text": "#### 12.4.1 马氏距离"
+    },
+    {
+      "index": 491,
+      "locator": "讲义 L491",
+      "text": ""
+    },
+    {
+      "index": 492,
+      "locator": "讲义 L492",
+      "text": "**马氏距离**的定义："
+    },
+    {
+      "index": 493,
+      "locator": "讲义 L493",
+      "text": ""
+    },
+    {
+      "index": 494,
+      "locator": "讲义 L494",
+      "text": "$$"
+    },
+    {
+      "index": 495,
+      "locator": "讲义 L495",
+      "text": "d(X, G_k) = \\sqrt{(X - \\mu_k)^T \\Sigma_k^{-1} (X - \\mu_k)}"
+    },
+    {
+      "index": 496,
+      "locator": "讲义 L496",
+      "text": "$$"
+    },
+    {
+      "index": 497,
+      "locator": "讲义 L497",
+      "text": ""
+    },
+    {
+      "index": 498,
+      "locator": "讲义 L498",
+      "text": "**马氏距离与欧氏距离的区别**："
+    },
+    {
+      "index": 499,
+      "locator": "讲义 L499",
+      "text": ""
+    },
+    {
+      "index": 500,
+      "locator": "讲义 L500",
+      "text": "| 维度 | 欧氏距离 | 马氏距离 |"
+    },
+    {
+      "index": 501,
+      "locator": "讲义 L501",
+      "text": "|------|----------|----------|"
+    },
+    {
+      "index": 502,
+      "locator": "讲义 L502",
+      "text": "| 定义 | $\\sqrt{\\sum(x_i - y_i)^2}$ | $\\sqrt{(X-Y)^T\\Sigma^{-1}(X-Y)}$ |"
+    },
+    {
+      "index": 503,
+      "locator": "讲义 L503",
+      "text": "| 考虑变量相关性 | 不考虑 | 考虑 |"
+    },
+    {
+      "index": 504,
+      "locator": "讲义 L504",
+      "text": "| 考虑量纲 | 不考虑 | 考虑 |"
+    },
+    {
+      "index": 505,
+      "locator": "讲义 L505",
+      "text": "| 适用场景 | 变量独立同方差 | 变量相关异方差 |"
+    },
+    {
+      "index": 506,
+      "locator": "讲义 L506",
+      "text": ""
+    },
+    {
+      "index": 507,
+      "locator": "讲义 L507",
+      "text": "#### 12.4.2 距离判别准则"
+    },
+    {
+      "index": 508,
+      "locator": "讲义 L508",
+      "text": ""
+    },
+    {
+      "index": 509,
+      "locator": "讲义 L509",
+      "text": "**判别准则**：将新样品判入距离最近的类别："
+    },
+    {
+      "index": 510,
+      "locator": "讲义 L510",
+      "text": ""
+    },
+    {
+      "index": 511,
+      "locator": "讲义 L511",
+      "text": "$$"
+    },
+    {
+      "index": 512,
+      "locator": "讲义 L512",
+      "text": "\\text{判入 } G_k \\iff d(X, G_k) = \\min_j d(X, G_j)"
+    },
+    {
+      "index": 513,
+      "locator": "讲义 L513",
+      "text": "$$"
+    },
+    {
+      "index": 514,
+      "locator": "讲义 L514",
+      "text": ""
+    },
+    {
+      "index": 515,
+      "locator": "讲义 L515",
+      "text": "**等协方差情形**："
+    },
+    {
+      "index": 516,
+      "locator": "讲义 L516",
+      "text": ""
+    },
+    {
+      "index": 517,
+      "locator": "讲义 L517",
+      "text": "$$"
+    },
+    {
+      "index": 518,
+      "locator": "讲义 L518",
+      "text": "d^2(X, G_k) = (X - \\mu_k)^T \\Sigma^{-1} (X - \\mu_k)"
+    },
+    {
+      "index": 519,
+      "locator": "讲义 L519",
+      "text": "$$"
+    },
+    {
+      "index": 520,
+      "locator": "讲义 L520",
+      "text": ""
+    },
+    {
+      "index": 521,
+      "locator": "讲义 L521",
+      "text": "展开："
+    },
+    {
+      "index": 522,
+      "locator": "讲义 L522",
+      "text": ""
+    },
+    {
+      "index": 523,
+      "locator": "讲义 L523",
+      "text": "$$"
+    },
+    {
+      "index": 524,
+      "locator": "讲义 L524",
+      "text": "d^2(X, G_k) = X^T\\Sigma^{-1}X - 2\\mu_k^T\\Sigma^{-1}X + \\mu_k^T\\Sigma^{-1}\\mu_k"
+    },
+    {
+      "index": 525,
+      "locator": "讲义 L525",
+      "text": "$$"
+    },
+    {
+      "index": 526,
+      "locator": "讲义 L526",
+      "text": ""
+    },
+    {
+      "index": 527,
+      "locator": "讲义 L527",
+      "text": "省略与 $k$ 无关的项 $X^T\\Sigma^{-1}X$，等价于判入使以下函数最大的类别："
+    },
+    {
+      "index": 528,
+      "locator": "讲义 L528",
+      "text": ""
+    },
+    {
+      "index": 529,
+      "locator": "讲义 L529",
+      "text": "$$"
+    },
+    {
+      "index": 530,
+      "locator": "讲义 L530",
+      "text": "W_k(X) = \\mu_k^T\\Sigma^{-1}X - \\frac{1}{2}\\mu_k^T\\Sigma^{-1}\\mu_k"
+    },
+    {
+      "index": 531,
+      "locator": "讲义 L531",
+      "text": "$$"
+    },
+    {
+      "index": 532,
+      "locator": "讲义 L532",
+      "text": ""
+    },
+    {
+      "index": 533,
+      "locator": "讲义 L533",
+      "text": "这与Bayes线性判别函数形式相同（当先验概率相等时）。"
+    },
+    {
+      "index": 534,
+      "locator": "讲义 L534",
+      "text": ""
+    },
+    {
+      "index": 535,
+      "locator": "讲义 L535",
+      "text": "**不等协方差情形**："
+    },
+    {
+      "index": 536,
+      "locator": "讲义 L536",
+      "text": ""
+    },
+    {
+      "index": 537,
+      "locator": "讲义 L537",
+      "text": "$$"
+    },
+    {
+      "index": 538,
+      "locator": "讲义 L538",
+      "text": "d^2(X, G_k) = (X - \\mu_k)^T \\Sigma_k^{-1} (X - \\mu_k) + \\ln|\\Sigma_k|"
+    },
+    {
+      "index": 539,
+      "locator": "讲义 L539",
+      "text": "$$"
+    },
+    {
+      "index": 540,
+      "locator": "讲义 L540",
+      "text": ""
+    },
+    {
+      "index": 541,
+      "locator": "讲义 L541",
+      "text": "这与Bayes二次判别函数形式相同（当先验概率相等时）。"
+    },
+    {
+      "index": 542,
+      "locator": "讲义 L542",
+      "text": ""
+    },
+    {
+      "index": 543,
+      "locator": "讲义 L543",
+      "text": "#### 12.4.3 距离判别与Bayes判别的关系"
+    },
+    {
+      "index": 544,
+      "locator": "讲义 L544",
+      "text": ""
+    },
+    {
+      "index": 545,
+      "locator": "讲义 L545",
+      "text": "在正态总体、先验概率相等的假设下，距离判别与Bayes判别等价。"
+    },
+    {
+      "index": 546,
+      "locator": "讲义 L546",
+      "text": ""
+    },
+    {
+      "index": 547,
+      "locator": "讲义 L547",
+      "text": "当先验概率不等时，距离判别需要修正："
+    },
+    {
+      "index": 548,
+      "locator": "讲义 L548",
+      "text": ""
+    },
+    {
+      "index": 549,
+      "locator": "讲义 L549",
+      "text": "$$"
+    },
+    {
+      "index": 550,
+      "locator": "讲义 L550",
+      "text": "d^2(X, G_k) = (X - \\mu_k)^T \\Sigma_k^{-1} (X - \\mu_k) + \\ln|\\Sigma_k| - 2\\ln P_k"
+    },
+    {
+      "index": 551,
+      "locator": "讲义 L551",
+      "text": "$$"
+    },
+    {
+      "index": 552,
+      "locator": "讲义 L552",
+      "text": ""
+    },
+    {
+      "index": 553,
+      "locator": "讲义 L553",
+      "text": "---"
+    },
+    {
+      "index": 554,
+      "locator": "讲义 L554",
+      "text": ""
+    },
+    {
+      "index": 555,
+      "locator": "讲义 L555",
+      "text": "### 12.5 判别效果评价"
+    },
+    {
+      "index": 556,
+      "locator": "讲义 L556",
+      "text": ""
+    },
+    {
+      "index": 557,
+      "locator": "讲义 L557",
+      "text": "#### 12.5.1 混淆矩阵"
+    },
+    {
+      "index": 558,
+      "locator": "讲义 L558",
+      "text": ""
+    },
+    {
+      "index": 559,
+      "locator": "讲义 L559",
+      "text": "|  | 预测为正 | 预测为负 |"
+    },
+    {
+      "index": 560,
+      "locator": "讲义 L560",
+      "text": "|--|---------|---------|"
+    },
+    {
+      "index": 561,
+      "locator": "讲义 L561",
+      "text": "| **实际为正** | TP（真正） | FN（假负） |"
+    },
+    {
+      "index": 562,
+      "locator": "讲义 L562",
+      "text": "| **实际为负** | FP（假正） | TN（真负） |"
+    },
+    {
+      "index": 563,
+      "locator": "讲义 L563",
+      "text": ""
+    },
+    {
+      "index": 564,
+      "locator": "讲义 L564",
+      "text": "**混淆矩阵的解读**："
+    },
+    {
+      "index": 565,
+      "locator": "讲义 L565",
+      "text": ""
+    },
+    {
+      "index": 566,
+      "locator": "讲义 L566",
+      "text": "- **TP（True Positive）**：实际为正，预测为正，正确识别"
+    },
+    {
+      "index": 567,
+      "locator": "讲义 L567",
+      "text": "- **FN（False Negative）**：实际为正，预测为负，漏报"
+    },
+    {
+      "index": 568,
+      "locator": "讲义 L568",
+      "text": "- **FP（False Positive）**：实际为负，预测为正，误报"
+    },
+    {
+      "index": 569,
+      "locator": "讲义 L569",
+      "text": "- **TN（True Negative）**：实际为负，预测为负，正确排除"
+    },
+    {
+      "index": 570,
+      "locator": "讲义 L570",
+      "text": ""
+    },
+    {
+      "index": 571,
+      "locator": "讲义 L571",
+      "text": "#### 12.5.2 评价指标"
+    },
+    {
+      "index": 572,
+      "locator": "讲义 L572",
+      "text": ""
+    },
+    {
+      "index": 573,
+      "locator": "讲义 L573",
+      "text": "**准确率（Accuracy）**："
+    },
+    {
+      "index": 574,
+      "locator": "讲义 L574",
+      "text": ""
+    },
+    {
+      "index": 575,
+      "locator": "讲义 L575",
+      "text": "$$"
+    },
+    {
+      "index": 576,
+      "locator": "讲义 L576",
+      "text": "\\text{Accuracy} = \\frac{TP + TN}{TP + TN + FP + FN}"
+    },
+    {
+      "index": 577,
+      "locator": "讲义 L577",
+      "text": "$$"
+    },
+    {
+      "index": 578,
+      "locator": "讲义 L578",
+      "text": ""
+    },
+    {
+      "index": 579,
+      "locator": "讲义 L579",
+      "text": "含义：所有样本中正确分类的比例。"
+    },
+    {
+      "index": 580,
+      "locator": "讲义 L580",
+      "text": ""
+    },
+    {
+      "index": 581,
+      "locator": "讲义 L581",
+      "text": "**精确率（Precision）**："
+    },
+    {
+      "index": 582,
+      "locator": "讲义 L582",
+      "text": ""
+    },
+    {
+      "index": 583,
+      "locator": "讲义 L583",
+      "text": "$$"
+    },
+    {
+      "index": 584,
+      "locator": "讲义 L584",
+      "text": "\\text{Precision} = \\frac{TP}{TP + FP}"
+    },
+    {
+      "index": 585,
+      "locator": "讲义 L585",
+      "text": "$$"
+    },
+    {
+      "index": 586,
+      "locator": "讲义 L586",
+      "text": ""
+    },
+    {
+      "index": 587,
+      "locator": "讲义 L587",
+      "text": "含义：预测为正的样本中，实际为正的比例。"
+    },
+    {
+      "index": 588,
+      "locator": "讲义 L588",
+      "text": ""
+    },
+    {
+      "index": 589,
+      "locator": "讲义 L589",
+      "text": "**召回率（Recall）**："
+    },
+    {
+      "index": 590,
+      "locator": "讲义 L590",
+      "text": ""
+    },
+    {
+      "index": 591,
+      "locator": "讲义 L591",
+      "text": "$$"
+    },
+    {
+      "index": 592,
+      "locator": "讲义 L592",
+      "text": "\\text{Recall} = \\frac{TP}{TP + FN}"
+    },
+    {
+      "index": 593,
+      "locator": "讲义 L593",
+      "text": "$$"
+    },
+    {
+      "index": 594,
+      "locator": "讲义 L594",
+      "text": ""
+    },
+    {
+      "index": 595,
+      "locator": "讲义 L595",
+      "text": "含义：实际为正的样本中，被正确预测的比例。"
+    },
+    {
+      "index": 596,
+      "locator": "讲义 L596",
+      "text": ""
+    },
+    {
+      "index": 597,
+      "locator": "讲义 L597",
+      "text": "**F1值（F1 Score）**："
+    },
+    {
+      "index": 598,
+      "locator": "讲义 L598",
+      "text": ""
+    },
+    {
+      "index": 599,
+      "locator": "讲义 L599",
+      "text": "$$"
+    },
+    {
+      "index": 600,
+      "locator": "讲义 L600",
+      "text": "F1 = \\frac{2 \\times \\text{Precision} \\times \\text{Recall}}{\\text{Precision} + \\text{Recall}}"
+    },
+    {
+      "index": 601,
+      "locator": "讲义 L601",
+      "text": "$$"
+    },
+    {
+      "index": 602,
+      "locator": "讲义 L602",
+      "text": ""
+    },
+    {
+      "index": 603,
+      "locator": "讲义 L603",
+      "text": "含义：精确率和召回率的调和平均。"
+    },
+    {
+      "index": 604,
+      "locator": "讲义 L604",
+      "text": ""
+    },
+    {
+      "index": 605,
+      "locator": "讲义 L605",
+      "text": "**特异度（Specificity）**："
+    },
+    {
+      "index": 606,
+      "locator": "讲义 L606",
+      "text": ""
+    },
+    {
+      "index": 607,
+      "locator": "讲义 L607",
+      "text": "$$"
+    },
+    {
+      "index": 608,
+      "locator": "讲义 L608",
+      "text": "\\text{Specificity} = \\frac{TN}{TN + FP}"
+    },
+    {
+      "index": 609,
+      "locator": "讲义 L609",
+      "text": "$$"
+    },
+    {
+      "index": 610,
+      "locator": "讲义 L610",
+      "text": ""
+    },
+    {
+      "index": 611,
+      "locator": "讲义 L611",
+      "text": "含义：实际为负的样本中，被正确预测的比例。"
+    },
+    {
+      "index": 612,
+      "locator": "讲义 L612",
+      "text": ""
+    },
+    {
+      "index": 613,
+      "locator": "讲义 L613",
+      "text": "#### 12.5.3 ROC曲线与AUC"
+    },
+    {
+      "index": 614,
+      "locator": "讲义 L614",
+      "text": ""
+    },
+    {
+      "index": 615,
+      "locator": "讲义 L615",
+      "text": "**ROC曲线**：以假正率（FPR）为横轴、真正率（TPR）为纵轴"
+    },
+    {
+      "index": 616,
+      "locator": "讲义 L616",
+      "text": ""
+    },
+    {
+      "index": 617,
+      "locator": "讲义 L617",
+      "text": "$$"
+    },
+    {
+      "index": 618,
+      "locator": "讲义 L618",
+      "text": "\\text{TPR} = \\frac{TP}{TP + FN}, \\quad \\text{FPR} = \\frac{FP}{FP + TN}"
+    },
+    {
+      "index": 619,
+      "locator": "讲义 L619",
+      "text": "$$"
+    },
+    {
+      "index": 620,
+      "locator": "讲义 L620",
+      "text": ""
+    },
+    {
+      "index": 621,
+      "locator": "讲义 L621",
+      "text": "**AUC**：ROC曲线下面积，AUC越大判别效果越好。"
+    },
+    {
+      "index": 622,
+      "locator": "讲义 L622",
+      "text": ""
+    },
+    {
+      "index": 623,
+      "locator": "讲义 L623",
+      "text": "**AUC的解释**："
+    },
+    {
+      "index": 624,
+      "locator": "讲义 L624",
+      "text": ""
+    },
+    {
+      "index": 625,
+      "locator": "讲义 L625",
+      "text": "| AUC范围 | 判别效果 |"
+    },
+    {
+      "index": 626,
+      "locator": "讲义 L626",
+      "text": "|---------|----------|"
+    },
+    {
+      "index": 627,
+      "locator": "讲义 L627",
+      "text": "| 0.5 | 无判别能力（随机猜测） |"
+    },
+    {
+      "index": 628,
+      "locator": "讲义 L628",
+      "text": "| 0.5-0.7 | 较低判别能力 |"
+    },
+    {
+      "index": 629,
+      "locator": "讲义 L629",
+      "text": "| 0.7-0.9 | 中等判别能力 |"
+    },
+    {
+      "index": 630,
+      "locator": "讲义 L630",
+      "text": "| 0.9-1.0 | 高判别能力 |"
+    },
+    {
+      "index": 631,
+      "locator": "讲义 L631",
+      "text": "| 1.0 | 完美判别 |"
+    },
+    {
+      "index": 632,
+      "locator": "讲义 L632",
+      "text": ""
+    },
+    {
+      "index": 633,
+      "locator": "讲义 L633",
+      "text": "**ROC曲线的绘制方法**："
+    },
+    {
+      "index": 634,
+      "locator": "讲义 L634",
+      "text": ""
+    },
+    {
+      "index": 635,
+      "locator": "讲义 L635",
+      "text": "1. 将预测概率从高到低排序"
+    },
+    {
+      "index": 636,
+      "locator": "讲义 L636",
+      "text": "2. 以不同的阈值将概率转化为类别"
+    },
+    {
+      "index": 637,
+      "locator": "讲义 L637",
+      "text": "3. 计算每个阈值对应的TPR和FPR"
+    },
+    {
+      "index": 638,
+      "locator": "讲义 L638",
+      "text": "4. 绘制TPR-FPR曲线"
+    },
+    {
+      "index": 639,
+      "locator": "讲义 L639",
+      "text": ""
+    },
+    {
+      "index": 640,
+      "locator": "讲义 L640",
+      "text": "#### 12.5.4 交叉验证"
+    },
+    {
+      "index": 641,
+      "locator": "讲义 L641",
+      "text": ""
+    },
+    {
+      "index": 642,
+      "locator": "讲义 L642",
+      "text": "**K折交叉验证**："
+    },
+    {
+      "index": 643,
+      "locator": "讲义 L643",
+      "text": ""
+    },
+    {
+      "index": 644,
+      "locator": "讲义 L644",
+      "text": "1. 将数据随机分为K份"
+    },
+    {
+      "index": 645,
+      "locator": "讲义 L645",
+      "text": "2. 每次用K-1份作为训练集，1份作为测试集"
+    },
+    {
+      "index": 646,
+      "locator": "讲义 L646",
+      "text": "3. 重复K次，取平均性能"
+    },
+    {
+      "index": 647,
+      "locator": "讲义 L647",
+      "text": ""
+    },
+    {
+      "index": 648,
+      "locator": "讲义 L648",
+      "text": "**留一法交叉验证**："
+    },
+    {
+      "index": 649,
+      "locator": "讲义 L649",
+      "text": ""
+    },
+    {
+      "index": 650,
+      "locator": "讲义 L650",
+      "text": "每次用n-1个样本作为训练集，1个样本作为测试集，重复n次。"
+    },
+    {
+      "index": 651,
+      "locator": "讲义 L651",
+      "text": ""
+    },
+    {
+      "index": 652,
+      "locator": "讲义 L652",
+      "text": "**交叉验证的优势**："
+    },
+    {
+      "index": 653,
+      "locator": "讲义 L653",
+      "text": ""
+    },
+    {
+      "index": 654,
+      "locator": "讲义 L654",
+      "text": "1. 充分利用数据"
+    },
+    {
+      "index": 655,
+      "locator": "讲义 L655",
+      "text": "2. 减少过拟合风险"
+    },
+    {
+      "index": 656,
+      "locator": "讲义 L656",
+      "text": "3. 提供性能的方差估计"
+    },
+    {
+      "index": 657,
+      "locator": "讲义 L657",
+      "text": ""
+    },
+    {
+      "index": 658,
+      "locator": "讲义 L658",
+      "text": "---"
+    },
+    {
+      "index": 659,
+      "locator": "讲义 L659",
+      "text": ""
+    },
+    {
+      "index": 660,
+      "locator": "讲义 L660",
+      "text": "### 12.6 多分类判别"
+    },
+    {
+      "index": 661,
+      "locator": "讲义 L661",
+      "text": ""
+    },
+    {
+      "index": 662,
+      "locator": "讲义 L662",
+      "text": "#### 12.6.1 多分类Fisher判别"
+    },
+    {
+      "index": 663,
+      "locator": "讲义 L663",
+      "text": ""
+    },
+    {
+      "index": 664,
+      "locator": "讲义 L664",
+      "text": "对于 $K$ 个类别，最多可以提取 $\\min(K-1, p)$ 个判别函数。"
+    },
+    {
+      "index": 665,
+      "locator": "讲义 L665",
+      "text": ""
+    },
+    {
+      "index": 666,
+      "locator": "讲义 L666",
+      "text": "**判别函数的求解**："
+    },
+    {
+      "index": 667,
+      "locator": "讲义 L667",
+      "text": ""
+    },
+    {
+      "index": 668,
+      "locator": "讲义 L668",
+      "text": "广义特征值问题："
+    },
+    {
+      "index": 669,
+      "locator": "讲义 L669",
+      "text": ""
+    },
+    {
+      "index": 670,
+      "locator": "讲义 L670",
+      "text": "$$"
+    },
+    {
+      "index": 671,
+      "locator": "讲义 L671",
+      "text": "B a = \\lambda W a"
+    },
+    {
+      "index": 672,
+      "locator": "讲义 L672",
+      "text": "$$"
+    },
+    {
+      "index": 673,
+      "locator": "讲义 L673",
+      "text": ""
+    },
+    {
+      "index": 674,
+      "locator": "讲义 L674",
+      "text": "其中 $B = \\sum_{k=1}^{K} n_k (\\bar{X}_k - \\bar{X})(\\bar{X}_k - \\bar{X})^T$ 是总类间散度矩阵。"
+    },
+    {
+      "index": 675,
+      "locator": "讲义 L675",
+      "text": ""
+    },
+    {
+      "index": 676,
+      "locator": "讲义 L676",
+      "text": "取前 $m$ 个最大特征值对应的特征向量，得到 $m$ 个判别函数。"
+    },
+    {
+      "index": 677,
+      "locator": "讲义 L677",
+      "text": ""
+    },
+    {
+      "index": 678,
+      "locator": "讲义 L678",
+      "text": "**判别准则**："
+    },
+    {
+      "index": 679,
+      "locator": "讲义 L679",
+      "text": ""
+    },
+    {
+      "index": 680,
+      "locator": "讲义 L680",
+      "text": "1. 计算新样品在各判别函数上的得分"
+    },
+    {
+      "index": 681,
+      "locator": "讲义 L681",
+      "text": "2. 计算新样品与各类别重心的马氏距离"
+    },
+    {
+      "index": 682,
+      "locator": "讲义 L682",
+      "text": "3. 判入距离最近的类别"
+    },
+    {
+      "index": 683,
+      "locator": "讲义 L683",
+      "text": ""
+    },
+    {
+      "index": 684,
+      "locator": "讲义 L684",
+      "text": "#### 12.6.2 多分类Bayes判别"
+    },
+    {
+      "index": 685,
+      "locator": "讲义 L685",
+      "text": ""
+    },
+    {
+      "index": 686,
+      "locator": "讲义 L686",
+      "text": "$$"
+    },
+    {
+      "index": 687,
+      "locator": "讲义 L687",
+      "text": "d_k(X) = \\ln(P_k) + \\mu_k^T \\Sigma^{-1} X - \\frac{1}{2}\\mu_k^T \\Sigma^{-1} \\mu_k"
+    },
+    {
+      "index": 688,
+      "locator": "讲义 L688",
+      "text": "$$"
+    },
+    {
+      "index": 689,
+      "locator": "讲义 L689",
+      "text": ""
+    },
+    {
+      "index": 690,
+      "locator": "讲义 L690",
+      "text": "判入 $d_k$ 最大的类别。"
+    },
+    {
+      "index": 691,
+      "locator": "讲义 L691",
+      "text": ""
+    },
+    {
+      "index": 692,
+      "locator": "讲义 L692",
+      "text": "后验概率："
+    },
+    {
+      "index": 693,
+      "locator": "讲义 L693",
+      "text": ""
+    },
+    {
+      "index": 694,
+      "locator": "讲义 L694",
+      "text": "$$"
+    },
+    {
+      "index": 695,
+      "locator": "讲义 L695",
+      "text": "P(G_k | X) = \\frac{\\exp(d_k(X))}{\\sum_j \\exp(d_j(X))}"
+    },
+    {
+      "index": 696,
+      "locator": "讲义 L696",
+      "text": "$$"
+    },
+    {
+      "index": 697,
+      "locator": "讲义 L697",
+      "text": ""
+    },
+    {
+      "index": 698,
+      "locator": "讲义 L698",
+      "text": "#### 12.6.3 一对多（One-vs-Rest）策略"
+    },
+    {
+      "index": 699,
+      "locator": "讲义 L699",
+      "text": ""
+    },
+    {
+      "index": 700,
+      "locator": "讲义 L700",
+      "text": "将K分类问题分解为K个二分类问题："
+    },
+    {
+      "index": 701,
+      "locator": "讲义 L701",
+      "text": ""
+    },
+    {
+      "index": 702,
+      "locator": "讲义 L702",
+      "text": "1. 对每个类别 $k$，训练一个二分类器区分\"类别 $k$\"和\"非类别 $k$\""
+    },
+    {
+      "index": 703,
+      "locator": "讲义 L703",
+      "text": "2. 对新样品，选择预测概率最高的类别"
+    },
+    {
+      "index": 704,
+      "locator": "讲义 L704",
+      "text": ""
+    },
+    {
+      "index": 705,
+      "locator": "讲义 L705",
+      "text": "#### 12.6.4 一对一（One-vs-One）策略"
+    },
+    {
+      "index": 706,
+      "locator": "讲义 L706",
+      "text": ""
+    },
+    {
+      "index": 707,
+      "locator": "讲义 L707",
+      "text": "将K分类问题分解为 $K(K-1)/2$ 个二分类问题："
+    },
+    {
+      "index": 708,
+      "locator": "讲义 L708",
+      "text": ""
+    },
+    {
+      "index": 709,
+      "locator": "讲义 L709",
+      "text": "1. 对每对类别 $(i, j)$，训练一个二分类器"
+    },
+    {
+      "index": 710,
+      "locator": "讲义 L710",
+      "text": "2. 对新样品，采用投票机制选择得票最多的类别"
+    },
+    {
+      "index": 711,
+      "locator": "讲义 L711",
+      "text": ""
+    },
+    {
+      "index": 712,
+      "locator": "讲义 L712",
+      "text": "---"
+    },
+    {
+      "index": 713,
+      "locator": "讲义 L713",
+      "text": ""
+    },
+    {
+      "index": 714,
+      "locator": "讲义 L714",
+      "text": "## 模块三：实战与代码复现"
+    },
+    {
+      "index": 715,
+      "locator": "讲义 L715",
+      "text": ""
+    },
+    {
+      "index": 716,
+      "locator": "讲义 L716",
+      "text": "### 实战案例12-1：Fisher判别与Bayes判别"
+    },
+    {
+      "index": 717,
+      "locator": "讲义 L717",
+      "text": ""
+    },
+    {
+      "index": 718,
+      "locator": "讲义 L718",
+      "text": "```python"
+    },
+    {
+      "index": 719,
+      "locator": "讲义 L719",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 720,
+      "locator": "讲义 L720",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 721,
+      "locator": "讲义 L721",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 722,
+      "locator": "讲义 L722",
+      "text": "from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticDiscriminantAnalysis"
+    },
+    {
+      "index": 723,
+      "locator": "讲义 L723",
+      "text": "from sklearn.model_selection import train_test_split, cross_val_score"
+    },
+    {
+      "index": 724,
+      "locator": "讲义 L724",
+      "text": "from sklearn.metrics import classification_report, confusion_matrix, roc_curve, auc"
+    },
+    {
+      "index": 725,
+      "locator": "讲义 L725",
+      "text": ""
+    },
+    {
+      "index": 726,
+      "locator": "讲义 L726",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 727,
+      "locator": "讲义 L727",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 728,
+      "locator": "讲义 L728",
+      "text": ""
+    },
+    {
+      "index": 729,
+      "locator": "讲义 L729",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 730,
+      "locator": "讲义 L730",
+      "text": "# 数据准备：疾病诊断"
+    },
+    {
+      "index": 731,
+      "locator": "讲义 L731",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 732,
+      "locator": "讲义 L732",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 733,
+      "locator": "讲义 L733",
+      "text": "n1, n2 = 80, 80"
+    },
+    {
+      "index": 734,
+      "locator": "讲义 L734",
+      "text": ""
+    },
+    {
+      "index": 735,
+      "locator": "讲义 L735",
+      "text": "# 健康人群"
+    },
+    {
+      "index": 736,
+      "locator": "讲义 L736",
+      "text": "X1 = np.random.multivariate_normal([120, 5.0, 200],"
+    },
+    {
+      "index": 737,
+      "locator": "讲义 L737",
+      "text": "                                    [[100, 5, 20], [5, 0.5, 10], [20, 10, 500]], n1)"
+    },
+    {
+      "index": 738,
+      "locator": "讲义 L738",
+      "text": "# 患病人群"
+    },
+    {
+      "index": 739,
+      "locator": "讲义 L739",
+      "text": "X2 = np.random.multivariate_normal([150, 7.5, 280],"
+    },
+    {
+      "index": 740,
+      "locator": "讲义 L740",
+      "text": "                                    [[120, 8, 30], [8, 1.0, 15], [30, 15, 600]], n2)"
+    },
+    {
+      "index": 741,
+      "locator": "讲义 L741",
+      "text": ""
+    },
+    {
+      "index": 742,
+      "locator": "讲义 L742",
+      "text": "X = np.vstack([X1, X2])"
+    },
+    {
+      "index": 743,
+      "locator": "讲义 L743",
+      "text": "y = np.array([0]*n1 + [1]*n2)"
+    },
+    {
+      "index": 744,
+      "locator": "讲义 L744",
+      "text": "feature_names = ['收缩压', '血糖', '胆固醇']"
+    },
+    {
+      "index": 745,
+      "locator": "讲义 L745",
+      "text": ""
+    },
+    {
+      "index": 746,
+      "locator": "讲义 L746",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 747,
+      "locator": "讲义 L747",
+      "text": "# 划分训练集和测试集"
+    },
+    {
+      "index": 748,
+      "locator": "讲义 L748",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 749,
+      "locator": "讲义 L749",
+      "text": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)"
+    },
+    {
+      "index": 750,
+      "locator": "讲义 L750",
+      "text": ""
+    },
+    {
+      "index": 751,
+      "locator": "讲义 L751",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 752,
+      "locator": "讲义 L752",
+      "text": "# Fisher线性判别（LDA）"
+    },
+    {
+      "index": 753,
+      "locator": "讲义 L753",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 754,
+      "locator": "讲义 L754",
+      "text": "lda = LinearDiscriminantAnalysis()"
+    },
+    {
+      "index": 755,
+      "locator": "讲义 L755",
+      "text": "lda.fit(X_train, y_train)"
+    },
+    {
+      "index": 756,
+      "locator": "讲义 L756",
+      "text": "y_pred_lda = lda.predict(X_test)"
+    },
+    {
+      "index": 757,
+      "locator": "讲义 L757",
+      "text": "y_prob_lda = lda.predict_proba(X_test)[:, 1]"
+    },
+    {
+      "index": 758,
+      "locator": "讲义 L758",
+      "text": ""
+    },
+    {
+      "index": 759,
+      "locator": "讲义 L759",
+      "text": "print(\"=== Fisher线性判别（LDA）===\")"
+    },
+    {
+      "index": 760,
+      "locator": "讲义 L760",
+      "text": "print(f\"判别系数: {dict(zip(feature_names, lda.coef_[0].round(3)))}\")"
+    },
+    {
+      "index": 761,
+      "locator": "讲义 L761",
+      "text": "print(f\"\\n混淆矩阵:\\n{confusion_matrix(y_test, y_pred_lda)}\")"
+    },
+    {
+      "index": 762,
+      "locator": "讲义 L762",
+      "text": "print(f\"\\n分类报告:\\n{classification_report(y_test, y_pred_lda, target_names=['健康', '患病'])}\")"
+    },
+    {
+      "index": 763,
+      "locator": "讲义 L763",
+      "text": ""
+    },
+    {
+      "index": 764,
+      "locator": "讲义 L764",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 765,
+      "locator": "讲义 L765",
+      "text": "# 二次判别分析（QDA）"
+    },
+    {
+      "index": 766,
+      "locator": "讲义 L766",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 767,
+      "locator": "讲义 L767",
+      "text": "qda = QuadraticDiscriminantAnalysis()"
+    },
+    {
+      "index": 768,
+      "locator": "讲义 L768",
+      "text": "qda.fit(X_train, y_train)"
+    },
+    {
+      "index": 769,
+      "locator": "讲义 L769",
+      "text": "y_pred_qda = qda.predict(X_test)"
+    },
+    {
+      "index": 770,
+      "locator": "讲义 L770",
+      "text": ""
+    },
+    {
+      "index": 771,
+      "locator": "讲义 L771",
+      "text": "print(\"\\n=== 二次判别分析（QDA）===\")"
+    },
+    {
+      "index": 772,
+      "locator": "讲义 L772",
+      "text": "print(f\"混淆矩阵:\\n{confusion_matrix(y_test, y_pred_qda)}\")"
+    },
+    {
+      "index": 773,
+      "locator": "讲义 L773",
+      "text": "print(f\"\\n分类报告:\\n{classification_report(y_test, y_pred_qda, target_names=['健康', '患病'])}\")"
+    },
+    {
+      "index": 774,
+      "locator": "讲义 L774",
+      "text": ""
+    },
+    {
+      "index": 775,
+      "locator": "讲义 L775",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 776,
+      "locator": "讲义 L776",
+      "text": "# 交叉验证"
+    },
+    {
+      "index": 777,
+      "locator": "讲义 L777",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 778,
+      "locator": "讲义 L778",
+      "text": "cv_scores = cross_val_score(lda, X, y, cv=5, scoring='accuracy')"
+    },
+    {
+      "index": 779,
+      "locator": "讲义 L779",
+      "text": "print(f\"\\n=== 5折交叉验证 ===\")"
+    },
+    {
+      "index": 780,
+      "locator": "讲义 L780",
+      "text": "print(f\"各折准确率: {cv_scores.round(3)}\")"
+    },
+    {
+      "index": 781,
+      "locator": "讲义 L781",
+      "text": "print(f\"平均准确率: {cv_scores.mean():.3f} ± {cv_scores.std():.3f}\")"
+    },
+    {
+      "index": 782,
+      "locator": "讲义 L782",
+      "text": ""
+    },
+    {
+      "index": 783,
+      "locator": "讲义 L783",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 784,
+      "locator": "讲义 L784",
+      "text": "# 可视化"
+    },
+    {
+      "index": 785,
+      "locator": "讲义 L785",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 786,
+      "locator": "讲义 L786",
+      "text": "fig, axes = plt.subplots(1, 3, figsize=(18, 5))"
+    },
+    {
+      "index": 787,
+      "locator": "讲义 L787",
+      "text": ""
+    },
+    {
+      "index": 788,
+      "locator": "讲义 L788",
+      "text": "# 判别函数得分分布"
+    },
+    {
+      "index": 789,
+      "locator": "讲义 L789",
+      "text": "scores = lda.transform(X_test)"
+    },
+    {
+      "index": 790,
+      "locator": "讲义 L790",
+      "text": "for label, name in [(0, '健康'), (1, '患病')]:"
+    },
+    {
+      "index": 791,
+      "locator": "讲义 L791",
+      "text": "    mask = y_test == label"
+    },
+    {
+      "index": 792,
+      "locator": "讲义 L792",
+      "text": "    axes[0].hist(scores[mask], bins=15, alpha=0.6, label=name)"
+    },
+    {
+      "index": 793,
+      "locator": "讲义 L793",
+      "text": "axes[0].axvline(x=0, color='r', linestyle='--', label='判别界值')"
+    },
+    {
+      "index": 794,
+      "locator": "讲义 L794",
+      "text": "axes[0].set_xlabel('判别函数得分')"
+    },
+    {
+      "index": 795,
+      "locator": "讲义 L795",
+      "text": "axes[0].set_ylabel('频数')"
+    },
+    {
+      "index": 796,
+      "locator": "讲义 L796",
+      "text": "axes[0].set_title('LDA判别函数得分分布')"
+    },
+    {
+      "index": 797,
+      "locator": "讲义 L797",
+      "text": "axes[0].legend()"
+    },
+    {
+      "index": 798,
+      "locator": "讲义 L798",
+      "text": ""
+    },
+    {
+      "index": 799,
+      "locator": "讲义 L799",
+      "text": "# ROC曲线"
+    },
+    {
+      "index": 800,
+      "locator": "讲义 L800",
+      "text": "fpr, tpr, _ = roc_curve(y_test, y_prob_lda)"
+    },
+    {
+      "index": 801,
+      "locator": "讲义 L801",
+      "text": "roc_auc = auc(fpr, tpr)"
+    },
+    {
+      "index": 802,
+      "locator": "讲义 L802",
+      "text": "axes[1].plot(fpr, tpr, 'b-', linewidth=2, label=f'LDA (AUC={roc_auc:.3f})')"
+    },
+    {
+      "index": 803,
+      "locator": "讲义 L803",
+      "text": "axes[1].plot([0, 1], [0, 1], 'r--')"
+    },
+    {
+      "index": 804,
+      "locator": "讲义 L804",
+      "text": "axes[1].set_xlabel('假正率')"
+    },
+    {
+      "index": 805,
+      "locator": "讲义 L805",
+      "text": "axes[1].set_ylabel('真正率')"
+    },
+    {
+      "index": 806,
+      "locator": "讲义 L806",
+      "text": "axes[1].set_title('ROC曲线')"
+    },
+    {
+      "index": 807,
+      "locator": "讲义 L807",
+      "text": "axes[1].legend()"
+    },
+    {
+      "index": 808,
+      "locator": "讲义 L808",
+      "text": ""
+    },
+    {
+      "index": 809,
+      "locator": "讲义 L809",
+      "text": "# 散点图"
+    },
+    {
+      "index": 810,
+      "locator": "讲义 L810",
+      "text": "for label, name, color in [(0, '健康', 'blue'), (1, '患病', 'red')]:"
+    },
+    {
+      "index": 811,
+      "locator": "讲义 L811",
+      "text": "    mask = y_test == label"
+    },
+    {
+      "index": 812,
+      "locator": "讲义 L812",
+      "text": "    axes[2].scatter(X_test[mask, 0], X_test[mask, 1], c=color, label=name,"
+    },
+    {
+      "index": 813,
+      "locator": "讲义 L813",
+      "text": "                    alpha=0.6, edgecolors='black', s=60)"
+    },
+    {
+      "index": 814,
+      "locator": "讲义 L814",
+      "text": "axes[2].set_xlabel(feature_names[0])"
+    },
+    {
+      "index": 815,
+      "locator": "讲义 L815",
+      "text": "axes[2].set_ylabel(feature_names[1])"
+    },
+    {
+      "index": 816,
+      "locator": "讲义 L816",
+      "text": "axes[2].set_title('测试集散点图')"
+    },
+    {
+      "index": 817,
+      "locator": "讲义 L817",
+      "text": "axes[2].legend()"
+    },
+    {
+      "index": 818,
+      "locator": "讲义 L818",
+      "text": ""
+    },
+    {
+      "index": 819,
+      "locator": "讲义 L819",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 820,
+      "locator": "讲义 L820",
+      "text": "plt.show()"
+    },
+    {
+      "index": 821,
+      "locator": "讲义 L821",
+      "text": ""
+    },
+    {
+      "index": 822,
+      "locator": "讲义 L822",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 823,
+      "locator": "讲义 L823",
+      "text": "# 新样品判别"
+    },
+    {
+      "index": 824,
+      "locator": "讲义 L824",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 825,
+      "locator": "讲义 L825",
+      "text": "new_patient = np.array([[140, 6.5, 250]])"
+    },
+    {
+      "index": 826,
+      "locator": "讲义 L826",
+      "text": "pred = lda.predict(new_patient)"
+    },
+    {
+      "index": 827,
+      "locator": "讲义 L827",
+      "text": "prob = lda.predict_proba(new_patient)"
+    },
+    {
+      "index": 828,
+      "locator": "讲义 L828",
+      "text": ""
+    },
+    {
+      "index": 829,
+      "locator": "讲义 L829",
+      "text": "print(f\"\\n=== 新样品判别 ===\")"
+    },
+    {
+      "index": 830,
+      "locator": "讲义 L830",
+      "text": "print(f\"指标: 收缩压={new_patient[0,0]}, 血糖={new_patient[0,1]}, 胆固醇={new_patient[0,2]}\")"
+    },
+    {
+      "index": 831,
+      "locator": "讲义 L831",
+      "text": "print(f\"判别结果: {'患病' if pred[0]==1 else '健康'}\")"
+    },
+    {
+      "index": 832,
+      "locator": "讲义 L832",
+      "text": "print(f\"后验概率: P(健康)={prob[0,0]:.4f}, P(患病)={prob[0,1]:.4f}\")"
+    },
+    {
+      "index": 833,
+      "locator": "讲义 L833",
+      "text": "```"
+    },
+    {
+      "index": 834,
+      "locator": "讲义 L834",
+      "text": ""
+    },
+    {
+      "index": 835,
+      "locator": "讲义 L835",
+      "text": "*(此处平台应展示判别分析的完整结果：判别系数、混淆矩阵、ROC曲线、散点图)*"
+    },
+    {
+      "index": 836,
+      "locator": "讲义 L836",
+      "text": ""
+    },
+    {
+      "index": 837,
+      "locator": "讲义 L837",
+      "text": "**结果解读**："
+    },
+    {
+      "index": 838,
+      "locator": "讲义 L838",
+      "text": ""
+    },
+    {
+      "index": 839,
+      "locator": "讲义 L839",
+      "text": "1. **判别系数**：收缩压和血糖的系数较大，说明这两个指标对疾病判别最重要。"
+    },
+    {
+      "index": 840,
+      "locator": "讲义 L840",
+      "text": ""
+    },
+    {
+      "index": 841,
+      "locator": "讲义 L841",
+      "text": "2. **混淆矩阵**：对角线元素为正确分类数，非对角线为错判数。"
+    },
+    {
+      "index": 842,
+      "locator": "讲义 L842",
+      "text": ""
+    },
+    {
+      "index": 843,
+      "locator": "讲义 L843",
+      "text": "3. **ROC曲线**：AUC接近1说明判别能力很强。"
+    },
+    {
+      "index": 844,
+      "locator": "讲义 L844",
+      "text": ""
+    },
+    {
+      "index": 845,
+      "locator": "讲义 L845",
+      "text": "4. **新样品**：根据后验概率判断新患者是否患病，后验概率越大说明属于该类的可能性越高。"
+    },
+    {
+      "index": 846,
+      "locator": "讲义 L846",
+      "text": ""
+    },
+    {
+      "index": 847,
+      "locator": "讲义 L847",
+      "text": "---"
+    },
+    {
+      "index": 848,
+      "locator": "讲义 L848",
+      "text": ""
+    },
+    {
+      "index": 849,
+      "locator": "讲义 L849",
+      "text": "### 实战案例12-2：多分类判别分析"
+    },
+    {
+      "index": 850,
+      "locator": "讲义 L850",
+      "text": ""
+    },
+    {
+      "index": 851,
+      "locator": "讲义 L851",
+      "text": "```python"
+    },
+    {
+      "index": 852,
+      "locator": "讲义 L852",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 853,
+      "locator": "讲义 L853",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 854,
+      "locator": "讲义 L854",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 855,
+      "locator": "讲义 L855",
+      "text": "from sklearn.discriminant_analysis import LinearDiscriminantAnalysis"
+    },
+    {
+      "index": 856,
+      "locator": "讲义 L856",
+      "text": "from sklearn.datasets import load_iris"
+    },
+    {
+      "index": 857,
+      "locator": "讲义 L857",
+      "text": "from sklearn.model_selection import train_test_split"
+    },
+    {
+      "index": 858,
+      "locator": "讲义 L858",
+      "text": "from sklearn.metrics import classification_report, confusion_matrix"
+    },
+    {
+      "index": 859,
+      "locator": "讲义 L859",
+      "text": ""
+    },
+    {
+      "index": 860,
+      "locator": "讲义 L860",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 861,
+      "locator": "讲义 L861",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 862,
+      "locator": "讲义 L862",
+      "text": ""
+    },
+    {
+      "index": 863,
+      "locator": "讲义 L863",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 864,
+      "locator": "讲义 L864",
+      "text": "# 加载鸢尾花数据集"
+    },
+    {
+      "index": 865,
+      "locator": "讲义 L865",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 866,
+      "locator": "讲义 L866",
+      "text": "iris = load_iris()"
+    },
+    {
+      "index": 867,
+      "locator": "讲义 L867",
+      "text": "X = iris.data"
+    },
+    {
+      "index": 868,
+      "locator": "讲义 L868",
+      "text": "y = iris.target"
+    },
+    {
+      "index": 869,
+      "locator": "讲义 L869",
+      "text": "feature_names = iris.feature_names"
+    },
+    {
+      "index": 870,
+      "locator": "讲义 L870",
+      "text": "target_names = iris.target_names"
+    },
+    {
+      "index": 871,
+      "locator": "讲义 L871",
+      "text": ""
+    },
+    {
+      "index": 872,
+      "locator": "讲义 L872",
+      "text": "print(\"数据集信息:\")"
+    },
+    {
+      "index": 873,
+      "locator": "讲义 L873",
+      "text": "print(f\"样本数: {X.shape[0]}\")"
+    },
+    {
+      "index": 874,
+      "locator": "讲义 L874",
+      "text": "print(f\"特征数: {X.shape[1]}\")"
+    },
+    {
+      "index": 875,
+      "locator": "讲义 L875",
+      "text": "print(f\"类别数: {len(target_names)}\")"
+    },
+    {
+      "index": 876,
+      "locator": "讲义 L876",
+      "text": "print(f\"类别名: {target_names}\")"
+    },
+    {
+      "index": 877,
+      "locator": "讲义 L877",
+      "text": ""
+    },
+    {
+      "index": 878,
+      "locator": "讲义 L878",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 879,
+      "locator": "讲义 L879",
+      "text": "# 划分训练集和测试集"
+    },
+    {
+      "index": 880,
+      "locator": "讲义 L880",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 881,
+      "locator": "讲义 L881",
+      "text": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)"
+    },
+    {
+      "index": 882,
+      "locator": "讲义 L882",
+      "text": ""
+    },
+    {
+      "index": 883,
+      "locator": "讲义 L883",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 884,
+      "locator": "讲义 L884",
+      "text": "# 多分类LDA"
+    },
+    {
+      "index": 885,
+      "locator": "讲义 L885",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 886,
+      "locator": "讲义 L886",
+      "text": "lda = LinearDiscriminantAnalysis()"
+    },
+    {
+      "index": 887,
+      "locator": "讲义 L887",
+      "text": "lda.fit(X_train, y_train)"
+    },
+    {
+      "index": 888,
+      "locator": "讲义 L888",
+      "text": "y_pred = lda.predict(X_test)"
+    },
+    {
+      "index": 889,
+      "locator": "讲义 L889",
+      "text": ""
+    },
+    {
+      "index": 890,
+      "locator": "讲义 L890",
+      "text": "print(\"\\n=== 多分类LDA结果 ===\")"
+    },
+    {
+      "index": 891,
+      "locator": "讲义 L891",
+      "text": "print(f\"判别系数矩阵形状: {lda.coef_.shape}\")"
+    },
+    {
+      "index": 892,
+      "locator": "讲义 L892",
+      "text": "print(f\"\\n混淆矩阵:\\n{confusion_matrix(y_test, y_pred)}\")"
+    },
+    {
+      "index": 893,
+      "locator": "讲义 L893",
+      "text": "print(f\"\\n分类报告:\\n{classification_report(y_test, y_pred, target_names=target_names)}\")"
+    },
+    {
+      "index": 894,
+      "locator": "讲义 L894",
+      "text": ""
+    },
+    {
+      "index": 895,
+      "locator": "讲义 L895",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 896,
+      "locator": "讲义 L896",
+      "text": "# 判别函数得分可视化"
+    },
+    {
+      "index": 897,
+      "locator": "讲义 L897",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 898,
+      "locator": "讲义 L898",
+      "text": "fig, axes = plt.subplots(1, 2, figsize=(14, 5))"
+    },
+    {
+      "index": 899,
+      "locator": "讲义 L899",
+      "text": ""
+    },
+    {
+      "index": 900,
+      "locator": "讲义 L900",
+      "text": "# 降维后的散点图"
+    },
+    {
+      "index": 901,
+      "locator": "讲义 L901",
+      "text": "X_lda = lda.transform(X)"
+    },
+    {
+      "index": 902,
+      "locator": "讲义 L902",
+      "text": "for label, name in zip(range(3), target_names):"
+    },
+    {
+      "index": 903,
+      "locator": "讲义 L903",
+      "text": "    mask = y == label"
+    },
+    {
+      "index": 904,
+      "locator": "讲义 L904",
+      "text": "    axes[0].scatter(X_lda[mask, 0], X_lda[mask, 1], label=name, alpha=0.6)"
+    },
+    {
+      "index": 905,
+      "locator": "讲义 L905",
+      "text": "axes[0].set_xlabel('第一判别函数')"
+    },
+    {
+      "index": 906,
+      "locator": "讲义 L906",
+      "text": "axes[0].set_ylabel('第二判别函数')"
+    },
+    {
+      "index": 907,
+      "locator": "讲义 L907",
+      "text": "axes[0].set_title('LDA降维结果')"
+    },
+    {
+      "index": 908,
+      "locator": "讲义 L908",
+      "text": "axes[0].legend()"
+    },
+    {
+      "index": 909,
+      "locator": "讲义 L909",
+      "text": ""
+    },
+    {
+      "index": 910,
+      "locator": "讲义 L910",
+      "text": "# 判别系数热力图"
+    },
+    {
+      "index": 911,
+      "locator": "讲义 L911",
+      "text": "coef_df = pd.DataFrame(lda.coef_, columns=feature_names, index=target_names)"
+    },
+    {
+      "index": 912,
+      "locator": "讲义 L912",
+      "text": "im = axes[1].imshow(coef_df.values, cmap='RdBu_r', aspect='auto')"
+    },
+    {
+      "index": 913,
+      "locator": "讲义 L913",
+      "text": "axes[1].set_xticks(range(len(feature_names)))"
+    },
+    {
+      "index": 914,
+      "locator": "讲义 L914",
+      "text": "axes[1].set_yticks(range(len(target_names)))"
+    },
+    {
+      "index": 915,
+      "locator": "讲义 L915",
+      "text": "axes[1].set_xticklabels(feature_names, rotation=45, ha='right')"
+    },
+    {
+      "index": 916,
+      "locator": "讲义 L916",
+      "text": "axes[1].set_yticklabels(target_names)"
+    },
+    {
+      "index": 917,
+      "locator": "讲义 L917",
+      "text": "axes[1].set_title('判别系数热力图')"
+    },
+    {
+      "index": 918,
+      "locator": "讲义 L918",
+      "text": "plt.colorbar(im, ax=axes[1])"
+    },
+    {
+      "index": 919,
+      "locator": "讲义 L919",
+      "text": ""
+    },
+    {
+      "index": 920,
+      "locator": "讲义 L920",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 921,
+      "locator": "讲义 L921",
+      "text": "plt.show()"
+    },
+    {
+      "index": 922,
+      "locator": "讲义 L922",
+      "text": ""
+    },
+    {
+      "index": 923,
+      "locator": "讲义 L923",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 924,
+      "locator": "讲义 L924",
+      "text": "# 新样品判别"
+    },
+    {
+      "index": 925,
+      "locator": "讲义 L925",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 926,
+      "locator": "讲义 L926",
+      "text": "new_sample = np.array([[5.1, 3.5, 1.4, 0.2]])"
+    },
+    {
+      "index": 927,
+      "locator": "讲义 L927",
+      "text": "pred = lda.predict(new_sample)"
+    },
+    {
+      "index": 928,
+      "locator": "讲义 L928",
+      "text": "prob = lda.predict_proba(new_sample)"
+    },
+    {
+      "index": 929,
+      "locator": "讲义 L929",
+      "text": ""
+    },
+    {
+      "index": 930,
+      "locator": "讲义 L930",
+      "text": "print(f\"\\n=== 新样品判别 ===\")"
+    },
+    {
+      "index": 931,
+      "locator": "讲义 L931",
+      "text": "print(f\"特征值: {new_sample[0]}\")"
+    },
+    {
+      "index": 932,
+      "locator": "讲义 L932",
+      "text": "print(f\"判别结果: {target_names[pred[0]]}\")"
+    },
+    {
+      "index": 933,
+      "locator": "讲义 L933",
+      "text": "print(f\"后验概率: {dict(zip(target_names, prob[0].round(4)))}\")"
+    },
+    {
+      "index": 934,
+      "locator": "讲义 L934",
+      "text": "```"
+    },
+    {
+      "index": 935,
+      "locator": "讲义 L935",
+      "text": ""
+    },
+    {
+      "index": 936,
+      "locator": "讲义 L936",
+      "text": "---"
+    },
+    {
+      "index": 937,
+      "locator": "讲义 L937",
+      "text": ""
+    },
+    {
+      "index": 938,
+      "locator": "讲义 L938",
+      "text": "### 实战案例12-3：手动实现Fisher判别"
+    },
+    {
+      "index": 939,
+      "locator": "讲义 L939",
+      "text": ""
+    },
+    {
+      "index": 940,
+      "locator": "讲义 L940",
+      "text": "```python"
+    },
+    {
+      "index": 941,
+      "locator": "讲义 L941",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 942,
+      "locator": "讲义 L942",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 943,
+      "locator": "讲义 L943",
+      "text": ""
+    },
+    {
+      "index": 944,
+      "locator": "讲义 L944",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 945,
+      "locator": "讲义 L945",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 946,
+      "locator": "讲义 L946",
+      "text": ""
+    },
+    {
+      "index": 947,
+      "locator": "讲义 L947",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 948,
+      "locator": "讲义 L948",
+      "text": "# 数据准备"
+    },
+    {
+      "index": 949,
+      "locator": "讲义 L949",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 950,
+      "locator": "讲义 L950",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 951,
+      "locator": "讲义 L951",
+      "text": ""
+    },
+    {
+      "index": 952,
+      "locator": "讲义 L952",
+      "text": "# 两组数据"
+    },
+    {
+      "index": 953,
+      "locator": "讲义 L953",
+      "text": "X1 = np.random.multivariate_normal([5, 3], [[2, 0.5], [0.5, 1]], 50)"
+    },
+    {
+      "index": 954,
+      "locator": "讲义 L954",
+      "text": "X2 = np.random.multivariate_normal([2, 1], [[2, 0.5], [0.5, 1]], 50)"
+    },
+    {
+      "index": 955,
+      "locator": "讲义 L955",
+      "text": ""
+    },
+    {
+      "index": 956,
+      "locator": "讲义 L956",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 957,
+      "locator": "讲义 L957",
+      "text": "# Fisher判别手动实现"
+    },
+    {
+      "index": 958,
+      "locator": "讲义 L958",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 959,
+      "locator": "讲义 L959",
+      "text": ""
+    },
+    {
+      "index": 960,
+      "locator": "讲义 L960",
+      "text": "# 步骤1：计算各组均值"
+    },
+    {
+      "index": 961,
+      "locator": "讲义 L961",
+      "text": "mean1 = np.mean(X1, axis=0)"
+    },
+    {
+      "index": 962,
+      "locator": "讲义 L962",
+      "text": "mean2 = np.mean(X2, axis=0)"
+    },
+    {
+      "index": 963,
+      "locator": "讲义 L963",
+      "text": "print(f\"组1均值: {mean1}\")"
+    },
+    {
+      "index": 964,
+      "locator": "讲义 L964",
+      "text": "print(f\"组2均值: {mean2}\")"
+    },
+    {
+      "index": 965,
+      "locator": "讲义 L965",
+      "text": ""
+    },
+    {
+      "index": 966,
+      "locator": "讲义 L966",
+      "text": "# 步骤2：计算类内散度矩阵"
+    },
+    {
+      "index": 967,
+      "locator": "讲义 L967",
+      "text": "S1 = np.dot((X1 - mean1).T, (X1 - mean1))"
+    },
+    {
+      "index": 968,
+      "locator": "讲义 L968",
+      "text": "S2 = np.dot((X2 - mean2).T, (X2 - mean2))"
+    },
+    {
+      "index": 969,
+      "locator": "讲义 L969",
+      "text": "W = S1 + S2"
+    },
+    {
+      "index": 970,
+      "locator": "讲义 L970",
+      "text": "print(f\"\\n类内散度矩阵W:\\n{W}\")"
+    },
+    {
+      "index": 971,
+      "locator": "讲义 L971",
+      "text": ""
+    },
+    {
+      "index": 972,
+      "locator": "讲义 L972",
+      "text": "# 步骤3：计算判别系数"
+    },
+    {
+      "index": 973,
+      "locator": "讲义 L973",
+      "text": "W_inv = np.linalg.inv(W)"
+    },
+    {
+      "index": 974,
+      "locator": "讲义 L974",
+      "text": "a = np.dot(W_inv, mean1 - mean2)"
+    },
+    {
+      "index": 975,
+      "locator": "讲义 L975",
+      "text": "print(f\"\\n判别系数a: {a}\")"
+    },
+    {
+      "index": 976,
+      "locator": "讲义 L976",
+      "text": ""
+    },
+    {
+      "index": 977,
+      "locator": "讲义 L977",
+      "text": "# 步骤4：计算判别界值"
+    },
+    {
+      "index": 978,
+      "locator": "讲义 L978",
+      "text": "c = (np.dot(a, mean1) + np.dot(a, mean2)) / 2"
+    },
+    {
+      "index": 979,
+      "locator": "讲义 L979",
+      "text": "print(f\"判别界值c: {c}\")"
+    },
+    {
+      "index": 980,
+      "locator": "讲义 L980",
+      "text": ""
+    },
+    {
+      "index": 981,
+      "locator": "讲义 L981",
+      "text": "# 步骤5：计算判别得分"
+    },
+    {
+      "index": 982,
+      "locator": "讲义 L982",
+      "text": "u1 = np.dot(X1, a)"
+    },
+    {
+      "index": 983,
+      "locator": "讲义 L983",
+      "text": "u2 = np.dot(X2, a)"
+    },
+    {
+      "index": 984,
+      "locator": "讲义 L984",
+      "text": ""
+    },
+    {
+      "index": 985,
+      "locator": "讲义 L985",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 986,
+      "locator": "讲义 L986",
+      "text": "# 可视化"
+    },
+    {
+      "index": 987,
+      "locator": "讲义 L987",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 988,
+      "locator": "讲义 L988",
+      "text": "fig, axes = plt.subplots(1, 2, figsize=(14, 5))"
+    },
+    {
+      "index": 989,
+      "locator": "讲义 L989",
+      "text": ""
+    },
+    {
+      "index": 990,
+      "locator": "讲义 L990",
+      "text": "# 原始数据散点图"
+    },
+    {
+      "index": 991,
+      "locator": "讲义 L991",
+      "text": "axes[0].scatter(X1[:, 0], X1[:, 1], c='blue', label='组1', alpha=0.6)"
+    },
+    {
+      "index": 992,
+      "locator": "讲义 L992",
+      "text": "axes[0].scatter(X2[:, 0], X2[:, 1], c='red', label='组2', alpha=0.6)"
+    },
+    {
+      "index": 993,
+      "locator": "讲义 L993",
+      "text": "axes[0].set_xlabel('X1')"
+    },
+    {
+      "index": 994,
+      "locator": "讲义 L994",
+      "text": "axes[0].set_ylabel('X2')"
+    },
+    {
+      "index": 995,
+      "locator": "讲义 L995",
+      "text": "axes[0].set_title('原始数据散点图')"
+    },
+    {
+      "index": 996,
+      "locator": "讲义 L996",
+      "text": "axes[0].legend()"
+    },
+    {
+      "index": 997,
+      "locator": "讲义 L997",
+      "text": ""
+    },
+    {
+      "index": 998,
+      "locator": "讲义 L998",
+      "text": "# 判别得分分布"
+    },
+    {
+      "index": 999,
+      "locator": "讲义 L999",
+      "text": "axes[1].hist(u1, bins=15, alpha=0.6, label='组1', color='blue')"
+    },
+    {
+      "index": 1000,
+      "locator": "讲义 L1000",
+      "text": "axes[1].hist(u2, bins=15, alpha=0.6, label='组2', color='red')"
+    },
+    {
+      "index": 1001,
+      "locator": "讲义 L1001",
+      "text": "axes[1].axvline(x=c, color='black', linestyle='--', label=f'判别界值={c:.3f}')"
+    },
+    {
+      "index": 1002,
+      "locator": "讲义 L1002",
+      "text": "axes[1].set_xlabel('判别得分')"
+    },
+    {
+      "index": 1003,
+      "locator": "讲义 L1003",
+      "text": "axes[1].set_ylabel('频数')"
+    },
+    {
+      "index": 1004,
+      "locator": "讲义 L1004",
+      "text": "axes[1].set_title('判别得分分布')"
+    },
+    {
+      "index": 1005,
+      "locator": "讲义 L1005",
+      "text": "axes[1].legend()"
+    },
+    {
+      "index": 1006,
+      "locator": "讲义 L1006",
+      "text": ""
+    },
+    {
+      "index": 1007,
+      "locator": "讲义 L1007",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 1008,
+      "locator": "讲义 L1008",
+      "text": "plt.show()"
+    },
+    {
+      "index": 1009,
+      "locator": "讲义 L1009",
+      "text": ""
+    },
+    {
+      "index": 1010,
+      "locator": "讲义 L1010",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1011,
+      "locator": "讲义 L1011",
+      "text": "# 新样品判别"
+    },
+    {
+      "index": 1012,
+      "locator": "讲义 L1012",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1013,
+      "locator": "讲义 L1013",
+      "text": "new_sample = np.array([3.5, 2.0])"
+    },
+    {
+      "index": 1014,
+      "locator": "讲义 L1014",
+      "text": "u_new = np.dot(a, new_sample)"
+    },
+    {
+      "index": 1015,
+      "locator": "讲义 L1015",
+      "text": "result = \"组1\" if u_new > c else \"组2\""
+    },
+    {
+      "index": 1016,
+      "locator": "讲义 L1016",
+      "text": ""
+    },
+    {
+      "index": 1017,
+      "locator": "讲义 L1017",
+      "text": "print(f\"\\n=== 新样品判别 ===\")"
+    },
+    {
+      "index": 1018,
+      "locator": "讲义 L1018",
+      "text": "print(f\"新样品: {new_sample}\")"
+    },
+    {
+      "index": 1019,
+      "locator": "讲义 L1019",
+      "text": "print(f\"判别得分: {u_new:.4f}\")"
+    },
+    {
+      "index": 1020,
+      "locator": "讲义 L1020",
+      "text": "print(f\"判别界值: {c:.4f}\")"
+    },
+    {
+      "index": 1021,
+      "locator": "讲义 L1021",
+      "text": "print(f\"判别结果: {result}\")"
+    },
+    {
+      "index": 1022,
+      "locator": "讲义 L1022",
+      "text": "```"
+    },
+    {
+      "index": 1023,
+      "locator": "讲义 L1023",
+      "text": ""
+    },
+    {
+      "index": 1024,
+      "locator": "讲义 L1024",
+      "text": "---"
+    },
+    {
+      "index": 1025,
+      "locator": "讲义 L1025",
+      "text": ""
+    },
+    {
+      "index": 1026,
+      "locator": "讲义 L1026",
+      "text": "### 实战案例12-4：ROC曲线绘制详解"
+    },
+    {
+      "index": 1027,
+      "locator": "讲义 L1027",
+      "text": ""
+    },
+    {
+      "index": 1028,
+      "locator": "讲义 L1028",
+      "text": "```python"
+    },
+    {
+      "index": 1029,
+      "locator": "讲义 L1029",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 1030,
+      "locator": "讲义 L1030",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 1031,
+      "locator": "讲义 L1031",
+      "text": "from sklearn.metrics import roc_curve, auc"
+    },
+    {
+      "index": 1032,
+      "locator": "讲义 L1032",
+      "text": "from sklearn.discriminant_analysis import LinearDiscriminantAnalysis"
+    },
+    {
+      "index": 1033,
+      "locator": "讲义 L1033",
+      "text": "from sklearn.model_selection import train_test_split"
+    },
+    {
+      "index": 1034,
+      "locator": "讲义 L1034",
+      "text": ""
+    },
+    {
+      "index": 1035,
+      "locator": "讲义 L1035",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 1036,
+      "locator": "讲义 L1036",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 1037,
+      "locator": "讲义 L1037",
+      "text": ""
+    },
+    {
+      "index": 1038,
+      "locator": "讲义 L1038",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1039,
+      "locator": "讲义 L1039",
+      "text": "# 数据准备"
+    },
+    {
+      "index": 1040,
+      "locator": "讲义 L1040",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1041,
+      "locator": "讲义 L1041",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 1042,
+      "locator": "讲义 L1042",
+      "text": "n1, n2 = 100, 100"
+    },
+    {
+      "index": 1043,
+      "locator": "讲义 L1043",
+      "text": ""
+    },
+    {
+      "index": 1044,
+      "locator": "讲义 L1044",
+      "text": "X1 = np.random.multivariate_normal([0, 0], [[1, 0.3], [0.3, 1]], n1)"
+    },
+    {
+      "index": 1045,
+      "locator": "讲义 L1045",
+      "text": "X2 = np.random.multivariate_normal([1, 1], [[1, 0.3], [0.3, 1]], n2)"
+    },
+    {
+      "index": 1046,
+      "locator": "讲义 L1046",
+      "text": ""
+    },
+    {
+      "index": 1047,
+      "locator": "讲义 L1047",
+      "text": "X = np.vstack([X1, X2])"
+    },
+    {
+      "index": 1048,
+      "locator": "讲义 L1048",
+      "text": "y = np.array([0]*n1 + [1]*n2)"
+    },
+    {
+      "index": 1049,
+      "locator": "讲义 L1049",
+      "text": ""
+    },
+    {
+      "index": 1050,
+      "locator": "讲义 L1050",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1051,
+      "locator": "讲义 L1051",
+      "text": "# 训练LDA模型"
+    },
+    {
+      "index": 1052,
+      "locator": "讲义 L1052",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1053,
+      "locator": "讲义 L1053",
+      "text": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)"
+    },
+    {
+      "index": 1054,
+      "locator": "讲义 L1054",
+      "text": "lda = LinearDiscriminantAnalysis()"
+    },
+    {
+      "index": 1055,
+      "locator": "讲义 L1055",
+      "text": "lda.fit(X_train, y_train)"
+    },
+    {
+      "index": 1056,
+      "locator": "讲义 L1056",
+      "text": "y_prob = lda.predict_proba(X_test)[:, 1]"
+    },
+    {
+      "index": 1057,
+      "locator": "讲义 L1057",
+      "text": ""
+    },
+    {
+      "index": 1058,
+      "locator": "讲义 L1058",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1059,
+      "locator": "讲义 L1059",
+      "text": "# 手动计算ROC曲线"
+    },
+    {
+      "index": 1060,
+      "locator": "讲义 L1060",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1061,
+      "locator": "讲义 L1061",
+      "text": "def manual_roc(y_true, y_score):"
+    },
+    {
+      "index": 1062,
+      "locator": "讲义 L1062",
+      "text": "    \"\"\"手动计算ROC曲线\"\"\""
+    },
+    {
+      "index": 1063,
+      "locator": "讲义 L1063",
+      "text": "    # 按预测概率降序排序"
+    },
+    {
+      "index": 1064,
+      "locator": "讲义 L1064",
+      "text": "    indices = np.argsort(-y_score)"
+    },
+    {
+      "index": 1065,
+      "locator": "讲义 L1065",
+      "text": "    y_true_sorted = y_true[indices]"
+    },
+    {
+      "index": 1066,
+      "locator": "讲义 L1066",
+      "text": "    y_score_sorted = y_score[indices]"
+    },
+    {
+      "index": 1067,
+      "locator": "讲义 L1067",
+      "text": ""
+    },
+    {
+      "index": 1068,
+      "locator": "讲义 L1068",
+      "text": "    # 计算TPR和FPR"
+    },
+    {
+      "index": 1069,
+      "locator": "讲义 L1069",
+      "text": "    tpr_list = [0]"
+    },
+    {
+      "index": 1070,
+      "locator": "讲义 L1070",
+      "text": "    fpr_list = [0]"
+    },
+    {
+      "index": 1071,
+      "locator": "讲义 L1071",
+      "text": ""
+    },
+    {
+      "index": 1072,
+      "locator": "讲义 L1072",
+      "text": "    n_pos = np.sum(y_true == 1)"
+    },
+    {
+      "index": 1073,
+      "locator": "讲义 L1073",
+      "text": "    n_neg = np.sum(y_true == 0)"
+    },
+    {
+      "index": 1074,
+      "locator": "讲义 L1074",
+      "text": ""
+    },
+    {
+      "index": 1075,
+      "locator": "讲义 L1075",
+      "text": "    tp = 0"
+    },
+    {
+      "index": 1076,
+      "locator": "讲义 L1076",
+      "text": "    fp = 0"
+    },
+    {
+      "index": 1077,
+      "locator": "讲义 L1077",
+      "text": ""
+    },
+    {
+      "index": 1078,
+      "locator": "讲义 L1078",
+      "text": "    for i in range(len(y_true_sorted)):"
+    },
+    {
+      "index": 1079,
+      "locator": "讲义 L1079",
+      "text": "        if y_true_sorted[i] == 1:"
+    },
+    {
+      "index": 1080,
+      "locator": "讲义 L1080",
+      "text": "            tp += 1"
+    },
+    {
+      "index": 1081,
+      "locator": "讲义 L1081",
+      "text": "        else:"
+    },
+    {
+      "index": 1082,
+      "locator": "讲义 L1082",
+      "text": "            fp += 1"
+    },
+    {
+      "index": 1083,
+      "locator": "讲义 L1083",
+      "text": ""
+    },
+    {
+      "index": 1084,
+      "locator": "讲义 L1084",
+      "text": "        tpr_list.append(tp / n_pos)"
+    },
+    {
+      "index": 1085,
+      "locator": "讲义 L1085",
+      "text": "        fpr_list.append(fp / n_neg)"
+    },
+    {
+      "index": 1086,
+      "locator": "讲义 L1086",
+      "text": ""
+    },
+    {
+      "index": 1087,
+      "locator": "讲义 L1087",
+      "text": "    return np.array(fpr_list), np.array(tpr_list)"
+    },
+    {
+      "index": 1088,
+      "locator": "讲义 L1088",
+      "text": ""
+    },
+    {
+      "index": 1089,
+      "locator": "讲义 L1089",
+      "text": "fpr_manual, tpr_manual = manual_roc(y_test, y_prob)"
+    },
+    {
+      "index": 1090,
+      "locator": "讲义 L1090",
+      "text": ""
+    },
+    {
+      "index": 1091,
+      "locator": "讲义 L1091",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1092,
+      "locator": "讲义 L1092",
+      "text": "# 使用sklearn计算ROC曲线"
+    },
+    {
+      "index": 1093,
+      "locator": "讲义 L1093",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1094,
+      "locator": "讲义 L1094",
+      "text": "fpr_sklearn, tpr_sklearn, thresholds = roc_curve(y_test, y_prob)"
+    },
+    {
+      "index": 1095,
+      "locator": "讲义 L1095",
+      "text": "roc_auc = auc(fpr_sklearn, tpr_sklearn)"
+    },
+    {
+      "index": 1096,
+      "locator": "讲义 L1096",
+      "text": ""
+    },
+    {
+      "index": 1097,
+      "locator": "讲义 L1097",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1098,
+      "locator": "讲义 L1098",
+      "text": "# 可视化"
+    },
+    {
+      "index": 1099,
+      "locator": "讲义 L1099",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1100,
+      "locator": "讲义 L1100",
+      "text": "fig, axes = plt.subplots(1, 3, figsize=(18, 5))"
+    },
+    {
+      "index": 1101,
+      "locator": "讲义 L1101",
+      "text": ""
+    },
+    {
+      "index": 1102,
+      "locator": "讲义 L1102",
+      "text": "# 手动计算的ROC曲线"
+    },
+    {
+      "index": 1103,
+      "locator": "讲义 L1103",
+      "text": "axes[0].plot(fpr_manual, tpr_manual, 'b-', linewidth=2)"
+    },
+    {
+      "index": 1104,
+      "locator": "讲义 L1104",
+      "text": "axes[0].plot([0, 1], [0, 1], 'r--')"
+    },
+    {
+      "index": 1105,
+      "locator": "讲义 L1105",
+      "text": "axes[0].set_xlabel('假正率 (FPR)')"
+    },
+    {
+      "index": 1106,
+      "locator": "讲义 L1106",
+      "text": "axes[0].set_ylabel('真正率 (TPR)')"
+    },
+    {
+      "index": 1107,
+      "locator": "讲义 L1107",
+      "text": "axes[0].set_title('手动计算的ROC曲线')"
+    },
+    {
+      "index": 1108,
+      "locator": "讲义 L1108",
+      "text": "axes[0].set_xlim([0, 1])"
+    },
+    {
+      "index": 1109,
+      "locator": "讲义 L1109",
+      "text": "axes[0].set_ylim([0, 1.05])"
+    },
+    {
+      "index": 1110,
+      "locator": "讲义 L1110",
+      "text": ""
+    },
+    {
+      "index": 1111,
+      "locator": "讲义 L1111",
+      "text": "# sklearn计算的ROC曲线"
+    },
+    {
+      "index": 1112,
+      "locator": "讲义 L1112",
+      "text": "axes[1].plot(fpr_sklearn, tpr_sklearn, 'b-', linewidth=2, label=f'AUC={roc_auc:.3f}')"
+    },
+    {
+      "index": 1113,
+      "locator": "讲义 L1113",
+      "text": "axes[1].plot([0, 1], [0, 1], 'r--')"
+    },
+    {
+      "index": 1114,
+      "locator": "讲义 L1114",
+      "text": "axes[1].set_xlabel('假正率 (FPR)')"
+    },
+    {
+      "index": 1115,
+      "locator": "讲义 L1115",
+      "text": "axes[1].set_ylabel('真正率 (TPR)')"
+    },
+    {
+      "index": 1116,
+      "locator": "讲义 L1116",
+      "text": "axes[1].set_title('sklearn计算的ROC曲线')"
+    },
+    {
+      "index": 1117,
+      "locator": "讲义 L1117",
+      "text": "axes[1].set_xlim([0, 1])"
+    },
+    {
+      "index": 1118,
+      "locator": "讲义 L1118",
+      "text": "axes[1].set_ylim([0, 1.05])"
+    },
+    {
+      "index": 1119,
+      "locator": "讲义 L1119",
+      "text": "axes[1].legend()"
+    },
+    {
+      "index": 1120,
+      "locator": "讲义 L1120",
+      "text": ""
+    },
+    {
+      "index": 1121,
+      "locator": "讲义 L1121",
+      "text": "# 不同阈值下的准确率"
+    },
+    {
+      "index": 1122,
+      "locator": "讲义 L1122",
+      "text": "from sklearn.metrics import accuracy_score"
+    },
+    {
+      "index": 1123,
+      "locator": "讲义 L1123",
+      "text": "thresholds_acc = np.linspace(0, 1, 100)"
+    },
+    {
+      "index": 1124,
+      "locator": "讲义 L1124",
+      "text": "accuracies = []"
+    },
+    {
+      "index": 1125,
+      "locator": "讲义 L1125",
+      "text": "for thresh in thresholds_acc:"
+    },
+    {
+      "index": 1126,
+      "locator": "讲义 L1126",
+      "text": "    y_pred_thresh = (y_prob >= thresh).astype(int)"
+    },
+    {
+      "index": 1127,
+      "locator": "讲义 L1127",
+      "text": "    acc = accuracy_score(y_test, y_pred_thresh)"
+    },
+    {
+      "index": 1128,
+      "locator": "讲义 L1128",
+      "text": "    accuracies.append(acc)"
+    },
+    {
+      "index": 1129,
+      "locator": "讲义 L1129",
+      "text": ""
+    },
+    {
+      "index": 1130,
+      "locator": "讲义 L1130",
+      "text": "axes[2].plot(thresholds_acc, accuracies, 'g-', linewidth=2)"
+    },
+    {
+      "index": 1131,
+      "locator": "讲义 L1131",
+      "text": "axes[2].set_xlabel('阈值')"
+    },
+    {
+      "index": 1132,
+      "locator": "讲义 L1132",
+      "text": "axes[2].set_ylabel('准确率')"
+    },
+    {
+      "index": 1133,
+      "locator": "讲义 L1133",
+      "text": "axes[2].set_title('不同阈值下的准确率')"
+    },
+    {
+      "index": 1134,
+      "locator": "讲义 L1134",
+      "text": ""
+    },
+    {
+      "index": 1135,
+      "locator": "讲义 L1135",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 1136,
+      "locator": "讲义 L1136",
+      "text": "plt.show()"
+    },
+    {
+      "index": 1137,
+      "locator": "讲义 L1137",
+      "text": "```"
+    },
+    {
+      "index": 1138,
+      "locator": "讲义 L1138",
+      "text": ""
+    },
+    {
+      "index": 1139,
+      "locator": "讲义 L1139",
+      "text": "---"
+    },
+    {
+      "index": 1140,
+      "locator": "讲义 L1140",
+      "text": ""
+    },
+    {
+      "index": 1141,
+      "locator": "讲义 L1141",
+      "text": "### 实战案例12-5：判别分析在信用评分中的应用"
+    },
+    {
+      "index": 1142,
+      "locator": "讲义 L1142",
+      "text": ""
+    },
+    {
+      "index": 1143,
+      "locator": "讲义 L1143",
+      "text": "```python"
+    },
+    {
+      "index": 1144,
+      "locator": "讲义 L1144",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 1145,
+      "locator": "讲义 L1145",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 1146,
+      "locator": "讲义 L1146",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 1147,
+      "locator": "讲义 L1147",
+      "text": "from sklearn.discriminant_analysis import LinearDiscriminantAnalysis"
+    },
+    {
+      "index": 1148,
+      "locator": "讲义 L1148",
+      "text": "from sklearn.model_selection import train_test_split, cross_val_score"
+    },
+    {
+      "index": 1149,
+      "locator": "讲义 L1149",
+      "text": "from sklearn.metrics import classification_report, confusion_matrix, roc_curve, auc"
+    },
+    {
+      "index": 1150,
+      "locator": "讲义 L1150",
+      "text": "from sklearn.preprocessing import StandardScaler"
+    },
+    {
+      "index": 1151,
+      "locator": "讲义 L1151",
+      "text": ""
+    },
+    {
+      "index": 1152,
+      "locator": "讲义 L1152",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 1153,
+      "locator": "讲义 L1153",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 1154,
+      "locator": "讲义 L1154",
+      "text": ""
+    },
+    {
+      "index": 1155,
+      "locator": "讲义 L1155",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1156,
+      "locator": "讲义 L1156",
+      "text": "# 生成模拟信用评分数据"
+    },
+    {
+      "index": 1157,
+      "locator": "讲义 L1157",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1158,
+      "locator": "讲义 L1158",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 1159,
+      "locator": "讲义 L1159",
+      "text": "n = 500"
+    },
+    {
+      "index": 1160,
+      "locator": "讲义 L1160",
+      "text": ""
+    },
+    {
+      "index": 1161,
+      "locator": "讲义 L1161",
+      "text": "# 特征变量"
+    },
+    {
+      "index": 1162,
+      "locator": "讲义 L1162",
+      "text": "income = np.random.lognormal(10, 0.5, n)  # 收入"
+    },
+    {
+      "index": 1163,
+      "locator": "讲义 L1163",
+      "text": "debt_ratio = np.random.beta(2, 5, n)  # 负债率"
+    },
+    {
+      "index": 1164,
+      "locator": "讲义 L1164",
+      "text": "credit_score = np.random.normal(650, 50, n)  # 信用评分"
+    },
+    {
+      "index": 1165,
+      "locator": "讲义 L1165",
+      "text": "loan_amount = np.random.lognormal(10, 1, n)  # 贷款金额"
+    },
+    {
+      "index": 1166,
+      "locator": "讲义 L1166",
+      "text": ""
+    },
+    {
+      "index": 1167,
+      "locator": "讲义 L1167",
+      "text": "# 生成标签（信用良好=0，信用不良=1）"
+    },
+    {
+      "index": 1168,
+      "locator": "讲义 L1168",
+      "text": "logit = -5 + 0.0001 * income - 3 * debt_ratio - 0.01 * credit_score + 0.00001 * loan_amount"
+    },
+    {
+      "index": 1169,
+      "locator": "讲义 L1169",
+      "text": "prob = 1 / (1 + np.exp(-logit))"
+    },
+    {
+      "index": 1170,
+      "locator": "讲义 L1170",
+      "text": "y = (np.random.random(n) < prob).astype(int)"
+    },
+    {
+      "index": 1171,
+      "locator": "讲义 L1171",
+      "text": ""
+    },
+    {
+      "index": 1172,
+      "locator": "讲义 L1172",
+      "text": "# 特征矩阵"
+    },
+    {
+      "index": 1173,
+      "locator": "讲义 L1173",
+      "text": "X = np.column_stack([income, debt_ratio, credit_score, loan_amount])"
+    },
+    {
+      "index": 1174,
+      "locator": "讲义 L1174",
+      "text": "feature_names = ['收入', '负债率', '信用评分', '贷款金额']"
+    },
+    {
+      "index": 1175,
+      "locator": "讲义 L1175",
+      "text": ""
+    },
+    {
+      "index": 1176,
+      "locator": "讲义 L1176",
+      "text": "print(f\"数据集大小: {X.shape}\")"
+    },
+    {
+      "index": 1177,
+      "locator": "讲义 L1177",
+      "text": "print(f\"信用良好: {np.sum(y==0)}\")"
+    },
+    {
+      "index": 1178,
+      "locator": "讲义 L1178",
+      "text": "print(f\"信用不良: {np.sum(y==1)}\")"
+    },
+    {
+      "index": 1179,
+      "locator": "讲义 L1179",
+      "text": ""
+    },
+    {
+      "index": 1180,
+      "locator": "讲义 L1180",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1181,
+      "locator": "讲义 L1181",
+      "text": "# 数据标准化"
+    },
+    {
+      "index": 1182,
+      "locator": "讲义 L1182",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1183,
+      "locator": "讲义 L1183",
+      "text": "scaler = StandardScaler()"
+    },
+    {
+      "index": 1184,
+      "locator": "讲义 L1184",
+      "text": "X_scaled = scaler.fit_transform(X)"
+    },
+    {
+      "index": 1185,
+      "locator": "讲义 L1185",
+      "text": ""
+    },
+    {
+      "index": 1186,
+      "locator": "讲义 L1186",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1187,
+      "locator": "讲义 L1187",
+      "text": "# 划分训练集和测试集"
+    },
+    {
+      "index": 1188,
+      "locator": "讲义 L1188",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1189,
+      "locator": "讲义 L1189",
+      "text": "X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.3, random_state=42)"
+    },
+    {
+      "index": 1190,
+      "locator": "讲义 L1190",
+      "text": ""
+    },
+    {
+      "index": 1191,
+      "locator": "讲义 L1191",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1192,
+      "locator": "讲义 L1192",
+      "text": "# 训练LDA模型"
+    },
+    {
+      "index": 1193,
+      "locator": "讲义 L1193",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1194,
+      "locator": "讲义 L1194",
+      "text": "lda = LinearDiscriminantAnalysis()"
+    },
+    {
+      "index": 1195,
+      "locator": "讲义 L1195",
+      "text": "lda.fit(X_train, y_train)"
+    },
+    {
+      "index": 1196,
+      "locator": "讲义 L1196",
+      "text": "y_pred = lda.predict(X_test)"
+    },
+    {
+      "index": 1197,
+      "locator": "讲义 L1197",
+      "text": "y_prob = lda.predict_proba(X_test)[:, 1]"
+    },
+    {
+      "index": 1198,
+      "locator": "讲义 L1198",
+      "text": ""
+    },
+    {
+      "index": 1199,
+      "locator": "讲义 L1199",
+      "text": "print(\"\\n=== LDA信用评分模型 ===\")"
+    },
+    {
+      "index": 1200,
+      "locator": "讲义 L1200",
+      "text": "print(f\"判别系数: {dict(zip(feature_names, lda.coef_[0].round(4)))}\")"
+    },
+    {
+      "index": 1201,
+      "locator": "讲义 L1201",
+      "text": "print(f\"\\n混淆矩阵:\\n{confusion_matrix(y_test, y_pred)}\")"
+    },
+    {
+      "index": 1202,
+      "locator": "讲义 L1202",
+      "text": "print(f\"\\n分类报告:\\n{classification_report(y_test, y_pred, target_names=['信用良好', '信用不良'])}\")"
+    },
+    {
+      "index": 1203,
+      "locator": "讲义 L1203",
+      "text": ""
+    },
+    {
+      "index": 1204,
+      "locator": "讲义 L1204",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1205,
+      "locator": "讲义 L1205",
+      "text": "# 交叉验证"
+    },
+    {
+      "index": 1206,
+      "locator": "讲义 L1206",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1207,
+      "locator": "讲义 L1207",
+      "text": "cv_scores = cross_val_score(lda, X_scaled, y, cv=5, scoring='accuracy')"
+    },
+    {
+      "index": 1208,
+      "locator": "讲义 L1208",
+      "text": "print(f\"\\n5折交叉验证准确率: {cv_scores.round(3)}\")"
+    },
+    {
+      "index": 1209,
+      "locator": "讲义 L1209",
+      "text": "print(f\"平均准确率: {cv_scores.mean():.3f} ± {cv_scores.std():.3f}\")"
+    },
+    {
+      "index": 1210,
+      "locator": "讲义 L1210",
+      "text": ""
+    },
+    {
+      "index": 1211,
+      "locator": "讲义 L1211",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1212,
+      "locator": "讲义 L1212",
+      "text": "# 可视化"
+    },
+    {
+      "index": 1213,
+      "locator": "讲义 L1213",
+      "text": "# ============================================================"
+    },
+    {
+      "index": 1214,
+      "locator": "讲义 L1214",
+      "text": "fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "index": 1215,
+      "locator": "讲义 L1215",
+      "text": ""
+    },
+    {
+      "index": 1216,
+      "locator": "讲义 L1216",
+      "text": "# 判别系数条形图"
+    },
+    {
+      "index": 1217,
+      "locator": "讲义 L1217",
+      "text": "coef = lda.coef_[0]"
+    },
+    {
+      "index": 1218,
+      "locator": "讲义 L1218",
+      "text": "colors = ['green' if c > 0 else 'red' for c in coef]"
+    },
+    {
+      "index": 1219,
+      "locator": "讲义 L1219",
+      "text": "axes[0, 0].barh(feature_names, coef, color=colors)"
+    },
+    {
+      "index": 1220,
+      "locator": "讲义 L1220",
+      "text": "axes[0, 0].set_xlabel('判别系数')"
+    },
+    {
+      "index": 1221,
+      "locator": "讲义 L1221",
+      "text": "axes[0, 0].set_title('判别系数（正值增加违约概率）')"
+    },
+    {
+      "index": 1222,
+      "locator": "讲义 L1222",
+      "text": "axes[0, 0].axvline(x=0, color='black', linestyle='-', linewidth=0.5)"
+    },
+    {
+      "index": 1223,
+      "locator": "讲义 L1223",
+      "text": ""
+    },
+    {
+      "index": 1224,
+      "locator": "讲义 L1224",
+      "text": "# ROC曲线"
+    },
+    {
+      "index": 1225,
+      "locator": "讲义 L1225",
+      "text": "fpr, tpr, _ = roc_curve(y_test, y_prob)"
+    },
+    {
+      "index": 1226,
+      "locator": "讲义 L1226",
+      "text": "roc_auc = auc(fpr, tpr)"
+    },
+    {
+      "index": 1227,
+      "locator": "讲义 L1227",
+      "text": "axes[0, 1].plot(fpr, tpr, 'b-', linewidth=2, label=f'AUC={roc_auc:.3f}')"
+    },
+    {
+      "index": 1228,
+      "locator": "讲义 L1228",
+      "text": "axes[0, 1].plot([0, 1], [0, 1], 'r--')"
+    },
+    {
+      "index": 1229,
+      "locator": "讲义 L1229",
+      "text": "axes[0, 1].set_xlabel('假正率')"
+    },
+    {
+      "index": 1230,
+      "locator": "讲义 L1230",
+      "text": "axes[0, 1].set_ylabel('真正率')"
+    },
+    {
+      "index": 1231,
+      "locator": "讲义 L1231",
+      "text": "axes[0, 1].set_title('ROC曲线')"
+    },
+    {
+      "index": 1232,
+      "locator": "讲义 L1232",
+      "text": "axes[0, 1].legend()"
+    },
+    {
+      "index": 1233,
+      "locator": "讲义 L1233",
+      "text": ""
+    },
+    {
+      "index": 1234,
+      "locator": "讲义 L1234",
+      "text": "# 后验概率分布"
+    },
+    {
+      "index": 1235,
+      "locator": "讲义 L1235",
+      "text": "for label, name in [(0, '信用良好'), (1, '信用不良')]:"
+    },
+    {
+      "index": 1236,
+      "locator": "讲义 L1236",
+      "text": "    mask = y_test == label"
+    },
+    {
+      "index": 1237,
+      "locator": "讲义 L1237",
+      "text": "    axes[1, 0].hist(y_prob[mask], bins=20, alpha=0.6, label=name)"
+    },
+    {
+      "index": 1238,
+      "locator": "讲义 L1238",
+      "text": "axes[1, 0].set_xlabel('违约后验概率')"
+    },
+    {
+      "index": 1239,
+      "locator": "讲义 L1239",
+      "text": "axes[1, 0].set_ylabel('频数')"
+    },
+    {
+      "index": 1240,
+      "locator": "讲义 L1240",
+      "text": "axes[1, 0].set_title('后验概率分布')"
+    },
+    {
+      "index": 1241,
+      "locator": "讲义 L1241",
+      "text": "axes[1, 0].legend()"
+    },
+    {
+      "index": 1242,
+      "locator": "讲义 L1242",
+      "text": ""
+    },
+    {
+      "index": 1243,
+      "locator": "讲义 L1243",
+      "text": "# 混淆矩阵可视化"
+    },
+    {
+      "index": 1244,
+      "locator": "讲义 L1244",
+      "text": "from sklearn.metrics import ConfusionMatrixDisplay"
+    },
+    {
+      "index": 1245,
+      "locator": "讲义 L1245",
+      "text": "ConfusionMatrixDisplay.from_predictions(y_test, y_pred, display_labels=['信用良好', '信用不良'],"
+    },
+    {
+      "index": 1246,
+      "locator": "讲义 L1246",
+      "text": "                                         cmap='Blues', ax=axes[1, 1])"
+    },
+    {
+      "index": 1247,
+      "locator": "讲义 L1247",
+      "text": "axes[1, 1].set_title('混淆矩阵')"
+    },
+    {
+      "index": 1248,
+      "locator": "讲义 L1248",
+      "text": ""
+    },
+    {
+      "index": 1249,
+      "locator": "讲义 L1249",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 1250,
+      "locator": "讲义 L1250",
+      "text": "plt.show()"
+    },
+    {
+      "index": 1251,
+      "locator": "讲义 L1251",
+      "text": "```"
+    },
+    {
+      "index": 1252,
+      "locator": "讲义 L1252",
+      "text": ""
+    },
+    {
+      "index": 1253,
+      "locator": "讲义 L1253",
+      "text": "---"
+    },
+    {
+      "index": 1254,
+      "locator": "讲义 L1254",
+      "text": ""
+    },
+    {
+      "index": 1255,
+      "locator": "讲义 L1255",
+      "text": "## 本章小结"
+    },
+    {
+      "index": 1256,
+      "locator": "讲义 L1256",
+      "text": ""
+    },
+    {
+      "index": 1257,
+      "locator": "讲义 L1257",
+      "text": "| 知识点 | 核心内容 | 关键公式 |"
+    },
+    {
+      "index": 1258,
+      "locator": "讲义 L1258",
+      "text": "|--------|----------|----------|"
+    },
+    {
+      "index": 1259,
+      "locator": "讲义 L1259",
+      "text": "| Fisher准则 | 最大化组间/组内比 | $J(a) = a^TBa/a^TWa$ |"
+    },
+    {
+      "index": 1260,
+      "locator": "讲义 L1260",
+      "text": "| 判别系数 | Fisher判别函数系数 | $a = W^{-1}(\\bar{X}_1-\\bar{X}_2)$ |"
+    },
+    {
+      "index": 1261,
+      "locator": "讲义 L1261",
+      "text": "| 判别界值 | 两组投影均值的中点 | $c = (a^T\\bar{X}_1+a^T\\bar{X}_2)/2$ |"
+    },
+    {
+      "index": 1262,
+      "locator": "讲义 L1262",
+      "text": "| Bayes定理 | 后验概率 | $P(G_k|X) \\propto P(G_k)f(X|G_k)$ |"
+    },
+    {
+      "index": 1263,
+      "locator": "讲义 L1263",
+      "text": "| 线性判别 | 等协方差 | $d_k = \\ln P_k + \\mu_k^T\\Sigma^{-1}X$ |"
+    },
+    {
+      "index": 1264,
+      "locator": "讲义 L1264",
+      "text": "| 二次判别 | 不等协方差 | $d_k = \\ln P_k - \\frac{1}{2}\\ln|\\Sigma_k| - \\frac{1}{2}(X-\\mu_k)^T\\Sigma_k^{-1}(X-\\mu_k)$ |"
+    },
+    {
+      "index": 1265,
+      "locator": "讲义 L1265",
+      "text": "| 马氏距离 | 距离判别 | $d^2 = (X-\\mu)^T\\Sigma^{-1}(X-\\mu)$ |"
+    },
+    {
+      "index": 1266,
+      "locator": "讲义 L1266",
+      "text": "| 混淆矩阵 | 分类结果汇总 | TP, FP, TN, FN |"
+    },
+    {
+      "index": 1267,
+      "locator": "讲义 L1267",
+      "text": "| 准确率 | 正确分类比例 | $(TP+TN)/(TP+TN+FP+FN)$ |"
+    },
+    {
+      "index": 1268,
+      "locator": "讲义 L1268",
+      "text": "| 精确率 | 预测为正的准确度 | $TP/(TP+FP)$ |"
+    },
+    {
+      "index": 1269,
+      "locator": "讲义 L1269",
+      "text": "| 召回率 | 实际为正的检出率 | $TP/(TP+FN)$ |"
+    },
+    {
+      "index": 1270,
+      "locator": "讲义 L1270",
+      "text": "| F1值 | 精确率和召回率的调和平均 | $2PR/(P+R)$ |"
+    },
+    {
+      "index": 1271,
+      "locator": "讲义 L1271",
+      "text": "| AUC | ROC曲线下面积 | AUC越大越好 |"
+    },
+    {
+      "index": 1272,
+      "locator": "讲义 L1272",
+      "text": ""
+    },
+    {
+      "index": 1273,
+      "locator": "讲义 L1273",
+      "text": "---"
+    },
+    {
+      "index": 1274,
+      "locator": "讲义 L1274",
+      "text": ""
+    },
+    {
+      "index": 1275,
+      "locator": "讲义 L1275",
+      "text": "## 练习题"
+    },
+    {
+      "index": 1276,
+      "locator": "讲义 L1276",
+      "text": ""
+    },
+    {
+      "index": 1277,
+      "locator": "讲义 L1277",
+      "text": "### 练习1：概念理解"
+    },
+    {
+      "index": 1278,
+      "locator": "讲义 L1278",
+      "text": ""
+    },
+    {
+      "index": 1279,
+      "locator": "讲义 L1279",
+      "text": "1. 简述Fisher判别法的核心思想和目标函数。"
+    },
+    {
+      "index": 1280,
+      "locator": "讲义 L1280",
+      "text": ""
+    },
+    {
+      "index": 1281,
+      "locator": "讲义 L1281",
+      "text": "2. 解释Bayes判别法中先验概率、后验概率和似然函数的关系。"
+    },
+    {
+      "index": 1282,
+      "locator": "讲义 L1282",
+      "text": ""
+    },
+    {
+      "index": 1283,
+      "locator": "讲义 L1283",
+      "text": "3. 比较LDA和QDA的适用条件和区别。"
+    },
+    {
+      "index": 1284,
+      "locator": "讲义 L1284",
+      "text": ""
+    },
+    {
+      "index": 1285,
+      "locator": "讲义 L1285",
+      "text": "4. 说明混淆矩阵中四个元素的含义。"
+    },
+    {
+      "index": 1286,
+      "locator": "讲义 L1286",
+      "text": ""
+    },
+    {
+      "index": 1287,
+      "locator": "讲义 L1287",
+      "text": "### 练习2：计算题"
+    },
+    {
+      "index": 1288,
+      "locator": "讲义 L1288",
+      "text": ""
+    },
+    {
+      "index": 1289,
+      "locator": "讲义 L1289",
+      "text": "1. 已知两组数据的均值向量和类内散度矩阵为："
+    },
+    {
+      "index": 1290,
+      "locator": "讲义 L1290",
+      "text": ""
+    },
+    {
+      "index": 1291,
+      "locator": "讲义 L1291",
+      "text": "$$"
+    },
+    {
+      "index": 1292,
+      "locator": "讲义 L1292",
+      "text": "\\bar{X}_1 = \\begin{pmatrix} 4 \\\\ 6 \\end{pmatrix}, \\quad \\bar{X}_2 = \\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}, \\quad W = \\begin{pmatrix} 8 & 2 \\\\ 2 & 6 \\end{pmatrix}"
+    },
+    {
+      "index": 1293,
+      "locator": "讲义 L1293",
+      "text": "$$"
+    },
+    {
+      "index": 1294,
+      "locator": "讲义 L1294",
+      "text": ""
+    },
+    {
+      "index": 1295,
+      "locator": "讲义 L1295",
+      "text": "求Fisher判别系数和判别界值。"
+    },
+    {
+      "index": 1296,
+      "locator": "讲义 L1296",
+      "text": ""
+    },
+    {
+      "index": 1297,
+      "locator": "讲义 L1297",
+      "text": "2. 已知两组数据服从正态分布："
+    },
+    {
+      "index": 1298,
+      "locator": "讲义 L1298",
+      "text": ""
+    },
+    {
+      "index": 1299,
+      "locator": "讲义 L1299",
+      "text": "$$"
+    },
+    {
+      "index": 1300,
+      "locator": "讲义 L1300",
+      "text": "G_1 \\sim N\\left(\\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}, \\begin{pmatrix} 2 & 0 \\\\ 0 & 1 \\end{pmatrix}\\right), \\quad G_2 \\sim N\\left(\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} 1 & 0 \\\\ 0 & 2 \\end{pmatrix}\\right)"
+    },
+    {
+      "index": 1301,
+      "locator": "讲义 L1301",
+      "text": "$$"
+    },
+    {
+      "index": 1302,
+      "locator": "讲义 L1302",
+      "text": ""
+    },
+    {
+      "index": 1303,
+      "locator": "讲义 L1303",
+      "text": "先验概率相等，求新样品 $X_0 = (2, 1.5)^T$ 的后验概率。"
+    },
+    {
+      "index": 1304,
+      "locator": "讲义 L1304",
+      "text": ""
+    },
+    {
+      "index": 1305,
+      "locator": "讲义 L1305",
+      "text": "### 练习3：编程题"
+    },
+    {
+      "index": 1306,
+      "locator": "讲义 L1306",
+      "text": ""
+    },
+    {
+      "index": 1307,
+      "locator": "讲义 L1307",
+      "text": "1. 使用sklearn实现鸢尾花数据集的多分类LDA，并绘制判别函数得分的散点图。"
+    },
+    {
+      "index": 1308,
+      "locator": "讲义 L1308",
+      "text": ""
+    },
+    {
+      "index": 1309,
+      "locator": "讲义 L1309",
+      "text": "2. 手动实现Fisher判别法，包括判别系数的计算、判别界值的确定和新样品的判别。"
+    },
+    {
+      "index": 1310,
+      "locator": "讲义 L1310",
+      "text": ""
+    },
+    {
+      "index": 1311,
+      "locator": "讲义 L1311",
+      "text": "3. 绘制ROC曲线并计算AUC，比较不同阈值下的分类性能。"
+    },
+    {
+      "index": 1312,
+      "locator": "讲义 L1312",
+      "text": ""
+    },
+    {
+      "index": 1313,
+      "locator": "讲义 L1313",
+      "text": "---"
+    },
+    {
+      "index": 1314,
+      "locator": "讲义 L1314",
+      "text": ""
+    },
+    {
+      "index": 1315,
+      "locator": "讲义 L1315",
+      "text": "## 课程总结"
+    },
+    {
+      "index": 1316,
+      "locator": "讲义 L1316",
+      "text": ""
+    },
+    {
+      "index": 1317,
+      "locator": "讲义 L1317",
+      "text": "### 多元统计分析方法体系回顾"
+    },
+    {
+      "index": 1318,
+      "locator": "讲义 L1318",
+      "text": ""
+    },
+    {
+      "index": 1319,
+      "locator": "讲义 L1319",
+      "text": "```mermaid"
+    },
+    {
+      "index": 1320,
+      "locator": "讲义 L1320",
+      "text": "graph TB"
+    },
+    {
+      "index": 1321,
+      "locator": "讲义 L1321",
+      "text": "    A[\"多元统计分析\"] --> B[\"降维方法\"]"
+    },
+    {
+      "index": 1322,
+      "locator": "讲义 L1322",
+      "text": "    A --> C[\"分类方法\"]"
+    },
+    {
+      "index": 1323,
+      "locator": "讲义 L1323",
+      "text": "    A --> D[\"相关方法\"]"
+    },
+    {
+      "index": 1324,
+      "locator": "讲义 L1324",
+      "text": "    "
+    },
+    {
+      "index": 1325,
+      "locator": "讲义 L1325",
+      "text": "    B --> B1[\"主成分分析PCA<br/>第6章\"]"
+    },
+    {
+      "index": 1326,
+      "locator": "讲义 L1326",
+      "text": "    B --> B2[\"因子分析FA<br/>第7章\"]"
+    },
+    {
+      "index": 1327,
+      "locator": "讲义 L1327",
+      "text": "    B --> B3[\"对应分析CA<br/>第8章\"]"
+    },
+    {
+      "index": 1328,
+      "locator": "讲义 L1328",
+      "text": "    "
+    },
+    {
+      "index": 1329,
+      "locator": "讲义 L1329",
+      "text": "    C --> C1[\"聚类分析<br/>第4章\"]"
+    },
+    {
+      "index": 1330,
+      "locator": "讲义 L1330",
+      "text": "    C --> C2[\"判别分析<br/>第12章\"]"
+    },
+    {
+      "index": 1331,
+      "locator": "讲义 L1331",
+      "text": "    "
+    },
+    {
+      "index": 1332,
+      "locator": "讲义 L1332",
+      "text": "    D --> D1[\"相关与回归<br/>第9章\"]"
+    },
+    {
+      "index": 1333,
+      "locator": "讲义 L1333",
+      "text": "    D --> D2[\"典型相关CCA<br/>第10章\"]"
+    },
+    {
+      "index": 1334,
+      "locator": "讲义 L1334",
+      "text": "    D --> D3[\"扩展线性模型<br/>第11章\"]"
+    },
+    {
+      "index": 1335,
+      "locator": "讲义 L1335",
+      "text": "```"
+    },
+    {
+      "index": 1336,
+      "locator": "讲义 L1336",
+      "text": ""
+    },
+    {
+      "index": 1337,
+      "locator": "讲义 L1337",
+      "text": "### 方法选择速查表"
+    },
+    {
+      "index": 1338,
+      "locator": "讲义 L1338",
+      "text": ""
+    },
+    {
+      "index": 1339,
+      "locator": "讲义 L1339",
+      "text": "| 问题类型 | 数据特征 | 推荐方法 | 章节 |"
+    },
+    {
+      "index": 1340,
+      "locator": "讲义 L1340",
+      "text": "|----------|----------|----------|------|"
+    },
+    {
+      "index": 1341,
+      "locator": "讲义 L1341",
+      "text": "| 变量太多想减少 | 连续变量 | PCA | 第6章 |"
+    },
+    {
+      "index": 1342,
+      "locator": "讲义 L1342",
+      "text": "| 探索潜在因子 | 连续变量 | 因子分析 | 第7章 |"
+    },
+    {
+      "index": 1343,
+      "locator": "讲义 L1343",
+      "text": "| 分类变量关联 | 列联表 | 对应分析 | 第8章 |"
+    },
+    {
+      "index": 1344,
+      "locator": "讲义 L1344",
+      "text": "| 样品自动分组 | 无标签 | 聚类分析 | 第4章 |"
+    },
+    {
+      "index": 1345,
+      "locator": "讲义 L1345",
+      "text": "| 样品分类预测 | 有标签 | 判别分析 | 第12章 |"
+    },
+    {
+      "index": 1346,
+      "locator": "讲义 L1346",
+      "text": "| 变量间关系建模 | 连续因变量 | 线性回归 | 第9章 |"
+    },
+    {
+      "index": 1347,
+      "locator": "讲义 L1347",
+      "text": "| 两组变量关系 | 两组变量 | 典型相关 | 第10章 |"
+    },
+    {
+      "index": 1348,
+      "locator": "讲义 L1348",
+      "text": "| 分类因变量 | 二分类 | Logistic回归 | 第11章 |"
+    },
+    {
+      "index": 1349,
+      "locator": "讲义 L1349",
+      "text": ""
+    },
+    {
+      "index": 1350,
+      "locator": "讲义 L1350",
+      "text": "### 判别分析方法选择指南"
+    },
+    {
+      "index": 1351,
+      "locator": "讲义 L1351",
+      "text": ""
+    },
+    {
+      "index": 1352,
+      "locator": "讲义 L1352",
+      "text": "| 场景 | 推荐方法 | 原因 |"
+    },
+    {
+      "index": 1353,
+      "locator": "讲义 L1353",
+      "text": "|------|----------|------|"
+    },
+    {
+      "index": 1354,
+      "locator": "讲义 L1354",
+      "text": "| 两类、等协方差 | Fisher判别/LDA | 简单直观，计算效率高 |"
+    },
+    {
+      "index": 1355,
+      "locator": "讲义 L1355",
+      "text": "| 两类、异方差 | QDA | 考虑协方差差异 |"
+    },
+    {
+      "index": 1356,
+      "locator": "讲义 L1356",
+      "text": "| 多类、等协方差 | LDA | 可提取多个判别函数 |"
+    },
+    {
+      "index": 1357,
+      "locator": "讲义 L1357",
+      "text": "| 考虑先验概率 | Bayes判别 | 理论最优 |"
+    },
+    {
+      "index": 1358,
+      "locator": "讲义 L1358",
+      "text": "| 样本量小 | LDA | 参数少，不易过拟合 |"
+    },
+    {
+      "index": 1359,
+      "locator": "讲义 L1359",
+      "text": "| 样本量大、协方差差异大 | QDA | 更灵活 |"
+    },
+    {
+      "index": 1360,
+      "locator": "讲义 L1360",
+      "text": ""
+    },
+    {
+      "index": 1361,
+      "locator": "讲义 L1361",
+      "text": "---"
+    },
+    {
+      "index": 1362,
+      "locator": "讲义 L1362",
+      "text": ""
+    },
+    {
+      "index": 1363,
+      "locator": "讲义 L1363",
+      "text": "## 模块四：拓展阅读与深度解析"
+    },
+    {
+      "index": 1364,
+      "locator": "讲义 L1364",
+      "text": ""
+    },
+    {
+      "index": 1365,
+      "locator": "讲义 L1365",
+      "text": "### 12.7 判别分析的假设检验"
+    },
+    {
+      "index": 1366,
+      "locator": "讲义 L1366",
+      "text": ""
+    },
+    {
+      "index": 1367,
+      "locator": "讲义 L1367",
+      "text": "#### 12.7.1 判别效果的显著性检验"
+    },
+    {
+      "index": 1368,
+      "locator": "讲义 L1368",
+      "text": ""
+    },
+    {
+      "index": 1369,
+      "locator": "讲义 L1369",
+      "text": "**Wilks' Lambda检验**："
+    },
+    {
+      "index": 1370,
+      "locator": "讲义 L1370",
+      "text": ""
+    },
+    {
+      "index": 1371,
+      "locator": "讲义 L1371",
+      "text": "用于检验判别函数是否显著，即各组均值是否相等。"
+    },
+    {
+      "index": 1372,
+      "locator": "讲义 L1372",
+      "text": ""
+    },
+    {
+      "index": 1373,
+      "locator": "讲义 L1373",
+      "text": "$$"
+    },
+    {
+      "index": 1374,
+      "locator": "讲义 L1374",
+      "text": "\\Lambda = \\frac{|W|}{|W + B|}"
+    },
+    {
+      "index": 1375,
+      "locator": "讲义 L1375",
+      "text": "$$"
+    },
+    {
+      "index": 1376,
+      "locator": "讲义 L1376",
+      "text": ""
+    },
+    {
+      "index": 1377,
+      "locator": "讲义 L1377",
+      "text": "其中 $W$ 是类内散度矩阵，$B$ 是类间散度矩阵。"
+    },
+    {
+      "index": 1378,
+      "locator": "讲义 L1378",
+      "text": ""
+    },
+    {
+      "index": 1379,
+      "locator": "讲义 L1379",
+      "text": "$\\Lambda$ 的取值范围为 $[0, 1]$："
+    },
+    {
+      "index": 1380,
+      "locator": "讲义 L1380",
+      "text": "- $\\Lambda$ 接近0：组间差异大，判别效果好"
+    },
+    {
+      "index": 1381,
+      "locator": "讲义 L1381",
+      "text": "- $\\Lambda$ 接近1：组间差异小，判别效果差"
+    },
+    {
+      "index": 1382,
+      "locator": "讲义 L1382",
+      "text": ""
+    },
+    {
+      "index": 1383,
+      "locator": "讲义 L1383",
+      "text": "**检验统计量**："
+    },
+    {
+      "index": 1384,
+      "locator": "讲义 L1384",
+      "text": ""
+    },
+    {
+      "index": 1385,
+      "locator": "讲义 L1385",
+      "text": "在正态假设下，可以用F分布近似："
+    },
+    {
+      "index": 1386,
+      "locator": "讲义 L1386",
+      "text": ""
+    },
+    {
+      "index": 1387,
+      "locator": "讲义 L1387",
+      "text": "$$"
+    },
+    {
+      "index": 1388,
+      "locator": "讲义 L1388",
+      "text": "F = \\frac{1 - \\Lambda}{\\Lambda} \\cdot \\frac{n - K - p + 1}{p}"
+    },
+    {
+      "index": 1389,
+      "locator": "讲义 L1389",
+      "text": "$$"
+    },
+    {
+      "index": 1390,
+      "locator": "讲义 L1390",
+      "text": ""
+    },
+    {
+      "index": 1391,
+      "locator": "讲义 L1391",
+      "text": "其中 $n$ 是总样本数，$K$ 是组数，$p$ 是变量数。"
+    },
+    {
+      "index": 1392,
+      "locator": "讲义 L1392",
+      "text": ""
+    },
+    {
+      "index": 1393,
+      "locator": "讲义 L1393",
+      "text": "**检验步骤**："
+    },
+    {
+      "index": 1394,
+      "locator": "讲义 L1394",
+      "text": ""
+    },
+    {
+      "index": 1395,
+      "locator": "讲义 L1395",
+      "text": "1. 计算Wilks' Lambda值"
+    },
+    {
+      "index": 1396,
+      "locator": "讲义 L1396",
+      "text": "2. 计算F统计量"
+    },
+    {
+      "index": 1397,
+      "locator": "讲义 L1397",
+      "text": "3. 查F分布表或计算p值"
+    },
+    {
+      "index": 1398,
+      "locator": "讲义 L1398",
+      "text": "4. 若p值小于显著性水平，拒绝\"各组均值相等\"的原假设"
+    },
+    {
+      "index": 1399,
+      "locator": "讲义 L1399",
+      "text": ""
+    },
+    {
+      "index": 1400,
+      "locator": "讲义 L1400",
+      "text": "#### 12.7.2 各判别函数的显著性检验"
+    },
+    {
+      "index": 1401,
+      "locator": "讲义 L1401",
+      "text": ""
+    },
+    {
+      "index": 1402,
+      "locator": "讲义 L1402",
+      "text": "对于多组情形，可以检验每个判别函数的显著性。"
+    },
+    {
+      "index": 1403,
+      "locator": "讲义 L1403",
+      "text": ""
+    },
+    {
+      "index": 1404,
+      "locator": "讲义 L1404",
+      "text": "**检验统计量**："
+    },
+    {
+      "index": 1405,
+      "locator": "讲义 L1405",
+      "text": ""
+    },
+    {
+      "index": 1406,
+      "locator": "讲义 L1406",
+      "text": "$$"
+    },
+    {
+      "index": 1407,
+      "locator": "讲义 L1407",
+      "text": "\\chi^2 = -\\left(n - 1 - \\frac{p + K}{2}\\right) \\ln \\Lambda_i"
+    },
+    {
+      "index": 1408,
+      "locator": "讲义 L1408",
+      "text": "$$"
+    },
+    {
+      "index": 1409,
+      "locator": "讲义 L1409",
+      "text": ""
+    },
+    {
+      "index": 1410,
+      "locator": "讲义 L1410",
+      "text": "其中 $\\Lambda_i$ 是去除前 $i$ 个判别函数后的Wilks' Lambda值。"
+    },
+    {
+      "index": 1411,
+      "locator": "讲义 L1411",
+      "text": ""
+    },
+    {
+      "index": 1412,
+      "locator": "讲义 L1412",
+      "text": "**逐步检验**："
+    },
+    {
+      "index": 1413,
+      "locator": "讲义 L1413",
+      "text": ""
+    },
+    {
+      "index": 1414,
+      "locator": "讲义 L1414",
+      "text": "1. 检验第一个判别函数是否显著"
+    },
+    {
+      "index": 1415,
+      "locator": "讲义 L1415",
+      "text": "2. 若显著，检验第二个判别函数是否显著"
+    },
+    {
+      "index": 1416,
+      "locator": "讲义 L1416",
+      "text": "3. 继续直到不显著为止"
+    },
+    {
+      "index": 1417,
+      "locator": "讲义 L1417",
+      "text": ""
+    },
+    {
+      "index": 1418,
+      "locator": "讲义 L1418",
+      "text": "#### 12.7.3 Box's M检验"
+    },
+    {
+      "index": 1419,
+      "locator": "讲义 L1419",
+      "text": ""
+    },
+    {
+      "index": 1420,
+      "locator": "讲义 L1420",
+      "text": "**目的**：检验各组协方差矩阵是否相等（LDA的假设前提）。"
+    },
+    {
+      "index": 1421,
+      "locator": "讲义 L1421",
+      "text": ""
+    },
+    {
+      "index": 1422,
+      "locator": "讲义 L1422",
+      "text": "**检验统计量**："
+    },
+    {
+      "index": 1423,
+      "locator": "讲义 L1423",
+      "text": ""
+    },
+    {
+      "index": 1424,
+      "locator": "讲义 L1424",
+      "text": "$$"
+    },
+    {
+      "index": 1425,
+      "locator": "讲义 L1425",
+      "text": "M = \\frac{(n-K)\\ln|\\hat{\\Sigma}_p| - \\sum_{k=1}^{K}(n_k-1)\\ln|\\hat{\\Sigma}_k|}{1 - g}"
+    },
+    {
+      "index": 1426,
+      "locator": "讲义 L1426",
+      "text": "$$"
+    },
+    {
+      "index": 1427,
+      "locator": "讲义 L1427",
+      "text": ""
+    },
+    {
+      "index": 1428,
+      "locator": "讲义 L1428",
+      "text": "其中 $\\hat{\\Sigma}_p$ 是合并协方差矩阵，$\\hat{\\Sigma}_k$ 是第 $k$ 组的协方差矩阵，$g$ 是修正系数。"
+    },
+    {
+      "index": 1429,
+      "locator": "讲义 L1429",
+      "text": ""
+    },
+    {
+      "index": 1430,
+      "locator": "讲义 L1430",
+      "text": "**检验结论**："
+    },
+    {
+      "index": 1431,
+      "locator": "讲义 L1431",
+      "text": "- 若p值大于显著性水平：各组协方差矩阵相等，使用LDA"
+    },
+    {
+      "index": 1432,
+      "locator": "讲义 L1432",
+      "text": "- 若p值小于显著性水平：各组协方差矩阵不等，使用QDA"
+    },
+    {
+      "index": 1433,
+      "locator": "讲义 L1433",
+      "text": ""
+    },
+    {
+      "index": 1434,
+      "locator": "讲义 L1434",
+      "text": "---"
+    },
+    {
+      "index": 1435,
+      "locator": "讲义 L1435",
+      "text": ""
+    },
+    {
+      "index": 1436,
+      "locator": "讲义 L1436",
+      "text": "### 12.8 判别分析中的变量选择"
+    },
+    {
+      "index": 1437,
+      "locator": "讲义 L1437",
+      "text": ""
+    },
+    {
+      "index": 1438,
+      "locator": "讲义 L1438",
+      "text": "#### 12.8.1 变量选择的意义"
+    },
+    {
+      "index": 1439,
+      "locator": "讲义 L1439",
+      "text": ""
+    },
+    {
+      "index": 1440,
+      "locator": "讲义 L1440",
+      "text": "并非所有变量都对判别有贡献。无关变量会："
+    },
+    {
+      "index": 1441,
+      "locator": "讲义 L1441",
+      "text": "- 增加计算复杂度"
+    },
+    {
+      "index": 1442,
+      "locator": "讲义 L1442",
+      "text": "- 引入噪声，降低判别效果"
+    },
+    {
+      "index": 1443,
+      "locator": "讲义 L1443",
+      "text": "- 导致过拟合"
+    },
+    {
+      "index": 1444,
+      "locator": "讲义 L1444",
+      "text": ""
+    },
+    {
+      "index": 1445,
+      "locator": "讲义 L1445",
+      "text": "变量选择的目标是找到对判别最有效的变量子集。"
+    },
+    {
+      "index": 1446,
+      "locator": "讲义 L1446",
+      "text": ""
+    },
+    {
+      "index": 1447,
+      "locator": "讲义 L1447",
+      "text": "#### 12.8.2 前向选择法"
+    },
+    {
+      "index": 1448,
+      "locator": "讲义 L1448",
+      "text": ""
+    },
+    {
+      "index": 1449,
+      "locator": "讲义 L1449",
+      "text": "**步骤**："
+    },
+    {
+      "index": 1450,
+      "locator": "讲义 L1450",
+      "text": ""
+    },
+    {
+      "index": 1451,
+      "locator": "讲义 L1451",
+      "text": "1. 从空模型开始"
+    },
+    {
+      "index": 1452,
+      "locator": "讲义 L1452",
+      "text": "2. 每步加入一个使Wilks' Lambda减少最多的变量"
+    },
+    {
+      "index": 1453,
+      "locator": "讲义 L1453",
+      "text": "3. 检验加入的变量是否显著"
+    },
+    {
+      "index": 1454,
+      "locator": "讲义 L1454",
+      "text": "4. 重复直到没有显著变量可以加入"
+    },
+    {
+      "index": 1455,
+      "locator": "讲义 L1455",
+      "text": ""
+    },
+    {
+      "index": 1456,
+      "locator": "讲义 L1456",
+      "text": "**优点**：计算简单，不会遗漏重要变量"
+    },
+    {
+      "index": 1457,
+      "locator": "讲义 L1457",
+      "text": ""
+    },
+    {
+      "index": 1458,
+      "locator": "讲义 L1458",
+      "text": "**缺点**：不能删除已加入的变量"
+    },
+    {
+      "index": 1459,
+      "locator": "讲义 L1459",
+      "text": ""
+    },
+    {
+      "index": 1460,
+      "locator": "讲义 L1460",
+      "text": "#### 12.8.3 后向剔除法"
+    },
+    {
+      "index": 1461,
+      "locator": "讲义 L1461",
+      "text": ""
+    },
+    {
+      "index": 1462,
+      "locator": "讲义 L1462",
+      "text": "**步骤**："
+    },
+    {
+      "index": 1463,
+      "locator": "讲义 L1463",
+      "text": ""
+    },
+    {
+      "index": 1464,
+      "locator": "讲义 L1464",
+      "text": "1. 从全模型开始"
+    },
+    {
+      "index": 1465,
+      "locator": "讲义 L1465",
+      "text": "2. 每步剔除一个对判别贡献最小的变量"
+    },
+    {
+      "index": 1466,
+      "locator": "讲义 L1466",
+      "text": "3. 检验剔除后模型是否仍显著"
+    },
+    {
+      "index": 1467,
+      "locator": "讲义 L1467",
+      "text": "4. 重复直到所有变量都显著"
+    },
+    {
+      "index": 1468,
+      "locator": "讲义 L1468",
+      "text": ""
+    },
+    {
+      "index": 1469,
+      "locator": "讲义 L1469",
+      "text": "**优点**：考虑了变量间的交互作用"
+    },
+    {
+      "index": 1470,
+      "locator": "讲义 L1470",
+      "text": ""
+    },
+    {
+      "index": 1471,
+      "locator": "讲义 L1471",
+      "text": "**缺点**：初始模型可能过大"
+    },
+    {
+      "index": 1472,
+      "locator": "讲义 L1472",
+      "text": ""
+    },
+    {
+      "index": 1473,
+      "locator": "讲义 L1473",
+      "text": "#### 12.8.4 逐步选择法"
+    },
+    {
+      "index": 1474,
+      "locator": "讲义 L1474",
+      "text": ""
+    },
+    {
+      "index": 1475,
+      "locator": "讲义 L1475",
+      "text": "**步骤**："
+    },
+    {
+      "index": 1476,
+      "locator": "讲义 L1476",
+      "text": ""
+    },
+    {
+      "index": 1477,
+      "locator": "讲义 L1477",
+      "text": "1. 从空模型开始"
+    },
+    {
+      "index": 1478,
+      "locator": "讲义 L1478",
+      "text": "2. 每步考虑加入或剔除一个变量"
+    },
+    {
+      "index": 1479,
+      "locator": "讲义 L1479",
+      "text": "3. 选择使Wilks' Lambda变化最大的操作"
+    },
+    {
+      "index": 1480,
+      "locator": "讲义 L1480",
+      "text": "4. 重复直到没有变量可以加入或剔除"
+    },
+    {
+      "index": 1481,
+      "locator": "讲义 L1481",
+      "text": ""
+    },
+    {
+      "index": 1482,
+      "locator": "讲义 L1482",
+      "text": "**优点**：综合了前向和后向的优点"
+    },
+    {
+      "index": 1483,
+      "locator": "讲义 L1483",
+      "text": ""
+    },
+    {
+      "index": 1484,
+      "locator": "讲义 L1484",
+      "text": "**缺点**：计算量较大"
+    },
+    {
+      "index": 1485,
+      "locator": "讲义 L1485",
+      "text": ""
+    },
+    {
+      "index": 1486,
+      "locator": "讲义 L1486",
+      "text": "#### 12.8.5 基于判别系数的变量重要性"
+    },
+    {
+      "index": 1487,
+      "locator": "讲义 L1487",
+      "text": ""
+    },
+    {
+      "index": 1488,
+      "locator": "讲义 L1488",
+      "text": "**标准化判别系数**："
+    },
+    {
+      "index": 1489,
+      "locator": "讲义 L1489",
+      "text": ""
+    },
+    {
+      "index": 1490,
+      "locator": "讲义 L1490",
+      "text": "将原始判别系数标准化，消除量纲影响："
+    },
+    {
+      "index": 1491,
+      "locator": "讲义 L1491",
+      "text": ""
+    },
+    {
+      "index": 1492,
+      "locator": "讲义 L1492",
+      "text": "$$"
+    },
+    {
+      "index": 1493,
+      "locator": "讲义 L1493",
+      "text": "a_j^* = a_j \\cdot \\sqrt{w_{jj}}"
+    },
+    {
+      "index": 1494,
+      "locator": "讲义 L1494",
+      "text": "$$"
+    },
+    {
+      "index": 1495,
+      "locator": "讲义 L1495",
+      "text": ""
+    },
+    {
+      "index": 1496,
+      "locator": "讲义 L1496",
+      "text": "其中 $w_{jj}$ 是类内散度矩阵对角线元素。"
+    },
+    {
+      "index": 1497,
+      "locator": "讲义 L1497",
+      "text": ""
+    },
+    {
+      "index": 1498,
+      "locator": "讲义 L1498",
+      "text": "**结构系数（相关系数）**："
+    },
+    {
+      "index": 1499,
+      "locator": "讲义 L1499",
+      "text": ""
+    },
+    {
+      "index": 1500,
+      "locator": "讲义 L1500",
+      "text": "计算判别得分与原始变量的相关系数："
+    },
+    {
+      "index": 1501,
+      "locator": "讲义 L1501",
+      "text": ""
+    },
+    {
+      "index": 1502,
+      "locator": "讲义 L1502",
+      "text": "$$"
+    },
+    {
+      "index": 1503,
+      "locator": "讲义 L1503",
+      "text": "r_j = \\text{corr}(u, X_j)"
+    },
+    {
+      "index": 1504,
+      "locator": "讲义 L1504",
+      "text": "$$"
+    },
+    {
+      "index": 1505,
+      "locator": "讲义 L1505",
+      "text": ""
+    },
+    {
+      "index": 1506,
+      "locator": "讲义 L1506",
+      "text": "结构系数绝对值越大，变量对判别的贡献越大。"
+    },
+    {
+      "index": 1507,
+      "locator": "讲义 L1507",
+      "text": ""
+    },
+    {
+      "index": 1508,
+      "locator": "讲义 L1508",
+      "text": "---"
+    },
+    {
+      "index": 1509,
+      "locator": "讲义 L1509",
+      "text": ""
+    },
+    {
+      "index": 1510,
+      "locator": "讲义 L1510",
+      "text": "### 12.9 判别分析的扩展方法"
+    },
+    {
+      "index": 1511,
+      "locator": "讲义 L1511",
+      "text": ""
+    },
+    {
+      "index": 1512,
+      "locator": "讲义 L1512",
+      "text": "#### 12.9.1 正则化判别分析（RDA）"
+    },
+    {
+      "index": 1513,
+      "locator": "讲义 L1513",
+      "text": ""
+    },
+    {
+      "index": 1514,
+      "locator": "讲义 L1514",
+      "text": "当协方差矩阵接近奇异时，可以使用正则化："
+    },
+    {
+      "index": 1515,
+      "locator": "讲义 L1515",
+      "text": ""
+    },
+    {
+      "index": 1516,
+      "locator": "讲义 L1516",
+      "text": "$$"
+    },
+    {
+      "index": 1517,
+      "locator": "讲义 L1517",
+      "text": "\\hat{\\Sigma}_k(\\alpha) = (1-\\alpha)\\hat{\\Sigma}_k + \\alpha\\hat{\\Sigma}"
+    },
+    {
+      "index": 1518,
+      "locator": "讲义 L1518",
+      "text": "$$"
+    },
+    {
+      "index": 1519,
+      "locator": "讲义 L1519",
+      "text": ""
+    },
+    {
+      "index": 1520,
+      "locator": "讲义 L1520",
+      "text": "其中 $\\alpha \\in [0, 1]$ 是正则化参数："
+    },
+    {
+      "index": 1521,
+      "locator": "讲义 L1521",
+      "text": "- $\\alpha = 0$：等价于QDA"
+    },
+    {
+      "index": 1522,
+      "locator": "讲义 L1522",
+      "text": "- $\\alpha = 1$：等价于LDA"
+    },
+    {
+      "index": 1523,
+      "locator": "讲义 L1523",
+      "text": ""
+    },
+    {
+      "index": 1524,
+      "locator": "讲义 L1524",
+      "text": "#### 12.9.2 灵活判别分析（FDA）"
+    },
+    {
+      "index": 1525,
+      "locator": "讲义 L1525",
+      "text": ""
+    },
+    {
+      "index": 1526,
+      "locator": "讲义 L1526",
+      "text": "使用非线性基函数扩展特征空间："
+    },
+    {
+      "index": 1527,
+      "locator": "讲义 L1527",
+      "text": ""
+    },
+    {
+      "index": 1528,
+      "locator": "讲义 L1528",
+      "text": "$$"
+    },
+    {
+      "index": 1529,
+      "locator": "讲义 L1529",
+      "text": "\\phi(X) = [X_1, X_2, \\ldots, X_p, X_1^2, X_2^2, \\ldots, X_1X_2, \\ldots]"
+    },
+    {
+      "index": 1530,
+      "locator": "讲义 L1530",
+      "text": "$$"
+    },
+    {
+      "index": 1531,
+      "locator": "讲义 L1531",
+      "text": ""
+    },
+    {
+      "index": 1532,
+      "locator": "讲义 L1532",
+      "text": "在扩展空间中使用LDA。"
+    },
+    {
+      "index": 1533,
+      "locator": "讲义 L1533",
+      "text": ""
+    },
+    {
+      "index": 1534,
+      "locator": "讲义 L1534",
+      "text": "#### 12.9.3 混合判别分析（MDA）"
+    },
+    {
+      "index": 1535,
+      "locator": "讲义 L1535",
+      "text": ""
+    },
+    {
+      "index": 1536,
+      "locator": "讲义 L1536",
+      "text": "假设每个类别的分布是多个高斯分布的混合："
+    },
+    {
+      "index": 1537,
+      "locator": "讲义 L1537",
+      "text": ""
+    },
+    {
+      "index": 1538,
+      "locator": "讲义 L1538",
+      "text": "$$"
+    },
+    {
+      "index": 1539,
+      "locator": "讲义 L1539",
+      "text": "f(X|G_k) = \\sum_{m=1}^{M_k} \\pi_{km} \\phi(X|\\mu_{km}, \\Sigma_{km})"
+    },
+    {
+      "index": 1540,
+      "locator": "讲义 L1540",
+      "text": "$$"
+    },
+    {
+      "index": 1541,
+      "locator": "讲义 L1541",
+      "text": ""
+    },
+    {
+      "index": 1542,
+      "locator": "讲义 L1542",
+      "text": "#### 12.9.4 核判别分析"
+    },
+    {
+      "index": 1543,
+      "locator": "讲义 L1543",
+      "text": ""
+    },
+    {
+      "index": 1544,
+      "locator": "讲义 L1544",
+      "text": "使用核技巧将数据映射到高维空间："
+    },
+    {
+      "index": 1545,
+      "locator": "讲义 L1545",
+      "text": ""
+    },
+    {
+      "index": 1546,
+      "locator": "讲义 L1546",
+      "text": "$$"
+    },
+    {
+      "index": 1547,
+      "locator": "讲义 L1547",
+      "text": "K(x_i, x_j) = \\phi(x_i)^T \\phi(x_j)"
+    },
+    {
+      "index": 1548,
+      "locator": "讲义 L1548",
+      "text": "$$"
+    },
+    {
+      "index": 1549,
+      "locator": "讲义 L1549",
+      "text": ""
+    },
+    {
+      "index": 1550,
+      "locator": "讲义 L1550",
+      "text": "在高维空间中使用Fisher判别或LDA。"
+    },
+    {
+      "index": 1551,
+      "locator": "讲义 L1551",
+      "text": ""
+    },
+    {
+      "index": 1552,
+      "locator": "讲义 L1552",
+      "text": "---"
+    },
+    {
+      "index": 1553,
+      "locator": "讲义 L1553",
+      "text": ""
+    },
+    {
+      "index": 1554,
+      "locator": "讲义 L1554",
+      "text": "### 12.10 判别分析与机器学习方法的比较"
+    },
+    {
+      "index": 1555,
+      "locator": "讲义 L1555",
+      "text": ""
+    },
+    {
+      "index": 1556,
+      "locator": "讲义 L1556",
+      "text": "#### 12.10.1 与逻辑回归的比较"
+    },
+    {
+      "index": 1557,
+      "locator": "讲义 L1557",
+      "text": ""
+    },
+    {
+      "index": 1558,
+      "locator": "讲义 L1558",
+      "text": "| 维度 | LDA | 逻辑回归 |"
+    },
+    {
+      "index": 1559,
+      "locator": "讲义 L1559",
+      "text": "|------|-----|----------|"
+    },
+    {
+      "index": 1560,
+      "locator": "讲义 L1560",
+      "text": "| 假设 | 正态分布 | 无分布假设 |"
+    },
+    {
+      "index": 1561,
+      "locator": "讲义 L1561",
+      "text": "| 参数估计 | 最大似然 | 最大似然 |"
+    },
+    {
+      "index": 1562,
+      "locator": "讲义 L1562",
+      "text": "| 判别边界 | 线性 | 线性 |"
+    },
+    {
+      "index": 1563,
+      "locator": "讲义 L1563",
+      "text": "| 适用场景 | 正态数据 | 通用 |"
+    },
+    {
+      "index": 1564,
+      "locator": "讲义 L1564",
+      "text": "| 多分类 | 直接支持 | 需扩展 |"
+    },
+    {
+      "index": 1565,
+      "locator": "讲义 L1565",
+      "text": ""
+    },
+    {
+      "index": 1566,
+      "locator": "讲义 L1566",
+      "text": "**理论关系**：在正态假设下，LDA和逻辑回归的判别边界相同，但系数估计方法不同。"
+    },
+    {
+      "index": 1567,
+      "locator": "讲义 L1567",
+      "text": ""
+    },
+    {
+      "index": 1568,
+      "locator": "讲义 L1568",
+      "text": "#### 12.10.2 与SVM的比较"
+    },
+    {
+      "index": 1569,
+      "locator": "讲义 L1569",
+      "text": ""
+    },
+    {
+      "index": 1570,
+      "locator": "讲义 L1570",
+      "text": "| 维度 | LDA | SVM |"
+    },
+    {
+      "index": 1571,
+      "locator": "讲义 L1571",
+      "text": "|------|-----|-----|"
+    },
+    {
+      "index": 1572,
+      "locator": "讲义 L1572",
+      "text": "| 目标 | 最大化组间分离 | 最大化间隔 |"
+    },
+    {
+      "index": 1573,
+      "locator": "讲义 L1573",
+      "text": "| 核技巧 | 不支持 | 支持 |"
+    },
+    {
+      "index": 1574,
+      "locator": "讲义 L1574",
+      "text": "| 稀疏性 | 非稀疏 | 稀疏（支持向量） |"
+    },
+    {
+      "index": 1575,
+      "locator": "讲义 L1575",
+      "text": "| 对异常值 | 敏感 | 较稳健 |"
+    },
+    {
+      "index": 1576,
+      "locator": "讲义 L1576",
+      "text": "| 适用场景 | 正态数据 | 通用 |"
+    },
+    {
+      "index": 1577,
+      "locator": "讲义 L1577",
+      "text": ""
+    },
+    {
+      "index": 1578,
+      "locator": "讲义 L1578",
+      "text": "#### 12.10.3 与决策树的比较"
+    },
+    {
+      "index": 1579,
+      "locator": "讲义 L1579",
+      "text": ""
+    },
+    {
+      "index": 1580,
+      "locator": "讲义 L1580",
+      "text": "| 维度 | LDA | 决策树 |"
+    },
+    {
+      "index": 1581,
+      "locator": "讲义 L1581",
+      "text": "|------|-----|--------|"
+    },
+    {
+      "index": 1582,
+      "locator": "讲义 L1582",
+      "text": "| 判别边界 | 线性 | 非线性（阶梯状） |"
+    },
+    {
+      "index": 1583,
+      "locator": "讲义 L1583",
+      "text": "| 可解释性 | 中等 | 高 |"
+    },
+    {
+      "index": 1584,
+      "locator": "讲义 L1584",
+      "text": "| 对缺失值 | 不支持 | 支持 |"
+    },
+    {
+      "index": 1585,
+      "locator": "讲义 L1585",
+      "text": "| 对非线性 | 不适用 | 适用 |"
+    },
+    {
+      "index": 1586,
+      "locator": "讲义 L1586",
+      "text": "| 集成方法 | 无 | 随机森林、XGBoost |"
+    },
+    {
+      "index": 1587,
+      "locator": "讲义 L1587",
+      "text": ""
+    },
+    {
+      "index": 1588,
+      "locator": "讲义 L1588",
+      "text": "#### 12.10.4 方法选择建议"
+    },
+    {
+      "index": 1589,
+      "locator": "讲义 L1589",
+      "text": ""
+    },
+    {
+      "index": 1590,
+      "locator": "讲义 L1590",
+      "text": "| 数据特征 | 推荐方法 |"
+    },
+    {
+      "index": 1591,
+      "locator": "讲义 L1591",
+      "text": "|----------|----------|"
+    },
+    {
+      "index": 1592,
+      "locator": "讲义 L1592",
+      "text": "| 正态分布、协方差相等 | LDA |"
+    },
+    {
+      "index": 1593,
+      "locator": "讲义 L1593",
+      "text": "| 正态分布、协方差不等 | QDA |"
+    },
+    {
+      "index": 1594,
+      "locator": "讲义 L1594",
+      "text": "| 非正态、样本量大 | 逻辑回归、SVM |"
+    },
+    {
+      "index": 1595,
+      "locator": "讲义 L1595",
+      "text": "| 需要可解释性 | 决策树 |"
+    },
+    {
+      "index": 1596,
+      "locator": "讲义 L1596",
+      "text": "| 高维小样本 | LDA + 正则化 |"
+    },
+    {
+      "index": 1597,
+      "locator": "讲义 L1597",
+      "text": "| 非线性边界 | 核SVM、决策树 |"
+    },
+    {
+      "index": 1598,
+      "locator": "讲义 L1598",
+      "text": ""
+    },
+    {
+      "index": 1599,
+      "locator": "讲义 L1599",
+      "text": "---"
+    },
+    {
+      "index": 1600,
+      "locator": "讲义 L1600",
+      "text": ""
+    },
+    {
+      "index": 1601,
+      "locator": "讲义 L1601",
+      "text": "## 附录A：关键公式汇总"
+    },
+    {
+      "index": 1602,
+      "locator": "讲义 L1602",
+      "text": ""
+    },
+    {
+      "index": 1603,
+      "locator": "讲义 L1603",
+      "text": "### A.1 Fisher判别"
+    },
+    {
+      "index": 1604,
+      "locator": "讲义 L1604",
+      "text": ""
+    },
+    {
+      "index": 1605,
+      "locator": "讲义 L1605",
+      "text": "| 公式名称 | 公式 |"
+    },
+    {
+      "index": 1606,
+      "locator": "讲义 L1606",
+      "text": "|----------|------|"
+    },
+    {
+      "index": 1607,
+      "locator": "讲义 L1607",
+      "text": "| Fisher准则函数 | $J(a) = \\frac{a^T B a}{a^T W a}$ |"
+    },
+    {
+      "index": 1608,
+      "locator": "讲义 L1608",
+      "text": "| 类间散度矩阵 | $B = (\\bar{X}_1 - \\bar{X}_2)(\\bar{X}_1 - \\bar{X}_2)^T$ |"
+    },
+    {
+      "index": 1609,
+      "locator": "讲义 L1609",
+      "text": "| 类内散度矩阵 | $W = S_1 + S_2$ |"
+    },
+    {
+      "index": 1610,
+      "locator": "讲义 L1610",
+      "text": "| 判别系数 | $a = W^{-1}(\\bar{X}_1 - \\bar{X}_2)$ |"
+    },
+    {
+      "index": 1611,
+      "locator": "讲义 L1611",
+      "text": "| 判别函数 | $u = a^T X$ |"
+    },
+    {
+      "index": 1612,
+      "locator": "讲义 L1612",
+      "text": "| 判别界值 | $c = \\frac{a^T \\bar{X}_1 + a^T \\bar{X}_2}{2}$ |"
+    },
+    {
+      "index": 1613,
+      "locator": "讲义 L1613",
+      "text": ""
+    },
+    {
+      "index": 1614,
+      "locator": "讲义 L1614",
+      "text": "### A.2 Bayes判别"
+    },
+    {
+      "index": 1615,
+      "locator": "讲义 L1615",
+      "text": ""
+    },
+    {
+      "index": 1616,
+      "locator": "讲义 L1616",
+      "text": "| 公式名称 | 公式 |"
+    },
+    {
+      "index": 1617,
+      "locator": "讲义 L1617",
+      "text": "|----------|------|"
+    },
+    {
+      "index": 1618,
+      "locator": "讲义 L1618",
+      "text": "| Bayes定理 | $P(G_k|X) = \\frac{P(G_k)f(X|G_k)}{\\sum_j P(G_j)f(X|G_j)}$ |"
+    },
+    {
+      "index": 1619,
+      "locator": "讲义 L1619",
+      "text": "| 线性判别函数 | $d_k(X) = \\ln P_k + \\mu_k^T\\Sigma^{-1}X - \\frac{1}{2}\\mu_k^T\\Sigma^{-1}\\mu_k$ |"
+    },
+    {
+      "index": 1620,
+      "locator": "讲义 L1620",
+      "text": "| 二次判别函数 | $d_k(X) = \\ln P_k - \\frac{1}{2}\\ln|\\Sigma_k| - \\frac{1}{2}(X-\\mu_k)^T\\Sigma_k^{-1}(X-\\mu_k)$ |"
+    },
+    {
+      "index": 1621,
+      "locator": "讲义 L1621",
+      "text": "| 后验概率 | $P(G_k|X) = \\frac{\\exp(d_k(X))}{\\sum_j \\exp(d_j(X))}$ |"
+    },
+    {
+      "index": 1622,
+      "locator": "讲义 L1622",
+      "text": ""
+    },
+    {
+      "index": 1623,
+      "locator": "讲义 L1623",
+      "text": "### A.3 评价指标"
+    },
+    {
+      "index": 1624,
+      "locator": "讲义 L1624",
+      "text": ""
+    },
+    {
+      "index": 1625,
+      "locator": "讲义 L1625",
+      "text": "| 指标名称 | 公式 |"
+    },
+    {
+      "index": 1626,
+      "locator": "讲义 L1626",
+      "text": "|----------|------|"
+    },
+    {
+      "index": 1627,
+      "locator": "讲义 L1627",
+      "text": "| 准确率 | $\\text{Accuracy} = \\frac{TP+TN}{TP+TN+FP+FN}$ |"
+    },
+    {
+      "index": 1628,
+      "locator": "讲义 L1628",
+      "text": "| 精确率 | $\\text{Precision} = \\frac{TP}{TP+FP}$ |"
+    },
+    {
+      "index": 1629,
+      "locator": "讲义 L1629",
+      "text": "| 召回率 | $\\text{Recall} = \\frac{TP}{TP+FN}$ |"
+    },
+    {
+      "index": 1630,
+      "locator": "讲义 L1630",
+      "text": "| F1值 | $F1 = \\frac{2PR}{P+R}$ |"
+    },
+    {
+      "index": 1631,
+      "locator": "讲义 L1631",
+      "text": "| 特异度 | $\\text{Specificity} = \\frac{TN}{TN+FP}$ |"
+    },
+    {
+      "index": 1632,
+      "locator": "讲义 L1632",
+      "text": "| AUC | ROC曲线下面积 |"
+    },
+    {
+      "index": 1633,
+      "locator": "讲义 L1633",
+      "text": ""
+    },
+    {
+      "index": 1634,
+      "locator": "讲义 L1634",
+      "text": "### A.4 马氏距离"
+    },
+    {
+      "index": 1635,
+      "locator": "讲义 L1635",
+      "text": ""
+    },
+    {
+      "index": 1636,
+      "locator": "讲义 L1636",
+      "text": "| 公式名称 | 公式 |"
+    },
+    {
+      "index": 1637,
+      "locator": "讲义 L1637",
+      "text": "|----------|------|"
+    },
+    {
+      "index": 1638,
+      "locator": "讲义 L1638",
+      "text": "| 马氏距离 | $d(X, G_k) = \\sqrt{(X-\\mu_k)^T\\Sigma_k^{-1}(X-\\mu_k)}$ |"
+    },
+    {
+      "index": 1639,
+      "locator": "讲义 L1639",
+      "text": "| 马氏距离平方 | $d^2(X, G_k) = (X-\\mu_k)^T\\Sigma_k^{-1}(X-\\mu_k)$ |"
+    },
+    {
+      "index": 1640,
+      "locator": "讲义 L1640",
+      "text": ""
+    },
+    {
+      "index": 1641,
+      "locator": "讲义 L1641",
+      "text": "---"
+    },
+    {
+      "index": 1642,
+      "locator": "讲义 L1642",
+      "text": ""
+    },
+    {
+      "index": 1643,
+      "locator": "讲义 L1643",
+      "text": "## 附录B：Python函数速查表"
+    },
+    {
+      "index": 1644,
+      "locator": "讲义 L1644",
+      "text": ""
+    },
+    {
+      "index": 1645,
+      "locator": "讲义 L1645",
+      "text": "### B.1 sklearn.discriminant_analysis"
+    },
+    {
+      "index": 1646,
+      "locator": "讲义 L1646",
+      "text": ""
+    },
+    {
+      "index": 1647,
+      "locator": "讲义 L1647",
+      "text": "| 函数/类 | 用途 | 主要参数 |"
+    },
+    {
+      "index": 1648,
+      "locator": "讲义 L1648",
+      "text": "|---------|------|----------|"
+    },
+    {
+      "index": 1649,
+      "locator": "讲义 L1649",
+      "text": "| `LinearDiscriminantAnalysis()` | LDA | `solver`, `shrinkage`, `n_components` |"
+    },
+    {
+      "index": 1650,
+      "locator": "讲义 L1650",
+      "text": "| `QuadraticDiscriminantAnalysis()` | QDA | `reg_param`, `store_covariance` |"
+    },
+    {
+      "index": 1651,
+      "locator": "讲义 L1651",
+      "text": ""
+    },
+    {
+      "index": 1652,
+      "locator": "讲义 L1652",
+      "text": "### B.2 LDA主要方法"
+    },
+    {
+      "index": 1653,
+      "locator": "讲义 L1653",
+      "text": ""
+    },
+    {
+      "index": 1654,
+      "locator": "讲义 L1654",
+      "text": "| 方法 | 用途 |"
+    },
+    {
+      "index": 1655,
+      "locator": "讲义 L1655",
+      "text": "|------|------|"
+    },
+    {
+      "index": 1656,
+      "locator": "讲义 L1656",
+      "text": "| `fit(X, y)` | 训练模型 |"
+    },
+    {
+      "index": 1657,
+      "locator": "讲义 L1657",
+      "text": "| `predict(X)` | 预测类别 |"
+    },
+    {
+      "index": 1658,
+      "locator": "讲义 L1658",
+      "text": "| `predict_proba(X)` | 预测后验概率 |"
+    },
+    {
+      "index": 1659,
+      "locator": "讲义 L1659",
+      "text": "| `transform(X)` | 降维变换 |"
+    },
+    {
+      "index": 1660,
+      "locator": "讲义 L1660",
+      "text": "| `score(X, y)` | 计算准确率 |"
+    },
+    {
+      "index": 1661,
+      "locator": "讲义 L1661",
+      "text": ""
+    },
+    {
+      "index": 1662,
+      "locator": "讲义 L1662",
+      "text": "### B.3 LDA主要属性"
+    },
+    {
+      "index": 1663,
+      "locator": "讲义 L1663",
+      "text": ""
+    },
+    {
+      "index": 1664,
+      "locator": "讲义 L1664",
+      "text": "| 属性 | 含义 |"
+    },
+    {
+      "index": 1665,
+      "locator": "讲义 L1665",
+      "text": "|------|------|"
+    },
+    {
+      "index": 1666,
+      "locator": "讲义 L1666",
+      "text": "| `coef_` | 判别系数 |"
+    },
+    {
+      "index": 1667,
+      "locator": "讲义 L1667",
+      "text": "| `intercept_` | 截距 |"
+    },
+    {
+      "index": 1668,
+      "locator": "讲义 L1668",
+      "text": "| `means_` | 各组均值 |"
+    },
+    {
+      "index": 1669,
+      "locator": "讲义 L1669",
+      "text": "| `priors_` | 先验概率 |"
+    },
+    {
+      "index": 1670,
+      "locator": "讲义 L1670",
+      "text": "| `scalings_` | 缩放矩阵 |"
+    },
+    {
+      "index": 1671,
+      "locator": "讲义 L1671",
+      "text": "| `explained_variance_ratio_` | 方差解释比例 |"
+    },
+    {
+      "index": 1672,
+      "locator": "讲义 L1672",
+      "text": ""
+    },
+    {
+      "index": 1673,
+      "locator": "讲义 L1673",
+      "text": "### B.4 评价指标函数"
+    },
+    {
+      "index": 1674,
+      "locator": "讲义 L1674",
+      "text": ""
+    },
+    {
+      "index": 1675,
+      "locator": "讲义 L1675",
+      "text": "| 函数 | 用途 |"
+    },
+    {
+      "index": 1676,
+      "locator": "讲义 L1676",
+      "text": "|------|------|"
+    },
+    {
+      "index": 1677,
+      "locator": "讲义 L1677",
+      "text": "| `confusion_matrix(y_true, y_pred)` | 混淆矩阵 |"
+    },
+    {
+      "index": 1678,
+      "locator": "讲义 L1678",
+      "text": "| `classification_report(y_true, y_pred)` | 分类报告 |"
+    },
+    {
+      "index": 1679,
+      "locator": "讲义 L1679",
+      "text": "| `accuracy_score(y_true, y_pred)` | 准确率 |"
+    },
+    {
+      "index": 1680,
+      "locator": "讲义 L1680",
+      "text": "| `precision_score(y_true, y_pred)` | 精确率 |"
+    },
+    {
+      "index": 1681,
+      "locator": "讲义 L1681",
+      "text": "| `recall_score(y_true, y_pred)` | 召回率 |"
+    },
+    {
+      "index": 1682,
+      "locator": "讲义 L1682",
+      "text": "| `f1_score(y_true, y_pred)` | F1值 |"
+    },
+    {
+      "index": 1683,
+      "locator": "讲义 L1683",
+      "text": "| `roc_curve(y_true, y_score)` | ROC曲线数据 |"
+    },
+    {
+      "index": 1684,
+      "locator": "讲义 L1684",
+      "text": "| `auc(x, y)` | AUC计算 |"
+    },
+    {
+      "index": 1685,
+      "locator": "讲义 L1685",
+      "text": ""
+    },
+    {
+      "index": 1686,
+      "locator": "讲义 L1686",
+      "text": "---"
+    },
+    {
+      "index": 1687,
+      "locator": "讲义 L1687",
+      "text": ""
+    },
+    {
+      "index": 1688,
+      "locator": "讲义 L1688",
+      "text": "## 附录C：常见问题与解答"
+    },
+    {
+      "index": 1689,
+      "locator": "讲义 L1689",
+      "text": ""
+    },
+    {
+      "index": 1690,
+      "locator": "讲义 L1690",
+      "text": "### Q1：LDA和QDA如何选择？"
+    },
+    {
+      "index": 1691,
+      "locator": "讲义 L1691",
+      "text": ""
+    },
+    {
+      "index": 1692,
+      "locator": "讲义 L1692",
+      "text": "**A**：首先进行Box's M检验，检验各组协方差矩阵是否相等："
+    },
+    {
+      "index": 1693,
+      "locator": "讲义 L1693",
+      "text": "- 若相等（p > 0.05）：使用LDA"
+    },
+    {
+      "index": 1694,
+      "locator": "讲义 L1694",
+      "text": "- 若不等（p < 0.05）：使用QDA"
+    },
+    {
+      "index": 1695,
+      "locator": "讲义 L1695",
+      "text": ""
+    },
+    {
+      "index": 1696,
+      "locator": "讲义 L1696",
+      "text": "另外，当样本量较小时，建议使用LDA（参数少，不易过拟合）。"
+    },
+    {
+      "index": 1697,
+      "locator": "讲义 L1697",
+      "text": ""
+    },
+    {
+      "index": 1698,
+      "locator": "讲义 L1698",
+      "text": "### Q2：判别系数如何解释？"
+    },
+    {
+      "index": 1699,
+      "locator": "讲义 L1699",
+      "text": ""
+    },
+    {
+      "index": 1700,
+      "locator": "讲义 L1700",
+      "text": "**A**：判别系数表示对应变量对判别得分的贡献："
+    },
+    {
+      "index": 1701,
+      "locator": "讲义 L1701",
+      "text": "- 系数为正：变量值越大，越可能判入第一组"
+    },
+    {
+      "index": 1702,
+      "locator": "讲义 L1702",
+      "text": "- 系数为负：变量值越大，越可能判入第二组"
+    },
+    {
+      "index": 1703,
+      "locator": "讲义 L1703",
+      "text": "- 系数绝对值越大：贡献越大"
+    },
+    {
+      "index": 1704,
+      "locator": "讲义 L1704",
+      "text": ""
+    },
+    {
+      "index": 1705,
+      "locator": "讲义 L1705",
+      "text": "### Q3：如何处理协方差矩阵奇异的情况？"
+    },
+    {
+      "index": 1706,
+      "locator": "讲义 L1706",
+      "text": ""
+    },
+    {
+      "index": 1707,
+      "locator": "讲义 L1707",
+      "text": "**A**：协方差矩阵奇异通常是因为："
+    },
+    {
+      "index": 1708,
+      "locator": "讲义 L1708",
+      "text": "1. 变量间存在完全共线性"
+    },
+    {
+      "index": 1709,
+      "locator": "讲义 L1709",
+      "text": "2. 样本量小于变量数"
+    },
+    {
+      "index": 1710,
+      "locator": "讲义 L1710",
+      "text": ""
+    },
+    {
+      "index": 1711,
+      "locator": "讲义 L1711",
+      "text": "解决方法："
+    },
+    {
+      "index": 1712,
+      "locator": "讲义 L1712",
+      "text": "1. 删除共线性变量"
+    },
+    {
+      "index": 1713,
+      "locator": "讲义 L1713",
+      "text": "2. 使用正则化判别分析（RDA）"
+    },
+    {
+      "index": 1714,
+      "locator": "讲义 L1714",
+      "text": "3. 先进行PCA降维"
+    },
+    {
+      "index": 1715,
+      "locator": "讲义 L1715",
+      "text": ""
+    },
+    {
+      "index": 1716,
+      "locator": "讲义 L1716",
+      "text": "### Q4：判别分析对数据有什么要求？"
+    },
+    {
+      "index": 1717,
+      "locator": "讲义 L1717",
+      "text": ""
+    },
+    {
+      "index": 1718,
+      "locator": "讲义 L1718",
+      "text": "**A**："
+    },
+    {
+      "index": 1719,
+      "locator": "讲义 L1719",
+      "text": "1. 各组样本服从多元正态分布（LDA/QDA的理论基础）"
+    },
+    {
+      "index": 1720,
+      "locator": "讲义 L1720",
+      "text": "2. 各组协方差矩阵相等（LDA的假设）"
+    },
+    {
+      "index": 1721,
+      "locator": "讲义 L1721",
+      "text": "3. 变量间不存在完全共线性"
+    },
+    {
+      "index": 1722,
+      "locator": "讲义 L1722",
+      "text": "4. 样本量足够（一般要求每组样本数大于变量数）"
+    },
+    {
+      "index": 1723,
+      "locator": "讲义 L1723",
+      "text": ""
+    },
+    {
+      "index": 1724,
+      "locator": "讲义 L1724",
+      "text": "### Q5：如何评估判别分析的效果？"
+    },
+    {
+      "index": 1725,
+      "locator": "讲义 L1725",
+      "text": ""
+    },
+    {
+      "index": 1726,
+      "locator": "讲义 L1726",
+      "text": "**A**："
+    },
+    {
+      "index": 1727,
+      "locator": "讲义 L1727",
+      "text": "1. 使用混淆矩阵计算准确率、精确率、召回率、F1值"
+    },
+    {
+      "index": 1728,
+      "locator": "讲义 L1728",
+      "text": "2. 绘制ROC曲线，计算AUC"
+    },
+    {
+      "index": 1729,
+      "locator": "讲义 L1729",
+      "text": "3. 使用交叉验证评估泛化能力"
+    },
+    {
+      "index": 1730,
+      "locator": "讲义 L1730",
+      "text": "4. 比较训练集和测试集的性能（过拟合检验）"
+    },
+    {
+      "index": 1731,
+      "locator": "讲义 L1731",
+      "text": ""
+    },
+    {
+      "index": 1732,
+      "locator": "讲义 L1732",
+      "text": "### Q6：判别分析能处理非线性问题吗？"
+    },
+    {
+      "index": 1733,
+      "locator": "讲义 L1733",
+      "text": ""
+    },
+    {
+      "index": 1734,
+      "locator": "讲义 L1734",
+      "text": "**A**：标准LDA只能处理线性问题。处理非线性问题的方法："
+    },
+    {
+      "index": 1735,
+      "locator": "讲义 L1735",
+      "text": "1. 使用QDA（二次判别边界）"
+    },
+    {
+      "index": 1736,
+      "locator": "讲义 L1736",
+      "text": "2. 使用核判别分析"
+    },
+    {
+      "index": 1737,
+      "locator": "讲义 L1737",
+      "text": "3. 使用灵活判别分析（FDA）"
+    },
+    {
+      "index": 1738,
+      "locator": "讲义 L1738",
+      "text": "4. 先进行特征工程，添加非线性项"
+    },
+    {
+      "index": 1739,
+      "locator": "讲义 L1739",
+      "text": ""
+    },
+    {
+      "index": 1740,
+      "locator": "讲义 L1740",
+      "text": "---"
+    },
+    {
+      "index": 1741,
+      "locator": "讲义 L1741",
+      "text": ""
+    },
+    {
+      "index": 1742,
+      "locator": "讲义 L1742",
+      "text": "## 附录D：术语表"
+    },
+    {
+      "index": 1743,
+      "locator": "讲义 L1743",
+      "text": ""
+    },
+    {
+      "index": 1744,
+      "locator": "讲义 L1744",
+      "text": "| 英文术语 | 中文翻译 | 含义 |"
+    },
+    {
+      "index": 1745,
+      "locator": "讲义 L1745",
+      "text": "|----------|----------|------|"
+    },
+    {
+      "index": 1746,
+      "locator": "讲义 L1746",
+      "text": "| Discriminant Analysis | 判别分析 | 根据已知类别样本建立分类规则的方法 |"
+    },
+    {
+      "index": 1747,
+      "locator": "讲义 L1747",
+      "text": "| Fisher's Linear Discriminant | Fisher线性判别 | 最大化组间/组内散度比的投影方法 |"
+    },
+    {
+      "index": 1748,
+      "locator": "讲义 L1748",
+      "text": "| Linear Discriminant Analysis (LDA) | 线性判别分析 | 假设等协方差的Bayes判别 |"
+    },
+    {
+      "index": 1749,
+      "locator": "讲义 L1749",
+      "text": "| Quadratic Discriminant Analysis (QDA) | 二次判别分析 | 不等协方差的Bayes判别 |"
+    },
+    {
+      "index": 1750,
+      "locator": "讲义 L1750",
+      "text": "| Prior Probability | 先验概率 | 分类前各类别的概率 |"
+    },
+    {
+      "index": 1751,
+      "locator": "讲义 L1751",
+      "text": "| Posterior Probability | 后验概率 | 观测数据后各类别的概率 |"
+    },
+    {
+      "index": 1752,
+      "locator": "讲义 L1752",
+      "text": "| Likelihood Function | 似然函数 | 给定类别下观测数据的概率密度 |"
+    },
+    {
+      "index": 1753,
+      "locator": "讲义 L1753",
+      "text": "| Scatter Matrix | 散布矩阵 | 描述数据离散程度的矩阵 |"
+    },
+    {
+      "index": 1754,
+      "locator": "讲义 L1754",
+      "text": "| Within-class Scatter Matrix | 类内散度矩阵 | 各组内部散布矩阵之和 |"
+    },
+    {
+      "index": 1755,
+      "locator": "讲义 L1755",
+      "text": "| Between-class Scatter Matrix | 类间散度矩阵 | 各组均值与总均值之间的散布矩阵 |"
+    },
+    {
+      "index": 1756,
+      "locator": "讲义 L1756",
+      "text": "| Fisher Criterion Function | Fisher准则函数 | 组间散度与组内散度之比 |"
+    },
+    {
+      "index": 1757,
+      "locator": "讲义 L1757",
+      "text": "| Discriminant Coefficient | 判别系数 | 判别函数中各变量的权重 |"
+    },
+    {
+      "index": 1758,
+      "locator": "讲义 L1758",
+      "text": "| Discriminant Score | 判别得分 | 样品代入判别函数后的值 |"
+    },
+    {
+      "index": 1759,
+      "locator": "讲义 L1759",
+      "text": "| Classification Boundary | 分类边界 | 区分不同类别的超平面或曲面 |"
+    },
+    {
+      "index": 1760,
+      "locator": "讲义 L1760",
+      "text": "| Confusion Matrix | 混淆矩阵 | 分类结果的汇总表 |"
+    },
+    {
+      "index": 1761,
+      "locator": "讲义 L1761",
+      "text": "| True Positive (TP) | 真正例 | 实际为正，预测为正 |"
+    },
+    {
+      "index": 1762,
+      "locator": "讲义 L1762",
+      "text": "| False Positive (FP) | 假正例 | 实际为负，预测为正 |"
+    },
+    {
+      "index": 1763,
+      "locator": "讲义 L1763",
+      "text": "| True Negative (TN) | 真负例 | 实际为负，预测为负 |"
+    },
+    {
+      "index": 1764,
+      "locator": "讲义 L1764",
+      "text": "| False Negative (FN) | 假负例 | 实际为正，预测为负 |"
+    },
+    {
+      "index": 1765,
+      "locator": "讲义 L1765",
+      "text": "| Accuracy | 准确率 | 正确分类的样本比例 |"
+    },
+    {
+      "index": 1766,
+      "locator": "讲义 L1766",
+      "text": "| Precision | 精确率 | 预测为正中实际为正的比例 |"
+    },
+    {
+      "index": 1767,
+      "locator": "讲义 L1767",
+      "text": "| Recall | 召回率 | 实际为正中被正确预测的比例 |"
+    },
+    {
+      "index": 1768,
+      "locator": "讲义 L1768",
+      "text": "| F1 Score | F1值 | 精确率和召回率的调和平均 |"
+    },
+    {
+      "index": 1769,
+      "locator": "讲义 L1769",
+      "text": "| ROC Curve | 受试者工作特征曲线 | TPR与FPR的关系曲线 |"
+    },
+    {
+      "index": 1770,
+      "locator": "讲义 L1770",
+      "text": "| AUC | 曲线下面积 | ROC曲线下的面积 |"
+    },
+    {
+      "index": 1771,
+      "locator": "讲义 L1771",
+      "text": "| Cross Validation | 交叉验证 | 评估模型泛化能力的方法 |"
+    },
+    {
+      "index": 1772,
+      "locator": "讲义 L1772",
+      "text": "| Mahalanobis Distance | 马氏距离 | 考虑变量相关性的距离度量 |"
+    },
+    {
+      "index": 1773,
+      "locator": "讲义 L1773",
+      "text": "| Regularization | 正则化 | 防止过拟合的技术 |"
+    },
+    {
+      "index": 1774,
+      "locator": "讲义 L1774",
+      "text": "| Wilks' Lambda | Wilks统计量 | 用于检验判别效果的指标 |"
+    },
+    {
+      "index": 1775,
+      "locator": "讲义 L1775",
+      "text": "| Box's M Test | Box's M检验 | 检验协方差矩阵是否相等 |"
+    },
+    {
+      "index": 1776,
+      "locator": "讲义 L1776",
+      "text": "| Softmax | Softmax函数 | 将得分转化为概率的归一化函数 |"
+    },
+    {
+      "index": 1777,
+      "locator": "讲义 L1777",
+      "text": "| Bayes' Theorem | 贝叶斯定理 | 条件概率的基本定理 |"
+    },
+    {
+      "index": 1778,
+      "locator": "讲义 L1778",
+      "text": "| Supervised Learning | 有监督学习 | 使用标签数据进行训练的学习方式 |"
+    },
+    {
+      "index": 1779,
+      "locator": "讲义 L1779",
+      "text": "| Classification | 分类 | 将样品归入已知类别的过程 |"
+    },
+    {
+      "index": 1780,
+      "locator": "讲义 L1780",
+      "text": "| Feature | 特征 | 描述样品属性的变量 |"
+    },
+    {
+      "index": 1781,
+      "locator": "讲义 L1781",
+      "text": "| Training Set | 训练集 | 用于建立模型的数据集 |"
+    },
+    {
+      "index": 1782,
+      "locator": "讲义 L1782",
+      "text": "| Test Set | 测试集 | 用于评估模型的数据集 |"
+    },
+    {
+      "index": 1783,
+      "locator": "讲义 L1783",
+      "text": "| Overfitting | 过拟合 | 模型对训练数据拟合过好，泛化能力差 |"
+    },
+    {
+      "index": 1784,
+      "locator": "讲义 L1784",
+      "text": "| Generalization | 泛化 | 模型对新数据的预测能力 |"
+    },
+    {
+      "index": 1785,
+      "locator": "讲义 L1785",
+      "text": "| Pooled Covariance | 合并协方差 | 各组协方差矩阵的加权平均 |"
+    },
+    {
+      "index": 1786,
+      "locator": "讲义 L1786",
+      "text": "| Threshold | 阈值 | 用于分类决策的临界值 |"
+    },
+    {
+      "index": 1787,
+      "locator": "讲义 L1787",
+      "text": "| One-vs-Rest | 一对多 | 多分类策略之一 |"
+    },
+    {
+      "index": 1788,
+      "locator": "讲义 L1788",
+      "text": "| One-vs-One | 一对一 | 多分类策略之一 |"
+    },
+    {
+      "index": 1789,
+      "locator": "讲义 L1789",
+      "text": "| Kernel Trick | 核技巧 | 将数据映射到高维空间的技术 |"
+    },
+    {
+      "index": 1790,
+      "locator": "讲义 L1790",
+      "text": "| Shrinkage | 收缩 | 正则化的一种形式 |"
+    },
+    {
+      "index": 1791,
+      "locator": "讲义 L1791",
+      "text": "| Eigenvalue | 特征值 | 矩阵的固有属性 |"
+    },
+    {
+      "index": 1792,
+      "locator": "讲义 L1792",
+      "text": "| Eigenvector | 特征向量 | 对应特征值的向量 |"
+    },
+    {
+      "index": 1793,
+      "locator": "讲义 L1793",
+      "text": "| Projection | 投影 | 将高维数据映射到低维空间 |"
+    },
+    {
+      "index": 1794,
+      "locator": "讲义 L1794",
+      "text": "| Centroid | 重心 | 各组数据的均值点 |"
+    },
+    {
+      "index": 1795,
+      "locator": "讲义 L1795",
+      "text": "| Covariance | 协方差 | 衡量两个变量联合变化程度的指标 |"
+    },
+    {
+      "index": 1796,
+      "locator": "讲义 L1796",
+      "text": "| Variance Explained | 方差解释比例 | 判别函数解释的变异比例 |"
+    },
+    {
+      "index": 1797,
+      "locator": "讲义 L1797",
+      "text": ""
+    },
+    {
+      "index": 1798,
+      "locator": "讲义 L1798",
+      "text": "---"
+    },
+    {
+      "index": 1799,
+      "locator": "讲义 L1799",
+      "text": ""
+    },
+    {
+      "index": 1800,
+      "locator": "讲义 L1800",
+      "text": "**全书内容生成完毕！所有12章均已完成。**"
+    }
+  ]
+}

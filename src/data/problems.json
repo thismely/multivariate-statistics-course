@@ -1,0 +1,163 @@
+[
+  {
+    "id": "reduce",
+    "title": "指标太多，如何保留主要信息？",
+    "method_ids": [
+      "pca"
+    ],
+    "condition": "多个数值变量，希望压缩维度",
+    "warning": "先确认量纲、异常值和需要保留的信息。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L94–L117",
+        "start": 94,
+        "end": 117,
+        "excerpt": "#### 6.1.2 PCA的核心思想\n\nPCA的核心思想可以用一句话概括：**找到一组新的正交坐标轴，使得数据在这些轴上的投影方差依次最大**。\n\n**几何直觉**：",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "latent",
+    "title": "多个指标背后是否存在共同维度？",
+    "method_ids": [
+      "fa"
+    ],
+    "condition": "变量可能测量潜在构念",
+    "warning": "潜在结构解释需要载荷、适宜性和领域依据。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L54–L77",
+        "start": 54,
+        "end": 77,
+        "excerpt": "#### 7.1.1 因子分析的核心思想\n\n**【业务场景引入】**\n\n假设你是一名教育研究者，收集了100名学生的6门课程成绩：语文、英语、历史、数学、物理、化学。你怀疑这6门课程的成绩背后可能存在2个潜在的\"能力因子\"：",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "segment",
+    "title": "没有类别标签，怎样发现群体？",
+    "method_ids": [
+      "cluster"
+    ],
+    "condition": "无标签数值特征或可定义的距离",
+    "warning": "尺度与距离影响结果；需检查稳定性。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L63–L86",
+        "start": 63,
+        "end": 86,
+        "excerpt": "#### 4.1.1 什么是聚类分析？\n\n**【业务场景引入】**\n\n假设你是某大宗商品交易所的风控经理，手头有50家期货公司的交易数据，包括：日均成交量、持仓量、客户数、保证金规模、违规次数等。你需要将这50家公司分为3-5个风险等级，以便实施差异化的监管策略。",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "classify",
+    "title": "已有类别，怎样预测新样本？",
+    "method_ids": [
+      "discriminant",
+      "logistic"
+    ],
+    "condition": "可信标签；Logistic 首版聚焦二分类",
+    "warning": "先拆分训练与测试，结合误判成本选模型。",
+    "sources": [
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L63–L86",
+        "start": 63,
+        "end": 86,
+        "excerpt": "#### 12.1.1 什么是判别分析？\n\n**【业务场景引入】**\n\n某商业银行需要根据客户的财务指标（收入、负债率、信用评分等）判断其信用等级（优、良、差）。已有1000名已知信用等级的客户数据，需要建立判别规则，对新客户进行自动分类。",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture11",
+        "locator": "讲义 L611–L634",
+        "start": 611,
+        "end": 634,
+        "excerpt": "#### 11.3.5 Logistic回归模型\n\nLogistic回归是GLM中最常用的模型之一，用于处理因变量为二分类变量的情况。\n\n**（1）模型设定**",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "response",
+    "title": "多个 X 如何解释一个连续 Y？",
+    "method_ids": [
+      "regression"
+    ],
+    "condition": "连续响应变量与多个解释变量",
+    "warning": "诊断外生性、残差与共线性；不自动得出因果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L688–L711",
+        "start": 688,
+        "end": 711,
+        "excerpt": "#### 9.3.3 多元线性回归\n\n**（1）模型**\n\n$$",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "groups",
+    "title": "两组变量的整体关联有多强？",
+    "method_ids": [
+      "cca"
+    ],
+    "condition": "两组匹配观测的数值变量",
+    "warning": "结合典型载荷和冗余解释。",
+    "sources": [
+      {
+        "resource_id": "lecture10",
+        "locator": "讲义 L71–L94",
+        "start": 71,
+        "end": 94,
+        "excerpt": "#### 10.1.1 典型相关分析的概念\n\n**【业务场景引入】**\n\n某大宗商品研究机构希望研究以下问题：",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "category",
+    "title": "分类变量之间怎样关联？",
+    "method_ids": [
+      "ca"
+    ],
+    "condition": "非负列联表，行列有明确分类含义",
+    "warning": "核对频数、缩放与独立性检验适用条件。",
+    "sources": [
+      {
+        "resource_id": "lecture08",
+        "locator": "讲义 L57–L80",
+        "start": 57,
+        "end": 80,
+        "excerpt": "#### 8.1.2 对应分析与因子分析的关系\n\n| 维度 | 因子分析 | 对应分析 |\n|------|----------|----------|\n| **输入** | 连续变量的相关矩阵 | 分类变量的列联表 |",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "rank",
+    "title": "怎样构建有依据的综合排名？",
+    "method_ids": [
+      "evaluation"
+    ],
+    "condition": "明确评价对象、目标与指标方向",
+    "warning": "记录权重来源并做敏感性分析。",
+    "sources": [
+      {
+        "resource_id": "lecture05",
+        "locator": "讲义 L77–L100",
+        "start": 77,
+        "end": 100,
+        "excerpt": "#### 5.1.1 什么是综合评价？\n\n**【业务场景引入】**\n\n假设你是某省发改委的分析师，需要对下属15个地级市的经济发展水平进行综合评价。你收集了以下指标：",
+        "basis": "course_material"
+      }
+    ]
+  }
+]

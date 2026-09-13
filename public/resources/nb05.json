@@ -1,0 +1,188 @@
+{
+  "resource": {
+    "id": "nb05",
+    "title": "第05章-综合评价",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第05章-综合评价.ipynb",
+    "sha256": "8fdaf570247c1fe14ec09148ac795d0470dc849217da3788b16a4aa2c2827c61",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb05.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "Notebook 单元 1 · code",
+      "text": "#%run init.py\n#%cd \"[本地路径已移除]\""
+    },
+    {
+      "index": 2,
+      "locator": "Notebook 单元 2 · markdown",
+      "text": "# 第5章 综合评价方法及应用"
+    },
+    {
+      "index": 3,
+      "locator": "Notebook 单元 3 · markdown",
+      "text": "## 5.1 综合评价的基本概念"
+    },
+    {
+      "index": 4,
+      "locator": "Notebook 单元 4 · markdown",
+      "text": "## 5.2 评价指标体系的构建"
+    },
+    {
+      "index": 5,
+      "locator": "Notebook 单元 5 · markdown",
+      "text": "### 5.2.1 指标体系的构建原则"
+    },
+    {
+      "index": 6,
+      "locator": "Notebook 单元 6 · markdown",
+      "text": "### 5.2.2 评价指标体系的选取"
+    },
+    {
+      "index": 7,
+      "locator": "Notebook 单元 7 · code",
+      "text": "import pandas as pd\npd.set_option('display.max_rows',31)                    #显示数据框最大行数\nd31=pd.read_excel('mvsData.xlsx','d31',index_col=0);   #读取居民消费支出数据\nd51=d31[['衣着','食品','居住','交通','教育','医疗','设备','杂项']] #指标体系数据\nprint(d51)"
+    },
+    {
+      "index": 8,
+      "locator": "Notebook 单元 8 · markdown",
+      "text": "## 5.3 数据无量纲化及权重确定"
+    },
+    {
+      "index": 9,
+      "locator": "Notebook 单元 9 · markdown",
+      "text": "### 5.3.1 观测指标的无量纲方法"
+    },
+    {
+      "index": 10,
+      "locator": "Notebook 单元 10 · code",
+      "text": "#def bz(x): return (x-x.min())/(x.max()-x.min())*60+40  #定义规范化函数\ndef bz(x): \n    z=(x-x.min())/(x.max()-x.min())*60+40\n    return(z)"
+    },
+    {
+      "index": 11,
+      "locator": "Notebook 单元 11 · code",
+      "text": "Z=d51.apply(bz,0);Z    #数据无量纲化\npd.set_option('display.precision',2) #设置数据框输出精度，2位小数\nprint(Z)"
+    },
+    {
+      "index": 12,
+      "locator": "Notebook 单元 12 · markdown",
+      "text": "### 5.3.2 评价指标权重确定方法"
+    },
+    {
+      "index": 13,
+      "locator": "Notebook 单元 13 · code",
+      "text": "import numpy as np\nnp.set_printoptions(precision=4)  #设置numpy输出精度\ndef AHP(A):  #A为判断矩阵\n    print('判断矩阵:\\n',A)\n    m=np.shape(A)[0];\n    D=np.linalg.eig(A);    #特征值\n    E=np.real(D[0][0]);    #特征向量 \n    ai=np.real(D[1][:,0]); #最大特征值   \n    W=ai/sum(ai)           #权重归一化\n    if(m>2):\n        print('L_max=',E.round(4))\n        CI=(E-m)/(m-1)   #计算一致性比例\n        RI=[0,0,0.52,0.89,1.12,1.25,1.35,1.42,1.46,1.49,1.52,1.54,1.56,1.58,1.59]\n        CR=CI/RI[m-1]\n        print('一致性指标 CI:',round(CI,4))\n        print('一致性比例 CR:',round(CR,4))    \n        if CR<0.1: print('CR<=0.1，一致性可以接受!')\n        else: print('CR>0.1，一致性不可接受!')\n    print('权重向量:')\n    return(W)"
+    },
+    {
+      "index": 14,
+      "locator": "Notebook 单元 14 · code",
+      "text": "A=np.array([[1,2],[1/2,1]])\nA_W=AHP(A);A_W"
+    },
+    {
+      "index": 15,
+      "locator": "Notebook 单元 15 · code",
+      "text": "B1=np.array([[1,1/4,1/3,1/2],[4,1,2,3],[3,1/2,1,4],[2,1/3,1/4,1]])\nB1_W=AHP(B1);B1_W"
+    },
+    {
+      "index": 16,
+      "locator": "Notebook 单元 16 · code",
+      "text": "B2=np.array([[1,2,3,3],[1/2,1,2,4],[1/3,1/2,1,2],[1/3,1/4,1/2,1]])\nB2_W=AHP(B2);B2_W"
+    },
+    {
+      "index": 17,
+      "locator": "Notebook 单元 17 · markdown",
+      "text": "## 5.4 综合评价方法及其应用"
+    },
+    {
+      "index": 18,
+      "locator": "Notebook 单元 18 · markdown",
+      "text": "### 5.4.1 综合评分法"
+    },
+    {
+      "index": 19,
+      "locator": "Notebook 单元 19 · code",
+      "text": "pd.set_option('display.max_rows',8)\nS=Z.mean(axis=1);S  #按列求均值"
+    },
+    {
+      "index": 20,
+      "locator": "Notebook 单元 20 · code",
+      "text": "len(S[S<60])"
+    },
+    {
+      "index": 21,
+      "locator": "Notebook 单元 21 · code",
+      "text": "Sr=S.rank(ascending=False).astype(int) #综合排名\nprint(Sr)"
+    },
+    {
+      "index": 22,
+      "locator": "Notebook 单元 22 · code",
+      "text": "pd.set_option('display.max_rows',31)\nprint(pd.DataFrame({'综合评分':S,'综合排名':Sr}))\n#pd.concat([A1_Z,M1],axis=1).round(2) "
+    },
+    {
+      "index": 23,
+      "locator": "Notebook 单元 23 · markdown",
+      "text": "### 5.4.2 层次分析法"
+    },
+    {
+      "index": 24,
+      "locator": "Notebook 单元 24 · code",
+      "text": "S2=pd.DataFrame()\nS2['A1得分']=Z[['衣着','食品','居住','交通']].dot(B1_W)        #常规消费A1得分\nS2['A1排名']=S2['A1得分'].rank(ascending=False).astype(int)   #常规消费A2排序\nprint(S2)"
+    },
+    {
+      "index": 25,
+      "locator": "Notebook 单元 25 · code",
+      "text": "S2['A2得分']=Z[['教育','医疗','设备','杂项']].dot(B2_W)        #附加消费A2得分\nS2['A2排名']=S2['A2得分'].rank(ascending=False).astype(int)   #附加消费A2排序\nprint(S2)"
+    },
+    {
+      "index": 26,
+      "locator": "Notebook 单元 26 · code",
+      "text": "S2['层次得分']=S2[['A1得分','A2得分']].dot(A_W)                 #A层次综合得分\nS2['层次排名']=S2['层次得分'].rank(ascending=False).astype(int) #A层次综合排序\npd.set_option('display.max_rows',31) \nprint(S2)"
+    },
+    {
+      "index": 27,
+      "locator": "Notebook 单元 27 · code",
+      "text": "print(pd.DataFrame({'综合评分':S,'综合排名':Sr,\n              '层次得分':S2.层次得分,'层次排名':S2.层次排名}))"
+    },
+    {
+      "index": 28,
+      "locator": "Notebook 单元 28 · markdown",
+      "text": "# 案例5：广东省知识产权发展水平综合评价"
+    },
+    {
+      "index": 29,
+      "locator": "Notebook 单元 29 · code",
+      "text": "A=np.array([[1,3,5],[1/3,1,3],[1/5,1/3,1]])\nA_W=AHP(A);A_W  #A的权重"
+    },
+    {
+      "index": 30,
+      "locator": "Notebook 单元 30 · code",
+      "text": "B1=np.array([[1,4,5,3,6,7],[1/4,1,2,1/2,3,4],[1/5,1/2,1,1/3,2,3],[1/3,2,3,1,4,5],[1/6,1/3,1/2,1/4,1,2],[1/7,1/4,1/3,1/5,1/2,1]] )\nB1_W=AHP(B1);B1_W  #B1的权重"
+    },
+    {
+      "index": 31,
+      "locator": "Notebook 单元 31 · code",
+      "text": "B2=np.array([[1,4,5,7,8,9],[1/4,1,2,4,5,6],[1/5,1/2,1,3,4,5],[1/7,1/4,1/3,1,2,3],[1/8,1/5,1/4,1/2,1,2],[1/9,1/6,1/5,1/3,1/2,1]])\nB2_W=AHP(B2);B2_W  #B2的权重"
+    },
+    {
+      "index": 32,
+      "locator": "Notebook 单元 32 · code",
+      "text": "B3=np.array([[1,5,2,6,2,6,1],[1/5,1,1/4,2,1/4,2,1/5],\n             [1/2,5,1,5,1,5,1/2],[1/6,1/2,1/5,1,1/5,1,1/6],\n             [1/2,4,1,5,1,5,1/2],[1/6,1/2,1/5,1,1/5,1,1/6],\n             [1,5,2,6,2,6,1]])\nB3_W=AHP(B3);B3_W  #B3的权重"
+    },
+    {
+      "index": 33,
+      "locator": "Notebook 单元 33 · code",
+      "text": "pd.set_option('display.max_rows',21)\nCase5=pd.read_excel('mvsCase.xlsx','Case5',index_col=0);\nprint(Case5)"
+    },
+    {
+      "index": 34,
+      "locator": "Notebook 单元 34 · code",
+      "text": "def bz(x):return (x-x.min())/(x.max()-x.min())*60+40  \nZ=Case5.apply(bz,0)\nS=pd.DataFrame()\nS['A1得分']=Z.iloc[:,0:6].dot(B1_W)     #A1得分 \nS['A1排名']=S.A1得分.rank(ascending=False).astype(int)  #A1排名\nS['A2得分']=Z.iloc[:,6:12].dot(B2_W)    #A2得分\nS['A2排名']=S.A2得分.rank(ascending=False).astype(int)  #A2排名\nS['A3得分']=Z.iloc[:,12:19].dot(B3_W)   #A3得分\nS['A3排名']=S.A3得分.rank(ascending=False).astype(int)  #A3排名\nS['综合得分']=S[['A1得分','A2得分','A3得分']].dot(A_W)  #总得分\nS['综合排名']=S.综合得分.rank(ascending=False).astype(int)  #总排名\nprint(S)"
+    },
+    {
+      "index": 35,
+      "locator": "Notebook 单元 35 · code",
+      "text": ""
+    }
+  ]
+}

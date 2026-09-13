@@ -1,0 +1,8 @@
+field,dtype,description,unit,role
+indicator_1,float,带有较大尺度的模拟指标，无真实主体含义,synthetic unit,input
+indicator_2,float,与潜变量相关的模拟指标,synthetic unit,input
+indicator_3,float,第二潜变量相关的模拟指标,synthetic unit,input
+indicator_4,float,第二潜变量相关的模拟指标,synthetic unit,input
+indicator_5,float,不同量纲的模拟指标,synthetic unit,input
+PC1,float,第一主成分得分,standardised score,derived
+PC2,float,第二主成分得分,standardised score,derived

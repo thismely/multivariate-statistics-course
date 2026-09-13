@@ -1,0 +1,3233 @@
+{
+  "resource": {
+    "id": "lecture03",
+    "title": "第3章_多元数据的Python可视化_完整讲义",
+    "kind": "lecture",
+    "source_path": "Construction of multivariate statistical analysis wisdom course/第3章_多元数据的Python可视化_完整讲义.md",
+    "sha256": "e4f7d83b38e88d1936841ea4917e0d732dd3c7eda79c5ceb4cc2d9bebde8e2f2",
+    "status": "TEXT_EXTRACTED_SELECTED_SECTIONS_REVIEWED",
+    "href": "resources/lecture03.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "讲义 L1",
+      "text": "# 第3章 多元数据的Python可视化"
+    },
+    {
+      "index": 2,
+      "locator": "讲义 L2",
+      "text": ""
+    },
+    {
+      "index": 3,
+      "locator": "讲义 L3",
+      "text": "## 模块一：精准教学大纲"
+    },
+    {
+      "index": 4,
+      "locator": "讲义 L4",
+      "text": ""
+    },
+    {
+      "index": 5,
+      "locator": "讲义 L5",
+      "text": "### 一、教学目标"
+    },
+    {
+      "index": 6,
+      "locator": "讲义 L6",
+      "text": ""
+    },
+    {
+      "index": 7,
+      "locator": "讲义 L7",
+      "text": "通过本章学习，学生应具备以下核心能力："
+    },
+    {
+      "index": 8,
+      "locator": "讲义 L8",
+      "text": ""
+    },
+    {
+      "index": 9,
+      "locator": "讲义 L9",
+      "text": "1. **Matplotlib基础绑图**：掌握figure/axes对象模型，能够创建折线图、柱状图、散点图、饼图等基本图形，并进行标题、标签、图例、颜色等参数设置。"
+    },
+    {
+      "index": 10,
+      "locator": "讲义 L10",
+      "text": "2. **Seaborn高级统计图形**：熟练使用Seaborn绘制热力图、箱线图、小提琴图、散点图矩阵等统计图形，理解figure-level与axes-level函数的区别。"
+    },
+    {
+      "index": 11,
+      "locator": "讲义 L11",
+      "text": "3. **描述统计可视化**：能够用箱线图识别异常值、用直方图和核密度图展示分布形态、用小提琴图比较分组分布。"
+    },
+    {
+      "index": 12,
+      "locator": "讲义 L12",
+      "text": "4. **关系可视化**：能够用散点图展示两变量关系、用散点图矩阵展示多变量两两关系、用热力图展示相关系数矩阵。"
+    },
+    {
+      "index": 13,
+      "locator": "讲义 L13",
+      "text": "5. **多元分析专用图形**：掌握雷达图（多维度评价）、气泡图（三维信息展示）、配对图（PairPlot）的绑制方法。"
+    },
+    {
+      "index": 14,
+      "locator": "讲义 L14",
+      "text": "6. **图形美化与出版级输出**：掌握中文字体设置、配色方案选择、子图布局调整等技巧。"
+    },
+    {
+      "index": 15,
+      "locator": "讲义 L15",
+      "text": ""
+    },
+    {
+      "index": 16,
+      "locator": "讲义 L16",
+      "text": "### 二、建议学时"
+    },
+    {
+      "index": 17,
+      "locator": "讲义 L17",
+      "text": ""
+    },
+    {
+      "index": 18,
+      "locator": "讲义 L18",
+      "text": "| 内容 | 学时 | 教学方式 |"
+    },
+    {
+      "index": 19,
+      "locator": "讲义 L19",
+      "text": "|------|------|----------|"
+    },
+    {
+      "index": 20,
+      "locator": "讲义 L20",
+      "text": "| 3.1 多元数据可视化准备 | 1 | 讲授+演示 |"
+    },
+    {
+      "index": 21,
+      "locator": "讲义 L21",
+      "text": "| 3.2 条图或柱图 | 1 | 讲授+练习 |"
+    },
+    {
+      "index": 22,
+      "locator": "讲义 L22",
+      "text": "| 3.3 描述统计及箱尾图 | 1.5 | 讲授+练习 |"
+    },
+    {
+      "index": 23,
+      "locator": "讲义 L23",
+      "text": "| 3.4 变量间的关系图 | 1.5 | 讲授+练习 |"
+    },
+    {
+      "index": 24,
+      "locator": "讲义 L24",
+      "text": "| 3.5 其他多元分析图 | 1 | 讲授+练习 |"
+    },
+    {
+      "index": 25,
+      "locator": "讲义 L25",
+      "text": "| **合计** | **6** | |"
+    },
+    {
+      "index": 26,
+      "locator": "讲义 L26",
+      "text": ""
+    },
+    {
+      "index": 27,
+      "locator": "讲义 L27",
+      "text": "### 三、重点与难点"
+    },
+    {
+      "index": 28,
+      "locator": "讲义 L28",
+      "text": ""
+    },
+    {
+      "index": 29,
+      "locator": "讲义 L29",
+      "text": "**重点**："
+    },
+    {
+      "index": 30,
+      "locator": "讲义 L30",
+      "text": "- Matplotlib的figure/axes对象模型（面向对象绑图 vs pyplot状态机绑图）"
+    },
+    {
+      "index": 31,
+      "locator": "讲义 L31",
+      "text": "- 箱线图的五数概括解读与异常值识别"
+    },
+    {
+      "index": 32,
+      "locator": "讲义 L32",
+      "text": "- 热力图的参数设置（annot、cmap、center）"
+    },
+    {
+      "index": 33,
+      "locator": "讲义 L33",
+      "text": "- 散点图矩阵（pairplot）的使用与解读"
+    },
+    {
+      "index": 34,
+      "locator": "讲义 L34",
+      "text": ""
+    },
+    {
+      "index": 35,
+      "locator": "讲义 L35",
+      "text": "**难点**："
+    },
+    {
+      "index": 36,
+      "locator": "讲义 L36",
+      "text": "- Seaborn的figure-level函数（如catplot、relplot）与axes-level函数（如boxplot、scatterplot）的区别"
+    },
+    {
+      "index": 37,
+      "locator": "讲义 L37",
+      "text": "- 多子图布局的精细调整（gridspec、subplot_mosaic）"
+    },
+    {
+      "index": 38,
+      "locator": "讲义 L38",
+      "text": "- 配色方案的选择（Sequential vs Diverging vs Qualitative）"
+    },
+    {
+      "index": 39,
+      "locator": "讲义 L39",
+      "text": ""
+    },
+    {
+      "index": 40,
+      "locator": "讲义 L40",
+      "text": "**化解建议**："
+    },
+    {
+      "index": 41,
+      "locator": "讲义 L41",
+      "text": "1. 建议初学者先掌握axes-level函数（如`sns.boxplot`），再学习figure-level函数（如`sns.catplot`）。axes-level函数更灵活，可以精确控制绑图位置。"
+    },
+    {
+      "index": 42,
+      "locator": "讲义 L42",
+      "text": "2. 配色方案的选择原则：**连续型数据用Sequential**（如\"viridis\"、\"Blues\"），**有中心值的数据用Diverging**（如\"RdBu_r\"、\"coolwarm\"），**分类数据用Qualitative**（如\"Set2\"、\"tab10\"）。"
+    },
+    {
+      "index": 43,
+      "locator": "讲义 L43",
+      "text": ""
+    },
+    {
+      "index": 44,
+      "locator": "讲义 L44",
+      "text": "### 四、前置知识"
+    },
+    {
+      "index": 45,
+      "locator": "讲义 L45",
+      "text": ""
+    },
+    {
+      "index": 46,
+      "locator": "讲义 L46",
+      "text": "| 前置知识 | 是否已在本课程前序章节出现 | 处理方式 |"
+    },
+    {
+      "index": 47,
+      "locator": "讲义 L47",
+      "text": "|----------|--------------------------|----------|"
+    },
+    {
+      "index": 48,
+      "locator": "讲义 L48",
+      "text": "| Pandas DataFrame基本操作 | 是（第2章） | 直接引用 |"
+    },
+    {
+      "index": 49,
+      "locator": "讲义 L49",
+      "text": "| 描述性统计量的含义 | 是（第2章） | 直接引用 |"
+    },
+    {
+      "index": 50,
+      "locator": "讲义 L50",
+      "text": "| NumPy数组操作 | 是（第2章） | 直接引用 |"
+    },
+    {
+      "index": 51,
+      "locator": "讲义 L51",
+      "text": ""
+    },
+    {
+      "index": 52,
+      "locator": "讲义 L52",
+      "text": "---"
+    },
+    {
+      "index": 53,
+      "locator": "讲义 L53",
+      "text": ""
+    },
+    {
+      "index": 54,
+      "locator": "讲义 L54",
+      "text": "## 模块二：沉浸式理论讲解"
+    },
+    {
+      "index": 55,
+      "locator": "讲义 L55",
+      "text": ""
+    },
+    {
+      "index": 56,
+      "locator": "讲义 L56",
+      "text": "### 3.1 多元数据可视化准备"
+    },
+    {
+      "index": 57,
+      "locator": "讲义 L57",
+      "text": ""
+    },
+    {
+      "index": 58,
+      "locator": "讲义 L58",
+      "text": "#### 3.1.1 Matplotlib基础"
+    },
+    {
+      "index": 59,
+      "locator": "讲义 L59",
+      "text": ""
+    },
+    {
+      "index": 60,
+      "locator": "讲义 L60",
+      "text": "**【业务场景引入】**"
+    },
+    {
+      "index": 61,
+      "locator": "讲义 L61",
+      "text": ""
+    },
+    {
+      "index": 62,
+      "locator": "讲义 L62",
+      "text": "在大宗商品分析中，可视化是沟通数据洞察的核心工具。一个优秀的图表可以："
+    },
+    {
+      "index": 63,
+      "locator": "讲义 L63",
+      "text": "- 一眼看出铜价的趋势方向和波动幅度"
+    },
+    {
+      "index": 64,
+      "locator": "讲义 L64",
+      "text": "- 直观比较不同品种的收益分布差异"
+    },
+    {
+      "index": 65,
+      "locator": "讲义 L65",
+      "text": "- 揭示变量之间的相关模式"
+    },
+    {
+      "index": 66,
+      "locator": "讲义 L66",
+      "text": ""
+    },
+    {
+      "index": 67,
+      "locator": "讲义 L67",
+      "text": "Matplotlib是Python最基础的绑图库，几乎所有其他可视化库（Seaborn、Plotly）都建立在它的基础之上。"
+    },
+    {
+      "index": 68,
+      "locator": "讲义 L68",
+      "text": ""
+    },
+    {
+      "index": 69,
+      "locator": "讲义 L69",
+      "text": "**（1）两种绑图风格**"
+    },
+    {
+      "index": 70,
+      "locator": "讲义 L70",
+      "text": ""
+    },
+    {
+      "index": 71,
+      "locator": "讲义 L71",
+      "text": "```python"
+    },
+    {
+      "index": 72,
+      "locator": "讲义 L72",
+      "text": "# 风格1：pyplot状态机风格（简单但不灵活）"
+    },
+    {
+      "index": 73,
+      "locator": "讲义 L73",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 74,
+      "locator": "讲义 L74",
+      "text": "plt.plot([1, 2, 3], [4, 5, 6])"
+    },
+    {
+      "index": 75,
+      "locator": "讲义 L75",
+      "text": "plt.title('简单折线图')"
+    },
+    {
+      "index": 76,
+      "locator": "讲义 L76",
+      "text": "plt.show()"
+    },
+    {
+      "index": 77,
+      "locator": "讲义 L77",
+      "text": ""
+    },
+    {
+      "index": 78,
+      "locator": "讲义 L78",
+      "text": "# 风格2：面向对象风格（推荐，更灵活）"
+    },
+    {
+      "index": 79,
+      "locator": "讲义 L79",
+      "text": "fig, ax = plt.subplots()"
+    },
+    {
+      "index": 80,
+      "locator": "讲义 L80",
+      "text": "ax.plot([1, 2, 3], [4, 5, 6])"
+    },
+    {
+      "index": 81,
+      "locator": "讲义 L81",
+      "text": "ax.set_title('简单折线图')"
+    },
+    {
+      "index": 82,
+      "locator": "讲义 L82",
+      "text": "plt.show()"
+    },
+    {
+      "index": 83,
+      "locator": "讲义 L83",
+      "text": "```"
+    },
+    {
+      "index": 84,
+      "locator": "讲义 L84",
+      "text": ""
+    },
+    {
+      "index": 85,
+      "locator": "讲义 L85",
+      "text": "**推荐使用面向对象风格**，因为可以精确控制每个子图的位置和大小，便于创建多子图布局，代码逻辑更清晰。"
+    },
+    {
+      "index": 86,
+      "locator": "讲义 L86",
+      "text": ""
+    },
+    {
+      "index": 87,
+      "locator": "讲义 L87",
+      "text": "**（2）figure与axes对象的关系**"
+    },
+    {
+      "index": 88,
+      "locator": "讲义 L88",
+      "text": ""
+    },
+    {
+      "index": 89,
+      "locator": "讲义 L89",
+      "text": "- **figure**：整个画布，可以包含一个或多个axes"
+    },
+    {
+      "index": 90,
+      "locator": "讲义 L90",
+      "text": "- **axes**：一个绑图区域，包含坐标轴、数据、标题等"
+    },
+    {
+      "index": 91,
+      "locator": "讲义 L91",
+      "text": ""
+    },
+    {
+      "index": 92,
+      "locator": "讲义 L92",
+      "text": "```python"
+    },
+    {
+      "index": 93,
+      "locator": "讲义 L93",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 94,
+      "locator": "讲义 L94",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 95,
+      "locator": "讲义 L95",
+      "text": ""
+    },
+    {
+      "index": 96,
+      "locator": "讲义 L96",
+      "text": "# 创建2行3列的子图布局"
+    },
+    {
+      "index": 97,
+      "locator": "讲义 L97",
+      "text": "fig, axes = plt.subplots(2, 3, figsize=(15, 10))"
+    },
+    {
+      "index": 98,
+      "locator": "讲义 L98",
+      "text": ""
+    },
+    {
+      "index": 99,
+      "locator": "讲义 L99",
+      "text": "# 在指定子图上绑图"
+    },
+    {
+      "index": 100,
+      "locator": "讲义 L100",
+      "text": "x = np.linspace(0, 2*np.pi, 100)"
+    },
+    {
+      "index": 101,
+      "locator": "讲义 L101",
+      "text": "axes[0, 0].plot(x, np.sin(x), color='steelblue', linewidth=2, label='sin(x)')"
+    },
+    {
+      "index": 102,
+      "locator": "讲义 L102",
+      "text": "axes[0, 0].plot(x, np.cos(x), color='coral', linewidth=2, linestyle='--', label='cos(x)')"
+    },
+    {
+      "index": 103,
+      "locator": "讲义 L103",
+      "text": "axes[0, 0].set_title('三角函数', fontsize=14)"
+    },
+    {
+      "index": 104,
+      "locator": "讲义 L104",
+      "text": "axes[0, 0].set_xlabel('x', fontsize=12)"
+    },
+    {
+      "index": 105,
+      "locator": "讲义 L105",
+      "text": "axes[0, 0].set_ylabel('y', fontsize=12)"
+    },
+    {
+      "index": 106,
+      "locator": "讲义 L106",
+      "text": "axes[0, 0].legend(loc='upper right')"
+    },
+    {
+      "index": 107,
+      "locator": "讲义 L107",
+      "text": "axes[0, 0].grid(True, alpha=0.3)"
+    },
+    {
+      "index": 108,
+      "locator": "讲义 L108",
+      "text": ""
+    },
+    {
+      "index": 109,
+      "locator": "讲义 L109",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 110,
+      "locator": "讲义 L110",
+      "text": "plt.show()"
+    },
+    {
+      "index": 111,
+      "locator": "讲义 L111",
+      "text": "```"
+    },
+    {
+      "index": 112,
+      "locator": "讲义 L112",
+      "text": ""
+    },
+    {
+      "index": 113,
+      "locator": "讲义 L113",
+      "text": "**（3）中文字体设置**"
+    },
+    {
+      "index": 114,
+      "locator": "讲义 L114",
+      "text": ""
+    },
+    {
+      "index": 115,
+      "locator": "讲义 L115",
+      "text": "```python"
+    },
+    {
+      "index": 116,
+      "locator": "讲义 L116",
+      "text": "# Windows系统"
+    },
+    {
+      "index": 117,
+      "locator": "讲义 L117",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 118,
+      "locator": "讲义 L118",
+      "text": "# macOS系统"
+    },
+    {
+      "index": 119,
+      "locator": "讲义 L119",
+      "text": "# plt.rcParams['font.sans-serif'] = ['Arial Unicode MS']"
+    },
+    {
+      "index": 120,
+      "locator": "讲义 L120",
+      "text": "# 解决负号显示问题"
+    },
+    {
+      "index": 121,
+      "locator": "讲义 L121",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 122,
+      "locator": "讲义 L122",
+      "text": "```"
+    },
+    {
+      "index": 123,
+      "locator": "讲义 L123",
+      "text": ""
+    },
+    {
+      "index": 124,
+      "locator": "讲义 L124",
+      "text": "**（4）常用图形元素设置**"
+    },
+    {
+      "index": 125,
+      "locator": "讲义 L125",
+      "text": ""
+    },
+    {
+      "index": 126,
+      "locator": "讲义 L126",
+      "text": "| 元素 | 设置方法 | 示例 |"
+    },
+    {
+      "index": 127,
+      "locator": "讲义 L127",
+      "text": "|------|----------|------|"
+    },
+    {
+      "index": 128,
+      "locator": "讲义 L128",
+      "text": "| 标题 | `ax.set_title()` | `ax.set_title('铜价走势', fontsize=14)` |"
+    },
+    {
+      "index": 129,
+      "locator": "讲义 L129",
+      "text": "| x轴标签 | `ax.set_xlabel()` | `ax.set_xlabel('日期', fontsize=12)` |"
+    },
+    {
+      "index": 130,
+      "locator": "讲义 L130",
+      "text": "| y轴标签 | `ax.set_ylabel()` | `ax.set_ylabel('价格（元/吨）', fontsize=12)` |"
+    },
+    {
+      "index": 131,
+      "locator": "讲义 L131",
+      "text": "| 图例 | `ax.legend()` | `ax.legend(loc='upper left', fontsize=10)` |"
+    },
+    {
+      "index": 132,
+      "locator": "讲义 L132",
+      "text": "| 网格线 | `ax.grid()` | `ax.grid(True, alpha=0.3)` |"
+    },
+    {
+      "index": 133,
+      "locator": "讲义 L133",
+      "text": "| x轴范围 | `ax.set_xlim()` | `ax.set_xlim(0, 100)` |"
+    },
+    {
+      "index": 134,
+      "locator": "讲义 L134",
+      "text": "| y轴范围 | `ax.set_ylim()` | `ax.set_ylim(50000, 80000)` |"
+    },
+    {
+      "index": 135,
+      "locator": "讲义 L135",
+      "text": "| 刻度旋转 | `ax.tick_params()` | `ax.tick_params(axis='x', rotation=45)` |"
+    },
+    {
+      "index": 136,
+      "locator": "讲义 L136",
+      "text": ""
+    },
+    {
+      "index": 137,
+      "locator": "讲义 L137",
+      "text": "#### 3.1.2 Seaborn高级可视化"
+    },
+    {
+      "index": 138,
+      "locator": "讲义 L138",
+      "text": ""
+    },
+    {
+      "index": 139,
+      "locator": "讲义 L139",
+      "text": "Seaborn是基于Matplotlib的高级统计图形库，提供了更美观的默认样式和更简洁的API。"
+    },
+    {
+      "index": 140,
+      "locator": "讲义 L140",
+      "text": ""
+    },
+    {
+      "index": 141,
+      "locator": "讲义 L141",
+      "text": "**（1）Seaborn的API风格**"
+    },
+    {
+      "index": 142,
+      "locator": "讲义 L142",
+      "text": ""
+    },
+    {
+      "index": 143,
+      "locator": "讲义 L143",
+      "text": "| 类型 | 特点 | 示例 | 适用场景 |"
+    },
+    {
+      "index": 144,
+      "locator": "讲义 L144",
+      "text": "|------|------|------|----------|"
+    },
+    {
+      "index": 145,
+      "locator": "讲义 L145",
+      "text": "| **axes-level** | 在指定axes上绑图 | `sns.boxplot(ax=ax)` | 需要精确控制位置 |"
+    },
+    {
+      "index": 146,
+      "locator": "讲义 L146",
+      "text": "| **figure-level** | 创建独立图形 | `sns.catplot(kind='box')` | 快速探索性分析 |"
+    },
+    {
+      "index": 147,
+      "locator": "讲义 L147",
+      "text": ""
+    },
+    {
+      "index": 148,
+      "locator": "讲义 L148",
+      "text": "```python"
+    },
+    {
+      "index": 149,
+      "locator": "讲义 L149",
+      "text": "# axes-level函数（推荐）"
+    },
+    {
+      "index": 150,
+      "locator": "讲义 L150",
+      "text": "fig, ax = plt.subplots(figsize=(8, 6))"
+    },
+    {
+      "index": 151,
+      "locator": "讲义 L151",
+      "text": "sns.boxplot(x='品种', y='收益率', data=df, ax=ax)"
+    },
+    {
+      "index": 152,
+      "locator": "讲义 L152",
+      "text": "ax.set_title('各品种收益率箱线图')"
+    },
+    {
+      "index": 153,
+      "locator": "讲义 L153",
+      "text": ""
+    },
+    {
+      "index": 154,
+      "locator": "讲义 L154",
+      "text": "# figure-level函数"
+    },
+    {
+      "index": 155,
+      "locator": "讲义 L155",
+      "text": "g = sns.catplot(x='品种', y='收益率', data=df, kind='box', height=6, aspect=1.5)"
+    },
+    {
+      "index": 156,
+      "locator": "讲义 L156",
+      "text": "g.fig.suptitle('各品种收益率箱线图', y=1.02)"
+    },
+    {
+      "index": 157,
+      "locator": "讲义 L157",
+      "text": "```"
+    },
+    {
+      "index": 158,
+      "locator": "讲义 L158",
+      "text": ""
+    },
+    {
+      "index": 159,
+      "locator": "讲义 L159",
+      "text": "**（2）Seaborn主题设置**"
+    },
+    {
+      "index": 160,
+      "locator": "讲义 L160",
+      "text": ""
+    },
+    {
+      "index": 161,
+      "locator": "讲义 L161",
+      "text": "```python"
+    },
+    {
+      "index": 162,
+      "locator": "讲义 L162",
+      "text": "sns.set_theme(style=\"whitegrid\", palette=\"muted\", font_scale=1.2)"
+    },
+    {
+      "index": 163,
+      "locator": "讲义 L163",
+      "text": "# style选项：darkgrid, whitegrid, dark, white, ticks"
+    },
+    {
+      "index": 164,
+      "locator": "讲义 L164",
+      "text": "# palette选项：muted, pastel, bright, deep, colorblind"
+    },
+    {
+      "index": 165,
+      "locator": "讲义 L165",
+      "text": "```"
+    },
+    {
+      "index": 166,
+      "locator": "讲义 L166",
+      "text": ""
+    },
+    {
+      "index": 167,
+      "locator": "讲义 L167",
+      "text": "#### 3.1.3 配色方案选择"
+    },
+    {
+      "index": 168,
+      "locator": "讲义 L168",
+      "text": ""
+    },
+    {
+      "index": 169,
+      "locator": "讲义 L169",
+      "text": "| 配色类型 | 适用场景 | 示例 |"
+    },
+    {
+      "index": 170,
+      "locator": "讲义 L170",
+      "text": "|----------|----------|------|"
+    },
+    {
+      "index": 171,
+      "locator": "讲义 L171",
+      "text": "| Sequential（连续型） | 连续数据 | \"viridis\", \"Blues\" |"
+    },
+    {
+      "index": 172,
+      "locator": "讲义 L172",
+      "text": "| Diverging（发散型） | 有中心值的数据 | \"RdBu_r\", \"coolwarm\" |"
+    },
+    {
+      "index": 173,
+      "locator": "讲义 L173",
+      "text": "| Qualitative（分类型） | 分类数据 | \"Set2\", \"tab10\" |"
+    },
+    {
+      "index": 174,
+      "locator": "讲义 L174",
+      "text": ""
+    },
+    {
+      "index": 175,
+      "locator": "讲义 L175",
+      "text": "---"
+    },
+    {
+      "index": 176,
+      "locator": "讲义 L176",
+      "text": ""
+    },
+    {
+      "index": 177,
+      "locator": "讲义 L177",
+      "text": "### 3.2 条图或柱图"
+    },
+    {
+      "index": 178,
+      "locator": "讲义 L178",
+      "text": ""
+    },
+    {
+      "index": 179,
+      "locator": "讲义 L179",
+      "text": "#### 3.2.1 简单条形图"
+    },
+    {
+      "index": 180,
+      "locator": "讲义 L180",
+      "text": ""
+    },
+    {
+      "index": 181,
+      "locator": "讲义 L181",
+      "text": "```python"
+    },
+    {
+      "index": 182,
+      "locator": "讲义 L182",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 183,
+      "locator": "讲义 L183",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 184,
+      "locator": "讲义 L184",
+      "text": ""
+    },
+    {
+      "index": 185,
+      "locator": "讲义 L185",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 186,
+      "locator": "讲义 L186",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 187,
+      "locator": "讲义 L187",
+      "text": ""
+    },
+    {
+      "index": 188,
+      "locator": "讲义 L188",
+      "text": "products = ['铜', '铝', '锌', '铅', '镍', '黄金', '白银', '原油']"
+    },
+    {
+      "index": 189,
+      "locator": "讲义 L189",
+      "text": "volumes = [125000, 89000, 67000, 45000, 52000, 98000, 76000, 150000]"
+    },
+    {
+      "index": 190,
+      "locator": "讲义 L190",
+      "text": ""
+    },
+    {
+      "index": 191,
+      "locator": "讲义 L191",
+      "text": "fig, axes = plt.subplots(1, 2, figsize=(14, 6))"
+    },
+    {
+      "index": 192,
+      "locator": "讲义 L192",
+      "text": ""
+    },
+    {
+      "index": 193,
+      "locator": "讲义 L193",
+      "text": "colors = plt.cm.Set2(np.linspace(0, 1, len(products)))"
+    },
+    {
+      "index": 194,
+      "locator": "讲义 L194",
+      "text": "axes[0].bar(products, volumes, color=colors, width=0.6, edgecolor='white', linewidth=0.5)"
+    },
+    {
+      "index": 195,
+      "locator": "讲义 L195",
+      "text": "axes[0].set_title('各品种月均成交量', fontsize=14)"
+    },
+    {
+      "index": 196,
+      "locator": "讲义 L196",
+      "text": "axes[0].set_ylabel('成交量（手）')"
+    },
+    {
+      "index": 197,
+      "locator": "讲义 L197",
+      "text": ""
+    },
+    {
+      "index": 198,
+      "locator": "讲义 L198",
+      "text": "for i, (name, vol) in enumerate(zip(products, volumes)):"
+    },
+    {
+      "index": 199,
+      "locator": "讲义 L199",
+      "text": "    axes[0].text(i, vol + 2000, f'{vol/10000:.1f}万', ha='center', fontsize=9)"
+    },
+    {
+      "index": 200,
+      "locator": "讲义 L200",
+      "text": ""
+    },
+    {
+      "index": 201,
+      "locator": "讲义 L201",
+      "text": "sorted_idx = np.argsort(volumes)"
+    },
+    {
+      "index": 202,
+      "locator": "讲义 L202",
+      "text": "axes[1].barh([products[i] for i in sorted_idx], [volumes[i] for i in sorted_idx],"
+    },
+    {
+      "index": 203,
+      "locator": "讲义 L203",
+      "text": "             color=colors[sorted_idx], height=0.6)"
+    },
+    {
+      "index": 204,
+      "locator": "讲义 L204",
+      "text": "axes[1].set_title('各品种月均成交量（水平）', fontsize=14)"
+    },
+    {
+      "index": 205,
+      "locator": "讲义 L205",
+      "text": "axes[1].set_xlabel('成交量（手）')"
+    },
+    {
+      "index": 206,
+      "locator": "讲义 L206",
+      "text": ""
+    },
+    {
+      "index": 207,
+      "locator": "讲义 L207",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 208,
+      "locator": "讲义 L208",
+      "text": "plt.show()"
+    },
+    {
+      "index": 209,
+      "locator": "讲义 L209",
+      "text": "```"
+    },
+    {
+      "index": 210,
+      "locator": "讲义 L210",
+      "text": ""
+    },
+    {
+      "index": 211,
+      "locator": "讲义 L211",
+      "text": "#### 3.2.2 复式条形图与堆叠图"
+    },
+    {
+      "index": 212,
+      "locator": "讲义 L212",
+      "text": ""
+    },
+    {
+      "index": 213,
+      "locator": "讲义 L213",
+      "text": "```python"
+    },
+    {
+      "index": 214,
+      "locator": "讲义 L214",
+      "text": "months = ['1月', '2月', '3月', '4月', '5月', '6月']"
+    },
+    {
+      "index": 215,
+      "locator": "讲义 L215",
+      "text": "cu_vol = [120000, 135000, 128000, 142000, 138000, 150000]"
+    },
+    {
+      "index": 216,
+      "locator": "讲义 L216",
+      "text": "al_vol = [85000, 92000, 88000, 95000, 91000, 98000]"
+    },
+    {
+      "index": 217,
+      "locator": "讲义 L217",
+      "text": ""
+    },
+    {
+      "index": 218,
+      "locator": "讲义 L218",
+      "text": "x = np.arange(len(months))"
+    },
+    {
+      "index": 219,
+      "locator": "讲义 L219",
+      "text": "width = 0.35"
+    },
+    {
+      "index": 220,
+      "locator": "讲义 L220",
+      "text": ""
+    },
+    {
+      "index": 221,
+      "locator": "讲义 L221",
+      "text": "fig, ax = plt.subplots(figsize=(10, 6))"
+    },
+    {
+      "index": 222,
+      "locator": "讲义 L222",
+      "text": "ax.bar(x - width/2, cu_vol, width, label='铜', color='steelblue')"
+    },
+    {
+      "index": 223,
+      "locator": "讲义 L223",
+      "text": "ax.bar(x + width/2, al_vol, width, label='铝', color='coral')"
+    },
+    {
+      "index": 224,
+      "locator": "讲义 L224",
+      "text": "ax.set_xlabel('月份')"
+    },
+    {
+      "index": 225,
+      "locator": "讲义 L225",
+      "text": "ax.set_ylabel('成交量（手）')"
+    },
+    {
+      "index": 226,
+      "locator": "讲义 L226",
+      "text": "ax.set_title('铜与铝月度成交量对比')"
+    },
+    {
+      "index": 227,
+      "locator": "讲义 L227",
+      "text": "ax.set_xticks(x)"
+    },
+    {
+      "index": 228,
+      "locator": "讲义 L228",
+      "text": "ax.set_xticklabels(months)"
+    },
+    {
+      "index": 229,
+      "locator": "讲义 L229",
+      "text": "ax.legend()"
+    },
+    {
+      "index": 230,
+      "locator": "讲义 L230",
+      "text": ""
+    },
+    {
+      "index": 231,
+      "locator": "讲义 L231",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 232,
+      "locator": "讲义 L232",
+      "text": "plt.show()"
+    },
+    {
+      "index": 233,
+      "locator": "讲义 L233",
+      "text": "```"
+    },
+    {
+      "index": 234,
+      "locator": "讲义 L234",
+      "text": ""
+    },
+    {
+      "index": 235,
+      "locator": "讲义 L235",
+      "text": "#### 3.2.3 饼图与环形图"
+    },
+    {
+      "index": 236,
+      "locator": "讲义 L236",
+      "text": ""
+    },
+    {
+      "index": 237,
+      "locator": "讲义 L237",
+      "text": "```python"
+    },
+    {
+      "index": 238,
+      "locator": "讲义 L238",
+      "text": "products = ['铜', '铝', '锌', '铅', '镍', '黄金', '白银', '原油']"
+    },
+    {
+      "index": 239,
+      "locator": "讲义 L239",
+      "text": "volumes = [125000, 89000, 67000, 45000, 52000, 98000, 76000, 150000]"
+    },
+    {
+      "index": 240,
+      "locator": "讲义 L240",
+      "text": ""
+    },
+    {
+      "index": 241,
+      "locator": "讲义 L241",
+      "text": "fig, axes = plt.subplots(1, 2, figsize=(14, 6))"
+    },
+    {
+      "index": 242,
+      "locator": "讲义 L242",
+      "text": "colors = plt.cm.Set2(np.linspace(0, 1, len(products)))"
+    },
+    {
+      "index": 243,
+      "locator": "讲义 L243",
+      "text": ""
+    },
+    {
+      "index": 244,
+      "locator": "讲义 L244",
+      "text": "axes[0].pie(volumes, labels=products, autopct='%1.1f%%', startangle=90,"
+    },
+    {
+      "index": 245,
+      "locator": "讲义 L245",
+      "text": "            colors=colors, pctdistance=0.85)"
+    },
+    {
+      "index": 246,
+      "locator": "讲义 L246",
+      "text": "axes[0].set_title('各品种成交量占比（饼图）', fontsize=14)"
+    },
+    {
+      "index": 247,
+      "locator": "讲义 L247",
+      "text": ""
+    },
+    {
+      "index": 248,
+      "locator": "讲义 L248",
+      "text": "axes[1].pie(volumes, labels=products, autopct='%1.1f%%', startangle=90,"
+    },
+    {
+      "index": 249,
+      "locator": "讲义 L249",
+      "text": "            colors=colors, pctdistance=0.85, wedgeprops=dict(width=0.4))"
+    },
+    {
+      "index": 250,
+      "locator": "讲义 L250",
+      "text": "axes[1].set_title('各品种成交量占比（环形图）', fontsize=14)"
+    },
+    {
+      "index": 251,
+      "locator": "讲义 L251",
+      "text": ""
+    },
+    {
+      "index": 252,
+      "locator": "讲义 L252",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 253,
+      "locator": "讲义 L253",
+      "text": "plt.show()"
+    },
+    {
+      "index": 254,
+      "locator": "讲义 L254",
+      "text": "```"
+    },
+    {
+      "index": 255,
+      "locator": "讲义 L255",
+      "text": ""
+    },
+    {
+      "index": 256,
+      "locator": "讲义 L256",
+      "text": "---"
+    },
+    {
+      "index": 257,
+      "locator": "讲义 L257",
+      "text": ""
+    },
+    {
+      "index": 258,
+      "locator": "讲义 L258",
+      "text": "### 3.3 描述统计及箱尾图"
+    },
+    {
+      "index": 259,
+      "locator": "讲义 L259",
+      "text": ""
+    },
+    {
+      "index": 260,
+      "locator": "讲义 L260",
+      "text": "#### 3.3.1 箱线图"
+    },
+    {
+      "index": 261,
+      "locator": "讲义 L261",
+      "text": ""
+    },
+    {
+      "index": 262,
+      "locator": "讲义 L262",
+      "text": "**箱线图的五数概括**：最小值、Q1（25%分位数）、中位数、Q3（75%分位数）、最大值。IQR = Q3 - Q1，超出Q1-1.5×IQR或Q3+1.5×IQR的点为异常值。"
+    },
+    {
+      "index": 263,
+      "locator": "讲义 L263",
+      "text": ""
+    },
+    {
+      "index": 264,
+      "locator": "讲义 L264",
+      "text": "```python"
+    },
+    {
+      "index": 265,
+      "locator": "讲义 L265",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 266,
+      "locator": "讲义 L266",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 267,
+      "locator": "讲义 L267",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 268,
+      "locator": "讲义 L268",
+      "text": "import seaborn as sns"
+    },
+    {
+      "index": 269,
+      "locator": "讲义 L269",
+      "text": ""
+    },
+    {
+      "index": 270,
+      "locator": "讲义 L270",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 271,
+      "locator": "讲义 L271",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 272,
+      "locator": "讲义 L272",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 273,
+      "locator": "讲义 L273",
+      "text": ""
+    },
+    {
+      "index": 274,
+      "locator": "讲义 L274",
+      "text": "n = 250"
+    },
+    {
+      "index": 275,
+      "locator": "讲义 L275",
+      "text": "df = pd.DataFrame({"
+    },
+    {
+      "index": 276,
+      "locator": "讲义 L276",
+      "text": "    '铜ETF': np.random.normal(0.0003, 0.018, n),"
+    },
+    {
+      "index": 277,
+      "locator": "讲义 L277",
+      "text": "    '原油ETF': np.random.normal(0.0002, 0.022, n),"
+    },
+    {
+      "index": 278,
+      "locator": "讲义 L278",
+      "text": "    '黄金ETF': np.random.normal(0.0001, 0.010, n),"
+    },
+    {
+      "index": 279,
+      "locator": "讲义 L279",
+      "text": "    '白银ETF': np.random.normal(0.00015, 0.020, n),"
+    },
+    {
+      "index": 280,
+      "locator": "讲义 L280",
+      "text": "    '农产品ETF': np.random.normal(0.0001, 0.012, n)"
+    },
+    {
+      "index": 281,
+      "locator": "讲义 L281",
+      "text": "})"
+    },
+    {
+      "index": 282,
+      "locator": "讲义 L282",
+      "text": ""
+    },
+    {
+      "index": 283,
+      "locator": "讲义 L283",
+      "text": "fig, axes = plt.subplots(1, 3, figsize=(18, 6))"
+    },
+    {
+      "index": 284,
+      "locator": "讲义 L284",
+      "text": ""
+    },
+    {
+      "index": 285,
+      "locator": "讲义 L285",
+      "text": "df.boxplot(ax=axes[0], grid=False)"
+    },
+    {
+      "index": 286,
+      "locator": "讲义 L286",
+      "text": "axes[0].set_title('Pandas箱线图', fontsize=14)"
+    },
+    {
+      "index": 287,
+      "locator": "讲义 L287",
+      "text": "axes[0].set_ylabel('日收益率')"
+    },
+    {
+      "index": 288,
+      "locator": "讲义 L288",
+      "text": "axes[0].axhline(y=0, color='red', linestyle='--', alpha=0.5)"
+    },
+    {
+      "index": 289,
+      "locator": "讲义 L289",
+      "text": ""
+    },
+    {
+      "index": 290,
+      "locator": "讲义 L290",
+      "text": "df_melt = df.melt(var_name='品种', value_name='收益率')"
+    },
+    {
+      "index": 291,
+      "locator": "讲义 L291",
+      "text": "sns.boxplot(x='品种', y='收益率', data=df_melt, ax=axes[1], palette='Set2')"
+    },
+    {
+      "index": 292,
+      "locator": "讲义 L292",
+      "text": "axes[1].set_title('Seaborn箱线图', fontsize=14)"
+    },
+    {
+      "index": 293,
+      "locator": "讲义 L293",
+      "text": "axes[1].axhline(y=0, color='red', linestyle='--', alpha=0.5)"
+    },
+    {
+      "index": 294,
+      "locator": "讲义 L294",
+      "text": ""
+    },
+    {
+      "index": 295,
+      "locator": "讲义 L295",
+      "text": "sns.violinplot(x='品种', y='收益率', data=df_melt, ax=axes[2], palette='Set2', inner='box')"
+    },
+    {
+      "index": 296,
+      "locator": "讲义 L296",
+      "text": "axes[2].set_title('Seaborn小提琴图', fontsize=14)"
+    },
+    {
+      "index": 297,
+      "locator": "讲义 L297",
+      "text": "axes[2].axhline(y=0, color='red', linestyle='--', alpha=0.5)"
+    },
+    {
+      "index": 298,
+      "locator": "讲义 L298",
+      "text": ""
+    },
+    {
+      "index": 299,
+      "locator": "讲义 L299",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 300,
+      "locator": "讲义 L300",
+      "text": "plt.show()"
+    },
+    {
+      "index": 301,
+      "locator": "讲义 L301",
+      "text": "```"
+    },
+    {
+      "index": 302,
+      "locator": "讲义 L302",
+      "text": ""
+    },
+    {
+      "index": 303,
+      "locator": "讲义 L303",
+      "text": "**小提琴图与箱线图的区别**："
+    },
+    {
+      "index": 304,
+      "locator": "讲义 L304",
+      "text": "- **箱线图**：只展示五数概括"
+    },
+    {
+      "index": 305,
+      "locator": "讲义 L305",
+      "text": "- **小提琴图**：在箱线图基础上叠加核密度估计曲线，展示分布形状"
+    },
+    {
+      "index": 306,
+      "locator": "讲义 L306",
+      "text": ""
+    },
+    {
+      "index": 307,
+      "locator": "讲义 L307",
+      "text": "#### 3.3.2 直方图与核密度图"
+    },
+    {
+      "index": 308,
+      "locator": "讲义 L308",
+      "text": ""
+    },
+    {
+      "index": 309,
+      "locator": "讲义 L309",
+      "text": "```python"
+    },
+    {
+      "index": 310,
+      "locator": "讲义 L310",
+      "text": "fig, axes = plt.subplots(1, 3, figsize=(18, 5))"
+    },
+    {
+      "index": 311,
+      "locator": "讲义 L311",
+      "text": ""
+    },
+    {
+      "index": 312,
+      "locator": "讲义 L312",
+      "text": "axes[0].hist(df['铜ETF'], bins=30, color='steelblue', alpha=0.7, edgecolor='white')"
+    },
+    {
+      "index": 313,
+      "locator": "讲义 L313",
+      "text": "axes[0].set_title('铜ETF收益率直方图')"
+    },
+    {
+      "index": 314,
+      "locator": "讲义 L314",
+      "text": "axes[0].set_xlabel('日收益率')"
+    },
+    {
+      "index": 315,
+      "locator": "讲义 L315",
+      "text": "axes[0].set_ylabel('频数')"
+    },
+    {
+      "index": 316,
+      "locator": "讲义 L316",
+      "text": ""
+    },
+    {
+      "index": 317,
+      "locator": "讲义 L317",
+      "text": "from scipy.stats import gaussian_kde"
+    },
+    {
+      "index": 318,
+      "locator": "讲义 L318",
+      "text": "axes[1].hist(df['铜ETF'], bins=30, density=True, alpha=0.7, color='steelblue', edgecolor='white')"
+    },
+    {
+      "index": 319,
+      "locator": "讲义 L319",
+      "text": "kde = gaussian_kde(df['铜ETF'])"
+    },
+    {
+      "index": 320,
+      "locator": "讲义 L320",
+      "text": "x_range = np.linspace(df['铜ETF'].min(), df['铜ETF'].max(), 200)"
+    },
+    {
+      "index": 321,
+      "locator": "讲义 L321",
+      "text": "axes[1].plot(x_range, kde(x_range), 'r-', linewidth=2, label='核密度')"
+    },
+    {
+      "index": 322,
+      "locator": "讲义 L322",
+      "text": "axes[1].set_title('直方图+KDE')"
+    },
+    {
+      "index": 323,
+      "locator": "讲义 L323",
+      "text": "axes[1].legend()"
+    },
+    {
+      "index": 324,
+      "locator": "讲义 L324",
+      "text": ""
+    },
+    {
+      "index": 325,
+      "locator": "讲义 L325",
+      "text": "for col in df.columns:"
+    },
+    {
+      "index": 326,
+      "locator": "讲义 L326",
+      "text": "    sns.kdeplot(df[col], ax=axes[2], linewidth=2, label=col)"
+    },
+    {
+      "index": 327,
+      "locator": "讲义 L327",
+      "text": "axes[2].set_title('各品种核密度对比')"
+    },
+    {
+      "index": 328,
+      "locator": "讲义 L328",
+      "text": "axes[2].legend(fontsize=8)"
+    },
+    {
+      "index": 329,
+      "locator": "讲义 L329",
+      "text": ""
+    },
+    {
+      "index": 330,
+      "locator": "讲义 L330",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 331,
+      "locator": "讲义 L331",
+      "text": "plt.show()"
+    },
+    {
+      "index": 332,
+      "locator": "讲义 L332",
+      "text": "```"
+    },
+    {
+      "index": 333,
+      "locator": "讲义 L333",
+      "text": ""
+    },
+    {
+      "index": 334,
+      "locator": "讲义 L334",
+      "text": "---"
+    },
+    {
+      "index": 335,
+      "locator": "讲义 L335",
+      "text": ""
+    },
+    {
+      "index": 336,
+      "locator": "讲义 L336",
+      "text": "### 3.4 变量间的关系图"
+    },
+    {
+      "index": 337,
+      "locator": "讲义 L337",
+      "text": ""
+    },
+    {
+      "index": 338,
+      "locator": "讲义 L338",
+      "text": "#### 3.4.1 散点图"
+    },
+    {
+      "index": 339,
+      "locator": "讲义 L339",
+      "text": ""
+    },
+    {
+      "index": 340,
+      "locator": "讲义 L340",
+      "text": "```python"
+    },
+    {
+      "index": 341,
+      "locator": "讲义 L341",
+      "text": "fig, axes = plt.subplots(1, 2, figsize=(14, 6))"
+    },
+    {
+      "index": 342,
+      "locator": "讲义 L342",
+      "text": ""
+    },
+    {
+      "index": 343,
+      "locator": "讲义 L343",
+      "text": "axes[0].scatter(df['铜ETF'], df['原油ETF'], alpha=0.4, s=20, color='steelblue')"
+    },
+    {
+      "index": 344,
+      "locator": "讲义 L344",
+      "text": "r = df['铜ETF'].corr(df['原油ETF'])"
+    },
+    {
+      "index": 345,
+      "locator": "讲义 L345",
+      "text": "z = np.polyfit(df['铜ETF'], df['原油ETF'], 1)"
+    },
+    {
+      "index": 346,
+      "locator": "讲义 L346",
+      "text": "p_line = np.poly1d(z)"
+    },
+    {
+      "index": 347,
+      "locator": "讲义 L347",
+      "text": "x_line = np.linspace(df['铜ETF'].min(), df['铜ETF'].max(), 100)"
+    },
+    {
+      "index": 348,
+      "locator": "讲义 L348",
+      "text": "axes[0].plot(x_line, p_line(x_line), 'r--', linewidth=2)"
+    },
+    {
+      "index": 349,
+      "locator": "讲义 L349",
+      "text": "axes[0].set_xlabel('铜ETF收益率')"
+    },
+    {
+      "index": 350,
+      "locator": "讲义 L350",
+      "text": "axes[0].set_ylabel('原油ETF收益率')"
+    },
+    {
+      "index": 351,
+      "locator": "讲义 L351",
+      "text": "axes[0].set_title(f'铜 vs 原油 (r={r:.3f})')"
+    },
+    {
+      "index": 352,
+      "locator": "讲义 L352",
+      "text": ""
+    },
+    {
+      "index": 353,
+      "locator": "讲义 L353",
+      "text": "sns.regplot(x='铜ETF', y='原油ETF', data=df, ax=axes[1],"
+    },
+    {
+      "index": 354,
+      "locator": "讲义 L354",
+      "text": "            scatter_kws={'alpha': 0.4, 's': 20},"
+    },
+    {
+      "index": 355,
+      "locator": "讲义 L355",
+      "text": "            line_kws={'color': 'red', 'linewidth': 2})"
+    },
+    {
+      "index": 356,
+      "locator": "讲义 L356",
+      "text": "axes[1].set_title('Seaborn回归散点图')"
+    },
+    {
+      "index": 357,
+      "locator": "讲义 L357",
+      "text": ""
+    },
+    {
+      "index": 358,
+      "locator": "讲义 L358",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 359,
+      "locator": "讲义 L359",
+      "text": "plt.show()"
+    },
+    {
+      "index": 360,
+      "locator": "讲义 L360",
+      "text": "```"
+    },
+    {
+      "index": 361,
+      "locator": "讲义 L361",
+      "text": ""
+    },
+    {
+      "index": 362,
+      "locator": "讲义 L362",
+      "text": "#### 3.4.2 散点图矩阵（PairPlot）"
+    },
+    {
+      "index": 363,
+      "locator": "讲义 L363",
+      "text": ""
+    },
+    {
+      "index": 364,
+      "locator": "讲义 L364",
+      "text": "```python"
+    },
+    {
+      "index": 365,
+      "locator": "讲义 L365",
+      "text": "from sklearn.datasets import load_iris"
+    },
+    {
+      "index": 366,
+      "locator": "讲义 L366",
+      "text": ""
+    },
+    {
+      "index": 367,
+      "locator": "讲义 L367",
+      "text": "iris = load_iris()"
+    },
+    {
+      "index": 368,
+      "locator": "讲义 L368",
+      "text": "df_iris = pd.DataFrame(iris.data, columns=iris.feature_names)"
+    },
+    {
+      "index": 369,
+      "locator": "讲义 L369",
+      "text": "df_iris['species'] = pd.Categorical.from_codes(iris.target, iris.target_names)"
+    },
+    {
+      "index": 370,
+      "locator": "讲义 L370",
+      "text": ""
+    },
+    {
+      "index": 371,
+      "locator": "讲义 L371",
+      "text": "g = sns.pairplot(df_iris, hue='species', diag_kind='kde',"
+    },
+    {
+      "index": 372,
+      "locator": "讲义 L372",
+      "text": "                 plot_kws={'alpha': 0.6, 's': 30}, palette='Set2')"
+    },
+    {
+      "index": 373,
+      "locator": "讲义 L373",
+      "text": "g.fig.suptitle('鸢尾花数据散点图矩阵', y=1.02, fontsize=16)"
+    },
+    {
+      "index": 374,
+      "locator": "讲义 L374",
+      "text": "plt.show()"
+    },
+    {
+      "index": 375,
+      "locator": "讲义 L375",
+      "text": "```"
+    },
+    {
+      "index": 376,
+      "locator": "讲义 L376",
+      "text": ""
+    },
+    {
+      "index": 377,
+      "locator": "讲义 L377",
+      "text": "**散点图矩阵的解读**："
+    },
+    {
+      "index": 378,
+      "locator": "讲义 L378",
+      "text": "- **对角线**：各变量的核密度分布图"
+    },
+    {
+      "index": 379,
+      "locator": "讲义 L379",
+      "text": "- **非对角线**：两两变量的散点图"
+    },
+    {
+      "index": 380,
+      "locator": "讲义 L380",
+      "text": "- 可以同时看到各变量的分布形态、变量间的相关关系、不同类别的分离程度"
+    },
+    {
+      "index": 381,
+      "locator": "讲义 L381",
+      "text": ""
+    },
+    {
+      "index": 382,
+      "locator": "讲义 L382",
+      "text": "#### 3.4.3 相关系数热力图"
+    },
+    {
+      "index": 383,
+      "locator": "讲义 L383",
+      "text": ""
+    },
+    {
+      "index": 384,
+      "locator": "讲义 L384",
+      "text": "```python"
+    },
+    {
+      "index": 385,
+      "locator": "讲义 L385",
+      "text": "corr = df.corr()"
+    },
+    {
+      "index": 386,
+      "locator": "讲义 L386",
+      "text": ""
+    },
+    {
+      "index": 387,
+      "locator": "讲义 L387",
+      "text": "fig, ax = plt.subplots(figsize=(8, 6))"
+    },
+    {
+      "index": 388,
+      "locator": "讲义 L388",
+      "text": "sns.heatmap(corr, annot=True, fmt='.3f', cmap='RdBu_r', center=0,"
+    },
+    {
+      "index": 389,
+      "locator": "讲义 L389",
+      "text": "            square=True, ax=ax, linewidths=0.5, annot_kws={'size': 12, 'weight': 'bold'})"
+    },
+    {
+      "index": 390,
+      "locator": "讲义 L390",
+      "text": "ax.set_title('商品ETF收益率相关系数矩阵', fontsize=14, pad=15)"
+    },
+    {
+      "index": 391,
+      "locator": "讲义 L391",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 392,
+      "locator": "讲义 L392",
+      "text": "plt.show()"
+    },
+    {
+      "index": 393,
+      "locator": "讲义 L393",
+      "text": "```"
+    },
+    {
+      "index": 394,
+      "locator": "讲义 L394",
+      "text": ""
+    },
+    {
+      "index": 395,
+      "locator": "讲义 L395",
+      "text": "---"
+    },
+    {
+      "index": 396,
+      "locator": "讲义 L396",
+      "text": ""
+    },
+    {
+      "index": 397,
+      "locator": "讲义 L397",
+      "text": "### 3.5 其他多元分析图"
+    },
+    {
+      "index": 398,
+      "locator": "讲义 L398",
+      "text": ""
+    },
+    {
+      "index": 399,
+      "locator": "讲义 L399",
+      "text": "#### 3.5.1 雷达图"
+    },
+    {
+      "index": 400,
+      "locator": "讲义 L400",
+      "text": ""
+    },
+    {
+      "index": 401,
+      "locator": "讲义 L401",
+      "text": "```python"
+    },
+    {
+      "index": 402,
+      "locator": "讲义 L402",
+      "text": "categories = ['经济发展', '教育水平', '医疗条件', '环境质量', '科技创新', '基础设施']"
+    },
+    {
+      "index": 403,
+      "locator": "讲义 L403",
+      "text": "N = len(categories)"
+    },
+    {
+      "index": 404,
+      "locator": "讲义 L404",
+      "text": ""
+    },
+    {
+      "index": 405,
+      "locator": "讲义 L405",
+      "text": "city_a = [85, 70, 80, 65, 90, 75]"
+    },
+    {
+      "index": 406,
+      "locator": "讲义 L406",
+      "text": "city_b = [70, 90, 75, 80, 60, 85]"
+    },
+    {
+      "index": 407,
+      "locator": "讲义 L407",
+      "text": "city_c = [60, 65, 70, 90, 55, 60]"
+    },
+    {
+      "index": 408,
+      "locator": "讲义 L408",
+      "text": ""
+    },
+    {
+      "index": 409,
+      "locator": "讲义 L409",
+      "text": "angles = np.linspace(0, 2*np.pi, N, endpoint=False).tolist()"
+    },
+    {
+      "index": 410,
+      "locator": "讲义 L410",
+      "text": "angles += angles[:1]"
+    },
+    {
+      "index": 411,
+      "locator": "讲义 L411",
+      "text": ""
+    },
+    {
+      "index": 412,
+      "locator": "讲义 L412",
+      "text": "city_a += city_a[:1]"
+    },
+    {
+      "index": 413,
+      "locator": "讲义 L413",
+      "text": "city_b += city_b[:1]"
+    },
+    {
+      "index": 414,
+      "locator": "讲义 L414",
+      "text": "city_c += city_c[:1]"
+    },
+    {
+      "index": 415,
+      "locator": "讲义 L415",
+      "text": ""
+    },
+    {
+      "index": 416,
+      "locator": "讲义 L416",
+      "text": "fig, ax = plt.subplots(figsize=(8, 8), subplot_kw=dict(polar=True))"
+    },
+    {
+      "index": 417,
+      "locator": "讲义 L417",
+      "text": ""
+    },
+    {
+      "index": 418,
+      "locator": "讲义 L418",
+      "text": "ax.fill(angles, city_a, alpha=0.15, color='steelblue')"
+    },
+    {
+      "index": 419,
+      "locator": "讲义 L419",
+      "text": "ax.plot(angles, city_a, 'o-', color='steelblue', linewidth=2, label='城市A', markersize=6)"
+    },
+    {
+      "index": 420,
+      "locator": "讲义 L420",
+      "text": "ax.fill(angles, city_b, alpha=0.15, color='coral')"
+    },
+    {
+      "index": 421,
+      "locator": "讲义 L421",
+      "text": "ax.plot(angles, city_b, 'o-', color='coral', linewidth=2, label='城市B', markersize=6)"
+    },
+    {
+      "index": 422,
+      "locator": "讲义 L422",
+      "text": "ax.fill(angles, city_c, alpha=0.15, color='seagreen')"
+    },
+    {
+      "index": 423,
+      "locator": "讲义 L423",
+      "text": "ax.plot(angles, city_c, 'o-', color='seagreen', linewidth=2, label='城市C', markersize=6)"
+    },
+    {
+      "index": 424,
+      "locator": "讲义 L424",
+      "text": ""
+    },
+    {
+      "index": 425,
+      "locator": "讲义 L425",
+      "text": "ax.set_thetagrids(np.degrees(angles[:-1]), categories, fontsize=12)"
+    },
+    {
+      "index": 426,
+      "locator": "讲义 L426",
+      "text": "ax.set_ylim(0, 100)"
+    },
+    {
+      "index": 427,
+      "locator": "讲义 L427",
+      "text": "ax.set_title('城市综合竞争力雷达图', fontsize=15, pad=20)"
+    },
+    {
+      "index": 428,
+      "locator": "讲义 L428",
+      "text": "ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1.0))"
+    },
+    {
+      "index": 429,
+      "locator": "讲义 L429",
+      "text": ""
+    },
+    {
+      "index": 430,
+      "locator": "讲义 L430",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 431,
+      "locator": "讲义 L431",
+      "text": "plt.show()"
+    },
+    {
+      "index": 432,
+      "locator": "讲义 L432",
+      "text": "```"
+    },
+    {
+      "index": 433,
+      "locator": "讲义 L433",
+      "text": ""
+    },
+    {
+      "index": 434,
+      "locator": "讲义 L434",
+      "text": "#### 3.5.2 气泡图"
+    },
+    {
+      "index": 435,
+      "locator": "讲义 L435",
+      "text": ""
+    },
+    {
+      "index": 436,
+      "locator": "讲义 L436",
+      "text": "```python"
+    },
+    {
+      "index": 437,
+      "locator": "讲义 L437",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 438,
+      "locator": "讲义 L438",
+      "text": "n_companies = 20"
+    },
+    {
+      "index": 439,
+      "locator": "讲义 L439",
+      "text": "revenue = np.random.uniform(10, 100, n_companies)"
+    },
+    {
+      "index": 440,
+      "locator": "讲义 L440",
+      "text": "profit_rate = np.random.uniform(5, 25, n_companies)"
+    },
+    {
+      "index": 441,
+      "locator": "讲义 L441",
+      "text": "market_cap = np.random.uniform(50, 500, n_companies)"
+    },
+    {
+      "index": 442,
+      "locator": "讲义 L442",
+      "text": ""
+    },
+    {
+      "index": 443,
+      "locator": "讲义 L443",
+      "text": "fig, ax = plt.subplots(figsize=(10, 8))"
+    },
+    {
+      "index": 444,
+      "locator": "讲义 L444",
+      "text": "scatter = ax.scatter(revenue, profit_rate, s=market_cap, c=profit_rate,"
+    },
+    {
+      "index": 445,
+      "locator": "讲义 L445",
+      "text": "                     cmap='RdYlGn', alpha=0.7, edgecolors='gray', linewidth=0.5)"
+    },
+    {
+      "index": 446,
+      "locator": "讲义 L446",
+      "text": "plt.colorbar(scatter, ax=ax, label='利润率(%)')"
+    },
+    {
+      "index": 447,
+      "locator": "讲义 L447",
+      "text": ""
+    },
+    {
+      "index": 448,
+      "locator": "讲义 L448",
+      "text": "for i in range(n_companies):"
+    },
+    {
+      "index": 449,
+      "locator": "讲义 L449",
+      "text": "    ax.annotate(f'公司{i+1}', (revenue[i], profit_rate[i]), fontsize=7, ha='center', va='bottom')"
+    },
+    {
+      "index": 450,
+      "locator": "讲义 L450",
+      "text": ""
+    },
+    {
+      "index": 451,
+      "locator": "讲义 L451",
+      "text": "ax.set_xlabel('营业收入（亿元）', fontsize=12)"
+    },
+    {
+      "index": 452,
+      "locator": "讲义 L452",
+      "text": "ax.set_ylabel('利润率（%）', fontsize=12)"
+    },
+    {
+      "index": 453,
+      "locator": "讲义 L453",
+      "text": "ax.set_title('大宗商品企业经营分析气泡图（气泡大小=市值）', fontsize=14)"
+    },
+    {
+      "index": 454,
+      "locator": "讲义 L454",
+      "text": ""
+    },
+    {
+      "index": 455,
+      "locator": "讲义 L455",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 456,
+      "locator": "讲义 L456",
+      "text": "plt.show()"
+    },
+    {
+      "index": 457,
+      "locator": "讲义 L457",
+      "text": "```"
+    },
+    {
+      "index": 458,
+      "locator": "讲义 L458",
+      "text": ""
+    },
+    {
+      "index": 459,
+      "locator": "讲义 L459",
+      "text": "---"
+    },
+    {
+      "index": 460,
+      "locator": "讲义 L460",
+      "text": ""
+    },
+    {
+      "index": 461,
+      "locator": "讲义 L461",
+      "text": "## 模块三：实战与代码复现"
+    },
+    {
+      "index": 462,
+      "locator": "讲义 L462",
+      "text": ""
+    },
+    {
+      "index": 463,
+      "locator": "讲义 L463",
+      "text": "### 实战案例3-1：大宗商品市场综合可视化报告"
+    },
+    {
+      "index": 464,
+      "locator": "讲义 L464",
+      "text": ""
+    },
+    {
+      "index": 465,
+      "locator": "讲义 L465",
+      "text": "**【业务场景】** 你需要为基金经理制作一份大宗商品市场的月度可视化报告。"
+    },
+    {
+      "index": 466,
+      "locator": "讲义 L466",
+      "text": ""
+    },
+    {
+      "index": 467,
+      "locator": "讲义 L467",
+      "text": "```python"
+    },
+    {
+      "index": 468,
+      "locator": "讲义 L468",
+      "text": "import numpy as np"
+    },
+    {
+      "index": 469,
+      "locator": "讲义 L469",
+      "text": "import pandas as pd"
+    },
+    {
+      "index": 470,
+      "locator": "讲义 L470",
+      "text": "import matplotlib.pyplot as plt"
+    },
+    {
+      "index": 471,
+      "locator": "讲义 L471",
+      "text": "import seaborn as sns"
+    },
+    {
+      "index": 472,
+      "locator": "讲义 L472",
+      "text": "from scipy import stats"
+    },
+    {
+      "index": 473,
+      "locator": "讲义 L473",
+      "text": ""
+    },
+    {
+      "index": 474,
+      "locator": "讲义 L474",
+      "text": "plt.rcParams['font.sans-serif'] = ['SimHei']"
+    },
+    {
+      "index": 475,
+      "locator": "讲义 L475",
+      "text": "plt.rcParams['axes.unicode_minus'] = False"
+    },
+    {
+      "index": 476,
+      "locator": "讲义 L476",
+      "text": "sns.set_theme(style=\"whitegrid\", palette=\"muted\")"
+    },
+    {
+      "index": 477,
+      "locator": "讲义 L477",
+      "text": "np.random.seed(42)"
+    },
+    {
+      "index": 478,
+      "locator": "讲义 L478",
+      "text": ""
+    },
+    {
+      "index": 479,
+      "locator": "讲义 L479",
+      "text": "# 数据准备"
+    },
+    {
+      "index": 480,
+      "locator": "讲义 L480",
+      "text": "n = 250"
+    },
+    {
+      "index": 481,
+      "locator": "讲义 L481",
+      "text": "dates = pd.date_range('2024-01-02', periods=n, freq='B')"
+    },
+    {
+      "index": 482,
+      "locator": "讲义 L482",
+      "text": ""
+    },
+    {
+      "index": 483,
+      "locator": "讲义 L483",
+      "text": "F1 = np.random.randn(n)"
+    },
+    {
+      "index": 484,
+      "locator": "讲义 L484",
+      "text": "F2 = np.random.randn(n)"
+    },
+    {
+      "index": 485,
+      "locator": "讲义 L485",
+      "text": "F3 = np.random.randn(n)"
+    },
+    {
+      "index": 486,
+      "locator": "讲义 L486",
+      "text": ""
+    },
+    {
+      "index": 487,
+      "locator": "讲义 L487",
+      "text": "returns = pd.DataFrame({"
+    },
+    {
+      "index": 488,
+      "locator": "讲义 L488",
+      "text": "    '铜': 0.7*F1 + 0.2*F2 + 0.3*F3 + np.random.randn(n)*0.3,"
+    },
+    {
+      "index": 489,
+      "locator": "讲义 L489",
+      "text": "    '原油': 0.6*F1 + 0.1*F2 + 0.5*F3 + np.random.randn(n)*0.3,"
+    },
+    {
+      "index": 490,
+      "locator": "讲义 L490",
+      "text": "    '黄金': -0.3*F1 + 0.8*F2 + 0.1*F3 + np.random.randn(n)*0.2,"
+    },
+    {
+      "index": 491,
+      "locator": "讲义 L491",
+      "text": "    '白银': -0.1*F1 + 0.6*F2 + 0.2*F3 + np.random.randn(n)*0.3,"
+    },
+    {
+      "index": 492,
+      "locator": "讲义 L492",
+      "text": "    '农产品': 0.3*F1 + 0.1*F2 + 0.2*F3 + np.random.randn(n)*0.3,"
+    },
+    {
+      "index": 493,
+      "locator": "讲义 L493",
+      "text": "    '天然气': 0.2*F1 + 0.0*F2 + 0.8*F3 + np.random.randn(n)*0.3"
+    },
+    {
+      "index": 494,
+      "locator": "讲义 L494",
+      "text": "}, index=dates)"
+    },
+    {
+      "index": 495,
+      "locator": "讲义 L495",
+      "text": ""
+    },
+    {
+      "index": 496,
+      "locator": "讲义 L496",
+      "text": "returns = returns / 100"
+    },
+    {
+      "index": 497,
+      "locator": "讲义 L497",
+      "text": ""
+    },
+    {
+      "index": 498,
+      "locator": "讲义 L498",
+      "text": "# 综合报告"
+    },
+    {
+      "index": 499,
+      "locator": "讲义 L499",
+      "text": "fig = plt.figure(figsize=(20, 16))"
+    },
+    {
+      "index": 500,
+      "locator": "讲义 L500",
+      "text": "gs = fig.add_gridspec(3, 3, hspace=0.35, wspace=0.3)"
+    },
+    {
+      "index": 501,
+      "locator": "讲义 L501",
+      "text": ""
+    },
+    {
+      "index": 502,
+      "locator": "讲义 L502",
+      "text": "# Panel 1: 累计收益走势"
+    },
+    {
+      "index": 503,
+      "locator": "讲义 L503",
+      "text": "ax1 = fig.add_subplot(gs[0, :])"
+    },
+    {
+      "index": 504,
+      "locator": "讲义 L504",
+      "text": "cumulative = (1 + returns).cumprod()"
+    },
+    {
+      "index": 505,
+      "locator": "讲义 L505",
+      "text": "for col in cumulative.columns:"
+    },
+    {
+      "index": 506,
+      "locator": "讲义 L506",
+      "text": "    ax1.plot(cumulative.index, cumulative[col], linewidth=1.5, label=col)"
+    },
+    {
+      "index": 507,
+      "locator": "讲义 L507",
+      "text": "ax1.axhline(y=1, color='gray', linestyle='--', alpha=0.5)"
+    },
+    {
+      "index": 508,
+      "locator": "讲义 L508",
+      "text": "ax1.set_title('大宗商品ETF累计收益走势（2024年）', fontsize=16, fontweight='bold')"
+    },
+    {
+      "index": 509,
+      "locator": "讲义 L509",
+      "text": "ax1.set_ylabel('累计净值')"
+    },
+    {
+      "index": 510,
+      "locator": "讲义 L510",
+      "text": "ax1.legend(loc='upper left', ncol=6, fontsize=10)"
+    },
+    {
+      "index": 511,
+      "locator": "讲义 L511",
+      "text": "ax1.grid(True, alpha=0.3)"
+    },
+    {
+      "index": 512,
+      "locator": "讲义 L512",
+      "text": ""
+    },
+    {
+      "index": 513,
+      "locator": "讲义 L513",
+      "text": "# Panel 2: 箱线图"
+    },
+    {
+      "index": 514,
+      "locator": "讲义 L514",
+      "text": "ax2 = fig.add_subplot(gs[1, 0])"
+    },
+    {
+      "index": 515,
+      "locator": "讲义 L515",
+      "text": "returns_melt = returns.melt(var_name='品种', value_name='收益率')"
+    },
+    {
+      "index": 516,
+      "locator": "讲义 L516",
+      "text": "sns.boxplot(x='品种', y='收益率', data=returns_melt, ax=ax2, palette='Set2')"
+    },
+    {
+      "index": 517,
+      "locator": "讲义 L517",
+      "text": "ax2.axhline(y=0, color='red', linestyle='--', alpha=0.5)"
+    },
+    {
+      "index": 518,
+      "locator": "讲义 L518",
+      "text": "ax2.set_title('收益率分布（箱线图）', fontsize=13)"
+    },
+    {
+      "index": 519,
+      "locator": "讲义 L519",
+      "text": "ax2.tick_params(axis='x', rotation=45)"
+    },
+    {
+      "index": 520,
+      "locator": "讲义 L520",
+      "text": ""
+    },
+    {
+      "index": 521,
+      "locator": "讲义 L521",
+      "text": "# Panel 3: 相关系数热力图"
+    },
+    {
+      "index": 522,
+      "locator": "讲义 L522",
+      "text": "ax3 = fig.add_subplot(gs[1, 1])"
+    },
+    {
+      "index": 523,
+      "locator": "讲义 L523",
+      "text": "corr = returns.corr()"
+    },
+    {
+      "index": 524,
+      "locator": "讲义 L524",
+      "text": "sns.heatmap(corr, annot=True, fmt='.3f', cmap='RdBu_r', center=0,"
+    },
+    {
+      "index": 525,
+      "locator": "讲义 L525",
+      "text": "            square=True, ax=ax3, linewidths=0.5, annot_kws={'size': 10})"
+    },
+    {
+      "index": 526,
+      "locator": "讲义 L526",
+      "text": "ax3.set_title('收益率相关系数矩阵', fontsize=13)"
+    },
+    {
+      "index": 527,
+      "locator": "讲义 L527",
+      "text": ""
+    },
+    {
+      "index": 528,
+      "locator": "讲义 L528",
+      "text": "# Panel 4: 年化指标对比"
+    },
+    {
+      "index": 529,
+      "locator": "讲义 L529",
+      "text": "ax4 = fig.add_subplot(gs[1, 2])"
+    },
+    {
+      "index": 530,
+      "locator": "讲义 L530",
+      "text": "ann_return = returns.mean() * 252"
+    },
+    {
+      "index": 531,
+      "locator": "讲义 L531",
+      "text": "ann_vol = returns.std() * np.sqrt(252)"
+    },
+    {
+      "index": 532,
+      "locator": "讲义 L532",
+      "text": "sharpe = ann_return / ann_vol"
+    },
+    {
+      "index": 533,
+      "locator": "讲义 L533",
+      "text": "x = np.arange(len(returns.columns))"
+    },
+    {
+      "index": 534,
+      "locator": "讲义 L534",
+      "text": "width = 0.35"
+    },
+    {
+      "index": 535,
+      "locator": "讲义 L535",
+      "text": "ax4.bar(x - width/2, ann_return*100, width, label='年化收益率(%)', color='steelblue')"
+    },
+    {
+      "index": 536,
+      "locator": "讲义 L536",
+      "text": "ax4.bar(x + width/2, ann_vol*100, width, label='年化波动率(%)', color='coral')"
+    },
+    {
+      "index": 537,
+      "locator": "讲义 L537",
+      "text": "ax4.set_xticks(x)"
+    },
+    {
+      "index": 538,
+      "locator": "讲义 L538",
+      "text": "ax4.set_xticklabels(returns.columns, rotation=45)"
+    },
+    {
+      "index": 539,
+      "locator": "讲义 L539",
+      "text": "ax4.set_title('年化收益与风险对比', fontsize=13)"
+    },
+    {
+      "index": 540,
+      "locator": "讲义 L540",
+      "text": "ax4.legend(fontsize=9)"
+    },
+    {
+      "index": 541,
+      "locator": "讲义 L541",
+      "text": ""
+    },
+    {
+      "index": 542,
+      "locator": "讲义 L542",
+      "text": "# Panel 5: 核密度对比"
+    },
+    {
+      "index": 543,
+      "locator": "讲义 L543",
+      "text": "ax5 = fig.add_subplot(gs[2, 0])"
+    },
+    {
+      "index": 544,
+      "locator": "讲义 L544",
+      "text": "for col in returns.columns:"
+    },
+    {
+      "index": 545,
+      "locator": "讲义 L545",
+      "text": "    sns.kdeplot(returns[col], ax=ax5, linewidth=2, label=col)"
+    },
+    {
+      "index": 546,
+      "locator": "讲义 L546",
+      "text": "ax5.set_title('收益率核密度对比', fontsize=13)"
+    },
+    {
+      "index": 547,
+      "locator": "讲义 L547",
+      "text": "ax5.legend(fontsize=8, ncol=2)"
+    },
+    {
+      "index": 548,
+      "locator": "讲义 L548",
+      "text": ""
+    },
+    {
+      "index": 549,
+      "locator": "讲义 L549",
+      "text": "# Panel 6: 散点图"
+    },
+    {
+      "index": 550,
+      "locator": "讲义 L550",
+      "text": "ax6 = fig.add_subplot(gs[2, 1])"
+    },
+    {
+      "index": 551,
+      "locator": "讲义 L551",
+      "text": "ax6.scatter(returns['铜'], returns['黄金'], alpha=0.4, s=15, color='steelblue')"
+    },
+    {
+      "index": 552,
+      "locator": "讲义 L552",
+      "text": "z = np.polyfit(returns['铜'], returns['黄金'], 1)"
+    },
+    {
+      "index": 553,
+      "locator": "讲义 L553",
+      "text": "p_line = np.poly1d(z)"
+    },
+    {
+      "index": 554,
+      "locator": "讲义 L554",
+      "text": "x_range = np.linspace(returns['铜'].min(), returns['铜'].max(), 100)"
+    },
+    {
+      "index": 555,
+      "locator": "讲义 L555",
+      "text": "ax6.plot(x_range, p_line(x_range), 'r--', linewidth=2)"
+    },
+    {
+      "index": 556,
+      "locator": "讲义 L556",
+      "text": "r_val = returns['铜'].corr(returns['黄金'])"
+    },
+    {
+      "index": 557,
+      "locator": "讲义 L557",
+      "text": "ax6.set_xlabel('铜收益率')"
+    },
+    {
+      "index": 558,
+      "locator": "讲义 L558",
+      "text": "ax6.set_ylabel('黄金收益率')"
+    },
+    {
+      "index": 559,
+      "locator": "讲义 L559",
+      "text": "ax6.set_title(f'铜 vs 黄金 (r={r_val:.3f})', fontsize=13)"
+    },
+    {
+      "index": 560,
+      "locator": "讲义 L560",
+      "text": ""
+    },
+    {
+      "index": 561,
+      "locator": "讲义 L561",
+      "text": "# Panel 7: Sharpe比率排名"
+    },
+    {
+      "index": 562,
+      "locator": "讲义 L562",
+      "text": "ax7 = fig.add_subplot(gs[2, 2])"
+    },
+    {
+      "index": 563,
+      "locator": "讲义 L563",
+      "text": "sharpe_sorted = sharpe.sort_values()"
+    },
+    {
+      "index": 564,
+      "locator": "讲义 L564",
+      "text": "colors = ['#E74C3C' if s < 0 else '#27AE60' for s in sharpe_sorted]"
+    },
+    {
+      "index": 565,
+      "locator": "讲义 L565",
+      "text": "ax7.barh(sharpe_sorted.index, sharpe_sorted.values, color=colors)"
+    },
+    {
+      "index": 566,
+      "locator": "讲义 L566",
+      "text": "ax7.axvline(x=0, color='black', linestyle='-', linewidth=0.5)"
+    },
+    {
+      "index": 567,
+      "locator": "讲义 L567",
+      "text": "ax7.set_title('Sharpe比率排名', fontsize=13)"
+    },
+    {
+      "index": 568,
+      "locator": "讲义 L568",
+      "text": "ax7.set_xlabel('Sharpe比率')"
+    },
+    {
+      "index": 569,
+      "locator": "讲义 L569",
+      "text": ""
+    },
+    {
+      "index": 570,
+      "locator": "讲义 L570",
+      "text": "fig.suptitle('大宗商品市场月度可视化报告', fontsize=20, fontweight='bold', y=0.98)"
+    },
+    {
+      "index": 571,
+      "locator": "讲义 L571",
+      "text": "plt.show()"
+    },
+    {
+      "index": 572,
+      "locator": "讲义 L572",
+      "text": "```"
+    },
+    {
+      "index": 573,
+      "locator": "讲义 L573",
+      "text": ""
+    },
+    {
+      "index": 574,
+      "locator": "讲义 L574",
+      "text": "*(此处平台应展示相应的 Python 运行结果和可视化统计图表)*"
+    },
+    {
+      "index": 575,
+      "locator": "讲义 L575",
+      "text": ""
+    },
+    {
+      "index": 576,
+      "locator": "讲义 L576",
+      "text": "#### 结果业务解读"
+    },
+    {
+      "index": 577,
+      "locator": "讲义 L577",
+      "text": ""
+    },
+    {
+      "index": 578,
+      "locator": "讲义 L578",
+      "text": "**解读1：累计收益走势** - 从走势图可以直观看到各品种在2024年的表现差异。"
+    },
+    {
+      "index": 579,
+      "locator": "讲义 L579",
+      "text": ""
+    },
+    {
+      "index": 580,
+      "locator": "讲义 L580",
+      "text": "**解读2：相关系数矩阵** - 热力图揭示了商品市场的联动结构：铜与原油高度正相关，黄金与铜负相关。"
+    },
+    {
+      "index": 581,
+      "locator": "讲义 L581",
+      "text": ""
+    },
+    {
+      "index": 582,
+      "locator": "讲义 L582",
+      "text": "**解读3：Sharpe比率排名** - Sharpe比率综合了收益和风险，是评估投资绩效的核心指标。"
+    },
+    {
+      "index": 583,
+      "locator": "讲义 L583",
+      "text": ""
+    },
+    {
+      "index": 584,
+      "locator": "讲义 L584",
+      "text": "**解读4：正态性检验** - Jarque-Bera检验结果可能显示多数品种的收益率不服从正态分布。"
+    },
+    {
+      "index": 585,
+      "locator": "讲义 L585",
+      "text": ""
+    },
+    {
+      "index": 586,
+      "locator": "讲义 L586",
+      "text": "---"
+    },
+    {
+      "index": 587,
+      "locator": "讲义 L587",
+      "text": ""
+    },
+    {
+      "index": 588,
+      "locator": "讲义 L588",
+      "text": "### 实战案例3-2：热力图与配对图的高级应用"
+    },
+    {
+      "index": 589,
+      "locator": "讲义 L589",
+      "text": ""
+    },
+    {
+      "index": 590,
+      "locator": "讲义 L590",
+      "text": "```python"
+    },
+    {
+      "index": 591,
+      "locator": "讲义 L591",
+      "text": "from sklearn.datasets import load_iris"
+    },
+    {
+      "index": 592,
+      "locator": "讲义 L592",
+      "text": ""
+    },
+    {
+      "index": 593,
+      "locator": "讲义 L593",
+      "text": "iris = load_iris()"
+    },
+    {
+      "index": 594,
+      "locator": "讲义 L594",
+      "text": "df = pd.DataFrame(iris.data, columns=['花萼长', '花萼宽', '花瓣长', '花瓣宽'])"
+    },
+    {
+      "index": 595,
+      "locator": "讲义 L595",
+      "text": "df['品种'] = pd.Categorical.from_codes(iris.target, ['山鸢尾', '变色鸢尾', '维吉尼亚鸢尾'])"
+    },
+    {
+      "index": 596,
+      "locator": "讲义 L596",
+      "text": ""
+    },
+    {
+      "index": 597,
+      "locator": "讲义 L597",
+      "text": "fig, axes = plt.subplots(2, 2, figsize=(14, 12))"
+    },
+    {
+      "index": 598,
+      "locator": "讲义 L598",
+      "text": ""
+    },
+    {
+      "index": 599,
+      "locator": "讲义 L599",
+      "text": "# 分组箱线图"
+    },
+    {
+      "index": 600,
+      "locator": "讲义 L600",
+      "text": "df_melt = df.melt(id_vars='品种', var_name='特征', value_name='值')"
+    },
+    {
+      "index": 601,
+      "locator": "讲义 L601",
+      "text": "sns.boxplot(x='特征', y='值', hue='品种', data=df_melt, ax=axes[0, 0], palette='Set2')"
+    },
+    {
+      "index": 602,
+      "locator": "讲义 L602",
+      "text": "axes[0, 0].set_title('各品种特征分布对比', fontsize=14)"
+    },
+    {
+      "index": 603,
+      "locator": "讲义 L603",
+      "text": "axes[0, 0].tick_params(axis='x', rotation=45)"
+    },
+    {
+      "index": 604,
+      "locator": "讲义 L604",
+      "text": ""
+    },
+    {
+      "index": 605,
+      "locator": "讲义 L605",
+      "text": "# 分组小提琴图"
+    },
+    {
+      "index": 606,
+      "locator": "讲义 L606",
+      "text": "sns.violinplot(x='特征', y='值', hue='品种', data=df_melt, ax=axes[0, 1],"
+    },
+    {
+      "index": 607,
+      "locator": "讲义 L607",
+      "text": "               palette='Set2', split=False, inner='box')"
+    },
+    {
+      "index": 608,
+      "locator": "讲义 L608",
+      "text": "axes[0, 1].set_title('各品种特征分布（小提琴图）', fontsize=14)"
+    },
+    {
+      "index": 609,
+      "locator": "讲义 L609",
+      "text": "axes[0, 1].tick_params(axis='x', rotation=45)"
+    },
+    {
+      "index": 610,
+      "locator": "讲义 L610",
+      "text": ""
+    },
+    {
+      "index": 611,
+      "locator": "讲义 L611",
+      "text": "# 分组核密度图"
+    },
+    {
+      "index": 612,
+      "locator": "讲义 L612",
+      "text": "for species in df['品种'].unique():"
+    },
+    {
+      "index": 613,
+      "locator": "讲义 L613",
+      "text": "    subset = df[df['品种'] == species]"
+    },
+    {
+      "index": 614,
+      "locator": "讲义 L614",
+      "text": "    sns.kdeplot(subset['花瓣长'], ax=axes[1, 0], label=species, linewidth=2, fill=True, alpha=0.3)"
+    },
+    {
+      "index": 615,
+      "locator": "讲义 L615",
+      "text": "axes[1, 0].set_title('花瓣长度分布对比', fontsize=14)"
+    },
+    {
+      "index": 616,
+      "locator": "讲义 L616",
+      "text": "axes[1, 0].legend()"
+    },
+    {
+      "index": 617,
+      "locator": "讲义 L617",
+      "text": ""
+    },
+    {
+      "index": 618,
+      "locator": "讲义 L618",
+      "text": "# 散点图"
+    },
+    {
+      "index": 619,
+      "locator": "讲义 L619",
+      "text": "for species, color in zip(df['品种'].unique(), ['steelblue', 'coral', 'seagreen']):"
+    },
+    {
+      "index": 620,
+      "locator": "讲义 L620",
+      "text": "    subset = df[df['品种'] == species]"
+    },
+    {
+      "index": 621,
+      "locator": "讲义 L621",
+      "text": "    axes[1, 1].scatter(subset['花瓣长'], subset['花瓣宽'], label=species,"
+    },
+    {
+      "index": 622,
+      "locator": "讲义 L622",
+      "text": "                       s=40, alpha=0.7, color=color, edgecolors='white', linewidth=0.5)"
+    },
+    {
+      "index": 623,
+      "locator": "讲义 L623",
+      "text": "axes[1, 1].set_xlabel('花瓣长度(cm)')"
+    },
+    {
+      "index": 624,
+      "locator": "讲义 L624",
+      "text": "axes[1, 1].set_ylabel('花瓣宽度(cm)')"
+    },
+    {
+      "index": 625,
+      "locator": "讲义 L625",
+      "text": "axes[1, 1].set_title('花瓣长度 vs 宽度', fontsize=14)"
+    },
+    {
+      "index": 626,
+      "locator": "讲义 L626",
+      "text": "axes[1, 1].legend()"
+    },
+    {
+      "index": 627,
+      "locator": "讲义 L627",
+      "text": ""
+    },
+    {
+      "index": 628,
+      "locator": "讲义 L628",
+      "text": "plt.tight_layout()"
+    },
+    {
+      "index": 629,
+      "locator": "讲义 L629",
+      "text": "plt.show()"
+    },
+    {
+      "index": 630,
+      "locator": "讲义 L630",
+      "text": "```"
+    },
+    {
+      "index": 631,
+      "locator": "讲义 L631",
+      "text": ""
+    },
+    {
+      "index": 632,
+      "locator": "讲义 L632",
+      "text": "*(此处平台应展示相应的 Python 运行结果和可视化统计图表)*"
+    },
+    {
+      "index": 633,
+      "locator": "讲义 L633",
+      "text": ""
+    },
+    {
+      "index": 634,
+      "locator": "讲义 L634",
+      "text": "#### 结果业务解读"
+    },
+    {
+      "index": 635,
+      "locator": "讲义 L635",
+      "text": ""
+    },
+    {
+      "index": 636,
+      "locator": "讲义 L636",
+      "text": "**解读1：分组箱线图** - 维吉尼亚鸢尾的花瓣长度明显大于其他两个品种。"
+    },
+    {
+      "index": 637,
+      "locator": "讲义 L637",
+      "text": ""
+    },
+    {
+      "index": 638,
+      "locator": "讲义 L638",
+      "text": "**解读2：小提琴图** - 某些品种在某些特征上呈现双峰分布，可能暗示该品种内部存在亚群。"
+    },
+    {
+      "index": 639,
+      "locator": "讲义 L639",
+      "text": ""
+    },
+    {
+      "index": 640,
+      "locator": "讲义 L640",
+      "text": "**解读3：散点图** - 花瓣长度与宽度的散点图显示了明显的品种聚类，为后续判别分析提供依据。"
+    },
+    {
+      "index": 641,
+      "locator": "讲义 L641",
+      "text": ""
+    },
+    {
+      "index": 642,
+      "locator": "讲义 L642",
+      "text": "---"
+    },
+    {
+      "index": 643,
+      "locator": "讲义 L643",
+      "text": ""
+    },
+    {
+      "index": 644,
+      "locator": "讲义 L644",
+      "text": "**本章内容是否需要修改？若无需修改，请回复\"继续\"以生成下一章。**"
+    }
+  ]
+}

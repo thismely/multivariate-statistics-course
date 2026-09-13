@@ -1,0 +1,461 @@
+[
+  {
+    "id": "case_cluster",
+    "title": "全国区域经济发展的聚类分析",
+    "domain": "区域经济",
+    "description": "依据 16 个经济指标比较地区发展结构。",
+    "task": "回到各簇原始指标均值，解释群体差异并检验标准化与链接方法的影响。",
+    "method_ids": [
+      "cluster"
+    ],
+    "node_id": "case_cluster",
+    "resource_ids": [
+      "ppt04",
+      "nb04",
+      "mvsCase"
+    ],
+    "sources": [
+      {
+        "resource_id": "ppt04",
+        "locator": "PPT 第 50 页",
+        "start": 50,
+        "end": 50,
+        "excerpt": "4  聚类分析及 Python 使用 操作案例 案例 4：全国区域经济发展的聚类分析",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb04",
+        "locator": "Notebook 单元 61 · code",
+        "start": 61,
+        "end": 61,
+        "excerpt": "Case4=pd.read_excel('mvsCase.xlsx','Case4',index_col=0);Case4",
+        "basis": "code_reference"
+      }
+    ],
+    "data": {
+      "resource_id": "mvsCase",
+      "sheet": "Case4",
+      "rows": 31,
+      "columns": 17,
+      "header": [
+        "地区",
+        "X1",
+        "X2",
+        "X3",
+        "X4",
+        "X5",
+        "X6",
+        "X7",
+        "X8",
+        "X9",
+        "X10",
+        "X11",
+        "X12",
+        "X13",
+        "X14",
+        "X15",
+        "X16"
+      ]
+    },
+    "status": "原课程案例 · 未重跑",
+    "outcome": "提交数据处理说明、方法选择理由、诊断图与有边界的结果解释。"
+  },
+  {
+    "id": "case_eval",
+    "title": "广东省知识产权发展水平评价",
+    "domain": "综合评价",
+    "description": "围绕专利指标体系构建综合评价。",
+    "task": "先核对指标方向、分组与权重，再解释排序；不直接沿用历史排名。",
+    "method_ids": [
+      "evaluation"
+    ],
+    "node_id": "case_eval",
+    "resource_ids": [
+      "ppt05",
+      "nb05",
+      "mvsCase"
+    ],
+    "sources": [
+      {
+        "resource_id": "ppt05",
+        "locator": "PPT 第 38 页",
+        "start": 38,
+        "end": 38,
+        "excerpt": "案例 5：广东省知识产权发展水平的综合评价 一、指标体系构建 广东省专利综合评价指标体系构建",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb05",
+        "locator": "Notebook 单元 33 · code",
+        "start": 33,
+        "end": 33,
+        "excerpt": "pd.set_option('display.max_rows',21)\nCase5=pd.read_excel('mvsCase.xlsx','Case5',index_col=0);\nprint(Case5)",
+        "basis": "code_reference"
+      }
+    ],
+    "data": {
+      "resource_id": "mvsCase",
+      "sheet": "Case5",
+      "rows": 32,
+      "columns": 20,
+      "header": [
+        null,
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B21",
+        "B22",
+        "B23",
+        "B24",
+        "B25",
+        "B26",
+        "B31",
+        "B32",
+        "B33",
+        "B34",
+        "B35",
+        "B36",
+        "B37"
+      ]
+    },
+    "status": "原课程案例 · 未重跑",
+    "outcome": "提交数据处理说明、方法选择理由、诊断图与有边界的结果解释。"
+  },
+  {
+    "id": "case_pca",
+    "title": "地区电信业发展的主成分分析",
+    "domain": "区域经济",
+    "description": "用电信发展指标探索规模与普及维度。",
+    "task": "比较贡献率、载荷和得分，讨论保留维数与指标尺度的影响。",
+    "method_ids": [
+      "pca"
+    ],
+    "node_id": "case_pca",
+    "resource_ids": [
+      "ppt06",
+      "nb06",
+      "mvsCase"
+    ],
+    "sources": [
+      {
+        "resource_id": "ppt06",
+        "locator": "PPT 第 27 页",
+        "start": 27,
+        "end": 27,
+        "excerpt": "操作案例 6 主成分分析及 Python 使用 案例 6-- 地区电信业发展的主成分分析",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb06",
+        "locator": "Notebook 单元 64 · code",
+        "start": 64,
+        "end": 64,
+        "excerpt": "Case6=pd.read_excel('mvsCase.xlsx','Case6',index_col=0); #Case6",
+        "basis": "code_reference"
+      }
+    ],
+    "data": {
+      "resource_id": "mvsCase",
+      "sheet": "Case6",
+      "rows": 22,
+      "columns": 8,
+      "header": [
+        "地区",
+        "X1",
+        "X2",
+        "X3",
+        "X4",
+        "X5",
+        "X6",
+        "X7"
+      ]
+    },
+    "status": "原课程案例 · 未重跑",
+    "outcome": "提交数据处理说明、方法选择理由、诊断图与有边界的结果解释。"
+  },
+  {
+    "id": "case_fa",
+    "title": "上市公司经营业绩因子分析",
+    "domain": "企业经营",
+    "description": "以课件中的医药行业上市公司财务指标探索经营绩效结构。",
+    "task": "根据载荷重新核对因子命名；原课件部分偿债与盈利解释待教师复核。",
+    "method_ids": [
+      "fa"
+    ],
+    "node_id": "case_fa",
+    "resource_ids": [
+      "ppt07",
+      "nb07",
+      "mvsCase"
+    ],
+    "sources": [
+      {
+        "resource_id": "ppt07",
+        "locator": "PPT 第 141 页",
+        "start": 141,
+        "end": 141,
+        "excerpt": "案例 7 第 7 章 因子分析及  Python   应用 案例  7 ：上市公司经营业绩评价的因子分析 随着中国资本市场的发展，上市公司的经营业绩日益成为股东、债权人、研究人员所关心的主要问题，本案例运用因子分析方法，从上市公司对股东的回报能力、资产管理能力、偿债能力、盈利能力四个方面对上海股票市场医药行业的上市公司经营业绩进行综合评价分析，并得出评价的结果。 一、案例简介",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb07",
+        "locator": "Notebook 单元 69 · code",
+        "start": 69,
+        "end": 69,
+        "excerpt": "Case7=pd.read_excel('mvscase.xlsx','Case7',index_col=0); #Case7\nprint(Case7.head(10))                  #计算相关阵",
+        "basis": "code_reference"
+      }
+    ],
+    "data": {
+      "resource_id": "mvsCase",
+      "sheet": "Case7",
+      "rows": 29,
+      "columns": 12,
+      "header": [
+        "上市公司",
+        "X1",
+        "X2",
+        "X3",
+        "X4",
+        "X5",
+        "X6",
+        "X7",
+        "X8",
+        "X9",
+        "X10",
+        "X11"
+      ]
+    },
+    "status": "原课程案例 · 未重跑",
+    "outcome": "提交数据处理说明、方法选择理由、诊断图与有边界的结果解释。"
+  },
+  {
+    "id": "case_ca",
+    "title": "对应分析在农民收入中的应用",
+    "domain": "收入结构",
+    "description": "将课件收入结构表作为对应分析应用对象。",
+    "task": "检查原表是否为频数、比例或金额；金额表的惯量图不自动支持计数型卡方推断。",
+    "method_ids": [
+      "ca"
+    ],
+    "node_id": "case_ca",
+    "resource_ids": [
+      "ppt08",
+      "nb08",
+      "mvsCase"
+    ],
+    "sources": [
+      {
+        "resource_id": "ppt08",
+        "locator": "PPT 第 35 页",
+        "start": 35,
+        "end": 35,
+        "excerpt": "多元统计分析及 Python 建模 案例 8：对应分析在农民收入中的应用        ",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb08",
+        "locator": "Notebook 单元 30 · code",
+        "start": 30,
+        "end": 30,
+        "excerpt": "Case8=pd.read_excel('mvsCase.xlsx','Case8',index_col=0);\nCase8",
+        "basis": "code_reference"
+      }
+    ],
+    "data": {
+      "resource_id": "mvsCase",
+      "sheet": "Case8",
+      "rows": 19,
+      "columns": 6,
+      "header": [
+        "项目",
+        "低收入户",
+        "中低收入户",
+        "中等收入户",
+        "中高收入户",
+        "高收入户"
+      ]
+    },
+    "status": "原课程案例 · 未重跑",
+    "outcome": "提交数据处理说明、方法选择理由、诊断图与有边界的结果解释。"
+  },
+  {
+    "id": "case_cca",
+    "title": "R&D 投入与产出的典型相关分析",
+    "domain": "创新发展",
+    "description": "比较 R&D 投入指标组与产出指标组的整体关联。",
+    "task": "区分典型相关、载荷与冗余；课件历史结果尚未在本轮重跑。",
+    "method_ids": [
+      "cca"
+    ],
+    "node_id": "case_cca",
+    "resource_ids": [
+      "ppt10",
+      "nb10",
+      "mvsCase"
+    ],
+    "sources": [
+      {
+        "resource_id": "ppt10",
+        "locator": "PPT 第 24 页",
+        "start": 24,
+        "end": 24,
+        "excerpt": "操作案例 案例 10 R&D 投入与产出的典型相关分析 第 10 章典型相关分析及 Python 使用 社会经济的发展以及知识信息的创新、扩散和应用主要依赖与掌握先进技术和知识的 R&D 资源。 R&D 水平的高低是衡量一个国家或区域的科技创新、技术进步的首要因素，而 R&D 水平的高低主要在于 R&D 投入能力与其产出效果。 以中国 29 个域省级区域，为研究样本，利用 2009 年数据进行分析，数据来源于 2010 年版 《 中国科技统计年鉴 》",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb10",
+        "locator": "Notebook 单元 35 · code",
+        "start": 35,
+        "end": 35,
+        "excerpt": "Case10=pd.read_excel('mvsCase.xlsx','Case10');Case10",
+        "basis": "code_reference"
+      }
+    ],
+    "data": {
+      "resource_id": "mvsCase",
+      "sheet": "Case10",
+      "rows": 30,
+      "columns": 9,
+      "header": [
+        "x1",
+        "x2",
+        "x3",
+        "y1",
+        "y2",
+        "y3",
+        "y4",
+        "y5",
+        "y6"
+      ]
+    },
+    "status": "原课程案例 · 未重跑",
+    "outcome": "提交数据处理说明、方法选择理由、诊断图与有边界的结果解释。"
+  },
+  {
+    "id": "case_reg",
+    "title": "财政收入多元回归",
+    "domain": "关系建模",
+    "description": "课件例 9.5 与 Notebook 中的财政收入多元回归。",
+    "task": "注意共同趋势与时间相关；解释系数前检查设定，避免直接进行因果解读。",
+    "method_ids": [
+      "regression"
+    ],
+    "node_id": "case_reg",
+    "resource_ids": [
+      "ppt09",
+      "nb09",
+      "mvsData"
+    ],
+    "sources": [
+      {
+        "resource_id": "nb09",
+        "locator": "Notebook 单元 32 · code",
+        "start": 32,
+        "end": 32,
+        "excerpt": "fm=ols('y~x1+x2+x3+x4',data=d94).fit()\nfm.params              #模型参数",
+        "basis": "code_reference"
+      }
+    ],
+    "data": {
+      "resource_id": "mvsData",
+      "sheet": "d94",
+      "rows": 42,
+      "columns": 6,
+      "header": [
+        "Year",
+        "y",
+        "x1",
+        "x2",
+        "x3",
+        "x4"
+      ]
+    },
+    "status": "原课程案例 · 未重跑",
+    "outcome": "提交预处理记录、拟合与诊断结果、解释边界。"
+  },
+  {
+    "id": "case_logistic",
+    "title": "二项响应建模 · 课程案例 11",
+    "domain": "监督分类",
+    "description": "使用原课程 y、sex、age 字段演示二项响应模型；具体业务含义待教师补充。",
+    "task": "原 Notebook 已输出概率后再次使用 Sigmoid，系统明确此问题，实践中直接使用模型预测概率。",
+    "method_ids": [
+      "logistic"
+    ],
+    "node_id": "case_logistic",
+    "resource_ids": [
+      "ppt11",
+      "nb11",
+      "mvsCase"
+    ],
+    "sources": [
+      {
+        "resource_id": "nb11",
+        "locator": "Notebook 单元 42 · code",
+        "start": 42,
+        "end": 42,
+        "excerpt": "import statsmodels.api as sm\nglm1=sm.GLM.from_formula('y~sex+age',family=sm.families.Binomial(),data=Case11)\nprint(glm1.fit().summary())",
+        "basis": "code_reference"
+      }
+    ],
+    "data": {
+      "resource_id": "mvsCase",
+      "sheet": "Case11",
+      "rows": 41,
+      "columns": 3,
+      "header": [
+        "y",
+        "sex",
+        "age"
+      ]
+    },
+    "status": "原课程案例 · 未重跑",
+    "outcome": "提交预处理记录、拟合与诊断结果、解释边界。"
+  },
+  {
+    "id": "case_discriminant",
+    "title": "财务指标判别 · 课程案例 12",
+    "domain": "监督分类",
+    "description": "使用 CF_TD、NI_TA、CA_CL、CA_NS 和标签 G 比较 LDA 与 QDA。",
+    "task": "原程序展示训练集回判；教学实践应另做样本外验证，G 的业务释义待教师核定。",
+    "method_ids": [
+      "discriminant"
+    ],
+    "node_id": "case_discriminant",
+    "resource_ids": [
+      "ppt12",
+      "nb12",
+      "mvsCase"
+    ],
+    "sources": [
+      {
+        "resource_id": "nb12",
+        "locator": "Notebook 单元 64 · code",
+        "start": 64,
+        "end": 64,
+        "excerpt": "from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as lda\nX=Case12[['CF_TD','NI_TA','CA_CL','CA_NS']]; Y=Case12.G \nCase12_lda=lda().fit(X,Y)  #线性判别\nCase12['ld_G'] = Case12_lda.predict(X)\nCase12",
+        "basis": "code_reference"
+      }
+    ],
+    "data": {
+      "resource_id": "mvsCase",
+      "sheet": "Case12",
+      "rows": 47,
+      "columns": 6,
+      "header": [
+        "id",
+        "CF_TD",
+        "NI_TA",
+        "CA_CL",
+        "CA_NS",
+        "G"
+      ]
+    },
+    "status": "原课程案例 · 未重跑",
+    "outcome": "提交预处理记录、拟合与诊断结果、解释边界。"
+  }
+]

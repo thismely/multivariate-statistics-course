@@ -1,0 +1,174 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px/1.8 system-ui;max-width:960px;margin:24px auto;padding:20px;color:#192b3b}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:20px}article{border-bottom:1px solid #ccc}h2{font-size:18px}</style><h1>第8章 原课程 Notebook（阅读参考）</h1><p>已移除运行输出、身份元数据与本机路径。历史依赖及数据文件尚未全部适配；请使用同章可重跑教学实验。</p><article><h2>单元 1 · markdown</h2><pre># 第8章 对应分析及Python视图</pre></article><article><h2>单元 2 · markdown</h2><pre>## 8.1 对应分析的提出</pre></article><article><h2>单元 3 · markdown</h2><pre>### 8.1.1 样品与变量间的关系</pre></article><article><h2>单元 4 · markdown</h2><pre>### 8.1.2 对应分析的类型</pre></article><article><h2>单元 5 · markdown</h2><pre>## 8.2 对应分析基本原理</pre></article><article><h2>单元 6 · markdown</h2><pre>### 8.2.1 列联表分析</pre></article><article><h2>单元 7 · code</h2><pre>import pandas as pd                   #加载数据分析包
+d81=pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d81&#x27;,index_col=0);
+print(d81) #读数据</pre></article><article><h2>单元 8 · code</h2><pre>from scipy import stats
+chi2=stats.chi2_contingency(d81)  #列联表卡方检验
+print(&#x27;卡方值=%.4f,  P值=%.4g&#x27;%(chi2[0],chi2[1]))
+print(&#x27;\n理论频数:\n&#x27;,chi2[3].round(2))</pre></article><article><h2>单元 9 · markdown</h2><pre>### 8.2.2 对应分析方法</pre></article><article><h2>单元 10 · markdown</h2><pre>## 8.3 对应分析计算步骤</pre></article><article><h2>单元 11 · markdown</h2><pre>### 8.3.1 对应分析值</pre></article><article><h2>单元 12 · markdown</h2><pre>### 8.3.2 实证分析</pre></article><article><h2>单元 13 · code</h2><pre>#!pip install prince</pre></article><article><h2>单元 14 · code</h2><pre>pd.set_option(&#x27;display.precision&#x27;,3)  #设置数据框输出精度
+from prince import CA         #对应分析 
+ca1=CA().fit(d81)</pre></article><article><h2>单元 15 · code</h2><pre>F=ca1.row_coordinates(d81)   #行坐标
+print(F)  </pre></article><article><h2>单元 16 · code</h2><pre>G=ca1.column_coordinates(d81) #列坐标 
+print(G)</pre></article><article><h2>单元 17 · code</h2><pre>def CA_plot(ca,df):      #作对应分析图，替代price的plot_coordinates函数
+    import matplotlib.pyplot as plt                    #加载基本绘图包
+    plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;SimHei&#x27;];    #设置中文字体为黑体
+    plt.rcParams[&#x27;axes.unicode_minus&#x27;]=False;      #正常显示图中正负号
+    ca_plot=pd.concat([ca.row_coordinates(df), ca.column_coordinates(df)])
+    ca_plot[&#x27;label&#x27;]=ca_plot.index    
+    Vi=ca.eigenvalues_; Wi=100*Vi/ca.total_inertia_
+    fig, ax = plt.subplots(figsize=(6,5.5))
+    ax.scatter(x=ca_plot[0],y=ca_plot[1])
+    ax.set_xlabel(&#x27;Component 0 (&#x27; + str(round(Wi[0],2))+str(&#x27;% inertia)&#x27;));
+    ax.set_ylabel(&#x27;Component 1 (&#x27; + str(round(Wi[1],2))+str(&#x27;% inertia)&#x27;));
+    plt.axvline(x=0,linestyle=&#x27;:&#x27;);plt.axhline(y=0,linestyle=&#x27;:&#x27;)
+    for idx, row in ca_plot.iterrows(): ax.annotate(row[&#x27;label&#x27;], (row[0], row[1]) )    
+    import numpy as np
+    return(pd.DataFrame({&#x27;特征值&#x27;:Vi,&#x27;贡献率%&#x27;:Wi,&#x27;累计贡献%&#x27;:np.cumsum(Wi)}))</pre></article><article><h2>单元 18 · code</h2><pre>def CA_plot(ca,df):      #作对应分析图，替代price的plot_coordinates函数
+    import matplotlib.pyplot as plt                    #加载基本绘图包
+    plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;SimHei&#x27;];    #设置中文字体为黑体
+    plt.rcParams[&#x27;axes.unicode_minus&#x27;]=False;      #正常显示图中正负号
+    
+    # 获取行坐标和列坐标
+    row_coords = ca.row_coordinates(df)
+    col_coords = ca.column_coordinates(df)
+    # 合并行坐标和列坐标
+    ca_plot = pd.concat([row_coords, col_coords])
+    # 设置标签
+    ca_plot[&#x27;label&#x27;]=ca_plot.index    
+    # 计算特征值和贡献率
+    Vi=ca.eigenvalues_; Wi=100*Vi/ca.total_inertia_
+    
+    fig, ax = plt.subplots(figsize=(6,5.5))
+     # 绘制行坐标点（蓝色）
+    ax.scatter(x=row_coords[0], y=row_coords[1], color=&#x27;blue&#x27;, label=&#x27;Rows&#x27;)
+    # 绘制列坐标点（红色）
+    ax.scatter(x=col_coords[0], y=col_coords[1], color=&#x27;red&#x27;, label=&#x27;Columns&#x27;)
+    
+    # 设置坐标轴标签
+    ax.set_xlabel(&#x27;Component 0 (&#x27; + str(round(Wi[0],2))+str(&#x27;% inertia)&#x27;));
+    ax.set_ylabel(&#x27;Component 1 (&#x27; + str(round(Wi[1],2))+str(&#x27;% inertia)&#x27;));
+    
+    # 添加辅助线
+    plt.axvline(x=0, linestyle=&#x27;:&#x27;, color=&#x27;gray&#x27;)
+    plt.axhline(y=0, linestyle=&#x27;:&#x27;, color=&#x27;gray&#x27;)
+    
+    # 添加图例
+    ax.legend()
+    
+    # 添加标签
+    for idx, row in ca_plot.iterrows():
+        ax.annotate(row[&#x27;label&#x27;], (row[0], row[1])) 
+    import numpy as np
+    return(pd.DataFrame({&#x27;特征值&#x27;:Vi,&#x27;贡献率%&#x27;:Wi,&#x27;累计贡献%&#x27;:np.cumsum(Wi)}))</pre></article><article><h2>单元 19 · code</h2><pre>CA_plot(ca1,d81)</pre></article><article><h2>单元 20 · code</h2><pre>ca1.eigenvalues_summary
+ca1.plot(d81,
+    x_component=0,
+    y_component=1,
+    show_row_markers=True,
+    show_column_markers=True,
+    show_row_labels=True,
+    show_column_labels=True)</pre></article><article><h2>单元 21 · code</h2><pre>d82</pre></article><article><h2>单元 22 · code</h2><pre>d82=pd.read_excel(&#x27;mvsData.xlsx&#x27;,&#x27;d82&#x27;,index_col=0);#d82 #读数据</pre></article><article><h2>单元 23 · code</h2><pre>ca2=CA().fit(d82);</pre></article><article><h2>单元 24 · code</h2><pre>print(ca2.row_coordinates(d82))</pre></article><article><h2>单元 25 · code</h2><pre>print(ca2.column_coordinates(d82))</pre></article><article><h2>单元 26 · code</h2><pre>print(CA_plot(ca2,d82))</pre></article><article><h2>单元 27 · code</h2><pre>ca2.plot(
+    d82,
+    x_component=0,
+    y_component=1,
+    show_row_markers=True,
+    show_column_markers=True,
+    show_row_labels=True,
+    show_column_labels=True
+)</pre></article><article><h2>单元 28 · markdown</h2><pre>## 8.4 对应分析注意事项</pre></article><article><h2>单元 29 · markdown</h2><pre>## 案例8  对应分析在农民收入中的应用</pre></article><article><h2>单元 30 · code</h2><pre>Case8=pd.read_excel(&#x27;mvsCase.xlsx&#x27;,&#x27;Case8&#x27;,index_col=0);
+Case8</pre></article><article><h2>单元 31 · code</h2><pre>from scipy import stats
+dat1=Case8.head(6)  #文化程度
+st=stats.chi2_contingency(dat1)  
+print(&#x27;卡方值=%.4f,  P值=%.4g&#x27;%(st[0],st[1]))</pre></article><article><h2>单元 32 · code</h2><pre>dat2=Case8.tail(7)  #总收入
+st=stats.chi2_contingency(dat2)  
+print(&#x27;卡方值=%.4f,  P值=%.4g&#x27;%(st[0],st[1]))</pre></article><article><h2>单元 33 · code</h2><pre></pre></article><article><h2>单元 34 · code</h2><pre>from prince import CA 
+Ca1=CA().fit(dat1);Ca1
+print(Ca1.row_coordinates(dat1))
+print(Ca1.column_coordinates(dat1))</pre></article><article><h2>单元 35 · code</h2><pre>CA_plot(Ca1,dat1)</pre></article><article><h2>单元 36 · code</h2><pre>Ca2=CA().fit(dat2)
+print(Ca2.row_coordinates(dat2))
+print(Ca2.column_coordinates(dat2))
+CA_plot(Ca2,dat2)</pre></article><article><h2>单元 37 · markdown</h2><pre># 习题</pre></article><article><h2>单元 38 · markdown</h2><pre>### 二、练习题第2题</pre></article><article><h2>单元 39 · code</h2><pre>e10_2=pd.read_excel(&#x27;mvsExer.xlsx&#x27;,&#x27;E10_2&#x27;,index_col=0);#e10_2 #读数据</pre></article><article><h2>单元 40 · code</h2><pre>pd.set_option(&#x27;display.precision&#x27;,3)  #设置数据框输出精度
+from prince import CA         #对应分析 
+ca10_2=CA().fit(e10_2)</pre></article><article><h2>单元 41 · code</h2><pre>Fe10_2=ca10_2.row_coordinates(e10_2)   #行坐标
+print(Fe10_2)  </pre></article><article><h2>单元 42 · code</h2><pre>Ge10_2=ca10_2.column_coordinates(e10_2) #列坐标 
+print(Ge10_2)</pre></article><article><h2>单元 43 · code</h2><pre>def CA_plot(ca,df):      #作对应分析图，替代price的plot_coordinates函数
+    import matplotlib.pyplot as plt                    #加载基本绘图包
+    plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;SimHei&#x27;];    #设置中文字体为黑体
+    plt.rcParams[&#x27;axes.unicode_minus&#x27;]=False;      #正常显示图中正负号
+    
+    # 获取行坐标和列坐标
+    row_coords = ca.row_coordinates(df)
+    col_coords = ca.column_coordinates(df)
+    # 合并行坐标和列坐标
+    ca_plot = pd.concat([row_coords, col_coords])
+    # 设置标签
+    ca_plot[&#x27;label&#x27;]=ca_plot.index    
+    # 计算特征值和贡献率
+    Vi=ca.eigenvalues_; Wi=100*Vi/ca.total_inertia_
+    
+    fig, ax = plt.subplots(figsize=(6,5.5))
+     # 绘制行坐标点（蓝色）
+    ax.scatter(x=row_coords[0], y=row_coords[1], color=&#x27;blue&#x27;, label=&#x27;Rows&#x27;)
+    # 绘制列坐标点（红色）
+    ax.scatter(x=col_coords[0], y=col_coords[1], color=&#x27;red&#x27;, label=&#x27;Columns&#x27;)
+    
+    # 设置坐标轴标签
+    ax.set_xlabel(&#x27;Component 0 (&#x27; + str(round(Wi[0],2))+str(&#x27;% inertia)&#x27;));
+    ax.set_ylabel(&#x27;Component 1 (&#x27; + str(round(Wi[1],2))+str(&#x27;% inertia)&#x27;));
+    
+    # 添加辅助线
+    plt.axvline(x=0, linestyle=&#x27;:&#x27;, color=&#x27;gray&#x27;)
+    plt.axhline(y=0, linestyle=&#x27;:&#x27;, color=&#x27;gray&#x27;)
+    
+    # 添加图例
+    ax.legend()
+    
+    # 添加标签
+    for idx, row in ca_plot.iterrows():
+        ax.annotate(row[&#x27;label&#x27;], (row[0], row[1])) 
+    import numpy as np
+    return(pd.DataFrame({&#x27;特征值&#x27;:Vi,&#x27;贡献率%&#x27;:Wi,&#x27;累计贡献%&#x27;:np.cumsum(Wi)}))</pre></article><article><h2>单元 44 · code</h2><pre>CA_plot(ca10_2,e10_2)</pre></article><article><h2>单元 45 · code</h2><pre>e10_3 = pd.read_excel(&#x27;mvsExer.xlsx&#x27;,&#x27;E10_3&#x27;,index_col=0);#e10_3 #读数据</pre></article><article><h2>单元 46 · code</h2><pre>ca10_3=CA().fit(e10_3)</pre></article><article><h2>单元 47 · code</h2><pre>Fe10_3=ca10_3.row_coordinates(e10_3)   #行坐标
+print(Fe10_3)  </pre></article><article><h2>单元 48 · code</h2><pre>Ge10_3=ca10_3.column_coordinates(e10_3) #列坐标 
+print(Ge10_3)</pre></article><article><h2>单元 49 · code</h2><pre>CA_plot(ca10_3,e10_3)</pre></article><article><h2>单元 50 · markdown</h2><pre># 主成分分析案例6：电信业发展的主成分分析及对应分析</pre></article><article><h2>单元 51 · code</h2><pre>Case6=pd.read_excel(&#x27;mvsCase.xlsx&#x27;,&#x27;Case6&#x27;,index_col=0); #Case6
+
+Case6.columns = [&#x27;电信业务量&#x27;,&#x27;每百人拥有固话数&#x27;,&#x27;每百人移动电话数&#x27;,&#x27;国际互联网用户&#x27;,&#x27;互联网用户使用时长&#x27;,&#x27;长途电话通话量&#x27;,&#x27;长途电话通话时长&#x27;]
+print(Case6)</pre></article><article><h2>单元 52 · code</h2><pre>plt.figure(figsize=(9,5))
+import scipy.cluster.hierarchy as sch
+Z=(Case6-Case6.mean())/Case6.std() #数据标准化
+D=sch.distance.pdist(Z)
+H=sch.linkage(D,method=&#x27;complete&#x27;);
+sch.dendrogram(H,labels=Case6.index); #绘制系统聚类图</pre></article><article><h2>单元 53 · code</h2><pre>import numpy as np
+def PCscores(X,m=2): #主成分评价函数
+    from sklearn.decomposition import PCA
+    Z=(X-X.mean())/X.std() #数据标准化
+    p=Z.shape[1]
+    pca = PCA(n_components=p).fit(Z)
+    Vi=pca.explained_variance_;Vi   # 获取特征值(各主成分的方差)
+    Wi=pca.explained_variance_ratio_;Wi # 获取各主成分的方差贡献率
+    
+    # 创建方差相关的DataFrame
+    Vars=pd.DataFrame({&#x27;Variances&#x27;:Vi});Vars  #,index=X.columns
+    Vars.index=[&#x27;Comp%d&#x27; %(i+1) for i in range(p)]
+    Vars[&#x27;Explained&#x27;]=Wi*100;Vars
+    Vars[&#x27;Cumulative&#x27;]=np.cumsum(Wi)*100;
+    print(&quot;\n方差贡献:\n&quot;,round(Vars,4))
+    
+    # 提取前m个主成分的负荷矩阵
+    Compi=[&#x27;Comp%d&#x27; %(i+1) for i in range(m)]
+    loadings=pd.DataFrame(pca.components_[:m].T,columns=Compi,index=X.columns);
+    print(&quot;\n主成分负荷:\n&quot;,round(loadings,4))
+    
+    # 计算主成分得分
+    scores=pd.DataFrame(pca.fit_transform(Z)).iloc[:,:m];
+    scores.index=X.index; 
+    scores.columns=Compi;scores
+    
+    # 计算综合得分和排名
+    scores[&#x27;Comp&#x27;]=scores.dot(Wi[:m]);scores
+    scores[&#x27;Rank&#x27;]=scores.Comp.rank(ascending=False).astype(int);
+    return scores #print(&#x27;\n综合得分与排名:\n&#x27;,round(scores,4))</pre></article><article><h2>单元 54 · code</h2><pre>Case6_pcs=PCscores(Case6);Case6_pcs    #主成分分析</pre></article><article><h2>单元 55 · code</h2><pre>import matplotlib.pyplot as plt            
+plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;Heiti TC&#x27;];  #中文黑体SimHei
+plt.rcParams[&#x27;axes.unicode_minus&#x27;]=False; #正常显示图中正负号
+def Scoreplot(Scores): #自定得分图绘制函数
+    plt.plot(Scores.iloc[:,0],Scores.iloc[:,1],&#x27;*&#x27;); 
+    plt.xlabel(Scores.columns[0]);plt.ylabel(Scores.columns[1])
+    plt.axhline(y=0,ls=&#x27;:&#x27;);plt.axvline(x=0,ls=&#x27;:&#x27;)
+    for i in range(len(Scores)):
+        plt.text(Scores.iloc[i,0],Scores.iloc[i,1],Scores.index[i])</pre></article><article><h2>单元 56 · code</h2><pre>Scoreplot(Case6_pcs)</pre></article><article><h2>单元 57 · code</h2><pre>caCase6=CA().fit(Case6)</pre></article><article><h2>单元 58 · code</h2><pre>CA_plot(caCase6,Case6)</pre></article><article><h2>单元 59 · code</h2><pre></pre></article></html>

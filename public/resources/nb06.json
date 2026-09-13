@@ -1,0 +1,363 @@
+{
+  "resource": {
+    "id": "nb06",
+    "title": "第06章-主成分分析",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第06章-主成分分析.ipynb",
+    "sha256": "cbc112893bb3988f1143723b4caf4d31cb7c517623ca72108269604c6019162b",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb06.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "Notebook 单元 1 · markdown",
+      "text": "# 第6章 主成分分析及Python计算"
+    },
+    {
+      "index": 2,
+      "locator": "Notebook 单元 2 · code",
+      "text": "#%cd \"[本地路径已移除]\n%run init.py"
+    },
+    {
+      "index": 3,
+      "locator": "Notebook 单元 3 · markdown",
+      "text": "## 6.1 主成分分析的概念"
+    },
+    {
+      "index": 4,
+      "locator": "Notebook 单元 4 · markdown",
+      "text": "### 6.1.1 主成分分析的提出"
+    },
+    {
+      "index": 5,
+      "locator": "Notebook 单元 5 · markdown",
+      "text": "### 6.1.2 主成分的直观解释"
+    },
+    {
+      "index": 6,
+      "locator": "Notebook 单元 6 · markdown",
+      "text": "$\\begin{cases}\ny_1=\\cos \\theta x_1+\\sin \\theta x_2 \\\\\ny_2=-\\sin \\theta x_1+\\cos \\theta x_2\n\\end{cases}$"
+    },
+    {
+      "index": 7,
+      "locator": "Notebook 单元 7 · code",
+      "text": "import matplotlib.pyplot as plt              #加载基本绘图包\nimport pandas as pd                         #加载数据处理包\nplt.rcParams['font.sans-serif']=['Heiti TC'];  #设置中文字体为黑体\n\npd.set_option('display.max_rows', None)\npd.set_option('display.max_columns', None)\npd.set_option('display.max_colwidth', None)"
+    },
+    {
+      "index": 8,
+      "locator": "Notebook 单元 8 · code",
+      "text": "x1=[147,171,175,159,155,152,158,154,164,168,166,159,164,177]  #身高\nx2=[32,57,64,41,38,35,44,41,54,57,49,47,46,63]                #体重"
+    },
+    {
+      "index": 9,
+      "locator": "Notebook 单元 9 · code",
+      "text": "import matplotlib.pyplot as plt\nplt.scatter(x1, x2); #绘制散点图\nplt.xlabel('x1');plt.ylabel('x2');      "
+    },
+    {
+      "index": 10,
+      "locator": "Notebook 单元 10 · code",
+      "text": "from matplotlib.patches import Ellipse\nfig=plt.figure();\nax=fig.add_subplot(111)\nell1=Ellipse(xy=(162,48),width=48,height=8,angle=48,facecolor='yellow',alpha=0.3) \nax.add_patch(ell1) #绘制椭圆 \nplt.scatter(x1, x2);plt.xlabel('x1');plt.ylabel('x2')    \nplt.plot([146,178],[30,66]);plt.plot([162,166],[54,47]); #绘制线段\nplt.text(178,66,'y1');plt.text(161,55,'y2');"
+    },
+    {
+      "index": 11,
+      "locator": "Notebook 单元 11 · markdown",
+      "text": "## 6.2 主成分分析的性质"
+    },
+    {
+      "index": 12,
+      "locator": "Notebook 单元 12 · markdown",
+      "text": "### 6.2.1 主成分的说明"
+    },
+    {
+      "index": 13,
+      "locator": "Notebook 单元 13 · code",
+      "text": "import pandas as pd\npd.set_option('display.precision',4)  #数据框输出精度\nX=pd.DataFrame({'x1':x1,'x2':x2});#X  #构建数据框 X"
+    },
+    {
+      "index": 14,
+      "locator": "Notebook 单元 14 · code",
+      "text": "S=X.cov();S    #协方差阵"
+    },
+    {
+      "index": 15,
+      "locator": "Notebook 单元 15 · code",
+      "text": "R=X.corr();R  #相关系数阵"
+    },
+    {
+      "index": 16,
+      "locator": "Notebook 单元 16 · code",
+      "text": "# 1. 数据标准化（均值为0，方差为1）\nX_mean = np.mean(X, axis=0)\nx_var = np.var(X, axis=0)\nX_centered = (X - X_mean) / np.sqrt(x_var)\n"
+    },
+    {
+      "index": 17,
+      "locator": "Notebook 单元 17 · code",
+      "text": "# 2. 计算协方差矩阵\ncov_matrix = np.cov(X_centered, rowvar=False)\ncov_matrix"
+    },
+    {
+      "index": 18,
+      "locator": "Notebook 单元 18 · code",
+      "text": "# 3. 计算协方差矩阵的特征值和特征向量\neigenvalues, eigenvectors = np.linalg.eig(cov_matrix)\neigenvalues, eigenvectors"
+    },
+    {
+      "index": 19,
+      "locator": "Notebook 单元 19 · code",
+      "text": "# 5. 选择前两个主成分\nn_components = 2\nselected_eigenvectors = eigenvectors[:, :n_components]\n"
+    },
+    {
+      "index": 20,
+      "locator": "Notebook 单元 20 · markdown",
+      "text": "### 6.2.2 主成分的推导"
+    },
+    {
+      "index": 21,
+      "locator": "Notebook 单元 21 · code",
+      "text": "import numpy as np  #from numpy.linalg import svd\nnp.set_printoptions(4)\nd1,u1,v1=np.linalg.svd(S) #协差阵的奇异值分解 S=UDV'\nprint('d1:\\n',d1,'\\n','u1:\\n',u1,'\\n','v1:\\n',v1)"
+    },
+    {
+      "index": 22,
+      "locator": "Notebook 单元 22 · code",
+      "text": "d2,u2,v2=np.linalg.svd(R)  #相关阵的奇异值分解 R=UDV'\nprint('d1:\\n',d2,'\\n','u1:\\n',u2,'\\n','v1:\\n',v2)"
+    },
+    {
+      "index": 23,
+      "locator": "Notebook 单元 23 · code",
+      "text": "# 1. 计算协方差矩阵的特征值和特征向量\neigenvalues, eigenvectors = np.linalg.eig(S)\neigenvalues, eigenvectors"
+    },
+    {
+      "index": 24,
+      "locator": "Notebook 单元 24 · code",
+      "text": "# 计算原始数据的方差（对角线元素）\nsigma_jj = np.var(X, axis=0, ddof=1)  # 样本方差"
+    },
+    {
+      "index": 25,
+      "locator": "Notebook 单元 25 · code",
+      "text": "(np.sqrt(eigenvalues) * X ) / (sigma_jj ** 0.5)"
+    },
+    {
+      "index": 26,
+      "locator": "Notebook 单元 26 · code",
+      "text": "# 计算主成分系数矩阵 A\nA = np.zeros_like(eigenvectors)\nfor i in range(len(eigenvectors)):  # 遍历每个主成分\n    A[:, i] = (np.sqrt(eigenvalues[i]) * eigenvectors[:, i]) / np.sqrt(sigma_jj)\nA\n"
+    },
+    {
+      "index": 27,
+      "locator": "Notebook 单元 27 · code",
+      "text": "np.dot(X, A)"
+    },
+    {
+      "index": 28,
+      "locator": "Notebook 单元 28 · markdown",
+      "text": "### 6.2.3 主成分的计算"
+    },
+    {
+      "index": 29,
+      "locator": "Notebook 单元 29 · markdown",
+      "text": "1.主成分方差"
+    },
+    {
+      "index": 30,
+      "locator": "Notebook 单元 30 · code",
+      "text": "from sklearn.decomposition import PCA\npca = PCA(n_components=2).fit(X)         #拟合主成分\nVi=pca.explained_variance_;Vi             #主成分方差\n#pd.DataFrame(pca.explained_variance_,index=['PC1','PC2'])   #主成分方差"
+    },
+    {
+      "index": 31,
+      "locator": "Notebook 单元 31 · markdown",
+      "text": "2.主成分系数"
+    },
+    {
+      "index": 32,
+      "locator": "Notebook 单元 32 · code",
+      "text": "#DataFrame(pca.components_,columns=['PC1','PC2'])        #主成分负荷\npca.components_     #主成分负荷"
+    },
+    {
+      "index": 33,
+      "locator": "Notebook 单元 33 · code",
+      "text": "# 将主成分得分转换为 DataFrame\nscores = pd.DataFrame(pca.components_, index=X.columns, columns=['PC1', 'PC2'])\nprint(\"主成分得分:\\n\", scores)"
+    },
+    {
+      "index": 34,
+      "locator": "Notebook 单元 34 · markdown",
+      "text": "3. 主成分系数及主成分得分的  <big><mark>**分步计算**<mark></big>"
+    },
+    {
+      "index": 35,
+      "locator": "Notebook 单元 35 · code",
+      "text": "# 数据中心化\nx_var = np.var(X, axis=0)\nX_centered = (X - X_mean)\nprint(\"中心化后的数据:\\n\", X_centered)"
+    },
+    {
+      "index": 36,
+      "locator": "Notebook 单元 36 · code",
+      "text": "# 计算协方差矩阵\ncov_matrix = np.cov(X_centered, rowvar=False)\nprint(\"协方差矩阵:\\n\", cov_matrix)"
+    },
+    {
+      "index": 37,
+      "locator": "Notebook 单元 37 · code",
+      "text": "# 计算协方差矩阵的特征值和特征向量\neigenvalues, eigenvectors = np.linalg.eig(cov_matrix)\nprint(\"特征值:\\n\", eigenvalues)\nprint(\"特征向量:\\n\", eigenvectors)\n"
+    },
+    {
+      "index": 38,
+      "locator": "Notebook 单元 38 · code",
+      "text": "# 将特征值从大到小排序\nsorted_indices = np.argsort(eigenvalues)[::-1]\nsorted_eigenvalues = eigenvalues[sorted_indices]\nsorted_eigenvectors = eigenvectors[:, sorted_indices]\n\nprint(\"排序后的特征值:\\n\", sorted_eigenvalues)\nprint(\"排序后的特征向量:\\n\", sorted_eigenvectors)"
+    },
+    {
+      "index": 39,
+      "locator": "Notebook 单元 39 · code",
+      "text": "# 选择前两个主成分\nn_components = 2\nselected_eigenvectors = sorted_eigenvectors[:, :n_components]\nprint(\"选择的主成分:\\n\", selected_eigenvectors)"
+    },
+    {
+      "index": 40,
+      "locator": "Notebook 单元 40 · code",
+      "text": "# 将数据投影到主成分上 （未排序）\nX_pca = np.dot(X_centered, eigenvectors)\nprint(\"投影后的数据:\\n\", X_pca)"
+    },
+    {
+      "index": 41,
+      "locator": "Notebook 单元 41 · code",
+      "text": "# 将数据投影到主成分上,即计算主成分得分\nX_pca = np.dot(X_centered, selected_eigenvectors)\nX_pca_df = pd.DataFrame(X_pca, columns=['PC1', 'PC2'])\nprint(\"投影后的数据:\\n\", X_pca_df)"
+    },
+    {
+      "index": 42,
+      "locator": "Notebook 单元 42 · code",
+      "text": "X_pca_df.plot.scatter(x='PC1', y='PC2')\nplt.axhline(y=0, color='blue', linestyle=':')\nplt.axvline(x=0, color='blue', linestyle='--')"
+    },
+    {
+      "index": 43,
+      "locator": "Notebook 单元 43 · markdown",
+      "text": "3.主成分得分"
+    },
+    {
+      "index": 44,
+      "locator": "Notebook 单元 44 · code",
+      "text": "scores=pd.DataFrame(pca.fit_transform(X),columns=['PC1','PC2']);\nscores #主成分得分\n#scores=pca.fit_transform(X);scores #主成分得分"
+    },
+    {
+      "index": 45,
+      "locator": "Notebook 单元 45 · code",
+      "text": "scores.plot('PC1','PC2',kind='scatter')           #绘制主成分得分散点图\nplt.axhline(y=0,ls=\":\");plt.axvline(x=0,ls=\":\"); #添加水平和垂直直线"
+    },
+    {
+      "index": 46,
+      "locator": "Notebook 单元 46 · code",
+      "text": "scores.corr().round(4)                  #主成分得分相关阵"
+    },
+    {
+      "index": 47,
+      "locator": "Notebook 单元 47 · code",
+      "text": "scores.cov().round(4)                    #主成分得分协方差阵"
+    },
+    {
+      "index": 48,
+      "locator": "Notebook 单元 48 · markdown",
+      "text": "4.方差贡献率"
+    },
+    {
+      "index": 49,
+      "locator": "Notebook 单元 49 · code",
+      "text": "Wi=pca.explained_variance_ratio_;Wi   #方差贡献率 "
+    },
+    {
+      "index": 50,
+      "locator": "Notebook 单元 50 · code",
+      "text": "Wi.sum()             #方差累计贡献率"
+    },
+    {
+      "index": 51,
+      "locator": "Notebook 单元 51 · code",
+      "text": "# 计算总方差\ntotal_variance = np.sum(sorted_eigenvalues)\nprint(\"总方差:\", total_variance)\n\n# 计算方差贡献率\nexplained_variance_ratio = sorted_eigenvalues / total_variance\nprint(\"方差贡献率:\\n\", explained_variance_ratio)\nprint('方差累积贡献率:\\n',explained_variance_ratio.sum())"
+    },
+    {
+      "index": 52,
+      "locator": "Notebook 单元 52 · code",
+      "text": ""
+    },
+    {
+      "index": 53,
+      "locator": "Notebook 单元 53 · markdown",
+      "text": "## 6.3 主成分分析步骤\n### 6.3.1 计算过程"
+    },
+    {
+      "index": 54,
+      "locator": "Notebook 单元 54 · code",
+      "text": "import numpy as np\ndef PCscores(X,m=2): #主成分评价函数\n    from sklearn.decomposition import PCA\n    Z=(X-X.mean())/X.std() #数据标准化\n    p=Z.shape[1]\n    pca = PCA(n_components=p).fit(Z)\n    Vi=pca.explained_variance_;Vi   # 获取特征值(各主成分的方差)\n    Wi=pca.explained_variance_ratio_;Wi # 获取各主成分的方差贡献率\n    \n    # 创建方差相关的DataFrame\n    Vars=pd.DataFrame({'Variances':Vi});Vars  #,index=X.columns\n    Vars.index=['Comp%d' %(i+1) for i in range(p)]\n    Vars['Explained']=Wi*100;Vars\n    Vars['Cumulative']=np.cumsum(Wi)*100;\n    print(\"\\n方差贡献:\\n\",round(Vars,4))\n    \n    # 提取前m个主成分的负荷矩阵\n    Compi=['Comp%d' %(i+1) for i in range(m)]\n    loadings=pd.DataFrame(pca.components_[:m].T,columns=Compi,index=X.columns);\n    print(\"\\n主成分负荷:\\n\",round(loadings,4))\n    \n    # 计算主成分得分\n    scores=pd.DataFrame(pca.fit_transform(Z)).iloc[:,:m];\n    scores.index=X.index; \n    scores.columns=Compi;scores\n    \n    # 计算综合得分和排名\n    scores['Comp']=scores.dot(Wi[:m]);scores\n    scores['Rank']=scores.Comp.rank(ascending=False).astype(int);\n    return scores #print('\\n综合得分与排名:\\n',round(scores,4))"
+    },
+    {
+      "index": 55,
+      "locator": "Notebook 单元 55 · markdown",
+      "text": "### 6.3.2 实证分析"
+    },
+    {
+      "index": 56,
+      "locator": "Notebook 单元 56 · code",
+      "text": "d31=pd.read_excel('mvsData.xlsx','d31',index_col=0)\nd31_pcs=PCscores(d31);print(d31_pcs)"
+    },
+    {
+      "index": 57,
+      "locator": "Notebook 单元 57 · code",
+      "text": "d31=pd.read_excel('mvsData.xlsx','d31',index_col=0); d31"
+    },
+    {
+      "index": 58,
+      "locator": "Notebook 单元 58 · code",
+      "text": "d31_pcs=PCscores(d31);\n#print(d31_pcs)"
+    },
+    {
+      "index": 59,
+      "locator": "Notebook 单元 59 · code",
+      "text": "print(d31_pcs.sort_values('Rank'))"
+    },
+    {
+      "index": 60,
+      "locator": "Notebook 单元 60 · code",
+      "text": "import matplotlib.pyplot as plt            \nplt.rcParams['font.sans-serif']=['Heiti TC'];  #中文黑体SimHei\nplt.rcParams['axes.unicode_minus']=False; #正常显示图中正负号\ndef Scoreplot(Scores): #自定得分图绘制函数\n    plt.plot(Scores.iloc[:,0],Scores.iloc[:,1],'*'); \n    plt.xlabel(Scores.columns[0]);plt.ylabel(Scores.columns[1])\n    plt.axhline(y=0,ls=':');plt.axvline(x=0,ls=':')\n    for i in range(len(Scores)):\n        plt.text(Scores.iloc[i,0],Scores.iloc[i,1],Scores.index[i])"
+    },
+    {
+      "index": 61,
+      "locator": "Notebook 单元 61 · code",
+      "text": "Scoreplot(d31_pcs)"
+    },
+    {
+      "index": 62,
+      "locator": "Notebook 单元 62 · markdown",
+      "text": "## 6.4 主成分分析注意事项"
+    },
+    {
+      "index": 63,
+      "locator": "Notebook 单元 63 · markdown",
+      "text": "## 案例6 电信业发展的主成分分析"
+    },
+    {
+      "index": 64,
+      "locator": "Notebook 单元 64 · code",
+      "text": "Case6=pd.read_excel('mvsCase.xlsx','Case6',index_col=0); #Case6"
+    },
+    {
+      "index": 65,
+      "locator": "Notebook 单元 65 · code",
+      "text": "plt.figure(figsize=(9,5))\nimport scipy.cluster.hierarchy as sch\nZ=(Case6-Case6.mean())/Case6.std() #数据标准化\nD=sch.distance.pdist(Z)\nH=sch.linkage(D,method='complete');\nsch.dendrogram(H,labels=Case6.index); #绘制系统聚类图"
+    },
+    {
+      "index": 66,
+      "locator": "Notebook 单元 66 · code",
+      "text": "level4 = pd.DataFrame(sch.cut_tree(H), index= Case6.index)[17]+1\nlevel3 = pd.DataFrame(sch.cut_tree(H), index= Case6.index)[18]+1\nlevel2 = pd.DataFrame(sch.cut_tree(H), index= Case6.index)[19]+1\n\nclass_41 = level4[level4 == 1].index.tolist()\nclass_42 = level4[level4 == 2].index.tolist()\nclass_43 = level4[level4 == 3].index.tolist()\nclass_44 = level4[level4 == 4].index.tolist()\n\n# 创建一个字典来存储分类结果\ndata4 = {\n    '第1类': [class_41],\n    '第2类': [class_42],\n    '第3类': [class_43],\n    '第4类': [class_44]\n}\n# 将字典转换为 DataFrame\nclass4_df = pd.DataFrame(data4)\nclass4_df\n\nclass_31 = level3[level3 == 1].index.tolist()\nclass_32 = level3[level3 == 2].index.tolist()\nclass_33 = level3[level3 == 3].index.tolist()\n\n# 创建一个字典来存储分类结果\ndata3 = {\n    '第1类': [class_31],\n    '第2类': [class_32],\n    '第3类': [class_33]\n}\n# 将字典转换为 DataFrame\nclass3_df = pd.DataFrame(data3)\n\nclass_21 = level2[level2 == 1].index.tolist()\nclass_22 = level2[level2 == 2].index.tolist()\n# 创建一个字典来存储分类结果\ndata2 = {\n    '第1类': [class_21],\n    '第2类': [class_22]\n}\n# 将字典转换为 DataFrame\nclass2_df = pd.DataFrame(data2)"
+    },
+    {
+      "index": 67,
+      "locator": "Notebook 单元 67 · code",
+      "text": "print(\"分2类：\\n\",class2_df.T)\nprint(\"分3类：\\n\",class3_df.T)\nprint(\"分4类：\\n\",class4_df.T)"
+    },
+    {
+      "index": 68,
+      "locator": "Notebook 单元 68 · code",
+      "text": "Case6_pcs=PCscores(Case6);Case6_pcs    #主成分分析"
+    },
+    {
+      "index": 69,
+      "locator": "Notebook 单元 69 · code",
+      "text": "Scoreplot(Case6_pcs)"
+    },
+    {
+      "index": 70,
+      "locator": "Notebook 单元 70 · code",
+      "text": ""
+    }
+  ]
+}

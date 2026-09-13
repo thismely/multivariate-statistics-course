@@ -1,0 +1,40 @@
+# Dependencies and generated frontend output
+node_modules/
+dist/
+.vite/
+.cache/
+.parcel-cache/
+.playwright-cli/
+output/
+*.log
+coverage/
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.venv/
+venv/
+env/
+
+# Build products copied from the canonical course tree
+public/course/
+course/preview/
+course/results/
+
+# Local notebooks and operating-system metadata
+.ipynb_checkpoints/
+.DS_Store
+*.swp
+*.swo
+
+# Local credentials/configuration
+.env
+.env.*
+!.env.example
+# Also exclude a local dependency symlink
+/node_modules

@@ -1,0 +1,228 @@
+{
+  "resource": {
+    "id": "nb03",
+    "title": "第03章-数据可视化",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第03章-数据可视化.ipynb",
+    "sha256": "acdf27d69c27f99f8513d4e397caf88ab000665872d93c61bee0bf7acdf9ab36",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb03.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "Notebook 单元 1 · markdown",
+      "text": "# 第3章 多元数据的Python可视化"
+    },
+    {
+      "index": 2,
+      "locator": "Notebook 单元 2 · markdown",
+      "text": "## 3.1 多元数据可视化准备"
+    },
+    {
+      "index": 3,
+      "locator": "Notebook 单元 3 · markdown",
+      "text": "### 3.1.1 多元数据的收集方式"
+    },
+    {
+      "index": 4,
+      "locator": "Notebook 单元 4 · markdown",
+      "text": "### 3.1.2 多元数据的读取方法"
+    },
+    {
+      "index": 5,
+      "locator": "Notebook 单元 5 · code",
+      "text": "import pandas as pd\npd.set_option('display.max_rows',8)         #显示最大行数\nprint(pd.read_excel('mvsData.xlsx','d31'))  #读Excel数据表"
+    },
+    {
+      "index": 6,
+      "locator": "Notebook 单元 6 · code",
+      "text": "d31=pd.read_excel('mvsData.xlsx','d31',index_col=0);\nprint(d31)  #将第一列设置为行标记"
+    },
+    {
+      "index": 7,
+      "locator": "Notebook 单元 7 · code",
+      "text": "#dat=pd.read_clipboard(index_col=0);dat  #读取粘贴板数据"
+    },
+    {
+      "index": 8,
+      "locator": "Notebook 单元 8 · markdown",
+      "text": "### 3.1.3 多元统计量与绘图函数"
+    },
+    {
+      "index": 9,
+      "locator": "Notebook 单元 9 · markdown",
+      "text": "1. 多元数据基本统计量"
+    },
+    {
+      "index": 10,
+      "locator": "Notebook 单元 10 · code",
+      "text": "d31.mean()   #均值向量"
+    },
+    {
+      "index": 11,
+      "locator": "Notebook 单元 11 · code",
+      "text": "pd.set_option('display.precision',4)       #设置pandas输出精度\npd.set_option('display.width', 160)        #设置pandas输出宽度\nprint(d31.cov())  #协方差矩阵"
+    },
+    {
+      "index": 12,
+      "locator": "Notebook 单元 12 · code",
+      "text": "print(d31.corr())  #相关系数矩阵"
+    },
+    {
+      "index": 13,
+      "locator": "Notebook 单元 13 · markdown",
+      "text": "## 3.2 条图或柱图"
+    },
+    {
+      "index": 14,
+      "locator": "Notebook 单元 14 · markdown",
+      "text": "### 3.2.1 原始数据的条图"
+    },
+    {
+      "index": 15,
+      "locator": "Notebook 单元 15 · code",
+      "text": "import matplotlib.pyplot as plt              #加载基本绘图包\nplt.rcParams['font.sans-serif']=['Heiti TC'];  #设置中文字体为黑体"
+    },
+    {
+      "index": 16,
+      "locator": "Notebook 单元 16 · code",
+      "text": "#?d31.plot "
+    },
+    {
+      "index": 17,
+      "locator": "Notebook 单元 17 · code",
+      "text": "d31['食品'].plot(kind='bar',figsize=(10,5)); "
+    },
+    {
+      "index": 18,
+      "locator": "Notebook 单元 18 · code",
+      "text": "d31.plot(kind='bar',figsize=(10,5));"
+    },
+    {
+      "index": 19,
+      "locator": "Notebook 单元 19 · code",
+      "text": "d31.plot(kind='bar',subplots=True,figsize=(10,15));"
+    },
+    {
+      "index": 20,
+      "locator": "Notebook 单元 20 · code",
+      "text": "d31.plot(kind='barh',subplots=True,layout=(3,3),figsize=(12,18),xlabel='',legend=False);"
+    },
+    {
+      "index": 21,
+      "locator": "Notebook 单元 21 · code",
+      "text": "d31.loc[['北京']].plot(kind='bar',xlabel=''); "
+    },
+    {
+      "index": 22,
+      "locator": "Notebook 单元 22 · code",
+      "text": "d31.loc[['北京','上海','广东']].plot(kind='bar'); "
+    },
+    {
+      "index": 23,
+      "locator": "Notebook 单元 23 · markdown",
+      "text": "### 3.2.2 统计量的条图"
+    },
+    {
+      "index": 24,
+      "locator": "Notebook 单元 24 · code",
+      "text": "print(d31.mean())\nd31.mean().plot(kind='barh'); "
+    },
+    {
+      "index": 25,
+      "locator": "Notebook 单元 25 · code",
+      "text": "print(d31.median().T)\nd31.median().plot(kind='barh'); "
+    },
+    {
+      "index": 26,
+      "locator": "Notebook 单元 26 · markdown",
+      "text": "## 3.3 描述统计及箱尾图"
+    },
+    {
+      "index": 27,
+      "locator": "Notebook 单元 27 · markdown",
+      "text": "### 3.3.1 描述性统计量"
+    },
+    {
+      "index": 28,
+      "locator": "Notebook 单元 28 · code",
+      "text": "print(d31.describe().round(1)) #描述统计量"
+    },
+    {
+      "index": 29,
+      "locator": "Notebook 单元 29 · markdown",
+      "text": "### 3.3.2 箱尾图的绘制"
+    },
+    {
+      "index": 30,
+      "locator": "Notebook 单元 30 · code",
+      "text": "d31.plot(kind='box'); #描述统计图"
+    },
+    {
+      "index": 31,
+      "locator": "Notebook 单元 31 · code",
+      "text": "d31.plot.box(vert=False); #箱尾图中图形按水平放置"
+    },
+    {
+      "index": 32,
+      "locator": "Notebook 单元 32 · markdown",
+      "text": "## 3.4 变量间的关系图"
+    },
+    {
+      "index": 33,
+      "locator": "Notebook 单元 33 · markdown",
+      "text": "### 3.4.1 两变量散点图"
+    },
+    {
+      "index": 34,
+      "locator": "Notebook 单元 34 · code",
+      "text": "d31.plot(x='食品',y='衣着',kind='scatter');"
+    },
+    {
+      "index": 35,
+      "locator": "Notebook 单元 35 · markdown",
+      "text": "### 3.4.2 多变量矩阵散点图"
+    },
+    {
+      "index": 36,
+      "locator": "Notebook 单元 36 · code",
+      "text": "pd.plotting.scatter_matrix(d31,figsize=(9,8));"
+    },
+    {
+      "index": 37,
+      "locator": "Notebook 单元 37 · markdown",
+      "text": "## 3.5 其他多元分析图"
+    },
+    {
+      "index": 38,
+      "locator": "Notebook 单元 38 · markdown",
+      "text": "## 案例3  城市现代化水平的直观分析\n"
+    },
+    {
+      "index": 39,
+      "locator": "Notebook 单元 39 · code",
+      "text": "Case3= pd.read_excel('mvsCase.xlsx','Case3',index_col=0);Case3"
+    },
+    {
+      "index": 40,
+      "locator": "Notebook 单元 40 · code",
+      "text": "Case3.X1.plot(kind='bar',figsize=(9,5)); "
+    },
+    {
+      "index": 41,
+      "locator": "Notebook 单元 41 · code",
+      "text": "Case3.plot(kind='bar',subplots=True,layout=(3,3),figsize=(12,10));"
+    },
+    {
+      "index": 42,
+      "locator": "Notebook 单元 42 · code",
+      "text": "Case3.plot(kind='barh',stacked=True,figsize=(8,6));"
+    },
+    {
+      "index": 43,
+      "locator": "Notebook 单元 43 · code",
+      "text": "Case3.loc[['广州','深圳','珠海']][['X1','X4']]\\\n     .plot(kind='bar',figsize=(8,6)); "
+    }
+  ]
+}

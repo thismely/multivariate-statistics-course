@@ -1,0 +1,244 @@
+{
+  "approvals": [
+    {
+      "path": "README.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "166219091fdd9eceda3a019c161f8d9e3addc237a92fe36fbd8360a098b62a24",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "course/cases/logistic.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "fa0887038837788d015dbaeeb4e48035760f32d46c8007feaed233ffc5ba2085",
+      "reason": "已核对：模拟案例隐私说明或审计测试规则；新修改仅增加模拟结果数值与测试，没有实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "course/notes/ch07.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "e4e4055222c286db3eeb850873b996d8ccf18eafe4295c915edd507bcd0810d4",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "course/notes/ch09.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "de318119732d7a954615e5f8ac08c51b5806be2eeeeb5cd0753438999bcdaeb2",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "course/notes/ch10.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "53bc5dce0380acd1cf370fe48da78b06b9a5a70a3c0f02b3933e6411ef07550e",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "course/notes/ch11.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "1ab4dfed4447c116c141ffdbdfd8361c34d11bbb86d124ccd1d6373d8d675fcf",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "course/preview/logistic.html",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "164450f8e47a9a449f275ff3d96e8feec01a35f5aee31b6711bfd6d543557e45",
+      "reason": "已核对：模拟案例隐私说明或审计测试规则；新修改仅增加模拟结果数值与测试，没有实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "course/running.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "9b20ab67e8803f903e7ddd18091c66e522254e6fc6769bb18e1182b7f666a996",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "course/slides/ch07.html",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "ec48b672f69dd42010089e9225ce6896a5ce6b257ba93967af8232fc71b94e1b",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "course/slides/ch07.pptx",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "f6f574f75e3ae2824b0f83d6c24e5ea0cd9f2b92311e2cd8b91c50875e48d48b",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/course/cases/logistic.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "2732b12e4ee9c511088cf5aa724a80a5911a2e4d7090015055492c744333e2f2",
+      "reason": "已核对：模拟案例隐私说明或审计测试规则；新修改仅增加模拟结果数值与测试，没有实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/course/notes/ch07.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "e4e4055222c286db3eeb850873b996d8ccf18eafe4295c915edd507bcd0810d4",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/course/notes/ch09.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "de318119732d7a954615e5f8ac08c51b5806be2eeeeb5cd0753438999bcdaeb2",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/course/notes/ch10.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "53bc5dce0380acd1cf370fe48da78b06b9a5a70a3c0f02b3933e6411ef07550e",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/course/notes/ch11.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "1ab4dfed4447c116c141ffdbdfd8361c34d11bbb86d124ccd1d6373d8d675fcf",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/course/preview/logistic.html",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "ec1f7b0e9a48c30ed494b82f1c5889945f54366ec66f3d88d10fffff038aafb1",
+      "reason": "已核对：模拟案例隐私说明或审计测试规则；新修改仅增加模拟结果数值与测试，没有实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/course/running.md",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "9b20ab67e8803f903e7ddd18091c66e522254e6fc6769bb18e1182b7f666a996",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/course/slides/ch07.html",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "ec48b672f69dd42010089e9225ce6896a5ce6b257ba93967af8232fc71b94e1b",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/course/slides/ch07.pptx",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "f6f574f75e3ae2824b0f83d6c24e5ea0cd9f2b92311e2cd8b91c50875e48d48b",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/resources/lecture07.json",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "f4cfddfc5761a8194ecac20b8a64022f550e98f1dada69a07d6c14c5bce59eed",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/resources/lecture09.json",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "9e917b3d2e317d8446affb572fe1cd6ced5aaeff6255d7bf6c7614c35efd2785",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/resources/lecture10.json",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "f3e4b820305cf01742d0cd277d11972e82550f935e9901a2f8ad14b8b47dde79",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/resources/lecture11.json",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "c88f6d8a7e0dc73c159037a5b8f31bc942ecfaa65f5da47b746ecdd4ec53c6fc",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "public/resources/ppt07.json",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "b1cf7b19864fe4ab50ab33c27f225629dc07d3216da351e890c48aa7fe283410",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "src/data/comparisons.json",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "16d8b49b8f70fc7e22bc93c677f38d3a1b0acbb726eb427ca56a5cbab10f8142",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "src/data/edges.json",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "6820fdbdb9c9534340212a7814f3f3688c88906774987eff171a70779f07a020",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "src/data/nodes.json",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "166c3560ac6783cec0f60cd9ea9fc780932d50936988595706d48817cc5f2194",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "src/data/problems.json",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "18dd3791be6d3e7c5aec982bcbe2d5aaa71d4f20a7e3d9bda0494ea411670448",
+      "reason": "已逐项核对命中上下文：仅含教学假设、随机生成数据、历史汇总相关矩阵或隐私说明；未含实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "tests/test_course_audit.py",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "5832fecc0c6e930bcc0969a1f0190509514b74acf9082a01d8f34cc835aa07a2",
+      "reason": "测试中的规则词与临时夹具，不包含真实个人信息。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    },
+    {
+      "path": "tests/test_labs.py",
+      "category": "teaching_sensitive_keyword",
+      "sha256": "7f3d6e9cd68d2384297fc5cdabbacc324ebef6d7847698856d1641224316e065",
+      "reason": "已核对：模拟案例隐私说明或审计测试规则；新修改仅增加模拟结果数值与测试，没有实际个人记录。",
+      "reviewer": "course build contextual review",
+      "date": "2026-09-13"
+    }
+  ]
+}

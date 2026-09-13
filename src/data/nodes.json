@@ -1,0 +1,3782 @@
+[
+  {
+    "id": "course",
+    "name": "多元统计分析及 Python 建模",
+    "module": "core",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH01",
+    "parent": "",
+    "description": "围绕多指标数据，学习探索、降维、分群、分类、关系建模与综合评价。",
+    "importance": 5,
+    "learning_objective": "能够解释并判断：围绕多指标数据，学习探索、降维、分群、分类、关系建模与综合评价。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture01",
+        "locator": "讲义 L7–L30",
+        "start": 7,
+        "end": 30,
+        "excerpt": "### 一、教学目标\n\n通过本章学习，学生应具备以下核心能力：\n\n1. **历史脉络认知**：准确描述多元统计分析从Pearson（1901）、Fisher（1936）到Hotelling（1933）三大奠基人的核心贡献，理解学科从\"描述\"到\"推断\"再到\"建模\"的演进逻辑。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt01",
+      "lecture01",
+      "nb01"
+    ],
+    "keywords": [
+      "course",
+      "多元统计分析及 Python 建模",
+      "第1章"
+    ]
+  },
+  {
+    "id": "data",
+    "name": "多元数据与观测矩阵",
+    "module": "A",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH02",
+    "parent": "",
+    "description": "每行代表一个观测对象，每列代表一个变量；明确对象、变量与测量单位是分析起点。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：每行代表一个观测对象，每列代表一个变量；明确对象、变量与测量单位是分析起点。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture02",
+        "locator": "讲义 L22–L45",
+        "start": 22,
+        "end": 45,
+        "excerpt": "| 2.3 多元数据的收集和整理 | 2 | 讲授+案例 |\n| 2.4 Python的数据框（Pandas） | 2 | 讲授+练习 |\n| 2.5 Python数据框的分析 | 2 | 讲授+练习 |\n| **合计** | **10** | |\n",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt02",
+      "lecture02",
+      "nb02"
+    ],
+    "keywords": [
+      "data",
+      "多元数据与观测矩阵",
+      "第2章"
+    ]
+  },
+  {
+    "id": "missing",
+    "name": "缺失值处理",
+    "module": "A",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH02",
+    "parent": "data",
+    "description": "识别缺失模式，再选择删除或插补；不能无条件用均值填补所有缺失。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：识别缺失模式，再选择删除或插补；不能无条件用均值填补所有缺失。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture02",
+        "locator": "讲义 L486–L509",
+        "start": 486,
+        "end": 509,
+        "excerpt": "#### 2.3.2 缺失值处理\n\n**（1）缺失值的类型与识别**\n\n缺失值是多元数据分析中最常见的数据质量问题。根据缺失机制的不同，可以分为三类：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt02",
+      "lecture02",
+      "nb02"
+    ],
+    "keywords": [
+      "missing",
+      "缺失值处理",
+      "第2章"
+    ]
+  },
+  {
+    "id": "standard",
+    "name": "数据标准化",
+    "module": "A",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH02",
+    "parent": "data",
+    "description": "变换变量尺度，使不同单位的数据可比较；是否标准化取决于分析目标。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：变换变量尺度，使不同单位的数据可比较；是否标准化取决于分析目标。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture02",
+        "locator": "讲义 L572–L595",
+        "start": 572,
+        "end": 595,
+        "excerpt": "#### 2.3.3 数据标准化\n\n**【业务场景引入】**\n\n在综合评价中，不同指标的量纲和数量级差异巨大。例如：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt02",
+      "lecture02",
+      "nb02"
+    ],
+    "keywords": [
+      "standard",
+      "数据标准化",
+      "第2章"
+    ]
+  },
+  {
+    "id": "numpy",
+    "name": "NumPy 数组运算",
+    "module": "A",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH02",
+    "parent": "data",
+    "description": "用数组表达观测矩阵，并进行向量化与线性代数运算。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：用数组表达观测矩阵，并进行向量化与线性代数运算。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture02",
+        "locator": "讲义 L257–L280",
+        "start": 257,
+        "end": 280,
+        "excerpt": "#### 2.2.1 NumPy数组操作\n\n**【业务场景引入】**\n\n在大宗商品分析中，我们经常需要对大量数据进行矩阵运算。例如：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt02",
+      "lecture02",
+      "nb02"
+    ],
+    "keywords": [
+      "numpy",
+      "NumPy 数组运算",
+      "第2章"
+    ]
+  },
+  {
+    "id": "pandas",
+    "name": "Pandas 数据框与读取",
+    "module": "A",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH02",
+    "parent": "data",
+    "description": "利用 DataFrame 管理变量标签、索引和表格数据。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：利用 DataFrame 管理变量标签、索引和表格数据。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture02",
+        "locator": "讲义 L655–L678",
+        "start": 655,
+        "end": 678,
+        "excerpt": "#### 2.4.1 DataFrame的创建与读取\n\n```python\nimport pandas as pd\n",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt02",
+      "lecture02",
+      "nb02"
+    ],
+    "keywords": [
+      "pandas",
+      "Pandas 数据框与读取",
+      "第2章"
+    ]
+  },
+  {
+    "id": "mean",
+    "name": "均值与离散程度",
+    "module": "A",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH02",
+    "parent": "data",
+    "description": "用位置与离散统计量概括分布，同时留意极端值和样本量。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：用位置与离散统计量概括分布，同时留意极端值和样本量。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture02",
+        "locator": "讲义 L764–L787",
+        "start": 764,
+        "end": 787,
+        "excerpt": "#### 2.5.1 描述性统计量\n\n```python\nimport numpy as np\nimport pandas as pd",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt02",
+      "lecture02",
+      "nb02"
+    ],
+    "keywords": [
+      "mean",
+      "均值与离散程度",
+      "第2章"
+    ]
+  },
+  {
+    "id": "corrmat",
+    "name": "相关系数矩阵",
+    "module": "A",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH06",
+    "parent": "",
+    "description": "矩阵元素表示变量两两线性相关，是基于相关矩阵的降维输入。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：矩阵元素表示变量两两线性相关，是基于相关矩阵的降维输入。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L707–L730",
+        "start": 707,
+        "end": 730,
+        "excerpt": "#### 6.3.3 计算相关系数矩阵\n\n计算所有变量两两之间的Pearson相关系数，构成 $p \\times p$ 的对称相关系数矩阵 $R$：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "corrmat",
+      "相关系数矩阵",
+      "第6章"
+    ]
+  },
+  {
+    "id": "cov",
+    "name": "协方差矩阵",
+    "module": "A",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH06",
+    "parent": "",
+    "description": "对角线记录方差，非对角线记录协方差，结果受变量单位影响。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：对角线记录方差，非对角线记录协方差，结果受变量单位影响。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L94–L117",
+        "start": 94,
+        "end": 117,
+        "excerpt": "#### 6.1.2 PCA的核心思想\n\nPCA的核心思想可以用一句话概括：**找到一组新的正交坐标轴，使得数据在这些轴上的投影方差依次最大**。\n\n**几何直觉**：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "cov",
+      "协方差矩阵",
+      "第6章"
+    ]
+  },
+  {
+    "id": "eigen",
+    "name": "特征值与特征向量",
+    "module": "A",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH06",
+    "parent": "",
+    "description": "在对称矩阵上寻找正交方向及对应变异尺度，为 PCA 提供计算基础。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：在对称矩阵上寻找正交方向及对应变异尺度，为 PCA 提供计算基础。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L757–L780",
+        "start": 757,
+        "end": 780,
+        "excerpt": "#### 6.3.4 特征值分解\n\n对相关系数矩阵 $R$ 做特征值分解：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "eigen",
+      "特征值与特征向量",
+      "第6章"
+    ],
+    "reading_suggestions": [
+      {
+        "resource_id": "book5",
+        "page": 16,
+        "note": "李东风《多元统计分析讲义》2024 年版；本轮核对指定页，R 代码不作为 Python 实现来源。"
+      }
+    ]
+  },
+  {
+    "id": "svd",
+    "name": "奇异值分解 SVD",
+    "module": "A",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH08",
+    "parent": "",
+    "description": "把矩阵分解为左右正交方向和奇异值，支持低秩表示。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：把矩阵分解为左右正交方向和奇异值，支持低秩表示。",
+    "misconception": "先核对频数总计、空行列、缩放与惯量；任意行列点间距离不能直接解释为关联强度。",
+    "sources": [
+      {
+        "resource_id": "lecture08",
+        "locator": "讲义 L146–L169",
+        "start": 146,
+        "end": 169,
+        "excerpt": "#### 8.2.4 过渡矩阵与奇异值分解\n\n**过渡矩阵**的构建：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt08",
+      "lecture08",
+      "nb08"
+    ],
+    "keywords": [
+      "svd",
+      "奇异值分解 SVD",
+      "第8章"
+    ]
+  },
+  {
+    "id": "distance",
+    "name": "距离与相似性",
+    "module": "A",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH04",
+    "parent": "",
+    "description": "用适当距离表达样本差异；度量的选择会改变聚类结果。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：用适当距离表达样本差异；度量的选择会改变聚类结果。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L172–L195",
+        "start": 172,
+        "end": 195,
+        "excerpt": "#### 4.2.1 距离的概念\n\n**【图形化说明：距离的几何直觉】**\n\n想象一个二维平面上有5个点，我们需要衡量它们之间的\"远近\"。不同距离度量会给出不同的\"远近\"判断。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "distance",
+      "距离与相似性",
+      "第4章"
+    ]
+  },
+  {
+    "id": "euclidean",
+    "name": "欧氏距离",
+    "module": "A",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH04",
+    "parent": "distance",
+    "description": "计算坐标差平方和的平方根，对变量量纲敏感。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：计算坐标差平方和的平方根，对变量量纲敏感。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L172–L195",
+        "start": 172,
+        "end": 195,
+        "excerpt": "#### 4.2.1 距离的概念\n\n**【图形化说明：距离的几何直觉】**\n\n想象一个二维平面上有5个点，我们需要衡量它们之间的\"远近\"。不同距离度量会给出不同的\"远近\"判断。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "euclidean",
+      "欧氏距离",
+      "第4章"
+    ]
+  },
+  {
+    "id": "mahalanobis",
+    "name": "马氏距离",
+    "module": "A",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH04",
+    "parent": "distance",
+    "description": "利用协方差结构调整距离，需检查协方差矩阵可逆性与稳定性。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：利用协方差结构调整距离，需检查协方差矩阵可逆性与稳定性。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L803–L826",
+        "start": 803,
+        "end": 826,
+        "excerpt": "#### 4.2.6 马氏距离的详细推导与计算\n\n**马氏距离的推导过程**：\n\n设 $p$ 维随机向量 $X$ 的协方差矩阵为 $\\Sigma$。马氏距离的定义为：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "mahalanobis",
+      "马氏距离",
+      "第4章"
+    ]
+  },
+  {
+    "id": "eda",
+    "name": "探索性数据分析",
+    "module": "B",
+    "level": 1,
+    "type": "method",
+    "chapter": "CH03",
+    "parent": "",
+    "description": "先观察分布、异常值与变量关系，再决定模型和预处理方式。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：先观察分布、异常值与变量关系，再决定模型和预处理方式。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture03",
+        "locator": "讲义 L5–L28",
+        "start": 5,
+        "end": 28,
+        "excerpt": "### 一、教学目标\n\n通过本章学习，学生应具备以下核心能力：\n\n1. **Matplotlib基础绑图**：掌握figure/axes对象模型，能够创建折线图、柱状图、散点图、饼图等基本图形，并进行标题、标签、图例、颜色等参数设置。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt03",
+      "lecture03",
+      "nb03"
+    ],
+    "keywords": [
+      "eda",
+      "探索性数据分析",
+      "第3章"
+    ]
+  },
+  {
+    "id": "boxplot",
+    "name": "箱线图",
+    "module": "B",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH03",
+    "parent": "eda",
+    "description": "通过中位数、四分位数与须展示分布，异常标记是复核线索。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：通过中位数、四分位数与须展示分布，异常标记是复核线索。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture03",
+        "locator": "讲义 L260–L283",
+        "start": 260,
+        "end": 283,
+        "excerpt": "#### 3.3.1 箱线图\n\n**箱线图的五数概括**：最小值、Q1（25%分位数）、中位数、Q3（75%分位数）、最大值。IQR = Q3 - Q1，超出Q1-1.5×IQR或Q3+1.5×IQR的点为异常值。\n\n```python",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt03",
+      "lecture03",
+      "nb03"
+    ],
+    "keywords": [
+      "boxplot",
+      "箱线图",
+      "第3章"
+    ]
+  },
+  {
+    "id": "histogram",
+    "name": "直方图与核密度",
+    "module": "B",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH03",
+    "parent": "eda",
+    "description": "展示单变量分布形状，分箱与带宽会影响视觉判断。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：展示单变量分布形状，分箱与带宽会影响视觉判断。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture03",
+        "locator": "讲义 L307–L330",
+        "start": 307,
+        "end": 330,
+        "excerpt": "#### 3.3.2 直方图与核密度图\n\n```python\nfig, axes = plt.subplots(1, 3, figsize=(18, 5))\n",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt03",
+      "lecture03",
+      "nb03"
+    ],
+    "keywords": [
+      "histogram",
+      "直方图与核密度",
+      "第3章"
+    ]
+  },
+  {
+    "id": "scatter",
+    "name": "散点图",
+    "module": "B",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH03",
+    "parent": "eda",
+    "description": "观察两个变量的关系、非线性与异常点，不能单凭图形识别因果。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：观察两个变量的关系、非线性与异常点，不能单凭图形识别因果。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture03",
+        "locator": "讲义 L338–L361",
+        "start": 338,
+        "end": 361,
+        "excerpt": "#### 3.4.1 散点图\n\n```python\nfig, axes = plt.subplots(1, 2, figsize=(14, 6))\n",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt03",
+      "lecture03",
+      "nb03"
+    ],
+    "keywords": [
+      "scatter",
+      "散点图",
+      "第3章"
+    ]
+  },
+  {
+    "id": "pairplot",
+    "name": "散点图矩阵",
+    "module": "B",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH03",
+    "parent": "eda",
+    "description": "用成对散点图快速检查多个变量的关系与分组模式。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：用成对散点图快速检查多个变量的关系与分组模式。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture03",
+        "locator": "讲义 L362–L385",
+        "start": 362,
+        "end": 385,
+        "excerpt": "#### 3.4.2 散点图矩阵（PairPlot）\n\n```python\nfrom sklearn.datasets import load_iris\n",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt03",
+      "lecture03",
+      "nb03"
+    ],
+    "keywords": [
+      "pairplot",
+      "散点图矩阵",
+      "第3章"
+    ]
+  },
+  {
+    "id": "heatmap",
+    "name": "相关热力图",
+    "module": "B",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH03",
+    "parent": "eda",
+    "description": "用颜色编码相关系数，同时保留数值尺度和变量标签。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：用颜色编码相关系数，同时保留数值尺度和变量标签。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture03",
+        "locator": "讲义 L382–L405",
+        "start": 382,
+        "end": 405,
+        "excerpt": "#### 3.4.3 相关系数热力图\n\n```python\ncorr = df.corr()\n",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt03",
+      "lecture03",
+      "nb03"
+    ],
+    "keywords": [
+      "heatmap",
+      "相关热力图",
+      "第3章"
+    ]
+  },
+  {
+    "id": "pearson",
+    "name": "Pearson 相关分析",
+    "module": "B",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH09",
+    "parent": "",
+    "description": "衡量两个变量线性关联的方向和强度，对异常值较敏感。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：衡量两个变量线性关联的方向和强度，对异常值较敏感。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L91–L114",
+        "start": 91,
+        "end": 114,
+        "excerpt": "#### 9.2.1 Pearson相关系数\n\n**（1）公式**\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "pearson",
+      "Pearson 相关分析",
+      "第9章"
+    ]
+  },
+  {
+    "id": "spearman",
+    "name": "Spearman 秩相关",
+    "module": "B",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH09",
+    "parent": "",
+    "description": "基于秩衡量单调关联，可用于有序数据与非线性单调关系。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：基于秩衡量单调关联，可用于有序数据与非线性单调关系。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L240–L263",
+        "start": 240,
+        "end": 263,
+        "excerpt": "#### 9.2.2 Spearman秩相关系数\n\n将数据转换为秩次后计算Pearson相关，适用于非正态分布数据或有序分类数据。\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "spearman",
+      "Spearman 秩相关",
+      "第9章"
+    ]
+  },
+  {
+    "id": "partial",
+    "name": "偏相关",
+    "module": "B",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH09",
+    "parent": "pearson",
+    "description": "控制其他变量的线性影响后描述两个变量的相关性。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：控制其他变量的线性影响后描述两个变量的相关性。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L394–L417",
+        "start": 394,
+        "end": 417,
+        "excerpt": "#### 9.3.1 偏相关系数\n\n控制其他变量后，$X_i$ 和 $X_j$ 的净相关：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "partial",
+      "偏相关",
+      "第9章"
+    ]
+  },
+  {
+    "id": "corrcaution",
+    "name": "相关与因果的区别",
+    "module": "B",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH09",
+    "parent": "pearson",
+    "description": "共同原因、反向作用和趋势均可能产生相关，相关系数不能单独证明因果。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：共同原因、反向作用和趋势均可能产生相关，相关系数不能单独证明因果。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L44–L67",
+        "start": 44,
+        "end": 67,
+        "excerpt": "#### 9.1.1 相关关系与因果关系\n\n**【业务场景引入】**\n\n在大宗商品市场中，铜价和油价通常呈正相关。但这是否意味着\"铜价上涨导致油价上涨\"？",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "corrcaution",
+      "相关与因果的区别",
+      "第9章"
+    ]
+  },
+  {
+    "id": "vizpython",
+    "name": "Matplotlib 可视化",
+    "module": "B",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH03",
+    "parent": "eda",
+    "description": "构造带标题、变量单位与图例的可读统计图形。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：构造带标题、变量单位与图例的可读统计图形。",
+    "misconception": "先检查观测单位、变量类型与数据质量，再进行计算和解释。",
+    "sources": [
+      {
+        "resource_id": "lecture03",
+        "locator": "讲义 L58–L81",
+        "start": 58,
+        "end": 81,
+        "excerpt": "#### 3.1.1 Matplotlib基础\n\n**【业务场景引入】**\n\n在大宗商品分析中，可视化是沟通数据洞察的核心工具。一个优秀的图表可以：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt03",
+      "lecture03",
+      "nb03"
+    ],
+    "keywords": [
+      "vizpython",
+      "Matplotlib 可视化",
+      "第3章"
+    ]
+  },
+  {
+    "id": "pca",
+    "name": "主成分分析 PCA",
+    "module": "C",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH06",
+    "parent": "",
+    "description": "寻找保留最大变异的正交线性组合，以少数主成分概括多变量信息。",
+    "importance": 5,
+    "learning_objective": "能够解释并判断：寻找保留最大变异的正交线性组合，以少数主成分概括多变量信息。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L94–L117",
+        "start": 94,
+        "end": 117,
+        "excerpt": "#### 6.1.2 PCA的核心思想\n\nPCA的核心思想可以用一句话概括：**找到一组新的正交坐标轴，使得数据在这些轴上的投影方差依次最大**。\n\n**几何直觉**：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "pca",
+      "主成分分析 PCA",
+      "第6章"
+    ],
+    "reading_suggestions": [
+      {
+        "resource_id": "book5",
+        "page": 395,
+        "note": "李东风《多元统计分析讲义》2024 年版；本轮核对指定页，R 代码不作为 Python 实现来源。"
+      }
+    ],
+    "formula": "zₖ = Xc vₖ；S vₖ = λₖ vₖ",
+    "inputs": "中心化或按目标标准化的数值矩阵",
+    "outputs": "主成分方向、贡献率、样本得分"
+  },
+  {
+    "id": "maxvar",
+    "name": "最大方差准则",
+    "module": "C",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH06",
+    "parent": "pca",
+    "description": "在单位长度约束下最大化投影方差；后续方向与已有主成分正交。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：在单位长度约束下最大化投影方差；后续方向与已有主成分正交。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L94–L117",
+        "start": 94,
+        "end": 117,
+        "excerpt": "#### 6.1.2 PCA的核心思想\n\nPCA的核心思想可以用一句话概括：**找到一组新的正交坐标轴，使得数据在这些轴上的投影方差依次最大**。\n\n**几何直觉**：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "maxvar",
+      "最大方差准则",
+      "第6章"
+    ]
+  },
+  {
+    "id": "pcamath",
+    "name": "主成分线性组合",
+    "module": "C",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH06",
+    "parent": "pca",
+    "description": "主成分是中心化变量的线性组合，系数由所用矩阵的特征向量确定。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：主成分是中心化变量的线性组合，系数由所用矩阵的特征向量确定。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L223–L246",
+        "start": 223,
+        "end": 246,
+        "excerpt": "#### 6.2.1 主成分的数学表达\n\n**（1）从协方差矩阵出发的推导**\n\n设 $X = (X_1, X_2, \\ldots, X_p)^T$ 为 $p$ 维随机向量，均值为 $\\boldsymbol{\\mu}$，协方差矩阵为 $\\boldsymbol{\\Sigma}$。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "pcamath",
+      "主成分线性组合",
+      "第6章"
+    ]
+  },
+  {
+    "id": "variance",
+    "name": "方差贡献率",
+    "module": "C",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH06",
+    "parent": "pca",
+    "description": "一个特征值占全部特征值之和的比例，描述该成分保留的变异。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：一个特征值占全部特征值之和的比例，描述该成分保留的变异。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L312–L335",
+        "start": 312,
+        "end": 335,
+        "excerpt": "#### 6.2.2 方差贡献率与累计贡献率\n\n**方差贡献率**：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "variance",
+      "方差贡献率",
+      "第6章"
+    ]
+  },
+  {
+    "id": "cumulative",
+    "name": "累计方差贡献率",
+    "module": "C",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH06",
+    "parent": "pca",
+    "description": "前若干成分贡献率之和，应结合任务需求与解释性决定保留信息量。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：前若干成分贡献率之和，应结合任务需求与解释性决定保留信息量。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L312–L335",
+        "start": 312,
+        "end": 335,
+        "excerpt": "#### 6.2.2 方差贡献率与累计贡献率\n\n**方差贡献率**：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "cumulative",
+      "累计方差贡献率",
+      "第6章"
+    ]
+  },
+  {
+    "id": "pcaload",
+    "name": "主成分载荷",
+    "module": "C",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH06",
+    "parent": "pca",
+    "description": "描述变量与主成分的联系，解释时应区分载荷与特征向量系数。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：描述变量与主成分的联系，解释时应区分载荷与特征向量系数。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L377–L400",
+        "start": 377,
+        "end": 400,
+        "excerpt": "#### 6.2.3 主成分载荷\n\n**（1）载荷的定义**\n\n主成分载荷是主成分与原始变量之间的相关系数：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "pcaload",
+      "主成分载荷",
+      "第6章"
+    ]
+  },
+  {
+    "id": "pcacount",
+    "name": "主成分个数选择",
+    "module": "C",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH06",
+    "parent": "pca",
+    "description": "综合贡献率、碎石图与分析目的选取维数，阈值不是通用定律。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：综合贡献率、碎石图与分析目的选取维数，阈值不是通用定律。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L465–L488",
+        "start": 465,
+        "end": 488,
+        "excerpt": "#### 6.2.4 主成分个数的确定\n\n**（1）Kaiser准则（特征值大于1准则）**\n\n保留特征值 $\\lambda_i > 1$ 的主成分（标准化数据）。因为特征值 < 1 的主成分其方差小于一个标准化原始变量的方差（= 1），解释力不足。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "pcacount",
+      "主成分个数选择",
+      "第6章"
+    ]
+  },
+  {
+    "id": "scree",
+    "name": "碎石图",
+    "module": "C",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH06",
+    "parent": "pca",
+    "description": "按顺序绘制特征值，观察下降趋势与拐点以辅助维数选择。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：按顺序绘制特征值，观察下降趋势与拐点以辅助维数选择。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L465–L488",
+        "start": 465,
+        "end": 488,
+        "excerpt": "#### 6.2.4 主成分个数的确定\n\n**（1）Kaiser准则（特征值大于1准则）**\n\n保留特征值 $\\lambda_i > 1$ 的主成分（标准化数据）。因为特征值 < 1 的主成分其方差小于一个标准化原始变量的方差（= 1），解释力不足。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "scree",
+      "碎石图",
+      "第6章"
+    ]
+  },
+  {
+    "id": "pcascore",
+    "name": "主成分得分计算",
+    "module": "C",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH06",
+    "parent": "pca",
+    "description": "将按训练口径处理的数据投影到主成分方向，得到每个样本的坐标。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：将按训练口径处理的数据投影到主成分方向，得到每个样本的坐标。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L800–L823",
+        "start": 800,
+        "end": 823,
+        "excerpt": "#### 6.3.5 主成分得分计算\n\n第 $i$ 个主成分得分：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "pcascore",
+      "主成分得分计算",
+      "第6章"
+    ]
+  },
+  {
+    "id": "pcapython",
+    "name": "Python PCA 实现",
+    "module": "C",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH06",
+    "parent": "pca",
+    "description": "用矩阵分解或 sklearn PCA 完成拟合与变换，并检查解释方差。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：用矩阵分解或 sklearn PCA 完成拟合与变换，并检查解释方差。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L854–L877",
+        "start": 854,
+        "end": 877,
+        "excerpt": "#### 6.3.6 手动实现PCA\n\n为了深入理解PCA的原理，我们可以手动实现完整的PCA流程：\n\n```python",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "pcapython",
+      "Python PCA 实现",
+      "第6章"
+    ]
+  },
+  {
+    "id": "pcainterpret",
+    "name": "主成分命名与符号",
+    "module": "C",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH06",
+    "parent": "pca",
+    "description": "依据变量载荷解释主成分；整体符号翻转不改变其数学含义。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：依据变量载荷解释主成分；整体符号翻转不改变其数学含义。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L1284–L1307",
+        "start": 1284,
+        "end": 1307,
+        "excerpt": "#### 6.4.5 主成分命名的技巧\n\n主成分命名是PCA中最具挑战性的环节之一。以下是一些实用技巧：\n\n1. **看载荷绝对值**：绝对值大的变量对主成分贡献大",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "pcainterpret",
+      "主成分命名与符号",
+      "第6章"
+    ]
+  },
+  {
+    "id": "fa",
+    "name": "因子分析 FA",
+    "module": "C",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH07",
+    "parent": "",
+    "description": "以公共因子和特殊部分解释观测变量的共变异，探索潜在结构。",
+    "importance": 5,
+    "learning_objective": "能够解释并判断：以公共因子和特殊部分解释观测变量的共变异，探索潜在结构。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L54–L77",
+        "start": 54,
+        "end": 77,
+        "excerpt": "#### 7.1.1 因子分析的核心思想\n\n**【业务场景引入】**\n\n假设你是一名教育研究者，收集了100名学生的6门课程成绩：语文、英语、历史、数学、物理、化学。你怀疑这6门课程的成绩背后可能存在2个潜在的\"能力因子\"：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "lecture07",
+      "nb07"
+    ],
+    "keywords": [
+      "fa",
+      "因子分析 FA",
+      "第7章"
+    ],
+    "reading_suggestions": [
+      {
+        "resource_id": "book5",
+        "page": 441,
+        "note": "李东风《多元统计分析讲义》2024 年版；本轮核对指定页，R 代码不作为 Python 实现来源。"
+      }
+    ],
+    "formula": "X = ΛF + ε",
+    "inputs": "相关数值指标与潜变量建模目标",
+    "outputs": "载荷、共同度、旋转结果、因子得分"
+  },
+  {
+    "id": "famodel",
+    "name": "公共因子模型",
+    "module": "C",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH07",
+    "parent": "fa",
+    "description": "用 X = AF + ε 表达观测变量、公共因子载荷与特殊部分。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：用 X = AF + ε 表达观测变量、公共因子载荷与特殊部分。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L75–L98",
+        "start": 75,
+        "end": 98,
+        "excerpt": "#### 7.1.2 因子分析模型的数学表达\n\n**（1）模型定义**\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "lecture07",
+      "nb07"
+    ],
+    "keywords": [
+      "famodel",
+      "公共因子模型",
+      "第7章"
+    ]
+  },
+  {
+    "id": "faload",
+    "name": "因子载荷",
+    "module": "C",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH07",
+    "parent": "fa",
+    "description": "载荷连接观测变量与公共因子；相关解释需结合标准化及旋转口径。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：载荷连接观测变量与公共因子；相关解释需结合标准化及旋转口径。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L181–L204",
+        "start": 181,
+        "end": 204,
+        "excerpt": "#### 7.2.1 因子载荷的统计意义\n\n在标准化条件下（$E(X_i) = 0$，$\\text{Var}(X_i) = 1$），因子载荷具有重要的统计意义：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "lecture07",
+      "nb07"
+    ],
+    "keywords": [
+      "faload",
+      "因子载荷",
+      "第7章"
+    ]
+  },
+  {
+    "id": "communality",
+    "name": "共同度与特殊方差",
+    "module": "C",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH07",
+    "parent": "fa",
+    "description": "共同度描述公共因子解释的变量方差，特殊方差描述未被解释的部分。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：共同度描述公共因子解释的变量方差，特殊方差描述未被解释的部分。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L209–L232",
+        "start": 209,
+        "end": 232,
+        "excerpt": "#### 7.2.2 共同度与特殊方差\n\n**（1）共同度（Communality）**\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "lecture07",
+      "nb07"
+    ],
+    "keywords": [
+      "communality",
+      "共同度与特殊方差",
+      "第7章"
+    ]
+  },
+  {
+    "id": "rotation",
+    "name": "因子旋转",
+    "module": "C",
+    "level": 4,
+    "type": "method",
+    "chapter": "CH07",
+    "parent": "fa",
+    "description": "通过改变因子坐标简化载荷结构，提高解释性。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：通过改变因子坐标简化载荷结构，提高解释性。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L479–L502",
+        "start": 479,
+        "end": 502,
+        "excerpt": "#### 7.3.1 因子旋转的目的\n\n初始因子载荷矩阵往往各元素大小相近，难以解释。因子旋转的目的是：**使载荷向0和±1两极分化，便于因子的实际解释**。\n\n**旋转前**：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "lecture07",
+      "nb07"
+    ],
+    "keywords": [
+      "rotation",
+      "因子旋转",
+      "第7章"
+    ]
+  },
+  {
+    "id": "varimax",
+    "name": "Varimax 正交旋转",
+    "module": "C",
+    "level": 3,
+    "type": "method",
+    "chapter": "CH07",
+    "parent": "fa",
+    "description": "在保持因子正交的约束下，使载荷结构更清晰。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：在保持因子正交的约束下，使载荷结构更清晰。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L519–L542",
+        "start": 519,
+        "end": 542,
+        "excerpt": "#### 7.3.2 最大方差旋转（Varimax）\n\nVarimax旋转使因子载荷矩阵各列的方差之和最大化：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "lecture07",
+      "nb07"
+    ],
+    "keywords": [
+      "varimax",
+      "Varimax 正交旋转",
+      "第7章"
+    ]
+  },
+  {
+    "id": "promax",
+    "name": "Promax 斜交旋转",
+    "module": "C",
+    "level": 3,
+    "type": "method",
+    "chapter": "CH07",
+    "parent": "fa",
+    "description": "允许因子相关，解释时区分模式矩阵与结构矩阵。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：允许因子相关，解释时区分模式矩阵与结构矩阵。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L572–L595",
+        "start": 572,
+        "end": 595,
+        "excerpt": "#### 7.3.5 斜交旋转（Promax）\n\nPromax旋转先做Varimax旋转，再允许因子相关进行斜交旋转。结果中因子相关矩阵非对角线元素不为0，更符合实际但解释更复杂。\n\n**Promax旋转的步骤**：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "lecture07",
+      "nb07"
+    ],
+    "keywords": [
+      "promax",
+      "Promax 斜交旋转",
+      "第7章"
+    ]
+  },
+  {
+    "id": "fascore",
+    "name": "因子得分",
+    "module": "C",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH07",
+    "parent": "fa",
+    "description": "根据拟合模型估计样本因子值；不同得分方法可能产生不同结果。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：根据拟合模型估计样本因子值；不同得分方法可能产生不同结果。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L656–L679",
+        "start": 656,
+        "end": 679,
+        "excerpt": "#### 7.4.2 回归法计算因子得分（Thomson法）\n\n将因子表示为观测变量的线性组合：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "lecture07",
+      "nb07"
+    ],
+    "keywords": [
+      "fascore",
+      "因子得分",
+      "第7章"
+    ]
+  },
+  {
+    "id": "kmo",
+    "name": "KMO 与 Bartlett 检验",
+    "module": "C",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH07",
+    "parent": "fa",
+    "description": "辅助判断因子提取的适宜性；通过检验不等于模型正确，也不是 PCA 可计算的必要条件。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：辅助判断因子提取的适宜性；通过检验不等于模型正确，也不是 PCA 可计算的必要条件。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L775–L798",
+        "start": 775,
+        "end": 798,
+        "excerpt": "#### 7.5.1 Step 1: 适用性检验\n\n**（1）KMO检验（Kaiser-Meyer-Olkin检验）**\n\nKMO统计量衡量变量之间的偏相关程度，取值范围为0到1。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "lecture07",
+      "nb07"
+    ],
+    "keywords": [
+      "kmo",
+      "KMO 与 Bartlett 检验",
+      "第7章"
+    ]
+  },
+  {
+    "id": "fapython",
+    "name": "Python 因子分析",
+    "module": "C",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH07",
+    "parent": "fa",
+    "description": "完成适用性检查、提取、旋转与得分，并核对载荷解释。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：完成适用性检查、提取、旋转与得分，并核对载荷解释。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L1600–L1623",
+        "start": 1600,
+        "end": 1623,
+        "excerpt": "### 实战案例7-7：完整因子分析流程\n\n```python\nimport numpy as np\nimport pandas as pd",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "lecture07",
+      "nb07"
+    ],
+    "keywords": [
+      "fapython",
+      "Python 因子分析",
+      "第7章"
+    ]
+  },
+  {
+    "id": "ca",
+    "name": "对应分析 CA",
+    "module": "C",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH08",
+    "parent": "",
+    "description": "用低维坐标展示列联表中行类别与列类别的关联结构。",
+    "importance": 5,
+    "learning_objective": "能够解释并判断：用低维坐标展示列联表中行类别与列类别的关联结构。",
+    "misconception": "先核对频数总计、空行列、缩放与惯量；任意行列点间距离不能直接解释为关联强度。",
+    "sources": [
+      {
+        "resource_id": "lecture08",
+        "locator": "讲义 L57–L80",
+        "start": 57,
+        "end": 80,
+        "excerpt": "#### 8.1.2 对应分析与因子分析的关系\n\n| 维度 | 因子分析 | 对应分析 |\n|------|----------|----------|\n| **输入** | 连续变量的相关矩阵 | 分类变量的列联表 |",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt08",
+      "lecture08",
+      "nb08"
+    ],
+    "keywords": [
+      "ca",
+      "对应分析 CA",
+      "第8章"
+    ],
+    "reading_suggestions": [
+      {
+        "resource_id": "book5",
+        "page": 479,
+        "note": "李东风《多元统计分析讲义》2024 年版；本轮核对指定页，R 代码不作为 Python 实现来源。"
+      }
+    ],
+    "formula": "列联表 → 轮廓 → 低维行列坐标",
+    "inputs": "非负频数表；其他权重表须另说明解释",
+    "outputs": "行列坐标、惯量与贡献率"
+  },
+  {
+    "id": "contingency",
+    "name": "列联表与频数矩阵",
+    "module": "C",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH08",
+    "parent": "ca",
+    "description": "按两个分类变量交叉统计频数；先核对总计与空行空列。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：按两个分类变量交叉统计频数；先核对总计与空行空列。",
+    "misconception": "先核对频数总计、空行列、缩放与惯量；任意行列点间距离不能直接解释为关联强度。",
+    "sources": [
+      {
+        "resource_id": "lecture08",
+        "locator": "讲义 L77–L100",
+        "start": 77,
+        "end": 100,
+        "excerpt": "#### 8.2.1 列联表与频数矩阵\n\n**【业务场景引入】**\n\n某市场调研公司调查了500名消费者对5个品牌的偏好（非常喜欢、喜欢、一般、不喜欢），得到如下列联表：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt08",
+      "lecture08",
+      "nb08"
+    ],
+    "keywords": [
+      "contingency",
+      "列联表与频数矩阵",
+      "第8章"
+    ]
+  },
+  {
+    "id": "profiles",
+    "name": "行轮廓与列轮廓",
+    "module": "C",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH08",
+    "parent": "ca",
+    "description": "将频数按行或按列归一化，描述条件分布。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：将频数按行或按列归一化，描述条件分布。",
+    "misconception": "先核对频数总计、空行列、缩放与惯量；任意行列点间距离不能直接解释为关联强度。",
+    "sources": [
+      {
+        "resource_id": "lecture08",
+        "locator": "讲义 L122–L145",
+        "start": 122,
+        "end": 145,
+        "excerpt": "#### 8.2.3 行轮廓与列轮廓\n\n**行轮廓**：每行各元素占该行总和的比例\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt08",
+      "lecture08",
+      "nb08"
+    ],
+    "keywords": [
+      "profiles",
+      "行轮廓与列轮廓",
+      "第8章"
+    ]
+  },
+  {
+    "id": "inertia",
+    "name": "惯量与贡献率",
+    "module": "C",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH08",
+    "parent": "ca",
+    "description": "用惯量衡量偏离独立性的结构，贡献率描述低维表示保留的比例。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：用惯量衡量偏离独立性的结构，贡献率描述低维表示保留的比例。",
+    "misconception": "先核对频数总计、空行列、缩放与惯量；任意行列点间距离不能直接解释为关联强度。",
+    "sources": [
+      {
+        "resource_id": "lecture08",
+        "locator": "讲义 L183–L206",
+        "start": 183,
+        "end": 206,
+        "excerpt": "#### 8.2.5 惯量与累计贡献率\n\n**惯量**（Inertia）：每个维度解释的总卡方统计量的比例\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt08",
+      "lecture08",
+      "nb08"
+    ],
+    "keywords": [
+      "inertia",
+      "惯量与贡献率",
+      "第8章"
+    ]
+  },
+  {
+    "id": "capython",
+    "name": "Python 对应分析",
+    "module": "C",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH08",
+    "parent": "ca",
+    "description": "对非负频数表进行对应分析，提取行列坐标并绘图。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：对非负频数表进行对应分析，提取行列坐标并绘图。",
+    "misconception": "先核对频数总计、空行列、缩放与惯量；任意行列点间距离不能直接解释为关联强度。",
+    "sources": [
+      {
+        "resource_id": "lecture08",
+        "locator": "讲义 L553–L576",
+        "start": 553,
+        "end": 576,
+        "excerpt": "#### 8.6.1 使用prince库进行对应分析\n\n```python\nimport prince\nimport pandas as pd",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt08",
+      "lecture08",
+      "nb08"
+    ],
+    "keywords": [
+      "capython",
+      "Python 对应分析",
+      "第8章"
+    ]
+  },
+  {
+    "id": "cainterpret",
+    "name": "对应分析图解读",
+    "module": "C",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH08",
+    "parent": "ca",
+    "description": "先核对坐标缩放与惯量保留；不能把任意行点和列点距离直接当成关联强度。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：先核对坐标缩放与惯量保留；不能把任意行点和列点距离直接当成关联强度。",
+    "misconception": "先核对频数总计、空行列、缩放与惯量；任意行列点间距离不能直接解释为关联强度。",
+    "sources": [
+      {
+        "resource_id": "lecture08",
+        "locator": "讲义 L224–L247",
+        "start": 224,
+        "end": 247,
+        "excerpt": "#### 8.3.2 对应分析图的解读\n\n**（1）点间距离的含义**\n\n- 距离近的行点和列点关联性强",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt08",
+      "lecture08",
+      "nb08"
+    ],
+    "keywords": [
+      "cainterpret",
+      "对应分析图解读",
+      "第8章"
+    ]
+  },
+  {
+    "id": "evaluation",
+    "name": "多指标综合评价",
+    "module": "C",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH05",
+    "parent": "",
+    "description": "围绕评价目标选择指标、处理方向与量纲、赋权并汇总为综合结果。",
+    "importance": 5,
+    "learning_objective": "能够解释并判断：围绕评价目标选择指标、处理方向与量纲、赋权并汇总为综合结果。",
+    "misconception": "权重反映特定评价口径，须报告方向处理与敏感性，不能把排名当作绝对事实。",
+    "sources": [
+      {
+        "resource_id": "lecture05",
+        "locator": "讲义 L77–L100",
+        "start": 77,
+        "end": 100,
+        "excerpt": "#### 5.1.1 什么是综合评价？\n\n**【业务场景引入】**\n\n假设你是某省发改委的分析师，需要对下属15个地级市的经济发展水平进行综合评价。你收集了以下指标：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt05",
+      "lecture05",
+      "nb05"
+    ],
+    "keywords": [
+      "evaluation",
+      "多指标综合评价",
+      "第5章"
+    ],
+    "formula": "指标 → 同向化 → 无量纲化 → 赋权 → 汇总",
+    "inputs": "评价目标、指标方向、权重依据",
+    "outputs": "综合得分、排序及敏感性"
+  },
+  {
+    "id": "indicators",
+    "name": "评价指标体系",
+    "module": "C",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH05",
+    "parent": "evaluation",
+    "description": "兼顾覆盖、可比性和可操作性，避免高度重复指标被重复计权。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：兼顾覆盖、可比性和可操作性，避免高度重复指标被重复计权。",
+    "misconception": "权重反映特定评价口径，须报告方向处理与敏感性，不能把排名当作绝对事实。",
+    "sources": [
+      {
+        "resource_id": "lecture05",
+        "locator": "讲义 L115–L138",
+        "start": 115,
+        "end": 138,
+        "excerpt": "#### 5.1.4 指标体系的构建原则\n\n| 原则 | 含义 | 示例 |\n|------|------|------|\n| **系统全面性** | 覆盖评价对象的各个方面 | 经济、社会、环境、民生 |",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt05",
+      "lecture05",
+      "nb05"
+    ],
+    "keywords": [
+      "indicators",
+      "评价指标体系",
+      "第5章"
+    ]
+  },
+  {
+    "id": "direction",
+    "name": "正向与逆向指标",
+    "module": "C",
+    "level": 1,
+    "type": "concept",
+    "chapter": "CH05",
+    "parent": "evaluation",
+    "description": "先明确指标是越大越好、越小越好或适中最优，再统一评价方向。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：先明确指标是越大越好、越小越好或适中最优，再统一评价方向。",
+    "misconception": "权重反映特定评价口径，须报告方向处理与敏感性，不能把排名当作绝对事实。",
+    "sources": [
+      {
+        "resource_id": "lecture05",
+        "locator": "讲义 L124–L147",
+        "start": 124,
+        "end": 147,
+        "excerpt": "#### 5.1.5 指标的分类\n\n**按方向分**：\n- **正向指标**（越大越好）：GDP、人均收入、教育投入\n- **逆向指标**（越小越好）：失业率、犯罪率、污染排放量",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt05",
+      "lecture05",
+      "nb05"
+    ],
+    "keywords": [
+      "direction",
+      "正向与逆向指标",
+      "第5章"
+    ]
+  },
+  {
+    "id": "ahp",
+    "name": "层次分析法 AHP",
+    "module": "C",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH05",
+    "parent": "evaluation",
+    "description": "利用成对判断形成权重，需检查判断矩阵一致性。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：利用成对判断形成权重，需检查判断矩阵一致性。",
+    "misconception": "权重反映特定评价口径，须报告方向处理与敏感性，不能把排名当作绝对事实。",
+    "sources": [
+      {
+        "resource_id": "lecture05",
+        "locator": "讲义 L231–L254",
+        "start": 231,
+        "end": 254,
+        "excerpt": "#### 5.3.1 层次分析法（AHP）\n\n**【业务场景引入】**\n\n在综合评价中，不同指标的重要性不同。例如，在评价城市发展水平时，\"GDP\"可能比\"绿化率\"更重要。如何科学地确定各指标的权重？",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt05",
+      "lecture05",
+      "nb05"
+    ],
+    "keywords": [
+      "ahp",
+      "层次分析法 AHP",
+      "第5章"
+    ]
+  },
+  {
+    "id": "entropy",
+    "name": "熵权法",
+    "module": "C",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH05",
+    "parent": "evaluation",
+    "description": "根据指标在样本中的差异确定信息权重，不等同于价值重要性。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：根据指标在样本中的差异确定信息权重，不等同于价值重要性。",
+    "misconception": "权重反映特定评价口径，须报告方向处理与敏感性，不能把排名当作绝对事实。",
+    "sources": [
+      {
+        "resource_id": "lecture05",
+        "locator": "讲义 L308–L331",
+        "start": 308,
+        "end": 331,
+        "excerpt": "#### 5.3.2 熵权法\n\n**（1）基本思想**\n\n熵权法是客观赋权方法，其核心思想是：**指标的变异越大，包含的信息越多，权重应该越高**。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt05",
+      "lecture05",
+      "nb05"
+    ],
+    "keywords": [
+      "entropy",
+      "熵权法",
+      "第5章"
+    ]
+  },
+  {
+    "id": "topsis",
+    "name": "TOPSIS 理想解法",
+    "module": "C",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH05",
+    "parent": "evaluation",
+    "description": "比较样本到正、负理想解的距离，形成相对接近度与排序。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：比较样本到正、负理想解的距离，形成相对接近度与排序。",
+    "misconception": "权重反映特定评价口径，须报告方向处理与敏感性，不能把排名当作绝对事实。",
+    "sources": [
+      {
+        "resource_id": "lecture05",
+        "locator": "讲义 L406–L429",
+        "start": 406,
+        "end": 429,
+        "excerpt": "#### 5.4.2 TOPSIS法\n\n**【TOPSIS法的完整推导与计算步骤】**\n\nTOPSIS（Technique for Order Preference by Similarity to Ideal Solution）法的核心思想是：**最优方案应该最接近理想解、最远离负理想解**。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt05",
+      "lecture05",
+      "nb05"
+    ],
+    "keywords": [
+      "topsis",
+      "TOPSIS 理想解法",
+      "第5章"
+    ]
+  },
+  {
+    "id": "evalpython",
+    "name": "Python 综合评价",
+    "module": "C",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH05",
+    "parent": "evaluation",
+    "description": "串联同向化、归一化、赋权和排序，并保存中间结果。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：串联同向化、归一化、赋权和排序，并保存中间结果。",
+    "misconception": "权重反映特定评价口径，须报告方向处理与敏感性，不能把排名当作绝对事实。",
+    "sources": [
+      {
+        "resource_id": "lecture05",
+        "locator": "讲义 L509–L532",
+        "start": 509,
+        "end": 532,
+        "excerpt": "### 实战案例5-1：TOPSIS综合评价完整实现\n\n**【业务场景】** 对6个城市的可持续发展水平进行综合评价，使用熵权法确定权重、TOPSIS法进行排序。\n\n```python",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt05",
+      "lecture05",
+      "nb05"
+    ],
+    "keywords": [
+      "evalpython",
+      "Python 综合评价",
+      "第5章"
+    ]
+  },
+  {
+    "id": "sensitivity",
+    "name": "权重敏感性分析",
+    "module": "C",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH05",
+    "parent": "evaluation",
+    "description": "改变权重设定观察排序稳定性，说明评价结论对设定的依赖。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：改变权重设定观察排序稳定性，说明评价结论对设定的依赖。",
+    "misconception": "权重反映特定评价口径，须报告方向处理与敏感性，不能把排名当作绝对事实。",
+    "sources": [
+      {
+        "resource_id": "lecture05",
+        "locator": "讲义 L1931–L1954",
+        "start": 1931,
+        "end": 1954,
+        "excerpt": "#### 6. 灵敏度分析\n\n```python\n# 灵敏度分析\nprint(\"\\n=== 灵敏度分析 ===\")",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt05",
+      "lecture05",
+      "nb05"
+    ],
+    "keywords": [
+      "sensitivity",
+      "权重敏感性分析",
+      "第5章"
+    ]
+  },
+  {
+    "id": "cluster",
+    "name": "聚类分析",
+    "module": "D",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH04",
+    "parent": "",
+    "description": "在没有预先类别标签的情况下，依据相似性寻找样本群体。",
+    "importance": 5,
+    "learning_objective": "能够解释并判断：在没有预先类别标签的情况下，依据相似性寻找样本群体。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L63–L86",
+        "start": 63,
+        "end": 86,
+        "excerpt": "#### 4.1.1 什么是聚类分析？\n\n**【业务场景引入】**\n\n假设你是某大宗商品交易所的风控经理，手头有50家期货公司的交易数据，包括：日均成交量、持仓量、客户数、保证金规模、违规次数等。你需要将这50家公司分为3-5个风险等级，以便实施差异化的监管策略。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "cluster",
+      "聚类分析",
+      "第4章"
+    ],
+    "reading_suggestions": [
+      {
+        "resource_id": "book5",
+        "page": 283,
+        "note": "李东风《多元统计分析讲义》2024 年版；本轮核对指定页，R 代码不作为 Python 实现来源。"
+      }
+    ],
+    "formula": "样本 → 相似性度量 → 群体结构",
+    "inputs": "无标签样本及合适的距离",
+    "outputs": "簇标签、群体画像、稳定性评价"
+  },
+  {
+    "id": "hierarchical",
+    "name": "层次聚类",
+    "module": "D",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH04",
+    "parent": "cluster",
+    "description": "通过逐步合并构成嵌套类别，链接准则会影响树结构。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：通过逐步合并构成嵌套类别，链接准则会影响树结构。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L486–L509",
+        "start": 486,
+        "end": 509,
+        "excerpt": "#### 4.3.1 基本思想\n\n系统聚类法（Hierarchical Clustering）是最直观的聚类方法之一。它的核心思想是：**从每个样品各为一类开始，逐步合并最相似的两类，直到所有样品合并为一类**。\n\n**凝聚型系统聚类的完整流程**：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "hierarchical",
+      "层次聚类",
+      "第4章"
+    ]
+  },
+  {
+    "id": "linkage",
+    "name": "类间距离与链接准则",
+    "module": "D",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH04",
+    "parent": "hierarchical",
+    "description": "单链接、完全链接与平均链接采用不同方式定义两簇差异。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：单链接、完全链接与平均链接采用不同方式定义两簇差异。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L562–L585",
+        "start": 562,
+        "end": 585,
+        "excerpt": "#### 4.3.3 类间距离的定义\n\n**（1）最短距离法（Single Linkage）**\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "linkage",
+      "类间距离与链接准则",
+      "第4章"
+    ]
+  },
+  {
+    "id": "ward",
+    "name": "Ward 方法",
+    "module": "D",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH04",
+    "parent": "hierarchical",
+    "description": "每步优先选择使簇内平方和增加最少的合并，使用时核对欧氏距离口径。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：每步优先选择使簇内平方和增加最少的合并，使用时核对欧氏距离口径。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L562–L585",
+        "start": 562,
+        "end": 585,
+        "excerpt": "#### 4.3.3 类间距离的定义\n\n**（1）最短距离法（Single Linkage）**\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "ward",
+      "Ward 方法",
+      "第4章"
+    ]
+  },
+  {
+    "id": "dendrogram",
+    "name": "树状图解读",
+    "module": "D",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH04",
+    "parent": "hierarchical",
+    "description": "从合并高度与切割位置解释分类层次，而非只看叶节点的左右顺序。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：从合并高度与切割位置解释分类层次，而非只看叶节点的左右顺序。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L646–L669",
+        "start": 646,
+        "end": 669,
+        "excerpt": "#### 4.3.5 谱系图的解读\n\n谱系图（树状图/dendrogram）是系统聚类法最重要的输出：\n\n**解读方法**：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "dendrogram",
+      "树状图解读",
+      "第4章"
+    ]
+  },
+  {
+    "id": "kmeans",
+    "name": "K-means 聚类",
+    "module": "D",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH04",
+    "parent": "cluster",
+    "description": "交替分配样本与更新质心，寻找较小的簇内平方和。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：交替分配样本与更新质心，寻找较小的簇内平方和。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L1064–L1087",
+        "start": 1064,
+        "end": 1087,
+        "excerpt": "#### 4.4.1 K-Means算法的完整步骤\n\n**输入**：数据集 $X = \\{x_1, x_2, \\ldots, x_n\\}$，分类数 $K$\n\n**Step 1 初始化**：随机选择 $K$ 个样品作为初始聚类中心 $c_1, c_2, \\ldots, c_K$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "kmeans",
+      "K-means 聚类",
+      "第4章"
+    ]
+  },
+  {
+    "id": "wcss",
+    "name": "簇内平方和",
+    "module": "D",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH04",
+    "parent": "kmeans",
+    "description": "计算每个样本到所属质心的平方距离之和，随簇数增加通常下降。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：计算每个样本到所属质心的平方距离之和，随簇数增加通常下降。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L1134–L1157",
+        "start": 1134,
+        "end": 1157,
+        "excerpt": "#### 4.4.2 目标函数\n\nK-Means最小化类内平方和：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "wcss",
+      "簇内平方和",
+      "第4章"
+    ]
+  },
+  {
+    "id": "initial",
+    "name": "K-means++ 初始化",
+    "module": "D",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH04",
+    "parent": "kmeans",
+    "description": "用分散的初始中心改善优化起点，同时保留多次初始化检验。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：用分散的初始中心改善优化起点，同时保留多次初始化检验。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L1176–L1199",
+        "start": 1176,
+        "end": 1199,
+        "excerpt": "#### 4.4.3 K-Means++初始化\n\n标准K-Means的初始中心是随机选择的，不同初始值可能得到不同的局部最优解。K-Means++通过以下策略使初始中心尽量分散：\n\n1. 第一个中心随机选择",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "initial",
+      "K-means++ 初始化",
+      "第4章"
+    ]
+  },
+  {
+    "id": "clusterpython",
+    "name": "Python 聚类实现",
+    "module": "D",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH04",
+    "parent": "cluster",
+    "description": "记录标准化、距离、簇数、初始化和随机种子，使结果可复核。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：记录标准化、距离、簇数、初始化和随机种子，使结果可复核。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L982–L1005",
+        "start": 982,
+        "end": 1005,
+        "excerpt": "#### 4.4.6 K-Means的Python实现详解\n\n```python\nimport numpy as np\nimport pandas as pd",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "clusterpython",
+      "Python 聚类实现",
+      "第4章"
+    ]
+  },
+  {
+    "id": "clustercount",
+    "name": "簇数选择与轮廓系数",
+    "module": "D",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH04",
+    "parent": "cluster",
+    "description": "结合肘部、轮廓系数与业务可解释性选择簇数，不只追求单一分数。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：结合肘部、轮廓系数与业务可解释性选择簇数，不只追求单一分数。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L660–L683",
+        "start": 660,
+        "end": 683,
+        "excerpt": "#### 4.3.6 最优分类数的确定\n\n**（1）肘部法则（Elbow Method）**\n\n计算不同 $K$ 值下的类内平方和 $W(K)$：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "clustercount",
+      "簇数选择与轮廓系数",
+      "第4章"
+    ]
+  },
+  {
+    "id": "clusterinterpret",
+    "name": "聚类画像与验证",
+    "module": "D",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH04",
+    "parent": "cluster",
+    "description": "对比群体的原始指标与稳定性；聚类不自动等于真实类别。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：对比群体的原始指标与稳定性；聚类不自动等于真实类别。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L1229–L1252",
+        "start": 1229,
+        "end": 1252,
+        "excerpt": "#### 4.5.3 聚类结果的验证\n\n**（1）内部评价指标**\n\n| 指标 | 公式 | 取值范围 | 含义 |",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "lecture04",
+      "nb04"
+    ],
+    "keywords": [
+      "clusterinterpret",
+      "聚类画像与验证",
+      "第4章"
+    ]
+  },
+  {
+    "id": "discriminant",
+    "name": "判别分析",
+    "module": "D",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH12",
+    "parent": "",
+    "description": "利用已有类别的训练样本建立规则，对新样本进行归类。",
+    "importance": 5,
+    "learning_objective": "能够解释并判断：利用已有类别的训练样本建立规则，对新样本进行归类。",
+    "misconception": "预处理在训练集或训练折内拟合，避免泄漏；类别不平衡时不能只报告准确率。",
+    "sources": [
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L63–L86",
+        "start": 63,
+        "end": 86,
+        "excerpt": "#### 12.1.1 什么是判别分析？\n\n**【业务场景引入】**\n\n某商业银行需要根据客户的财务指标（收入、负债率、信用评分等）判断其信用等级（优、良、差）。已有1000名已知信用等级的客户数据，需要建立判别规则，对新客户进行自动分类。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt12",
+      "lecture12",
+      "nb12"
+    ],
+    "keywords": [
+      "discriminant",
+      "判别分析",
+      "第12章"
+    ],
+    "formula": "x → 判别规则 → 预测类别",
+    "inputs": "带类别标签的特征与独立评估数据",
+    "outputs": "预测类别、分类错误与判别表现"
+  },
+  {
+    "id": "fisher",
+    "name": "Fisher 线性判别",
+    "module": "D",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH12",
+    "parent": "discriminant",
+    "description": "寻找类间差异相对类内离散最大的投影方向。",
+    "importance": 5,
+    "learning_objective": "能够解释并判断：寻找类间差异相对类内离散最大的投影方向。",
+    "misconception": "预处理在训练集或训练折内拟合，避免泄漏；类别不平衡时不能只报告准确率。",
+    "sources": [
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L123–L146",
+        "start": 123,
+        "end": 146,
+        "excerpt": "#### 12.2.1 Fisher判别的核心思想\n\n**目标**：找到投影方向 $a$，使投影后的两组数据 $u_1 = a^T X_1$ 和 $u_2 = a^T X_2$ 尽可能分开。\n\n**直观理解**：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt12",
+      "lecture12",
+      "nb12"
+    ],
+    "keywords": [
+      "fisher",
+      "Fisher 线性判别",
+      "第12章"
+    ],
+    "formula": "J(w) = (wᵀ Sᵦ w) / (wᵀ S𝑤 w)",
+    "inputs": "已知类别的多变量观测",
+    "outputs": "判别方向与投影得分"
+  },
+  {
+    "id": "scattermatrix",
+    "name": "类内与类间散度",
+    "module": "D",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH12",
+    "parent": "fisher",
+    "description": "用散度矩阵表达类别内部的变异与类别均值之间的差异。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：用散度矩阵表达类别内部的变异与类别均值之间的差异。",
+    "misconception": "预处理在训练集或训练折内拟合，避免泄漏；类别不平衡时不能只报告准确率。",
+    "sources": [
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L164–L187",
+        "start": 164,
+        "end": 187,
+        "excerpt": "#### 12.2.2 判别系数的求解\n\n**求解过程**：\n\n对 $J(a)$ 关于 $a$ 求导并令其为零：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt12",
+      "lecture12",
+      "nb12"
+    ],
+    "keywords": [
+      "scattermatrix",
+      "类内与类间散度",
+      "第12章"
+    ]
+  },
+  {
+    "id": "bayes",
+    "name": "Bayes 判别",
+    "module": "D",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH12",
+    "parent": "discriminant",
+    "description": "结合先验、类条件分布与误判损失，选择后验风险较小的类别。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：结合先验、类条件分布与误判损失，选择后验风险较小的类别。",
+    "misconception": "预处理在训练集或训练折内拟合，避免泄漏；类别不平衡时不能只报告准确率。",
+    "sources": [
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L329–L352",
+        "start": 329,
+        "end": 352,
+        "excerpt": "#### 12.3.1 Bayes判别准则\n\n**先验概率**：$P(G_k)$，分类前各类别的概率。\n\n**后验概率**：$P(G_k | X)$，观测到X后更新的概率。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt12",
+      "lecture12",
+      "nb12"
+    ],
+    "keywords": [
+      "bayes",
+      "Bayes 判别",
+      "第12章"
+    ]
+  },
+  {
+    "id": "qda",
+    "name": "二次判别 QDA",
+    "module": "D",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH12",
+    "parent": "discriminant",
+    "description": "允许各类具有不同协方差矩阵，在正态类条件模型下形成二次边界。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：允许各类具有不同协方差矩阵，在正态类条件模型下形成二次边界。",
+    "misconception": "预处理在训练集或训练折内拟合，避免泄漏；类别不平衡时不能只报告准确率。",
+    "sources": [
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L357–L380",
+        "start": 357,
+        "end": 380,
+        "excerpt": "#### 12.3.2 正态总体的Bayes判别\n\n**假设**：各类别的条件分布为多元正态分布：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt12",
+      "lecture12",
+      "nb12"
+    ],
+    "keywords": [
+      "qda",
+      "二次判别 QDA",
+      "第12章"
+    ]
+  },
+  {
+    "id": "ldapython",
+    "name": "Python LDA / QDA",
+    "module": "D",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH12",
+    "parent": "discriminant",
+    "description": "划分训练和测试数据，拟合 LDA 或 QDA，并评价样本外分类。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：划分训练和测试数据，拟合 LDA 或 QDA，并评价样本外分类。",
+    "misconception": "预处理在训练集或训练折内拟合，避免泄漏；类别不平衡时不能只报告准确率。",
+    "sources": [
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L716–L739",
+        "start": 716,
+        "end": 739,
+        "excerpt": "### 实战案例12-1：Fisher判别与Bayes判别\n\n```python\nimport numpy as np\nimport pandas as pd",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt12",
+      "lecture12",
+      "nb12"
+    ],
+    "keywords": [
+      "ldapython",
+      "Python LDA / QDA",
+      "第12章"
+    ]
+  },
+  {
+    "id": "confusion",
+    "name": "混淆矩阵",
+    "module": "D",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH12",
+    "parent": "discriminant",
+    "description": "将真实类别与预测类别交叉计数，辨识不同类型的分类错误。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：将真实类别与预测类别交叉计数，辨识不同类型的分类错误。",
+    "misconception": "预处理在训练集或训练折内拟合，避免泄漏；类别不平衡时不能只报告准确率。",
+    "sources": [
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L557–L580",
+        "start": 557,
+        "end": 580,
+        "excerpt": "#### 12.5.1 混淆矩阵\n\n|  | 预测为正 | 预测为负 |\n|--|---------|---------|\n| **实际为正** | TP（真正） | FN（假负） |",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt12",
+      "lecture12",
+      "nb12"
+    ],
+    "keywords": [
+      "confusion",
+      "混淆矩阵",
+      "第12章"
+    ]
+  },
+  {
+    "id": "roc",
+    "name": "ROC 与 AUC",
+    "module": "D",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH12",
+    "parent": "discriminant",
+    "description": "观察分类阈值变化下的真阳性率和假阳性率；AUC 不代表概率校准。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：观察分类阈值变化下的真阳性率和假阳性率；AUC 不代表概率校准。",
+    "misconception": "预处理在训练集或训练折内拟合，避免泄漏；类别不平衡时不能只报告准确率。",
+    "sources": [
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L613–L636",
+        "start": 613,
+        "end": 636,
+        "excerpt": "#### 12.5.3 ROC曲线与AUC\n\n**ROC曲线**：以假正率（FPR）为横轴、真正率（TPR）为纵轴\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt12",
+      "lecture12",
+      "nb12"
+    ],
+    "keywords": [
+      "roc",
+      "ROC 与 AUC",
+      "第12章"
+    ]
+  },
+  {
+    "id": "cv",
+    "name": "交叉验证",
+    "module": "D",
+    "level": 4,
+    "type": "method",
+    "chapter": "CH12",
+    "parent": "discriminant",
+    "description": "在不同数据划分上评估泛化能力，所有预处理都应在训练折内拟合。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：在不同数据划分上评估泛化能力，所有预处理都应在训练折内拟合。",
+    "misconception": "预处理在训练集或训练折内拟合，避免泄漏；类别不平衡时不能只报告准确率。",
+    "sources": [
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L640–L663",
+        "start": 640,
+        "end": 663,
+        "excerpt": "#### 12.5.4 交叉验证\n\n**K折交叉验证**：\n\n1. 将数据随机分为K份",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt12",
+      "lecture12",
+      "nb12"
+    ],
+    "keywords": [
+      "cv",
+      "交叉验证",
+      "第12章"
+    ]
+  },
+  {
+    "id": "logistic",
+    "name": "Logistic 回归",
+    "module": "D",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH11",
+    "parent": "",
+    "description": "对二分类结果的条件概率建模，将线性预测量映射到 0 到 1。",
+    "importance": 5,
+    "learning_objective": "能够解释并判断：对二分类结果的条件概率建模，将线性预测量映射到 0 到 1。",
+    "misconception": "优势比不同于概率比；分类阈值需联系误判成本与类别分布。",
+    "sources": [
+      {
+        "resource_id": "lecture11",
+        "locator": "讲义 L611–L634",
+        "start": 611,
+        "end": 634,
+        "excerpt": "#### 11.3.5 Logistic回归模型\n\nLogistic回归是GLM中最常用的模型之一，用于处理因变量为二分类变量的情况。\n\n**（1）模型设定**",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt11",
+      "lecture11",
+      "nb11"
+    ],
+    "keywords": [
+      "logistic",
+      "Logistic 回归",
+      "第11章"
+    ],
+    "formula": "log[p / (1 − p)] = β₀ + xᵀβ",
+    "inputs": "二分类响应与解释变量",
+    "outputs": "条件概率、优势比和分类评价"
+  },
+  {
+    "id": "logit",
+    "name": "Logit 连接函数",
+    "module": "D",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH11",
+    "parent": "logistic",
+    "description": "将概率变换为对数优势，使其可以由解释变量的线性组合表达。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：将概率变换为对数优势，使其可以由解释变量的线性组合表达。",
+    "misconception": "优势比不同于概率比；分类阈值需联系误判成本与类别分布。",
+    "sources": [
+      {
+        "resource_id": "lecture11",
+        "locator": "讲义 L611–L634",
+        "start": 611,
+        "end": 634,
+        "excerpt": "#### 11.3.5 Logistic回归模型\n\nLogistic回归是GLM中最常用的模型之一，用于处理因变量为二分类变量的情况。\n\n**（1）模型设定**",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt11",
+      "lecture11",
+      "nb11"
+    ],
+    "keywords": [
+      "logit",
+      "Logit 连接函数",
+      "第11章"
+    ]
+  },
+  {
+    "id": "or",
+    "name": "优势比 OR",
+    "module": "D",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH11",
+    "parent": "logistic",
+    "description": "系数的指数表示其他变量不变时优势的倍数变化，不是概率的倍数变化。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：系数的指数表示其他变量不变时优势的倍数变化，不是概率的倍数变化。",
+    "misconception": "优势比不同于概率比；分类阈值需联系误判成本与类别分布。",
+    "sources": [
+      {
+        "resource_id": "lecture11",
+        "locator": "讲义 L1125–L1148",
+        "start": 1125,
+        "end": 1148,
+        "excerpt": "# 第4步：优势比（OR）计算\n# ============================================================\nprint(\"\\n\" + \"=\" * 60)\nprint(\"第4步：优势比（OR）及置信区间\")\nprint(\"=\" * 60)",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt11",
+      "lecture11",
+      "nb11"
+    ],
+    "keywords": [
+      "or",
+      "优势比 OR",
+      "第11章"
+    ]
+  },
+  {
+    "id": "logisticpython",
+    "name": "Python Logistic 实现",
+    "module": "D",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH11",
+    "parent": "logistic",
+    "description": "拟合二分类模型，输出预测概率，并在测试集评价分类表现。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：拟合二分类模型，输出预测概率，并在测试集评价分类表现。",
+    "misconception": "优势比不同于概率比；分类阈值需联系误判成本与类别分布。",
+    "sources": [
+      {
+        "resource_id": "lecture11",
+        "locator": "讲义 L1032–L1055",
+        "start": 1032,
+        "end": 1055,
+        "excerpt": "### 实战案例11-2：Logistic回归完整实现\n\n**问题背景**：某电信公司需要预测客户流失情况。数据包含客户的消费金额、消费频率和投诉次数三个自变量，以及是否流失的二分类因变量。\n\n**Python代码实现**：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt11",
+      "lecture11",
+      "nb11"
+    ],
+    "keywords": [
+      "logisticpython",
+      "Python Logistic 实现",
+      "第11章"
+    ]
+  },
+  {
+    "id": "regression",
+    "name": "多元线性回归",
+    "module": "E",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH09",
+    "parent": "",
+    "description": "用多个解释变量描述一个连续响应变量的条件均值。",
+    "importance": 5,
+    "learning_objective": "能够解释并判断：用多个解释变量描述一个连续响应变量的条件均值。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L688–L711",
+        "start": 688,
+        "end": 711,
+        "excerpt": "#### 9.3.3 多元线性回归\n\n**（1）模型**\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "regression",
+      "多元线性回归",
+      "第9章"
+    ],
+    "formula": "E(Y | X) = β₀ + β₁X₁ + ⋯ + βₚXₚ",
+    "inputs": "连续响应与多个解释变量",
+    "outputs": "系数、区间、拟合值与诊断"
+  },
+  {
+    "id": "ols",
+    "name": "最小二乘估计 OLS",
+    "module": "E",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH09",
+    "parent": "regression",
+    "description": "通过最小化残差平方和估计系数，唯一解需设计矩阵满列秩。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：通过最小化残差平方和估计系数，唯一解需设计矩阵满列秩。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L688–L711",
+        "start": 688,
+        "end": 711,
+        "excerpt": "#### 9.3.3 多元线性回归\n\n**（1）模型**\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "ols",
+      "最小二乘估计 OLS",
+      "第9章"
+    ]
+  },
+  {
+    "id": "assumptions",
+    "name": "回归假设与推断边界",
+    "module": "E",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH09",
+    "parent": "regression",
+    "description": "区分线性设定、外生性、误差结构和正态性；计算 OLS 不要求解释变量服从正态。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：区分线性设定、外生性、误差结构和正态性；计算 OLS 不要求解释变量服从正态。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L688–L711",
+        "start": 688,
+        "end": 711,
+        "excerpt": "#### 9.3.3 多元线性回归\n\n**（1）模型**\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "assumptions",
+      "回归假设与推断边界",
+      "第9章"
+    ]
+  },
+  {
+    "id": "regpython",
+    "name": "Python 多元回归",
+    "module": "E",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH09",
+    "parent": "regression",
+    "description": "用 statsmodels 拟合带截距回归，读取系数、区间与诊断信息。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：用 statsmodels 拟合带截距回归，读取系数、区间与诊断信息。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L996–L1019",
+        "start": 996,
+        "end": 1019,
+        "excerpt": "### 实战案例9-1：多元线性回归完整实现\n\n```python\nimport numpy as np\nimport pandas as pd",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "regpython",
+      "Python 多元回归",
+      "第9章"
+    ]
+  },
+  {
+    "id": "residual",
+    "name": "残差诊断",
+    "module": "E",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH09",
+    "parent": "regression",
+    "description": "检查残差与拟合值、正态图和影响点，寻找设定与误差结构问题。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：检查残差与拟合值、正态图和影响点，寻找设定与误差结构问题。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L873–L896",
+        "start": 873,
+        "end": 896,
+        "excerpt": "#### 9.3.4 回归诊断\n\n**（1）残差分析**\n\n残差定义：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "residual",
+      "残差诊断",
+      "第9章"
+    ]
+  },
+  {
+    "id": "vif",
+    "name": "多重共线性与 VIF",
+    "module": "E",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH09",
+    "parent": "regression",
+    "description": "检查解释变量的线性依赖程度，避免把不稳定系数误读为确定关系。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：检查解释变量的线性依赖程度，避免把不稳定系数误读为确定关系。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L1535–L1558",
+        "start": 1535,
+        "end": 1558,
+        "excerpt": "### 实战案例9-5：多重共线性的诊断与处理\n\n```python\nimport numpy as np\nimport pandas as pd",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "vif",
+      "多重共线性与 VIF",
+      "第9章"
+    ]
+  },
+  {
+    "id": "r2",
+    "name": "决定系数与调整 R²",
+    "module": "E",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH09",
+    "parent": "regression",
+    "description": "描述样本内拟合，调整版本惩罚变量数量，但均不保证样本外预测或因果解释。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：描述样本内拟合，调整版本惩罚变量数量，但均不保证样本外预测或因果解释。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L688–L711",
+        "start": 688,
+        "end": 711,
+        "excerpt": "#### 9.3.3 多元线性回归\n\n**（1）模型**\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "r2",
+      "决定系数与调整 R²",
+      "第9章"
+    ]
+  },
+  {
+    "id": "prediction",
+    "name": "回归预测与区间",
+    "module": "E",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH09",
+    "parent": "regression",
+    "description": "区分均值响应区间与单个新观测的预测区间，并留意外推风险。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：区分均值响应区间与单个新观测的预测区间，并留意外推风险。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L924–L947",
+        "start": 924,
+        "end": 947,
+        "excerpt": "#### 9.3.5 回归预测\n\n**（1）点预测**\n\n给定新的自变量值 $x_0$，预测因变量：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "lecture09",
+      "nb09"
+    ],
+    "keywords": [
+      "prediction",
+      "回归预测与区间",
+      "第9章"
+    ]
+  },
+  {
+    "id": "glm",
+    "name": "广义线性模型 GLM",
+    "module": "E",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH11",
+    "parent": "",
+    "description": "通过响应分布、线性预测量和连接函数将回归推广到不同类型的响应。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：通过响应分布、线性预测量和连接函数将回归推广到不同类型的响应。",
+    "misconception": "优势比不同于概率比；分类阈值需联系误判成本与类别分布。",
+    "sources": [
+      {
+        "resource_id": "lecture11",
+        "locator": "讲义 L486–L509",
+        "start": 486,
+        "end": 509,
+        "excerpt": "#### 11.3.2 GLM的三要素\n\nGLM由三个核心要素组成：\n\n```mermaid",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt11",
+      "lecture11",
+      "nb11"
+    ],
+    "keywords": [
+      "glm",
+      "广义线性模型 GLM",
+      "第11章"
+    ]
+  },
+  {
+    "id": "cca",
+    "name": "典型相关分析 CCA",
+    "module": "E",
+    "level": 2,
+    "type": "method",
+    "chapter": "CH10",
+    "parent": "",
+    "description": "为两组变量分别构造线性组合，使两组综合变量的相关最大。",
+    "importance": 5,
+    "learning_objective": "能够解释并判断：为两组变量分别构造线性组合，使两组综合变量的相关最大。",
+    "misconception": "高典型相关不等于两组变量的大部分方差被解释，需结合载荷、冗余和检验。",
+    "sources": [
+      {
+        "resource_id": "lecture10",
+        "locator": "讲义 L71–L94",
+        "start": 71,
+        "end": 94,
+        "excerpt": "#### 10.1.1 典型相关分析的概念\n\n**【业务场景引入】**\n\n某大宗商品研究机构希望研究以下问题：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt10",
+      "lecture10",
+      "nb10"
+    ],
+    "keywords": [
+      "cca",
+      "典型相关分析 CCA",
+      "第10章"
+    ],
+    "reading_suggestions": [
+      {
+        "resource_id": "book5",
+        "page": 507,
+        "note": "李东风《多元统计分析讲义》2024 年版；本轮核对指定页，R 代码不作为 Python 实现来源。"
+      }
+    ],
+    "formula": "max corr(Xa, Yb)",
+    "inputs": "同一批观测的两组数值变量",
+    "outputs": "典型变量对、相关、载荷与冗余"
+  },
+  {
+    "id": "canonical",
+    "name": "典型变量与系数",
+    "module": "E",
+    "level": 2,
+    "type": "theory",
+    "chapter": "CH10",
+    "parent": "cca",
+    "description": "每一对典型变量来自两组变量的线性组合，各对满足相应正交约束。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：每一对典型变量来自两组变量的线性组合，各对满足相应正交约束。",
+    "misconception": "高典型相关不等于两组变量的大部分方差被解释，需结合载荷、冗余和检验。",
+    "sources": [
+      {
+        "resource_id": "lecture10",
+        "locator": "讲义 L360–L383",
+        "start": 360,
+        "end": 383,
+        "excerpt": "#### 10.3.4 典型变量的性质\n\n**性质1：不相关性**\n\n不同对典型变量之间互不相关：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt10",
+      "lecture10",
+      "nb10"
+    ],
+    "keywords": [
+      "canonical",
+      "典型变量与系数",
+      "第10章"
+    ]
+  },
+  {
+    "id": "ccaload",
+    "name": "典型载荷与交叉载荷",
+    "module": "E",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH10",
+    "parent": "cca",
+    "description": "分别考察原变量与本组、另一组典型变量的相关，辅助解释。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：分别考察原变量与本组、另一组典型变量的相关，辅助解释。",
+    "misconception": "高典型相关不等于两组变量的大部分方差被解释，需结合载荷、冗余和检验。",
+    "sources": [
+      {
+        "resource_id": "lecture10",
+        "locator": "讲义 L406–L429",
+        "start": 406,
+        "end": 429,
+        "excerpt": "#### 10.3.5 典型载荷与典型交叉载荷\n\n**典型载荷（Canonical Loading）**：原始变量与本组典型变量之间的相关系数\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt10",
+      "lecture10",
+      "nb10"
+    ],
+    "keywords": [
+      "ccaload",
+      "典型载荷与交叉载荷",
+      "第10章"
+    ]
+  },
+  {
+    "id": "wilks",
+    "name": "典型相关显著性检验",
+    "module": "E",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH10",
+    "parent": "cca",
+    "description": "检验剩余典型相关的联合显著性，需关注推断假设与样本量。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：检验剩余典型相关的联合显著性，需关注推断假设与样本量。",
+    "misconception": "高典型相关不等于两组变量的大部分方差被解释，需结合载荷、冗余和检验。",
+    "sources": [
+      {
+        "resource_id": "lecture10",
+        "locator": "讲义 L466–L489",
+        "start": 466,
+        "end": 489,
+        "excerpt": "#### 10.3.7 典型相关的检验\n\n**Wilks' Lambda统计量**：\n\n$$",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt10",
+      "lecture10",
+      "nb10"
+    ],
+    "keywords": [
+      "wilks",
+      "典型相关显著性检验",
+      "第10章"
+    ]
+  },
+  {
+    "id": "ccapython",
+    "name": "Python CCA 实现",
+    "module": "E",
+    "level": 3,
+    "type": "python",
+    "chapter": "CH10",
+    "parent": "cca",
+    "description": "标准化两组变量，求解典型方向，并核对典型相关与载荷。",
+    "importance": 3,
+    "learning_objective": "能够实现并检查：标准化两组变量，求解典型方向，并核对典型相关与载荷。",
+    "misconception": "高典型相关不等于两组变量的大部分方差被解释，需结合载荷、冗余和检验。",
+    "sources": [
+      {
+        "resource_id": "lecture10",
+        "locator": "讲义 L1274–L1297",
+        "start": 1274,
+        "end": 1297,
+        "excerpt": "### 实战案例10-3：手工计算CCA（教学演示）\n\n```python\nimport numpy as np\nimport pandas as pd",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt10",
+      "lecture10",
+      "nb10"
+    ],
+    "keywords": [
+      "ccapython",
+      "Python CCA 实现",
+      "第10章"
+    ]
+  },
+  {
+    "id": "redundancy",
+    "name": "典型冗余分析",
+    "module": "E",
+    "level": 4,
+    "type": "concept",
+    "chapter": "CH10",
+    "parent": "cca",
+    "description": "结合载荷和典型相关衡量跨组解释的方差，避免只看最大相关系数。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：结合载荷和典型相关衡量跨组解释的方差，避免只看最大相关系数。",
+    "misconception": "高典型相关不等于两组变量的大部分方差被解释，需结合载荷、冗余和检验。",
+    "sources": [
+      {
+        "resource_id": "lecture10",
+        "locator": "讲义 L432–L455",
+        "start": 432,
+        "end": 455,
+        "excerpt": "#### 10.3.6 典型冗余分析\n\n**典型冗余（Canonical Redundancy）** 衡量一组典型变量对另一组原始变量的解释能力。\n\n**组内方差解释比例**：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt10",
+      "lecture10",
+      "nb10"
+    ],
+    "keywords": [
+      "redundancy",
+      "典型冗余分析",
+      "第10章"
+    ]
+  },
+  {
+    "id": "pcaexercise",
+    "name": "PCA 概念与计算练习",
+    "module": "F",
+    "level": 5,
+    "type": "assessment",
+    "chapter": "CH06",
+    "parent": "",
+    "description": "通过原讲义习题检查主成分计算、贡献率和解释能力。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：通过原讲义习题检查主成分计算、贡献率和解释能力。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L1764–L1787",
+        "start": 1764,
+        "end": 1787,
+        "excerpt": "### 练习题\n\n**练习1：基础计算**\n\n给定数据矩阵：",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "lecture06",
+      "nb06"
+    ],
+    "keywords": [
+      "pcaexercise",
+      "PCA 概念与计算练习",
+      "第6章"
+    ]
+  },
+  {
+    "id": "faexercise",
+    "name": "因子分析应用练习",
+    "module": "F",
+    "level": 5,
+    "type": "assessment",
+    "chapter": "CH07",
+    "parent": "",
+    "description": "根据载荷、旋转和因子得分完成应用解释。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：根据载荷、旋转和因子得分完成应用解释。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L2456–L2476",
+        "start": 2456,
+        "end": 2476,
+        "excerpt": "### 练习3：应用题\n\n1. 使用明确标记的模拟课程指标数据（包括语文、数学、英语、物理、化学、生物），使用因子分析探索成绩的潜在结构。\n\n2. 设计一个问卷，包含10个关于学习态度的问题，使用因子分析验证问卷的因子结构。",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "lecture07",
+      "nb07"
+    ],
+    "keywords": [
+      "faexercise",
+      "因子分析应用练习",
+      "第7章"
+    ]
+  },
+  {
+    "id": "evalexercise",
+    "name": "综合评价编程练习",
+    "module": "F",
+    "level": 5,
+    "type": "assessment",
+    "chapter": "CH05",
+    "parent": "",
+    "description": "编写评价流程并解释权重设定和最终排序。",
+    "importance": 3,
+    "learning_objective": "能够解释并判断：编写评价流程并解释权重设定和最终排序。",
+    "misconception": "权重反映特定评价口径，须报告方向处理与敏感性，不能把排名当作绝对事实。",
+    "sources": [
+      {
+        "resource_id": "lecture05",
+        "locator": "讲义 L1095–L1118",
+        "start": 1095,
+        "end": 1118,
+        "excerpt": "#### 练习4：Python编程练习\n\n**题目**：编写一个完整的综合评价Python程序，实现以下功能：\n\n```python",
+        "basis": "course_material"
+      }
+    ],
+    "resource_ids": [
+      "ppt05",
+      "lecture05",
+      "nb05"
+    ],
+    "keywords": [
+      "evalexercise",
+      "综合评价编程练习",
+      "第5章"
+    ]
+  },
+  {
+    "id": "case_cluster",
+    "name": "全国区域经济发展的聚类分析",
+    "module": "F",
+    "level": 5,
+    "type": "case",
+    "chapter": "CH04",
+    "parent": "",
+    "importance": 4,
+    "description": "依据 16 个经济指标比较地区发展结构。",
+    "learning_objective": "回到各簇原始指标均值，解释群体差异并检验标准化与链接方法的影响。",
+    "misconception": "尺度、距离和初始值可能改变分类；群体划分必须回到原始变量解释。",
+    "sources": [
+      {
+        "resource_id": "ppt04",
+        "locator": "PPT 第 50 页",
+        "start": 50,
+        "end": 50,
+        "excerpt": "4  聚类分析及 Python 使用 操作案例 案例 4：全国区域经济发展的聚类分析",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb04",
+        "locator": "Notebook 单元 61 · code",
+        "start": 61,
+        "end": 61,
+        "excerpt": "Case4=pd.read_excel('mvsCase.xlsx','Case4',index_col=0);Case4",
+        "basis": "code_reference"
+      }
+    ],
+    "resource_ids": [
+      "ppt04",
+      "nb04",
+      "mvsCase"
+    ],
+    "keywords": [
+      "区域经济",
+      "cluster",
+      "Case4"
+    ]
+  },
+  {
+    "id": "case_eval",
+    "name": "广东省知识产权发展水平评价",
+    "module": "F",
+    "level": 5,
+    "type": "case",
+    "chapter": "CH05",
+    "parent": "",
+    "importance": 4,
+    "description": "围绕专利指标体系构建综合评价。",
+    "learning_objective": "先核对指标方向、分组与权重，再解释排序；不直接沿用历史排名。",
+    "misconception": "权重反映特定评价口径，须报告方向处理与敏感性，不能把排名当作绝对事实。",
+    "sources": [
+      {
+        "resource_id": "ppt05",
+        "locator": "PPT 第 38 页",
+        "start": 38,
+        "end": 38,
+        "excerpt": "案例 5：广东省知识产权发展水平的综合评价 一、指标体系构建 广东省专利综合评价指标体系构建",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb05",
+        "locator": "Notebook 单元 33 · code",
+        "start": 33,
+        "end": 33,
+        "excerpt": "pd.set_option('display.max_rows',21)\nCase5=pd.read_excel('mvsCase.xlsx','Case5',index_col=0);\nprint(Case5)",
+        "basis": "code_reference"
+      }
+    ],
+    "resource_ids": [
+      "ppt05",
+      "nb05",
+      "mvsCase"
+    ],
+    "keywords": [
+      "综合评价",
+      "evaluation",
+      "Case5"
+    ]
+  },
+  {
+    "id": "case_pca",
+    "name": "地区电信业发展的主成分分析",
+    "module": "F",
+    "level": 5,
+    "type": "case",
+    "chapter": "CH06",
+    "parent": "",
+    "importance": 4,
+    "description": "用电信发展指标探索规模与普及维度。",
+    "learning_objective": "比较贡献率、载荷和得分，讨论保留维数与指标尺度的影响。",
+    "misconception": "PCA 最大化数据方差，不等于最大化业务价值；降维后一般不可逆，KMO 不作为 PCA 的强制先修门槛。",
+    "sources": [
+      {
+        "resource_id": "ppt06",
+        "locator": "PPT 第 27 页",
+        "start": 27,
+        "end": 27,
+        "excerpt": "操作案例 6 主成分分析及 Python 使用 案例 6-- 地区电信业发展的主成分分析",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb06",
+        "locator": "Notebook 单元 64 · code",
+        "start": 64,
+        "end": 64,
+        "excerpt": "Case6=pd.read_excel('mvsCase.xlsx','Case6',index_col=0); #Case6",
+        "basis": "code_reference"
+      }
+    ],
+    "resource_ids": [
+      "ppt06",
+      "nb06",
+      "mvsCase"
+    ],
+    "keywords": [
+      "区域经济",
+      "pca",
+      "Case6"
+    ]
+  },
+  {
+    "id": "case_fa",
+    "name": "上市公司经营业绩因子分析",
+    "module": "F",
+    "level": 5,
+    "type": "case",
+    "chapter": "CH07",
+    "parent": "",
+    "importance": 4,
+    "description": "以课件中的医药行业上市公司财务指标探索经营绩效结构。",
+    "learning_objective": "根据载荷重新核对因子命名；原课件部分偿债与盈利解释待教师复核。",
+    "misconception": "因子命名须回到实际载荷；不能把提取的公共因子直接视为已证实的因果机制。",
+    "sources": [
+      {
+        "resource_id": "ppt07",
+        "locator": "PPT 第 141 页",
+        "start": 141,
+        "end": 141,
+        "excerpt": "案例 7 第 7 章 因子分析及  Python   应用 案例  7 ：上市公司经营业绩评价的因子分析 随着中国资本市场的发展，上市公司的经营业绩日益成为股东、债权人、研究人员所关心的主要问题，本案例运用因子分析方法，从上市公司对股东的回报能力、资产管理能力、偿债能力、盈利能力四个方面对上海股票市场医药行业的上市公司经营业绩进行综合评价分析，并得出评价的结果。 一、案例简介",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb07",
+        "locator": "Notebook 单元 69 · code",
+        "start": 69,
+        "end": 69,
+        "excerpt": "Case7=pd.read_excel('mvscase.xlsx','Case7',index_col=0); #Case7\nprint(Case7.head(10))                  #计算相关阵",
+        "basis": "code_reference"
+      }
+    ],
+    "resource_ids": [
+      "ppt07",
+      "nb07",
+      "mvsCase"
+    ],
+    "keywords": [
+      "企业经营",
+      "fa",
+      "Case7"
+    ]
+  },
+  {
+    "id": "case_ca",
+    "name": "对应分析在农民收入中的应用",
+    "module": "F",
+    "level": 5,
+    "type": "case",
+    "chapter": "CH08",
+    "parent": "",
+    "importance": 4,
+    "description": "将课件收入结构表作为对应分析应用对象。",
+    "learning_objective": "检查原表是否为频数、比例或金额；金额表的惯量图不自动支持计数型卡方推断。",
+    "misconception": "先核对频数总计、空行列、缩放与惯量；任意行列点间距离不能直接解释为关联强度。",
+    "sources": [
+      {
+        "resource_id": "ppt08",
+        "locator": "PPT 第 35 页",
+        "start": 35,
+        "end": 35,
+        "excerpt": "多元统计分析及 Python 建模 案例 8：对应分析在农民收入中的应用        ",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb08",
+        "locator": "Notebook 单元 30 · code",
+        "start": 30,
+        "end": 30,
+        "excerpt": "Case8=pd.read_excel('mvsCase.xlsx','Case8',index_col=0);\nCase8",
+        "basis": "code_reference"
+      }
+    ],
+    "resource_ids": [
+      "ppt08",
+      "nb08",
+      "mvsCase"
+    ],
+    "keywords": [
+      "收入结构",
+      "ca",
+      "Case8"
+    ]
+  },
+  {
+    "id": "case_cca",
+    "name": "R&D 投入与产出的典型相关分析",
+    "module": "F",
+    "level": 5,
+    "type": "case",
+    "chapter": "CH10",
+    "parent": "",
+    "importance": 4,
+    "description": "比较 R&D 投入指标组与产出指标组的整体关联。",
+    "learning_objective": "区分典型相关、载荷与冗余；课件历史结果尚未在本轮重跑。",
+    "misconception": "高典型相关不等于两组变量的大部分方差被解释，需结合载荷、冗余和检验。",
+    "sources": [
+      {
+        "resource_id": "ppt10",
+        "locator": "PPT 第 24 页",
+        "start": 24,
+        "end": 24,
+        "excerpt": "操作案例 案例 10 R&D 投入与产出的典型相关分析 第 10 章典型相关分析及 Python 使用 社会经济的发展以及知识信息的创新、扩散和应用主要依赖与掌握先进技术和知识的 R&D 资源。 R&D 水平的高低是衡量一个国家或区域的科技创新、技术进步的首要因素，而 R&D 水平的高低主要在于 R&D 投入能力与其产出效果。 以中国 29 个域省级区域，为研究样本，利用 2009 年数据进行分析，数据来源于 2010 年版 《 中国科技统计年鉴 》",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "nb10",
+        "locator": "Notebook 单元 35 · code",
+        "start": 35,
+        "end": 35,
+        "excerpt": "Case10=pd.read_excel('mvsCase.xlsx','Case10');Case10",
+        "basis": "code_reference"
+      }
+    ],
+    "resource_ids": [
+      "ppt10",
+      "nb10",
+      "mvsCase"
+    ],
+    "keywords": [
+      "创新发展",
+      "cca",
+      "Case10"
+    ]
+  },
+  {
+    "id": "case_reg",
+    "name": "财政收入多元回归",
+    "module": "F",
+    "level": 5,
+    "type": "case",
+    "chapter": "CH09",
+    "parent": "",
+    "importance": 4,
+    "description": "课件例 9.5 与 Notebook 中的财政收入多元回归。",
+    "learning_objective": "注意共同趋势与时间相关；解释系数前检查设定，避免直接进行因果解读。",
+    "misconception": "统计关联和回归系数本身不提供因果识别；训练拟合优度也不保证样本外效果。",
+    "sources": [
+      {
+        "resource_id": "nb09",
+        "locator": "Notebook 单元 32 · code",
+        "start": 32,
+        "end": 32,
+        "excerpt": "fm=ols('y~x1+x2+x3+x4',data=d94).fit()\nfm.params              #模型参数",
+        "basis": "code_reference"
+      }
+    ],
+    "resource_ids": [
+      "ppt09",
+      "nb09",
+      "mvsData"
+    ],
+    "keywords": [
+      "regression",
+      "d94"
+    ]
+  },
+  {
+    "id": "case_logistic",
+    "name": "二项响应建模 · 课程案例 11",
+    "module": "F",
+    "level": 5,
+    "type": "case",
+    "chapter": "CH11",
+    "parent": "",
+    "importance": 4,
+    "description": "使用原课程 y、sex、age 字段演示二项响应模型；具体业务含义待教师补充。",
+    "learning_objective": "原 Notebook 已输出概率后再次使用 Sigmoid，系统明确此问题，实践中直接使用模型预测概率。",
+    "misconception": "优势比不同于概率比；分类阈值需联系误判成本与类别分布。",
+    "sources": [
+      {
+        "resource_id": "nb11",
+        "locator": "Notebook 单元 42 · code",
+        "start": 42,
+        "end": 42,
+        "excerpt": "import statsmodels.api as sm\nglm1=sm.GLM.from_formula('y~sex+age',family=sm.families.Binomial(),data=Case11)\nprint(glm1.fit().summary())",
+        "basis": "code_reference"
+      }
+    ],
+    "resource_ids": [
+      "ppt11",
+      "nb11",
+      "mvsCase"
+    ],
+    "keywords": [
+      "logistic",
+      "Case11"
+    ]
+  },
+  {
+    "id": "case_discriminant",
+    "name": "财务指标判别 · 课程案例 12",
+    "module": "F",
+    "level": 5,
+    "type": "case",
+    "chapter": "CH12",
+    "parent": "",
+    "importance": 4,
+    "description": "使用 CF_TD、NI_TA、CA_CL、CA_NS 和标签 G 比较 LDA 与 QDA。",
+    "learning_objective": "原程序展示训练集回判；教学实践应另做样本外验证，G 的业务释义待教师核定。",
+    "misconception": "预处理在训练集或训练折内拟合，避免泄漏；类别不平衡时不能只报告准确率。",
+    "sources": [
+      {
+        "resource_id": "nb12",
+        "locator": "Notebook 单元 64 · code",
+        "start": 64,
+        "end": 64,
+        "excerpt": "from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as lda\nX=Case12[['CF_TD','NI_TA','CA_CL','CA_NS']]; Y=Case12.G \nCase12_lda=lda().fit(X,Y)  #线性判别\nCase12['ld_G'] = Case12_lda.predict(X)\nCase12",
+        "basis": "code_reference"
+      }
+    ],
+    "resource_ids": [
+      "ppt12",
+      "nb12",
+      "mvsCase"
+    ],
+    "keywords": [
+      "discriminant",
+      "Case12"
+    ]
+  }
+]

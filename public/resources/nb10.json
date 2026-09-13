@@ -1,0 +1,213 @@
+{
+  "resource": {
+    "id": "nb10",
+    "title": "第10章-典型相关",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第10章-典型相关.ipynb",
+    "sha256": "01a6214887ba7e11b9e2c266317ab40b3bcce6599914b6dda255dfb9ac3219d2",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb10.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "Notebook 单元 1 · markdown",
+      "text": "# 第10章 典型相关分析"
+    },
+    {
+      "index": 2,
+      "locator": "Notebook 单元 2 · markdown",
+      "text": "## 10.1 引言"
+    },
+    {
+      "index": 3,
+      "locator": "Notebook 单元 3 · markdown",
+      "text": "## 10.2 相关分析的架构"
+    },
+    {
+      "index": 4,
+      "locator": "Notebook 单元 4 · code",
+      "text": "#%run init.py"
+    },
+    {
+      "index": 5,
+      "locator": "Notebook 单元 5 · code",
+      "text": "#%cd \"[本地路径已移除]\""
+    },
+    {
+      "index": 6,
+      "locator": "Notebook 单元 6 · markdown",
+      "text": "### 10.2.1 简单相关分析"
+    },
+    {
+      "index": 7,
+      "locator": "Notebook 单元 7 · code",
+      "text": "import pandas as pd\npd.set_option('display.precision',4)  #数据框输出精度\nd101=pd.read_excel('mvsData.xlsx','d101');#d101"
+    },
+    {
+      "index": 8,
+      "locator": "Notebook 单元 8 · code",
+      "text": "d101.corr()"
+    },
+    {
+      "index": 9,
+      "locator": "Notebook 单元 9 · code",
+      "text": "pd.plotting.scatter_matrix(d101); #sns.pairplot(d10_1)"
+    },
+    {
+      "index": 10,
+      "locator": "Notebook 单元 10 · markdown",
+      "text": "### 10.2.2 多元相关分析"
+    },
+    {
+      "index": 11,
+      "locator": "Notebook 单元 11 · code",
+      "text": "from statsmodels.formula.api import ols\nfmy1=ols(formula='y1~x1+x2+x3',data=d101).fit()\nprint(fmy1.summary())"
+    },
+    {
+      "index": 12,
+      "locator": "Notebook 单元 12 · code",
+      "text": "fmy2=ols(formula='y2~x1+x2+x3',data=d101).fit()\nprint(fmy2.summary())"
+    },
+    {
+      "index": 13,
+      "locator": "Notebook 单元 13 · code",
+      "text": "fmy3=ols(formula='y3~x1+x2+x3',data=d101).fit()\nprint(fmy3.summary())"
+    },
+    {
+      "index": 14,
+      "locator": "Notebook 单元 14 · markdown",
+      "text": "## 10.3 典型相关分析原理"
+    },
+    {
+      "index": 15,
+      "locator": "Notebook 单元 15 · markdown",
+      "text": "### 10.3.1 典型相关的思想"
+    },
+    {
+      "index": 16,
+      "locator": "Notebook 单元 16 · markdown",
+      "text": "### 10.3.2 典型相关的求法"
+    },
+    {
+      "index": 17,
+      "locator": "Notebook 单元 17 · code",
+      "text": "X=d101[['x1','x2','x3']]  #第一组数据\nY=d101[['y1','y2','y3']]  #第二组数据"
+    },
+    {
+      "index": 18,
+      "locator": "Notebook 单元 18 · code",
+      "text": "from sklearn.cross_decomposition import CCA\nimport numpy as np\nn,p=np.shape(X); n,q = np.shape(Y)\nca=CCA(n_components=min(p,q)).fit(X,Y); #取最小变量个数"
+    },
+    {
+      "index": 19,
+      "locator": "Notebook 单元 19 · code",
+      "text": "from pandas import DataFrame as DF\nu_coef=ca.x_rotations_.T  #X的典型变量系数\nprint(DF(u_coef,['u1','u2','u3'],X.columns))\nv_coef=ca.y_rotations_.T  #Y的典型变量系数\nprint(DF(v_coef,['v1','v2','v3'],Y.columns))"
+    },
+    {
+      "index": 20,
+      "locator": "Notebook 单元 20 · code",
+      "text": "u_scores,v_scores=ca.transform(X,Y) #典型变量u、v得分\nU=DF(u_scores);V=DF(v_scores)       #典型变量得分数据框\nU,V"
+    },
+    {
+      "index": 21,
+      "locator": "Notebook 单元 21 · code",
+      "text": "CR=U.corrwith(V);CR                 #典型变量的相关系数"
+    },
+    {
+      "index": 22,
+      "locator": "Notebook 单元 22 · markdown",
+      "text": "### 10.3.3 典型变量的性质"
+    },
+    {
+      "index": 23,
+      "locator": "Notebook 单元 23 · markdown",
+      "text": "### 10.3.4 典型相关的检验"
+    },
+    {
+      "index": 24,
+      "locator": "Notebook 单元 24 · code",
+      "text": "def CR_test(n,p,q,r):  #典型相关检验函数\n    m=len(r); \n    import numpy as np\n    Q=np.zeros(m); P=np.zeros(m)\n    L=1  #lambda=1\n    from math import log\n    for k in range(m-1,-1,-1):  \n        L=L*(1-r[k]**2)  \n        Q[k]=-log(L)\n    from scipy import stats                \n    for k in range(0,m):\n        Q[k]=(n-k-1/2*(p+q+3))*Q[k] #检验的卡方值\n        P[k]=1-stats.chi2.cdf(Q[k],(p-k)*(q-k)) #P值\n    CR=DF({'CR':r,'Q':Q,'P':P}).round(4)\n    return CR"
+    },
+    {
+      "index": 25,
+      "locator": "Notebook 单元 25 · code",
+      "text": "print(CR_test(n,p,q,CR))"
+    },
+    {
+      "index": 26,
+      "locator": "Notebook 单元 26 · markdown",
+      "text": "### 10.4 典型相关分析步骤"
+    },
+    {
+      "index": 27,
+      "locator": "Notebook 单元 27 · markdown",
+      "text": "### 10.4.1 计算典型系数及变量"
+    },
+    {
+      "index": 28,
+      "locator": "Notebook 单元 28 · code",
+      "text": "def cancor(X,Y,pq=None,plot=False):  #pq指定典型变量的个数\n    import numpy as np\n    n,p=np.shape(X); n,q=np.shape(Y)\n    if pq==None: pq=min(p,q)\n    cca=CCA(n_components=pq).fit(X,Y); \n    u_scores,v_scores=cca.transform(X,Y) \n    r=DF(u_scores).corrwith(DF(v_scores));  \n    CR=CR_test(n,p,q,r)           \n    print('典型相关系数检验：\\n',CR)   \n    print('\\n典型相关变量系数：\\n')\n    u_coef=DF(cca.x_rotations_.T,['u%d'%(i+1) for i in range(pq)],X.columns)\n    v_coef=DF(cca.y_rotations_.T,['v%d'%(i+1) for i in range(pq)],Y.columns)        \n    if plot: #显示第一对典型变量的关系图\n        import matplotlib.pyplot as plt    \n        plt.plot(u_scores[:,0],v_scores[:,0],'o')\n    return u_coef,v_coef"
+    },
+    {
+      "index": 29,
+      "locator": "Notebook 单元 29 · code",
+      "text": "cancor(X,Y,plot=True)"
+    },
+    {
+      "index": 30,
+      "locator": "Notebook 单元 30 · markdown",
+      "text": "### 10.4.2 典型相关的实证分析"
+    },
+    {
+      "index": 31,
+      "locator": "Notebook 单元 31 · code",
+      "text": "d102=pd.read_excel('mvsData.xlsx','d102');d102"
+    },
+    {
+      "index": 32,
+      "locator": "Notebook 单元 32 · code",
+      "text": "#cancor(d102[['x1','x2','x3','x4']],d102[['y1','y2','y3','y4','y5','y6']])\nX=d102[['x1','x2','x3','x4']];Y=d102[['y1','y2','y3','y4','y5','y6']]\ncancor(X,Y)"
+    },
+    {
+      "index": 33,
+      "locator": "Notebook 单元 33 · code",
+      "text": "cancor(X,Y,2,plot=True) #去前两对典型变量并绘制第一对典型变量的散点图"
+    },
+    {
+      "index": 34,
+      "locator": "Notebook 单元 34 · markdown",
+      "text": "## 案例10：R&D投入与产出的典型相关分析"
+    },
+    {
+      "index": 35,
+      "locator": "Notebook 单元 35 · code",
+      "text": "Case10=pd.read_excel('mvsCase.xlsx','Case10');Case10"
+    },
+    {
+      "index": 36,
+      "locator": "Notebook 单元 36 · code",
+      "text": "Case10.corr()"
+    },
+    {
+      "index": 37,
+      "locator": "Notebook 单元 37 · code",
+      "text": "pd.plotting.scatter_matrix(Case10,figsize=(10,8));"
+    },
+    {
+      "index": 38,
+      "locator": "Notebook 单元 38 · code",
+      "text": "cancor(Case10[['x1','x2','x3']],Case10[['y1','y2','y3','y4','y5','y6']])"
+    },
+    {
+      "index": 39,
+      "locator": "Notebook 单元 39 · code",
+      "text": "cancor(Case10[['x1','x2','x3']],Case10[['y1','y2','y3','y4','y5','y6']]\n       ,2,True)"
+    },
+    {
+      "index": 40,
+      "locator": "Notebook 单元 40 · code",
+      "text": ""
+    }
+  ]
+}

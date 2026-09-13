@@ -1,0 +1,9 @@
+field,dtype,description,unit,role
+income,float,正向指标：模拟收入水平,synthetic unit,input benefit
+employment,float,正向指标：模拟就业水平,synthetic unit,input benefit
+innovation,float,正向指标：模拟创新水平,synthetic unit,input benefit
+pollution,float,逆向指标：模拟污染水平,synthetic unit,input cost
+debt,float,逆向指标：模拟负债水平,synthetic unit,input cost
+service,float,正向指标：模拟公共服务水平,synthetic unit,input benefit
+topsis_score,float,熵权 TOPSIS 贴近度得分,0 to 1,derived
+rank,int,按 TOPSIS 得分降序的名次,rank,derived

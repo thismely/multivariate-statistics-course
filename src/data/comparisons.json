@@ -1,0 +1,399 @@
+[
+  {
+    "id": "pca-fa",
+    "method_ids": [
+      "pca",
+      "fa"
+    ],
+    "title": "主成分分析 PCA × 因子分析 FA",
+    "rows": [
+      {
+        "dimension": "核心目标",
+        "values": [
+          "保留总变异的降维",
+          "解释变量的共变异结构"
+        ]
+      },
+      {
+        "dimension": "模型",
+        "values": [
+          "观测变量的正交线性组合",
+          "公共因子 + 特殊部分"
+        ]
+      },
+      {
+        "dimension": "典型输出",
+        "values": [
+          "主成分、贡献率、得分",
+          "载荷、共同度、旋转、得分"
+        ]
+      },
+      {
+        "dimension": "信息边界",
+        "values": [
+          "保留全部成分才可恢复原空间",
+          "潜变量解释依赖模型假设"
+        ]
+      },
+      {
+        "dimension": "适用问题",
+        "values": [
+          "压缩多指标信息",
+          "探索潜在维度"
+        ]
+      }
+    ],
+    "takeaway": "先明确是压缩数据还是解释潜在结构；两种结果均不能直接识别因果。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L1213–L1236",
+        "start": 1213,
+        "end": 1236,
+        "excerpt": "#### 6.4.3 PCA与因子分析的区别\n\nPCA和因子分析（Factor Analysis）都是降维方法，但有本质区别：\n\n| 方面 | PCA | 因子分析 |",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L94–L117",
+        "start": 94,
+        "end": 117,
+        "excerpt": "#### 6.1.2 PCA的核心思想\n\nPCA的核心思想可以用一句话概括：**找到一组新的正交坐标轴，使得数据在这些轴上的投影方差依次最大**。\n\n**几何直觉**：",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture07",
+        "locator": "讲义 L54–L77",
+        "start": 54,
+        "end": 77,
+        "excerpt": "#### 7.1.1 因子分析的核心思想\n\n**【业务场景引入】**\n\n假设你是一名教育研究者，收集了100名学生的6门课程成绩：语文、英语、历史、数学、物理、化学。你怀疑这6门课程的成绩背后可能存在2个潜在的\"能力因子\"：",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "cluster-class",
+    "method_ids": [
+      "cluster",
+      "discriminant"
+    ],
+    "title": "聚类分析 × 判别分析",
+    "rows": [
+      {
+        "dimension": "标签",
+        "values": [
+          "没有预先给定类别",
+          "已有类别标签"
+        ]
+      },
+      {
+        "dimension": "目标",
+        "values": [
+          "发现群体结构",
+          "判定新样本类别"
+        ]
+      },
+      {
+        "dimension": "评价",
+        "values": [
+          "稳定性、轮廓与解释",
+          "样本外分类与误判成本"
+        ]
+      },
+      {
+        "dimension": "典型输入",
+        "values": [
+          "特征矩阵",
+          "特征矩阵 + 标签"
+        ]
+      }
+    ],
+    "takeaway": "不知道分成哪些类时探索聚类；有可信标签并需预测时考虑判别。",
+    "sources": [
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L87–L110",
+        "start": 87,
+        "end": 110,
+        "excerpt": "#### 4.1.2 聚类与分类的区别\n\n| 维度 | 聚类分析 | 判别分析/分类 |\n|------|----------|---------------|\n| **学习类型** | 无监督学习 | 有监督学习 |",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture04",
+        "locator": "讲义 L63–L86",
+        "start": 63,
+        "end": 86,
+        "excerpt": "#### 4.1.1 什么是聚类分析？\n\n**【业务场景引入】**\n\n假设你是某大宗商品交易所的风控经理，手头有50家期货公司的交易数据，包括：日均成交量、持仓量、客户数、保证金规模、违规次数等。你需要将这50家公司分为3-5个风险等级，以便实施差异化的监管策略。",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L63–L86",
+        "start": 63,
+        "end": 86,
+        "excerpt": "#### 12.1.1 什么是判别分析？\n\n**【业务场景引入】**\n\n某商业银行需要根据客户的财务指标（收入、负债率、信用评分等）判断其信用等级（优、良、差）。已有1000名已知信用等级的客户数据，需要建立判别规则，对新客户进行自动分类。",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "fisher-logistic",
+    "method_ids": [
+      "fisher",
+      "logistic"
+    ],
+    "title": "Fisher 线性判别 × Logistic 回归",
+    "rows": [
+      {
+        "dimension": "目标",
+        "values": [
+          "增强投影后的类间分离",
+          "估计二分类条件概率"
+        ]
+      },
+      {
+        "dimension": "结构",
+        "values": [
+          "类内与类间散度",
+          "线性预测量 + Logit"
+        ]
+      },
+      {
+        "dimension": "解释",
+        "values": [
+          "判别方向与边界",
+          "条件优势比与概率"
+        ]
+      },
+      {
+        "dimension": "边界",
+        "values": [
+          "Fisher 准则本身不要求正态；LDA 概率解释另有假设",
+          "不要求自变量联合正态，需检查模型设定"
+        ]
+      }
+    ],
+    "takeaway": "比较需在相同数据划分上进行，并检查分类错误的具体类型。",
+    "sources": [
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L123–L146",
+        "start": 123,
+        "end": 146,
+        "excerpt": "#### 12.2.1 Fisher判别的核心思想\n\n**目标**：找到投影方向 $a$，使投影后的两组数据 $u_1 = a^T X_1$ 和 $u_2 = a^T X_2$ 尽可能分开。\n\n**直观理解**：",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture12",
+        "locator": "讲义 L123–L146",
+        "start": 123,
+        "end": 146,
+        "excerpt": "#### 12.2.1 Fisher判别的核心思想\n\n**目标**：找到投影方向 $a$，使投影后的两组数据 $u_1 = a^T X_1$ 和 $u_2 = a^T X_2$ 尽可能分开。\n\n**直观理解**：",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture11",
+        "locator": "讲义 L611–L634",
+        "start": 611,
+        "end": 634,
+        "excerpt": "#### 11.3.5 Logistic回归模型\n\nLogistic回归是GLM中最常用的模型之一，用于处理因变量为二分类变量的情况。\n\n**（1）模型设定**",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "corr-reg",
+    "method_ids": [
+      "pearson",
+      "regression"
+    ],
+    "title": "Pearson 相关分析 × 多元线性回归",
+    "rows": [
+      {
+        "dimension": "变量角色",
+        "values": [
+          "两变量地位对称",
+          "解释变量与响应变量有角色区分"
+        ]
+      },
+      {
+        "dimension": "问题",
+        "values": [
+          "线性关联有多强",
+          "条件均值怎样变化"
+        ]
+      },
+      {
+        "dimension": "输出",
+        "values": [
+          "相关系数",
+          "回归系数、预测与区间"
+        ]
+      },
+      {
+        "dimension": "共同限制",
+        "values": [
+          "不能单独证明因果",
+          "不能单独证明因果"
+        ]
+      }
+    ],
+    "takeaway": "先确定问题是描述关联还是构造响应模型。",
+    "sources": [
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L60–L83",
+        "start": 60,
+        "end": 83,
+        "excerpt": "#### 9.1.2 相关分析与回归分析的区别与联系\n\n**相关分析**研究的是变量之间线性关联的强度和方向，回答的是\"两个变量是否相关、相关程度如何\"的问题。相关分析中变量是对等的，没有因变量和自变量之分。\n\n**回归分析**研究的是变量之间的依存关系，回答的是\"一个变量如何随另一个变量变化\"的问题。回归分析中必须明确因变量（被解释变量）和自变量（解释变量）。",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L91–L114",
+        "start": 91,
+        "end": 114,
+        "excerpt": "#### 9.2.1 Pearson相关系数\n\n**（1）公式**\n\n$$",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L688–L711",
+        "start": 688,
+        "end": 711,
+        "excerpt": "#### 9.3.3 多元线性回归\n\n**（1）模型**\n\n$$",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "pca-eval",
+    "method_ids": [
+      "pca",
+      "evaluation"
+    ],
+    "title": "主成分分析 PCA × 多指标综合评价",
+    "rows": [
+      {
+        "dimension": "目标",
+        "values": [
+          "保留数据中的变异",
+          "回答既定评价目标"
+        ]
+      },
+      {
+        "dimension": "权重依据",
+        "values": [
+          "方差结构",
+          "专家判断、信息差异等"
+        ]
+      },
+      {
+        "dimension": "方向",
+        "values": [
+          "数学符号可翻转",
+          "需统一价值方向"
+        ]
+      },
+      {
+        "dimension": "结果",
+        "values": [
+          "低维坐标",
+          "综合分值与排序"
+        ]
+      }
+    ],
+    "takeaway": "PCA 可以服务评价，但贡献率并不天然代表政策或业务重要性。",
+    "sources": [
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L5–L28",
+        "start": 5,
+        "end": 28,
+        "excerpt": "### 一、教学目标\n\n通过本章学习，学生应具备以下核心能力：\n\n1. **PCA基本思想**：理解主成分分析的核心思想（方差最大化降维）、几何解释（数据椭球的主轴方向）和信息保留原则。",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture06",
+        "locator": "讲义 L94–L117",
+        "start": 94,
+        "end": 117,
+        "excerpt": "#### 6.1.2 PCA的核心思想\n\nPCA的核心思想可以用一句话概括：**找到一组新的正交坐标轴，使得数据在这些轴上的投影方差依次最大**。\n\n**几何直觉**：",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture05",
+        "locator": "讲义 L77–L100",
+        "start": 77,
+        "end": 100,
+        "excerpt": "#### 5.1.1 什么是综合评价？\n\n**【业务场景引入】**\n\n假设你是某省发改委的分析师，需要对下属15个地级市的经济发展水平进行综合评价。你收集了以下指标：",
+        "basis": "course_material"
+      }
+    ]
+  },
+  {
+    "id": "corr-cca",
+    "method_ids": [
+      "pearson",
+      "cca"
+    ],
+    "title": "Pearson 相关分析 × 典型相关分析 CCA",
+    "rows": [
+      {
+        "dimension": "变量",
+        "values": [
+          "一个变量与另一个变量",
+          "一组变量与另一组变量"
+        ]
+      },
+      {
+        "dimension": "构造",
+        "values": [
+          "原变量之间的相关",
+          "两组线性组合间最大相关"
+        ]
+      },
+      {
+        "dimension": "输出",
+        "values": [
+          "一个相关系数",
+          "多对典型变量、载荷和检验"
+        ]
+      },
+      {
+        "dimension": "风险",
+        "values": [
+          "异常点与混杂",
+          "过拟合、高相关但低冗余"
+        ]
+      }
+    ],
+    "takeaway": "两组变量整体关联问题优先考虑 CCA，并检查样本量与解释的稳定性。",
+    "sources": [
+      {
+        "resource_id": "lecture10",
+        "locator": "讲义 L146–L169",
+        "start": 146,
+        "end": 169,
+        "excerpt": "#### 10.2.1 简单相关分析\n\n两个变量之间的相关：\n\n$$",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture09",
+        "locator": "讲义 L91–L114",
+        "start": 91,
+        "end": 114,
+        "excerpt": "#### 9.2.1 Pearson相关系数\n\n**（1）公式**\n\n$$",
+        "basis": "course_material"
+      },
+      {
+        "resource_id": "lecture10",
+        "locator": "讲义 L71–L94",
+        "start": 71,
+        "end": 94,
+        "excerpt": "#### 10.1.1 典型相关分析的概念\n\n**【业务场景引入】**\n\n某大宗商品研究机构希望研究以下问题：",
+        "basis": "course_material"
+      }
+    ]
+  }
+]

@@ -1,0 +1,308 @@
+{
+  "resource": {
+    "id": "nb08",
+    "title": "第08章-对应分析",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第08章-对应分析.ipynb",
+    "sha256": "426fa2f292ec1b816ab142664828663b8406f8ba63183ea4dfc66040e1a2a143",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb08.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "Notebook 单元 1 · markdown",
+      "text": "# 第8章 对应分析及Python视图"
+    },
+    {
+      "index": 2,
+      "locator": "Notebook 单元 2 · markdown",
+      "text": "## 8.1 对应分析的提出"
+    },
+    {
+      "index": 3,
+      "locator": "Notebook 单元 3 · markdown",
+      "text": "### 8.1.1 样品与变量间的关系"
+    },
+    {
+      "index": 4,
+      "locator": "Notebook 单元 4 · markdown",
+      "text": "### 8.1.2 对应分析的类型"
+    },
+    {
+      "index": 5,
+      "locator": "Notebook 单元 5 · markdown",
+      "text": "## 8.2 对应分析基本原理"
+    },
+    {
+      "index": 6,
+      "locator": "Notebook 单元 6 · markdown",
+      "text": "### 8.2.1 列联表分析"
+    },
+    {
+      "index": 7,
+      "locator": "Notebook 单元 7 · code",
+      "text": "import pandas as pd                   #加载数据分析包\nd81=pd.read_excel('mvsData.xlsx','d81',index_col=0);\nprint(d81) #读数据"
+    },
+    {
+      "index": 8,
+      "locator": "Notebook 单元 8 · code",
+      "text": "from scipy import stats\nchi2=stats.chi2_contingency(d81)  #列联表卡方检验\nprint('卡方值=%.4f,  P值=%.4g'%(chi2[0],chi2[1]))\nprint('\\n理论频数:\\n',chi2[3].round(2))"
+    },
+    {
+      "index": 9,
+      "locator": "Notebook 单元 9 · markdown",
+      "text": "### 8.2.2 对应分析方法"
+    },
+    {
+      "index": 10,
+      "locator": "Notebook 单元 10 · markdown",
+      "text": "## 8.3 对应分析计算步骤"
+    },
+    {
+      "index": 11,
+      "locator": "Notebook 单元 11 · markdown",
+      "text": "### 8.3.1 对应分析值"
+    },
+    {
+      "index": 12,
+      "locator": "Notebook 单元 12 · markdown",
+      "text": "### 8.3.2 实证分析"
+    },
+    {
+      "index": 13,
+      "locator": "Notebook 单元 13 · code",
+      "text": "#!pip install prince"
+    },
+    {
+      "index": 14,
+      "locator": "Notebook 单元 14 · code",
+      "text": "pd.set_option('display.precision',3)  #设置数据框输出精度\nfrom prince import CA         #对应分析 \nca1=CA().fit(d81)"
+    },
+    {
+      "index": 15,
+      "locator": "Notebook 单元 15 · code",
+      "text": "F=ca1.row_coordinates(d81)   #行坐标\nprint(F)  "
+    },
+    {
+      "index": 16,
+      "locator": "Notebook 单元 16 · code",
+      "text": "G=ca1.column_coordinates(d81) #列坐标 \nprint(G)"
+    },
+    {
+      "index": 17,
+      "locator": "Notebook 单元 17 · code",
+      "text": "def CA_plot(ca,df):      #作对应分析图，替代price的plot_coordinates函数\n    import matplotlib.pyplot as plt                    #加载基本绘图包\n    plt.rcParams['font.sans-serif']=['SimHei'];    #设置中文字体为黑体\n    plt.rcParams['axes.unicode_minus']=False;      #正常显示图中正负号\n    ca_plot=pd.concat([ca.row_coordinates(df), ca.column_coordinates(df)])\n    ca_plot['label']=ca_plot.index    \n    Vi=ca.eigenvalues_; Wi=100*Vi/ca.total_inertia_\n    fig, ax = plt.subplots(figsize=(6,5.5))\n    ax.scatter(x=ca_plot[0],y=ca_plot[1])\n    ax.set_xlabel('Component 0 (' + str(round(Wi[0],2))+str('% inertia)'));\n    ax.set_ylabel('Component 1 (' + str(round(Wi[1],2))+str('% inertia)'));\n    plt.axvline(x=0,linestyle=':');plt.axhline(y=0,linestyle=':')\n    for idx, row in ca_plot.iterrows(): ax.annotate(row['label'], (row[0], row[1]) )    \n    import numpy as np\n    return(pd.DataFrame({'特征值':Vi,'贡献率%':Wi,'累计贡献%':np.cumsum(Wi)}))"
+    },
+    {
+      "index": 18,
+      "locator": "Notebook 单元 18 · code",
+      "text": "def CA_plot(ca,df):      #作对应分析图，替代price的plot_coordinates函数\n    import matplotlib.pyplot as plt                    #加载基本绘图包\n    plt.rcParams['font.sans-serif']=['SimHei'];    #设置中文字体为黑体\n    plt.rcParams['axes.unicode_minus']=False;      #正常显示图中正负号\n    \n    # 获取行坐标和列坐标\n    row_coords = ca.row_coordinates(df)\n    col_coords = ca.column_coordinates(df)\n    # 合并行坐标和列坐标\n    ca_plot = pd.concat([row_coords, col_coords])\n    # 设置标签\n    ca_plot['label']=ca_plot.index    \n    # 计算特征值和贡献率\n    Vi=ca.eigenvalues_; Wi=100*Vi/ca.total_inertia_\n    \n    fig, ax = plt.subplots(figsize=(6,5.5))\n     # 绘制行坐标点（蓝色）\n    ax.scatter(x=row_coords[0], y=row_coords[1], color='blue', label='Rows')\n    # 绘制列坐标点（红色）\n    ax.scatter(x=col_coords[0], y=col_coords[1], color='red', label='Columns')\n    \n    # 设置坐标轴标签\n    ax.set_xlabel('Component 0 (' + str(round(Wi[0],2))+str('% inertia)'));\n    ax.set_ylabel('Component 1 (' + str(round(Wi[1],2))+str('% inertia)'));\n    \n    # 添加辅助线\n    plt.axvline(x=0, linestyle=':', color='gray')\n    plt.axhline(y=0, linestyle=':', color='gray')\n    \n    # 添加图例\n    ax.legend()\n    \n    # 添加标签\n    for idx, row in ca_plot.iterrows():\n        ax.annotate(row['label'], (row[0], row[1])) \n    import numpy as np\n    return(pd.DataFrame({'特征值':Vi,'贡献率%':Wi,'累计贡献%':np.cumsum(Wi)}))"
+    },
+    {
+      "index": 19,
+      "locator": "Notebook 单元 19 · code",
+      "text": "CA_plot(ca1,d81)"
+    },
+    {
+      "index": 20,
+      "locator": "Notebook 单元 20 · code",
+      "text": "ca1.eigenvalues_summary\nca1.plot(d81,\n    x_component=0,\n    y_component=1,\n    show_row_markers=True,\n    show_column_markers=True,\n    show_row_labels=True,\n    show_column_labels=True)"
+    },
+    {
+      "index": 21,
+      "locator": "Notebook 单元 21 · code",
+      "text": "d82"
+    },
+    {
+      "index": 22,
+      "locator": "Notebook 单元 22 · code",
+      "text": "d82=pd.read_excel('mvsData.xlsx','d82',index_col=0);#d82 #读数据"
+    },
+    {
+      "index": 23,
+      "locator": "Notebook 单元 23 · code",
+      "text": "ca2=CA().fit(d82);"
+    },
+    {
+      "index": 24,
+      "locator": "Notebook 单元 24 · code",
+      "text": "print(ca2.row_coordinates(d82))"
+    },
+    {
+      "index": 25,
+      "locator": "Notebook 单元 25 · code",
+      "text": "print(ca2.column_coordinates(d82))"
+    },
+    {
+      "index": 26,
+      "locator": "Notebook 单元 26 · code",
+      "text": "print(CA_plot(ca2,d82))"
+    },
+    {
+      "index": 27,
+      "locator": "Notebook 单元 27 · code",
+      "text": "ca2.plot(\n    d82,\n    x_component=0,\n    y_component=1,\n    show_row_markers=True,\n    show_column_markers=True,\n    show_row_labels=True,\n    show_column_labels=True\n)"
+    },
+    {
+      "index": 28,
+      "locator": "Notebook 单元 28 · markdown",
+      "text": "## 8.4 对应分析注意事项"
+    },
+    {
+      "index": 29,
+      "locator": "Notebook 单元 29 · markdown",
+      "text": "## 案例8  对应分析在农民收入中的应用"
+    },
+    {
+      "index": 30,
+      "locator": "Notebook 单元 30 · code",
+      "text": "Case8=pd.read_excel('mvsCase.xlsx','Case8',index_col=0);\nCase8"
+    },
+    {
+      "index": 31,
+      "locator": "Notebook 单元 31 · code",
+      "text": "from scipy import stats\ndat1=Case8.head(6)  #文化程度\nst=stats.chi2_contingency(dat1)  \nprint('卡方值=%.4f,  P值=%.4g'%(st[0],st[1]))"
+    },
+    {
+      "index": 32,
+      "locator": "Notebook 单元 32 · code",
+      "text": "dat2=Case8.tail(7)  #总收入\nst=stats.chi2_contingency(dat2)  \nprint('卡方值=%.4f,  P值=%.4g'%(st[0],st[1]))"
+    },
+    {
+      "index": 33,
+      "locator": "Notebook 单元 33 · code",
+      "text": ""
+    },
+    {
+      "index": 34,
+      "locator": "Notebook 单元 34 · code",
+      "text": "from prince import CA \nCa1=CA().fit(dat1);Ca1\nprint(Ca1.row_coordinates(dat1))\nprint(Ca1.column_coordinates(dat1))"
+    },
+    {
+      "index": 35,
+      "locator": "Notebook 单元 35 · code",
+      "text": "CA_plot(Ca1,dat1)"
+    },
+    {
+      "index": 36,
+      "locator": "Notebook 单元 36 · code",
+      "text": "Ca2=CA().fit(dat2)\nprint(Ca2.row_coordinates(dat2))\nprint(Ca2.column_coordinates(dat2))\nCA_plot(Ca2,dat2)"
+    },
+    {
+      "index": 37,
+      "locator": "Notebook 单元 37 · markdown",
+      "text": "# 习题"
+    },
+    {
+      "index": 38,
+      "locator": "Notebook 单元 38 · markdown",
+      "text": "### 二、练习题第2题"
+    },
+    {
+      "index": 39,
+      "locator": "Notebook 单元 39 · code",
+      "text": "e10_2=pd.read_excel('mvsExer.xlsx','E10_2',index_col=0);#e10_2 #读数据"
+    },
+    {
+      "index": 40,
+      "locator": "Notebook 单元 40 · code",
+      "text": "pd.set_option('display.precision',3)  #设置数据框输出精度\nfrom prince import CA         #对应分析 \nca10_2=CA().fit(e10_2)"
+    },
+    {
+      "index": 41,
+      "locator": "Notebook 单元 41 · code",
+      "text": "Fe10_2=ca10_2.row_coordinates(e10_2)   #行坐标\nprint(Fe10_2)  "
+    },
+    {
+      "index": 42,
+      "locator": "Notebook 单元 42 · code",
+      "text": "Ge10_2=ca10_2.column_coordinates(e10_2) #列坐标 \nprint(Ge10_2)"
+    },
+    {
+      "index": 43,
+      "locator": "Notebook 单元 43 · code",
+      "text": "def CA_plot(ca,df):      #作对应分析图，替代price的plot_coordinates函数\n    import matplotlib.pyplot as plt                    #加载基本绘图包\n    plt.rcParams['font.sans-serif']=['SimHei'];    #设置中文字体为黑体\n    plt.rcParams['axes.unicode_minus']=False;      #正常显示图中正负号\n    \n    # 获取行坐标和列坐标\n    row_coords = ca.row_coordinates(df)\n    col_coords = ca.column_coordinates(df)\n    # 合并行坐标和列坐标\n    ca_plot = pd.concat([row_coords, col_coords])\n    # 设置标签\n    ca_plot['label']=ca_plot.index    \n    # 计算特征值和贡献率\n    Vi=ca.eigenvalues_; Wi=100*Vi/ca.total_inertia_\n    \n    fig, ax = plt.subplots(figsize=(6,5.5))\n     # 绘制行坐标点（蓝色）\n    ax.scatter(x=row_coords[0], y=row_coords[1], color='blue', label='Rows')\n    # 绘制列坐标点（红色）\n    ax.scatter(x=col_coords[0], y=col_coords[1], color='red', label='Columns')\n    \n    # 设置坐标轴标签\n    ax.set_xlabel('Component 0 (' + str(round(Wi[0],2))+str('% inertia)'));\n    ax.set_ylabel('Component 1 (' + str(round(Wi[1],2))+str('% inertia)'));\n    \n    # 添加辅助线\n    plt.axvline(x=0, linestyle=':', color='gray')\n    plt.axhline(y=0, linestyle=':', color='gray')\n    \n    # 添加图例\n    ax.legend()\n    \n    # 添加标签\n    for idx, row in ca_plot.iterrows():\n        ax.annotate(row['label'], (row[0], row[1])) \n    import numpy as np\n    return(pd.DataFrame({'特征值':Vi,'贡献率%':Wi,'累计贡献%':np.cumsum(Wi)}))"
+    },
+    {
+      "index": 44,
+      "locator": "Notebook 单元 44 · code",
+      "text": "CA_plot(ca10_2,e10_2)"
+    },
+    {
+      "index": 45,
+      "locator": "Notebook 单元 45 · code",
+      "text": "e10_3 = pd.read_excel('mvsExer.xlsx','E10_3',index_col=0);#e10_3 #读数据"
+    },
+    {
+      "index": 46,
+      "locator": "Notebook 单元 46 · code",
+      "text": "ca10_3=CA().fit(e10_3)"
+    },
+    {
+      "index": 47,
+      "locator": "Notebook 单元 47 · code",
+      "text": "Fe10_3=ca10_3.row_coordinates(e10_3)   #行坐标\nprint(Fe10_3)  "
+    },
+    {
+      "index": 48,
+      "locator": "Notebook 单元 48 · code",
+      "text": "Ge10_3=ca10_3.column_coordinates(e10_3) #列坐标 \nprint(Ge10_3)"
+    },
+    {
+      "index": 49,
+      "locator": "Notebook 单元 49 · code",
+      "text": "CA_plot(ca10_3,e10_3)"
+    },
+    {
+      "index": 50,
+      "locator": "Notebook 单元 50 · markdown",
+      "text": "# 主成分分析案例6：电信业发展的主成分分析及对应分析"
+    },
+    {
+      "index": 51,
+      "locator": "Notebook 单元 51 · code",
+      "text": "Case6=pd.read_excel('mvsCase.xlsx','Case6',index_col=0); #Case6\n\nCase6.columns = ['电信业务量','每百人拥有固话数','每百人移动电话数','国际互联网用户','互联网用户使用时长','长途电话通话量','长途电话通话时长']\nprint(Case6)"
+    },
+    {
+      "index": 52,
+      "locator": "Notebook 单元 52 · code",
+      "text": "plt.figure(figsize=(9,5))\nimport scipy.cluster.hierarchy as sch\nZ=(Case6-Case6.mean())/Case6.std() #数据标准化\nD=sch.distance.pdist(Z)\nH=sch.linkage(D,method='complete');\nsch.dendrogram(H,labels=Case6.index); #绘制系统聚类图"
+    },
+    {
+      "index": 53,
+      "locator": "Notebook 单元 53 · code",
+      "text": "import numpy as np\ndef PCscores(X,m=2): #主成分评价函数\n    from sklearn.decomposition import PCA\n    Z=(X-X.mean())/X.std() #数据标准化\n    p=Z.shape[1]\n    pca = PCA(n_components=p).fit(Z)\n    Vi=pca.explained_variance_;Vi   # 获取特征值(各主成分的方差)\n    Wi=pca.explained_variance_ratio_;Wi # 获取各主成分的方差贡献率\n    \n    # 创建方差相关的DataFrame\n    Vars=pd.DataFrame({'Variances':Vi});Vars  #,index=X.columns\n    Vars.index=['Comp%d' %(i+1) for i in range(p)]\n    Vars['Explained']=Wi*100;Vars\n    Vars['Cumulative']=np.cumsum(Wi)*100;\n    print(\"\\n方差贡献:\\n\",round(Vars,4))\n    \n    # 提取前m个主成分的负荷矩阵\n    Compi=['Comp%d' %(i+1) for i in range(m)]\n    loadings=pd.DataFrame(pca.components_[:m].T,columns=Compi,index=X.columns);\n    print(\"\\n主成分负荷:\\n\",round(loadings,4))\n    \n    # 计算主成分得分\n    scores=pd.DataFrame(pca.fit_transform(Z)).iloc[:,:m];\n    scores.index=X.index; \n    scores.columns=Compi;scores\n    \n    # 计算综合得分和排名\n    scores['Comp']=scores.dot(Wi[:m]);scores\n    scores['Rank']=scores.Comp.rank(ascending=False).astype(int);\n    return scores #print('\\n综合得分与排名:\\n',round(scores,4))"
+    },
+    {
+      "index": 54,
+      "locator": "Notebook 单元 54 · code",
+      "text": "Case6_pcs=PCscores(Case6);Case6_pcs    #主成分分析"
+    },
+    {
+      "index": 55,
+      "locator": "Notebook 单元 55 · code",
+      "text": "import matplotlib.pyplot as plt            \nplt.rcParams['font.sans-serif']=['Heiti TC'];  #中文黑体SimHei\nplt.rcParams['axes.unicode_minus']=False; #正常显示图中正负号\ndef Scoreplot(Scores): #自定得分图绘制函数\n    plt.plot(Scores.iloc[:,0],Scores.iloc[:,1],'*'); \n    plt.xlabel(Scores.columns[0]);plt.ylabel(Scores.columns[1])\n    plt.axhline(y=0,ls=':');plt.axvline(x=0,ls=':')\n    for i in range(len(Scores)):\n        plt.text(Scores.iloc[i,0],Scores.iloc[i,1],Scores.index[i])"
+    },
+    {
+      "index": 56,
+      "locator": "Notebook 单元 56 · code",
+      "text": "Scoreplot(Case6_pcs)"
+    },
+    {
+      "index": 57,
+      "locator": "Notebook 单元 57 · code",
+      "text": "caCase6=CA().fit(Case6)"
+    },
+    {
+      "index": 58,
+      "locator": "Notebook 单元 58 · code",
+      "text": "CA_plot(caCase6,Case6)"
+    },
+    {
+      "index": 59,
+      "locator": "Notebook 单元 59 · code",
+      "text": ""
+    }
+  ]
+}

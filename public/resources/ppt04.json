@@ -1,0 +1,361 @@
+{
+  "resource": {
+    "id": "ppt04",
+    "title": "第4章 聚类分析及Python分类 (1)",
+    "kind": "ppt",
+    "source_path": "PPT/第4章 聚类分析及Python分类 (1).pptx",
+    "sha256": "764db40e93fe7d001a33ad946573b0b0ce7e66a528f4f211c9ae32a78fd0d1c8",
+    "status": "TEXT_EXTRACTED_IMAGES_NOT_OCR",
+    "href": "resources/ppt04.json"
+  },
+  "units": [
+    {
+      "locator": "PPT 第 1 页",
+      "index": 1,
+      "text": "第 4 章    聚类分析及 Python 分类   多元统计分析及 Python 建模 ",
+      "images": 0
+    },
+    {
+      "locator": "PPT 第 2 页",
+      "index": 2,
+      "text": "多元统计分析及 Python 建模 4  聚类分析及 Python 使用",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 3 页",
+      "index": 3,
+      "text": "多元统计分析及 Python 建模 4  聚类分析及 Python 使用",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 4 页",
+      "index": 4,
+      "text": "4  聚类分析及 Python 使用 4.1   聚类分析的概念",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 5 页",
+      "index": 5,
+      "text": "4  聚类分析及 Python 使用 4.1.2 聚类分析的类型 4.1   聚类分析的概念",
+      "images": 4
+    },
+    {
+      "locator": "PPT 第 6 页",
+      "index": 6,
+      "text": "4  聚类分析及 Python 使用 4.2   聚类统计量",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 7 页",
+      "index": 7,
+      "text": "4  聚类分析及 Python 使用 4. 2 . 1  距离的概念 4.2   聚类统计量",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 8 页",
+      "index": 8,
+      "text": "4  聚类分析及 Python 使用 4. 2 . 1  距离的概念 4.2   聚类统计量",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 9 页",
+      "index": 9,
+      "text": "4  聚类分析及 Python 使用 4. 2 . 1  距离的概念 4.2   聚类统计量",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 10 页",
+      "index": 10,
+      "text": "4  聚类分析及 Python 使用 4.2   聚类统计量",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 11 页",
+      "index": 11,
+      "text": "4  聚类分析及 Python 使用 4. 2 . 2  距离的计算 4.2   聚类统计量",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 12 页",
+      "index": 12,
+      "text": "4  聚类分析及 Python 使用 4. 2 . 2  距离的计算 4.2   聚类统计量",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 13 页",
+      "index": 13,
+      "text": "4  聚类分析及 Python 使用 4.2   聚类统计量",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 14 页",
+      "index": 14,
+      "text": "4  聚类分析及 Python 使用 4.2   聚类统计量",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 15 页",
+      "index": 15,
+      "text": "4  聚类分析及 Python 使用 4.2   聚类统计量",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 16 页",
+      "index": 16,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 1  系统聚类法的基本思想与方法 4.3   系统聚类法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 17 页",
+      "index": 17,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 1  系统聚类法的基本思想与方法 4.3   系统聚类法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 18 页",
+      "index": 18,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 1  系统聚类法的基本思想与方法 4.3   系统聚类法",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 19 页",
+      "index": 19,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 1  系统聚类法的基本思想与方法 4.3   系统聚类法",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 20 页",
+      "index": 20,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 1  系统聚类法的基本思想与方法 4.3   系统聚类法",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 21 页",
+      "index": 21,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 1  系统聚类法的基本思想与方法 4.3   系统聚类法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 22 页",
+      "index": 22,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 2  系统聚类法的基本步骤 4.3   系统聚类法",
+      "images": 4
+    },
+    {
+      "locator": "PPT 第 23 页",
+      "index": 23,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 2  系统聚类法的基本步骤 4.3   系统聚类法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 24 页",
+      "index": 24,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 3  聚类分析实例分析 4.3   系统聚类法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 25 页",
+      "index": 25,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 3  聚类分析实例分析 4.3   系统聚类法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 26 页",
+      "index": 26,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 3  聚类分析实例分析 4.3   系统聚类法",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 27 页",
+      "index": 27,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 3  聚类分析实例分析 4.3   系统聚类法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 28 页",
+      "index": 28,
+      "text": "4  聚类分析及 Python 使用 4.3   系统聚类法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 29 页",
+      "index": 29,
+      "text": "4  聚类分析及 Python 使用 4.3   系统聚类法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 30 页",
+      "index": 30,
+      "text": "4  聚类分析及 Python 使用 4.3   系统聚类法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 31 页",
+      "index": 31,
+      "text": "4  聚类分析及 Python 使用 4.3   系统聚类法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 32 页",
+      "index": 32,
+      "text": "4  聚类分析及 Python 使用 4.3   系统聚类法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 33 页",
+      "index": 33,
+      "text": "4  聚类分析及 Python 使用 4.3   系统聚类法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 34 页",
+      "index": 34,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 3  聚类分析实例分析 4.3   系统聚类法 综合考虑以上的分析结果，笔者认为从全国各省、市、自治区的费情况来看，如果使用欧氏距离，从上面方法的比较看，使用  ward 方法 聚类的效果较好（有时要根据实际数据聚类情况判断），且分为四类较为合适。",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 35 页",
+      "index": 35,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 3  聚类分析实例分析 4.3   系统聚类法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 36 页",
+      "index": 36,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 3  聚类分析实例分析 4.3   系统聚类法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 37 页",
+      "index": 37,
+      "text": "4  聚类分析及 Python 使用 4. 3 . 3  聚类分析实例分析 4.3   系统聚类法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 38 页",
+      "index": 38,
+      "text": "4  聚类分析及 Python 使用 4. 4 . 1  快速聚类基本概念 4.4   快速聚类法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 39 页",
+      "index": 39,
+      "text": "4  聚类分析及 Python 使用 4. 4 . 2  快速聚类计算原理 4.4   快速聚类法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 40 页",
+      "index": 40,
+      "text": "4  聚类分析及 Python 使用 4. 4 . 2  快速聚类计算原理 4.4   快速聚类法",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 41 页",
+      "index": 41,
+      "text": "4  聚类分析及 Python 使用 4. 4 . 2  快速聚类计算原理 4.4   快速聚类法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 42 页",
+      "index": 42,
+      "text": "4  聚类分析及 Python 使用 4.4   快速聚类法 4. 4 . 3  快速聚类的模拟研究",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 43 页",
+      "index": 43,
+      "text": "4  聚类分析及 Python 使用 4.4   快速聚类法 4. 4 . 3  快速聚类的模拟研究",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 44 页",
+      "index": 44,
+      "text": "4  聚类分析及 Python 使用 4.4   快速聚类法 4. 4 . 3  快速聚类的模拟研究",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 45 页",
+      "index": 45,
+      "text": "4  聚类分析及 Python 使用 4.4   快速聚类法 4. 4 . 3  快速聚类的模拟研究",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 46 页",
+      "index": 46,
+      "text": "4  聚类分析及 Python 使用 4.4   快速聚类法 4. 4 . 3  快速聚类的模拟研究",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 47 页",
+      "index": 47,
+      "text": "4  聚类分析及 Python 使用 4.4   快速聚类法",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 48 页",
+      "index": 48,
+      "text": "4  聚类分析及 Python 使用 4.5    聚类分析注意的问题 4. 5 . 1  系统聚类的一些特点",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 49 页",
+      "index": 49,
+      "text": "4  聚类分析及 Python 使用 4.5    聚类分析注意的问题 4. 5 . 2  关于 KMeans 算法",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 50 页",
+      "index": 50,
+      "text": "4  聚类分析及 Python 使用 操作案例 案例 4：全国区域经济发展的聚类分析",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 51 页",
+      "index": 51,
+      "text": "操作案例 案例 4：全国区域经济发展的聚类分析 一、数据管理",
+      "images": 1
+    },
+    {
+      "locator": "PPT 第 52 页",
+      "index": 52,
+      "text": "操作案例 案例 4：全国区域经济发展的聚类分析 二、Jupyter 操作",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 53 页",
+      "index": 53,
+      "text": "操作案例 案例 4：全国区域经济发展的聚类分析",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 54 页",
+      "index": 54,
+      "text": "",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 55 页",
+      "index": 55,
+      "text": "操作案例 案例 4：全国区域经济发展的聚类分析",
+      "images": 2
+    },
+    {
+      "locator": "PPT 第 56 页",
+      "index": 56,
+      "text": "操作案例 案例 4：全国区域经济发展的聚类分析",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 57 页",
+      "index": 57,
+      "text": "",
+      "images": 3
+    },
+    {
+      "locator": "PPT 第 58 页",
+      "index": 58,
+      "text": "7  聚类分析及 R 使用 第四章 讲到这里就结束了 欢迎大家继续学习第五章！",
+      "images": 0
+    }
+  ]
+}

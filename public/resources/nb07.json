@@ -1,0 +1,378 @@
+{
+  "resource": {
+    "id": "nb07",
+    "title": "第07章-因子分析",
+    "kind": "python",
+    "source_path": "code/mvsJupyter/第07章-因子分析.ipynb",
+    "sha256": "52faf9a91e913bedd3bca94fc4bc98dced3bb247403e032d28dd1537e1d232a7",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED",
+    "href": "resources/nb07.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "Notebook 单元 1 · markdown",
+      "text": "# 第7章 因子分析及Python应用"
+    },
+    {
+      "index": 2,
+      "locator": "Notebook 单元 2 · code",
+      "text": "#%cd \"[本地路径已移除]\""
+    },
+    {
+      "index": 3,
+      "locator": "Notebook 单元 3 · code",
+      "text": ""
+    },
+    {
+      "index": 4,
+      "locator": "Notebook 单元 4 · code",
+      "text": "#输出初始化设置\nimport pandas as pd                        #加载数据分析包\nimport numpy as np                        #加载数值计算包\npd.set_option('display.precision',4)       #设置数据框输出精度\npd.set_option('display.max_rows',14)       #显示数据框最大行数\nfrom pandas import DataFrame as DF         #设置数据框别名\nfrom sklearn.preprocessing import StandardScaler\nimport factor_analyzer as fa\nfrom factor_analyzer import FactorAnalyzer as FA"
+    },
+    {
+      "index": 5,
+      "locator": "Notebook 单元 5 · markdown",
+      "text": "## 7.1 因子分析模型"
+    },
+    {
+      "index": 6,
+      "locator": "Notebook 单元 6 · markdown",
+      "text": "### 7.1.1 因子概念的提出"
+    },
+    {
+      "index": 7,
+      "locator": "Notebook 单元 7 · markdown",
+      "text": "### 7.1.2 因子分析的用途"
+    },
+    {
+      "index": 8,
+      "locator": "Notebook 单元 8 · markdown",
+      "text": "### 7.1.3 因子模型的提出"
+    },
+    {
+      "index": 9,
+      "locator": "Notebook 单元 9 · code",
+      "text": "d71=pd.read_excel('mvsData.xlsx','d71',index_col=0)\nd71_scaler = d71.copy()             #复制数据框\nd71_mean = d71_scaler-d71_scaler.mean()  #均值中心化\nd71_scaler = d71_mean/d71_scaler.std()    #标准化\nd71 = d71_scaler.copy()             #复制数据框\nd71.columns = [\"主营业务利润率\",\"销售毛利率\",\"速动比率\",\"资产负债率\",\"主营业务收入增长率\",\"营业利润增长率\"]\nprint(d71)\n\n\n\n"
+    },
+    {
+      "index": 10,
+      "locator": "Notebook 单元 10 · code",
+      "text": "d71.corr()                              #计算相关阵"
+    },
+    {
+      "index": 11,
+      "locator": "Notebook 单元 11 · markdown",
+      "text": "## KMO检验\nKMO值是由Kaiser、Meyer和Olkin提出的，用于衡量变量间的相关性和适合性。它通过比较变量间的简单相关系数与偏相关系数来判断数据是否适合进行因子分析。KMO值越接近1，表示变量间的相关性越强，适合进行因子分析；而KMO值接近0则表示变量间的相关性较弱，不适合进行因子分析。\n### KMO值的计算\nKMO值的计算公式为：\n$KMO = \\frac{\\sum_{i=1}\\^{n} \\sum_{j=1}\\^{n} r_{ij}\\^2}{\\sum_{i=1}\\^{n} \\sum_{j=1}\\^{n} r_{ij}\\^2 + \\sum_{i=1}\\^{n} \\sum_{j=1}\\^{n} p_{ij}\\^2}$ \n其中，$r_{ij}$为变量间的简单相关系数，$p_{ij}$为变量间的偏相关系数。\n- **KMO值的解读**\n  - KMO值 ≥ 0.9：非常适合进行因子分析\n  - KMO值 ≥ 0.8：适合进行因子分析\n  - KMO值 ≥ 0.7：一般适合\n  - KMO值 ≥ 0.6：勉强适合\n  - KMO值 < 0.5：不适合进行因子分析。 "
+    },
+    {
+      "index": 12,
+      "locator": "Notebook 单元 12 · code",
+      "text": "kmo=fa.calculate_kmo(d71) #计算KMO\nprint('KMO值: %5.4f'%kmo[1])\nchisq=fa.calculate_bartlett_sphericity(d71) #进行bartlett检验\nprint('卡方值 = %8.4f, Bartlett检验P值 = %5.4f'%(chisq[0],chisq[1]))"
+    },
+    {
+      "index": 13,
+      "locator": "Notebook 单元 13 · markdown",
+      "text": "## 7.2 因子载荷及解释"
+    },
+    {
+      "index": 14,
+      "locator": "Notebook 单元 14 · code",
+      "text": "#!pip install factor_analyzer"
+    },
+    {
+      "index": 15,
+      "locator": "Notebook 单元 15 · markdown",
+      "text": "### 7.2.1 主因子估计法"
+    },
+    {
+      "index": 16,
+      "locator": "Notebook 单元 16 · code",
+      "text": "#def FA_disp(fa,Indexs):  #显示因子信息\n#    Columns=['F'+str(i) for i in range(1,fa.n_factors+1)]    \n#    return pd.DataFrame(fa.loadings_,Indexs,Columns)      "
+    },
+    {
+      "index": 17,
+      "locator": "Notebook 单元 17 · code",
+      "text": "#显示因子名称\ndef Factors(fa):\n    return ['F'+str(i) for i in range(1,fa.n_factors+1)]    "
+    },
+    {
+      "index": 18,
+      "locator": "Notebook 单元 18 · code",
+      "text": "from factor_analyzer import FactorAnalyzer as FA\nFp=FA(n_factors=6,method='principal',rotation=None).fit(d71.values) #拟合6个主因子\nDF(Fp.loadings_,d71.columns,Factors(Fp)) #显示因子载荷"
+    },
+    {
+      "index": 19,
+      "locator": "Notebook 单元 19 · code",
+      "text": "Fp1=FA(n_factors=3,method='principal',rotation=None).fit(d71.values) #取前3个主因子\nFp1_load=DF(Fp1.loadings_,d71.columns,Factors(Fp1))  #定义因子载荷阵\nFp1_load"
+    },
+    {
+      "index": 20,
+      "locator": "Notebook 单元 20 · markdown",
+      "text": "### 7.2.2 极大似然估计法"
+    },
+    {
+      "index": 21,
+      "locator": "Notebook 单元 21 · code",
+      "text": "Fm=FA(n_factors=6,method='ml',rotation=None).fit(d71.values) #取前6个主因子\nDF(Fm.loadings_,d71.columns,Factors(Fm)) "
+    },
+    {
+      "index": 22,
+      "locator": "Notebook 单元 22 · code",
+      "text": "Fm1=FA(n_factors=3,method='ml',rotation=None).fit(d71.values)\nFm1_load=DF(Fm1.loadings_,d71.columns,Factors(Fm1)) \nFm1_load"
+    },
+    {
+      "index": 23,
+      "locator": "Notebook 单元 23 · markdown",
+      "text": "### 7.2.3 因子载荷的意义"
+    },
+    {
+      "index": 24,
+      "locator": "Notebook 单元 24 · code",
+      "text": "Vars=['方差','贡献率','累计贡献率']\nFp1_Vars=DF(Fp1.get_factor_variance(),Vars,Factors(Fp1))\nFp1_Vars #主因子法方差贡献 "
+    },
+    {
+      "index": 25,
+      "locator": "Notebook 单元 25 · code",
+      "text": "Fm1_Vars=DF(Fm1.get_factor_variance(),Vars,Factors(Fm1))\nFm1_Vars #极大似然法方差贡献 "
+    },
+    {
+      "index": 26,
+      "locator": "Notebook 单元 26 · code",
+      "text": "#主因子法共同度，uniquenesses（不一致性）\nFp1_load['共同度']=1-Fp1.get_uniquenesses()\nDF(Fp1_load)"
+    },
+    {
+      "index": 27,
+      "locator": "Notebook 单元 27 · code",
+      "text": "#极大似然法共同度，uniquenesses（不一致性）\nFm1_load['共同度']=1-Fm1.get_uniquenesses()\nDF(Fm1_load)"
+    },
+    {
+      "index": 28,
+      "locator": "Notebook 单元 28 · markdown",
+      "text": "## 7.3 因子旋转"
+    },
+    {
+      "index": 29,
+      "locator": "Notebook 单元 29 · markdown",
+      "text": "### 7.3.1 因子旋转方法"
+    },
+    {
+      "index": 30,
+      "locator": "Notebook 单元 30 · markdown",
+      "text": "### 7.3.2 如何进行旋转"
+    },
+    {
+      "index": 31,
+      "locator": "Notebook 单元 31 · code",
+      "text": "Fp2=FA(3,method='principal',rotation='varimax').fit(d71.values) #varimax旋转\nFp2_Vars=DF(Fp2.get_factor_variance(),Vars,Factors(Fp2))\nFp2_Vars"
+    },
+    {
+      "index": 32,
+      "locator": "Notebook 单元 32 · code",
+      "text": "Fp2_load=DF(Fp2.loadings_,d71.columns,Factors(Fp2))  \nFp2_load  #旋转前因子载荷"
+    },
+    {
+      "index": 33,
+      "locator": "Notebook 单元 33 · code",
+      "text": "Fp2_load['共同度']=1-Fp2.get_uniquenesses()\nDF(Fp2_load)  #旋转后因子载荷及共同度"
+    },
+    {
+      "index": 34,
+      "locator": "Notebook 单元 34 · markdown",
+      "text": "## 7.4 因子得分"
+    },
+    {
+      "index": 35,
+      "locator": "Notebook 单元 35 · markdown",
+      "text": "### 7.4.1 因子得分的计算"
+    },
+    {
+      "index": 36,
+      "locator": "Notebook 单元 36 · code",
+      "text": "#pd.set_option('display.max_rows',15) #设置最大显示行数\nFp1_scores=DF(Fp1.transform(d71.values),d71.index,Factors(Fp1))\nDF(Fp1_scores)   #旋转前因子得分"
+    },
+    {
+      "index": 37,
+      "locator": "Notebook 单元 37 · code",
+      "text": "#旋转后因子得分\nFp2_scores=DF(Fp2.transform(d71.values),d71.index,Factors(Fp2))\nDF(Fp2_scores)"
+    },
+    {
+      "index": 38,
+      "locator": "Notebook 单元 38 · markdown",
+      "text": "## 7.4.2 （倒推）计算因子得分系数矩阵"
+    },
+    {
+      "index": 39,
+      "locator": "Notebook 单元 39 · code",
+      "text": "Z = d71.values\nF = Fp2.transform(Z) \nFp2_confi = np.linalg.inv(Z.T @ Z) @ Z.T @ F\nfactor_scores_df = pd.DataFrame(Fp2_confi, index=d71.columns, columns=Factors(Fp2))\nDF(factor_scores_df)"
+    },
+    {
+      "index": 40,
+      "locator": "Notebook 单元 40 · markdown",
+      "text": "### 因子模型表达式：\n$$\nx_1 = 0.5276 \\cdot F_1 - 0.0246 \\cdot F_2 - 0.0665 \\cdot F_3 + \\varepsilon_1\n$$\n\n$$\nx_2 = 0.5301 \\cdot F_1 - 0.0197 \\cdot F_2 - 0.0768 \\cdot F_3 + \\varepsilon_2\n$$\n\n$$\nx_3 = 0.0660 \\cdot F_1 - 0.5210 \\cdot F_2 - 0.0035 \\cdot F_3 + \\varepsilon_3\n$$\n\n$$\nx_4 = 0.0251 \\cdot F_1 + 0.5157 \\cdot F_2 - 0.1036 \\cdot F_3 + \\varepsilon_4\n$$\n\n$$\nx_5 = -0.1304 \\cdot F_1 + 0.1032 \\cdot F_2 + 0.5848 \\cdot F_3 + \\varepsilon_5\n$$\n\n$$\nx_6 = -0.0178 \\cdot F_1 - 0.1704 \\cdot F_2 + 0.6222 \\cdot F_3 + \\varepsilon_6\n$$\n\n#### OR \n\n$$\nF_1 = 0.5276 \\cdot x_1 + 0.5301 \\cdot x_2 + 0.0660 \\cdot x_3 + 0.0251 \\cdot x_4 - 0.1304 \\cdot x_5 - 0.0178 \\cdot x_6\n$$\n\n$$\nF_2 = -0.0246 \\cdot x_1 - 0.0197 \\cdot x_2 - 0.5210 \\cdot x_3 + 0.5157 \\cdot x_4 + 0.1032 \\cdot x_5 - 0.1704 \\cdot x_6\n$$\n\n$$\nF_3 = -0.0665 \\cdot x_1 - 0.0768 \\cdot x_2 - 0.0035 \\cdot x_3 - 0.1036 \\cdot x_4 + 0.5848 \\cdot x_5 + 0.6222 \\cdot x_6\n$$"
+    },
+    {
+      "index": 41,
+      "locator": "Notebook 单元 41 · markdown",
+      "text": "### 7.4.3 因子得分信息图"
+    },
+    {
+      "index": 42,
+      "locator": "Notebook 单元 42 · code",
+      "text": "import matplotlib.pyplot as plt            \nplt.rcParams['font.sans-serif']=['SimHei'];  #中文黑体SimHei\nplt.rcParams['axes.unicode_minus']=False; #正常显示图中正负号\ndef Scoreplot(Scores): #自定得分图绘制函数\n    plt.plot(Scores.iloc[:,0],Scores.iloc[:,1],'*'); \n    plt.xlabel(Scores.columns[0]);plt.ylabel(Scores.columns[1])\n    plt.axhline(y=0,ls=':');plt.axvline(x=0,ls=':')\n    for i in range(len(Scores)):\n        plt.text(Scores.iloc[i,0],Scores.iloc[i,1],Scores.index[i])"
+    },
+    {
+      "index": 43,
+      "locator": "Notebook 单元 43 · code",
+      "text": "#自定得分图绘制函数，见第6章6.3.2节\nScoreplot(Fp2_scores[['F1','F2']]) "
+    },
+    {
+      "index": 44,
+      "locator": "Notebook 单元 44 · code",
+      "text": "Scoreplot(Fp2_scores[['F1','F3']])"
+    },
+    {
+      "index": 45,
+      "locator": "Notebook 单元 45 · code",
+      "text": "Scoreplot(Fp2_scores[['F2','F3']])"
+    },
+    {
+      "index": 46,
+      "locator": "Notebook 单元 46 · code",
+      "text": "def Biplot(Load,Score): #双向因子信息重叠图\n    Scoreplot(Score)\n    for i in range(Load.shape[0]):\n        plt.arrow(0,0,Load.iloc[i,0],Load.iloc[i,1],color='r')\n        plt.text(Load.iloc[i,0],Load.iloc[i,1],Load.index[i],color='b')"
+    },
+    {
+      "index": 47,
+      "locator": "Notebook 单元 47 · code",
+      "text": "Biplot(Fp2_load,Fp2_scores)"
+    },
+    {
+      "index": 48,
+      "locator": "Notebook 单元 48 · markdown",
+      "text": "### 7.4.4 综合得分及排名"
+    },
+    {
+      "index": 49,
+      "locator": "Notebook 单元 49 · code",
+      "text": "def FArank(Vars,Scores): #计算综合因子得分与排名\n    Vi=Vars.values[0]\n    Wi=Vi/sum(Vi);Wi\n    Fi=Scores.dot(Wi)\n    Ri=Fi.rank(ascending=False).astype(int);\n    return(pd.DataFrame({'因子得分':Fi,'因子排名':Ri}))"
+    },
+    {
+      "index": 50,
+      "locator": "Notebook 单元 50 · code",
+      "text": "print(FArank(Fp1_Vars,Fp1_scores))"
+    },
+    {
+      "index": 51,
+      "locator": "Notebook 单元 51 · code",
+      "text": "print(FArank(Fp2_Vars,Fp2_scores))"
+    },
+    {
+      "index": 52,
+      "locator": "Notebook 单元 52 · markdown",
+      "text": "## 7.5 因子分析步骤"
+    },
+    {
+      "index": 53,
+      "locator": "Notebook 单元 53 · markdown",
+      "text": "### 7.5.1 因子分析的准备工作"
+    },
+    {
+      "index": 54,
+      "locator": "Notebook 单元 54 · markdown",
+      "text": "（1）简单相关分析"
+    },
+    {
+      "index": 55,
+      "locator": "Notebook 单元 55 · code",
+      "text": "d31=pd.read_excel('mvsData.xlsx','d31',index_col=0)\nDF(d31.corr())                  #计算相关阵"
+    },
+    {
+      "index": 56,
+      "locator": "Notebook 单元 56 · markdown",
+      "text": "（2）KMO统计量"
+    },
+    {
+      "index": 57,
+      "locator": "Notebook 单元 57 · code",
+      "text": "import factor_analyzer as fa\nkmo=fa.calculate_kmo(d31) #计算KMO\nprint('KMO: %5.4f'%kmo[1])"
+    },
+    {
+      "index": 58,
+      "locator": "Notebook 单元 58 · markdown",
+      "text": "（3）Bartlett's球状检验"
+    },
+    {
+      "index": 59,
+      "locator": "Notebook 单元 59 · code",
+      "text": "chisq=fa.calculate_bartlett_sphericity(d31) #进行bartlett检验\nprint('卡方值 = %8.4f, p值 = %5.4f'%(chisq[0],chisq[1]))"
+    },
+    {
+      "index": 60,
+      "locator": "Notebook 单元 60 · markdown",
+      "text": "### 7.5.2 因子分析的过程"
+    },
+    {
+      "index": 61,
+      "locator": "Notebook 单元 61 · code",
+      "text": "def FAscores(X,m=2,rot='varimax'): #因子分析综合评价函数\n    import factor_analyzer as fa\n    kmo=fa.calculate_kmo(X) \n    chisq=fa.calculate_bartlett_sphericity(X) #进行bartlett检验\n    print('KMO检验: KMO值=%6.4f 卡方值=%8.4f, p值=%5.4f'%(kmo[1],chisq[0],chisq[1]))\n    from factor_analyzer import FactorAnalyzer as FA\n    Fp=FA(n_factors=m,method='principal',rotation=rot).fit(X.values)\n    vars=Fp.get_factor_variance()\n    Factor=['F%d' %(i+1) for i in range(m)]\n    Vars=pd.DataFrame(vars,['方差','贡献率','累计贡献率'],Factor)\n    print(\"\\n方差贡献:\\n\",Vars)\n    Load=pd.DataFrame(Fp.loadings_,X.columns,Factor) \n    Load['共同度']=1-Fp.get_uniquenesses()\n    print(\"\\n因子载荷:\\n\",Load)\n    Scores=pd.DataFrame(Fp.transform(X.values),X.index,Factor)    \n    print(\"\\n因子得分:\\n\",Scores)\n    Vi=vars[0]\n    Wi=Vi/sum(Vi);Wi\n    Fi=Scores.dot(Wi)\n    Ri=Fi.rank(ascending=False).astype(int);\n    print(\"\\n综合排名:\\n\")\n    return pd.DataFrame({'综合得分':Fi,'综合排名':Ri})"
+    },
+    {
+      "index": 62,
+      "locator": "Notebook 单元 62 · code",
+      "text": "pd.set_option('display.max_rows',31) \nFAscores(d31,m=2,rot='varimax')"
+    },
+    {
+      "index": 63,
+      "locator": "Notebook 单元 63 · code",
+      "text": "Fp4 = FA(2,method='principal',rotation='varimax').fit(d31.values)\nFp4_scores=DF(Fp4.transform(d31.values),d31.index,Factors(Fp4))\nScoreplot(Fp4_scores[['F1','F2']])\n"
+    },
+    {
+      "index": 64,
+      "locator": "Notebook 单元 64 · code",
+      "text": "Fp4_load=DF(Fp4.loadings_,d31.columns,Factors(Fp4)) \nBiplot(Fp4_load,Fp4_scores)\n"
+    },
+    {
+      "index": 65,
+      "locator": "Notebook 单元 65 · markdown",
+      "text": "## 7.6 实际中进行因子分析"
+    },
+    {
+      "index": 66,
+      "locator": "Notebook 单元 66 · markdown",
+      "text": "### 7.6.1 基本分析"
+    },
+    {
+      "index": 67,
+      "locator": "Notebook 单元 67 · markdown",
+      "text": "### 7.6.2 扩展分析"
+    },
+    {
+      "index": 68,
+      "locator": "Notebook 单元 68 · markdown",
+      "text": "## 案例7 上市公司经营业绩评价的因子分析"
+    },
+    {
+      "index": 69,
+      "locator": "Notebook 单元 69 · code",
+      "text": "Case7=pd.read_excel('mvscase.xlsx','Case7',index_col=0); #Case7\nprint(Case7.head(10))                  #计算相关阵"
+    },
+    {
+      "index": 70,
+      "locator": "Notebook 单元 70 · code",
+      "text": "print(FAscores(Case7,m=4))"
+    },
+    {
+      "index": 71,
+      "locator": "Notebook 单元 71 · code",
+      "text": "Fp5 = FA(4,method='principal',rotation='varimax').fit(Case7.values)\nFp5_scores=DF(Fp5.transform(Case7.values),Case7.index,Factors(Fp5))\nScoreplot(Fp5_scores[['F1','F2']])\n"
+    },
+    {
+      "index": 72,
+      "locator": "Notebook 单元 72 · code",
+      "text": "Fp5_load=DF(Fp5.loadings_,Case7.columns,Factors(Fp5)) \nBiplot(Fp5_load,Fp5_scores)\n"
+    },
+    {
+      "index": 73,
+      "locator": "Notebook 单元 73 · code",
+      "text": ""
+    }
+  ]
+}

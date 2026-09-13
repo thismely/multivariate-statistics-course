@@ -1,0 +1,113 @@
+{
+  "resource": {
+    "id": "mvsExer",
+    "title": "mvsExer",
+    "kind": "dataset",
+    "source_path": "课程数据/mvsExer.xlsx",
+    "sha256": "2aead42a633fbf57baaf56fe0dca478dadb3a929a46cac4c8cf0dc6d90ebe9ad",
+    "status": "SHEET_NAMES_VERIFIED",
+    "href": "resources/mvsExer.json"
+  },
+  "units": [
+    {
+      "index": 1,
+      "locator": "工作表 E2_2",
+      "text": "E2_2"
+    },
+    {
+      "index": 2,
+      "locator": "工作表 E2_3",
+      "text": "E2_3"
+    },
+    {
+      "index": 3,
+      "locator": "工作表 E3_2",
+      "text": "E3_2"
+    },
+    {
+      "index": 4,
+      "locator": "工作表 E4_2",
+      "text": "E4_2"
+    },
+    {
+      "index": 5,
+      "locator": "工作表 E4_3",
+      "text": "E4_3"
+    },
+    {
+      "index": 6,
+      "locator": "工作表 E4_4",
+      "text": "E4_4"
+    },
+    {
+      "index": 7,
+      "locator": "工作表 E5_3",
+      "text": "E5_3"
+    },
+    {
+      "index": 8,
+      "locator": "工作表 E6_3",
+      "text": "E6_3"
+    },
+    {
+      "index": 9,
+      "locator": "工作表 E6_4",
+      "text": "E6_4"
+    },
+    {
+      "index": 10,
+      "locator": "工作表 E6_5",
+      "text": "E6_5"
+    },
+    {
+      "index": 11,
+      "locator": "工作表 E7_2",
+      "text": "E7_2"
+    },
+    {
+      "index": 12,
+      "locator": "工作表 E8_3",
+      "text": "E8_3"
+    },
+    {
+      "index": 13,
+      "locator": "工作表 E8_4",
+      "text": "E8_4"
+    },
+    {
+      "index": 14,
+      "locator": "工作表 E9_4",
+      "text": "E9_4"
+    },
+    {
+      "index": 15,
+      "locator": "工作表 E10_2",
+      "text": "E10_2"
+    },
+    {
+      "index": 16,
+      "locator": "工作表 E10_3",
+      "text": "E10_3"
+    },
+    {
+      "index": 17,
+      "locator": "工作表 E11_3",
+      "text": "E11_3"
+    },
+    {
+      "index": 18,
+      "locator": "工作表 E11_4",
+      "text": "E11_4"
+    },
+    {
+      "index": 19,
+      "locator": "工作表 E12_3",
+      "text": "E12_3"
+    },
+    {
+      "index": 20,
+      "locator": "工作表 E13_5",
+      "text": "E13_5"
+    }
+  ]
+}
